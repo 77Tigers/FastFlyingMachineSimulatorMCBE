@@ -1,0 +1,10 @@
+[package]
+name = "fastflyer"
+version = "0.1.0"
+edition = "2021"
+description = "Chunk-oriented storage for Minecraft Bedrock flying machines"
+license = "MIT"
+
+[lib]
+path = "src/lib.rs"
+
