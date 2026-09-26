@@ -2,3 +2,5 @@
 __pycache__/
 *.pyc
 *.flyer
+/viewer/node_modules/
+/viewer/.npm-cache/

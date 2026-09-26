@@ -246,13 +246,6 @@ class Flyer:
         return len(selected)
 
     @_counted
-    def fill_line(self, start: Coord, end: Coord, block: Block) -> None:
-        a, b = _coord(start), _coord(end)
-        if sum(a[i] != b[i] for i in range(3)) > 1:
-            raise ValueError("fill_line currently requires an axis-aligned line")
-        self.fill_box(a, b, block)
-
-    @_counted
     def replace(self, pos: Coord, old: Block | None, new: Block | None) -> bool:
         pos = _coord(pos)
         if self._cells.get(pos) != old:

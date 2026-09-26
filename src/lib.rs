@@ -1,5 +1,8 @@
 //! Chunk-oriented storage and version-1 file I/O for Bedrock flying machines.
-//! Gameplay validation and simulation are intentionally outside this crate.
+//! Storage and simulation for Bedrock flying machines.
+
+pub mod debug;
+pub mod sim;
 
 use std::collections::BTreeMap;
 use std::fmt;
@@ -184,6 +187,9 @@ impl Block {
     }
     pub fn moving(self) -> bool {
         self.0 & 16 != 0
+    }
+    pub fn with_moving(self, moving: bool) -> Self {
+        Self((self.0 & !16) | ((moving as u16) << 4))
     }
     pub fn direction(self) -> u8 {
         ((self.0 >> 5) & 7) as u8

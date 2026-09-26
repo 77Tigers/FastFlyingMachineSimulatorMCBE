@@ -70,9 +70,9 @@ class StorageTests(unittest.TestCase):
         flyer.rotate_y()
         flyer.mirror("z")
         self.assertEqual(flyer.occupied_count(), 9)
-        with self.assertRaises(ValueError):
-            flyer.fill_line((0, 0, 0), (1, 1, 0), Block(Kind.SLIME))
-        self.assertEqual(flyer.operation_counts()["failed"]["fill_line"], 1)
+        with self.assertRaises(TypeError):
+            flyer.fill_box((0, 0, 0), (1, 1, 0), None)
+        self.assertEqual(flyer.operation_counts()["failed"]["fill_box"], 1)
 
     def test_python_and_rust_write_identical_files(self):
         if shutil.which("cargo") is None:
@@ -88,6 +88,26 @@ class StorageTests(unittest.TestCase):
                             str(source), str(rewritten)], check=True,
                            cwd=Path(__file__).resolve().parents[1], capture_output=True)
             self.assertEqual(source.read_bytes(), rewritten.read_bytes())
+
+    def test_rust_simulator_reads_python_flyer(self):
+        if shutil.which("cargo") is None:
+            self.skipTest("Rust toolchain unavailable")
+        with tempfile.TemporaryDirectory() as temp:
+            source = Path(temp) / "source.flyer"
+            result = Path(temp) / "result.flyer"
+            flyer = Flyer()
+            flyer.set((0, 0, 0), Block.piston(0, sticky=True))
+            flyer.set((0, -1, 0), Block.rod(0))
+            flyer.set((1, 0, 0), Block(Kind.SLIME))
+            flyer.save(source)
+            subprocess.run(["cargo", "run", "--quiet", "--bin", "fastflyer-sim", "--",
+                            str(source), str(result), "1"], check=True,
+                           cwd=Path(__file__).resolve().parents[1], capture_output=True)
+            loaded = Flyer.load(result)
+            # Saved coordinates are normalized: original Y=-1 becomes Y=0.
+            self.assertEqual(loaded.get((0, 1, 0)).state, 1)
+            self.assertEqual(loaded.get((1, 1, 0)).kind, Kind.PISTON_ARM)
+            self.assertTrue(loaded.get((2, 1, 0)).moving)
 
     def test_reject_bad_cell(self):
         flyer = Flyer()
