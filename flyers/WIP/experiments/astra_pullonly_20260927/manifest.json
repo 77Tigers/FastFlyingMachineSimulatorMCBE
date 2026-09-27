@@ -1,0 +1,53 @@
+{
+  "date": "2026-09-27",
+  "simulator_modified": false,
+  "files": {
+    "mwmw_best.flyer": "e826d12763f2c239d070fd54955726cc986f2d910411cfaa532fdd3b4b6ec0a4",
+    "ring3_best.flyer": "857451e0c0bd0df409c475a5c3219d168abfc679e27b25e19a08e45db5e24898",
+    "three_pull_burst.flyer": "44c4dde1fdf7cd18d2e01937dfba80f3a9e8bb5d6aab70991fe7fa483ef07cb0",
+    "pull_mwmw.py": "98339374d64da1910afff631c77bbb098e47ea5b9265b4420d59413a5ac1e5b4",
+    "ring3.py": "d80cf3f41f5105d3fe8334a3a4e07d8c3bf5e995588e92cd4cdd7a136ed2730a",
+    "burst.py": "877de01ab7c3a95521e90bf1d852b145a187f7aace47012e5229770f3e4af7d3",
+    "verify.rs": "dcbcbd63a6285096051644c1982c52fa1abff5c7c69345f149d285021faaf56f"
+  },
+  "verified_result": {
+    "file": "mwmw_best.flyer",
+    "push_limit": 10,
+    "ticks": 10000,
+    "distance": 2500,
+    "period": 8,
+    "period_displacement": 2,
+    "rng": [
+      0,
+      1,
+      2,
+      5,
+      42
+    ],
+    "phase_x": [
+      0,
+      7,
+      8,
+      15
+    ],
+    "phase_z": [
+      0,
+      7,
+      8,
+      15
+    ]
+  },
+  "search_bounds": {
+    "mwmw_generated": 504,
+    "mwmw_distance40_of160": 272,
+    "ring3_seeds": 600,
+    "ring3_generated": 407,
+    "adhesive_deletions": 14,
+    "deletion_limits": [
+      9,
+      100
+    ],
+    "compact_parameter_sets": 10976,
+    "compact_routed": 0
+  }
+}

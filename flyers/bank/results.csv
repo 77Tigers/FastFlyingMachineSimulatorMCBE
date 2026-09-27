@@ -53,3 +53,4 @@ push_limit,name,start_min_x,end_min_x,distance,end_blocks,extensions
 20,five_segment_ring_low,13,3013,3000,94,15000
 12,diagonal_alternating,13,2513,2500,21,5000
 11,diagonal_alternating,13,2513,2500,21,5000
+10,pulling_alternating,0,2500,2500,21,5000

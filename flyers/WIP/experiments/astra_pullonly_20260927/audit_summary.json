@@ -1,0 +1,29 @@
+{
+  "mwmw": {
+    "samples": 80,
+    "distances": [
+      2500
+    ],
+    "all_conserved": true,
+    "all_periodic": true,
+    "extension_failures": 0
+  },
+  "ring3": {
+    "samples": 80,
+    "distances": [
+      1666
+    ],
+    "all_conserved": true,
+    "all_periodic": true,
+    "extension_failures": 0
+  },
+  "burst": {
+    "samples": 80,
+    "distances": [
+      3
+    ],
+    "all_conserved": true,
+    "all_periodic": false,
+    "extension_failures": 0
+  }
+}

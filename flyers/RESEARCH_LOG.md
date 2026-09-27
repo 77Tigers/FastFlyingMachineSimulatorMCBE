@@ -4,7 +4,9 @@ Keep this active handoff below **3,000 words**. Prior evidence is preserved in [
 
 ## Objectives and verified records
 
-**PL12 at 2.5 bps is achieved and surpassed: PL11 at 2.5 bps.** Both encoded-limit copies are banked as `bank/pl11/diagonal_alternating.flyer` and `bank/pl12/diagonal_alternating.flyer`; `bank/results.csv` contains both rows. Each moves exactly **2,500 blocks in 10,000 Rust ticks**, with 5,000 extensions and 21 end blocks. Both passed all 80 combinations of RNG `[0,1,2,5,42]` and independent X/Z phases `[0,7,8,15]`: conservation every tick, complete translated physical-state/owner-list repeat every eight ticks, zero extension failures.
+**New best, 2026-09-27: PL10 at 2.5 bps, pulling-only.** `bank/pl10/pulling_alternating.flyer` uses four -X sticky pistons and travels **2,500 blocks in 10,000 Rust ticks**. All 80 RNG/phase samples passed conservation and complete translated state/owner-list recurrence every eight ticks, with zero extension failures. A full traced run confirms maximum successful load 10 and zero movement failures. `bank/results.csv` includes the result. Details below.
+
+The previous normal-piston PL11/PL12 records remain banked as `bank/pl11/diagonal_alternating.flyer` and `bank/pl12/diagonal_alternating.flyer`. Each also moves 2,500/10,000 with 5,000 extensions and 21 end blocks and passed the same 80-case audit: RNG `[0,1,2,5,42]`, independent X/Z phases `[0,7,8,15]`.
 
 **Primary objective: 3 bps at PL17 or lower.** The user's friend reports a **PL12/3 bps** two-push/one-pull design; this is the stronger aspiration, but no coordinates or file were supplied. It is guidance, not a verified result here. The user explicitly authorized improving **3.333 bps concurrently**, superseding the earlier deferral of that track. Current verified references remain `WIP/three_push_ring_pl19.flyer` (3,000/10,000) and `WIP/four_push_ring_pl22.flyer` (3,333/10,000).
 
@@ -22,7 +24,25 @@ Evidence: `astra_diagonal/c58_pl11_audit.csv`, `c58_pl12_audit.csv`, and corresp
 
 PL10 local screen: c58 cannot start its 11-cell move. All eight generated 7/7-sticky layouts stalled; every single slime deletion from c58 broke motion even at diagnostic PL20. c244's moved observer powers the wrong piston for an extra slot, causing a tick-4 immovable collision. Relocation repairs that action but changes observer ownership, loses the next pulse, and still exceeds ten. See `sol_diagonal/FINDINGS.md`; do not repeat those deletion screens or infer global impossibility.
 
+## Pulling-only exploration — 2026-09-27
+
+All artifacts are under `WIP/experiments/astra_pullonly_20260927/`. The PL10 winner has **7 slime, 7 honey, 2 observers, 4 -X sticky pistons**, plus one sampled arm. Its extensions move no blocks; each alternating retraction moves 10. Retracted pistons transfer between the two carriers. Generator `pull_mwmw.py`, candidate `mwmw/c448.flyer`; offset `(1,-1,2)`, transform `(swap=0,sy=1,sz=-1)`, both observer choices 0, geometry seed 0. Encoded-limit copy `mwmw_best.flyer`; evidence `mwmw_audit.csv`, `mwmw_load_audit.txt`, `mwmw_cycle.txt`.
+
+Local target rail: `{(2,0,0),(1,0,0),(0,0,0),(0,0,1),(0,1,0)}`. Opposite-material support: `(2,1,1)`. Sticky P0 `(2,0,1)` starts extended, P1 `(2,1,0)` retracted. Target observer `(2,-1,0)` outputs +Y. Target moves slots 0/2, support 1/3. P0 extends in slot 3 and pulls in 0; P1 extends in 1 and pulls in 2. Two routed interfaces close the cycle.
+
+Search: 504 layouts, 272 travelled 40/160 at diagnostic PL100. Ranking short successful loads found PL10; the winner then passed the full 80 × 10,000 audit. All 14 single sticky-cell deletions failed to preserve 40/160 at both PL9 and PL100. A cap-six-per-material closure screen over offsets `[-3,3]^3`, eight transverse transforms, and four observer combinations routed no candidates (10,976 parameter sets); this is not a global lower bound.
+
+Earlier baselines: `baseline.flyer` repeats at 1.25 bps (short audit, load 10). `ring3_best.flyer` achieves 1,666/10,000 at encoded PL8, full six-tick recurrence and all 80 samples passed. The three-carrier generator routed 407 of 600 seeds. These are retained as simpler mechanisms, not banked speed improvements.
+
+Faster lead: `three_pull_burst.flyer` makes three consecutive +X pulls at ticks 0/2/4, loads 17/18/19, then **stalls**. All 80 short samples conserve blocks and advance three; a 10,000-tick run still advances only three. `burst.py` and traces preserve the finite mechanism. It is not a repeating flyer or a speed record. Closing the piston reset/transport cycle is the next speed question; a naive shared support can recapture a piston during its intended extension slot.
+
 ## Friend's 3 bps mechanism
+
+**2026-09-27 feedback:** “add even more front segments to reduce the back segments pl.” The intended revision is to distribute the front workload across additional carriers so each back segment only needs **two pistons** to push the segments in front, and to shorten the connections substantially. Sol acted on this in `WIP/experiments/sol_extra_front_20260927/`; see its `FINDINGS.md`.
+
+Sol traced the prior helper's 30-block pull and screened 48 bridge deletions/material substitutions; none exceeded its transient distance 10/160. The new four-role architecture adds five front relays (20 carriers total), moving the next back's two-piston support burden onto a relay and reducing each nominal back sticky shape to five cells. An early one-drive relay incorrectly assumed three advances: all 54 Rust screens stalled at distance zero. The corrected three-drive relay routed no complete candidates in a bounded 50-seed screen (19 middle-route failures, 13 relay-route failures, 9 mandatory collisions, 8 middle distance-cap failures, 1 unwanted adhesion). This is unfinished geometry, **not a new 3 bps result**. Next: compact the relay's three drive sites near their supporting middle carrier without crossing the back pickup corridor. Do not repeat the invalid one-drive relay screen.
+
+**New category, 2026-09-27:** explore pulling-only fast flyers. Every piston used to move anything must be a **sticky piston facing -X**. The user explicitly permits any motion caused by those pistons, including extension pushes; prioritize speed at any push limit. Intended net travel remains +X. Work is separate from the mixed 3 bps track, under `WIP/experiments/astra_pullonly_20260927/`.
 
 The friend proposes five main back carriers. A back carrier drives the next back carrier and an additional middle carrier; the middle drives a front carrier. A backward sticky on the middle is powered by the front, making the back's **third movement a pull after two normal pushes**. Additional middle/front carriers may distribute hardware and shorten the back routes. Derive the layout; no build file exists in the conversation.
 

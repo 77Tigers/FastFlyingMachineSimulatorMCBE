@@ -1,0 +1,57 @@
+{
+  "bank_file": "flyers/bank/pl10/pulling_alternating.flyer",
+  "sha256": "e826d12763f2c239d070fd54955726cc986f2d910411cfaa532fdd3b4b6ec0a4",
+  "period_ticks": 8,
+  "translation_x": 2,
+  "actions": [
+    {
+      "action": "retract",
+      "load": 10,
+      "failed": false
+    },
+    {
+      "action": "extend",
+      "load": 0,
+      "failed": false
+    },
+    {
+      "action": "extend",
+      "load": 0,
+      "failed": false
+    },
+    {
+      "action": "retract",
+      "load": 10,
+      "failed": false
+    },
+    {
+      "action": "retract",
+      "load": 10,
+      "failed": false
+    },
+    {
+      "action": "extend",
+      "load": 0,
+      "failed": false
+    },
+    {
+      "action": "extend",
+      "load": 0,
+      "failed": false
+    },
+    {
+      "action": "retract",
+      "load": 10,
+      "failed": false
+    }
+  ],
+  "samples": {
+    "samples": 80,
+    "distances": [
+      2500
+    ],
+    "all_conserved": true,
+    "all_periodic": true,
+    "extension_failures": 0
+  }
+}
