@@ -52,6 +52,14 @@ access to one subchunk at a time.
 
 Run the Python tests with `python -m unittest discover -s tests` and the Rust
 tests with `cargo test`.
+The cross-language storage test runs the simulator for zero ticks to check that
+Rust can read and rewrite a flyer created by Python.
+
+Verified designs are kept in [`flyers/bank/`](flyers/bank/) alongside their
+[`results.csv`](flyers/bank/results.csv) entries. Banked `.flyer` files are
+eligible for version control; generated research candidates stay ignored.
+Research sources, findings, and output conventions are described in
+[`flyers/WIP/experiments/README.md`](flyers/WIP/experiments/README.md).
 
 To run a saved flyer for four ticks:
 

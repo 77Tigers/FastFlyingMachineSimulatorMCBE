@@ -8,7 +8,6 @@ use fastflyer::{Block, Coord, Flyer, Kind};
 
 const HTML: &str = include_str!("../../viewer/index.html");
 const CSS: &str = include_str!("../../viewer/style.css");
-const V2_CSS: &str = include_str!("../../viewer/v2.css");
 const JS: &str = include_str!("../../viewer/app.js");
 const THREE: &str = include_str!("../../viewer/node_modules/three/build/three.module.js");
 const THREE_CORE: &str = include_str!("../../viewer/node_modules/three/build/three.core.js");
@@ -149,12 +148,6 @@ fn handle(mut stream: TcpStream) -> std::io::Result<()> {
             "200 OK",
             "text/css; charset=utf-8",
             CSS.as_bytes(),
-        ),
-        ("GET", "/v2.css") => respond(
-            &mut stream,
-            "200 OK",
-            "text/css; charset=utf-8",
-            V2_CSS.as_bytes(),
         ),
         ("GET", "/app.js") => respond(
             &mut stream,

@@ -84,8 +84,10 @@ class StorageTests(unittest.TestCase):
             flyer.set((-1, -16, -17), Block.observer(4, powered=True, moving=True))
             flyer.set((16, 16, 16), Block.rod(2, moving=True))
             flyer.save(source)
-            subprocess.run(["cargo", "run", "--quiet", "--example", "roundtrip", "--",
-                            str(source), str(rewritten)], check=True,
+            # Zero simulation ticks exercise the Rust reader and writer without
+            # depending on a separate example binary.
+            subprocess.run(["cargo", "run", "--quiet", "--bin", "fastflyer-sim", "--",
+                            str(source), str(rewritten), "0"], check=True,
                            cwd=Path(__file__).resolve().parents[1], capture_output=True)
             self.assertEqual(source.read_bytes(), rewritten.read_bytes())
 

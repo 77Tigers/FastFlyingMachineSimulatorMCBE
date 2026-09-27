@@ -1,0 +1,249 @@
+TICK 0 x=13 ext=2 fail=0 ret=3
+INITIAL Coord { x: 12, y: 2, z: 16 } Block(1)
+INITIAL Coord { x: 12, y: 2, z: 21 } Block(1)
+INITIAL Coord { x: 12, y: 3, z: 16 } Block(1)
+INITIAL Coord { x: 12, y: 3, z: 21 } Block(1)
+INITIAL Coord { x: 12, y: 4, z: 21 } Block(1)
+INITIAL Coord { x: 12, y: 5, z: 21 } Block(1)
+INITIAL Coord { x: 13, y: 0, z: 18 } Block(2)
+INITIAL Coord { x: 13, y: 0, z: 19 } Block(2)
+INITIAL Coord { x: 13, y: 0, z: 20 } Block(2)
+INITIAL Coord { x: 13, y: 2, z: 19 } Block(1)
+INITIAL Coord { x: 13, y: 2, z: 20 } Block(1)
+INITIAL Coord { x: 13, y: 2, z: 21 } Block(1)
+INITIAL Coord { x: 13, y: 3, z: 16 } Block(1)
+INITIAL Coord { x: 13, y: 4, z: 16 } Block(2)
+INITIAL Coord { x: 13, y: 4, z: 17 } Block(2)
+INITIAL Coord { x: 13, y: 6, z: 19 } Block(1)
+INITIAL Coord { x: 13, y: 6, z: 20 } Block(1)
+INITIAL Coord { x: 14, y: 0, z: 17 } Block(2)
+INITIAL Coord { x: 14, y: 0, z: 18 } Block(2)
+INITIAL Coord { x: 14, y: 0, z: 19 } Block(1)
+INITIAL Coord { x: 14, y: 0, z: 20 } Block(297)
+INITIAL Coord { x: 14, y: 1, z: 15 } Block(2)
+INITIAL Coord { x: 14, y: 1, z: 16 } Block(2)
+INITIAL Coord { x: 14, y: 1, z: 17 } Block(2)
+INITIAL Coord { x: 14, y: 1, z: 19 } Block(1)
+INITIAL Coord { x: 14, y: 1, z: 21 } Block(9)
+INITIAL Coord { x: 14, y: 2, z: 15 } Block(2)
+INITIAL Coord { x: 14, y: 2, z: 19 } Block(1)
+INITIAL Coord { x: 14, y: 2, z: 21 } Block(1)
+INITIAL Coord { x: 14, y: 3, z: 15 } Block(1)
+INITIAL Coord { x: 14, y: 3, z: 16 } Block(1)
+INITIAL Coord { x: 14, y: 4, z: 14 } Block(1)
+INITIAL Coord { x: 14, y: 4, z: 15 } Block(1)
+INITIAL Coord { x: 14, y: 4, z: 17 } Block(2)
+INITIAL Coord { x: 14, y: 5, z: 14 } Block(1)
+INITIAL Coord { x: 14, y: 5, z: 17 } Block(2)
+INITIAL Coord { x: 14, y: 6, z: 17 } Block(2)
+INITIAL Coord { x: 14, y: 6, z: 19 } Block(10)
+INITIAL Coord { x: 14, y: 6, z: 20 } Block(1)
+INITIAL Coord { x: 14, y: 7, z: 17 } Block(2)
+INITIAL Coord { x: 14, y: 7, z: 18 } Block(2)
+INITIAL Coord { x: 14, y: 7, z: 19 } Block(2)
+INITIAL Coord { x: 15, y: 0, z: 16 } Block(9)
+INITIAL Coord { x: 15, y: 0, z: 17 } Block(2)
+INITIAL Coord { x: 15, y: 0, z: 19 } Block(1)
+INITIAL Coord { x: 15, y: 1, z: 15 } Block(9)
+INITIAL Coord { x: 15, y: 1, z: 16 } Block(6)
+INITIAL Coord { x: 15, y: 2, z: 15 } Block(2)
+INITIAL Coord { x: 15, y: 2, z: 16 } Block(297)
+INITIAL Coord { x: 15, y: 2, z: 20 } Block(2057)
+INITIAL Coord { x: 15, y: 3, z: 16 } Block(1)
+INITIAL Coord { x: 15, y: 3, z: 21 } Block(9)
+INITIAL Coord { x: 15, y: 3, z: 22 } Block(1)
+INITIAL Coord { x: 15, y: 4, z: 14 } Block(9)
+INITIAL Coord { x: 15, y: 4, z: 16 } Block(297)
+INITIAL Coord { x: 15, y: 4, z: 17 } Block(2)
+INITIAL Coord { x: 15, y: 4, z: 18 } Block(2)
+INITIAL Coord { x: 15, y: 4, z: 20 } Block(9)
+INITIAL Coord { x: 15, y: 4, z: 22 } Block(1)
+INITIAL Coord { x: 15, y: 5, z: 14 } Block(1)
+INITIAL Coord { x: 15, y: 5, z: 15 } Block(9)
+INITIAL Coord { x: 15, y: 5, z: 17 } Block(2)
+INITIAL Coord { x: 15, y: 5, z: 20 } Block(1)
+INITIAL Coord { x: 15, y: 5, z: 21 } Block(297)
+INITIAL Coord { x: 15, y: 5, z: 22 } Block(1)
+INITIAL Coord { x: 15, y: 6, z: 19 } Block(2345)
+INITIAL Coord { x: 15, y: 6, z: 20 } Block(1)
+INITIAL Coord { x: 15, y: 6, z: 21 } Block(1)
+INITIAL Coord { x: 15, y: 6, z: 22 } Block(1)
+INITIAL Coord { x: 15, y: 7, z: 18 } Block(2057)
+INITIAL Coord { x: 15, y: 7, z: 19 } Block(2)
+INITIAL Coord { x: 16, y: 0, z: 16 } Block(1)
+INITIAL Coord { x: 16, y: 0, z: 17 } Block(1)
+INITIAL Coord { x: 16, y: 0, z: 18 } Block(1)
+INITIAL Coord { x: 16, y: 0, z: 19 } Block(1)
+INITIAL Coord { x: 16, y: 1, z: 15 } Block(1)
+INITIAL Coord { x: 16, y: 1, z: 16 } Block(1)
+INITIAL Coord { x: 16, y: 1, z: 20 } Block(6)
+INITIAL Coord { x: 16, y: 2, z: 15 } Block(2)
+INITIAL Coord { x: 16, y: 2, z: 20 } Block(10)
+INITIAL Coord { x: 16, y: 3, z: 16 } Block(1)
+INITIAL Coord { x: 16, y: 3, z: 22 } Block(1)
+INITIAL Coord { x: 16, y: 4, z: 18 } Block(2)
+INITIAL Coord { x: 16, y: 4, z: 21 } Block(6)
+INITIAL Coord { x: 16, y: 6, z: 17 } Block(9)
+INITIAL Coord { x: 16, y: 6, z: 18 } Block(6)
+INITIAL Coord { x: 16, y: 7, z: 18 } Block(10)
+INITIAL Coord { x: 17, y: 1, z: 20 } Block(1)
+INITIAL Coord { x: 17, y: 1, z: 21 } Block(1)
+INITIAL Coord { x: 17, y: 1, z: 22 } Block(1)
+INITIAL Coord { x: 17, y: 2, z: 15 } Block(2)
+INITIAL Coord { x: 17, y: 2, z: 20 } Block(1)
+INITIAL Coord { x: 17, y: 2, z: 22 } Block(1)
+INITIAL Coord { x: 17, y: 3, z: 15 } Block(2)
+INITIAL Coord { x: 17, y: 3, z: 16 } Block(1)
+INITIAL Coord { x: 17, y: 3, z: 17 } Block(1)
+INITIAL Coord { x: 17, y: 3, z: 21 } Block(2)
+INITIAL Coord { x: 17, y: 3, z: 22 } Block(1)
+INITIAL Coord { x: 17, y: 4, z: 15 } Block(6)
+INITIAL Coord { x: 17, y: 4, z: 17 } Block(1)
+INITIAL Coord { x: 17, y: 4, z: 18 } Block(2)
+INITIAL Coord { x: 17, y: 4, z: 19 } Block(2)
+INITIAL Coord { x: 17, y: 4, z: 20 } Block(2)
+INITIAL Coord { x: 17, y: 4, z: 21 } Block(2)
+INITIAL Coord { x: 17, y: 5, z: 17 } Block(1)
+INITIAL Coord { x: 17, y: 6, z: 17 } Block(1)
+INITIAL Coord { x: 17, y: 6, z: 18 } Block(1)
+INITIAL Coord { x: 17, y: 7, z: 18 } Block(1)
+INITIAL Coord { x: 18, y: 3, z: 15 } Block(2)
+INITIAL Coord { x: 18, y: 4, z: 14 } Block(2)
+INITIAL Coord { x: 18, y: 4, z: 15 } Block(2)
+INITIAL Coord { x: 18, y: 5, z: 15 } Block(2)
+POWER soft Coord { x: 15, y: 1, z: 16 } Some(Block(6)) -> Coord { x: 15, y: 2, z: 16 }
+POWER soft Coord { x: 15, y: 1, z: 16 } Some(Block(6)) -> Coord { x: 15, y: 0, z: 16 }
+POWER soft Coord { x: 15, y: 1, z: 16 } Some(Block(6)) -> Coord { x: 15, y: 1, z: 15 }
+POWER soft Coord { x: 16, y: 6, z: 18 } Some(Block(6)) -> Coord { x: 16, y: 6, z: 17 }
+POWER soft Coord { x: 15, y: 1, z: 16 } Some(Block(6)) -> Coord { x: 15, y: 2, z: 16 }
+POWER soft Coord { x: 15, y: 1, z: 16 } Some(Block(6)) -> Coord { x: 15, y: 0, z: 16 }
+POWER soft Coord { x: 15, y: 1, z: 16 } Some(Block(6)) -> Coord { x: 15, y: 1, z: 15 }
+POWER soft Coord { x: 16, y: 6, z: 18 } Some(Block(6)) -> Coord { x: 16, y: 6, z: 17 }
+POWER soft Coord { x: 15, y: 1, z: 16 } Some(Block(6)) -> Coord { x: 15, y: 2, z: 16 }
+POWER soft Coord { x: 15, y: 1, z: 16 } Some(Block(6)) -> Coord { x: 15, y: 0, z: 16 }
+POWER soft Coord { x: 15, y: 1, z: 16 } Some(Block(6)) -> Coord { x: 15, y: 1, z: 15 }
+POWER soft Coord { x: 16, y: 6, z: 18 } Some(Block(6)) -> Coord { x: 16, y: 6, z: 17 }
+POWER soft Coord { x: 15, y: 1, z: 16 } Some(Block(6)) -> Coord { x: 15, y: 2, z: 16 }
+POWER soft Coord { x: 15, y: 1, z: 16 } Some(Block(6)) -> Coord { x: 15, y: 0, z: 16 }
+POWER soft Coord { x: 15, y: 1, z: 16 } Some(Block(6)) -> Coord { x: 15, y: 1, z: 15 }
+POWER soft Coord { x: 16, y: 6, z: 18 } Some(Block(6)) -> Coord { x: 16, y: 6, z: 17 }
+POWER soft Coord { x: 15, y: 1, z: 16 } Some(Block(6)) -> Coord { x: 15, y: 2, z: 16 }
+POWER soft Coord { x: 15, y: 1, z: 16 } Some(Block(6)) -> Coord { x: 15, y: 0, z: 16 }
+POWER soft Coord { x: 15, y: 1, z: 16 } Some(Block(6)) -> Coord { x: 15, y: 1, z: 15 }
+POWER soft Coord { x: 16, y: 6, z: 18 } Some(Block(6)) -> Coord { x: 16, y: 6, z: 17 }
+POWER soft Coord { x: 15, y: 1, z: 16 } Some(Block(6)) -> Coord { x: 15, y: 2, z: 16 }
+POWER soft Coord { x: 15, y: 1, z: 16 } Some(Block(6)) -> Coord { x: 15, y: 0, z: 16 }
+POWER soft Coord { x: 15, y: 1, z: 16 } Some(Block(6)) -> Coord { x: 15, y: 1, z: 15 }
+POWER soft Coord { x: 16, y: 6, z: 18 } Some(Block(6)) -> Coord { x: 16, y: 6, z: 17 }
+ACTION Tick 0 · extend @ (15, 1, 15) piston=Some(Coord { x: 15, y: 1, z: 15 }) sources=22 failure=None
+SOURCE Coord { x: 12, y: 2, z: 21 } Some(Block(1))
+SOURCE Coord { x: 12, y: 3, z: 21 } Some(Block(1))
+SOURCE Coord { x: 12, y: 4, z: 21 } Some(Block(1))
+SOURCE Coord { x: 12, y: 5, z: 21 } Some(Block(1))
+SOURCE Coord { x: 13, y: 2, z: 19 } Some(Block(1))
+SOURCE Coord { x: 13, y: 2, z: 20 } Some(Block(1))
+SOURCE Coord { x: 13, y: 2, z: 21 } Some(Block(1))
+SOURCE Coord { x: 14, y: 0, z: 19 } Some(Block(1))
+SOURCE Coord { x: 14, y: 0, z: 20 } Some(Block(297))
+SOURCE Coord { x: 14, y: 1, z: 19 } Some(Block(1))
+SOURCE Coord { x: 14, y: 1, z: 21 } Some(Block(9))
+SOURCE Coord { x: 14, y: 2, z: 19 } Some(Block(1))
+SOURCE Coord { x: 14, y: 2, z: 21 } Some(Block(1))
+SOURCE Coord { x: 15, y: 0, z: 16 } Some(Block(9))
+SOURCE Coord { x: 15, y: 0, z: 19 } Some(Block(1))
+SOURCE Coord { x: 15, y: 1, z: 16 } Some(Block(6))
+SOURCE Coord { x: 16, y: 0, z: 16 } Some(Block(1))
+SOURCE Coord { x: 16, y: 0, z: 17 } Some(Block(1))
+SOURCE Coord { x: 16, y: 0, z: 18 } Some(Block(1))
+SOURCE Coord { x: 16, y: 0, z: 19 } Some(Block(1))
+SOURCE Coord { x: 16, y: 1, z: 15 } Some(Block(1))
+SOURCE Coord { x: 16, y: 1, z: 16 } Some(Block(1))
+POWER soft Coord { x: 15, y: 1, z: 16 } None -> Coord { x: 15, y: 2, z: 16 }
+POWER soft Coord { x: 15, y: 1, z: 16 } None -> Coord { x: 15, y: 0, z: 16 }
+POWER soft Coord { x: 15, y: 1, z: 16 } None -> Coord { x: 15, y: 1, z: 15 }
+POWER soft Coord { x: 16, y: 6, z: 18 } Some(Block(6)) -> Coord { x: 16, y: 6, z: 17 }
+POWER soft Coord { x: 15, y: 1, z: 16 } None -> Coord { x: 15, y: 2, z: 16 }
+POWER soft Coord { x: 15, y: 1, z: 16 } None -> Coord { x: 15, y: 0, z: 16 }
+POWER soft Coord { x: 15, y: 1, z: 16 } None -> Coord { x: 15, y: 1, z: 15 }
+POWER soft Coord { x: 16, y: 6, z: 18 } Some(Block(6)) -> Coord { x: 16, y: 6, z: 17 }
+POWER soft Coord { x: 15, y: 1, z: 16 } None -> Coord { x: 15, y: 2, z: 16 }
+POWER soft Coord { x: 15, y: 1, z: 16 } None -> Coord { x: 15, y: 0, z: 16 }
+POWER soft Coord { x: 15, y: 1, z: 16 } None -> Coord { x: 15, y: 1, z: 15 }
+POWER soft Coord { x: 16, y: 6, z: 18 } Some(Block(6)) -> Coord { x: 16, y: 6, z: 17 }
+ACTION Tick 0 · extend @ (16, 6, 17) piston=Some(Coord { x: 16, y: 6, z: 17 }) sources=23 failure=None
+SOURCE Coord { x: 12, y: 2, z: 16 } Some(Block(1))
+SOURCE Coord { x: 12, y: 3, z: 16 } Some(Block(1))
+SOURCE Coord { x: 13, y: 3, z: 16 } Some(Block(1))
+SOURCE Coord { x: 14, y: 3, z: 15 } Some(Block(1))
+SOURCE Coord { x: 14, y: 3, z: 16 } Some(Block(1))
+SOURCE Coord { x: 14, y: 4, z: 14 } Some(Block(1))
+SOURCE Coord { x: 14, y: 4, z: 15 } Some(Block(1))
+SOURCE Coord { x: 14, y: 5, z: 14 } Some(Block(1))
+SOURCE Coord { x: 15, y: 2, z: 16 } Some(Block(297))
+SOURCE Coord { x: 15, y: 3, z: 16 } Some(Block(1))
+SOURCE Coord { x: 15, y: 4, z: 14 } Some(Block(9))
+SOURCE Coord { x: 15, y: 4, z: 16 } Some(Block(297))
+SOURCE Coord { x: 15, y: 5, z: 14 } Some(Block(1))
+SOURCE Coord { x: 15, y: 5, z: 15 } Some(Block(9))
+SOURCE Coord { x: 16, y: 3, z: 16 } Some(Block(1))
+SOURCE Coord { x: 16, y: 6, z: 18 } Some(Block(6))
+SOURCE Coord { x: 17, y: 3, z: 16 } Some(Block(1))
+SOURCE Coord { x: 17, y: 3, z: 17 } Some(Block(1))
+SOURCE Coord { x: 17, y: 4, z: 17 } Some(Block(1))
+SOURCE Coord { x: 17, y: 5, z: 17 } Some(Block(1))
+SOURCE Coord { x: 17, y: 6, z: 17 } Some(Block(1))
+SOURCE Coord { x: 17, y: 6, z: 18 } Some(Block(1))
+SOURCE Coord { x: 17, y: 7, z: 18 } Some(Block(1))
+POWER soft Coord { x: 15, y: 1, z: 16 } None -> Coord { x: 15, y: 2, z: 16 }
+POWER soft Coord { x: 15, y: 1, z: 16 } None -> Coord { x: 15, y: 0, z: 16 }
+POWER soft Coord { x: 15, y: 1, z: 16 } None -> Coord { x: 15, y: 1, z: 15 }
+POWER soft Coord { x: 16, y: 6, z: 18 } None -> Coord { x: 16, y: 6, z: 17 }
+POWER soft Coord { x: 15, y: 1, z: 16 } None -> Coord { x: 15, y: 2, z: 16 }
+POWER soft Coord { x: 15, y: 1, z: 16 } None -> Coord { x: 15, y: 0, z: 16 }
+POWER soft Coord { x: 15, y: 1, z: 16 } None -> Coord { x: 15, y: 1, z: 15 }
+POWER soft Coord { x: 16, y: 6, z: 18 } None -> Coord { x: 16, y: 6, z: 17 }
+POWER soft Coord { x: 15, y: 1, z: 16 } None -> Coord { x: 15, y: 2, z: 16 }
+POWER soft Coord { x: 15, y: 1, z: 16 } None -> Coord { x: 15, y: 0, z: 16 }
+POWER soft Coord { x: 15, y: 1, z: 16 } None -> Coord { x: 15, y: 1, z: 15 }
+POWER soft Coord { x: 16, y: 6, z: 18 } None -> Coord { x: 16, y: 6, z: 17 }
+ACTION Tick 0 · retract @ (15, 2, 20) piston=Some(Coord { x: 15, y: 2, z: 20 }) sources=0 failure=None
+POWER soft Coord { x: 15, y: 1, z: 16 } None -> Coord { x: 15, y: 2, z: 16 }
+POWER soft Coord { x: 15, y: 1, z: 16 } None -> Coord { x: 15, y: 0, z: 16 }
+POWER soft Coord { x: 15, y: 1, z: 16 } None -> Coord { x: 15, y: 1, z: 15 }
+POWER soft Coord { x: 16, y: 6, z: 18 } None -> Coord { x: 16, y: 6, z: 17 }
+POWER soft Coord { x: 15, y: 1, z: 16 } None -> Coord { x: 15, y: 2, z: 16 }
+POWER soft Coord { x: 15, y: 1, z: 16 } None -> Coord { x: 15, y: 0, z: 16 }
+POWER soft Coord { x: 15, y: 1, z: 16 } None -> Coord { x: 15, y: 1, z: 15 }
+POWER soft Coord { x: 16, y: 6, z: 18 } None -> Coord { x: 16, y: 6, z: 17 }
+ACTION Tick 0 · retract @ (15, 7, 18) piston=Some(Coord { x: 15, y: 7, z: 18 }) sources=0 failure=None
+POWER soft Coord { x: 15, y: 1, z: 16 } None -> Coord { x: 15, y: 2, z: 16 }
+POWER soft Coord { x: 15, y: 1, z: 16 } None -> Coord { x: 15, y: 0, z: 16 }
+POWER soft Coord { x: 15, y: 1, z: 16 } None -> Coord { x: 15, y: 1, z: 15 }
+POWER soft Coord { x: 16, y: 6, z: 18 } None -> Coord { x: 16, y: 6, z: 17 }
+ACTION Tick 0 · retract @ (15, 6, 19) piston=Some(Coord { x: 15, y: 6, z: 19 }) sources=21 failure=None
+SOURCE Coord { x: 13, y: 6, z: 19 } Some(Block(1))
+SOURCE Coord { x: 13, y: 6, z: 20 } Some(Block(1))
+SOURCE Coord { x: 14, y: 6, z: 20 } Some(Block(1))
+SOURCE Coord { x: 15, y: 3, z: 21 } Some(Block(9))
+SOURCE Coord { x: 15, y: 3, z: 22 } Some(Block(1))
+SOURCE Coord { x: 15, y: 4, z: 20 } Some(Block(9))
+SOURCE Coord { x: 15, y: 4, z: 22 } Some(Block(1))
+SOURCE Coord { x: 15, y: 5, z: 20 } Some(Block(1))
+SOURCE Coord { x: 15, y: 5, z: 21 } Some(Block(297))
+SOURCE Coord { x: 15, y: 5, z: 22 } Some(Block(1))
+SOURCE Coord { x: 15, y: 6, z: 20 } Some(Block(1))
+SOURCE Coord { x: 15, y: 6, z: 21 } Some(Block(1))
+SOURCE Coord { x: 15, y: 6, z: 22 } Some(Block(1))
+SOURCE Coord { x: 16, y: 1, z: 20 } Some(Block(6))
+SOURCE Coord { x: 16, y: 3, z: 22 } Some(Block(1))
+SOURCE Coord { x: 17, y: 1, z: 20 } Some(Block(1))
+SOURCE Coord { x: 17, y: 1, z: 21 } Some(Block(1))
+SOURCE Coord { x: 17, y: 1, z: 22 } Some(Block(1))
+SOURCE Coord { x: 17, y: 2, z: 20 } Some(Block(1))
+SOURCE Coord { x: 17, y: 2, z: 22 } Some(Block(1))
+SOURCE Coord { x: 17, y: 3, z: 22 } Some(Block(1))
+POWER soft Coord { x: 15, y: 1, z: 16 } None -> Coord { x: 15, y: 2, z: 16 }
+POWER soft Coord { x: 15, y: 1, z: 16 } None -> Coord { x: 15, y: 0, z: 16 }
+POWER soft Coord { x: 15, y: 1, z: 16 } None -> Coord { x: 15, y: 1, z: 15 }
+POWER soft Coord { x: 16, y: 6, z: 18 } None -> Coord { x: 16, y: 6, z: 17 }
+TICK 1 x=13 ext=0 fail=0 ret=0

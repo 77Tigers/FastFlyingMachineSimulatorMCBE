@@ -1,6 +1,25 @@
 /target/
 __pycache__/
 *.pyc
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
 *.flyer
+# Keep verified bank entries under version control.
+!/flyers/bank/**/*.flyer
 /viewer/node_modules/
 /viewer/.npm-cache/
+# Keep compiled artifacts local, including archived research executables.
+*.exe
+*.pdb
+*.dll
+*.so
+*.dylib
+*.a
+*.lib
+*.rlib
+*.o
+*.obj
+*.wasm
+/flyers/WIP/experiments/bin/
