@@ -706,7 +706,7 @@ async function loadBank() {
   const response=await fetch('./bank.json');
   if(!response.ok)throw Error(`Could not load flyer bank (${response.status})`);
   const items=await response.json();
-  const limits=[...new Set(items.map(item=>item.push_limit))].sort((a,b)=>a-b);
+  const limits=Array.from({length:17},(_,index)=>index+8);
   for(const id of ['bank-min','bank-max'])$(id).innerHTML=limits.map(limit=>`<option value="${limit}">${limit}</option>`).join('');
   $('bank-max').value=String(limits.at(-1));
   const list=$('bank-list');

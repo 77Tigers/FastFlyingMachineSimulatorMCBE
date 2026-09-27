@@ -54,3 +54,5 @@ push_limit,name,start_min_x,end_min_x,distance,end_blocks,extensions
 12,diagonal_alternating,13,2513,2500,21,5000
 11,diagonal_alternating,13,2513,2500,21,5000
 10,pulling_alternating,0,2500,2500,21,5000
+22,four_push_ring,13,3346,3333,66,10000
+23,four_push_ring,13,3346,3333,68,10000
