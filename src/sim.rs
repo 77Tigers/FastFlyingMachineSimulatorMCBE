@@ -1071,4 +1071,54 @@ mod tests {
             assert_eq!(editor.to_bytes().unwrap(), loaded.to_bytes().unwrap());
         }
     }
+
+    #[test]
+    fn browser_snapshot_origin_keeps_motion_continuous() {
+        let mut live = Flyer::new(0, 0, 2, 12).unwrap();
+        live.set(Coord::new(0, 0, 0), piston(0, false, false, 0, false));
+        live.set(Coord::new(1, 0, 1), piston(1, true, false, 0, false));
+        live.set(Coord::new(0, 0, 1), plain(Kind::Slime));
+        live.set(Coord::new(1, 0, 0), plain(Kind::Slime));
+        live.set(
+            Coord::new(0, 1, 1),
+            Block::observer(3, true, false).unwrap(),
+        );
+        live.set(
+            Coord::new(1, 1, 0),
+            Block::observer(3, false, false).unwrap(),
+        );
+        let mut cached = Flyer::from_bytes(&live.to_bytes().unwrap()).unwrap();
+        let mut origin = (0i128, 0i128, 0i128);
+        for _ in 0..100 {
+            live.tick().unwrap();
+            cached.tick().unwrap();
+            let shift = cached.normalization_shift();
+            cached = Flyer::from_bytes(&cached.to_bytes().unwrap()).unwrap();
+            origin.0 -= shift.0;
+            origin.1 -= shift.1;
+            origin.2 -= shift.2;
+            let mut actual = cached
+                .blocks()
+                .into_iter()
+                .map(|(pos, block)| {
+                    (
+                        (
+                            pos.x as i128 + origin.0,
+                            pos.y as i128 + origin.1,
+                            pos.z as i128 + origin.2,
+                        ),
+                        block.cell(),
+                    )
+                })
+                .collect::<Vec<_>>();
+            let mut expected = live
+                .blocks()
+                .into_iter()
+                .map(|(pos, block)| ((pos.x as i128, pos.y as i128, pos.z as i128), block.cell()))
+                .collect::<Vec<_>>();
+            actual.sort();
+            expected.sort();
+            assert_eq!(actual, expected);
+        }
+    }
 }

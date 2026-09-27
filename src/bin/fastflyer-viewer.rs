@@ -2,6 +2,7 @@
 
 use std::io::{Read, Write};
 use std::net::{TcpListener, TcpStream};
+use std::path::Path;
 
 use fastflyer::debug::TickTrace;
 use fastflyer::{Block, Coord, Flyer, Kind};
@@ -129,6 +130,34 @@ fn handle(mut stream: TcpStream) -> std::io::Result<()> {
         );
     }
     let route = path.split('?').next().unwrap_or(path);
+    // Prefer the assembled static/Wasm site when present. This keeps the
+    // familiar `cargo run --bin fastflyer-viewer` local workflow working.
+    if method == "GET" && !route.starts_with("/api/") {
+        let name = if route == "/" {
+            "index.html"
+        } else {
+            route.trim_start_matches('/')
+        };
+        if !name.contains('\\')
+            && !name.contains(':')
+            && name.split('/').all(|part| !matches!(part, "" | "." | ".."))
+        {
+            let file = Path::new(env!("CARGO_MANIFEST_DIR"))
+                .join("dist")
+                .join(name);
+            if let Ok(bytes) = std::fs::read(&file) {
+                let content_type = match file.extension().and_then(|ext| ext.to_str()) {
+                    Some("html") => "text/html; charset=utf-8",
+                    Some("css") => "text/css; charset=utf-8",
+                    Some("js") => "text/javascript; charset=utf-8",
+                    Some("json") => "application/json; charset=utf-8",
+                    Some("wasm") => "application/wasm",
+                    _ => "application/octet-stream",
+                };
+                return respond(&mut stream, "200 OK", content_type, &bytes);
+            }
+        }
+    }
     let ticks = path
         .split("ticks=")
         .nth(1)

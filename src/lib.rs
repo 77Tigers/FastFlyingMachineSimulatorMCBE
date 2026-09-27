@@ -3,6 +3,8 @@
 
 pub mod debug;
 pub mod sim;
+#[cfg(target_arch = "wasm32")]
+mod wasm;
 
 use std::collections::BTreeMap;
 use std::fmt;
@@ -442,8 +444,10 @@ impl Flyer {
         result
     }
 
-    pub fn to_bytes(&self) -> Result<Vec<u8>, Error> {
-        let blocks = self.blocks();
+    /// Translation applied when writing the canonical nonnegative disk form.
+    /// Browser snapshots retain the inverse separately to keep world motion
+    /// visually continuous across 16-block normalization boundaries.
+    pub(crate) fn normalization_shift(&self) -> (i128, i128, i128) {
         let mut minimum: Option<Coord> = None;
         let mut include = |pos: Coord| {
             minimum = Some(match minimum {
@@ -451,7 +455,7 @@ impl Flyer {
                 Some(old) => Coord::new(old.x.min(pos.x), old.y.min(pos.y), old.z.min(pos.z)),
             });
         };
-        for &(pos, _) in &blocks {
+        for (pos, _) in self.blocks() {
             include(pos);
         }
         for (&owner, members) in &self.piston_blocks {
@@ -461,9 +465,16 @@ impl Flyer {
             }
         }
         let minimum = minimum.unwrap_or(Coord::new(0, 0, 0));
-        let shift_x = -((minimum.x as i128).div_euclid(16) * 16);
-        let shift_y = -(minimum.y as i128);
-        let shift_z = -((minimum.z as i128).div_euclid(16) * 16);
+        (
+            -((minimum.x as i128).div_euclid(16) * 16),
+            -(minimum.y as i128),
+            -((minimum.z as i128).div_euclid(16) * 16),
+        )
+    }
+
+    pub fn to_bytes(&self) -> Result<Vec<u8>, Error> {
+        let blocks = self.blocks();
+        let (shift_x, shift_y, shift_z) = self.normalization_shift();
         let normalize = |pos: Coord| -> Result<DiskCoord, Error> {
             let converted = |value: i64, shift: i128| -> Result<u64, Error> {
                 let shifted = value as i128 + shift;

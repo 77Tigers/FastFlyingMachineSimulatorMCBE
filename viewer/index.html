@@ -4,34 +4,19 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>FastFlyer · Inspector</title>
-  <link rel="stylesheet" href="/style.css">
-  <script type="importmap">{"imports":{"three":"/vendor/three.module.js"}}</script>
+  <link rel="stylesheet" href="./style.css?v=__STYLE_HASH__">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
 </head>
 <body>
   <header class="topbar">
-    <div class="brand"><span class="brand-mark">◈</span><div><strong>FASTFLYER</strong><small>Simulation inspector</small></div></div>
+    <div class="brand"><span class="brand-mark">◈</span><div><strong id="run-title">FastFlyer</strong><small id="flyer-meta">Push limit —</small></div></div>
     <div class="top-actions">
-      <button id="demo" class="subtle">Reset demo</button>
-      <a href="/api/demo.flyer" download="six-block-demo.flyer" class="subtle download">Download demo</a>
+      <button id="demo" class="subtle">Load demo</button>
+      <a href="./demo.flyer" download="six-block-demo.flyer" class="subtle download">Download demo</a>
       <label class="load-button">Open .flyer<input id="file" type="file" accept=".flyer,application/octet-stream"></label>
     </div>
   </header>
   <main class="layout">
-    <aside class="left-panel">
-      <div class="panel-section intro">
-        <div class="eyebrow">CURRENT RUN</div>
-        <h1 id="run-title">Six-block flyer</h1>
-        <div class="tick-input"><label for="ticks">Ticks to simulate</label><input id="ticks" type="number" min="1" max="1000000" value="200"><button id="rerun" title="Simulate again">Run</button></div>
-        <div id="status" class="status" role="status" aria-live="polite">Loading demo…</div>
-      </div>
-      <div id="diagnostics-panel" class="panel-section" hidden>
-        <div class="section-head"><span>DISPLAY</span><span class="tiny">VISIBLE LAYERS</span></div>
-        <label class="toggle"><input id="show-power" type="checkbox" checked><span class="swatch power"></span>Power paths</label>
-        <label class="toggle"><input id="show-move" type="checkbox" checked><span class="swatch move"></span>Move discovery</label>
-        <label class="toggle"><input id="show-owners" type="checkbox" checked><span class="swatch owner"></span>Moving owners / ghosts</label>
-        <label class="toggle"><input id="show-chunks" type="checkbox" checked><span class="swatch chunk"></span>Chunk boundaries</label>
-      </div>
-    </aside>
     <section class="workspace">
       <div class="timeline">
         <div class="timeline-top">
@@ -41,12 +26,10 @@
               <button id="mode-ticks" class="active" aria-pressed="true">Ticks</button>
               <button id="mode-detailed" aria-pressed="false">Detailed</button>
             </div>
-            <label class="speed-control" for="speed">Speed <input id="speed" type="range" min="0" max="10" step="1" value="3" aria-valuetext="1×"><output id="speed-label" for="speed">1×</output></label>
-            <div class="player"><button id="prev" aria-label="Previous" title="Previous">‹</button><button id="play" aria-label="Play" title="Play / pause">▶</button><button id="next" aria-label="Next" title="Next">›</button></div>
+            <label class="speed-control" for="speed">Speed <input id="speed" type="range" min="0" max="26" step="1" value="11" aria-valuetext="1×"><output id="speed-label" for="speed">1×</output></label>
+            <div class="player"><button id="reset" aria-label="Reset to start" title="Reset to start">↺</button><button id="direction" aria-label="Direction: forward" title="Toggle playback direction">→</button><button id="step" aria-label="Step forward" title="Step once">›</button><button id="play" aria-label="Play" title="Play / pause">▶</button></div>
           </div>
         </div>
-        <input id="scrubber" type="range" min="0" max="0" value="0" aria-label="Playback position">
-        <div class="timeline-bottom"><span>Start</span><span id="end-label">Tick 0</span></div>
       </div>
       <div id="viewport">
         <div class="viewport-label"><span id="step-badge">INITIAL</span><span id="step-title">Initial configuration</span></div>
@@ -55,19 +38,21 @@
       </div>
     </section>
     <aside class="right-panel">
+      <div class="panel-section"><div class="section-head"><span>FLYER BANK</span><span id="bank-count" class="tiny"></span></div><div class="bank-filters"><label>Push limit from <select id="bank-min"></select></label><label>to <select id="bank-max"></select></label></div><div id="bank-list" class="bank-list"></div></div>
+      <div id="status" class="status panel-section" role="status" aria-live="polite">Loading…</div>
+      <div id="diagnostics-panel" class="panel-section" hidden>
+        <div class="section-head"><span>DISPLAY</span><span class="tiny">VISIBLE LAYERS</span></div>
+        <label class="toggle"><input id="show-power" type="checkbox" checked><span class="swatch power"></span>Power paths</label>
+        <label class="toggle"><input id="show-move" type="checkbox" checked><span class="swatch move"></span>Move discovery</label>
+        <label class="toggle"><input id="show-owners" type="checkbox" checked><span class="swatch owner"></span>Moving owners / ghosts</label>
+        <label class="toggle"><input id="show-chunks" type="checkbox" checked><span class="swatch chunk"></span>Chunk boundaries</label>
+      </div>
       <div class="panel-section"><div class="section-head"><span>INSPECTOR</span></div><div id="inspector" class="empty-inspector">Select a block to see its state, owner, and coordinates.</div></div>
       <div id="details-panel" class="panel-section" hidden><div class="section-head"><span id="details-title">ACTION DETAILS</span></div><div id="details" class="details"></div></div>
       <div id="order-panel" class="panel-section" hidden><div class="section-head"><span>UPDATE ORDER</span></div><div id="update-order" class="update-order"></div></div>
+      <details class="panel-section slice-panel"><summary>Slice filter <span>optional</span></summary><div class="slice-footer-controls"><div class="slice-row"><label><input id="slice-x-on" type="checkbox"> X</label><input id="slice-x" type="number" value="0"></div><div class="slice-row"><label><input id="slice-y-on" type="checkbox"> Y</label><input id="slice-y" type="number" value="1"></div><div class="slice-row"><label><input id="slice-z-on" type="checkbox"> Z</label><input id="slice-z" type="number" value="0"></div></div></details>
     </aside>
   </main>
-  <details class="slice-footer">
-    <summary>Slice filter <span>optional</span></summary>
-    <div class="slice-footer-controls">
-      <div class="slice-row"><label><input id="slice-x-on" type="checkbox"> X</label><input id="slice-x" type="number" value="0"></div>
-      <div class="slice-row"><label><input id="slice-y-on" type="checkbox"> Y</label><input id="slice-y" type="number" value="1"></div>
-      <div class="slice-row"><label><input id="slice-z-on" type="checkbox"> Z</label><input id="slice-z" type="number" value="0"></div>
-    </div>
-  </details>
-  <script type="module" src="/app.js"></script>
+  <script type="module" src="./app.js?v=__APP_HASH__"></script>
 </body>
 </html>

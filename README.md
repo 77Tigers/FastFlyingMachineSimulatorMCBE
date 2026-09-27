@@ -71,25 +71,33 @@ The command prints a summary for each tick and writes the resulting flyer.
 
 ## Local 3D viewer
 
-Install the viewer's Three.js dependency once, then start its loopback-only
-server:
+Build the same static site used on GitHub Pages, then start the optional
+loopback-only local server:
 
 ```sh
-cd viewer
-npm install
-cd ..
+cargo build --release --target wasm32-unknown-unknown --lib
+cd viewer && npm ci && cd ..
+python scripts/build_site.py
 cargo run --bin fastflyer-viewer
 ```
 
-Open `http://127.0.0.1:8765/`. The built-in demo is a six-block flying machine
-(one normal piston, one sticky piston, two slime blocks, two observers) that
-travels in +X. Use **Open .flyer** to inspect another saved design and **Run**
-to choose up to 1,000,000 ticks (default 200; very large detailed traces can
-take substantial time and memory). Playback defaults to whole ticks, with an adjustable
-speed up to 30×; switch to **Detailed** to step through power, chunk, and piston updates.
-The arrow controls pause playback before stepping. Use WASD to move
-the player camera, Space/Shift (or Q/E) to move vertically, drag to turn in
-place, and scroll to move forward or back.
+Install the Wasm target once with `rustup target add wasm32-unknown-unknown`.
+The viewer simulates in the browser; the local server only serves files. You can
+also preview `dist/` using any static HTTP server. GitHub Actions builds and
+publishes the site to GitHub Pages; set **Settings → Pages → Source** to
+**GitHub Actions** in the repository. Browser uploads remain local to the
+browser and the bank is bundled into the published site.
+
+Open `http://127.0.0.1:8765/`. The six-block demo opens paused at tick 0.
+Browse all bundled bank flyers on the right, filter by push-limit range, or
+open a local `.flyer`. Playback computes new ticks on demand and retains the
+latest 200 preceding tick states for bounded rewind; already-computed future
+states are replayed exactly. Direction toggles between forward and backward;
+Step follows the chosen direction, and Reset does not alter Play/Pause.
+Detailed mode calculates one tick's power, chunk, and piston actions as needed
+and steps through them without retaining detailed traces. Speed 1× is 10 ticks
+per second, with a continuous 0.1–30× slider. Click the canvas before using
+WASD, Space/Shift (or Q/E); drag to turn and scroll to move forward or back.
 Whole-tick playback keeps the scene uncluttered. Detailed mode adds optional
 chunk and power overlays, movement discovery links, and moving-block owner
 arrows. Directional block textures are generated locally; piston textures show
@@ -98,5 +106,5 @@ redstone output and light up while powered. Moving blocks appear halfway
 between their usual colour and white, while extending or retracting piston
 heads are displayed halfway through their travel as thin plates with full 1×1 faces.
 Piston-arm facing is inferred from its piston for display only. The viewer does
-not write a trajectory or change the `.flyer` format. The server binds only to
-`127.0.0.1`; the flyer file is submitted to that local server for simulation.
+not write a trajectory or change the `.flyer` format. Simulation occurs locally
+in the browser; the optional server binds only to `127.0.0.1`.
