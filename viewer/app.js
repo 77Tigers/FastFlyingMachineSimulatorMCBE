@@ -662,12 +662,15 @@ async function loadUrl(url,title) {
   catch(error){showError(error);}
 }
 const bankBytes=new Map();
+const bankVersions=new Map();
 function fetchBankBytes(path){
-  if(!bankBytes.has(path))bankBytes.set(path,fetch(`./${path}`).then(response=>{
+  const version=bankVersions.get(path);
+  const url=`./${path}${version?`?v=${encodeURIComponent(version)}`:''}`;
+  if(!bankBytes.has(url))bankBytes.set(url,fetch(url).then(response=>{
     if(!response.ok)throw Error(`Could not load flyer (${response.status})`);
     return response.arrayBuffer().then(buffer=>new Uint8Array(buffer));
-  }).catch(error=>{bankBytes.delete(path);throw error;}));
-  return bankBytes.get(path);
+  }).catch(error=>{bankBytes.delete(url);throw error;}));
+  return bankBytes.get(url);
 }
 const previewColors={
   1:['#8fdd9a','#5fbf72','#3c9658'],2:['#efd08c','#d9a958','#b7833b'],
@@ -703,9 +706,10 @@ function drawPreview(canvas,rows){
   }
 }
 async function loadBank() {
-  const response=await fetch('./bank.json');
+  const response=await fetch('./bank.json?v=__BANK_HASH__');
   if(!response.ok)throw Error(`Could not load flyer bank (${response.status})`);
   const items=await response.json();
+  for(const item of items)bankVersions.set(item.path,item.version);
   const limits=Array.from({length:17},(_,index)=>index+8);
   for(const id of ['bank-min','bank-max'])$(id).innerHTML=limits.map(limit=>`<option value="${limit}">${limit}</option>`).join('');
   $('bank-max').value=String(limits.at(-1));

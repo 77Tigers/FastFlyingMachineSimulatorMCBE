@@ -30,12 +30,6 @@ def main() -> None:
         copy(VIEWER / filename, DIST / filename)
     copy(wasm, DIST / "fastflyer.wasm")
     digest = lambda path: sha256(path.read_bytes()).hexdigest()[:12]
-    app = DIST / "app.js"
-    app.write_text(app.read_text(encoding="utf-8").replace("__WASM_HASH__", digest(wasm)), encoding="utf-8")
-    html = DIST / "index.html"
-    html.write_text(html.read_text(encoding="utf-8")
-        .replace("__STYLE_HASH__", digest(DIST / "style.css"))
-        .replace("__APP_HASH__", digest(app)), encoding="utf-8")
     three = VIEWER / "node_modules" / "three"
     copy(three / "build" / "three.module.js", DIST / "vendor" / "three.module.js")
     copy(three / "build" / "three.core.js", DIST / "vendor" / "three.core.js")
@@ -58,9 +52,20 @@ def main() -> None:
             "name": path.stem.replace("_", " "),
             "push_limit": flyer.push_limit,
             "blocks": flyer.occupied_count(),
+            "version": digest(path),
         })
         copy(path, DIST / relative)
     (DIST / "bank.json").write_text(json.dumps(manifest, separators=(",", ":")), encoding="utf-8")
+    # Include the bank contents in the app URL too: a bank-only deployment must
+    # invalidate both the manifest and any previously cached flyer downloads.
+    app = DIST / "app.js"
+    app.write_text(app.read_text(encoding="utf-8")
+        .replace("__WASM_HASH__", digest(wasm))
+        .replace("__BANK_HASH__", digest(DIST / "bank.json")), encoding="utf-8")
+    html = DIST / "index.html"
+    html.write_text(html.read_text(encoding="utf-8")
+        .replace("__STYLE_HASH__", digest(DIST / "style.css"))
+        .replace("__APP_HASH__", digest(app)), encoding="utf-8")
     print(f"Built {DIST} with {len(manifest)} bank flyers")
 
 
