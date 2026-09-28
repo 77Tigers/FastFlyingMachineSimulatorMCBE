@@ -11,8 +11,7 @@
   <header class="topbar">
     <div class="brand"><span class="brand-mark">◈</span><div><strong id="run-title">FastFlyer</strong><small id="flyer-meta">Push limit —</small></div></div>
     <div class="top-actions">
-      <button id="demo" class="subtle">Load demo</button>
-      <a href="./demo.flyer" download="six-block-demo.flyer" class="subtle download">Download demo</a>
+      <button id="open-bank" class="subtle">Browse flyer bank</button>
       <label class="load-button">Open .flyer<input id="file" type="file" accept=".flyer,application/octet-stream"></label>
     </div>
   </header>
@@ -38,7 +37,6 @@
       </div>
     </section>
     <aside class="right-panel">
-      <div class="panel-section"><div class="section-head"><span>FLYER BANK</span><span id="bank-count" class="tiny"></span></div><div class="bank-filters"><label>Push limit from <select id="bank-min"></select></label><label>to <select id="bank-max"></select></label></div><div id="bank-list" class="bank-list"></div></div>
       <div id="status" class="status panel-section" role="status" aria-live="polite">Loading…</div>
       <div id="diagnostics-panel" class="panel-section" hidden>
         <div class="section-head"><span>DISPLAY</span><span class="tiny">VISIBLE LAYERS</span></div>
@@ -53,6 +51,20 @@
       <details class="panel-section slice-panel"><summary>Slice filter <span>optional</span></summary><div class="slice-footer-controls"><div class="slice-row"><label><input id="slice-x-on" type="checkbox"> X</label><input id="slice-x" type="number" value="0"></div><div class="slice-row"><label><input id="slice-y-on" type="checkbox"> Y</label><input id="slice-y" type="number" value="1"></div><div class="slice-row"><label><input id="slice-z-on" type="checkbox"> Z</label><input id="slice-z" type="number" value="0"></div></div></details>
     </aside>
   </main>
+  <dialog id="bank-dialog" aria-labelledby="bank-title">
+    <div class="bank-modal">
+      <header class="bank-header"><div><span class="eyebrow">EXPLORE THE COLLECTION</span><h1 id="bank-title">Flyer bank</h1><div id="bank-summary" class="bank-summary"></div></div><button id="close-bank" class="subtle" aria-label="Close flyer bank">✕</button></header>
+      <section class="bank-chart-section" aria-label="Fastest flyers by push limit"><div class="chart-heading"><strong>Best speed by push limit</strong><span>Click a bar to open a fastest matching flyer · ties chosen randomly</span></div><div id="bank-chart" class="bank-chart"></div><p class="chart-note">Average blocks/second over 10,000 ticks at the saved RNG/phase. Cached measurements; not an all-seed robustness claim.</p></section>
+      <div class="bank-toolbar">
+        <label class="bank-search-label">Search <input id="bank-search" type="search" placeholder="Find a flyer…"></label>
+        <div class="bank-filters"><label>Push limit from <select id="bank-min"></select></label><label>to <select id="bank-max"></select></label></div>
+        <label>Sort <select id="bank-sort"><option value="speed">Fastest first</option><option value="blocks">Fewest blocks</option><option value="limit">Push limit</option><option value="name">Name</option></select></label>
+      </div>
+      <div class="bank-tag-filters" role="group" aria-label="Flyer categories"><span>Match all selected:</span><label><input type="checkbox" id="filter-pushing"> Pushing-only</label><label><input type="checkbox" id="filter-pulling"> Pulling-only</label><label><input type="checkbox" id="filter-observer"> Observer-only</label><label><input type="checkbox" id="filter-no-observer"> No observers</label><button id="bank-clear" class="subtle">Clear filters</button></div>
+      <div class="bank-list-heading"><span id="bank-count"></span><span>Choose a flyer to open it paused</span></div>
+      <div id="bank-list" class="bank-list"></div>
+    </div>
+  </dialog>
   <script type="module" src="./app.js?v=__APP_HASH__"></script>
 </body>
 </html>

@@ -10,9 +10,38 @@ from unittest.mock import patch
 
 from fastflyer import Block, Flyer, Kind
 from scripts import build_site
+from scripts.update_bank import engine_fingerprint
 
 
 class SiteBuildTests(unittest.TestCase):
+    def test_engine_fingerprint_ignores_checkout_line_endings(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            (root / "src").mkdir()
+            source = root / "src/lib.rs"
+            source.write_bytes(b"first\r\nsecond\r\n")
+            windows = engine_fingerprint(root)
+            source.write_bytes(b"first\nsecond\n")
+            self.assertEqual(windows, engine_fingerprint(root))
+            source.write_bytes(b"changed\n")
+            self.assertNotEqual(windows, engine_fingerprint(root))
+
+    def test_categories_are_overlapping_and_read_blocks_not_folders(self):
+        flyer = Flyer()
+        flyer.set((0, 0, 0), Block.piston(1, sticky=True))
+        flyer.set((1, 0, 0), Block.observer(0))
+        self.assertEqual(build_site.categories(flyer), ["pulling_only", "observer_only"])
+        flyer.set((0, 0, 0), Block.piston(0, sticky=True))
+        self.assertEqual(build_site.categories(flyer), ["pushing_only", "observer_only"])
+        flyer.set((2, 0, 0), Block.rod(0))
+        self.assertEqual(build_site.categories(flyer), ["pushing_only"])
+        flyer.remove((1, 0, 0))
+        self.assertEqual(build_site.categories(flyer), ["pushing_only", "no_observer"])
+        flyer.set((3, 0, 0), Block.piston(1))
+        self.assertEqual(build_site.categories(flyer), ["no_observer"])
+        self.assertNotIn("pushing_only", build_site.categories(Flyer()))
+        self.assertNotIn("pulling_only", build_site.categories(Flyer()))
+
     def test_bank_change_versions_manifest_app_and_flyer(self):
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
@@ -32,6 +61,13 @@ class SiteBuildTests(unittest.TestCase):
             flyer.set((0, 0, 0), Block(Kind.SLIME))
             path = bank / "sample.flyer"
             flyer.save(path)
+            (bank / "catalogue.json").write_text(json.dumps({
+                "format_version": 1, "engine_sha256": engine_fingerprint(root),
+                "entries": {path.relative_to(root).as_posix(): {
+                    "sha256": sha256(path.read_bytes()).hexdigest(), "ticks": 10_000,
+                    "distance": 1000, "speed_bps": 1, "endpoint_conserved": True,
+                }},
+            }), encoding="utf-8")
             with patch.multiple(build_site, ROOT=root, VIEWER=viewer, DIST=dist, BANK=bank), patch("builtins.print"):
                 build_site.main()
                 old_app = (dist / "app.js").read_text(encoding="utf-8")
@@ -44,6 +80,8 @@ class SiteBuildTests(unittest.TestCase):
             entry = json.loads((dist / "bank.json").read_text())[0]
             manifest_hash = sha256((dist / "bank.json").read_bytes()).hexdigest()[:12]
             self.assertNotEqual(old_entry["version"], entry["version"])
+            self.assertEqual(old_entry["speed_bps"], 1)
+            self.assertIsNone(entry["speed_bps"], "Changed flyers must not retain an old speed")
             self.assertEqual(entry["version"], sha256(path.read_bytes()).hexdigest()[:12])
             self.assertIn(f"bank.json?v={manifest_hash}", app)
             self.assertNotIn("__BANK_HASH__", app)

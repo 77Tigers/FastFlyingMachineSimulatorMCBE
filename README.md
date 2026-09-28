@@ -89,7 +89,7 @@ publishes the site to GitHub Pages; set **Settings → Pages → Source** to
 browser and the bank is bundled into the published site.
 
 Open `http://127.0.0.1:8765/`. The six-block demo opens paused at tick 0.
-Browse all bundled bank flyers on the right, filter across the bank's push-limit
+Use **Browse flyer bank** to open the large bank popup and filter across its push-limit
 range of 8–24 (some limits may have no verified flyers yet), or
 open a local `.flyer`. Playback computes new ticks on demand and retains the
 latest 200 preceding tick states for bounded rewind; already-computed future
@@ -97,7 +97,7 @@ states are replayed exactly. Direction toggles between forward and backward;
 Step follows the chosen direction, and Reset does not alter Play/Pause.
 Detailed mode calculates one tick's power, chunk, and piston actions as needed
 and steps through them without retaining detailed traces. Speed 1× is 10 ticks
-per second, with a continuous 0.1–30× slider. Click the canvas before using
+per second, with a stepped 0.1–30× slider. Click the canvas before using
 WASD, Space/Shift (or Q/E); drag to turn and scroll to move forward or back.
 Whole-tick playback keeps the scene uncluttered. Detailed mode adds optional
 chunk and power overlays, movement discovery links, and moving-block owner
@@ -109,3 +109,38 @@ heads are displayed halfway through their travel as thin plates with full 1×1 f
 Piston-arm facing is inferred from its piston for display only. The viewer does
 not write a trajectory or change the `.flyer` format. Simulation occurs locally
 in the browser; the optional server binds only to `127.0.0.1`.
+
+## Bank speeds, filters, and updating the catalogue
+
+The bank popup includes search, speed/block-count sorting, browser-generated
+previews, and a best-speed-per-push-limit chart. Click a bar to open a fastest
+flyer at that limit **among the current filter matches**; equal speeds are picked
+randomly without touching simulation RNG. Browsing temporarily holds playback;
+closing the popup resumes it, while opening a new flyer starts paused.
+
+Category tags are recomputed from the actual `.flyer` blocks during each site
+build, not inferred from folder names. Selected tags must all match:
+
+- **Pushing-only:** at least one piston, and every piston faces +X (sticky or normal).
+- **Pulling-only:** at least one piston, and every piston is sticky and faces −X.
+- **Observer-only:** no redstone blocks or rods. This can overlap either piston category.
+- **No observers:** no observer blocks; other power sources are allowed.
+
+Recompute the speed cache after adding/editing flyers or changing the simulator:
+
+```sh
+python scripts/update_bank.py
+python scripts/build_site.py
+```
+
+The updater builds the Rust `fastflyer-bank-stats` utility and simulates every
+bank flyer for **10,000 ticks** with its saved RNG/phase. It writes
+`flyers/bank/catalogue.json`; commit this cache together with changed flyers.
+GitHub Pages uses the cache without running benchmarks at deployment or in the
+browser. Speed is minimum occupied X displacement divided by 1,000 simulated
+seconds (10 ticks/second), not a short-term peak. Permanent block-kind counts
+are compared at the endpoints; this is not an all-seed/conservation-per-tick
+robustness audit. Missing, stale, or endpoint-nonconserving measurements show as
+**Unmeasured** and are excluded from the chart. Hashes cover both flyer bytes and
+Rust source/build configuration. Diagnostic `--ticks` values are supported by
+the updater, but only standard 10,000-tick measurements appear in the chart.

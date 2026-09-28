@@ -1,0 +1,520 @@
+{
+  "format_version": 1,
+  "engine_sha256": "0f8b3e7d7ab8e0b922c881e80be969b93b19a4d9b13c36eef1efb9ec28bfc4c2",
+  "ticks_per_second": 10,
+  "entries": {
+    "flyers/bank/pl10/compact_honey.flyer": {
+      "sha256": "1826e0cb23b448bfc91af533cf1cb055c2e7879a063f1a0d6141e2c21633afc1",
+      "ticks": 10000,
+      "distance": 1666,
+      "speed_bps": 1.666,
+      "extensions": 3334,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl10/compact_slime.flyer": {
+      "sha256": "13ddd9a8203066d7b40d98fad03f108534109de5f32e4afa74142e549de69d7f",
+      "ticks": 10000,
+      "distance": 1666,
+      "speed_bps": 1.666,
+      "extensions": 3334,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl10/pulling_alternating.flyer": {
+      "sha256": "e826d12763f2c239d070fd54955726cc986f2d910411cfaa532fdd3b4b6ec0a4",
+      "ticks": 10000,
+      "distance": 2500,
+      "speed_bps": 2.5,
+      "extensions": 5000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl10/upright_pair.flyer": {
+      "sha256": "ebee7847bd4121289458ae330c5d2e97388cf98d8bada58c27e33cf18727102d",
+      "ticks": 10000,
+      "distance": 1666,
+      "speed_bps": 1.666,
+      "extensions": 3334,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl11/compact_honey.flyer": {
+      "sha256": "7be30c9f57f6a4f9924e33a608ce94d9eb02cc4e10028d53020415c728b9307c",
+      "ticks": 10000,
+      "distance": 1666,
+      "speed_bps": 1.666,
+      "extensions": 3334,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl11/compact_slime.flyer": {
+      "sha256": "29f80a0ca93515841cb5a22fd906b2d899588f80ef5035be368d8d4de82c98f9",
+      "ticks": 10000,
+      "distance": 1666,
+      "speed_bps": 1.666,
+      "extensions": 3334,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl11/diagonal_alternating.flyer": {
+      "sha256": "d13b70c68a4788cdee2ef24bcabc03d99f15c85ba6748134744b8634dff4cd83",
+      "ticks": 10000,
+      "distance": 2500,
+      "speed_bps": 2.5,
+      "extensions": 5000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl11/upright_pair.flyer": {
+      "sha256": "a7c3ba2a00b9b4733f7953ed6ec70d3374505bcf5a9b6abb5817e3ee824e59fb",
+      "ticks": 10000,
+      "distance": 1666,
+      "speed_bps": 1.666,
+      "extensions": 3334,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl12/compact_honey.flyer": {
+      "sha256": "f7a18c8e73923ad63afaf98528a2dd0c663c337aec37609ed8b2fa04dd396f85",
+      "ticks": 10000,
+      "distance": 1666,
+      "speed_bps": 1.666,
+      "extensions": 3334,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl12/compact_slime.flyer": {
+      "sha256": "6862eaed119e40a840790a65503e652b73f7edc283fae03754233d95943682c9",
+      "ticks": 10000,
+      "distance": 1666,
+      "speed_bps": 1.666,
+      "extensions": 3334,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl12/diagonal_alternating.flyer": {
+      "sha256": "5b14fc09f0471469c9d7c1397ec9721d55fd3d606c956cfbed37b097132a6ebf",
+      "ticks": 10000,
+      "distance": 2500,
+      "speed_bps": 2.5,
+      "extensions": 5000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl12/upright_pair.flyer": {
+      "sha256": "9e6809f0aaf28823d411b64337e0449e2a21be066acb79e26eecb404ae7d8949",
+      "ticks": 10000,
+      "distance": 1666,
+      "speed_bps": 1.666,
+      "extensions": 3334,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl13/crosslayer_materialswap.flyer": {
+      "sha256": "98177f92680eac784ffdb5c67eb625963b970cb3f0526643a2a1cce27a7bcec0",
+      "ticks": 10000,
+      "distance": 2500,
+      "speed_bps": 2.5,
+      "extensions": 5000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl13/crosslayer_mirrorz.flyer": {
+      "sha256": "11086b6bcabf797cca8b2ccef01a7eaeb61499784b817c6cbcc358eadf903157",
+      "ticks": 10000,
+      "distance": 2500,
+      "speed_bps": 2.5,
+      "extensions": 5000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl13/crosslayer_rodpower.flyer": {
+      "sha256": "9797f35f0d1e82499f12617433aed0e6adad6ff59fa7a6d6541c90a5c0b178b2",
+      "ticks": 10000,
+      "distance": 2500,
+      "speed_bps": 2.5,
+      "extensions": 5000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl13/crosslayer_upright.flyer": {
+      "sha256": "168ebac8daa38bd4a61e7e680c7003123d45c13189b723cc78caab4e5a0d63dc",
+      "ticks": 10000,
+      "distance": 2500,
+      "speed_bps": 2.5,
+      "extensions": 5000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl13/crosslayer_upright_swap.flyer": {
+      "sha256": "a72a087343f99dc287fc1a3025e0fe36d11c31811725c92a66a6cadaa7157a66",
+      "ticks": 10000,
+      "distance": 2500,
+      "speed_bps": 2.5,
+      "extensions": 5000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl14/lightning_rods.flyer": {
+      "sha256": "15e8408cea8d5f9d76930440d297182618f83131c8df6d864c272b611f708170",
+      "ticks": 10000,
+      "distance": 2500,
+      "speed_bps": 2.5,
+      "extensions": 5000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl14/material_swap.flyer": {
+      "sha256": "31e9df238f1a2a093b546299c7da8b5e869b5bc3fe831645e8d1c4c4a77cd2ac",
+      "ticks": 10000,
+      "distance": 2500,
+      "speed_bps": 2.5,
+      "extensions": 5000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl14/shared_redstone.flyer": {
+      "sha256": "b446188c0c73cf68b5ffc4b4e4a6f4e2bb4c183147ff650fafb039db48da5453",
+      "ticks": 10000,
+      "distance": 2500,
+      "speed_bps": 2.5,
+      "extensions": 5000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl14/upright.flyer": {
+      "sha256": "57a708d07320f751657eedfafd9580bb5670552521825290940fc1b8aedb2fb0",
+      "ticks": 10000,
+      "distance": 2500,
+      "speed_bps": 2.5,
+      "extensions": 5000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl15/four_segment_ring.flyer": {
+      "sha256": "cb9b08e11ce25a6d0102b27112d13473c93bce2a1a4c83b28cbe64419850b760",
+      "ticks": 10000,
+      "distance": 2500,
+      "speed_bps": 2.5,
+      "extensions": 10000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl15/lightning_rods.flyer": {
+      "sha256": "b839d121ce1ed5e02f5fd5a1d9c1bf4c83f76389ca497e7a183812b985da78cc",
+      "ticks": 10000,
+      "distance": 2500,
+      "speed_bps": 2.5,
+      "extensions": 5000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl15/material_swap.flyer": {
+      "sha256": "f1bd9f342b379a1a940b0bd4fa8159825f910abe89b05d618fc62db5816735c6",
+      "ticks": 10000,
+      "distance": 2500,
+      "speed_bps": 2.5,
+      "extensions": 5000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl15/shared_redstone.flyer": {
+      "sha256": "a4fdab8df6604ab172686d2d09fd11e6f3f71a4b4b9178854566b617784d17d5",
+      "ticks": 10000,
+      "distance": 2500,
+      "speed_bps": 2.5,
+      "extensions": 5000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl15/upright.flyer": {
+      "sha256": "1f233410123772ec2d852903d811618050ad148f0aa507cd1485107bba7195dc",
+      "ticks": 10000,
+      "distance": 2500,
+      "speed_bps": 2.5,
+      "extensions": 5000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl16/crossfeed_compact.flyer": {
+      "sha256": "decbd1e516cfa63b4d7ce79c73eb106029feee2c7114a4912e7f5447cc41b481",
+      "ticks": 10000,
+      "distance": 2500,
+      "speed_bps": 2.5,
+      "extensions": 5000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl16/crossfeed_honey_front.flyer": {
+      "sha256": "413e9aea0608fced2d0ca89d70f42c166adc36bef90acd283c5fbf0de0986581",
+      "ticks": 10000,
+      "distance": 2500,
+      "speed_bps": 2.5,
+      "extensions": 5000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl16/crossfeed_upright.flyer": {
+      "sha256": "ea0e0086b7fa28819eba9316cb32ffab8053ced9aaa001071307147c76a4092d",
+      "ticks": 10000,
+      "distance": 2500,
+      "speed_bps": 2.5,
+      "extensions": 5000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl17/crossfeed_compact.flyer": {
+      "sha256": "1c04060d93b5d44113a068db48843b9135af3d46630f5a0840a8aa5e0af3534a",
+      "ticks": 10000,
+      "distance": 2500,
+      "speed_bps": 2.5,
+      "extensions": 5000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl17/crossfeed_honey_front.flyer": {
+      "sha256": "223f384a509c8a1801bd10e0115d3462ffdb18f270b92af09abd457a0d925f9a",
+      "ticks": 10000,
+      "distance": 2500,
+      "speed_bps": 2.5,
+      "extensions": 5000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl17/crossfeed_sidebridge.flyer": {
+      "sha256": "0a3ad8c5ac24693bbdfaf89ea6cf1cb40ab3ad7f8132d79fd6e5426a97417ca1",
+      "ticks": 10000,
+      "distance": 2500,
+      "speed_bps": 2.5,
+      "extensions": 5000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl17/crossfeed_upright.flyer": {
+      "sha256": "a6b7f3427ce2b135b708a04a7368a10694df7e2fffe10da65ef33e1f7f830e7f",
+      "ticks": 10000,
+      "distance": 2500,
+      "speed_bps": 2.5,
+      "extensions": 5000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl18/crossfeed_compact.flyer": {
+      "sha256": "f7433bd0980db0b05c3263eaaf2a42c3cc4e8a781ef85b5a945fc647180a647c",
+      "ticks": 10000,
+      "distance": 2500,
+      "speed_bps": 2.5,
+      "extensions": 5000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl18/crossfeed_honey_front.flyer": {
+      "sha256": "53e52e64d76cfea1ed0f0b5ea79d4c99669ccba4eeb4f11bab4e830c67f7b7ae",
+      "ticks": 10000,
+      "distance": 2500,
+      "speed_bps": 2.5,
+      "extensions": 5000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl18/crossfeed_longbridge.flyer": {
+      "sha256": "b9a3e30e54b433988f76b3f8db18f65e73579a03336af5908b2ea38d105952f6",
+      "ticks": 10000,
+      "distance": 2500,
+      "speed_bps": 2.5,
+      "extensions": 5000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl18/crossfeed_sidebridge.flyer": {
+      "sha256": "67e7d1e52bddcd7bb90cc4aee17d0a3aa243a70e0ec81a4f12c965e4e67502c2",
+      "ticks": 10000,
+      "distance": 2500,
+      "speed_bps": 2.5,
+      "extensions": 5000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl18/crossfeed_upright.flyer": {
+      "sha256": "bbf7622fd3902a13333a390c3d3d43616e545a417f0245af07820d49d389f014",
+      "ticks": 10000,
+      "distance": 2500,
+      "speed_bps": 2.5,
+      "extensions": 5000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl19/crossfeed_compact.flyer": {
+      "sha256": "dd43fc56b08e2b3e1b8d295b25462d8e805755a20d494619120a542a8259997c",
+      "ticks": 10000,
+      "distance": 2500,
+      "speed_bps": 2.5,
+      "extensions": 5000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl19/crossfeed_honey_front.flyer": {
+      "sha256": "be0ff1568d98d90adfa8115c1e3c5438101594bf847b16ed4505d252f3016305",
+      "ticks": 10000,
+      "distance": 2500,
+      "speed_bps": 2.5,
+      "extensions": 5000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl19/crossfeed_longbridge.flyer": {
+      "sha256": "02267f214f66305ef46969fd2465af973da9c5305901f82bf88929fdad730faf",
+      "ticks": 10000,
+      "distance": 2500,
+      "speed_bps": 2.5,
+      "extensions": 5000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl19/crossfeed_offset_rear.flyer": {
+      "sha256": "b398bd0a5294c898ab602dda2d55c8b9ac4d96fc4a1326ef70f9068dbe979c79",
+      "ticks": 10000,
+      "distance": 2500,
+      "speed_bps": 2.5,
+      "extensions": 5000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl19/crossfeed_sidebridge.flyer": {
+      "sha256": "601c608bcdfd147b46f14d13eb4c1bee130df33be0bc59e66caf1c312826635b",
+      "ticks": 10000,
+      "distance": 2500,
+      "speed_bps": 2.5,
+      "extensions": 5000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl19/crossfeed_upright.flyer": {
+      "sha256": "3fa9b3c21f9bbf2d2a78c505f72794a280053f069991b4326b1a9ff43e5d4155",
+      "ticks": 10000,
+      "distance": 2500,
+      "speed_bps": 2.5,
+      "extensions": 5000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl19/five_segment_ring_high.flyer": {
+      "sha256": "c9a39cb656fb743fafb84387e08276c945f25b403377d9400d105b89b231545a",
+      "ticks": 10000,
+      "distance": 3000,
+      "speed_bps": 3.0,
+      "extensions": 15000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl19/five_segment_ring_low.flyer": {
+      "sha256": "b2b4cfa1ea214efc98cd6bd3aabb471bf7b65337db9f952091cf5e719eb70261",
+      "ticks": 10000,
+      "distance": 3000,
+      "speed_bps": 3.0,
+      "extensions": 15000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl20/crossfeed_compact.flyer": {
+      "sha256": "224a0e9b0cc3b7c98031c5bb74ced5cd7c71bc99d9e42f97d69f3fc7d166ff17",
+      "ticks": 10000,
+      "distance": 2500,
+      "speed_bps": 2.5,
+      "extensions": 5000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl20/crossfeed_honey_front.flyer": {
+      "sha256": "32716b484f1afd51dde1aa098fe0135eecc6ae41258e15598f54d711e18d98c4",
+      "ticks": 10000,
+      "distance": 2500,
+      "speed_bps": 2.5,
+      "extensions": 5000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl20/crossfeed_longbridge.flyer": {
+      "sha256": "7a5f44daa59602d8a4e18abb286bd69e9f999012dc7295a6a0e3802f22f12602",
+      "ticks": 10000,
+      "distance": 2500,
+      "speed_bps": 2.5,
+      "extensions": 5000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl20/crossfeed_offset_rear.flyer": {
+      "sha256": "cad63cb8c84baee99ff73006b858779d98e7e2f04162691c5ec77c51b3823dc8",
+      "ticks": 10000,
+      "distance": 2500,
+      "speed_bps": 2.5,
+      "extensions": 5000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl20/crossfeed_sidebridge.flyer": {
+      "sha256": "e816648b2b59e6cb82d0028850db3725f40aa0f2b5a1795ccc0ad1a424789e8b",
+      "ticks": 10000,
+      "distance": 2500,
+      "speed_bps": 2.5,
+      "extensions": 5000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl20/crossfeed_upright.flyer": {
+      "sha256": "3a7bf7fc4ba18219b2aaa16b5107954f86bcf3652671c3114ce9f44a579beca7",
+      "ticks": 10000,
+      "distance": 2500,
+      "speed_bps": 2.5,
+      "extensions": 5000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl20/crossfeed_wide_rear.flyer": {
+      "sha256": "f3edd8fb7ec66a959af9bcba8b1dcde89f9052e010f73708166b9a47d915111b",
+      "ticks": 10000,
+      "distance": 2500,
+      "speed_bps": 2.5,
+      "extensions": 5000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl20/five_segment_ring_high.flyer": {
+      "sha256": "ecd068afde4209ddedf0247b3e1c980593cdce24cc383a4e1d215b59f8e1ccfb",
+      "ticks": 10000,
+      "distance": 3000,
+      "speed_bps": 3.0,
+      "extensions": 15000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl20/five_segment_ring_low.flyer": {
+      "sha256": "8182d8ae2be3e7f1b88917037ba5c1021406b21f62876f9ce76d86c532dadd6c",
+      "ticks": 10000,
+      "distance": 3000,
+      "speed_bps": 3.0,
+      "extensions": 15000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl22/four_push_ring.flyer": {
+      "sha256": "cc63a735092ec575ce1d49b65ccec188057a7f59ff157610a00ba9ab461dfaa7",
+      "ticks": 10000,
+      "distance": 3333,
+      "speed_bps": 3.333,
+      "extensions": 10000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl23/four_push_ring.flyer": {
+      "sha256": "e664634e53b57b608e7f67a5963591023e0b3adf84b5cc483ed8a3ceab512108",
+      "ticks": 10000,
+      "distance": 3333,
+      "speed_bps": 3.333,
+      "extensions": 10000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    }
+  }
+}

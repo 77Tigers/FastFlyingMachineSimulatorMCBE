@@ -124,10 +124,15 @@ function pistonTexture(face,block,powered) {
       fill('#e8c28a',22,22,20,20);
     }
   } else if(face<4) {
-    // The simple wood-and-slime band always sits at the front edge.
-    fill('#ac7e4e',5,5,13,54);
-    fill(block.sticky?'#79d587':'#d7b37b',5,5,7,54);
+    // The front head slice belongs to the cube only when fully retracted.
+    if(block.state===0){
+      fill('#ac7e4e',5,5,13,54);
+      fill(block.sticky?'#79d587':'#d7b37b',5,5,7,54);
+    }else if(block.sticky)fill('#79d587',49,19,5,23);
     fill('#53615a',18,28,40,7);
+  } else if(face==='interior') {
+    fill('#59675e',5,5,54,54);
+    fill('#33473e',23,23,18,18);
   } else {
     fill('#59675e',11,11,42,42);
     fill('#aeb8a8',19,19,26,26);
@@ -253,7 +258,7 @@ function faceMaterials(block,powered=false) {
   const observer=block.kind===7;
   return [0,1,2,3,4,5].map(index=>standardMaterial(
     displayedTexture(observer?observerTexture(index,block.powered)
-      :pistonTexture(index===4?'front':index===5?'back':index,block,powered),block.moving),.84));
+      :pistonTexture(index===4?(block.state===0?'front':'interior'):index===5?'back':index,block,powered),block.moving),.84));
 }
 
 let trace = null, stepIndex = 0, tickIndex = 0, playbackMode = 'ticks';
@@ -375,7 +380,7 @@ function makeArm(pos,block,direction,sticky=false) {
   const metalColor=new THREE.Color(0x77827f);
   if(block.moving)metalColor.lerp(new THREE.Color(0xffffff),.5);
   const metal=colorMaterial(metalColor);
-  const shaft=pickable(new THREE.Mesh(box(.72,.25,.25),wood),pos);group.add(shaft);
+  const shaft=pickable(new THREE.Mesh(box(1.07,.25,.25),wood),pos);shaft.position.x=-.285;group.add(shaft);
   const plate=pickable(new THREE.Mesh(box(.17,1,1),headMaterials(sticky,block.moving)),pos);
   plate.position.x=.33;group.add(plate);
   const collar=pickable(new THREE.Mesh(box(.13,.43,.43),metal),pos);
@@ -387,8 +392,8 @@ function makeHalfwayHead(pos,block) {
   const group=new THREE.Group();group.position.copy(point(pos));
   group.quaternion.setFromUnitVectors(new THREE.Vector3(1,0,0),point(directions[block.direction]));
   const wood=standardMaterial(displayedTexture(faceTexture('arm'),block.moving));
-  const shaft=pickable(new THREE.Mesh(box(.52,.24,.24),wood),pos);
-  shaft.position.x=.57;group.add(shaft);
+  const shaft=pickable(new THREE.Mesh(box(.74,.24,.24),wood),pos);
+  shaft.position.x=.46;group.add(shaft);
   const plate=pickable(new THREE.Mesh(box(.18,1,1),headMaterials(block.sticky,block.moving)),pos);
   plate.position.x=.91;group.add(plate);
   content.add(group);
@@ -410,12 +415,15 @@ function makeBlock(pos,cell,arms,armStickiness,powered=false) {
   if(block.kind===10) {makeArm(pos,block,arms.get(key(pos)),armStickiness.get(key(pos))||false);return;}
   if(block.kind===8) {makeRod(pos,block);return;}
   const material=[7,9].includes(block.kind)?faceMaterials(block,powered&&!block.moving):standardMaterial(displayedTexture(plainTexture(block.kind),block.moving),.73,{metalness:.03,transparent:block.kind===4,opacity:block.kind===4?.48:1});
-  const mesh=new THREE.Mesh(box(),material);
+  const shortened=block.kind===9&&block.state!==0;
+  const depth=shortened ? .75 : 1;
+  const mesh=new THREE.Mesh(box(1,1,depth),material);
   if([7,9].includes(block.kind))orientBlock(mesh,block.direction);
   mesh.position.copy(point(pos));content.add(mesh);pickable(mesh,pos);
+  if(shortened)mesh.position.addScaledVector(point(directions[block.direction]),-.125);
   const movingHighlight=playbackMode==='detailed'&&block.moving;
-  const outline=new THREE.LineSegments(geometry('block-outline',()=>new THREE.EdgesGeometry(box(1.002,1.002,1.002))),new THREE.LineBasicMaterial({color:movingHighlight?0x7be4f4:0x19242a,transparent:true,opacity:movingHighlight?1:.45}));
-  outline.position.copy(mesh.position);content.add(outline);
+  const outline=new THREE.LineSegments(geometry(`block-outline:${depth}`,()=>new THREE.EdgesGeometry(box(1.002,1.002,depth+.002))),new THREE.LineBasicMaterial({color:movingHighlight?0x7be4f4:0x19242a,transparent:true,opacity:movingHighlight?1:.45}));
+  outline.position.copy(mesh.position);outline.rotation.copy(mesh.rotation);content.add(outline);
 }
 function makeBulkBlocks(entries) {
   if(!entries.length)return;
@@ -525,7 +533,16 @@ function render() {
       }
     }
   }
-  if(selected&&cells.has(key(selected))&&allowed(selected))boxOutline(selected,0xffffff,detailed?1.48:1.04,detailed?1:.7);
+  if(selected&&cells.has(key(selected))&&allowed(selected)){
+    const block=decode(cells.get(key(selected)));
+    if(block.kind===9&&block.state!==0){
+      const pad=detailed?.16:.04;
+      const outline=new THREE.LineSegments(new THREE.EdgesGeometry(box(1+pad,1+pad,.75+pad)),new THREE.LineBasicMaterial({color:0xffffff,transparent:true,opacity:detailed?1:.7,depthTest:false}));
+      orientBlock(outline,block.direction);
+      outline.position.copy(point(selected)).addScaledVector(point(directions[block.direction]),-.125);
+      content.add(outline);
+    }else boxOutline(selected,0xffffff,detailed?1.48:1.04,detailed?1:.7);
+  }
   updatePanels(cells,owners,armDirections,info);
 }
 function property(name,value) {return `<div class="property"><span>${name}</span><span>${value}</span></div>`;}
@@ -714,36 +731,90 @@ async function loadBank() {
   for(const id of ['bank-min','bank-max'])$(id).innerHTML=limits.map(limit=>`<option value="${limit}">${limit}</option>`).join('');
   $('bank-max').value=String(limits.at(-1));
   const list=$('bank-list');
+  const previews=new Map();
+  const categoryNames={pushing_only:'Pushing-only',pulling_only:'Pulling-only',observer_only:'Observer-only',no_observer:'No observers'};
+  const filterTags=[['filter-pushing','pushing_only'],['filter-pulling','pulling_only'],['filter-observer','observer_only'],['filter-no-observer','no_observer']];
+  const formatSpeed=value=>Number(value.toFixed(3)).toString();
+  async function openFlyer(item){
+    try{
+      installFlyer(await fetchBankBytes(item.path),item.name);
+      $('bank-dialog').close();
+    }catch(error){$('bank-summary').textContent=error.message;showError(error);}
+  }
   const previewObserver=new IntersectionObserver(entries=>{
     for(const entry of entries){
       if(!entry.isIntersecting)continue;
       previewObserver.unobserve(entry.target);
       const canvas=entry.target;
-      fetchBankBytes(canvas.dataset.path).then(bytes=>drawPreview(canvas,runEngine(bytes).trace.initial))
+      const path=canvas.dataset.path;
+      const previewKey=`${path}:${bankVersions.get(path)}`;
+      if(!previews.has(previewKey))previews.set(previewKey,fetchBankBytes(path).then(bytes=>runEngine(bytes).trace.initial));
+      previews.get(previewKey).then(rows=>drawPreview(canvas,rows))
         .catch(error=>{canvas.title=`Preview unavailable: ${error.message}`;});
     }
   },{root:list,rootMargin:'80px'});
   function update(){
     const min=Number($('bank-min').value),max=Number($('bank-max').value);
-    const filtered=items.filter(item=>item.push_limit>=min&&item.push_limit<=max);
-    $('bank-count').textContent=`${filtered.length}/${items.length}`;
+    const search=$('bank-search').value.trim().toLowerCase();
+    const tags=filterTags.filter(([id])=>$(id).checked).map(([,tag])=>tag);
+    const filtered=items.filter(item=>item.push_limit>=min&&item.push_limit<=max
+      &&(!search||`${item.name} ${item.path}`.toLowerCase().includes(search))
+      &&tags.every(tag=>item.categories?.includes(tag)));
+    const sort=$('bank-sort').value;
+    filtered.sort((a,b)=>{
+      const primary=sort==='speed'?(b.speed_bps??-Infinity)-(a.speed_bps??-Infinity)
+        :sort==='blocks'?a.blocks-b.blocks:sort==='limit'?a.push_limit-b.push_limit:a.name.localeCompare(b.name);
+      return primary||a.push_limit-b.push_limit||a.blocks-b.blocks||a.path.localeCompare(b.path);
+    });
+    $('bank-count').textContent=`${filtered.length} of ${items.length} flyers`;
+    const measured=filtered.filter(item=>item.speed_bps!==null&&item.speed_bps!==undefined);
+    const top=measured.length?Math.max(...measured.map(item=>item.speed_bps)):null;
+    $('bank-summary').textContent=`${items.length} machines · ${new Set(items.map(item=>item.push_limit)).size}/17 push limits populated${top!==null?` · best matching speed ${formatSpeed(top)} bps`:''}`;
+    const chart=$('bank-chart');chart.replaceChildren();
+    const chartMax=Math.max(1,top??0);
+    for(const limit of limits){
+      const candidates=measured.filter(item=>item.push_limit===limit);
+      const best=candidates.length?Math.max(...candidates.map(item=>item.speed_bps)):null;
+      const button=document.createElement('button');button.className='chart-column';button.disabled=best===null;
+      button.setAttribute('aria-label',best===null?`PL ${limit}: no matching measured flyers`:`Open fastest PL ${limit} flyer: ${formatSpeed(best)} blocks per second`);
+      button.title=best===null?'No matching measured flyers':`${formatSpeed(best)} bps · click to open a fastest flyer`;
+      const track=document.createElement('span');track.className='chart-track';
+      const fill=document.createElement('span');fill.className='chart-fill';fill.style.height=best===null?'0':`${Math.max(1,Math.max(0,best)/chartMax*100)}%`;if(best===null)fill.style.visibility='hidden';
+      const value=document.createElement('span');value.className='chart-value';value.textContent=best===null?'—':formatSpeed(best);
+      const caption=document.createElement('span');caption.className='chart-limit';caption.textContent=limit;
+      track.append(fill,value);button.append(track,caption);
+      button.onclick=()=>{const winners=candidates.filter(item=>item.speed_bps===best);openFlyer(winners[Math.floor(Math.random()*winners.length)]);};
+      chart.appendChild(button);
+    }
     previewObserver.disconnect();list.replaceChildren();
+    if(!filtered.length){const empty=document.createElement('div');empty.className='bank-empty';empty.textContent='No flyers match these filters. Try clearing a category or widening the push-limit range.';list.appendChild(empty);}
     for(const item of filtered){
       const button=document.createElement('button');button.className='bank-item';
       const image=document.createElement('canvas');image.dataset.path=item.path;image.width=108;image.height=70;
       image.setAttribute('aria-hidden','true');
       const label=document.createElement('span');label.className='bank-copy';
       const name=document.createElement('span');name.className='bank-name';name.textContent=item.name;
-      const meta=document.createElement('span');meta.className='bank-meta';meta.textContent=`PL ${item.push_limit} · ${item.blocks} blocks`;
-      label.append(name,meta);button.append(image,label);
-      button.title=item.path;button.onclick=async()=>{try{installFlyer(await fetchBankBytes(item.path),item.name);}catch(error){showError(error);}};
+      const meta=document.createElement('span');meta.className='bank-meta';meta.textContent=`PL ${item.push_limit} · ${item.blocks} blocks · ${item.speed_bps==null?'Unmeasured':`${formatSpeed(item.speed_bps)} bps`}`;
+      const badges=document.createElement('span');badges.className='bank-tags';badges.textContent=(item.categories||[]).map(tag=>categoryNames[tag]).join(' · ');
+      label.append(name,meta,badges);button.append(image,label);
+      button.title=item.path;button.onclick=()=>openFlyer(item);
       list.appendChild(button);
       previewObserver.observe(image);
     }
   }
-  $('bank-min').onchange=update;$('bank-max').onchange=update;update();
+  for(const id of ['bank-min','bank-max','bank-sort',...filterTags.map(([id])=>id)])$(id).onchange=update;
+  $('bank-search').oninput=update;
+  $('bank-clear').onclick=()=>{$('bank-min').value='8';$('bank-max').value='24';$('bank-search').value='';for(const [id] of filterTags)$(id).checked=false;update();};
+  update();$('open-bank').disabled=false;
 }
-$('demo').onclick=()=>loadUrl('./demo.flyer','Six-block flyer');
+$('open-bank').disabled=true;
+$('open-bank').onclick=()=>{setDisplayFocused(false);$('bank-dialog').showModal();};
+$('close-bank').onclick=()=>$('bank-dialog').close();
+$('bank-dialog').addEventListener('click',event=>{
+  if(event.target!==$('bank-dialog'))return;
+  const rect=$('bank-dialog').getBoundingClientRect();
+  if(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom)$('bank-dialog').close();
+});
 $('file').onchange=async event=>{const file=event.target.files[0];if(!file)return;try{installFlyer(new Uint8Array(await file.arrayBuffer()),file.name);}catch(error){showError(error);}};
 $('reset').onclick=()=>{if(!sourceBytes)return;const wasPlaying=playing;installFlyer(sourceBytes,sourceTitle);if(wasPlaying){playing=true;$('play').textContent='Ⅱ';$('play').setAttribute('aria-label','Pause');}};
 $('direction').onclick=()=>{direction=-direction;$('direction').textContent=direction>0?'→':'←';$('direction').setAttribute('aria-label',`Direction: ${direction>0?'forward':'backward'}`);$('step').textContent=direction>0?'›':'‹';$('step').setAttribute('aria-label',`Step ${direction>0?'forward':'backward'}`);};
@@ -796,6 +867,7 @@ document.addEventListener('pointerdown',event=>{
   setDisplayFocused(false);renderer.domElement.blur();
 },true);
 window.addEventListener('keydown',event=>{
+  if($('bank-dialog').open)return;
   if(event.target instanceof HTMLElement&&(event.target.matches('input, textarea, select')||event.target.isContentEditable))return;
   if(event.key==='ArrowRight'){event.preventDefault();advance(1);return;}
   if(event.key==='ArrowLeft'){event.preventDefault();advance(-1);return;}
@@ -839,7 +911,7 @@ function animate(now){
   const dt=Math.min((now-lastFrame)/1000,.1);lastFrame=now;
   moveCamera(dt);
   if(ground){ground.position.x=camera.position.x;ground.position.z=camera.position.z;}
-  if(playing&&trace){
+  if(playing&&trace&&!$('bank-dialog').open){
     playbackAccumulator+=dt*10*playbackSpeed();
     let count=Math.min(Math.floor(playbackAccumulator),100);
     if(count){

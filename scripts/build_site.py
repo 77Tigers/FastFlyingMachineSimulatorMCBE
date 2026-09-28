@@ -11,10 +11,25 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from fastflyer import Block, Flyer, Kind
+from scripts.update_bank import engine_fingerprint
 
 VIEWER = ROOT / "viewer"
 DIST = ROOT / "dist"
 BANK = ROOT / "flyers" / "bank"
+
+def categories(flyer: Flyer) -> list[str]:
+    blocks = [block for _, block in flyer.blocks()]
+    pistons = [block for block in blocks if block.kind == Kind.PISTON]
+    tags = []
+    if pistons and all(block.direction == 0 for block in pistons):
+        tags.append("pushing_only")
+    if pistons and all(block.sticky and block.direction == 1 for block in pistons):
+        tags.append("pulling_only")
+    if not any(block.kind in (Kind.REDSTONE_BLOCK, Kind.ROD) for block in blocks):
+        tags.append("observer_only")
+    if not any(block.kind == Kind.OBSERVER for block in blocks):
+        tags.append("no_observer")
+    return tags
 
 def copy(source: Path, destination: Path) -> None:
     destination.parent.mkdir(parents=True, exist_ok=True)
@@ -43,16 +58,29 @@ def main() -> None:
     demo.set((1, 1, 0), Block.observer(3))
     (DIST / "demo.flyer").write_bytes(demo.to_bytes())
 
+    catalogue_path = BANK / "catalogue.json"
+    catalogue = json.loads(catalogue_path.read_text(encoding="utf-8")) if catalogue_path.exists() else {}
+    measurements = catalogue.get("entries", {}) if (catalogue.get("format_version") == 1
+        and catalogue.get("engine_sha256") == engine_fingerprint(ROOT)) else {}
     manifest = []
     for path in sorted(BANK.rglob("*.flyer")):
         relative = path.relative_to(ROOT)
         flyer = Flyer.load(path)
+        measurement = measurements.get(relative.as_posix())
+        if measurement and (measurement.get("sha256") != sha256(path.read_bytes()).hexdigest()
+                            or measurement.get("ticks") != 10_000
+                            or not measurement.get("endpoint_conserved")):
+            measurement = None
         manifest.append({
             "path": relative.as_posix(),
             "name": path.stem.replace("_", " "),
             "push_limit": flyer.push_limit,
             "blocks": flyer.occupied_count(),
             "version": digest(path),
+            "categories": categories(flyer),
+            "speed_bps": measurement["speed_bps"] if measurement else None,
+            "distance": measurement["distance"] if measurement else None,
+            "ticks": measurement["ticks"] if measurement else None,
         })
         copy(path, DIST / relative)
     (DIST / "bank.json").write_text(json.dumps(manifest, separators=(",", ":")), encoding="utf-8")
