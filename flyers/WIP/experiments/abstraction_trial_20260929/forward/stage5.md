@@ -1,0 +1,11 @@
+# Stage 5 — local interface geometry (PARTIAL)
+
+Inputs were extraction stages 1–4 and general format/simulator documentation only. No reference geometry, earlier generator, or extraction stage 5–7 was read; root/Astra supplied no additional geometry.
+
+I chose the gauge and X ports in stage 3. A local pull motif has target slime at `(0,0,0)`, extended arm at `(1,0,0)`, and an unpowered sticky piston facing `-X` in state 2 at `(2,0,0)`. The target source moves to `(1,0,0)` on retraction. The same motif translates along X for the later A/B actions and can replace slime with honey. Its pull sweep reserves the arm cell `(1,0,0)` and target destination, and requires the target's material body to be attached at faces that do not accidentally attach another moving body. An isolated one-tick simulator check moved one block, with one retraction started. See `motif_probe.py` and `local_pull_probe.flyer`.
+
+An empty reset motif has a state-0 sticky piston at `(2,0,0)` facing `-X`, smooth stone at `(2,1,0)`, and a powered observer at `(2,2,0)` facing `-Y`. The observer hard-powers the stone; the stone powers the piston. Arm cell `(1,0,0)` is empty. An isolated one-tick check started one extension, with zero blocks moved. See `local_reset_probe.flyer`. The source must be unpowered by the following pull; this probe tests neither pulse generation by moving hardware nor absence of other power after routing.
+
+These are verified one-action fragments, not a verified reusable cycle motif. Local body contribution is one target block, one piston and (when extended) its arm, plus one stone and observer for the reset probe. Shared-body accounting and connection loads are unknown. Transverse coordinates, exact pickup faces, and power placement are expected stage-5 design choices, while stage 2 already specifies the coarse transport slots and stage 3 specifies action/reset coordinates. I did not close the required pickup/release, repeated pulse, or full-cycle keepout obligations. Initial A0 extension is inferred from its t0 pull, rather than directly supplied.
+
+Check: the two isolated action checks passed. Four timed motifs and their mutual keepouts remain unverified, so stage 5 is incomplete.

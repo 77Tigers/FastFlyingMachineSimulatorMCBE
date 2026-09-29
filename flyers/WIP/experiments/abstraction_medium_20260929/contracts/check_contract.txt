@@ -1,0 +1,7 @@
+tick 0: A 0->1; A0 base 2; B0 empty arm 3; passengers A1,B1,O_A
+tick 2: B 2->3; B0 base 4; A1 empty arm 2; passengers A0,B1,O_B
+tick 4: A 1->2; A1 base 3; B1 empty arm 4; passengers A0,B0,O_A
+tick 6: B 3->4; B1 base 5; A0 empty arm 3; passengers A1,B0,O_B
+tick 8 boundary: all two bodies and six hardware elements translated +2 X
+mwmw: slot=2 ticks, shifted=wmwm, shifted starts=[2, 6], displacement=+2, shortest word period=4 ticks, hardware cycle=8 ticks
+mmwmmw: slot=2 ticks, shifted=wmmwmm, shifted starts=[2, 4, 8, 10], displacement=+4, shortest word period=6 ticks, hardware cycle=12 ticks

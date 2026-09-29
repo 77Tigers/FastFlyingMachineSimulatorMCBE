@@ -1,0 +1,15 @@
+file,limit,rng,phase_x,phase_z,ticks,distance,end_blocks,extensions,extension_failures,movement_failures,first_failure_tick,first_failure_kind,conservation_mismatch_ticks,max_successful_action,clean
+"flyers/WIP/experiments/astra_mmwm_20260928/candidates_v2\s0.flyer",512,5,0,0,120,31,187,59,37,37,20,"(Coord { x: 22, y: 11, z: 21 }, ""immovable obstruction"")",0,186,false
+"flyers/WIP/experiments/astra_mmwm_20260928/candidates_v2\s1.flyer",512,5,0,0,120,12,200,26,0,0,,"",0,198,true
+"flyers/WIP/experiments/astra_mmwm_20260928/candidates_v2\s10.flyer",512,5,0,0,120,8,188,20,0,0,,"",0,127,true
+"flyers/WIP/experiments/astra_mmwm_20260928/candidates_v2\s12.flyer",512,5,0,0,120,15,189,32,15,15,24,"(Coord { x: 25, y: 11, z: 16 }, ""immovable obstruction"")",0,188,false
+"flyers/WIP/experiments/astra_mmwm_20260928/candidates_v2\s13.flyer",512,5,0,0,120,5,197,11,3,3,14,"(Coord { x: 19, y: 7, z: 16 }, ""immovable obstruction"")",0,195,false
+"flyers/WIP/experiments/astra_mmwm_20260928/candidates_v2\s16.flyer",512,5,0,0,120,17,203,41,13,13,14,"(Coord { x: 19, y: 4, z: 16 }, ""immovable obstruction"")",0,201,false
+"flyers/WIP/experiments/astra_mmwm_20260928/candidates_v2\s18.flyer",512,5,0,0,120,7,184,24,1,1,22,"(Coord { x: 25, y: 5, z: 16 }, ""immovable obstruction"")",0,181,false
+"flyers/WIP/experiments/astra_mmwm_20260928/candidates_v2\s19.flyer",512,5,0,0,120,8,200,23,1,1,8,"(Coord { x: 20, y: 6, z: 16 }, ""immovable obstruction"")",0,140,false
+"flyers/WIP/experiments/astra_mmwm_20260928/candidates_v2\s3.flyer",512,5,0,0,120,11,198,41,79,79,16,"(Coord { x: 22, y: 3, z: 21 }, ""immovable obstruction"")",0,196,false
+"flyers/WIP/experiments/astra_mmwm_20260928/candidates_v2\s5.flyer",512,5,0,0,120,9,193,23,3,3,14,"(Coord { x: 21, y: 8, z: 16 }, ""immovable obstruction"")",0,133,false
+"flyers/WIP/experiments/astra_mmwm_20260928/candidates_v2\s6.flyer",512,5,0,0,120,8,195,39,12,12,12,"(Coord { x: 21, y: 6, z: 16 }, ""immovable obstruction"")",0,192,false
+"flyers/WIP/experiments/astra_mmwm_20260928/candidates_v2\s7.flyer",512,5,0,0,120,10,179,26,0,0,,"",0,125,true
+"flyers/WIP/experiments/astra_mmwm_20260928/candidates_v2\s8.flyer",512,5,0,0,120,7,190,16,0,0,,"",0,138,true
+"flyers/WIP/experiments/astra_mmwm_20260928/candidates_v2\s9.flyer",512,5,0,0,120,7,184,14,0,0,,"",0,182,true

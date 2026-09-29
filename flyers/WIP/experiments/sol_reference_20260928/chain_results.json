@@ -1,0 +1,50 @@
+[
+  {
+    "n": 3,
+    "copies": 1,
+    "seed": 0,
+    "status": "simulated",
+    "output": "file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\sol_reference_20260928\\n3_copies1_s0.flyer limit=100 rng_final=16333451868175699237 phase_x=0 phase_z=0 ticks=160 start_min_x=13 end_min_x=61 distance=48 extensions=240 extension_failures=0 end_blocks=91 initial_kinds=[0, 41, 27, 0, 0, 0, 5, 0, 0, 15, 0] final_kinds=[0, 41, 27, 0, 0, 0, 5, 0, 0, 15, 0] conservation_mismatch_ticks=0 period=10 translated_repeat_pairs=3 first_repeat=Some((0, 20, 6)) traced=true max_successful_action=18 movement_failures=0",
+    "full": "file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\sol_reference_20260928\\n3_copies1_s0.flyer limit=100 rng_final=6269817706955863125 phase_x=0 phase_z=0 ticks=10000 start_min_x=13 end_min_x=3013 distance=3000 extensions=15000 extension_failures=0 end_blocks=91 initial_kinds=[0, 41, 27, 0, 0, 0, 5, 0, 0, 15, 0] final_kinds=[0, 41, 27, 0, 0, 0, 5, 0, 0, 15, 0] conservation_mismatch_ticks=0 period=10 translated_repeat_pairs=947 first_repeat=Some((0, 20, 6)) traced=true max_successful_action=18 movement_failures=0"
+  },
+  {
+    "n": 3,
+    "copies": 2,
+    "seed": 0,
+    "status": "simulated",
+    "output": "file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\sol_reference_20260928\\n3_copies2_s0.flyer limit=100 rng_final=16333451868175699237 phase_x=0 phase_z=0 ticks=160 start_min_x=13 end_min_x=61 distance=48 extensions=480 extension_failures=0 end_blocks=179 initial_kinds=[0, 67, 66, 0, 0, 0, 10, 0, 0, 30, 0] final_kinds=[0, 67, 66, 0, 0, 0, 10, 0, 0, 30, 0] conservation_mismatch_ticks=0 period=10 translated_repeat_pairs=0 first_repeat=None traced=true max_successful_action=18 movement_failures=0",
+    "full": "file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\sol_reference_20260928\\n3_copies2_s0.flyer limit=100 rng_final=6269817706955863125 phase_x=0 phase_z=0 ticks=10000 start_min_x=13 end_min_x=3013 distance=3000 extensions=30000 extension_failures=0 end_blocks=179 initial_kinds=[0, 67, 66, 0, 0, 0, 10, 0, 0, 30, 0] final_kinds=[0, 67, 66, 0, 0, 0, 10, 0, 0, 30, 0] conservation_mismatch_ticks=0 period=10 translated_repeat_pairs=166 first_repeat=Some((180, 410, 69)) traced=true max_successful_action=18 movement_failures=0"
+  },
+  {
+    "n": 3,
+    "copies": 4,
+    "seed": 0,
+    "status": "simulated",
+    "output": "file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\sol_reference_20260928\\n3_copies4_s0.flyer limit=100 rng_final=16333451868175699237 phase_x=0 phase_z=0 ticks=160 start_min_x=13 end_min_x=61 distance=48 extensions=960 extension_failures=0 end_blocks=371 initial_kinds=[0, 140, 139, 0, 0, 0, 20, 0, 0, 60, 0] final_kinds=[0, 140, 139, 0, 0, 0, 20, 0, 0, 60, 0] conservation_mismatch_ticks=0 period=10 translated_repeat_pairs=0 first_repeat=None traced=true max_successful_action=20 movement_failures=0",
+    "full": "file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\sol_reference_20260928\\n3_copies4_s0.flyer limit=100 rng_final=6269817706955863125 phase_x=0 phase_z=0 ticks=10000 start_min_x=13 end_min_x=3013 distance=3000 extensions=60000 extension_failures=0 end_blocks=371 initial_kinds=[0, 140, 139, 0, 0, 0, 20, 0, 0, 60, 0] final_kinds=[0, 140, 139, 0, 0, 0, 20, 0, 0, 60, 0] conservation_mismatch_ticks=0 period=10 translated_repeat_pairs=0 first_repeat=None traced=true max_successful_action=20 movement_failures=0"
+  },
+  {
+    "n": 4,
+    "copies": 1,
+    "seed": 0,
+    "status": "simulated",
+    "output": "file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\sol_reference_20260928\\n4_copies1_s0.flyer limit=100 rng_final=16333451868175699237 phase_x=0 phase_z=0 ticks=160 start_min_x=13 end_min_x=66 distance=53 extensions=160 extension_failures=0 end_blocks=66 initial_kinds=[0, 33, 16, 0, 0, 0, 3, 0, 0, 12, 0] final_kinds=[0, 33, 16, 0, 0, 0, 3, 0, 0, 12, 0] conservation_mismatch_ticks=0 period=12 translated_repeat_pairs=3 first_repeat=Some((24, 60, 12)) traced=true max_successful_action=22 movement_failures=0",
+    "full": "file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\sol_reference_20260928\\n4_copies1_s0.flyer limit=100 rng_final=6269817706955863125 phase_x=0 phase_z=0 ticks=10000 start_min_x=13 end_min_x=3346 distance=3333 extensions=10000 extension_failures=0 end_blocks=66 initial_kinds=[0, 33, 16, 0, 0, 0, 3, 0, 0, 12, 0] final_kinds=[0, 33, 16, 0, 0, 0, 3, 0, 0, 12, 0] conservation_mismatch_ticks=0 period=12 translated_repeat_pairs=786 first_repeat=Some((24, 60, 12)) traced=true max_successful_action=22 movement_failures=0"
+  },
+  {
+    "n": 4,
+    "copies": 2,
+    "seed": 0,
+    "status": "simulated",
+    "output": "file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\sol_reference_20260928\\n4_copies2_s0.flyer limit=100 rng_final=16333451868175699237 phase_x=0 phase_z=0 ticks=160 start_min_x=13 end_min_x=66 distance=53 extensions=320 extension_failures=0 end_blocks=136 initial_kinds=[0, 51, 51, 0, 0, 0, 6, 0, 0, 24, 0] final_kinds=[0, 51, 51, 0, 0, 0, 6, 0, 0, 24, 0] conservation_mismatch_ticks=0 period=12 translated_repeat_pairs=0 first_repeat=None traced=true max_successful_action=23 movement_failures=0",
+    "full": "file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\sol_reference_20260928\\n4_copies2_s0.flyer limit=100 rng_final=6269817706955863125 phase_x=0 phase_z=0 ticks=10000 start_min_x=13 end_min_x=3346 distance=3333 extensions=20000 extension_failures=0 end_blocks=136 initial_kinds=[0, 51, 51, 0, 0, 0, 6, 0, 0, 24, 0] final_kinds=[0, 51, 51, 0, 0, 0, 6, 0, 0, 24, 0] conservation_mismatch_ticks=0 period=12 translated_repeat_pairs=141 first_repeat=Some((420, 480, 20)) traced=true max_successful_action=23 movement_failures=0"
+  },
+  {
+    "n": 4,
+    "copies": 4,
+    "seed": 0,
+    "status": "simulated",
+    "output": "file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\sol_reference_20260928\\n4_copies4_s0.flyer limit=100 rng_final=16333451868175699237 phase_x=0 phase_z=0 ticks=160 start_min_x=13 end_min_x=66 distance=53 extensions=640 extension_failures=0 end_blocks=256 initial_kinds=[0, 94, 94, 0, 0, 0, 12, 0, 0, 48, 0] final_kinds=[0, 94, 94, 0, 0, 0, 12, 0, 0, 48, 0] conservation_mismatch_ticks=0 period=12 translated_repeat_pairs=0 first_repeat=None traced=true max_successful_action=21 movement_failures=0",
+    "full": "file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\sol_reference_20260928\\n4_copies4_s0.flyer limit=100 rng_final=6269817706955863125 phase_x=0 phase_z=0 ticks=10000 start_min_x=13 end_min_x=3346 distance=3333 extensions=40000 extension_failures=0 end_blocks=256 initial_kinds=[0, 94, 94, 0, 0, 0, 12, 0, 0, 48, 0] final_kinds=[0, 94, 94, 0, 0, 0, 12, 0, 0, 48, 0] conservation_mismatch_ticks=0 period=12 translated_repeat_pairs=0 first_repeat=None traced=true max_successful_action=21 movement_failures=0"
+  }
+]

@@ -1,0 +1,159 @@
+TICK 0 x=1 ext=1 fail=0 ret=1
+INITIAL Coord { x: 0, y: 2, z: 0 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 0, y: 2, z: 1 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 0, y: 3, z: 0 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 1, y: 2, z: 0 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 1, y: 2, z: 1 } PistonArm cell=10 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 2, y: 1, z: 0 } Observer cell=71 dir=2 sticky=false state=0 moving=false
+INITIAL Coord { x: 2, y: 1, z: 1 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 2, y: 1, z: 2 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 2, y: 2, z: 0 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 2, y: 2, z: 1 } Piston cell=2345 dir=1 sticky=true state=2 moving=false
+INITIAL Coord { x: 2, y: 2, z: 2 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 2, y: 3, z: 0 } Piston cell=297 dir=1 sticky=true state=0 moving=false
+INITIAL Coord { x: 2, y: 3, z: 1 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 2, y: 3, z: 2 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 3, y: 1, z: 1 } Piston cell=297 dir=1 sticky=true state=0 moving=false
+INITIAL Coord { x: 3, y: 1, z: 2 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 3, y: 2, z: 0 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 3, y: 2, z: 1 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 4, y: 0, z: 2 } Observer cell=327 dir=2 sticky=false state=0 moving=false
+INITIAL Coord { x: 4, y: 1, z: 2 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 4, y: 2, z: 2 } Piston cell=297 dir=1 sticky=true state=0 moving=false
+POWER hard Coord { x: 4, y: 0, z: 2 } Observer cell=327 dir=2 sticky=false state=0 moving=false -> Coord { x: 4, y: 1, z: 2 }
+POWER hard→piston Coord { x: 4, y: 1, z: 2 } Honey cell=2 dir=0 sticky=false state=0 moving=false -> Coord { x: 4, y: 2, z: 2 }
+ACTION Tick 0 · retract @ (2, 2, 1) piston=Some(Coord { x: 2, y: 2, z: 1 }) sources=10 failure=None
+SOURCE Coord { x: 0, y: 2, z: 0 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 0, y: 2, z: 1 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 0, y: 3, z: 0 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 1, y: 2, z: 0 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 2, y: 1, z: 0 } Observer cell=71 dir=2 sticky=false state=0 moving=false
+SOURCE Coord { x: 2, y: 2, z: 0 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 2, y: 3, z: 0 } Piston cell=297 dir=1 sticky=true state=0 moving=false
+SOURCE Coord { x: 3, y: 1, z: 1 } Piston cell=297 dir=1 sticky=true state=0 moving=false
+SOURCE Coord { x: 3, y: 2, z: 0 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 3, y: 2, z: 1 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+LINK stick Coord { x: 0, y: 2, z: 1 } -> Coord { x: 0, y: 2, z: 0 }
+LINK stick Coord { x: 0, y: 2, z: 0 } -> Coord { x: 1, y: 2, z: 0 }
+LINK stick Coord { x: 0, y: 2, z: 0 } -> Coord { x: 0, y: 3, z: 0 }
+LINK stick Coord { x: 0, y: 2, z: 0 } -> Coord { x: 0, y: 2, z: 1 }
+LINK obstruction Coord { x: 0, y: 2, z: 0 } -> Coord { x: 1, y: 2, z: 0 }
+LINK stick Coord { x: 1, y: 2, z: 0 } -> Coord { x: 2, y: 2, z: 0 }
+LINK stick Coord { x: 1, y: 2, z: 0 } -> Coord { x: 0, y: 2, z: 0 }
+LINK obstruction Coord { x: 1, y: 2, z: 0 } -> Coord { x: 2, y: 2, z: 0 }
+LINK stick Coord { x: 0, y: 3, z: 0 } -> Coord { x: 0, y: 2, z: 0 }
+LINK stick Coord { x: 2, y: 2, z: 0 } -> Coord { x: 3, y: 2, z: 0 }
+LINK stick Coord { x: 2, y: 2, z: 0 } -> Coord { x: 1, y: 2, z: 0 }
+LINK stick Coord { x: 2, y: 2, z: 0 } -> Coord { x: 2, y: 3, z: 0 }
+LINK stick Coord { x: 2, y: 2, z: 0 } -> Coord { x: 2, y: 1, z: 0 }
+LINK obstruction Coord { x: 2, y: 2, z: 0 } -> Coord { x: 3, y: 2, z: 0 }
+LINK stick Coord { x: 3, y: 2, z: 0 } -> Coord { x: 2, y: 2, z: 0 }
+LINK stick Coord { x: 3, y: 2, z: 0 } -> Coord { x: 3, y: 2, z: 1 }
+LINK stick Coord { x: 3, y: 2, z: 1 } -> Coord { x: 3, y: 1, z: 1 }
+LINK stick Coord { x: 3, y: 2, z: 1 } -> Coord { x: 3, y: 2, z: 0 }
+ACTION Tick 0 · extend @ (4, 2, 2) piston=Some(Coord { x: 4, y: 2, z: 2 }) sources=0 failure=None
+TICK 1 x=1 ext=0 fail=0 ret=0
+TICK 2 x=1 ext=1 fail=0 ret=1
+POWER hard Coord { x: 3, y: 1, z: 0 } Observer cell=327 dir=2 sticky=false state=0 moving=false -> Coord { x: 3, y: 2, z: 0 }
+POWER hard→piston Coord { x: 3, y: 2, z: 0 } Slime cell=1 dir=0 sticky=false state=0 moving=false -> Coord { x: 3, y: 3, z: 0 }
+ACTION Tick 2 · extend @ (3, 3, 0) piston=Some(Coord { x: 3, y: 3, z: 0 }) sources=0 failure=None
+ACTION Tick 2 · retract @ (4, 2, 2) piston=Some(Coord { x: 4, y: 2, z: 2 }) sources=10 failure=None
+SOURCE Coord { x: 2, y: 1, z: 1 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 2, y: 1, z: 2 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 2, y: 2, z: 1 } Piston cell=297 dir=1 sticky=true state=0 moving=false
+SOURCE Coord { x: 2, y: 2, z: 2 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 2, y: 3, z: 1 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 2, y: 3, z: 2 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 3, y: 1, z: 2 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 4, y: 0, z: 2 } Observer cell=71 dir=2 sticky=false state=0 moving=false
+SOURCE Coord { x: 4, y: 1, z: 1 } Piston cell=297 dir=1 sticky=true state=0 moving=false
+SOURCE Coord { x: 4, y: 1, z: 2 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+LINK stick Coord { x: 2, y: 2, z: 2 } -> Coord { x: 2, y: 3, z: 2 }
+LINK stick Coord { x: 2, y: 2, z: 2 } -> Coord { x: 2, y: 1, z: 2 }
+LINK stick Coord { x: 2, y: 2, z: 2 } -> Coord { x: 2, y: 2, z: 1 }
+LINK stick Coord { x: 2, y: 3, z: 2 } -> Coord { x: 2, y: 2, z: 2 }
+LINK stick Coord { x: 2, y: 3, z: 2 } -> Coord { x: 2, y: 3, z: 1 }
+LINK stick Coord { x: 2, y: 1, z: 2 } -> Coord { x: 3, y: 1, z: 2 }
+LINK stick Coord { x: 2, y: 1, z: 2 } -> Coord { x: 2, y: 2, z: 2 }
+LINK stick Coord { x: 2, y: 1, z: 2 } -> Coord { x: 2, y: 1, z: 1 }
+LINK obstruction Coord { x: 2, y: 1, z: 2 } -> Coord { x: 3, y: 1, z: 2 }
+LINK stick Coord { x: 2, y: 3, z: 1 } -> Coord { x: 2, y: 2, z: 1 }
+LINK stick Coord { x: 2, y: 3, z: 1 } -> Coord { x: 2, y: 3, z: 2 }
+LINK stick Coord { x: 3, y: 1, z: 2 } -> Coord { x: 4, y: 1, z: 2 }
+LINK stick Coord { x: 3, y: 1, z: 2 } -> Coord { x: 2, y: 1, z: 2 }
+LINK obstruction Coord { x: 3, y: 1, z: 2 } -> Coord { x: 4, y: 1, z: 2 }
+LINK stick Coord { x: 2, y: 1, z: 1 } -> Coord { x: 2, y: 2, z: 1 }
+LINK stick Coord { x: 2, y: 1, z: 1 } -> Coord { x: 2, y: 1, z: 2 }
+LINK stick Coord { x: 4, y: 1, z: 2 } -> Coord { x: 3, y: 1, z: 2 }
+LINK stick Coord { x: 4, y: 1, z: 2 } -> Coord { x: 4, y: 0, z: 2 }
+LINK stick Coord { x: 4, y: 1, z: 2 } -> Coord { x: 4, y: 1, z: 1 }
+TICK 3 x=1 ext=0 fail=0 ret=0
+TICK 4 x=2 ext=1 fail=0 ret=1
+POWER hard Coord { x: 5, y: 0, z: 2 } Observer cell=327 dir=2 sticky=false state=0 moving=false -> Coord { x: 5, y: 1, z: 2 }
+POWER hard→piston Coord { x: 5, y: 1, z: 2 } Honey cell=2 dir=0 sticky=false state=0 moving=false -> Coord { x: 5, y: 1, z: 1 }
+ACTION Tick 4 · retract @ (3, 3, 0) piston=Some(Coord { x: 3, y: 3, z: 0 }) sources=10 failure=None
+SOURCE Coord { x: 1, y: 2, z: 0 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 1, y: 2, z: 1 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 1, y: 3, z: 0 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 2, y: 2, z: 0 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 3, y: 1, z: 0 } Observer cell=71 dir=2 sticky=false state=0 moving=false
+SOURCE Coord { x: 3, y: 2, z: 0 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 3, y: 2, z: 1 } Piston cell=297 dir=1 sticky=true state=0 moving=false
+SOURCE Coord { x: 4, y: 2, z: 0 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 4, y: 2, z: 1 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 4, y: 2, z: 2 } Piston cell=297 dir=1 sticky=true state=0 moving=false
+LINK stick Coord { x: 1, y: 3, z: 0 } -> Coord { x: 1, y: 2, z: 0 }
+LINK stick Coord { x: 1, y: 2, z: 0 } -> Coord { x: 2, y: 2, z: 0 }
+LINK stick Coord { x: 1, y: 2, z: 0 } -> Coord { x: 1, y: 3, z: 0 }
+LINK stick Coord { x: 1, y: 2, z: 0 } -> Coord { x: 1, y: 2, z: 1 }
+LINK obstruction Coord { x: 1, y: 2, z: 0 } -> Coord { x: 2, y: 2, z: 0 }
+LINK stick Coord { x: 2, y: 2, z: 0 } -> Coord { x: 3, y: 2, z: 0 }
+LINK stick Coord { x: 2, y: 2, z: 0 } -> Coord { x: 1, y: 2, z: 0 }
+LINK obstruction Coord { x: 2, y: 2, z: 0 } -> Coord { x: 3, y: 2, z: 0 }
+LINK stick Coord { x: 1, y: 2, z: 1 } -> Coord { x: 1, y: 2, z: 0 }
+LINK stick Coord { x: 3, y: 2, z: 0 } -> Coord { x: 4, y: 2, z: 0 }
+LINK stick Coord { x: 3, y: 2, z: 0 } -> Coord { x: 2, y: 2, z: 0 }
+LINK stick Coord { x: 3, y: 2, z: 0 } -> Coord { x: 3, y: 1, z: 0 }
+LINK stick Coord { x: 3, y: 2, z: 0 } -> Coord { x: 3, y: 2, z: 1 }
+LINK obstruction Coord { x: 3, y: 2, z: 0 } -> Coord { x: 4, y: 2, z: 0 }
+LINK stick Coord { x: 4, y: 2, z: 0 } -> Coord { x: 3, y: 2, z: 0 }
+LINK stick Coord { x: 4, y: 2, z: 0 } -> Coord { x: 4, y: 2, z: 1 }
+LINK obstruction Coord { x: 3, y: 2, z: 1 } -> Coord { x: 4, y: 2, z: 1 }
+LINK stick Coord { x: 4, y: 2, z: 1 } -> Coord { x: 3, y: 2, z: 1 }
+LINK stick Coord { x: 4, y: 2, z: 1 } -> Coord { x: 4, y: 2, z: 2 }
+LINK stick Coord { x: 4, y: 2, z: 1 } -> Coord { x: 4, y: 2, z: 0 }
+ACTION Tick 4 · extend @ (5, 1, 1) piston=Some(Coord { x: 5, y: 1, z: 1 }) sources=0 failure=None
+TICK 5 x=2 ext=0 fail=0 ret=0
+TICK 6 x=2 ext=1 fail=0 ret=1
+POWER hard Coord { x: 4, y: 1, z: 0 } Observer cell=327 dir=2 sticky=false state=0 moving=false -> Coord { x: 4, y: 2, z: 0 }
+POWER hard→piston Coord { x: 4, y: 2, z: 0 } Slime cell=1 dir=0 sticky=false state=0 moving=false -> Coord { x: 4, y: 2, z: 1 }
+ACTION Tick 6 · extend @ (4, 2, 1) piston=Some(Coord { x: 4, y: 2, z: 1 }) sources=0 failure=None
+ACTION Tick 6 · retract @ (5, 1, 1) piston=Some(Coord { x: 5, y: 1, z: 1 }) sources=10 failure=None
+SOURCE Coord { x: 3, y: 1, z: 1 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 3, y: 1, z: 2 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 3, y: 2, z: 2 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 3, y: 3, z: 0 } Piston cell=297 dir=1 sticky=true state=0 moving=false
+SOURCE Coord { x: 3, y: 3, z: 1 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 3, y: 3, z: 2 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 4, y: 1, z: 2 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 5, y: 0, z: 2 } Observer cell=71 dir=2 sticky=false state=0 moving=false
+SOURCE Coord { x: 5, y: 1, z: 2 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 5, y: 2, z: 2 } Piston cell=297 dir=1 sticky=true state=0 moving=false
+LINK stick Coord { x: 3, y: 1, z: 1 } -> Coord { x: 3, y: 1, z: 2 }
+LINK stick Coord { x: 3, y: 1, z: 2 } -> Coord { x: 4, y: 1, z: 2 }
+LINK stick Coord { x: 3, y: 1, z: 2 } -> Coord { x: 3, y: 2, z: 2 }
+LINK stick Coord { x: 3, y: 1, z: 2 } -> Coord { x: 3, y: 1, z: 1 }
+LINK obstruction Coord { x: 3, y: 1, z: 2 } -> Coord { x: 4, y: 1, z: 2 }
+LINK stick Coord { x: 4, y: 1, z: 2 } -> Coord { x: 5, y: 1, z: 2 }
+LINK stick Coord { x: 4, y: 1, z: 2 } -> Coord { x: 3, y: 1, z: 2 }
+LINK obstruction Coord { x: 4, y: 1, z: 2 } -> Coord { x: 5, y: 1, z: 2 }
+LINK stick Coord { x: 3, y: 2, z: 2 } -> Coord { x: 3, y: 3, z: 2 }
+LINK stick Coord { x: 3, y: 2, z: 2 } -> Coord { x: 3, y: 1, z: 2 }
+LINK stick Coord { x: 5, y: 1, z: 2 } -> Coord { x: 4, y: 1, z: 2 }
+LINK stick Coord { x: 5, y: 1, z: 2 } -> Coord { x: 5, y: 2, z: 2 }
+LINK stick Coord { x: 5, y: 1, z: 2 } -> Coord { x: 5, y: 0, z: 2 }
+LINK stick Coord { x: 3, y: 3, z: 2 } -> Coord { x: 3, y: 2, z: 2 }
+LINK stick Coord { x: 3, y: 3, z: 2 } -> Coord { x: 3, y: 3, z: 1 }
+LINK stick Coord { x: 3, y: 3, z: 1 } -> Coord { x: 3, y: 3, z: 2 }
+LINK stick Coord { x: 3, y: 3, z: 1 } -> Coord { x: 3, y: 3, z: 0 }
+TICK 7 x=2 ext=0 fail=0 ret=0

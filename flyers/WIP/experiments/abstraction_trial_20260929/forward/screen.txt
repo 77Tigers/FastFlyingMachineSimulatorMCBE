@@ -1,0 +1,26 @@
+Reproduce from repository root in PowerShell:
+  $env:PYTHONPATH='.'; python flyers/WIP/experiments/abstraction_trial_20260929/forward/motif_probe.py
+  target/release/fastflyer-sim.exe flyers/WIP/experiments/abstraction_trial_20260929/forward/local_pull_probe.flyer flyers/WIP/experiments/abstraction_trial_20260929/forward/local_pull_after.flyer 1
+  target/release/fastflyer-sim.exe flyers/WIP/experiments/abstraction_trial_20260929/forward/local_reset_probe.flyer flyers/WIP/experiments/abstraction_trial_20260929/forward/local_reset_after.flyer 1
+  target/release/fastflyer-sim.exe flyers/WIP/experiments/abstraction_trial_20260929/forward/speculative_assembly.flyer flyers/WIP/experiments/abstraction_trial_20260929/forward/speculative_assembly_after8.flyer 8
+
+Local pull raw output:
+tick 1: TickReport { powered_pistons: 0, chunks_ticked: 1, extension_attempts: 0, extensions_started: 0, extension_failures: 0, extensions_finished: 0, retractions_started: 1, retractions_finished: 0, blocks_moved: 1 }
+
+Local reset raw output:
+tick 1: TickReport { powered_pistons: 1, chunks_ticked: 1, extension_attempts: 1, extensions_started: 1, extension_failures: 0, extensions_finished: 0, retractions_started: 0, retractions_finished: 0, blocks_moved: 0 }
+
+Assembly raw output:
+tick 1: TickReport { powered_pistons: 1, chunks_ticked: 1, extension_attempts: 1, extensions_started: 1, extension_failures: 0, extensions_finished: 0, retractions_started: 1, retractions_finished: 0, blocks_moved: 5 }
+tick 2: TickReport { powered_pistons: 0, chunks_ticked: 1, extension_attempts: 0, extensions_started: 0, extension_failures: 0, extensions_finished: 1, retractions_started: 0, retractions_finished: 1, blocks_moved: 0 }
+tick 3: TickReport { powered_pistons: 0, chunks_ticked: 1, extension_attempts: 0, extensions_started: 0, extension_failures: 0, extensions_finished: 0, retractions_started: 1, retractions_finished: 0, blocks_moved: 6 }
+tick 4: TickReport { powered_pistons: 0, chunks_ticked: 1, extension_attempts: 0, extensions_started: 0, extension_failures: 0, extensions_finished: 0, retractions_started: 0, retractions_finished: 1, blocks_moved: 0 }
+tick 5: TickReport { powered_pistons: 0, chunks_ticked: 1, extension_attempts: 0, extensions_started: 0, extension_failures: 0, extensions_finished: 0, retractions_started: 0, retractions_finished: 0, blocks_moved: 0 }
+tick 6: TickReport { powered_pistons: 0, chunks_ticked: 1, extension_attempts: 0, extensions_started: 0, extension_failures: 0, extensions_finished: 0, retractions_started: 0, retractions_finished: 0, blocks_moved: 0 }
+tick 7: TickReport { powered_pistons: 0, chunks_ticked: 1, extension_attempts: 0, extensions_started: 0, extension_failures: 0, extensions_finished: 0, retractions_started: 0, retractions_finished: 0, blocks_moved: 0 }
+tick 8: TickReport { powered_pistons: 0, chunks_ticked: 1, extension_attempts: 0, extensions_started: 0, extension_failures: 0, extensions_finished: 0, retractions_started: 0, retractions_finished: 0, blocks_moved: 0 }
+
+Piston positions read with Flyer.load(...).blocks_of_type(Kind.PISTON):
+initial: (2,0,0) state 2; (3,0,4) state 0; (4,0,2) state 0; (5,0,6) state 0
+after tick 0: (2,0,0) state 3; (3,0,4) state 0; (4,0,2) state 1; (5,0,6) state 0
+after tick 3: (2,0,0) state 0; (4,0,2) state 0; (4,0,4) state 0; (5,0,6) state 0

@@ -1,6 +1,35 @@
 # Flyer research handoff — 2026-09-26, diagonal breakthrough
 
-Keep this active handoff below **3,000 words**. Prior evidence is preserved in [RESEARCH_LOG_PRE_DIAGONAL_2026-09-26.md](RESEARCH_LOG_PRE_DIAGONAL_2026-09-26.md), [RESEARCH_LOG_ARCHIVE_2026-09-26.md](RESEARCH_LOG_ARCHIVE_2026-09-26.md), and experiment findings. Read root `SIMULATION.md` before implementing mechanics. Do not change the simulator, editor library, format, viewer, or unrelated project files to obtain a score.
+Keep this active handoff below **5,000 words**. Prior evidence is preserved in [RESEARCH_LOG_PRE_DIAGONAL_2026-09-26.md](RESEARCH_LOG_PRE_DIAGONAL_2026-09-26.md), [RESEARCH_LOG_ARCHIVE_2026-09-26.md](RESEARCH_LOG_ARCHIVE_2026-09-26.md), and experiment findings. Read root `SIMULATION.md` before implementing mechanics. Do not change the simulator, editor library, format, viewer, or unrelated project files to obtain a score.
+
+**Research workflow and tooling:** Start with the short [active-experiment index](WIP/experiments/INDEX.md), then read only the linked files needed for the current question. [RESEARCH_RUNNER.md](WIP/experiments/RESEARCH_RUNNER.md) documents portable `screen`, `verify`, `samples`, and focused `trace` commands. Save full batch results and traces in the experiment directory; show compact summaries and the first relevant failure in chat. Search named directories with bounded output instead of listing all `.flyer` files. Reuse the runner before writing a one-off diagnostic. **Do not remove or shorten information about existing research tools unless a replacement tool and its usage are documented and available.** Preserve paths and evidence needed to reproduce prior claims.
+
+**Maintain the handoff yourself:** Before finishing a research turn, update this log and the [active-experiment index](WIP/experiments/INDEX.md) when priorities, leads, status, best candidates, evidence paths, or next steps change. Update the experiment's `FINDINGS.md` with its bounds and outcome, and update [RESEARCH_RUNNER.md](WIP/experiments/RESEARCH_RUNNER.md) whenever runner commands or output meanings change. Keep the index short by moving completed detail to findings; do not leave stale pointers or ask the user to maintain these files.
+
+## Highest-priority directions — 2026-09-28
+
+**Abstraction workflow (2026-09-29):** The current discussion/research task is to improve and test the [abstraction pipeline](ABSTRACTION_PIPELINE.md), delegating implementation to GPT-6 Sol Medium. Use piston-group lifecycle/contact contracts to keep high-level reasoning out of cell-by-cell repairs. Future agents should improve the pipeline when a concrete weakness appears, or record the example and proposed improvement in their findings; state whether the change was tested. Preserve old evidence and distinguish abstraction tests from new performance claims. The current geometry trial is `mwmw`; `mmwmmw` must be representable but is not being geometry-tested in this iteration.
+
+**Trial result:** A fresh Sol Medium worker built a PL10 `mwmw` flyer from the reference-derived sparse group/contact handoff without the full reference body geometry or old generator. Exact 10,000-tick verification and all 80 full RNG/phase samples passed. This establishes constrained realization, not novel architecture discovery or measured token savings. [Results and limits](WIP/experiments/abstraction_medium_20260929/RESULTS.md).
+
+These supersede the older closed-engine search priorities below. Pulling-only remains an important direction, but the user explicitly defers it until later.
+
+1. **Simple three-segment `mmwmmw` flyer at 3.333 bps.** All three segments must have different timings. Ignore push-limit optimization initially, while keeping the geometry reasonably compact; do not inflate it unnecessarily. Confirm the intended timing notation if needed before choosing an architecture.
+2. **Repeatable low-push-limit extensions at both 3 bps and 3.333 bps.** Prioritize extensions whose geometry reaches at least as far back as the previous segment. They must be chainable repeatedly, not merely produce a finite burst or work as a single special attachment. Closing them into an engine is a later task the user plans to give Sol. Use the friend's additional front segments/pulling assistance where useful. Test with an existing engine or a long chain, and record timing, attachment geometry, actual action loads, conservation, and repeated translated behaviour. Distinguish driver overhead from extension loads and validate that adding copies preserves operation.
+
+The user permits Sol subagents for sufficiently easy, concrete subtasks. The 5,000-word limit is a ceiling, not a target.
+
+### Results from this direction — 2026-09-28
+
+**Working three-segment `mmwmmw` mechanism:** `WIP/three_segment_mmwmmw_pl65.flyer`. Three connected sticky carriers follow `mmwmmw`, `wmmwmm`, and `mwmmwm`. Four cells per twelve ticks; the encoded PL65 copy travels **3,333 in 10,000 ticks**, with 177 sampled blocks, zero failures, permanent-kind conservation, and complete translated cell/owner-list recurrence every twelve ticks. It uses 12 normal pistons, six redstone blocks, six observers, and 151 sticky cells, plus two sampled arms. This is a working timing proof with substantial routing overhead, not a compactness or push-limit record. The user requested an immediate wrap-up; further compaction is deferred.
+
+Artifacts: `WIP/experiments/astra_mmwm_20260928/`. `search.py` synthesizes time-dependent pickup contacts and routes three carriers; `trim.py` trims connected rails. The final geometry comes from seed19, module spacing4, followed by five successful sticky deletions. Final evidence: `trim/pl65_full.txt`, `trim/pl65_80_samples.csv` (**all80 full10,000-tick samples passed**, every833 cycle boundaries matched exact cells/owner lists and +4 displacement), and `trim/geometry.json`. The earlier 206-block PL82 version passed all80 full-length exact-recurrence samples; Sol's evidence is `sol_reference_20260928/mmw_3segment_pl82_exact_samples.csv`.
+
+Key correction: a free recovering piston grabbed by carrier A can push an occupied destination belonging to B, merging their loads and stealing B's scheduled firing piston. Routing must exclude that ownership transfer, not merely overlapping cells and direct sticky adhesion. Versions1/2 preserve failed screens; version3 fixes it. Use `diagnose.py`/`annotate.py` as diagnostic examples, noting they regenerate against the current generator and their original seed0 failure refers to version2. No simulator/editor changes were made.
+
+**Extension work is unfinished.** Sol tested closed rings containing 1/2/4 phase blocks, not identical attachable extensions: N3 loads18/18/20; N4 loads22/23/21. All six baselines sustained the intended speed for10,000 ticks without conservation or movement failures. `sol_reference_20260928/chain_metadata.json` records changing full-cycle rear offsets. Do not mistake a positive gap in one phase for a general impossibility, or these varying routed rings for a proven chainable module. Actual open-chain duplication and the friend's pull-assisted low-load architecture remain next steps.
+
+Useful side leads: `sol_reference_20260928/n3_copies1_s0_pl18.flyer` runs3bps at PL18 and passes all80 full-length speed/conservation samples; exact ten-tick cell/owner recurrence varies, even after masking angry bits, so it is not banked. `n4_copies4_s0_pl21.flyer` runs3.333bps at PL21 with twelve carriers/256 blocks; one full traced run passed, phase/RNG audit outstanding. See that directory's `FINDINGS.md`. These are leads, not replacements for the requested extension proof.
 
 ## Objectives and verified records
 
@@ -69,9 +98,9 @@ Sol trimmed the g1 variant. `sol_diagonal/pull3trim/double_pl22.flyer` reaches 3
 
 ## Suggestions that would most help Astra and Sol
 
-These are proposed research helpers, not simulator changes or claims that they already exist. Implement under `WIP/experiments/` using public Rust APIs.
+The portable runner below now exists. The other items remain proposed research helpers, not simulator changes or claims that they already exist. Implement them under `WIP/experiments/` using public Rust APIs.
 
-- **One portable runner:** a checked-in Rust diagnostic plus rebuild script for batch screening, exact scoring, arbitrary-period repeat checks, conservation, RNG/phase samples, JSON/CSV output. Replace host-specific TEMP dependencies. Current `verify.rs` hardcodes period eight; N3 needs ten, N4 twelve.
+- **Portable runner (implemented):** `WIP/experiments/research_runner.rs`, built by `build_research_runner.ps1`, now supports compact CSV `screen`, exact encoded-state/owner-list `verify` at arbitrary period and advance, 80-case `samples`, conservation checks, maximum successful action loads, and focused `trace`. See `RESEARCH_RUNNER.md` for complete commands and limits. It does not yet produce JSON or persistent block identities. The older `astra_diagonal/verify.rs` still hardcodes period eight; use the portable runner for N3/10 and N4/12.
 - **Movement ledger with stable block identities:** source/destination, kind, initiating piston, owner before/after, and carried hardware for each action. Highlight the exact extra cell exceeding a limit. Clearly separate a failed discovery's partial set from a diagnostic complete set.
 - **Power/contact timeline:** source → hard-powered solid → piston, plus arms and retraction states. Diff a failure against its repeating parent at the first divergent tick. This would expose c244's extra pulse immediately.
 - **Temporal router:** check all scheduled phases with explicit allowed pickups and forbidden arm/destination sweeps. Current heuristics can both reject useful contacts and accept wrong timed contacts. A failed finite route search is not a lower bound.
@@ -91,6 +120,8 @@ Screen 120–300 ticks, then longer, then exactly 10,000 at the encoded claimed 
 ## Reproducible tools
 
 Work from repository root. `fastflyer/` edits files; Rust `src/` simulates. Static sticky counts are not action loads. Compile diagnostics against the current `target/release/deps/libfastflyer-*.rlib`, not a hardcoded hash.
+
+Preferred portable workflow: run `WIP/experiments/build_research_runner.ps1`, then `bin/research_runner.exe screen CANDIDATE_DIRECTORY 160 --out RESULTS.csv`, `verify CANDIDATE.flyer 10000 --period 12 --advance 4`, or `samples CANDIDATE.flyer --period 12 --advance 4 --out SAMPLES.csv`. Replace 12/+4 with the candidate's actual cycle contract. The runner prints short summaries and saves per-candidate/per-sample CSV; use `trace FILE START END` only around a relevant failure. Full syntax and interpretation are in [RESEARCH_RUNNER.md](WIP/experiments/RESEARCH_RUNNER.md).
 
 ```powershell
 & "$env:TEMP/flyer_measure.exe" 10000 flyers/bank/pl11/diagonal_alternating.flyer

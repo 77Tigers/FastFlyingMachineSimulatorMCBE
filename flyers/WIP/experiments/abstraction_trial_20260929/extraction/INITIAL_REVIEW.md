@@ -1,0 +1,3 @@
+# Initial review correction
+
+The first stage-3 draft placed the sticky-pull *source* one X behind the piston base. Under `SIMULATION.md`, a -X-facing sticky retraction deletes its arm at base-1 and discovers the target at base-2; that target moves into base-1. The first draft confused source with destination. Parent review found this before forward use. Stage 3 below has corrected equalities. This is a concrete boundary failure: an axial abstraction can look plausible while encoding the wrong simulator reach rule. The first stage-2 draft also failed to specify each piston's transport slots; it is corrected and downgraded to partial because order robustness remains unresolved.

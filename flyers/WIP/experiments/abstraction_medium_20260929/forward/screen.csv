@@ -1,0 +1,2 @@
+file,limit,rng,phase_x,phase_z,ticks,distance,end_blocks,extensions,extension_failures,movement_failures,first_failure_tick,first_failure_kind,conservation_mismatch_ticks,max_successful_action,clean
+"flyers/WIP/experiments/abstraction_medium_20260929/forward\candidate_pl10.flyer",10,0,0,0,160,40,21,80,0,0,,"",0,10,true

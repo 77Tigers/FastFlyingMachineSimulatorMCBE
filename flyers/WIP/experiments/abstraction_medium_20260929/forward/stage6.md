@@ -1,0 +1,8 @@
+# Stage 6 — assembly and routing
+
+**Pass for the supplied identity order and tested initial conditions.** `build.py` is the complete source and `candidate_pl10.flyer` is the assembled 21-cell PL10 candidate (14 sticky solids, four pistons, two observers, one initial arm). The file SHA256 is `8E314CD63756BEC928AFE8BACFAA9389C7D4FFDCD893741F82BB25B5ABF82830`. Coordinates are the initial world gauge in the handoff; saving introduced no visible X/Y/Z shift because minima are zero. The initial piston bases/states are A0 `(2,2,1)/2`, A1 `(2,3,0)/0`, B0 `(4,2,2)/0`, B1 `(3,1,1)/0`; the arm is `(1,2,1)`. A observer starts unpowered at `(2,1,0)` and B observer powered at `(4,0,2)`.
+
+In the first-cycle trace, the source sets match the planned passengers: tick 0 carries A1 and B1 with A; tick 2 carries A0 and B1 with B; tick 4 carries A0 and B0 with A; tick 6 carries A1 and B0 with B. The resetting piston is excluded each time. The corresponding body source X values are A `0→1` and `1→2`, B `2→3` and `3→4`; observer positions track their own bodies. All four power links are observer→same-body solid→resetter. No unintended puller power, extra pickup, destination obstruction, or failed reset appears in the trace. Both action orders that happened in the tested run are visible: pull then reset at ticks 0, 2, 6; reset then pull at tick 4. Other RNG orders are covered empirically in stage 7, without a claim that all possible orders are proven.
+
+One route was built and physically checked. The first-cycle contract had no violation, so no alternative candidate or diagnostic higher limit was needed. The maximum successful single-action load is 10, equal to the encoded target limit.
+

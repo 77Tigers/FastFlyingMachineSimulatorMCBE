@@ -1,0 +1,1295 @@
+[
+  {
+    "n": 3,
+    "copies": 1,
+    "seed": 0,
+    "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\sol_reference_20260928\\n3_copies1_s0.flyer",
+    "centers": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        5,
+        2
+      ],
+      [
+        3,
+        -1
+      ]
+    ],
+    "phases": [
+      0,
+      2,
+      4,
+      1,
+      3
+    ],
+    "sticky_counts": [
+      14,
+      14,
+      13,
+      13,
+      14
+    ],
+    "minxs": [
+      -3,
+      -2,
+      -2,
+      -2,
+      -2
+    ],
+    "reach": [
+      {
+        "carrier": 0,
+        "previous": 4,
+        "min_delta": -1,
+        "max_delta": 1,
+        "deltas": [
+          -1,
+          0,
+          1,
+          1,
+          0
+        ],
+        "all_phases_at_least_as_far_back": false
+      },
+      {
+        "carrier": 1,
+        "previous": 0,
+        "min_delta": -1,
+        "max_delta": 1,
+        "deltas": [
+          1,
+          1,
+          0,
+          -1,
+          0
+        ],
+        "all_phases_at_least_as_far_back": false
+      },
+      {
+        "carrier": 2,
+        "previous": 1,
+        "min_delta": -1,
+        "max_delta": 1,
+        "deltas": [
+          0,
+          -1,
+          0,
+          1,
+          1
+        ],
+        "all_phases_at_least_as_far_back": false
+      },
+      {
+        "carrier": 3,
+        "previous": 2,
+        "min_delta": -1,
+        "max_delta": 1,
+        "deltas": [
+          0,
+          1,
+          1,
+          0,
+          -1
+        ],
+        "all_phases_at_least_as_far_back": false
+      },
+      {
+        "carrier": 4,
+        "previous": 3,
+        "min_delta": -2,
+        "max_delta": 0,
+        "deltas": [
+          0,
+          -1,
+          -2,
+          -1,
+          0
+        ],
+        "all_phases_at_least_as_far_back": true
+      }
+    ]
+  },
+  {
+    "n": 3,
+    "copies": 2,
+    "seed": 0,
+    "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\sol_reference_20260928\\n3_copies2_s0.flyer",
+    "centers": [
+      [
+        6,
+        0
+      ],
+      [
+        5,
+        4
+      ],
+      [
+        2,
+        6
+      ],
+      [
+        -2,
+        6
+      ],
+      [
+        -5,
+        4
+      ],
+      [
+        -6,
+        0
+      ],
+      [
+        -5,
+        -4
+      ],
+      [
+        -2,
+        -6
+      ],
+      [
+        2,
+        -6
+      ],
+      [
+        5,
+        -4
+      ]
+    ],
+    "phases": [
+      0,
+      2,
+      4,
+      1,
+      3,
+      0,
+      2,
+      4,
+      1,
+      3
+    ],
+    "sticky_counts": [
+      13,
+      13,
+      14,
+      13,
+      14,
+      13,
+      13,
+      13,
+      13,
+      14
+    ],
+    "minxs": [
+      -3,
+      -2,
+      -2,
+      -2,
+      -2,
+      -3,
+      -2,
+      -2,
+      -2,
+      -2
+    ],
+    "reach": [
+      {
+        "carrier": 0,
+        "previous": 9,
+        "min_delta": -1,
+        "max_delta": 1,
+        "deltas": [
+          -1,
+          0,
+          1,
+          1,
+          0
+        ],
+        "all_phases_at_least_as_far_back": false
+      },
+      {
+        "carrier": 1,
+        "previous": 0,
+        "min_delta": -1,
+        "max_delta": 1,
+        "deltas": [
+          1,
+          1,
+          0,
+          -1,
+          0
+        ],
+        "all_phases_at_least_as_far_back": false
+      },
+      {
+        "carrier": 2,
+        "previous": 1,
+        "min_delta": -1,
+        "max_delta": 1,
+        "deltas": [
+          0,
+          -1,
+          0,
+          1,
+          1
+        ],
+        "all_phases_at_least_as_far_back": false
+      },
+      {
+        "carrier": 3,
+        "previous": 2,
+        "min_delta": -1,
+        "max_delta": 1,
+        "deltas": [
+          0,
+          1,
+          1,
+          0,
+          -1
+        ],
+        "all_phases_at_least_as_far_back": false
+      },
+      {
+        "carrier": 4,
+        "previous": 3,
+        "min_delta": -2,
+        "max_delta": 0,
+        "deltas": [
+          0,
+          -1,
+          -2,
+          -1,
+          0
+        ],
+        "all_phases_at_least_as_far_back": true
+      },
+      {
+        "carrier": 5,
+        "previous": 4,
+        "min_delta": -1,
+        "max_delta": 1,
+        "deltas": [
+          -1,
+          0,
+          1,
+          1,
+          0
+        ],
+        "all_phases_at_least_as_far_back": false
+      },
+      {
+        "carrier": 6,
+        "previous": 5,
+        "min_delta": -1,
+        "max_delta": 1,
+        "deltas": [
+          1,
+          1,
+          0,
+          -1,
+          0
+        ],
+        "all_phases_at_least_as_far_back": false
+      },
+      {
+        "carrier": 7,
+        "previous": 6,
+        "min_delta": -1,
+        "max_delta": 1,
+        "deltas": [
+          0,
+          -1,
+          0,
+          1,
+          1
+        ],
+        "all_phases_at_least_as_far_back": false
+      },
+      {
+        "carrier": 8,
+        "previous": 7,
+        "min_delta": -1,
+        "max_delta": 1,
+        "deltas": [
+          0,
+          1,
+          1,
+          0,
+          -1
+        ],
+        "all_phases_at_least_as_far_back": false
+      },
+      {
+        "carrier": 9,
+        "previous": 8,
+        "min_delta": -2,
+        "max_delta": 0,
+        "deltas": [
+          0,
+          -1,
+          -2,
+          -1,
+          0
+        ],
+        "all_phases_at_least_as_far_back": true
+      }
+    ]
+  },
+  {
+    "n": 3,
+    "copies": 4,
+    "seed": 0,
+    "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\sol_reference_20260928\\n3_copies4_s0.flyer",
+    "centers": [
+      [
+        13,
+        0
+      ],
+      [
+        12,
+        4
+      ],
+      [
+        10,
+        8
+      ],
+      [
+        8,
+        10
+      ],
+      [
+        4,
+        12
+      ],
+      [
+        0,
+        13
+      ],
+      [
+        -4,
+        12
+      ],
+      [
+        -8,
+        10
+      ],
+      [
+        -10,
+        8
+      ],
+      [
+        -12,
+        4
+      ],
+      [
+        -13,
+        0
+      ],
+      [
+        -12,
+        -4
+      ],
+      [
+        -10,
+        -8
+      ],
+      [
+        -8,
+        -10
+      ],
+      [
+        -4,
+        -12
+      ],
+      [
+        0,
+        -13
+      ],
+      [
+        4,
+        -12
+      ],
+      [
+        8,
+        -10
+      ],
+      [
+        10,
+        -8
+      ],
+      [
+        12,
+        -4
+      ]
+    ],
+    "phases": [
+      0,
+      2,
+      4,
+      1,
+      3,
+      0,
+      2,
+      4,
+      1,
+      3,
+      0,
+      2,
+      4,
+      1,
+      3,
+      0,
+      2,
+      4,
+      1,
+      3
+    ],
+    "sticky_counts": [
+      13,
+      14,
+      16,
+      14,
+      14,
+      13,
+      14,
+      16,
+      14,
+      14,
+      13,
+      14,
+      13,
+      14,
+      15,
+      13,
+      14,
+      13,
+      14,
+      14
+    ],
+    "minxs": [
+      -3,
+      -2,
+      -3,
+      -2,
+      -2,
+      -3,
+      -2,
+      -2,
+      -2,
+      -2,
+      -3,
+      -2,
+      -2,
+      -2,
+      -2,
+      -3,
+      -2,
+      -2,
+      -2,
+      -2
+    ],
+    "reach": [
+      {
+        "carrier": 0,
+        "previous": 19,
+        "min_delta": -1,
+        "max_delta": 1,
+        "deltas": [
+          -1,
+          0,
+          1,
+          1,
+          0
+        ],
+        "all_phases_at_least_as_far_back": false
+      },
+      {
+        "carrier": 1,
+        "previous": 0,
+        "min_delta": -1,
+        "max_delta": 1,
+        "deltas": [
+          1,
+          1,
+          0,
+          -1,
+          0
+        ],
+        "all_phases_at_least_as_far_back": false
+      },
+      {
+        "carrier": 2,
+        "previous": 1,
+        "min_delta": -2,
+        "max_delta": 0,
+        "deltas": [
+          -1,
+          -2,
+          -1,
+          0,
+          0
+        ],
+        "all_phases_at_least_as_far_back": true
+      },
+      {
+        "carrier": 3,
+        "previous": 2,
+        "min_delta": 0,
+        "max_delta": 2,
+        "deltas": [
+          1,
+          2,
+          2,
+          1,
+          0
+        ],
+        "all_phases_at_least_as_far_back": false
+      },
+      {
+        "carrier": 4,
+        "previous": 3,
+        "min_delta": -2,
+        "max_delta": 0,
+        "deltas": [
+          0,
+          -1,
+          -2,
+          -1,
+          0
+        ],
+        "all_phases_at_least_as_far_back": true
+      },
+      {
+        "carrier": 5,
+        "previous": 4,
+        "min_delta": -1,
+        "max_delta": 1,
+        "deltas": [
+          -1,
+          0,
+          1,
+          1,
+          0
+        ],
+        "all_phases_at_least_as_far_back": false
+      },
+      {
+        "carrier": 6,
+        "previous": 5,
+        "min_delta": -1,
+        "max_delta": 1,
+        "deltas": [
+          1,
+          1,
+          0,
+          -1,
+          0
+        ],
+        "all_phases_at_least_as_far_back": false
+      },
+      {
+        "carrier": 7,
+        "previous": 6,
+        "min_delta": -1,
+        "max_delta": 1,
+        "deltas": [
+          0,
+          -1,
+          0,
+          1,
+          1
+        ],
+        "all_phases_at_least_as_far_back": false
+      },
+      {
+        "carrier": 8,
+        "previous": 7,
+        "min_delta": -1,
+        "max_delta": 1,
+        "deltas": [
+          0,
+          1,
+          1,
+          0,
+          -1
+        ],
+        "all_phases_at_least_as_far_back": false
+      },
+      {
+        "carrier": 9,
+        "previous": 8,
+        "min_delta": -2,
+        "max_delta": 0,
+        "deltas": [
+          0,
+          -1,
+          -2,
+          -1,
+          0
+        ],
+        "all_phases_at_least_as_far_back": true
+      },
+      {
+        "carrier": 10,
+        "previous": 9,
+        "min_delta": -1,
+        "max_delta": 1,
+        "deltas": [
+          -1,
+          0,
+          1,
+          1,
+          0
+        ],
+        "all_phases_at_least_as_far_back": false
+      },
+      {
+        "carrier": 11,
+        "previous": 10,
+        "min_delta": -1,
+        "max_delta": 1,
+        "deltas": [
+          1,
+          1,
+          0,
+          -1,
+          0
+        ],
+        "all_phases_at_least_as_far_back": false
+      },
+      {
+        "carrier": 12,
+        "previous": 11,
+        "min_delta": -1,
+        "max_delta": 1,
+        "deltas": [
+          0,
+          -1,
+          0,
+          1,
+          1
+        ],
+        "all_phases_at_least_as_far_back": false
+      },
+      {
+        "carrier": 13,
+        "previous": 12,
+        "min_delta": -1,
+        "max_delta": 1,
+        "deltas": [
+          0,
+          1,
+          1,
+          0,
+          -1
+        ],
+        "all_phases_at_least_as_far_back": false
+      },
+      {
+        "carrier": 14,
+        "previous": 13,
+        "min_delta": -2,
+        "max_delta": 0,
+        "deltas": [
+          0,
+          -1,
+          -2,
+          -1,
+          0
+        ],
+        "all_phases_at_least_as_far_back": true
+      },
+      {
+        "carrier": 15,
+        "previous": 14,
+        "min_delta": -1,
+        "max_delta": 1,
+        "deltas": [
+          -1,
+          0,
+          1,
+          1,
+          0
+        ],
+        "all_phases_at_least_as_far_back": false
+      },
+      {
+        "carrier": 16,
+        "previous": 15,
+        "min_delta": -1,
+        "max_delta": 1,
+        "deltas": [
+          1,
+          1,
+          0,
+          -1,
+          0
+        ],
+        "all_phases_at_least_as_far_back": false
+      },
+      {
+        "carrier": 17,
+        "previous": 16,
+        "min_delta": -1,
+        "max_delta": 1,
+        "deltas": [
+          0,
+          -1,
+          0,
+          1,
+          1
+        ],
+        "all_phases_at_least_as_far_back": false
+      },
+      {
+        "carrier": 18,
+        "previous": 17,
+        "min_delta": -1,
+        "max_delta": 1,
+        "deltas": [
+          0,
+          1,
+          1,
+          0,
+          -1
+        ],
+        "all_phases_at_least_as_far_back": false
+      },
+      {
+        "carrier": 19,
+        "previous": 18,
+        "min_delta": -2,
+        "max_delta": 0,
+        "deltas": [
+          0,
+          -1,
+          -2,
+          -1,
+          0
+        ],
+        "all_phases_at_least_as_far_back": true
+      }
+    ]
+  },
+  {
+    "n": 4,
+    "copies": 1,
+    "seed": 0,
+    "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\sol_reference_20260928\\n4_copies1_s0.flyer",
+    "centers": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        3,
+        1
+      ]
+    ],
+    "phases": [
+      0,
+      2,
+      4
+    ],
+    "sticky_counts": [
+      16,
+      16,
+      17
+    ],
+    "minxs": [
+      -3,
+      -2,
+      -2
+    ],
+    "reach": [
+      {
+        "carrier": 0,
+        "previous": 2,
+        "min_delta": -1,
+        "max_delta": 1,
+        "deltas": [
+          -1,
+          0,
+          1,
+          1,
+          1,
+          0
+        ],
+        "all_phases_at_least_as_far_back": false
+      },
+      {
+        "carrier": 1,
+        "previous": 0,
+        "min_delta": -1,
+        "max_delta": 1,
+        "deltas": [
+          1,
+          1,
+          1,
+          0,
+          -1,
+          0
+        ],
+        "all_phases_at_least_as_far_back": false
+      },
+      {
+        "carrier": 2,
+        "previous": 1,
+        "min_delta": -2,
+        "max_delta": 0,
+        "deltas": [
+          0,
+          -1,
+          -2,
+          -1,
+          0,
+          0
+        ],
+        "all_phases_at_least_as_far_back": true
+      }
+    ]
+  },
+  {
+    "n": 4,
+    "copies": 2,
+    "seed": 0,
+    "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\sol_reference_20260928\\n4_copies2_s0.flyer",
+    "centers": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        2,
+        6
+      ],
+      [
+        6,
+        6
+      ],
+      [
+        6,
+        2
+      ],
+      [
+        4,
+        0
+      ]
+    ],
+    "phases": [
+      0,
+      2,
+      4,
+      0,
+      2,
+      4
+    ],
+    "sticky_counts": [
+      16,
+      18,
+      17,
+      16,
+      18,
+      17
+    ],
+    "minxs": [
+      -3,
+      -2,
+      -2,
+      -3,
+      -3,
+      -2
+    ],
+    "reach": [
+      {
+        "carrier": 0,
+        "previous": 5,
+        "min_delta": -1,
+        "max_delta": 1,
+        "deltas": [
+          -1,
+          0,
+          1,
+          1,
+          1,
+          0
+        ],
+        "all_phases_at_least_as_far_back": false
+      },
+      {
+        "carrier": 1,
+        "previous": 0,
+        "min_delta": -1,
+        "max_delta": 1,
+        "deltas": [
+          1,
+          1,
+          1,
+          0,
+          -1,
+          0
+        ],
+        "all_phases_at_least_as_far_back": false
+      },
+      {
+        "carrier": 2,
+        "previous": 1,
+        "min_delta": -2,
+        "max_delta": 0,
+        "deltas": [
+          0,
+          -1,
+          -2,
+          -1,
+          0,
+          0
+        ],
+        "all_phases_at_least_as_far_back": true
+      },
+      {
+        "carrier": 3,
+        "previous": 2,
+        "min_delta": -1,
+        "max_delta": 1,
+        "deltas": [
+          -1,
+          0,
+          1,
+          1,
+          1,
+          0
+        ],
+        "all_phases_at_least_as_far_back": false
+      },
+      {
+        "carrier": 4,
+        "previous": 3,
+        "min_delta": -2,
+        "max_delta": 0,
+        "deltas": [
+          0,
+          0,
+          0,
+          -1,
+          -2,
+          -1
+        ],
+        "all_phases_at_least_as_far_back": true
+      },
+      {
+        "carrier": 5,
+        "previous": 4,
+        "min_delta": -1,
+        "max_delta": 1,
+        "deltas": [
+          1,
+          0,
+          -1,
+          0,
+          1,
+          1
+        ],
+        "all_phases_at_least_as_far_back": false
+      }
+    ]
+  },
+  {
+    "n": 4,
+    "copies": 4,
+    "seed": 0,
+    "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\sol_reference_20260928\\n4_copies4_s0.flyer",
+    "centers": [
+      [
+        8,
+        0
+      ],
+      [
+        7,
+        4
+      ],
+      [
+        4,
+        7
+      ],
+      [
+        0,
+        8
+      ],
+      [
+        -4,
+        7
+      ],
+      [
+        -7,
+        4
+      ],
+      [
+        -8,
+        0
+      ],
+      [
+        -7,
+        -4
+      ],
+      [
+        -4,
+        -7
+      ],
+      [
+        0,
+        -8
+      ],
+      [
+        4,
+        -7
+      ],
+      [
+        7,
+        -4
+      ]
+    ],
+    "phases": [
+      0,
+      2,
+      4,
+      0,
+      2,
+      4,
+      0,
+      2,
+      4,
+      0,
+      2,
+      4
+    ],
+    "sticky_counts": [
+      15,
+      16,
+      16,
+      15,
+      16,
+      16,
+      15,
+      16,
+      16,
+      15,
+      16,
+      16
+    ],
+    "minxs": [
+      -3,
+      -2,
+      -2,
+      -3,
+      -2,
+      -2,
+      -3,
+      -2,
+      -2,
+      -3,
+      -2,
+      -2
+    ],
+    "reach": [
+      {
+        "carrier": 0,
+        "previous": 11,
+        "min_delta": -1,
+        "max_delta": 1,
+        "deltas": [
+          -1,
+          0,
+          1,
+          1,
+          1,
+          0
+        ],
+        "all_phases_at_least_as_far_back": false
+      },
+      {
+        "carrier": 1,
+        "previous": 0,
+        "min_delta": -1,
+        "max_delta": 1,
+        "deltas": [
+          1,
+          1,
+          1,
+          0,
+          -1,
+          0
+        ],
+        "all_phases_at_least_as_far_back": false
+      },
+      {
+        "carrier": 2,
+        "previous": 1,
+        "min_delta": -2,
+        "max_delta": 0,
+        "deltas": [
+          0,
+          -1,
+          -2,
+          -1,
+          0,
+          0
+        ],
+        "all_phases_at_least_as_far_back": true
+      },
+      {
+        "carrier": 3,
+        "previous": 2,
+        "min_delta": -1,
+        "max_delta": 1,
+        "deltas": [
+          -1,
+          0,
+          1,
+          1,
+          1,
+          0
+        ],
+        "all_phases_at_least_as_far_back": false
+      },
+      {
+        "carrier": 4,
+        "previous": 3,
+        "min_delta": -1,
+        "max_delta": 1,
+        "deltas": [
+          1,
+          1,
+          1,
+          0,
+          -1,
+          0
+        ],
+        "all_phases_at_least_as_far_back": false
+      },
+      {
+        "carrier": 5,
+        "previous": 4,
+        "min_delta": -2,
+        "max_delta": 0,
+        "deltas": [
+          0,
+          -1,
+          -2,
+          -1,
+          0,
+          0
+        ],
+        "all_phases_at_least_as_far_back": true
+      },
+      {
+        "carrier": 6,
+        "previous": 5,
+        "min_delta": -1,
+        "max_delta": 1,
+        "deltas": [
+          -1,
+          0,
+          1,
+          1,
+          1,
+          0
+        ],
+        "all_phases_at_least_as_far_back": false
+      },
+      {
+        "carrier": 7,
+        "previous": 6,
+        "min_delta": -1,
+        "max_delta": 1,
+        "deltas": [
+          1,
+          1,
+          1,
+          0,
+          -1,
+          0
+        ],
+        "all_phases_at_least_as_far_back": false
+      },
+      {
+        "carrier": 8,
+        "previous": 7,
+        "min_delta": -2,
+        "max_delta": 0,
+        "deltas": [
+          0,
+          -1,
+          -2,
+          -1,
+          0,
+          0
+        ],
+        "all_phases_at_least_as_far_back": true
+      },
+      {
+        "carrier": 9,
+        "previous": 8,
+        "min_delta": -1,
+        "max_delta": 1,
+        "deltas": [
+          -1,
+          0,
+          1,
+          1,
+          1,
+          0
+        ],
+        "all_phases_at_least_as_far_back": false
+      },
+      {
+        "carrier": 10,
+        "previous": 9,
+        "min_delta": -1,
+        "max_delta": 1,
+        "deltas": [
+          1,
+          1,
+          1,
+          0,
+          -1,
+          0
+        ],
+        "all_phases_at_least_as_far_back": false
+      },
+      {
+        "carrier": 11,
+        "previous": 10,
+        "min_delta": -2,
+        "max_delta": 0,
+        "deltas": [
+          0,
+          -1,
+          -2,
+          -1,
+          0,
+          0
+        ],
+        "all_phases_at_least_as_far_back": true
+      }
+    ]
+  }
+]

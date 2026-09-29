@@ -1,0 +1,8 @@
+slot=1 differences=0 {}
+slot=2 differences=0 {}
+slot=3 differences=0 {}
+slot=4 differences=0 {}
+slot=5 differences=0 {}
+slot=6 differences=0 {}
+slot=7 differences=0 {}
+slot=8 differences=2 {(4, 11, 2): (10, 9), (3, 11, 2): (2057, None)}

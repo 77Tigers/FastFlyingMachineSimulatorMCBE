@@ -1,0 +1,1 @@
+verify pass=true file=flyers/WIP/experiments/abstraction_medium_20260929/forward/candidate_pl10.flyer ticks=10000 distance=2500 limit=10 max_successful_action=10 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=1250 initial_matches=1250 consecutive_matches=1250 displacement_mismatches=0
