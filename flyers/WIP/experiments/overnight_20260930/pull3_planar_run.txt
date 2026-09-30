@@ -1,0 +1,42 @@
+paired_grid 0 {'paired_grid:route': 1}
+paired_grid 1 {'paired_grid:route': 2}
+paired_grid 2 {'paired_grid:route': 3}
+paired_grid 3 {'paired_grid:route': 3, 'paired_grid:routed': 1}
+paired_grid 4 {'paired_grid:route': 3, 'paired_grid:routed': 2}
+paired_grid 5 {'paired_grid:route': 3, 'paired_grid:routed': 3}
+paired_grid 6 {'paired_grid:route': 4, 'paired_grid:routed': 3}
+paired_grid 7 {'paired_grid:route': 4, 'paired_grid:routed': 4}
+paired_grid 8 {'paired_grid:route': 5, 'paired_grid:routed': 4}
+paired_grid 9 {'paired_grid:route': 6, 'paired_grid:routed': 4}
+paired_grid 10 {'paired_grid:route': 7, 'paired_grid:routed': 4}
+paired_grid 11 {'paired_grid:route': 8, 'paired_grid:routed': 4}
+cyclic_line 0 {'paired_grid:route': 8, 'paired_grid:routed': 4, 'cyclic_line:route': 1}
+cyclic_line 1 {'paired_grid:route': 8, 'paired_grid:routed': 4, 'cyclic_line:route': 2}
+cyclic_line 2 {'paired_grid:route': 8, 'paired_grid:routed': 4, 'cyclic_line:route': 3}
+cyclic_line 3 {'paired_grid:route': 8, 'paired_grid:routed': 4, 'cyclic_line:route': 4}
+cyclic_line 4 {'paired_grid:route': 8, 'paired_grid:routed': 4, 'cyclic_line:route': 5}
+cyclic_line 5 {'paired_grid:route': 8, 'paired_grid:routed': 4, 'cyclic_line:route': 6}
+cyclic_line 6 {'paired_grid:route': 8, 'paired_grid:routed': 4, 'cyclic_line:route': 7}
+cyclic_line 7 {'paired_grid:route': 8, 'paired_grid:routed': 4, 'cyclic_line:route': 8}
+cyclic_line 8 {'paired_grid:route': 8, 'paired_grid:routed': 4, 'cyclic_line:route': 9}
+cyclic_line 9 {'paired_grid:route': 8, 'paired_grid:routed': 4, 'cyclic_line:route': 10}
+cyclic_line 10 {'paired_grid:route': 8, 'paired_grid:routed': 4, 'cyclic_line:route': 11}
+cyclic_line 11 {'paired_grid:route': 8, 'paired_grid:routed': 4, 'cyclic_line:route': 12}
+paired_line 0 {'paired_grid:route': 8, 'paired_grid:routed': 4, 'cyclic_line:route': 12, 'paired_line:route': 1}
+paired_line 1 {'paired_grid:route': 8, 'paired_grid:routed': 4, 'cyclic_line:route': 12, 'paired_line:route': 2}
+paired_line 2 {'paired_grid:route': 8, 'paired_grid:routed': 4, 'cyclic_line:route': 12, 'paired_line:route': 3}
+paired_line 3 {'paired_grid:route': 8, 'paired_grid:routed': 4, 'cyclic_line:route': 12, 'paired_line:route': 4}
+paired_line 4 {'paired_grid:route': 8, 'paired_grid:routed': 4, 'cyclic_line:route': 12, 'paired_line:route': 5}
+paired_line 5 {'paired_grid:route': 8, 'paired_grid:routed': 4, 'cyclic_line:route': 12, 'paired_line:route': 6}
+paired_line 6 {'paired_grid:route': 8, 'paired_grid:routed': 4, 'cyclic_line:route': 12, 'paired_line:route': 7}
+paired_line 7 {'paired_grid:route': 8, 'paired_grid:routed': 4, 'cyclic_line:route': 12, 'paired_line:route': 8}
+paired_line 8 {'paired_grid:route': 8, 'paired_grid:routed': 4, 'cyclic_line:route': 12, 'paired_line:route': 9}
+paired_line 9 {'paired_grid:route': 8, 'paired_grid:routed': 4, 'cyclic_line:route': 12, 'paired_line:route': 10}
+paired_line 10 {'paired_grid:route': 8, 'paired_grid:routed': 4, 'cyclic_line:route': 12, 'paired_line:route': 11}
+paired_line 11 {'paired_grid:route': 8, 'paired_grid:routed': 4, 'cyclic_line:route': 12, 'paired_line:route': 12}
+screen candidates=4 clean=4 ticks=240 out=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\pull3_planar_screen.csv
+  distance=72 load=105 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\pull3_planar_candidates\paired_grid_s003.flyer
+  distance=72 load=104 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\pull3_planar_candidates\paired_grid_s004.flyer
+  distance=72 load=106 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\pull3_planar_candidates\paired_grid_s005.flyer
+  distance=72 load=103 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\pull3_planar_candidates\paired_grid_s007.flyer
+

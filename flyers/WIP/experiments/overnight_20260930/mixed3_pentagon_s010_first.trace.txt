@@ -1,0 +1,654 @@
+TICK 6 x=14 ext=3 fail=0 ret=3
+INITIAL Coord { x: 13, y: 1, z: 20 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 13, y: 2, z: 20 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 13, y: 3, z: 20 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 13, y: 4, z: 20 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 13, y: 5, z: 20 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 13, y: 6, z: 19 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 13, y: 6, z: 20 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 14, y: 1, z: 19 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 14, y: 1, z: 20 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 14, y: 4, z: 18 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 14, y: 5, z: 17 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 14, y: 5, z: 18 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 14, y: 6, z: 17 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 14, y: 6, z: 19 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 14, y: 7, z: 17 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 15, y: 1, z: 18 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 15, y: 1, z: 19 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 15, y: 2, z: 18 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 15, y: 3, z: 16 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 15, y: 3, z: 17 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 15, y: 3, z: 18 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 15, y: 3, z: 19 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 15, y: 3, z: 20 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 15, y: 3, z: 21 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 15, y: 4, z: 14 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 15, y: 4, z: 15 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 15, y: 4, z: 16 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 15, y: 4, z: 18 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 15, y: 4, z: 20 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 15, y: 6, z: 15 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 15, y: 6, z: 19 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 15, y: 7, z: 15 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 15, y: 7, z: 17 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 15, y: 7, z: 19 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 15, y: 7, z: 20 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 15, y: 8, z: 15 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 15, y: 8, z: 17 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 15, y: 8, z: 18 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 15, y: 9, z: 18 } Piston cell=2057 dir=0 sticky=false state=2 moving=false
+INITIAL Coord { x: 16, y: 1, z: 18 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 16, y: 1, z: 19 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 16, y: 3, z: 22 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 16, y: 4, z: 14 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 16, y: 4, z: 16 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 16, y: 4, z: 18 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 16, y: 4, z: 19 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 16, y: 4, z: 21 } Observer cell=167 dir=5 sticky=false state=0 moving=false
+INITIAL Coord { x: 16, y: 5, z: 16 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 16, y: 5, z: 19 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 16, y: 5, z: 20 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 16, y: 5, z: 21 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 16, y: 5, z: 22 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 16, y: 6, z: 15 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 16, y: 6, z: 18 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 16, y: 6, z: 19 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 16, y: 6, z: 20 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 16, y: 6, z: 21 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 16, y: 6, z: 22 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 16, y: 6, z: 23 } Observer cell=167 dir=5 sticky=false state=0 moving=false
+INITIAL Coord { x: 16, y: 7, z: 15 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 16, y: 7, z: 18 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 16, y: 7, z: 19 } Observer cell=423 dir=5 sticky=false state=0 moving=false
+INITIAL Coord { x: 16, y: 7, z: 20 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 16, y: 7, z: 22 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 16, y: 7, z: 23 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 16, y: 8, z: 15 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 16, y: 8, z: 17 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 16, y: 9, z: 15 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 16, y: 9, z: 16 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 16, y: 9, z: 17 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 16, y: 9, z: 18 } PistonArm cell=10 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 16, y: 9, z: 19 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 16, y: 10, z: 17 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 16, y: 10, z: 18 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 17, y: 0, z: 16 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 17, y: 0, z: 17 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 17, y: 0, z: 18 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 17, y: 0, z: 19 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 17, y: 1, z: 15 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 17, y: 1, z: 16 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 17, y: 1, z: 18 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 17, y: 1, z: 19 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 17, y: 2, z: 15 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 17, y: 2, z: 16 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 17, y: 2, z: 20 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 17, y: 2, z: 21 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 17, y: 3, z: 15 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 17, y: 3, z: 21 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 17, y: 3, z: 22 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 17, y: 4, z: 14 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 17, y: 4, z: 15 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 17, y: 4, z: 16 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 17, y: 4, z: 19 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 17, y: 4, z: 20 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 17, y: 4, z: 21 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 17, y: 5, z: 14 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 17, y: 5, z: 15 } Piston cell=2057 dir=0 sticky=false state=2 moving=false
+INITIAL Coord { x: 17, y: 5, z: 16 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 17, y: 5, z: 18 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 17, y: 5, z: 19 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 17, y: 5, z: 21 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 17, y: 5, z: 22 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 17, y: 6, z: 22 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 17, y: 7, z: 18 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 17, y: 7, z: 19 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 17, y: 7, z: 20 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 17, y: 7, z: 21 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 17, y: 7, z: 22 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 17, y: 8, z: 17 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 17, y: 8, z: 19 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 17, y: 9, z: 15 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 17, y: 9, z: 18 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 17, y: 9, z: 19 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 17, y: 10, z: 18 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 18, y: 1, z: 18 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 18, y: 1, z: 19 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 18, y: 5, z: 14 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 18, y: 5, z: 15 } PistonArm cell=10 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 18, y: 5, z: 16 } Observer cell=423 dir=5 sticky=false state=0 moving=false
+INITIAL Coord { x: 18, y: 5, z: 18 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 18, y: 7, z: 16 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 18, y: 7, z: 22 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 18, y: 8, z: 17 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 18, y: 8, z: 20 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 18, y: 9, z: 15 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 18, y: 9, z: 20 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 18, y: 10, z: 18 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 18, y: 10, z: 19 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 18, y: 10, z: 20 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 19, y: 1, z: 18 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 19, y: 1, z: 19 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 19, y: 2, z: 17 } Observer cell=423 dir=5 sticky=false state=0 moving=false
+INITIAL Coord { x: 19, y: 2, z: 19 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 19, y: 2, z: 20 } Piston cell=297 dir=1 sticky=true state=0 moving=false
+INITIAL Coord { x: 19, y: 3, z: 16 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 19, y: 3, z: 17 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 19, y: 3, z: 18 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 19, y: 3, z: 19 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 19, y: 3, z: 20 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 19, y: 4, z: 17 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 19, y: 4, z: 18 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 19, y: 5, z: 14 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 19, y: 5, z: 15 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 19, y: 5, z: 18 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 19, y: 6, z: 14 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 19, y: 6, z: 16 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 19, y: 6, z: 18 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 19, y: 6, z: 19 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 19, y: 7, z: 14 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 19, y: 7, z: 15 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 19, y: 7, z: 16 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 19, y: 7, z: 22 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 19, y: 8, z: 17 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 19, y: 8, z: 20 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 19, y: 8, z: 21 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 19, y: 8, z: 22 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 19, y: 9, z: 15 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 20, y: 1, z: 18 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 20, y: 2, z: 16 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 20, y: 2, z: 17 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 20, y: 2, z: 21 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 20, y: 3, z: 16 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 20, y: 3, z: 17 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 20, y: 3, z: 20 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 20, y: 3, z: 21 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 20, y: 4, z: 16 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 20, y: 6, z: 16 } PistonArm cell=10 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 20, y: 6, z: 19 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 20, y: 6, z: 21 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 20, y: 7, z: 18 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 20, y: 7, z: 19 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 20, y: 7, z: 21 } Piston cell=297 dir=1 sticky=true state=0 moving=false
+INITIAL Coord { x: 20, y: 7, z: 22 } Observer cell=167 dir=5 sticky=false state=0 moving=false
+INITIAL Coord { x: 20, y: 8, z: 17 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 20, y: 8, z: 18 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 20, y: 8, z: 19 } Piston cell=297 dir=1 sticky=true state=0 moving=false
+INITIAL Coord { x: 20, y: 8, z: 20 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 20, y: 9, z: 15 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 21, y: 1, z: 18 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 21, y: 2, z: 21 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 21, y: 3, z: 17 } Piston cell=297 dir=1 sticky=true state=0 moving=false
+INITIAL Coord { x: 21, y: 4, z: 17 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 21, y: 5, z: 21 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 21, y: 6, z: 16 } Piston cell=2345 dir=1 sticky=true state=2 moving=false
+INITIAL Coord { x: 21, y: 6, z: 21 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 21, y: 7, z: 16 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 21, y: 8, z: 16 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 21, y: 8, z: 17 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 21, y: 9, z: 15 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 22, y: 1, z: 18 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 22, y: 2, z: 18 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 22, y: 3, z: 18 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 22, y: 3, z: 19 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 22, y: 4, z: 16 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 22, y: 4, z: 17 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 22, y: 4, z: 19 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 22, y: 5, z: 15 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 22, y: 5, z: 16 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 22, y: 5, z: 18 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 22, y: 5, z: 19 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 22, y: 5, z: 20 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 22, y: 5, z: 21 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 22, y: 6, z: 15 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 22, y: 6, z: 17 } Observer cell=423 dir=5 sticky=false state=0 moving=false
+INITIAL Coord { x: 22, y: 6, z: 18 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 22, y: 7, z: 15 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 22, y: 8, z: 15 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 22, y: 9, z: 15 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 23, y: 3, z: 18 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+POWER soft Coord { x: 16, y: 5, z: 22 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 16, y: 6, z: 22 }
+POWER soft Coord { x: 16, y: 5, z: 22 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 16, y: 5, z: 21 }
+POWER soft Coord { x: 16, y: 7, z: 19 } Observer cell=423 dir=5 sticky=false state=0 moving=false -> Coord { x: 16, y: 7, z: 18 }
+POWER soft Coord { x: 20, y: 8, z: 20 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 20, y: 8, z: 19 }
+ACTION Tick 6 · extend @ (16, 7, 18) piston=Some(Coord { x: 16, y: 7, z: 18 }) sources=42 failure=None
+SOURCE Coord { x: 13, y: 1, z: 20 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 13, y: 2, z: 20 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 13, y: 3, z: 20 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 13, y: 4, z: 20 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 13, y: 5, z: 20 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 13, y: 6, z: 19 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 13, y: 6, z: 20 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 14, y: 1, z: 19 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 14, y: 1, z: 20 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 14, y: 6, z: 19 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 15, y: 1, z: 19 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 15, y: 6, z: 19 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 15, y: 7, z: 19 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 15, y: 7, z: 20 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 16, y: 1, z: 19 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 16, y: 6, z: 18 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 16, y: 6, z: 19 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 16, y: 7, z: 19 } Observer cell=167 dir=5 sticky=false state=0 moving=false
+SOURCE Coord { x: 16, y: 7, z: 20 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 16, y: 9, z: 19 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 17, y: 0, z: 16 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 17, y: 0, z: 17 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 17, y: 0, z: 18 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 17, y: 0, z: 19 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 17, y: 1, z: 15 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 17, y: 1, z: 16 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 17, y: 1, z: 19 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 17, y: 2, z: 15 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 17, y: 2, z: 16 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 17, y: 3, z: 15 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 17, y: 4, z: 15 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 17, y: 4, z: 16 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 17, y: 7, z: 18 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 17, y: 7, z: 19 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 17, y: 7, z: 20 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 17, y: 8, z: 19 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 17, y: 9, z: 18 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 17, y: 9, z: 19 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 18, y: 1, z: 19 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 19, y: 1, z: 19 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 19, y: 2, z: 19 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 19, y: 2, z: 20 } Piston cell=297 dir=1 sticky=true state=0 moving=false
+LINK stick Coord { x: 17, y: 7, z: 18 } -> Coord { x: 17, y: 7, z: 19 }
+LINK stick Coord { x: 17, y: 7, z: 19 } -> Coord { x: 16, y: 7, z: 19 }
+LINK stick Coord { x: 17, y: 7, z: 19 } -> Coord { x: 17, y: 8, z: 19 }
+LINK stick Coord { x: 17, y: 7, z: 19 } -> Coord { x: 17, y: 7, z: 20 }
+LINK stick Coord { x: 17, y: 7, z: 19 } -> Coord { x: 17, y: 7, z: 18 }
+LINK stick Coord { x: 17, y: 8, z: 19 } -> Coord { x: 17, y: 9, z: 19 }
+LINK stick Coord { x: 17, y: 8, z: 19 } -> Coord { x: 17, y: 7, z: 19 }
+LINK stick Coord { x: 17, y: 7, z: 20 } -> Coord { x: 16, y: 7, z: 20 }
+LINK stick Coord { x: 17, y: 7, z: 20 } -> Coord { x: 17, y: 7, z: 19 }
+LINK stick Coord { x: 17, y: 9, z: 19 } -> Coord { x: 16, y: 9, z: 19 }
+LINK stick Coord { x: 17, y: 9, z: 19 } -> Coord { x: 17, y: 8, z: 19 }
+LINK stick Coord { x: 17, y: 9, z: 19 } -> Coord { x: 17, y: 9, z: 18 }
+LINK stick Coord { x: 16, y: 7, z: 20 } -> Coord { x: 17, y: 7, z: 20 }
+LINK stick Coord { x: 16, y: 7, z: 20 } -> Coord { x: 15, y: 7, z: 20 }
+LINK stick Coord { x: 16, y: 7, z: 20 } -> Coord { x: 16, y: 7, z: 19 }
+LINK stick Coord { x: 17, y: 9, z: 18 } -> Coord { x: 17, y: 9, z: 19 }
+LINK stick Coord { x: 15, y: 7, z: 20 } -> Coord { x: 16, y: 7, z: 20 }
+LINK stick Coord { x: 15, y: 7, z: 20 } -> Coord { x: 15, y: 7, z: 19 }
+LINK stick Coord { x: 15, y: 7, z: 19 } -> Coord { x: 16, y: 7, z: 19 }
+LINK stick Coord { x: 15, y: 7, z: 19 } -> Coord { x: 15, y: 6, z: 19 }
+LINK stick Coord { x: 15, y: 7, z: 19 } -> Coord { x: 15, y: 7, z: 20 }
+LINK stick Coord { x: 15, y: 6, z: 19 } -> Coord { x: 16, y: 6, z: 19 }
+LINK stick Coord { x: 15, y: 6, z: 19 } -> Coord { x: 14, y: 6, z: 19 }
+LINK stick Coord { x: 15, y: 6, z: 19 } -> Coord { x: 15, y: 7, z: 19 }
+LINK obstruction Coord { x: 15, y: 6, z: 19 } -> Coord { x: 16, y: 6, z: 19 }
+LINK stick Coord { x: 16, y: 6, z: 19 } -> Coord { x: 15, y: 6, z: 19 }
+LINK stick Coord { x: 16, y: 6, z: 19 } -> Coord { x: 16, y: 7, z: 19 }
+LINK stick Coord { x: 16, y: 6, z: 19 } -> Coord { x: 16, y: 6, z: 18 }
+LINK stick Coord { x: 14, y: 6, z: 19 } -> Coord { x: 15, y: 6, z: 19 }
+LINK stick Coord { x: 14, y: 6, z: 19 } -> Coord { x: 13, y: 6, z: 19 }
+LINK stick Coord { x: 16, y: 6, z: 18 } -> Coord { x: 16, y: 6, z: 19 }
+LINK stick Coord { x: 13, y: 6, z: 19 } -> Coord { x: 14, y: 6, z: 19 }
+LINK stick Coord { x: 13, y: 6, z: 19 } -> Coord { x: 13, y: 6, z: 20 }
+LINK stick Coord { x: 13, y: 6, z: 20 } -> Coord { x: 13, y: 5, z: 20 }
+LINK stick Coord { x: 13, y: 6, z: 20 } -> Coord { x: 13, y: 6, z: 19 }
+LINK stick Coord { x: 13, y: 5, z: 20 } -> Coord { x: 13, y: 6, z: 20 }
+LINK stick Coord { x: 13, y: 5, z: 20 } -> Coord { x: 13, y: 4, z: 20 }
+LINK stick Coord { x: 13, y: 4, z: 20 } -> Coord { x: 13, y: 5, z: 20 }
+LINK stick Coord { x: 13, y: 4, z: 20 } -> Coord { x: 13, y: 3, z: 20 }
+LINK stick Coord { x: 13, y: 3, z: 20 } -> Coord { x: 13, y: 4, z: 20 }
+LINK stick Coord { x: 13, y: 3, z: 20 } -> Coord { x: 13, y: 2, z: 20 }
+LINK stick Coord { x: 13, y: 2, z: 20 } -> Coord { x: 13, y: 3, z: 20 }
+LINK stick Coord { x: 13, y: 2, z: 20 } -> Coord { x: 13, y: 1, z: 20 }
+LINK stick Coord { x: 13, y: 1, z: 20 } -> Coord { x: 14, y: 1, z: 20 }
+LINK stick Coord { x: 13, y: 1, z: 20 } -> Coord { x: 13, y: 2, z: 20 }
+LINK obstruction Coord { x: 13, y: 1, z: 20 } -> Coord { x: 14, y: 1, z: 20 }
+LINK stick Coord { x: 14, y: 1, z: 20 } -> Coord { x: 13, y: 1, z: 20 }
+LINK stick Coord { x: 14, y: 1, z: 20 } -> Coord { x: 14, y: 1, z: 19 }
+LINK stick Coord { x: 14, y: 1, z: 19 } -> Coord { x: 15, y: 1, z: 19 }
+LINK stick Coord { x: 14, y: 1, z: 19 } -> Coord { x: 14, y: 1, z: 20 }
+LINK obstruction Coord { x: 14, y: 1, z: 19 } -> Coord { x: 15, y: 1, z: 19 }
+LINK stick Coord { x: 15, y: 1, z: 19 } -> Coord { x: 16, y: 1, z: 19 }
+LINK stick Coord { x: 15, y: 1, z: 19 } -> Coord { x: 14, y: 1, z: 19 }
+LINK obstruction Coord { x: 15, y: 1, z: 19 } -> Coord { x: 16, y: 1, z: 19 }
+LINK stick Coord { x: 16, y: 1, z: 19 } -> Coord { x: 17, y: 1, z: 19 }
+LINK stick Coord { x: 16, y: 1, z: 19 } -> Coord { x: 15, y: 1, z: 19 }
+LINK obstruction Coord { x: 16, y: 1, z: 19 } -> Coord { x: 17, y: 1, z: 19 }
+LINK stick Coord { x: 17, y: 1, z: 19 } -> Coord { x: 18, y: 1, z: 19 }
+LINK stick Coord { x: 17, y: 1, z: 19 } -> Coord { x: 16, y: 1, z: 19 }
+LINK stick Coord { x: 17, y: 1, z: 19 } -> Coord { x: 17, y: 0, z: 19 }
+LINK obstruction Coord { x: 17, y: 1, z: 19 } -> Coord { x: 18, y: 1, z: 19 }
+LINK stick Coord { x: 18, y: 1, z: 19 } -> Coord { x: 19, y: 1, z: 19 }
+LINK stick Coord { x: 18, y: 1, z: 19 } -> Coord { x: 17, y: 1, z: 19 }
+LINK obstruction Coord { x: 18, y: 1, z: 19 } -> Coord { x: 19, y: 1, z: 19 }
+LINK stick Coord { x: 17, y: 0, z: 19 } -> Coord { x: 17, y: 1, z: 19 }
+LINK stick Coord { x: 17, y: 0, z: 19 } -> Coord { x: 17, y: 0, z: 18 }
+LINK stick Coord { x: 19, y: 1, z: 19 } -> Coord { x: 18, y: 1, z: 19 }
+LINK stick Coord { x: 19, y: 1, z: 19 } -> Coord { x: 19, y: 2, z: 19 }
+LINK stick Coord { x: 17, y: 0, z: 18 } -> Coord { x: 17, y: 0, z: 19 }
+LINK stick Coord { x: 17, y: 0, z: 18 } -> Coord { x: 17, y: 0, z: 17 }
+LINK stick Coord { x: 19, y: 2, z: 19 } -> Coord { x: 19, y: 1, z: 19 }
+LINK stick Coord { x: 19, y: 2, z: 19 } -> Coord { x: 19, y: 2, z: 20 }
+LINK stick Coord { x: 17, y: 0, z: 17 } -> Coord { x: 17, y: 0, z: 18 }
+LINK stick Coord { x: 17, y: 0, z: 17 } -> Coord { x: 17, y: 0, z: 16 }
+LINK stick Coord { x: 17, y: 0, z: 16 } -> Coord { x: 17, y: 1, z: 16 }
+LINK stick Coord { x: 17, y: 0, z: 16 } -> Coord { x: 17, y: 0, z: 17 }
+LINK stick Coord { x: 17, y: 1, z: 16 } -> Coord { x: 17, y: 2, z: 16 }
+LINK stick Coord { x: 17, y: 1, z: 16 } -> Coord { x: 17, y: 0, z: 16 }
+LINK stick Coord { x: 17, y: 1, z: 16 } -> Coord { x: 17, y: 1, z: 15 }
+LINK stick Coord { x: 17, y: 1, z: 15 } -> Coord { x: 17, y: 2, z: 15 }
+LINK stick Coord { x: 17, y: 1, z: 15 } -> Coord { x: 17, y: 1, z: 16 }
+LINK stick Coord { x: 17, y: 2, z: 15 } -> Coord { x: 17, y: 3, z: 15 }
+LINK stick Coord { x: 17, y: 2, z: 15 } -> Coord { x: 17, y: 1, z: 15 }
+LINK stick Coord { x: 17, y: 2, z: 15 } -> Coord { x: 17, y: 2, z: 16 }
+LINK stick Coord { x: 17, y: 3, z: 15 } -> Coord { x: 17, y: 4, z: 15 }
+LINK stick Coord { x: 17, y: 3, z: 15 } -> Coord { x: 17, y: 2, z: 15 }
+LINK stick Coord { x: 17, y: 4, z: 15 } -> Coord { x: 17, y: 3, z: 15 }
+LINK stick Coord { x: 17, y: 4, z: 15 } -> Coord { x: 17, y: 4, z: 16 }
+ACTION Tick 6 · retract @ (21, 6, 16) piston=Some(Coord { x: 21, y: 6, z: 16 }) sources=50 failure=None
+SOURCE Coord { x: 15, y: 1, z: 18 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 15, y: 2, z: 18 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 15, y: 3, z: 16 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 15, y: 3, z: 17 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 15, y: 3, z: 18 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 15, y: 3, z: 19 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 15, y: 3, z: 20 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 15, y: 3, z: 21 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 15, y: 4, z: 14 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 15, y: 4, z: 15 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 15, y: 4, z: 16 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 15, y: 4, z: 20 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 16, y: 1, z: 18 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 16, y: 4, z: 14 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 16, y: 4, z: 16 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 16, y: 5, z: 16 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 17, y: 1, z: 18 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 17, y: 4, z: 14 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 17, y: 5, z: 14 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 17, y: 5, z: 16 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 18, y: 1, z: 18 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 18, y: 5, z: 14 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 18, y: 5, z: 16 } Observer cell=167 dir=5 sticky=false state=0 moving=false
+SOURCE Coord { x: 18, y: 7, z: 16 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 19, y: 1, z: 18 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 19, y: 5, z: 14 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 19, y: 5, z: 15 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 19, y: 6, z: 14 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 19, y: 6, z: 16 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 19, y: 7, z: 14 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 19, y: 7, z: 15 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 19, y: 7, z: 16 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 20, y: 1, z: 18 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 20, y: 6, z: 21 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 20, y: 7, z: 21 } Piston cell=297 dir=1 sticky=true state=0 moving=false
+SOURCE Coord { x: 21, y: 1, z: 18 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 21, y: 5, z: 21 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 21, y: 6, z: 21 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 22, y: 1, z: 18 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 22, y: 2, z: 18 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 22, y: 3, z: 18 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 22, y: 3, z: 19 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 22, y: 4, z: 19 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 22, y: 5, z: 18 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 22, y: 5, z: 19 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 22, y: 5, z: 20 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 22, y: 5, z: 21 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 22, y: 6, z: 17 } Observer cell=167 dir=5 sticky=false state=0 moving=false
+SOURCE Coord { x: 22, y: 6, z: 18 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 23, y: 3, z: 18 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+LINK stick Coord { x: 19, y: 6, z: 16 } -> Coord { x: 19, y: 7, z: 16 }
+LINK stick Coord { x: 19, y: 7, z: 16 } -> Coord { x: 18, y: 7, z: 16 }
+LINK stick Coord { x: 19, y: 7, z: 16 } -> Coord { x: 19, y: 6, z: 16 }
+LINK stick Coord { x: 19, y: 7, z: 16 } -> Coord { x: 19, y: 7, z: 15 }
+LINK stick Coord { x: 19, y: 7, z: 15 } -> Coord { x: 19, y: 7, z: 16 }
+LINK stick Coord { x: 19, y: 7, z: 15 } -> Coord { x: 19, y: 7, z: 14 }
+LINK stick Coord { x: 19, y: 7, z: 14 } -> Coord { x: 19, y: 6, z: 14 }
+LINK stick Coord { x: 19, y: 7, z: 14 } -> Coord { x: 19, y: 7, z: 15 }
+LINK stick Coord { x: 19, y: 6, z: 14 } -> Coord { x: 19, y: 7, z: 14 }
+LINK stick Coord { x: 19, y: 6, z: 14 } -> Coord { x: 19, y: 5, z: 14 }
+LINK stick Coord { x: 19, y: 5, z: 14 } -> Coord { x: 18, y: 5, z: 14 }
+LINK stick Coord { x: 19, y: 5, z: 14 } -> Coord { x: 19, y: 6, z: 14 }
+LINK stick Coord { x: 19, y: 5, z: 14 } -> Coord { x: 19, y: 5, z: 15 }
+LINK stick Coord { x: 18, y: 5, z: 14 } -> Coord { x: 19, y: 5, z: 14 }
+LINK stick Coord { x: 18, y: 5, z: 14 } -> Coord { x: 17, y: 5, z: 14 }
+LINK stick Coord { x: 19, y: 5, z: 15 } -> Coord { x: 19, y: 5, z: 14 }
+LINK stick Coord { x: 17, y: 5, z: 14 } -> Coord { x: 18, y: 5, z: 14 }
+LINK stick Coord { x: 17, y: 5, z: 14 } -> Coord { x: 17, y: 4, z: 14 }
+LINK stick Coord { x: 17, y: 4, z: 14 } -> Coord { x: 16, y: 4, z: 14 }
+LINK stick Coord { x: 17, y: 4, z: 14 } -> Coord { x: 17, y: 5, z: 14 }
+LINK stick Coord { x: 16, y: 4, z: 14 } -> Coord { x: 17, y: 4, z: 14 }
+LINK stick Coord { x: 16, y: 4, z: 14 } -> Coord { x: 15, y: 4, z: 14 }
+LINK stick Coord { x: 15, y: 4, z: 14 } -> Coord { x: 16, y: 4, z: 14 }
+LINK stick Coord { x: 15, y: 4, z: 14 } -> Coord { x: 15, y: 4, z: 15 }
+LINK stick Coord { x: 15, y: 4, z: 15 } -> Coord { x: 15, y: 4, z: 16 }
+LINK stick Coord { x: 15, y: 4, z: 15 } -> Coord { x: 15, y: 4, z: 14 }
+LINK stick Coord { x: 15, y: 4, z: 16 } -> Coord { x: 16, y: 4, z: 16 }
+LINK stick Coord { x: 15, y: 4, z: 16 } -> Coord { x: 15, y: 3, z: 16 }
+LINK stick Coord { x: 15, y: 4, z: 16 } -> Coord { x: 15, y: 4, z: 15 }
+LINK obstruction Coord { x: 15, y: 4, z: 16 } -> Coord { x: 16, y: 4, z: 16 }
+LINK stick Coord { x: 16, y: 4, z: 16 } -> Coord { x: 15, y: 4, z: 16 }
+LINK stick Coord { x: 16, y: 4, z: 16 } -> Coord { x: 16, y: 5, z: 16 }
+LINK stick Coord { x: 15, y: 3, z: 16 } -> Coord { x: 15, y: 4, z: 16 }
+LINK stick Coord { x: 15, y: 3, z: 16 } -> Coord { x: 15, y: 3, z: 17 }
+LINK stick Coord { x: 16, y: 5, z: 16 } -> Coord { x: 17, y: 5, z: 16 }
+LINK stick Coord { x: 16, y: 5, z: 16 } -> Coord { x: 16, y: 4, z: 16 }
+LINK obstruction Coord { x: 16, y: 5, z: 16 } -> Coord { x: 17, y: 5, z: 16 }
+LINK stick Coord { x: 15, y: 3, z: 17 } -> Coord { x: 15, y: 3, z: 18 }
+LINK stick Coord { x: 15, y: 3, z: 17 } -> Coord { x: 15, y: 3, z: 16 }
+LINK stick Coord { x: 17, y: 5, z: 16 } -> Coord { x: 18, y: 5, z: 16 }
+LINK stick Coord { x: 17, y: 5, z: 16 } -> Coord { x: 16, y: 5, z: 16 }
+LINK obstruction Coord { x: 17, y: 5, z: 16 } -> Coord { x: 18, y: 5, z: 16 }
+LINK stick Coord { x: 15, y: 3, z: 18 } -> Coord { x: 15, y: 2, z: 18 }
+LINK stick Coord { x: 15, y: 3, z: 18 } -> Coord { x: 15, y: 3, z: 19 }
+LINK stick Coord { x: 15, y: 3, z: 18 } -> Coord { x: 15, y: 3, z: 17 }
+LINK stick Coord { x: 15, y: 2, z: 18 } -> Coord { x: 15, y: 3, z: 18 }
+LINK stick Coord { x: 15, y: 2, z: 18 } -> Coord { x: 15, y: 1, z: 18 }
+LINK stick Coord { x: 15, y: 3, z: 19 } -> Coord { x: 15, y: 3, z: 20 }
+LINK stick Coord { x: 15, y: 3, z: 19 } -> Coord { x: 15, y: 3, z: 18 }
+LINK stick Coord { x: 15, y: 1, z: 18 } -> Coord { x: 16, y: 1, z: 18 }
+LINK stick Coord { x: 15, y: 1, z: 18 } -> Coord { x: 15, y: 2, z: 18 }
+LINK obstruction Coord { x: 15, y: 1, z: 18 } -> Coord { x: 16, y: 1, z: 18 }
+LINK stick Coord { x: 15, y: 3, z: 20 } -> Coord { x: 15, y: 4, z: 20 }
+LINK stick Coord { x: 15, y: 3, z: 20 } -> Coord { x: 15, y: 3, z: 21 }
+LINK stick Coord { x: 15, y: 3, z: 20 } -> Coord { x: 15, y: 3, z: 19 }
+LINK stick Coord { x: 16, y: 1, z: 18 } -> Coord { x: 17, y: 1, z: 18 }
+LINK stick Coord { x: 16, y: 1, z: 18 } -> Coord { x: 15, y: 1, z: 18 }
+LINK obstruction Coord { x: 16, y: 1, z: 18 } -> Coord { x: 17, y: 1, z: 18 }
+LINK stick Coord { x: 17, y: 1, z: 18 } -> Coord { x: 18, y: 1, z: 18 }
+LINK stick Coord { x: 17, y: 1, z: 18 } -> Coord { x: 16, y: 1, z: 18 }
+LINK obstruction Coord { x: 17, y: 1, z: 18 } -> Coord { x: 18, y: 1, z: 18 }
+LINK stick Coord { x: 18, y: 1, z: 18 } -> Coord { x: 19, y: 1, z: 18 }
+LINK stick Coord { x: 18, y: 1, z: 18 } -> Coord { x: 17, y: 1, z: 18 }
+LINK obstruction Coord { x: 18, y: 1, z: 18 } -> Coord { x: 19, y: 1, z: 18 }
+LINK stick Coord { x: 19, y: 1, z: 18 } -> Coord { x: 20, y: 1, z: 18 }
+LINK stick Coord { x: 19, y: 1, z: 18 } -> Coord { x: 18, y: 1, z: 18 }
+LINK obstruction Coord { x: 19, y: 1, z: 18 } -> Coord { x: 20, y: 1, z: 18 }
+LINK stick Coord { x: 20, y: 1, z: 18 } -> Coord { x: 21, y: 1, z: 18 }
+LINK stick Coord { x: 20, y: 1, z: 18 } -> Coord { x: 19, y: 1, z: 18 }
+LINK obstruction Coord { x: 20, y: 1, z: 18 } -> Coord { x: 21, y: 1, z: 18 }
+LINK stick Coord { x: 21, y: 1, z: 18 } -> Coord { x: 22, y: 1, z: 18 }
+LINK stick Coord { x: 21, y: 1, z: 18 } -> Coord { x: 20, y: 1, z: 18 }
+LINK obstruction Coord { x: 21, y: 1, z: 18 } -> Coord { x: 22, y: 1, z: 18 }
+LINK stick Coord { x: 22, y: 1, z: 18 } -> Coord { x: 21, y: 1, z: 18 }
+LINK stick Coord { x: 22, y: 1, z: 18 } -> Coord { x: 22, y: 2, z: 18 }
+LINK stick Coord { x: 22, y: 2, z: 18 } -> Coord { x: 22, y: 3, z: 18 }
+LINK stick Coord { x: 22, y: 2, z: 18 } -> Coord { x: 22, y: 1, z: 18 }
+LINK stick Coord { x: 22, y: 3, z: 18 } -> Coord { x: 23, y: 3, z: 18 }
+LINK stick Coord { x: 22, y: 3, z: 18 } -> Coord { x: 22, y: 2, z: 18 }
+LINK stick Coord { x: 22, y: 3, z: 18 } -> Coord { x: 22, y: 3, z: 19 }
+LINK obstruction Coord { x: 22, y: 3, z: 18 } -> Coord { x: 23, y: 3, z: 18 }
+LINK stick Coord { x: 22, y: 3, z: 19 } -> Coord { x: 22, y: 4, z: 19 }
+LINK stick Coord { x: 22, y: 3, z: 19 } -> Coord { x: 22, y: 3, z: 18 }
+LINK stick Coord { x: 22, y: 4, z: 19 } -> Coord { x: 22, y: 5, z: 19 }
+LINK stick Coord { x: 22, y: 4, z: 19 } -> Coord { x: 22, y: 3, z: 19 }
+LINK stick Coord { x: 22, y: 5, z: 19 } -> Coord { x: 22, y: 4, z: 19 }
+LINK stick Coord { x: 22, y: 5, z: 19 } -> Coord { x: 22, y: 5, z: 20 }
+LINK stick Coord { x: 22, y: 5, z: 19 } -> Coord { x: 22, y: 5, z: 18 }
+LINK stick Coord { x: 22, y: 5, z: 20 } -> Coord { x: 22, y: 5, z: 21 }
+LINK stick Coord { x: 22, y: 5, z: 20 } -> Coord { x: 22, y: 5, z: 19 }
+LINK stick Coord { x: 22, y: 5, z: 18 } -> Coord { x: 22, y: 6, z: 18 }
+LINK stick Coord { x: 22, y: 5, z: 18 } -> Coord { x: 22, y: 5, z: 19 }
+LINK stick Coord { x: 22, y: 5, z: 21 } -> Coord { x: 21, y: 5, z: 21 }
+LINK stick Coord { x: 22, y: 5, z: 21 } -> Coord { x: 22, y: 5, z: 20 }
+LINK stick Coord { x: 22, y: 6, z: 18 } -> Coord { x: 22, y: 5, z: 18 }
+LINK stick Coord { x: 22, y: 6, z: 18 } -> Coord { x: 22, y: 6, z: 17 }
+LINK stick Coord { x: 21, y: 5, z: 21 } -> Coord { x: 22, y: 5, z: 21 }
+LINK stick Coord { x: 21, y: 5, z: 21 } -> Coord { x: 21, y: 6, z: 21 }
+LINK stick Coord { x: 21, y: 6, z: 21 } -> Coord { x: 20, y: 6, z: 21 }
+LINK stick Coord { x: 21, y: 6, z: 21 } -> Coord { x: 21, y: 5, z: 21 }
+LINK stick Coord { x: 20, y: 6, z: 21 } -> Coord { x: 21, y: 6, z: 21 }
+LINK stick Coord { x: 20, y: 6, z: 21 } -> Coord { x: 20, y: 7, z: 21 }
+ACTION Tick 6 · extend @ (20, 8, 19) piston=Some(Coord { x: 20, y: 8, z: 19 }) sources=0 failure=None
+ACTION Tick 6 · extend @ (16, 6, 22) piston=Some(Coord { x: 16, y: 6, z: 22 }) sources=49 failure=None
+SOURCE Coord { x: 15, y: 6, z: 15 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 15, y: 7, z: 15 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 15, y: 8, z: 15 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 16, y: 5, z: 21 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 16, y: 5, z: 22 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 16, y: 6, z: 15 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 16, y: 6, z: 23 } Observer cell=167 dir=5 sticky=false state=0 moving=false
+SOURCE Coord { x: 16, y: 7, z: 15 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 16, y: 7, z: 22 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 16, y: 7, z: 23 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 16, y: 8, z: 15 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 16, y: 9, z: 15 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 16, y: 9, z: 16 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 16, y: 9, z: 17 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 16, y: 10, z: 17 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 16, y: 10, z: 18 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 17, y: 5, z: 21 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 17, y: 5, z: 22 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 17, y: 6, z: 22 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 17, y: 7, z: 21 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 17, y: 7, z: 22 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 17, y: 9, z: 15 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 17, y: 10, z: 18 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 18, y: 7, z: 22 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 18, y: 8, z: 20 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 18, y: 9, z: 15 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 18, y: 9, z: 20 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 18, y: 10, z: 18 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 18, y: 10, z: 19 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 18, y: 10, z: 20 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 19, y: 7, z: 22 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 19, y: 8, z: 20 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 19, y: 8, z: 21 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 19, y: 8, z: 22 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 19, y: 9, z: 15 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 20, y: 7, z: 22 } Observer cell=167 dir=5 sticky=false state=0 moving=false
+SOURCE Coord { x: 20, y: 8, z: 20 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 20, y: 9, z: 15 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 21, y: 3, z: 17 } Piston cell=297 dir=1 sticky=true state=0 moving=false
+SOURCE Coord { x: 21, y: 4, z: 17 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 21, y: 9, z: 15 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 22, y: 4, z: 16 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 22, y: 4, z: 17 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 22, y: 5, z: 15 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 22, y: 5, z: 16 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 22, y: 6, z: 15 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 22, y: 7, z: 15 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 22, y: 8, z: 15 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 22, y: 9, z: 15 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+LINK stick Coord { x: 17, y: 6, z: 22 } -> Coord { x: 17, y: 7, z: 22 }
+LINK stick Coord { x: 17, y: 6, z: 22 } -> Coord { x: 17, y: 5, z: 22 }
+LINK stick Coord { x: 17, y: 7, z: 22 } -> Coord { x: 18, y: 7, z: 22 }
+LINK stick Coord { x: 17, y: 7, z: 22 } -> Coord { x: 16, y: 7, z: 22 }
+LINK stick Coord { x: 17, y: 7, z: 22 } -> Coord { x: 17, y: 6, z: 22 }
+LINK stick Coord { x: 17, y: 7, z: 22 } -> Coord { x: 17, y: 7, z: 21 }
+LINK obstruction Coord { x: 17, y: 7, z: 22 } -> Coord { x: 18, y: 7, z: 22 }
+LINK stick Coord { x: 17, y: 5, z: 22 } -> Coord { x: 16, y: 5, z: 22 }
+LINK stick Coord { x: 17, y: 5, z: 22 } -> Coord { x: 17, y: 6, z: 22 }
+LINK stick Coord { x: 17, y: 5, z: 22 } -> Coord { x: 17, y: 5, z: 21 }
+LINK stick Coord { x: 18, y: 7, z: 22 } -> Coord { x: 19, y: 7, z: 22 }
+LINK stick Coord { x: 18, y: 7, z: 22 } -> Coord { x: 17, y: 7, z: 22 }
+LINK obstruction Coord { x: 18, y: 7, z: 22 } -> Coord { x: 19, y: 7, z: 22 }
+LINK stick Coord { x: 16, y: 7, z: 22 } -> Coord { x: 17, y: 7, z: 22 }
+LINK stick Coord { x: 16, y: 7, z: 22 } -> Coord { x: 16, y: 7, z: 23 }
+LINK stick Coord { x: 17, y: 7, z: 21 } -> Coord { x: 17, y: 7, z: 22 }
+LINK stick Coord { x: 17, y: 5, z: 21 } -> Coord { x: 16, y: 5, z: 21 }
+LINK stick Coord { x: 17, y: 5, z: 21 } -> Coord { x: 17, y: 5, z: 22 }
+LINK stick Coord { x: 19, y: 7, z: 22 } -> Coord { x: 20, y: 7, z: 22 }
+LINK stick Coord { x: 19, y: 7, z: 22 } -> Coord { x: 18, y: 7, z: 22 }
+LINK stick Coord { x: 19, y: 7, z: 22 } -> Coord { x: 19, y: 8, z: 22 }
+LINK obstruction Coord { x: 19, y: 7, z: 22 } -> Coord { x: 20, y: 7, z: 22 }
+LINK stick Coord { x: 16, y: 7, z: 23 } -> Coord { x: 16, y: 6, z: 23 }
+LINK stick Coord { x: 16, y: 7, z: 23 } -> Coord { x: 16, y: 7, z: 22 }
+LINK stick Coord { x: 19, y: 8, z: 22 } -> Coord { x: 19, y: 7, z: 22 }
+LINK stick Coord { x: 19, y: 8, z: 22 } -> Coord { x: 19, y: 8, z: 21 }
+LINK stick Coord { x: 19, y: 8, z: 21 } -> Coord { x: 19, y: 8, z: 22 }
+LINK stick Coord { x: 19, y: 8, z: 21 } -> Coord { x: 19, y: 8, z: 20 }
+LINK stick Coord { x: 19, y: 8, z: 20 } -> Coord { x: 20, y: 8, z: 20 }
+LINK stick Coord { x: 19, y: 8, z: 20 } -> Coord { x: 18, y: 8, z: 20 }
+LINK stick Coord { x: 19, y: 8, z: 20 } -> Coord { x: 19, y: 8, z: 21 }
+LINK obstruction Coord { x: 19, y: 8, z: 20 } -> Coord { x: 20, y: 8, z: 20 }
+LINK stick Coord { x: 18, y: 8, z: 20 } -> Coord { x: 19, y: 8, z: 20 }
+LINK stick Coord { x: 18, y: 8, z: 20 } -> Coord { x: 18, y: 9, z: 20 }
+LINK stick Coord { x: 18, y: 9, z: 20 } -> Coord { x: 18, y: 10, z: 20 }
+LINK stick Coord { x: 18, y: 9, z: 20 } -> Coord { x: 18, y: 8, z: 20 }
+LINK stick Coord { x: 18, y: 10, z: 20 } -> Coord { x: 18, y: 9, z: 20 }
+LINK stick Coord { x: 18, y: 10, z: 20 } -> Coord { x: 18, y: 10, z: 19 }
+LINK stick Coord { x: 18, y: 10, z: 19 } -> Coord { x: 18, y: 10, z: 20 }
+LINK stick Coord { x: 18, y: 10, z: 19 } -> Coord { x: 18, y: 10, z: 18 }
+LINK stick Coord { x: 18, y: 10, z: 18 } -> Coord { x: 17, y: 10, z: 18 }
+LINK stick Coord { x: 18, y: 10, z: 18 } -> Coord { x: 18, y: 10, z: 19 }
+LINK stick Coord { x: 17, y: 10, z: 18 } -> Coord { x: 18, y: 10, z: 18 }
+LINK stick Coord { x: 17, y: 10, z: 18 } -> Coord { x: 16, y: 10, z: 18 }
+LINK stick Coord { x: 16, y: 10, z: 18 } -> Coord { x: 17, y: 10, z: 18 }
+LINK stick Coord { x: 16, y: 10, z: 18 } -> Coord { x: 16, y: 10, z: 17 }
+LINK stick Coord { x: 16, y: 10, z: 17 } -> Coord { x: 16, y: 9, z: 17 }
+LINK stick Coord { x: 16, y: 10, z: 17 } -> Coord { x: 16, y: 10, z: 18 }
+LINK stick Coord { x: 16, y: 9, z: 17 } -> Coord { x: 16, y: 10, z: 17 }
+LINK stick Coord { x: 16, y: 9, z: 17 } -> Coord { x: 16, y: 9, z: 16 }
+LINK stick Coord { x: 16, y: 9, z: 16 } -> Coord { x: 16, y: 9, z: 17 }
+LINK stick Coord { x: 16, y: 9, z: 16 } -> Coord { x: 16, y: 9, z: 15 }
+LINK stick Coord { x: 16, y: 9, z: 15 } -> Coord { x: 17, y: 9, z: 15 }
+LINK stick Coord { x: 16, y: 9, z: 15 } -> Coord { x: 16, y: 8, z: 15 }
+LINK stick Coord { x: 16, y: 9, z: 15 } -> Coord { x: 16, y: 9, z: 16 }
+LINK obstruction Coord { x: 16, y: 9, z: 15 } -> Coord { x: 17, y: 9, z: 15 }
+LINK stick Coord { x: 17, y: 9, z: 15 } -> Coord { x: 18, y: 9, z: 15 }
+LINK stick Coord { x: 17, y: 9, z: 15 } -> Coord { x: 16, y: 9, z: 15 }
+LINK obstruction Coord { x: 17, y: 9, z: 15 } -> Coord { x: 18, y: 9, z: 15 }
+LINK stick Coord { x: 16, y: 8, z: 15 } -> Coord { x: 15, y: 8, z: 15 }
+LINK stick Coord { x: 16, y: 8, z: 15 } -> Coord { x: 16, y: 9, z: 15 }
+LINK stick Coord { x: 16, y: 8, z: 15 } -> Coord { x: 16, y: 7, z: 15 }
+LINK stick Coord { x: 18, y: 9, z: 15 } -> Coord { x: 19, y: 9, z: 15 }
+LINK stick Coord { x: 18, y: 9, z: 15 } -> Coord { x: 17, y: 9, z: 15 }
+LINK obstruction Coord { x: 18, y: 9, z: 15 } -> Coord { x: 19, y: 9, z: 15 }
+LINK stick Coord { x: 15, y: 8, z: 15 } -> Coord { x: 16, y: 8, z: 15 }
+LINK stick Coord { x: 15, y: 8, z: 15 } -> Coord { x: 15, y: 7, z: 15 }
+LINK stick Coord { x: 19, y: 9, z: 15 } -> Coord { x: 20, y: 9, z: 15 }
+LINK stick Coord { x: 19, y: 9, z: 15 } -> Coord { x: 18, y: 9, z: 15 }
+LINK obstruction Coord { x: 19, y: 9, z: 15 } -> Coord { x: 20, y: 9, z: 15 }
+LINK stick Coord { x: 15, y: 7, z: 15 } -> Coord { x: 16, y: 7, z: 15 }
+LINK stick Coord { x: 15, y: 7, z: 15 } -> Coord { x: 15, y: 8, z: 15 }
+LINK stick Coord { x: 15, y: 7, z: 15 } -> Coord { x: 15, y: 6, z: 15 }
+LINK stick Coord { x: 20, y: 9, z: 15 } -> Coord { x: 21, y: 9, z: 15 }
+LINK stick Coord { x: 20, y: 9, z: 15 } -> Coord { x: 19, y: 9, z: 15 }
+LINK obstruction Coord { x: 20, y: 9, z: 15 } -> Coord { x: 21, y: 9, z: 15 }
+LINK stick Coord { x: 15, y: 6, z: 15 } -> Coord { x: 16, y: 6, z: 15 }
+LINK stick Coord { x: 15, y: 6, z: 15 } -> Coord { x: 15, y: 7, z: 15 }
+LINK obstruction Coord { x: 15, y: 6, z: 15 } -> Coord { x: 16, y: 6, z: 15 }
+LINK stick Coord { x: 21, y: 9, z: 15 } -> Coord { x: 22, y: 9, z: 15 }
+LINK stick Coord { x: 21, y: 9, z: 15 } -> Coord { x: 20, y: 9, z: 15 }
+LINK obstruction Coord { x: 21, y: 9, z: 15 } -> Coord { x: 22, y: 9, z: 15 }
+LINK stick Coord { x: 16, y: 6, z: 15 } -> Coord { x: 15, y: 6, z: 15 }
+LINK stick Coord { x: 16, y: 6, z: 15 } -> Coord { x: 16, y: 7, z: 15 }
+LINK stick Coord { x: 22, y: 9, z: 15 } -> Coord { x: 21, y: 9, z: 15 }
+LINK stick Coord { x: 22, y: 9, z: 15 } -> Coord { x: 22, y: 8, z: 15 }
+LINK stick Coord { x: 22, y: 8, z: 15 } -> Coord { x: 22, y: 9, z: 15 }
+LINK stick Coord { x: 22, y: 8, z: 15 } -> Coord { x: 22, y: 7, z: 15 }
+LINK stick Coord { x: 22, y: 7, z: 15 } -> Coord { x: 22, y: 8, z: 15 }
+LINK stick Coord { x: 22, y: 7, z: 15 } -> Coord { x: 22, y: 6, z: 15 }
+LINK stick Coord { x: 22, y: 6, z: 15 } -> Coord { x: 22, y: 7, z: 15 }
+LINK stick Coord { x: 22, y: 6, z: 15 } -> Coord { x: 22, y: 5, z: 15 }
+LINK stick Coord { x: 22, y: 5, z: 15 } -> Coord { x: 22, y: 6, z: 15 }
+LINK stick Coord { x: 22, y: 5, z: 15 } -> Coord { x: 22, y: 5, z: 16 }
+LINK stick Coord { x: 22, y: 5, z: 16 } -> Coord { x: 22, y: 4, z: 16 }
+LINK stick Coord { x: 22, y: 5, z: 16 } -> Coord { x: 22, y: 5, z: 15 }
+LINK stick Coord { x: 22, y: 4, z: 16 } -> Coord { x: 22, y: 5, z: 16 }
+LINK stick Coord { x: 22, y: 4, z: 16 } -> Coord { x: 22, y: 4, z: 17 }
+LINK stick Coord { x: 22, y: 4, z: 17 } -> Coord { x: 21, y: 4, z: 17 }
+LINK stick Coord { x: 22, y: 4, z: 17 } -> Coord { x: 22, y: 4, z: 16 }
+LINK stick Coord { x: 21, y: 4, z: 17 } -> Coord { x: 22, y: 4, z: 17 }
+LINK stick Coord { x: 21, y: 4, z: 17 } -> Coord { x: 21, y: 3, z: 17 }
+ACTION Tick 6 · retract @ (15, 9, 18) piston=Some(Coord { x: 15, y: 9, z: 18 }) sources=0 failure=None
+ACTION Tick 6 · retract @ (17, 5, 15) piston=Some(Coord { x: 17, y: 5, z: 15 }) sources=0 failure=None
+TICK 7 x=14 ext=0 fail=0 ret=0

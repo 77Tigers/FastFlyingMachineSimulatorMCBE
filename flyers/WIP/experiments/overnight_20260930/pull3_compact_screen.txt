@@ -1,0 +1,3 @@
+screen candidates=2 clean=2 ticks=240 out=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\pull3_compact_screen.csv
+  distance=72 load=106 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\pull3_compact_candidates\paired_grid_s002.flyer
+  distance=72 load=109 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\pull3_compact_candidates\paired_grid_s003.flyer

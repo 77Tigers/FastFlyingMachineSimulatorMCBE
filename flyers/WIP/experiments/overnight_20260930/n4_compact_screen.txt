@@ -1,0 +1,6 @@
+screen candidates=48 clean=48 ticks=240 out=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\n4_compact_screen.csv
+  distance=80 load=23 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\n4_compact_candidates\d3.2_a0_s000.flyer
+  distance=80 load=23 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\n4_compact_candidates\d3.2_a0_s001.flyer
+  distance=80 load=23 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\n4_compact_candidates\d3.2_a0_s002.flyer
+  distance=80 load=23 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\n4_compact_candidates\d3.2_a0_s003.flyer
+  distance=80 load=23 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\n4_compact_candidates\d3.2_a0_s004.flyer

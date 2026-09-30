@@ -1,0 +1,1 @@
+ticks=10000 empty_extensions=7000 empty_retractions=14000 movement_failures=0 unmatched_nonempty_actions=0

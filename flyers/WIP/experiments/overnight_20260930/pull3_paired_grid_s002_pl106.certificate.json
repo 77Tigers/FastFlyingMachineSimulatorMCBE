@@ -1,0 +1,24 @@
+{
+  "bank_file": "flyers/bank/pl106/pulling3_tenbody.flyer",
+  "sha256": "bc7d2bfd86eef92825614a46b73ad7477048652f94736d2d8aa4ff4c3ef90ab0",
+  "ticks": 10000,
+  "distance": 3000,
+  "speed_bps": 3.0,
+  "extensions": 30000,
+  "extension_failures": 0,
+  "endpoint_conserved": true,
+  "cycle_ticks": 10,
+  "cycle_advance": 3,
+  "full_rng_phase_samples": 80,
+  "exact_block_owner_recurrence": true,
+  "max_successful_action": 106,
+  "pulling_only": true,
+  "pistons": 30,
+  "piston_direction": "-X",
+  "sticky_pistons_only": true,
+  "evidence": [
+    "pull3_paired_grid_s002_pl106.verify.txt",
+    "pull3_paired_grid_s002_pl106.audit.txt",
+    "pull3_paired_grid_s002_pl106.samples.csv"
+  ]
+}

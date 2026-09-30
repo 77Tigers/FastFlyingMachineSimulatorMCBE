@@ -1,0 +1,39 @@
+8 uniform 0 {'routed': 1}
+8 uniform 1 {'routed': 2}
+8 uniform 2 {'routed': 3}
+8 uniform 3 {'routed': 3, 'route': 1}
+8 uniform 4 {'routed': 4, 'route': 1}
+8 uniform 5 {'routed': 4, 'route': 2}
+8 uniform 6 {'routed': 4, 'route': 3}
+8 uniform 7 {'routed': 5, 'route': 3}
+8 radial 0 {'routed': 5, 'route': 3, 'source_overlap': 1}
+8 radial 1 {'routed': 5, 'route': 3, 'source_overlap': 1, 'fixed_overlap': 1}
+8 radial 2 {'routed': 5, 'route': 3, 'source_overlap': 2, 'fixed_overlap': 1}
+8 radial 3 {'routed': 5, 'route': 3, 'source_overlap': 3, 'fixed_overlap': 1}
+8 radial 4 {'routed': 5, 'route': 3, 'source_overlap': 4, 'fixed_overlap': 1}
+8 radial 5 {'routed': 5, 'route': 3, 'source_overlap': 4, 'fixed_overlap': 2}
+8 radial 6 {'routed': 5, 'route': 3, 'source_overlap': 5, 'fixed_overlap': 2}
+8 radial 7 {'routed': 5, 'route': 3, 'source_overlap': 5, 'fixed_overlap': 3}
+10 uniform 0 {'routed': 5, 'route': 4, 'source_overlap': 5, 'fixed_overlap': 3}
+10 uniform 1 {'routed': 5, 'route': 5, 'source_overlap': 5, 'fixed_overlap': 3}
+10 uniform 2 {'routed': 5, 'route': 6, 'source_overlap': 5, 'fixed_overlap': 3}
+10 uniform 3 {'routed': 5, 'route': 7, 'source_overlap': 5, 'fixed_overlap': 3}
+10 uniform 4 {'routed': 5, 'route': 8, 'source_overlap': 5, 'fixed_overlap': 3}
+10 uniform 5 {'routed': 5, 'route': 9, 'source_overlap': 5, 'fixed_overlap': 3}
+10 uniform 6 {'routed': 5, 'route': 10, 'source_overlap': 5, 'fixed_overlap': 3}
+10 uniform 7 {'routed': 5, 'route': 11, 'source_overlap': 5, 'fixed_overlap': 3}
+10 radial 0 {'routed': 5, 'route': 12, 'source_overlap': 5, 'fixed_overlap': 3}
+10 radial 1 {'routed': 5, 'route': 13, 'source_overlap': 5, 'fixed_overlap': 3}
+10 radial 2 {'routed': 5, 'route': 14, 'source_overlap': 5, 'fixed_overlap': 3}
+10 radial 3 {'routed': 5, 'route': 15, 'source_overlap': 5, 'fixed_overlap': 3}
+10 radial 4 {'routed': 5, 'route': 16, 'source_overlap': 5, 'fixed_overlap': 3}
+10 radial 5 {'routed': 5, 'route': 17, 'source_overlap': 5, 'fixed_overlap': 3}
+10 radial 6 {'routed': 5, 'route': 18, 'source_overlap': 5, 'fixed_overlap': 3}
+10 radial 7 {'routed': 5, 'route': 19, 'source_overlap': 5, 'fixed_overlap': 3}
+screen candidates=5 clean=5 ticks=240 out=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mixed_role_ring_v2_screen.csv
+  distance=72 load=54 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mixed_role_ring_v2_candidates\r8_uniform_s000.flyer
+  distance=72 load=56 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mixed_role_ring_v2_candidates\r8_uniform_s001.flyer
+  distance=72 load=55 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mixed_role_ring_v2_candidates\r8_uniform_s002.flyer
+  distance=72 load=56 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mixed_role_ring_v2_candidates\r8_uniform_s004.flyer
+  distance=72 load=54 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mixed_role_ring_v2_candidates\r8_uniform_s007.flyer
+

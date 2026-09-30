@@ -56,3 +56,11 @@ push_limit,name,start_min_x,end_min_x,distance,end_blocks,extensions
 10,pulling_alternating,0,2500,2500,21,5000
 22,four_push_ring,13,3346,3333,66,10000
 23,four_push_ring,13,3346,3333,68,10000
+9,pulling_loop4,15,2515,2500,38,10000
+57,three_segment_mmwmmw,14,3347,3333,161,10000
+127,pulling3_tenbody,11,3011,3000,890,30000
+126,pulling3_tenbody,11,3011,3000,882,30000
+106,pulling3_tenbody,11,3011,3000,852,30000
+37,planar_mmwmmw,12,3345,3333,109,10000
+36,planar_mmwmmw,12,3345,3333,105,10000
+102,pulling3_tenbody,11,3011,3000,845,30000

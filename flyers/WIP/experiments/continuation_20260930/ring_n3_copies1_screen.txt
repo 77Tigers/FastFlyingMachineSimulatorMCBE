@@ -1,0 +1,6 @@
+screen candidates=96 clean=96 ticks=240 out=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\continuation_20260930\ring_n3_copies1_screen.csv
+  distance=72 load=18 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\continuation_20260930\ring_n3_copies1\s000.flyer
+  distance=72 load=19 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\continuation_20260930\ring_n3_copies1\s001.flyer
+  distance=72 load=19 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\continuation_20260930\ring_n3_copies1\s002.flyer
+  distance=72 load=18 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\continuation_20260930\ring_n3_copies1\s003.flyer
+  distance=72 load=19 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\continuation_20260930\ring_n3_copies1\s004.flyer

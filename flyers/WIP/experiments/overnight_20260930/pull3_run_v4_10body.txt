@@ -1,0 +1,35 @@
+pull3 3 0 {'route': 1}
+pull3 3 1 {'route': 2}
+pull3 3 2 {'route': 3}
+pull3 3 3 {'route': 4}
+pull3 3 4 {'route': 5}
+pull3 3 5 {'route': 6}
+pull3 3 6 {'route': 7}
+pull3 3 7 {'route': 8}
+pull3 3 8 {'route': 9}
+pull3 3 9 {'route': 10}
+pull3 3 10 {'route': 11}
+pull3 3 11 {'route': 12}
+pull3 3 12 {'route': 13}
+pull3 3 13 {'route': 14}
+pull3 3 14 {'route': 15}
+pull3 3 15 {'route': 16}
+pull3 4 0 {'route': 17}
+pull3 4 1 {'route': 18}
+pull3 4 2 {'route': 19}
+pull3 4 3 {'route': 19, 'routed': 1}
+pull3 4 4 {'route': 20, 'routed': 1}
+pull3 4 5 {'route': 21, 'routed': 1}
+pull3 4 6 {'route': 22, 'routed': 1}
+pull3 4 7 {'route': 23, 'routed': 1}
+pull3 4 8 {'route': 24, 'routed': 1}
+pull3 4 9 {'route': 25, 'routed': 1}
+pull3 4 10 {'route': 26, 'routed': 1}
+pull3 4 11 {'route': 27, 'routed': 1}
+pull3 4 12 {'route': 28, 'routed': 1}
+pull3 4 13 {'route': 29, 'routed': 1}
+pull3 4 14 {'route': 30, 'routed': 1}
+pull3 4 15 {'route': 31, 'routed': 1}
+screen candidates=1 clean=1 ticks=200 out=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\pull3_10body_screen.csv
+  distance=60 load=127 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\pull3_10body_candidates\g4_s003.flyer
+

@@ -1,0 +1,7 @@
+screen candidates=96 clean=94 ticks=240 out=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\continuation_20260930\ring_n4_copies2_screen.csv
+  distance=80 load=23 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\continuation_20260930\ring_n4_copies2\s000.flyer
+  distance=80 load=23 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\continuation_20260930\ring_n4_copies2\s001.flyer
+  distance=80 load=23 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\continuation_20260930\ring_n4_copies2\s002.flyer
+  distance=80 load=23 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\continuation_20260930\ring_n4_copies2\s003.flyer
+  distance=80 load=23 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\continuation_20260930\ring_n4_copies2\s004.flyer
+  earliest_failure tick=4 kind=(Coord { x: 17, y: 5, z: 15 }, "immovable obstruction") file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\continuation_20260930\ring_n4_copies2\s052.flyer

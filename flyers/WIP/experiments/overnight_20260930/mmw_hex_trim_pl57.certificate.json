@@ -1,0 +1,26 @@
+{
+  "bank_file": "flyers/bank/pl57/three_segment_mmwmmw.flyer",
+  "sha256": "f8e949eaf914de75a2e1564737b41756deb5f2b5ad21514aa8785b910f7c6496",
+  "ticks": 10000,
+  "distance": 3333,
+  "speed_bps": 3.333,
+  "extensions": 10000,
+  "extension_failures": 0,
+  "endpoint_conserved": true,
+  "cycle_ticks": 12,
+  "cycle_advance": 4,
+  "full_rng_phase_samples": 80,
+  "exact_block_owner_recurrence": true,
+  "max_successful_action": 57,
+  "movement_words": [
+    "mmwmmw",
+    "wmmwmm",
+    "mwmmwm"
+  ],
+  "evidence": [
+    "mmw_hex_trim_pl57.verify.txt",
+    "mmw_hex_trim_pl57.samples.csv",
+    "mmw_hex_trim_pl57.audit.txt",
+    "trim_mmw/geometry.json"
+  ]
+}

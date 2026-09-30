@@ -40,6 +40,16 @@ Check both directions: lifecycle implies the positions, and positions satisfy ac
 
 Prefer an executable check of the initial-state/passenger increments against the phase table before geometry. The Medium trial's small [contract check](WIP/experiments/abstraction_medium_20260929/contracts/check_contract.py) demonstrates this for the chosen fixture and both movement words; it is not a general physical solver.
 
+For route-heavy schedules, optimize each target's drive ports in the axial
+table before routing. Different member recovery histories can put their
+initial bases on different X planes while making their action contacts share
+one target plane. Preserve the resulting source alignment windows, including
+early bursts where a later member must remain unpowered. This was physically
+tested by the overnight `mmw_planar.py`: the three different mmwmmw body
+timings and twelve normal members produce a bankedPL36 mechanism after
+pruning, with80 full exact audits. It improves this family's routing overhead;
+it does not establish that coplanar ports always minimize load.
+
 ## 4. Piston-group contact choreography
 
 Plan the entire group's contact relationships across the cycle. Choose named transverse sites and **oriented faces** for action, pickup, release and power. For every member/phase specify which body contacts it, which contacts must be absent, and why a state change or relative motion changes that relationship. An immovable piston can be face-adjacent yet not transported; distinguish adjacency, adhesive discoverability and actual transport.
@@ -47,6 +57,25 @@ Plan the entire group's contact relationships across the cycle. Choose named tra
 Identify which body carries each power element, the source-to-solid-to-piston path or direct source, when it operates, and forbidden extra powering. Specify same-body connections that assembly must route, shared axes, keepout/sweep relationships, and any permitted projected overlap. Use symbolic adjacency/offset relationships or sparse contact diagrams; do not fill in the full sticky body. Metric embedding is still a lower-stage choice.
 
 Power calculated at the start of a tick does not itself turn a state-0 piston immovable. When a reset and payload movement can occur in either order, check actual pre-action contact absence or state-based exclusion for both orders; do not assume reset happens first.
+
+Source ownership must also survive intermediate movement order. If a source
+and a foreign sticky body both move +X in a slot, test source-first and
+body-first placements before accepting that source owner. Legal endpoint
+positions can hide a temporary side contact that recruits the source into a
+second move. This was tested in the [overnight mixed3 witness](WIP/experiments/overnight_20260930/mixed3_mandatory_witness.json):
+filtering such source choices changed64 mandatory-contact rejections into
+39 routed candidates, all clean over200 ticks. That bounded result validates
+the correction for this family, not a general order-independence theorem.
+
+Check every source against every actuator, including power transmitted
+through a candidate solid connector. Own-member alignment checks alone miss
+cross-power when modules are packed together. The compact mixed3 witness
+`overnight_20260930/mixed3_pentagon_s010_first.trace.txt` shows one redstone
+block powering two normal members at tick6. The wrong member fires and
+transports the intended member before its action. Added all-source checks
+reject all64 placements of that tightly packed family; widening the ports
+then yields37/37 clean240-tick candidates in the completed64-attempt screen.
+The rejected family is not a general impossibility result.
 
 Check phase-by-phase against stage 2 passengers and stage 3 reach. "Pick up when needed" is not a complete output. Geometry choice is this stage's job where necessary to make a relationship concrete; document unresolved alternatives instead of pretending the graph proves embeddability.
 
@@ -57,6 +86,19 @@ The unit is a **piston group plus its pickup and power relationships**, potentia
 Check the **whole cycle under declared inputs**, not just one pull or extension. A local fixture may supply external motion/pulses if labelled; distinguish such checks from self-running simulation. If cyclic interfaces cannot be isolated, document a joint check of mutually dependent groups rather than fabricate independence. Primitive checks are useful but do not pass this stage. Physical group-size/route/load optimization is secondary to a working contract.
 
 ## 6. Assembly and routing
+
+A power interface may need a nonadhesive solid terminal rather than direct
+source adjacency. The overnight `mmmm_glazed_ports.py --hex` separates a
+front helper's rod/observer from the target with a glazed terminal. A helper
+sticky cell pushes the terminal as an occupied destination; the target does
+not adhere to it. Six bodies with opposite-material helper pairs discharge
+all transport obligations. The resulting PL47 layout passes full exact
+10000-tick recurrence and conservation; it is not a bank improvement on
+mmmmwwPL22 and has no80-case audit. Model terminal movement, power paths and
+ownership explicitly; naming a nonadhesive terminal does not prove transport.
+Check connectivity for every body before saving. A conversion that routed
+three of six bodies produced a stalled fixture despite correct port timing;
+the preserved snapshots localize the first discrepancy to tick2.
 
 Embed interfaces and connect same-body terminals. Discharge their external assumptions using the other interfaces, route within phase keepouts, prevent unintended pickups/destination collisions/power, and compute actual movement sets and loads. Deliver a candidate plus an identity-to-geometry mapping and initial states derived from the lifecycle. A global schedule checker cannot substitute for physical realization.
 

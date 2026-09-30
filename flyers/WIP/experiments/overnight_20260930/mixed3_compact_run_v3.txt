@@ -1,0 +1,71 @@
+pentagon_wide 0 0 {'pentagon_wide:mandatory_conflict': 1}
+pentagon_wide 0 1 {'pentagon_wide:mandatory_conflict': 2}
+pentagon_wide 0 2 {'pentagon_wide:mandatory_conflict': 2, 'pentagon_wide:arm_overlap': 1}
+pentagon_wide 0 3 {'pentagon_wide:mandatory_conflict': 2, 'pentagon_wide:arm_overlap': 2}
+pentagon_wide 0 4 {'pentagon_wide:mandatory_conflict': 3, 'pentagon_wide:arm_overlap': 2}
+pentagon_wide 0 5 {'pentagon_wide:mandatory_conflict': 3, 'pentagon_wide:arm_overlap': 2, 'pentagon_wide:fixed_overlap': 1}
+pentagon_wide 0 6 {'pentagon_wide:mandatory_conflict': 3, 'pentagon_wide:arm_overlap': 2, 'pentagon_wide:fixed_overlap': 2}
+pentagon_wide 0 7 {'pentagon_wide:mandatory_conflict': 3, 'pentagon_wide:arm_overlap': 2, 'pentagon_wide:fixed_overlap': 3}
+pentagon_wide 0 8 {'pentagon_wide:mandatory_conflict': 3, 'pentagon_wide:arm_overlap': 3, 'pentagon_wide:fixed_overlap': 3}
+pentagon_wide 0 9 {'pentagon_wide:mandatory_conflict': 4, 'pentagon_wide:arm_overlap': 3, 'pentagon_wide:fixed_overlap': 3}
+pentagon_wide 0 10 {'pentagon_wide:mandatory_conflict': 4, 'pentagon_wide:arm_overlap': 3, 'pentagon_wide:fixed_overlap': 4}
+pentagon_wide 0 11 {'pentagon_wide:mandatory_conflict': 5, 'pentagon_wide:arm_overlap': 3, 'pentagon_wide:fixed_overlap': 4}
+pentagon_wide 0 12 {'pentagon_wide:mandatory_conflict': 5, 'pentagon_wide:arm_overlap': 3, 'pentagon_wide:fixed_overlap': 5}
+pentagon_wide 0 13 {'pentagon_wide:mandatory_conflict': 5, 'pentagon_wide:arm_overlap': 3, 'pentagon_wide:fixed_overlap': 6}
+pentagon_wide 0 14 {'pentagon_wide:mandatory_conflict': 5, 'pentagon_wide:arm_overlap': 4, 'pentagon_wide:fixed_overlap': 6}
+pentagon_wide 0 15 {'pentagon_wide:mandatory_conflict': 5, 'pentagon_wide:arm_overlap': 4, 'pentagon_wide:fixed_overlap': 7}
+pentagon_wide 1 0 {'pentagon_wide:mandatory_conflict': 5, 'pentagon_wide:arm_overlap': 4, 'pentagon_wide:fixed_overlap': 7, 'pentagon_wide:routed': 1}
+pentagon_wide 1 1 {'pentagon_wide:mandatory_conflict': 5, 'pentagon_wide:arm_overlap': 4, 'pentagon_wide:fixed_overlap': 7, 'pentagon_wide:routed': 2}
+pentagon_wide 1 2 {'pentagon_wide:mandatory_conflict': 5, 'pentagon_wide:arm_overlap': 4, 'pentagon_wide:fixed_overlap': 7, 'pentagon_wide:routed': 3}
+pentagon_wide 1 3 {'pentagon_wide:mandatory_conflict': 5, 'pentagon_wide:arm_overlap': 4, 'pentagon_wide:fixed_overlap': 7, 'pentagon_wide:routed': 3, 'pentagon_wide:route': 1}
+pentagon_wide 1 4 {'pentagon_wide:mandatory_conflict': 5, 'pentagon_wide:arm_overlap': 4, 'pentagon_wide:fixed_overlap': 7, 'pentagon_wide:routed': 4, 'pentagon_wide:route': 1}
+pentagon_wide 1 5 {'pentagon_wide:mandatory_conflict': 6, 'pentagon_wide:arm_overlap': 4, 'pentagon_wide:fixed_overlap': 7, 'pentagon_wide:routed': 4, 'pentagon_wide:route': 1}
+pentagon_wide 1 6 {'pentagon_wide:mandatory_conflict': 6, 'pentagon_wide:arm_overlap': 4, 'pentagon_wide:fixed_overlap': 7, 'pentagon_wide:routed': 5, 'pentagon_wide:route': 1}
+pentagon_wide 1 7 {'pentagon_wide:mandatory_conflict': 7, 'pentagon_wide:arm_overlap': 4, 'pentagon_wide:fixed_overlap': 7, 'pentagon_wide:routed': 5, 'pentagon_wide:route': 1}
+pentagon_wide 1 8 {'pentagon_wide:mandatory_conflict': 7, 'pentagon_wide:arm_overlap': 4, 'pentagon_wide:fixed_overlap': 7, 'pentagon_wide:routed': 6, 'pentagon_wide:route': 1}
+pentagon_wide 1 9 {'pentagon_wide:mandatory_conflict': 7, 'pentagon_wide:arm_overlap': 4, 'pentagon_wide:fixed_overlap': 7, 'pentagon_wide:routed': 6, 'pentagon_wide:route': 2}
+pentagon_wide 1 10 {'pentagon_wide:mandatory_conflict': 7, 'pentagon_wide:arm_overlap': 4, 'pentagon_wide:fixed_overlap': 7, 'pentagon_wide:routed': 7, 'pentagon_wide:route': 2}
+pentagon_wide 1 11 {'pentagon_wide:mandatory_conflict': 7, 'pentagon_wide:arm_overlap': 4, 'pentagon_wide:fixed_overlap': 7, 'pentagon_wide:routed': 8, 'pentagon_wide:route': 2}
+pentagon_wide 1 12 {'pentagon_wide:mandatory_conflict': 7, 'pentagon_wide:arm_overlap': 4, 'pentagon_wide:fixed_overlap': 7, 'pentagon_wide:routed': 9, 'pentagon_wide:route': 2}
+pentagon_wide 1 13 {'pentagon_wide:mandatory_conflict': 7, 'pentagon_wide:arm_overlap': 4, 'pentagon_wide:fixed_overlap': 7, 'pentagon_wide:routed': 9, 'pentagon_wide:route': 3}
+pentagon_wide 1 14 {'pentagon_wide:mandatory_conflict': 7, 'pentagon_wide:arm_overlap': 4, 'pentagon_wide:fixed_overlap': 7, 'pentagon_wide:routed': 9, 'pentagon_wide:route': 4}
+pentagon_wide 1 15 {'pentagon_wide:mandatory_conflict': 7, 'pentagon_wide:arm_overlap': 4, 'pentagon_wide:fixed_overlap': 7, 'pentagon_wide:routed': 9, 'pentagon_wide:route': 5}
+pentagon7 0 0 {'pentagon_wide:mandatory_conflict': 7, 'pentagon_wide:arm_overlap': 4, 'pentagon_wide:fixed_overlap': 7, 'pentagon_wide:routed': 9, 'pentagon_wide:route': 5, 'pentagon7:routed': 1}
+pentagon7 0 1 {'pentagon_wide:mandatory_conflict': 7, 'pentagon_wide:arm_overlap': 4, 'pentagon_wide:fixed_overlap': 7, 'pentagon_wide:routed': 9, 'pentagon_wide:route': 5, 'pentagon7:routed': 1, 'pentagon7:route': 1}
+pentagon7 0 2 {'pentagon_wide:mandatory_conflict': 7, 'pentagon_wide:arm_overlap': 4, 'pentagon_wide:fixed_overlap': 7, 'pentagon_wide:routed': 9, 'pentagon_wide:route': 5, 'pentagon7:routed': 2, 'pentagon7:route': 1}
+pentagon7 0 3 {'pentagon_wide:mandatory_conflict': 7, 'pentagon_wide:arm_overlap': 4, 'pentagon_wide:fixed_overlap': 7, 'pentagon_wide:routed': 9, 'pentagon_wide:route': 5, 'pentagon7:routed': 3, 'pentagon7:route': 1}
+pentagon7 0 4 {'pentagon_wide:mandatory_conflict': 7, 'pentagon_wide:arm_overlap': 4, 'pentagon_wide:fixed_overlap': 7, 'pentagon_wide:routed': 9, 'pentagon_wide:route': 5, 'pentagon7:routed': 4, 'pentagon7:route': 1}
+pentagon7 0 5 {'pentagon_wide:mandatory_conflict': 7, 'pentagon_wide:arm_overlap': 4, 'pentagon_wide:fixed_overlap': 7, 'pentagon_wide:routed': 9, 'pentagon_wide:route': 5, 'pentagon7:routed': 5, 'pentagon7:route': 1}
+pentagon7 0 6 {'pentagon_wide:mandatory_conflict': 7, 'pentagon_wide:arm_overlap': 4, 'pentagon_wide:fixed_overlap': 7, 'pentagon_wide:routed': 9, 'pentagon_wide:route': 5, 'pentagon7:routed': 6, 'pentagon7:route': 1}
+pentagon7 0 7 {'pentagon_wide:mandatory_conflict': 7, 'pentagon_wide:arm_overlap': 4, 'pentagon_wide:fixed_overlap': 7, 'pentagon_wide:routed': 9, 'pentagon_wide:route': 5, 'pentagon7:routed': 7, 'pentagon7:route': 1}
+pentagon7 0 8 {'pentagon_wide:mandatory_conflict': 7, 'pentagon_wide:arm_overlap': 4, 'pentagon_wide:fixed_overlap': 7, 'pentagon_wide:routed': 9, 'pentagon_wide:route': 5, 'pentagon7:routed': 8, 'pentagon7:route': 1}
+pentagon7 0 9 {'pentagon_wide:mandatory_conflict': 7, 'pentagon_wide:arm_overlap': 4, 'pentagon_wide:fixed_overlap': 7, 'pentagon_wide:routed': 9, 'pentagon_wide:route': 5, 'pentagon7:routed': 9, 'pentagon7:route': 1}
+pentagon7 0 10 {'pentagon_wide:mandatory_conflict': 7, 'pentagon_wide:arm_overlap': 4, 'pentagon_wide:fixed_overlap': 7, 'pentagon_wide:routed': 9, 'pentagon_wide:route': 5, 'pentagon7:routed': 10, 'pentagon7:route': 1}
+pentagon7 0 11 {'pentagon_wide:mandatory_conflict': 7, 'pentagon_wide:arm_overlap': 4, 'pentagon_wide:fixed_overlap': 7, 'pentagon_wide:routed': 9, 'pentagon_wide:route': 5, 'pentagon7:routed': 11, 'pentagon7:route': 1}
+pentagon7 0 12 {'pentagon_wide:mandatory_conflict': 7, 'pentagon_wide:arm_overlap': 4, 'pentagon_wide:fixed_overlap': 7, 'pentagon_wide:routed': 9, 'pentagon_wide:route': 5, 'pentagon7:routed': 12, 'pentagon7:route': 1}
+pentagon7 0 13 {'pentagon_wide:mandatory_conflict': 7, 'pentagon_wide:arm_overlap': 4, 'pentagon_wide:fixed_overlap': 7, 'pentagon_wide:routed': 9, 'pentagon_wide:route': 5, 'pentagon7:routed': 13, 'pentagon7:route': 1}
+pentagon7 0 14 {'pentagon_wide:mandatory_conflict': 7, 'pentagon_wide:arm_overlap': 4, 'pentagon_wide:fixed_overlap': 7, 'pentagon_wide:routed': 9, 'pentagon_wide:route': 5, 'pentagon7:routed': 14, 'pentagon7:route': 1}
+pentagon7 0 15 {'pentagon_wide:mandatory_conflict': 7, 'pentagon_wide:arm_overlap': 4, 'pentagon_wide:fixed_overlap': 7, 'pentagon_wide:routed': 9, 'pentagon_wide:route': 5, 'pentagon7:routed': 14, 'pentagon7:route': 2}
+pentagon7 1 0 {'pentagon_wide:mandatory_conflict': 7, 'pentagon_wide:arm_overlap': 4, 'pentagon_wide:fixed_overlap': 7, 'pentagon_wide:routed': 9, 'pentagon_wide:route': 5, 'pentagon7:routed': 15, 'pentagon7:route': 2}
+pentagon7 1 1 {'pentagon_wide:mandatory_conflict': 7, 'pentagon_wide:arm_overlap': 4, 'pentagon_wide:fixed_overlap': 7, 'pentagon_wide:routed': 9, 'pentagon_wide:route': 5, 'pentagon7:routed': 15, 'pentagon7:route': 3}
+pentagon7 1 2 {'pentagon_wide:mandatory_conflict': 7, 'pentagon_wide:arm_overlap': 4, 'pentagon_wide:fixed_overlap': 7, 'pentagon_wide:routed': 9, 'pentagon_wide:route': 5, 'pentagon7:routed': 16, 'pentagon7:route': 3}
+pentagon7 1 3 {'pentagon_wide:mandatory_conflict': 7, 'pentagon_wide:arm_overlap': 4, 'pentagon_wide:fixed_overlap': 7, 'pentagon_wide:routed': 9, 'pentagon_wide:route': 5, 'pentagon7:routed': 17, 'pentagon7:route': 3}
+pentagon7 1 4 {'pentagon_wide:mandatory_conflict': 7, 'pentagon_wide:arm_overlap': 4, 'pentagon_wide:fixed_overlap': 7, 'pentagon_wide:routed': 9, 'pentagon_wide:route': 5, 'pentagon7:routed': 18, 'pentagon7:route': 3}
+pentagon7 1 5 {'pentagon_wide:mandatory_conflict': 7, 'pentagon_wide:arm_overlap': 4, 'pentagon_wide:fixed_overlap': 7, 'pentagon_wide:routed': 9, 'pentagon_wide:route': 5, 'pentagon7:routed': 19, 'pentagon7:route': 3}
+pentagon7 1 6 {'pentagon_wide:mandatory_conflict': 7, 'pentagon_wide:arm_overlap': 4, 'pentagon_wide:fixed_overlap': 7, 'pentagon_wide:routed': 9, 'pentagon_wide:route': 5, 'pentagon7:routed': 20, 'pentagon7:route': 3}
+pentagon7 1 7 {'pentagon_wide:mandatory_conflict': 7, 'pentagon_wide:arm_overlap': 4, 'pentagon_wide:fixed_overlap': 7, 'pentagon_wide:routed': 9, 'pentagon_wide:route': 5, 'pentagon7:routed': 21, 'pentagon7:route': 3}
+pentagon7 1 8 {'pentagon_wide:mandatory_conflict': 7, 'pentagon_wide:arm_overlap': 4, 'pentagon_wide:fixed_overlap': 7, 'pentagon_wide:routed': 9, 'pentagon_wide:route': 5, 'pentagon7:routed': 22, 'pentagon7:route': 3}
+pentagon7 1 9 {'pentagon_wide:mandatory_conflict': 7, 'pentagon_wide:arm_overlap': 4, 'pentagon_wide:fixed_overlap': 7, 'pentagon_wide:routed': 9, 'pentagon_wide:route': 5, 'pentagon7:routed': 22, 'pentagon7:route': 4}
+pentagon7 1 10 {'pentagon_wide:mandatory_conflict': 7, 'pentagon_wide:arm_overlap': 4, 'pentagon_wide:fixed_overlap': 7, 'pentagon_wide:routed': 9, 'pentagon_wide:route': 5, 'pentagon7:routed': 23, 'pentagon7:route': 4}
+pentagon7 1 11 {'pentagon_wide:mandatory_conflict': 7, 'pentagon_wide:arm_overlap': 4, 'pentagon_wide:fixed_overlap': 7, 'pentagon_wide:routed': 9, 'pentagon_wide:route': 5, 'pentagon7:routed': 24, 'pentagon7:route': 4}
+pentagon7 1 12 {'pentagon_wide:mandatory_conflict': 7, 'pentagon_wide:arm_overlap': 4, 'pentagon_wide:fixed_overlap': 7, 'pentagon_wide:routed': 9, 'pentagon_wide:route': 5, 'pentagon7:routed': 25, 'pentagon7:route': 4}
+pentagon7 1 13 {'pentagon_wide:mandatory_conflict': 7, 'pentagon_wide:arm_overlap': 4, 'pentagon_wide:fixed_overlap': 7, 'pentagon_wide:routed': 9, 'pentagon_wide:route': 5, 'pentagon7:routed': 26, 'pentagon7:route': 4}
+pentagon7 1 14 {'pentagon_wide:mandatory_conflict': 7, 'pentagon_wide:arm_overlap': 4, 'pentagon_wide:fixed_overlap': 7, 'pentagon_wide:routed': 9, 'pentagon_wide:route': 5, 'pentagon7:routed': 27, 'pentagon7:route': 4}
+pentagon7 1 15 {'pentagon_wide:mandatory_conflict': 7, 'pentagon_wide:arm_overlap': 4, 'pentagon_wide:fixed_overlap': 7, 'pentagon_wide:routed': 9, 'pentagon_wide:route': 5, 'pentagon7:routed': 28, 'pentagon7:route': 4}
+screen candidates=37 clean=37 ticks=240 out=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mixed3_compact_v3_screen.csv
+  distance=72 load=64 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mixed3_compact_v3_candidates\pentagon7_v0_s000.flyer
+  distance=72 load=57 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mixed3_compact_v3_candidates\pentagon7_v0_s002.flyer
+  distance=72 load=52 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mixed3_compact_v3_candidates\pentagon7_v0_s003.flyer
+  distance=72 load=56 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mixed3_compact_v3_candidates\pentagon7_v0_s004.flyer
+  distance=72 load=59 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mixed3_compact_v3_candidates\pentagon7_v0_s005.flyer
+

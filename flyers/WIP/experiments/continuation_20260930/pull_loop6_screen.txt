@@ -1,0 +1,6 @@
+screen candidates=32 clean=32 ticks=240 out=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\continuation_20260930\pull_loop6_screen.csv
+  distance=60 load=9 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\continuation_20260930\pull_loop6\c0000.flyer
+  distance=60 load=9 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\continuation_20260930\pull_loop6\c0001.flyer
+  distance=60 load=9 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\continuation_20260930\pull_loop6\c0002.flyer
+  distance=60 load=9 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\continuation_20260930\pull_loop6\c0003.flyer
+  distance=60 load=9 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\continuation_20260930\pull_loop6\c0004.flyer

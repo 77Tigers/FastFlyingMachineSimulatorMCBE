@@ -1,0 +1,13 @@
+file,limit,rng,phase_x,phase_z,ticks,distance,end_blocks,extensions,extension_failures,movement_failures,first_failure_tick,first_failure_kind,conservation_mismatch_ticks,max_successful_action,clean
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmmm_glazed_compact_candidates\hex7_s000.flyer",1000,5,0,0,240,80,252,480,0,0,,"",0,46,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmmm_glazed_compact_candidates\hex7_s001.flyer",1000,5,0,0,240,80,255,480,0,0,,"",0,45,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmmm_glazed_compact_candidates\hex7_s002.flyer",1000,5,0,0,240,80,253,480,0,0,,"",0,44,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmmm_glazed_compact_candidates\hex7_s005.flyer",1000,5,0,0,240,80,250,480,0,0,,"",0,44,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmmm_glazed_compact_candidates\hex7_s006.flyer",1000,5,0,0,240,80,247,480,0,0,,"",0,43,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmmm_glazed_compact_candidates\hex8_s000.flyer",1000,5,0,0,240,80,257,480,0,0,,"",0,46,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmmm_glazed_compact_candidates\hex8_s001.flyer",1000,5,0,0,240,80,261,480,0,0,,"",0,46,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmmm_glazed_compact_candidates\hex8_s002.flyer",1000,5,0,0,240,80,258,480,0,0,,"",0,45,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmmm_glazed_compact_candidates\hex8_s004.flyer",1000,5,0,0,240,80,268,480,0,0,,"",0,48,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmmm_glazed_compact_candidates\hex8_s005.flyer",1000,5,0,0,240,80,256,480,0,0,,"",0,44,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmmm_glazed_compact_candidates\hex8_s006.flyer",1000,5,0,0,240,80,253,480,0,0,,"",0,44,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmmm_glazed_compact_candidates\hex8_s007.flyer",1000,5,0,0,240,80,256,480,0,0,,"",0,47,true

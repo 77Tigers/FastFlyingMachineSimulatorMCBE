@@ -1,0 +1,7 @@
+# Native full-audit checkpoint
+
+Updated directly from completed native audit reports; no account reset or purchase.
+
+- pulling3: passed; {"bank_file": "flyers/bank/pl102/pulling3_tenbody.flyer", "file": "pull3_reroute_pl102.flyer", "status": "passed"}
+- mixed_local11: passed; {"advance": 3, "baseline_tagged_local_max": 11, "copies": 8, "file": "mixed_chain_8tiles_pl217.flyer", "full_cases": 80, "period": 10, "sha256": "75b32785b945fc26ab38cf30ef4ddc75ea52705999dc8550317b4eee9fb3579b", "status": "passed", "ticks": 10000, "whole_limit": 217}
+- mixed_local8: passed; {"advance": 3, "baseline_tagged_local_max": 8, "copies": 8, "file": "compact_mixed_chain_8tiles_pl195.flyer", "full_cases": 80, "period": 10, "sha256": "128fed44206db0802a41517aec5e3435e14bf58b0699291b83ff39e7ec45d84d", "status": "passed", "ticks": 10000, "whole_limit": 195}

@@ -1,0 +1,232 @@
+[
+  {
+    "cycle": 0,
+    "position": [
+      18,
+      4,
+      14
+    ],
+    "accepted": false,
+    "result": "file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\continuation_20260930\\trim_n3\\probe.flyer limit=100 rng_final=626981770695586317 phase_x=0 phase_z=0 ticks=1000 start_min_x=13 end_min_x=26 distance=13 extensions=66 extension_failures=62 end_blocks=85 initial_kinds=[0, 39, 26, 0, 0, 0, 5, 0, 0, 15, 0] final_kinds=[0, 39, 26, 0, 0, 0, 5, 0, 0, 15, 0] conservation_mismatch_ticks=0 period=10 translated_repeat_pairs=0 first_repeat=None traced=true max_successful_action=35 movement_failures=62"
+  },
+  {
+    "cycle": 0,
+    "position": [
+      14,
+      5,
+      21
+    ],
+    "accepted": false,
+    "result": "file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\continuation_20260930\\trim_n3\\probe.flyer limit=100 rng_final=626981770695586317 phase_x=0 phase_z=0 ticks=1000 start_min_x=13 end_min_x=230 distance=217 extensions=914 extension_failures=1010 end_blocks=88 initial_kinds=[0, 40, 25, 0, 0, 0, 5, 0, 0, 15, 0] final_kinds=[0, 40, 25, 0, 0, 0, 5, 0, 0, 15, 0] conservation_mismatch_ticks=0 period=10 translated_repeat_pairs=0 first_repeat=None traced=true max_successful_action=50 movement_failures=1010"
+  },
+  {
+    "cycle": 0,
+    "position": [
+      14,
+      1,
+      15
+    ],
+    "accepted": false,
+    "result": "file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\continuation_20260930\\trim_n3\\probe.flyer limit=100 rng_final=626981770695586317 phase_x=0 phase_z=0 ticks=1000 start_min_x=13 end_min_x=223 distance=210 extensions=926 extension_failures=1033 end_blocks=87 initial_kinds=[0, 39, 26, 0, 0, 0, 5, 0, 0, 15, 0] final_kinds=[0, 39, 26, 0, 0, 0, 5, 0, 0, 15, 0] conservation_mismatch_ticks=0 period=10 translated_repeat_pairs=0 first_repeat=None traced=true max_successful_action=50 movement_failures=1033"
+  },
+  {
+    "cycle": 0,
+    "position": [
+      18,
+      3,
+      15
+    ],
+    "accepted": false,
+    "result": "file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\continuation_20260930\\trim_n3\\probe.flyer limit=100 rng_final=626981770695586317 phase_x=0 phase_z=0 ticks=1000 start_min_x=13 end_min_x=26 distance=13 extensions=66 extension_failures=61 end_blocks=85 initial_kinds=[0, 39, 26, 0, 0, 0, 5, 0, 0, 15, 0] final_kinds=[0, 39, 26, 0, 0, 0, 5, 0, 0, 15, 0] conservation_mismatch_ticks=0 period=10 translated_repeat_pairs=0 first_repeat=None traced=true max_successful_action=35 movement_failures=61"
+  },
+  {
+    "cycle": 0,
+    "position": [
+      17,
+      0,
+      20
+    ],
+    "accepted": false,
+    "result": "file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\continuation_20260930\\trim_n3\\probe.flyer limit=100 rng_final=626981770695586317 phase_x=0 phase_z=0 ticks=1000 start_min_x=13 end_min_x=175 distance=162 extensions=775 extension_failures=756 end_blocks=85 initial_kinds=[0, 40, 25, 0, 0, 0, 5, 0, 0, 15, 0] final_kinds=[0, 40, 25, 0, 0, 0, 5, 0, 0, 15, 0] conservation_mismatch_ticks=0 period=10 translated_repeat_pairs=0 first_repeat=None traced=true max_successful_action=49 movement_failures=756"
+  },
+  {
+    "cycle": 0,
+    "position": [
+      17,
+      3,
+      21
+    ],
+    "accepted": false,
+    "result": "file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\continuation_20260930\\trim_n3\\probe.flyer limit=100 rng_final=626981770695586317 phase_x=0 phase_z=0 ticks=1000 start_min_x=13 end_min_x=226 distance=213 extensions=1053 extension_failures=1058 end_blocks=87 initial_kinds=[0, 39, 26, 0, 0, 0, 5, 0, 0, 15, 0] final_kinds=[0, 39, 26, 0, 0, 0, 5, 0, 0, 15, 0] conservation_mismatch_ticks=0 period=10 translated_repeat_pairs=0 first_repeat=None traced=true max_successful_action=52 movement_failures=1058"
+  },
+  {
+    "cycle": 0,
+    "position": [
+      14,
+      7,
+      18
+    ],
+    "accepted": false,
+    "result": "file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\continuation_20260930\\trim_n3\\probe.flyer limit=100 rng_final=626981770695586317 phase_x=0 phase_z=0 ticks=1000 start_min_x=13 end_min_x=21 distance=8 extensions=39 extension_failures=13 end_blocks=85 initial_kinds=[0, 39, 26, 0, 0, 0, 5, 0, 0, 15, 0] final_kinds=[0, 39, 26, 0, 0, 0, 5, 0, 0, 15, 0] conservation_mismatch_ticks=0 period=10 translated_repeat_pairs=0 first_repeat=None traced=true max_successful_action=33 movement_failures=13"
+  },
+  {
+    "cycle": 0,
+    "position": [
+      17,
+      7,
+      18
+    ],
+    "accepted": false,
+    "result": "file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\continuation_20260930\\trim_n3\\probe.flyer limit=100 rng_final=626981770695586317 phase_x=0 phase_z=0 ticks=1000 start_min_x=13 end_min_x=132 distance=119 extensions=571 extension_failures=555 end_blocks=85 initial_kinds=[0, 40, 25, 0, 0, 0, 5, 0, 0, 15, 0] final_kinds=[0, 40, 25, 0, 0, 0, 5, 0, 0, 15, 0] conservation_mismatch_ticks=0 period=10 translated_repeat_pairs=0 first_repeat=None traced=true max_successful_action=48 movement_failures=555"
+  },
+  {
+    "cycle": 0,
+    "position": [
+      16,
+      0,
+      16
+    ],
+    "accepted": false,
+    "result": "file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\continuation_20260930\\trim_n3\\probe.flyer limit=100 rng_final=626981770695586317 phase_x=0 phase_z=0 ticks=1000 start_min_x=13 end_min_x=195 distance=182 extensions=896 extension_failures=954 end_blocks=85 initial_kinds=[0, 39, 26, 0, 0, 0, 5, 0, 0, 15, 0] final_kinds=[0, 39, 26, 0, 0, 0, 5, 0, 0, 15, 0] conservation_mismatch_ticks=0 period=10 translated_repeat_pairs=0 first_repeat=None traced=true max_successful_action=51 movement_failures=954"
+  },
+  {
+    "cycle": 0,
+    "position": [
+      17,
+      6,
+      19
+    ],
+    "accepted": false,
+    "result": "file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\continuation_20260930\\trim_n3\\probe.flyer limit=100 rng_final=626981770695586317 phase_x=0 phase_z=0 ticks=1000 start_min_x=13 end_min_x=222 distance=209 extensions=1011 extension_failures=1128 end_blocks=87 initial_kinds=[0, 40, 25, 0, 0, 0, 5, 0, 0, 15, 0] final_kinds=[0, 40, 25, 0, 0, 0, 5, 0, 0, 15, 0] conservation_mismatch_ticks=0 period=10 translated_repeat_pairs=0 first_repeat=None traced=true max_successful_action=51 movement_failures=1128"
+  },
+  {
+    "cycle": 0,
+    "position": [
+      14,
+      6,
+      17
+    ],
+    "accepted": false,
+    "result": "file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\continuation_20260930\\trim_n3\\probe.flyer limit=100 rng_final=626981770695586317 phase_x=0 phase_z=0 ticks=1000 start_min_x=13 end_min_x=231 distance=218 extensions=910 extension_failures=1004 end_blocks=88 initial_kinds=[0, 39, 26, 0, 0, 0, 5, 0, 0, 15, 0] final_kinds=[0, 39, 26, 0, 0, 0, 5, 0, 0, 15, 0] conservation_mismatch_ticks=0 period=10 translated_repeat_pairs=0 first_repeat=None traced=true max_successful_action=50 movement_failures=1004"
+  },
+  {
+    "cycle": 0,
+    "position": [
+      14,
+      4,
+      22
+    ],
+    "accepted": false,
+    "result": "file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\continuation_20260930\\trim_n3\\probe.flyer limit=100 rng_final=626981770695586317 phase_x=0 phase_z=0 ticks=1000 start_min_x=13 end_min_x=230 distance=217 extensions=914 extension_failures=1010 end_blocks=88 initial_kinds=[0, 40, 25, 0, 0, 0, 5, 0, 0, 15, 0] final_kinds=[0, 40, 25, 0, 0, 0, 5, 0, 0, 15, 0] conservation_mismatch_ticks=0 period=10 translated_repeat_pairs=0 first_repeat=None traced=true max_successful_action=50 movement_failures=1010"
+  },
+  {
+    "cycle": 0,
+    "position": [
+      17,
+      1,
+      21
+    ],
+    "accepted": false,
+    "result": "file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\continuation_20260930\\trim_n3\\probe.flyer limit=100 rng_final=626981770695586317 phase_x=0 phase_z=0 ticks=1000 start_min_x=13 end_min_x=229 distance=216 extensions=1007 extension_failures=1072 end_blocks=87 initial_kinds=[0, 40, 25, 0, 0, 0, 5, 0, 0, 15, 0] final_kinds=[0, 40, 25, 0, 0, 0, 5, 0, 0, 15, 0] conservation_mismatch_ticks=0 period=10 translated_repeat_pairs=0 first_repeat=None traced=true max_successful_action=51 movement_failures=1072"
+  },
+  {
+    "cycle": 0,
+    "position": [
+      17,
+      4,
+      22
+    ],
+    "accepted": false,
+    "result": "file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\continuation_20260930\\trim_n3\\probe.flyer limit=100 rng_final=626981770695586317 phase_x=0 phase_z=0 ticks=1000 start_min_x=13 end_min_x=237 distance=224 extensions=1103 extension_failures=985 end_blocks=86 initial_kinds=[0, 39, 26, 0, 0, 0, 5, 0, 0, 15, 0] final_kinds=[0, 39, 26, 0, 0, 0, 5, 0, 0, 15, 0] conservation_mismatch_ticks=0 period=10 translated_repeat_pairs=0 first_repeat=None traced=true max_successful_action=48 movement_failures=985"
+  },
+  {
+    "cycle": 0,
+    "position": [
+      14,
+      4,
+      14
+    ],
+    "accepted": false,
+    "result": "file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\continuation_20260930\\trim_n3\\probe.flyer limit=100 rng_final=626981770695586317 phase_x=0 phase_z=0 ticks=1000 start_min_x=13 end_min_x=109 distance=96 extensions=413 extension_failures=421 end_blocks=85 initial_kinds=[0, 40, 25, 0, 0, 0, 5, 0, 0, 15, 0] final_kinds=[0, 40, 25, 0, 0, 0, 5, 0, 0, 15, 0] conservation_mismatch_ticks=0 period=10 translated_repeat_pairs=0 first_repeat=None traced=true max_successful_action=50 movement_failures=421"
+  },
+  {
+    "cycle": 0,
+    "position": [
+      14,
+      3,
+      15
+    ],
+    "accepted": false,
+    "result": "file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\continuation_20260930\\trim_n3\\probe.flyer limit=100 rng_final=626981770695586317 phase_x=0 phase_z=0 ticks=1000 start_min_x=13 end_min_x=109 distance=96 extensions=413 extension_failures=421 end_blocks=85 initial_kinds=[0, 40, 25, 0, 0, 0, 5, 0, 0, 15, 0] final_kinds=[0, 40, 25, 0, 0, 0, 5, 0, 0, 15, 0] conservation_mismatch_ticks=0 period=10 translated_repeat_pairs=0 first_repeat=None traced=true max_successful_action=50 movement_failures=421"
+  },
+  {
+    "cycle": 0,
+    "position": [
+      17,
+      1,
+      19
+    ],
+    "accepted": false,
+    "result": "file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\continuation_20260930\\trim_n3\\probe.flyer limit=100 rng_final=626981770695586317 phase_x=0 phase_z=0 ticks=1000 start_min_x=13 end_min_x=84 distance=71 extensions=354 extension_failures=365 end_blocks=85 initial_kinds=[0, 40, 25, 0, 0, 0, 5, 0, 0, 15, 0] final_kinds=[0, 40, 25, 0, 0, 0, 5, 0, 0, 15, 0] conservation_mismatch_ticks=0 period=10 translated_repeat_pairs=0 first_repeat=None traced=true max_successful_action=49 movement_failures=365"
+  },
+  {
+    "cycle": 0,
+    "position": [
+      16,
+      1,
+      15
+    ],
+    "accepted": false,
+    "result": "file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\continuation_20260930\\trim_n3\\probe.flyer limit=100 rng_final=626981770695586317 phase_x=0 phase_z=0 ticks=1000 start_min_x=13 end_min_x=38 distance=25 extensions=123 extension_failures=129 end_blocks=85 initial_kinds=[0, 39, 26, 0, 0, 0, 5, 0, 0, 15, 0] final_kinds=[0, 39, 26, 0, 0, 0, 5, 0, 0, 15, 0] conservation_mismatch_ticks=0 period=10 translated_repeat_pairs=0 first_repeat=None traced=true max_successful_action=34 movement_failures=129"
+  },
+  {
+    "cycle": 0,
+    "position": [
+      16,
+      2,
+      16
+    ],
+    "accepted": false,
+    "result": "file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\continuation_20260930\\trim_n3\\probe.flyer limit=100 rng_final=626981770695586317 phase_x=0 phase_z=0 ticks=1000 start_min_x=13 end_min_x=224 distance=211 extensions=1018 extension_failures=1053 end_blocks=87 initial_kinds=[0, 39, 26, 0, 0, 0, 5, 0, 0, 15, 0] final_kinds=[0, 39, 26, 0, 0, 0, 5, 0, 0, 15, 0] conservation_mismatch_ticks=0 period=10 translated_repeat_pairs=0 first_repeat=None traced=true max_successful_action=51 movement_failures=1053"
+  },
+  {
+    "cycle": 0,
+    "position": [
+      13,
+      0,
+      20
+    ],
+    "accepted": false,
+    "result": "file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\continuation_20260930\\trim_n3\\probe.flyer limit=100 rng_final=626981770695586317 phase_x=0 phase_z=0 ticks=1000 start_min_x=13 end_min_x=44 distance=31 extensions=139 extension_failures=139 end_blocks=85 initial_kinds=[0, 39, 26, 0, 0, 0, 5, 0, 0, 15, 0] final_kinds=[0, 39, 26, 0, 0, 0, 5, 0, 0, 15, 0] conservation_mismatch_ticks=0 period=10 translated_repeat_pairs=0 first_repeat=None traced=true max_successful_action=34 movement_failures=139"
+  },
+  {
+    "cycle": 0,
+    "position": [
+      18,
+      5,
+      15
+    ],
+    "accepted": false,
+    "result": "file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\continuation_20260930\\trim_n3\\probe.flyer limit=100 rng_final=626981770695586317 phase_x=0 phase_z=0 ticks=1000 start_min_x=13 end_min_x=26 distance=13 extensions=66 extension_failures=62 end_blocks=85 initial_kinds=[0, 39, 26, 0, 0, 0, 5, 0, 0, 15, 0] final_kinds=[0, 39, 26, 0, 0, 0, 5, 0, 0, 15, 0] conservation_mismatch_ticks=0 period=10 translated_repeat_pairs=0 first_repeat=None traced=true max_successful_action=35 movement_failures=62"
+  },
+  {
+    "cycle": 0,
+    "position": [
+      14,
+      0,
+      16
+    ],
+    "accepted": false,
+    "result": "file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\continuation_20260930\\trim_n3\\probe.flyer limit=100 rng_final=626981770695586317 phase_x=0 phase_z=0 ticks=1000 start_min_x=13 end_min_x=222 distance=209 extensions=933 extension_failures=1002 end_blocks=87 initial_kinds=[0, 39, 26, 0, 0, 0, 5, 0, 0, 15, 0] final_kinds=[0, 39, 26, 0, 0, 0, 5, 0, 0, 15, 0] conservation_mismatch_ticks=0 period=10 translated_repeat_pairs=0 first_repeat=None traced=true max_successful_action=51 movement_failures=1002"
+  },
+  {
+    "cycle": 0,
+    "position": [
+      13,
+      1,
+      21
+    ],
+    "accepted": false,
+    "result": "file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\continuation_20260930\\trim_n3\\probe.flyer limit=100 rng_final=626981770695586317 phase_x=0 phase_z=0 ticks=1000 start_min_x=13 end_min_x=127 distance=114 extensions=490 extension_failures=481 end_blocks=85 initial_kinds=[0, 39, 26, 0, 0, 0, 5, 0, 0, 15, 0] final_kinds=[0, 39, 26, 0, 0, 0, 5, 0, 0, 15, 0] conservation_mismatch_ticks=0 period=10 translated_repeat_pairs=0 first_repeat=None traced=true max_successful_action=50 movement_failures=481"
+  }
+]

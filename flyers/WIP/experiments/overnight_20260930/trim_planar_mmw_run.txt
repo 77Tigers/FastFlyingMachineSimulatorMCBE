@@ -1,0 +1,5 @@
+mmw trim 0 removed 3 sticky [26, 27, 27]
+mmw trim 1 removed 1 sticky [26, 27, 26]
+mmw trim 2 removed 0 sticky [26, 27, 26]
+verify pass=true file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmw_planar_trim_pl36.flyer ticks=10000 distance=3333 limit=36 max_successful_action=36 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=833 initial_matches=833 consecutive_matches=833 displacement_mismatches=0
+

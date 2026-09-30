@@ -1,0 +1,18 @@
+grid4 {'grid4:no_pickup': 24, 'grid4:route': 4, 'grid4:routed': 4}
+stagger3 {'grid4:no_pickup': 24, 'grid4:route': 4, 'grid4:routed': 4, 'stagger3:mandatory_conflict': 26, 'stagger3:no_pickup': 6}
+stagger4 {'grid4:no_pickup': 24, 'grid4:route': 4, 'grid4:routed': 4, 'stagger3:mandatory_conflict': 26, 'stagger3:no_pickup': 6, 'stagger4:mandatory_conflict': 26, 'stagger4:no_pickup': 6}
+hex3 {'grid4:no_pickup': 24, 'grid4:route': 4, 'grid4:routed': 4, 'stagger3:mandatory_conflict': 26, 'stagger3:no_pickup': 6, 'stagger4:mandatory_conflict': 26, 'stagger4:no_pickup': 6, 'hex3:no_pickup': 13, 'hex3:mandatory_conflict': 15, 'hex3:route': 4}
+hex4 {'grid4:no_pickup': 24, 'grid4:route': 4, 'grid4:routed': 4, 'stagger3:mandatory_conflict': 26, 'stagger3:no_pickup': 6, 'stagger4:mandatory_conflict': 26, 'stagger4:no_pickup': 6, 'hex3:no_pickup': 13, 'hex3:mandatory_conflict': 15, 'hex3:route': 4, 'hex4:no_pickup': 21, 'hex4:route': 6, 'hex4:routed': 5}
+screen candidates=9 clean=9 ticks=240 out=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmw_layout_screen.csv
+  distance=80 load=74 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmw_layouts\grid4_s009.flyer
+  distance=80 load=74 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmw_layouts\grid4_s016.flyer
+  distance=80 load=65 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmw_layouts\grid4_s019.flyer
+  distance=80 load=69 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmw_layouts\grid4_s026.flyer
+  distance=80 load=75 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmw_layouts\hex4_s005.flyer
+
+verify pass=true file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmw_hex4_s014_pl62.flyer ticks=10000 distance=3333 limit=62 max_successful_action=62 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=833 initial_matches=833 consecutive_matches=833 displacement_mismatches=0
+
+verify pass=true file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmw_grid4_s019_pl65.flyer ticks=10000 distance=3333 limit=65 max_successful_action=65 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=833 initial_matches=833 consecutive_matches=833 displacement_mismatches=0
+
+verify pass=true file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmw_hex4_s022_pl67.flyer ticks=10000 distance=3333 limit=67 max_successful_action=67 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=833 initial_matches=833 consecutive_matches=833 displacement_mismatches=0
+

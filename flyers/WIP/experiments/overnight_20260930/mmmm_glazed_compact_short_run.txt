@@ -1,0 +1,23 @@
+hex7 0 {'routed': 1}
+hex7 1 {'routed': 2}
+hex7 2 {'routed': 3}
+hex7 3 {'routed': 3, 'mandatory': 1}
+hex7 4 {'routed': 4, 'mandatory': 1}
+hex7 5 {'routed': 5, 'mandatory': 1}
+hex7 6 {'routed': 6, 'mandatory': 1}
+hex7 7 {'routed': 7, 'mandatory': 1}
+hex8 0 {'routed': 8, 'mandatory': 1}
+hex8 1 {'routed': 9, 'mandatory': 1}
+hex8 2 {'routed': 10, 'mandatory': 1}
+hex8 3 {'routed': 11, 'mandatory': 1}
+hex8 4 {'routed': 12, 'mandatory': 1}
+hex8 5 {'routed': 13, 'mandatory': 1}
+hex8 6 {'routed': 14, 'mandatory': 1}
+hex8 7 {'routed': 15, 'mandatory': 1}
+screen candidates=15 clean=15 ticks=240 out=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmmm_glazed_compact_short_screen.csv
+  distance=80 load=44 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmmm_glazed_compact_short_candidates\hex7_s000.flyer
+  distance=80 load=43 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmmm_glazed_compact_short_candidates\hex7_s001.flyer
+  distance=80 load=40 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmmm_glazed_compact_short_candidates\hex7_s002.flyer
+  distance=80 load=41 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmmm_glazed_compact_short_candidates\hex7_s004.flyer
+  distance=80 load=41 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmmm_glazed_compact_short_candidates\hex7_s005.flyer
+

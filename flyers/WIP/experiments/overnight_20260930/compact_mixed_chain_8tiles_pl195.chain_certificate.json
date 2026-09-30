@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "file": "compact_mixed_chain_8tiles_pl195.flyer",
+  "copies": 8,
+  "full_cases": 80,
+  "ticks": 10000,
+  "period": 10,
+  "advance": 3,
+  "baseline_tagged_local_max": 8,
+  "whole_limit": 195,
+  "sha256": "128fed44206db0802a41517aec5e3435e14bf58b0699291b83ff39e7ec45d84d"
+}

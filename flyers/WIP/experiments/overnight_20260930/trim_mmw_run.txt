@@ -1,0 +1,7 @@
+mmw trim 0 removed 6 sticky [47, 41, 49]
+mmw trim 1 removed 2 sticky [47, 41, 47]
+mmw trim 2 removed 0 sticky [47, 41, 47]
+verify pass=true file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmw_hex_trim_pl57.flyer ticks=10000 distance=3333 limit=57 max_successful_action=57 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=833 initial_matches=833 consecutive_matches=833 displacement_mismatches=0
+
+samples passed=80/80 file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmw_hex_trim_pl57.flyer ticks=10000 period=12 advance=4 first_failed=None out=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmw_hex_trim_pl57.samples.csv
+

@@ -1,0 +1,1670 @@
+[
+  {
+    "tick": 8,
+    "difference_count": 4,
+    "differences": [
+      {
+        "position": [
+          16,
+          5,
+          21
+        ],
+        "tag": "piston7",
+        "expected": "Block(kind=<Kind.PISTON: 9>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=2)",
+        "actual": "None"
+      },
+      {
+        "position": [
+          16,
+          6,
+          22
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.PISTON: 9>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=2)"
+      },
+      {
+        "position": [
+          17,
+          5,
+          21
+        ],
+        "tag": "arm7",
+        "expected": "Block(kind=<Kind.PISTON_ARM: 10>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "Block(kind=<Kind.PISTON: 9>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          17,
+          6,
+          22
+        ],
+        "tag": "piston8",
+        "expected": "Block(kind=<Kind.PISTON: 9>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "Block(kind=<Kind.PISTON_ARM: 10>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      }
+    ]
+  },
+  {
+    "tick": 10,
+    "difference_count": 6,
+    "differences": [
+      {
+        "position": [
+          16,
+          5,
+          21
+        ],
+        "tag": "piston7",
+        "expected": "Block(kind=<Kind.PISTON: 9>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "None"
+      },
+      {
+        "position": [
+          16,
+          6,
+          22
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.PISTON: 9>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          17,
+          5,
+          21
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.PISTON: 9>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=2)"
+      },
+      {
+        "position": [
+          17,
+          6,
+          22
+        ],
+        "tag": "piston8",
+        "expected": "Block(kind=<Kind.PISTON: 9>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=2)",
+        "actual": "None"
+      },
+      {
+        "position": [
+          18,
+          5,
+          21
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.PISTON_ARM: 10>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          18,
+          6,
+          22
+        ],
+        "tag": "arm8",
+        "expected": "Block(kind=<Kind.PISTON_ARM: 10>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "None"
+      }
+    ]
+  },
+  {
+    "tick": 28,
+    "difference_count": 4,
+    "differences": [
+      {
+        "position": [
+          22,
+          5,
+          21
+        ],
+        "tag": "piston7",
+        "expected": "Block(kind=<Kind.PISTON: 9>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=2)",
+        "actual": "None"
+      },
+      {
+        "position": [
+          22,
+          6,
+          22
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.PISTON: 9>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=2)"
+      },
+      {
+        "position": [
+          23,
+          5,
+          21
+        ],
+        "tag": "arm7",
+        "expected": "Block(kind=<Kind.PISTON_ARM: 10>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "Block(kind=<Kind.PISTON: 9>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          23,
+          6,
+          22
+        ],
+        "tag": "piston8",
+        "expected": "Block(kind=<Kind.PISTON: 9>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "Block(kind=<Kind.PISTON_ARM: 10>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      }
+    ]
+  },
+  {
+    "tick": 30,
+    "difference_count": 6,
+    "differences": [
+      {
+        "position": [
+          22,
+          5,
+          21
+        ],
+        "tag": "piston7",
+        "expected": "Block(kind=<Kind.PISTON: 9>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "None"
+      },
+      {
+        "position": [
+          22,
+          6,
+          22
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.PISTON: 9>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          23,
+          5,
+          21
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.PISTON: 9>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=2)"
+      },
+      {
+        "position": [
+          23,
+          6,
+          22
+        ],
+        "tag": "piston8",
+        "expected": "Block(kind=<Kind.PISTON: 9>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=2)",
+        "actual": "None"
+      },
+      {
+        "position": [
+          24,
+          5,
+          21
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.PISTON_ARM: 10>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          24,
+          6,
+          22
+        ],
+        "tag": "arm8",
+        "expected": "Block(kind=<Kind.PISTON_ARM: 10>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "None"
+      }
+    ]
+  },
+  {
+    "tick": 58,
+    "difference_count": 4,
+    "differences": [
+      {
+        "position": [
+          31,
+          5,
+          21
+        ],
+        "tag": "piston7",
+        "expected": "Block(kind=<Kind.PISTON: 9>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=2)",
+        "actual": "None"
+      },
+      {
+        "position": [
+          31,
+          6,
+          22
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.PISTON: 9>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=2)"
+      },
+      {
+        "position": [
+          32,
+          5,
+          21
+        ],
+        "tag": "arm7",
+        "expected": "Block(kind=<Kind.PISTON_ARM: 10>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "Block(kind=<Kind.PISTON: 9>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          32,
+          6,
+          22
+        ],
+        "tag": "piston8",
+        "expected": "Block(kind=<Kind.PISTON: 9>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "Block(kind=<Kind.PISTON_ARM: 10>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      }
+    ]
+  },
+  {
+    "tick": 60,
+    "difference_count": 6,
+    "differences": [
+      {
+        "position": [
+          31,
+          5,
+          21
+        ],
+        "tag": "piston7",
+        "expected": "Block(kind=<Kind.PISTON: 9>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "None"
+      },
+      {
+        "position": [
+          31,
+          6,
+          22
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.PISTON: 9>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          32,
+          5,
+          21
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.PISTON: 9>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=2)"
+      },
+      {
+        "position": [
+          32,
+          6,
+          22
+        ],
+        "tag": "piston8",
+        "expected": "Block(kind=<Kind.PISTON: 9>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=2)",
+        "actual": "None"
+      },
+      {
+        "position": [
+          33,
+          5,
+          21
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.PISTON_ARM: 10>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          33,
+          6,
+          22
+        ],
+        "tag": "arm8",
+        "expected": "Block(kind=<Kind.PISTON_ARM: 10>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "None"
+      }
+    ]
+  },
+  {
+    "tick": 68,
+    "difference_count": 4,
+    "differences": [
+      {
+        "position": [
+          34,
+          5,
+          21
+        ],
+        "tag": "piston7",
+        "expected": "Block(kind=<Kind.PISTON: 9>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=2)",
+        "actual": "None"
+      },
+      {
+        "position": [
+          34,
+          6,
+          22
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.PISTON: 9>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=2)"
+      },
+      {
+        "position": [
+          35,
+          5,
+          21
+        ],
+        "tag": "arm7",
+        "expected": "Block(kind=<Kind.PISTON_ARM: 10>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "Block(kind=<Kind.PISTON: 9>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          35,
+          6,
+          22
+        ],
+        "tag": "piston8",
+        "expected": "Block(kind=<Kind.PISTON: 9>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "Block(kind=<Kind.PISTON_ARM: 10>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      }
+    ]
+  },
+  {
+    "tick": 70,
+    "difference_count": 5,
+    "differences": [
+      {
+        "position": [
+          34,
+          5,
+          21
+        ],
+        "tag": "piston7",
+        "expected": "Block(kind=<Kind.PISTON: 9>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "None"
+      },
+      {
+        "position": [
+          34,
+          6,
+          22
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.PISTON: 9>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          35,
+          6,
+          22
+        ],
+        "tag": "piston8",
+        "expected": "Block(kind=<Kind.PISTON: 9>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=2)",
+        "actual": "None"
+      },
+      {
+        "position": [
+          36,
+          5,
+          21
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.PISTON: 9>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          36,
+          6,
+          22
+        ],
+        "tag": "arm8",
+        "expected": "Block(kind=<Kind.PISTON_ARM: 10>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "None"
+      }
+    ]
+  },
+  {
+    "tick": 72,
+    "difference_count": 43,
+    "differences": [
+      {
+        "position": [
+          33,
+          4,
+          18
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          33,
+          5,
+          17
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          33,
+          5,
+          18
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          33,
+          6,
+          17
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          33,
+          7,
+          17
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          34,
+          5,
+          17
+        ],
+        "tag": "body1",
+        "expected": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "None"
+      },
+      {
+        "position": [
+          34,
+          5,
+          18
+        ],
+        "tag": "body1",
+        "expected": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "None"
+      },
+      {
+        "position": [
+          34,
+          6,
+          17
+        ],
+        "tag": "body1",
+        "expected": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "None"
+      },
+      {
+        "position": [
+          34,
+          7,
+          18
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.PISTON: 9>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          34,
+          8,
+          17
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          34,
+          8,
+          18
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          34,
+          9,
+          18
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.PISTON: 9>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          35,
+          3,
+          22
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.REDSTONE_BLOCK: 6>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          35,
+          4,
+          19
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          35,
+          4,
+          20
+        ],
+        "tag": "piston3",
+        "expected": "Block(kind=<Kind.PISTON: 9>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=2)",
+        "actual": "Block(kind=<Kind.PISTON: 9>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          35,
+          4,
+          21
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.OBSERVER: 7>, moving=False, direction=5, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          35,
+          5,
+          21
+        ],
+        "tag": "piston7",
+        "expected": "Block(kind=<Kind.PISTON: 9>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "None"
+      },
+      {
+        "position": [
+          35,
+          7,
+          17
+        ],
+        "tag": "body1",
+        "expected": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "None"
+      },
+      {
+        "position": [
+          35,
+          7,
+          18
+        ],
+        "tag": "piston10",
+        "expected": "Block(kind=<Kind.PISTON: 9>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "None"
+      },
+      {
+        "position": [
+          35,
+          8,
+          18
+        ],
+        "tag": "body1",
+        "expected": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "None"
+      },
+      {
+        "position": [
+          35,
+          9,
+          18
+        ],
+        "tag": "piston9",
+        "expected": "Block(kind=<Kind.PISTON: 9>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "None"
+      },
+      {
+        "position": [
+          36,
+          2,
+          20
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          36,
+          2,
+          21
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          36,
+          3,
+          21
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      }
+    ]
+  },
+  {
+    "tick": 74,
+    "difference_count": 104,
+    "differences": [
+      {
+        "position": [
+          34,
+          4,
+          18
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          34,
+          5,
+          17
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          34,
+          5,
+          18
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          34,
+          6,
+          17
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          34,
+          7,
+          17
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          35,
+          4,
+          20
+        ],
+        "tag": "piston3",
+        "expected": "Block(kind=<Kind.PISTON: 9>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "None"
+      },
+      {
+        "position": [
+          35,
+          5,
+          17
+        ],
+        "tag": "body1",
+        "expected": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "None"
+      },
+      {
+        "position": [
+          35,
+          5,
+          18
+        ],
+        "tag": "body1",
+        "expected": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "None"
+      },
+      {
+        "position": [
+          35,
+          6,
+          17
+        ],
+        "tag": "body1",
+        "expected": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "None"
+      },
+      {
+        "position": [
+          35,
+          7,
+          18
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.PISTON: 9>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          35,
+          8,
+          17
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          35,
+          8,
+          18
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          35,
+          9,
+          18
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.PISTON: 9>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          36,
+          3,
+          22
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.REDSTONE_BLOCK: 6>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          36,
+          4,
+          19
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          36,
+          4,
+          20
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.PISTON: 9>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          36,
+          4,
+          21
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.OBSERVER: 7>, moving=False, direction=5, powered=True, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          36,
+          5,
+          21
+        ],
+        "tag": "piston7",
+        "expected": "Block(kind=<Kind.PISTON: 9>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "None"
+      },
+      {
+        "position": [
+          36,
+          6,
+          15
+        ],
+        "tag": "body2",
+        "expected": "Block(kind=<Kind.SLIME: 1>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "None"
+      },
+      {
+        "position": [
+          36,
+          7,
+          15
+        ],
+        "tag": "body2",
+        "expected": "Block(kind=<Kind.SLIME: 1>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "None"
+      },
+      {
+        "position": [
+          36,
+          7,
+          17
+        ],
+        "tag": "body1",
+        "expected": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "None"
+      },
+      {
+        "position": [
+          36,
+          7,
+          18
+        ],
+        "tag": "piston10",
+        "expected": "Block(kind=<Kind.PISTON: 9>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "None"
+      },
+      {
+        "position": [
+          36,
+          8,
+          15
+        ],
+        "tag": "body2",
+        "expected": "Block(kind=<Kind.SLIME: 1>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "None"
+      },
+      {
+        "position": [
+          36,
+          8,
+          18
+        ],
+        "tag": "body1",
+        "expected": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "None"
+      }
+    ]
+  },
+  {
+    "tick": 76,
+    "difference_count": 123,
+    "differences": [
+      {
+        "position": [
+          33,
+          1,
+          20
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          33,
+          2,
+          20
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          33,
+          3,
+          20
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          33,
+          4,
+          20
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          33,
+          5,
+          20
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          33,
+          6,
+          19
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          33,
+          6,
+          20
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          34,
+          1,
+          19
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          34,
+          2,
+          20
+        ],
+        "tag": "body3",
+        "expected": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "None"
+      },
+      {
+        "position": [
+          34,
+          3,
+          20
+        ],
+        "tag": "body3",
+        "expected": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "None"
+      },
+      {
+        "position": [
+          34,
+          4,
+          20
+        ],
+        "tag": "body3",
+        "expected": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "None"
+      },
+      {
+        "position": [
+          34,
+          5,
+          20
+        ],
+        "tag": "body3",
+        "expected": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "None"
+      },
+      {
+        "position": [
+          34,
+          6,
+          20
+        ],
+        "tag": "body3",
+        "expected": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "None"
+      },
+      {
+        "position": [
+          35,
+          1,
+          20
+        ],
+        "tag": "body3",
+        "expected": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "None"
+      },
+      {
+        "position": [
+          35,
+          7,
+          19
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          35,
+          7,
+          20
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          36,
+          4,
+          20
+        ],
+        "tag": "piston3",
+        "expected": "Block(kind=<Kind.PISTON: 9>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "None"
+      },
+      {
+        "position": [
+          36,
+          6,
+          15
+        ],
+        "tag": "body2",
+        "expected": "Block(kind=<Kind.SLIME: 1>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "None"
+      },
+      {
+        "position": [
+          36,
+          6,
+          18
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          36,
+          7,
+          15
+        ],
+        "tag": "body2",
+        "expected": "Block(kind=<Kind.SLIME: 1>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "None"
+      },
+      {
+        "position": [
+          36,
+          7,
+          18
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.PISTON: 9>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          36,
+          7,
+          19
+        ],
+        "tag": "body3",
+        "expected": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "Block(kind=<Kind.OBSERVER: 7>, moving=False, direction=5, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          36,
+          8,
+          15
+        ],
+        "tag": "body2",
+        "expected": "Block(kind=<Kind.SLIME: 1>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "None"
+      },
+      {
+        "position": [
+          36,
+          9,
+          18
+        ],
+        "tag": "piston9",
+        "expected": "Block(kind=<Kind.PISTON: 9>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=2)",
+        "actual": "Block(kind=<Kind.PISTON: 9>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      }
+    ]
+  },
+  {
+    "tick": 78,
+    "difference_count": 110,
+    "differences": [
+      {
+        "position": [
+          34,
+          1,
+          20
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          34,
+          2,
+          20
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          34,
+          3,
+          20
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          34,
+          4,
+          20
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          34,
+          5,
+          20
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          34,
+          6,
+          19
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          34,
+          6,
+          20
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          35,
+          1,
+          19
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          35,
+          2,
+          20
+        ],
+        "tag": "body3",
+        "expected": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "None"
+      },
+      {
+        "position": [
+          35,
+          3,
+          20
+        ],
+        "tag": "body3",
+        "expected": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "None"
+      },
+      {
+        "position": [
+          35,
+          4,
+          18
+        ],
+        "tag": "body1",
+        "expected": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "None"
+      },
+      {
+        "position": [
+          35,
+          4,
+          20
+        ],
+        "tag": "body3",
+        "expected": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "None"
+      },
+      {
+        "position": [
+          35,
+          5,
+          17
+        ],
+        "tag": "body1",
+        "expected": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "None"
+      },
+      {
+        "position": [
+          35,
+          5,
+          18
+        ],
+        "tag": "body1",
+        "expected": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "None"
+      },
+      {
+        "position": [
+          35,
+          5,
+          20
+        ],
+        "tag": "body3",
+        "expected": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "None"
+      },
+      {
+        "position": [
+          35,
+          6,
+          17
+        ],
+        "tag": "body1",
+        "expected": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "None"
+      },
+      {
+        "position": [
+          35,
+          6,
+          20
+        ],
+        "tag": "body3",
+        "expected": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "None"
+      },
+      {
+        "position": [
+          35,
+          7,
+          17
+        ],
+        "tag": "body1",
+        "expected": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "None"
+      },
+      {
+        "position": [
+          36,
+          1,
+          20
+        ],
+        "tag": "body3",
+        "expected": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "None"
+      },
+      {
+        "position": [
+          36,
+          5,
+          17
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          36,
+          5,
+          18
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          36,
+          6,
+          17
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          36,
+          7,
+          19
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          36,
+          7,
+          20
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      }
+    ]
+  },
+  {
+    "tick": 80,
+    "difference_count": 134,
+    "differences": [
+      {
+        "position": [
+          35,
+          1,
+          20
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          35,
+          2,
+          20
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          35,
+          3,
+          20
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          35,
+          4,
+          20
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          35,
+          5,
+          20
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          35,
+          6,
+          19
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          35,
+          6,
+          20
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          36,
+          1,
+          19
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          36,
+          2,
+          20
+        ],
+        "tag": "body3",
+        "expected": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "None"
+      },
+      {
+        "position": [
+          36,
+          3,
+          20
+        ],
+        "tag": "body3",
+        "expected": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "None"
+      },
+      {
+        "position": [
+          36,
+          4,
+          20
+        ],
+        "tag": "body3",
+        "expected": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "None"
+      },
+      {
+        "position": [
+          36,
+          5,
+          20
+        ],
+        "tag": "body3",
+        "expected": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "None"
+      },
+      {
+        "position": [
+          36,
+          6,
+          20
+        ],
+        "tag": "body3",
+        "expected": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "None"
+      },
+      {
+        "position": [
+          36,
+          9,
+          18
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.PISTON: 9>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          37,
+          1,
+          20
+        ],
+        "tag": "body3",
+        "expected": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "None"
+      },
+      {
+        "position": [
+          37,
+          3,
+          21
+        ],
+        "tag": "piston5",
+        "expected": "Block(kind=<Kind.PISTON: 9>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=2)",
+        "actual": "Block(kind=<Kind.PISTON: 9>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          37,
+          4,
+          20
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.PISTON: 9>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          37,
+          6,
+          15
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.SLIME: 1>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          37,
+          6,
+          22
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.PISTON: 9>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          37,
+          7,
+          15
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.SLIME: 1>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          37,
+          7,
+          18
+        ],
+        "tag": "piston10",
+        "expected": "Block(kind=<Kind.PISTON: 9>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)",
+        "actual": "Block(kind=<Kind.PISTON: 9>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=2)"
+      },
+      {
+        "position": [
+          37,
+          7,
+          19
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          37,
+          7,
+          20
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.HONEY: 2>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      },
+      {
+        "position": [
+          37,
+          8,
+          15
+        ],
+        "tag": null,
+        "expected": "None",
+        "actual": "Block(kind=<Kind.SLIME: 1>, moving=False, direction=0, powered=False, sticky=False, angry=False, state=0)"
+      }
+    ]
+  }
+]

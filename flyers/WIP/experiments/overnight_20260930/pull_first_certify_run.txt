@@ -1,0 +1,8 @@
+verify pass=true file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\pull_first_dy12_s001_diagnostic.flyer ticks=10000 distance=3000 limit=1000 max_successful_action=59 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=1000 initial_matches=1000 consecutive_matches=1000 displacement_mismatches=0
+
+verify pass=true file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\pull_first_dy12_s001_pl59.flyer ticks=10000 distance=3000 limit=59 max_successful_action=59 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=1000 initial_matches=1000 consecutive_matches=1000 displacement_mismatches=0
+
+file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\pull_first_dy12_s001_pl59.flyer limit=59 rng_final=6269817706955863125 phase_x=0 phase_z=0 ticks=10000 start_min_x=13 end_min_x=3013 distance=3000 extensions=18000 extension_failures=0 end_blocks=262 initial_kinds=[0, 129, 92, 0, 0, 1, 11, 7, 0, 18, 0] final_kinds=[0, 129, 92, 0, 0, 1, 11, 7, 0, 18, 0] conservation_mismatch_ticks=0 period=10 translated_repeat_pairs=1000 first_repeat=Some((0, 10, 3)) traced=true max_successful_action=59 movement_failures=0
+
+samples passed=80/80 file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\pull_first_dy12_s001_pl59.flyer ticks=10000 period=10 advance=3 first_failed=None out=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\pull_first_dy12_s001_pl59.samples.csv
+

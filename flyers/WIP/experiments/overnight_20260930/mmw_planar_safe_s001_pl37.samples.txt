@@ -1,0 +1,1 @@
+samples passed=80/80 file=flyers\WIP\experiments\overnight_20260930\mmw_planar_safe_s001_pl37.flyer ticks=10000 period=12 advance=4 first_failed=None out=flyers\WIP\experiments\overnight_20260930\mmw_planar_safe_s001_pl37.samples.csv

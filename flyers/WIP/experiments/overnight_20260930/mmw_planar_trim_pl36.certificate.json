@@ -1,0 +1,28 @@
+{
+  "bank_file": "flyers/bank/pl36/planar_mmwmmw.flyer",
+  "sha256": "30793bbea94549f6347680bfbef707cda5de8524bbabe7587c93c3ccb7d38470",
+  "ticks": 10000,
+  "distance": 3333,
+  "speed_bps": 3.333,
+  "extensions": 10000,
+  "extension_failures": 0,
+  "endpoint_conserved": true,
+  "cycle_ticks": 12,
+  "cycle_advance": 4,
+  "full_rng_phase_samples": 80,
+  "exact_block_owner_recurrence": true,
+  "max_successful_action": 36,
+  "movement_words": [
+    "mmwmmw",
+    "wmmwmm",
+    "mwmmwm"
+  ],
+  "pistons": 12,
+  "piston_direction": "+X",
+  "normal_pistons_only": true,
+  "evidence": [
+    "mmw_planar_trim_pl36.verify.txt",
+    "mmw_planar_trim_pl36.audit.txt",
+    "mmw_planar_trim_pl36.samples.csv"
+  ]
+}

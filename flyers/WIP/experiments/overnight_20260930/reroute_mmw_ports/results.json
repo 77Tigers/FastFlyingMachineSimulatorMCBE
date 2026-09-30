@@ -1,0 +1,492 @@
+[
+  {
+    "round": 0,
+    "body": 0,
+    "seed": 4,
+    "old_count": 47,
+    "new_count": 46,
+    "ports": 19,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\reroute_mmw_ports\\probe.flyer ticks=240 distance=2 limit=1000 max_successful_action=102 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=16 displacement_mismatches=20"
+  },
+  {
+    "round": 0,
+    "body": 2,
+    "seed": 0,
+    "old_count": 47,
+    "new_count": 45,
+    "ports": 15,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\reroute_mmw_ports\\probe.flyer ticks=240 distance=3 limit=1000 max_successful_action=57 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=19 displacement_mismatches=20"
+  },
+  {
+    "round": 0,
+    "body": 2,
+    "seed": 1,
+    "old_count": 47,
+    "new_count": 45,
+    "ports": 15,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\reroute_mmw_ports\\probe.flyer ticks=240 distance=3 limit=1000 max_successful_action=57 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=19 displacement_mismatches=20"
+  },
+  {
+    "round": 0,
+    "body": 2,
+    "seed": 2,
+    "old_count": 47,
+    "new_count": 45,
+    "ports": 15,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\reroute_mmw_ports\\probe.flyer ticks=240 distance=3 limit=1000 max_successful_action=57 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=19 displacement_mismatches=20"
+  },
+  {
+    "round": 0,
+    "body": 2,
+    "seed": 3,
+    "old_count": 47,
+    "new_count": 45,
+    "ports": 15,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\reroute_mmw_ports\\probe.flyer ticks=240 distance=3 limit=1000 max_successful_action=57 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=19 displacement_mismatches=20"
+  },
+  {
+    "round": 0,
+    "body": 2,
+    "seed": 4,
+    "old_count": 47,
+    "new_count": 45,
+    "ports": 15,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\reroute_mmw_ports\\probe.flyer ticks=240 distance=3 limit=1000 max_successful_action=57 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=19 displacement_mismatches=20"
+  },
+  {
+    "round": 0,
+    "body": 2,
+    "seed": 5,
+    "old_count": 47,
+    "new_count": 45,
+    "ports": 15,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\reroute_mmw_ports\\probe.flyer ticks=240 distance=3 limit=1000 max_successful_action=57 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=19 displacement_mismatches=20"
+  },
+  {
+    "round": 0,
+    "body": 2,
+    "seed": 6,
+    "old_count": 47,
+    "new_count": 45,
+    "ports": 15,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\reroute_mmw_ports\\probe.flyer ticks=240 distance=3 limit=1000 max_successful_action=57 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=19 displacement_mismatches=20"
+  },
+  {
+    "round": 0,
+    "body": 2,
+    "seed": 7,
+    "old_count": 47,
+    "new_count": 46,
+    "ports": 15,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\reroute_mmw_ports\\probe.flyer ticks=240 distance=3 limit=1000 max_successful_action=57 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=19 displacement_mismatches=20"
+  },
+  {
+    "round": 0,
+    "body": 2,
+    "seed": 8,
+    "old_count": 47,
+    "new_count": 45,
+    "ports": 15,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\reroute_mmw_ports\\probe.flyer ticks=240 distance=3 limit=1000 max_successful_action=57 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=19 displacement_mismatches=20"
+  },
+  {
+    "round": 0,
+    "body": 2,
+    "seed": 9,
+    "old_count": 47,
+    "new_count": 45,
+    "ports": 15,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\reroute_mmw_ports\\probe.flyer ticks=240 distance=3 limit=1000 max_successful_action=57 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=19 displacement_mismatches=20"
+  },
+  {
+    "round": 0,
+    "body": 2,
+    "seed": 10,
+    "old_count": 47,
+    "new_count": 45,
+    "ports": 15,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\reroute_mmw_ports\\probe.flyer ticks=240 distance=3 limit=1000 max_successful_action=57 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=19 displacement_mismatches=20"
+  },
+  {
+    "round": 0,
+    "body": 2,
+    "seed": 11,
+    "old_count": 47,
+    "new_count": 45,
+    "ports": 15,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\reroute_mmw_ports\\probe.flyer ticks=240 distance=3 limit=1000 max_successful_action=57 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=19 displacement_mismatches=20"
+  },
+  {
+    "round": 0,
+    "body": 2,
+    "seed": 12,
+    "old_count": 47,
+    "new_count": 45,
+    "ports": 15,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\reroute_mmw_ports\\probe.flyer ticks=240 distance=3 limit=1000 max_successful_action=57 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=19 displacement_mismatches=20"
+  },
+  {
+    "round": 0,
+    "body": 2,
+    "seed": 13,
+    "old_count": 47,
+    "new_count": 46,
+    "ports": 15,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\reroute_mmw_ports\\probe.flyer ticks=240 distance=3 limit=1000 max_successful_action=57 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=19 displacement_mismatches=20"
+  },
+  {
+    "round": 0,
+    "body": 2,
+    "seed": 14,
+    "old_count": 47,
+    "new_count": 46,
+    "ports": 15,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\reroute_mmw_ports\\probe.flyer ticks=240 distance=3 limit=1000 max_successful_action=57 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=19 displacement_mismatches=20"
+  },
+  {
+    "round": 0,
+    "body": 2,
+    "seed": 15,
+    "old_count": 47,
+    "new_count": 45,
+    "ports": 15,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\reroute_mmw_ports\\probe.flyer ticks=240 distance=3 limit=1000 max_successful_action=57 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=19 displacement_mismatches=20"
+  },
+  {
+    "round": 0,
+    "body": 1,
+    "seed": 0,
+    "old_count": 41,
+    "new_count": 38,
+    "ports": 14,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\reroute_mmw_ports\\probe.flyer ticks=240 distance=13 limit=1000 max_successful_action=152 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=14 displacement_mismatches=19"
+  },
+  {
+    "round": 0,
+    "body": 1,
+    "seed": 1,
+    "old_count": 41,
+    "new_count": 38,
+    "ports": 14,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\reroute_mmw_ports\\probe.flyer ticks=240 distance=13 limit=1000 max_successful_action=152 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=14 displacement_mismatches=19"
+  },
+  {
+    "round": 0,
+    "body": 1,
+    "seed": 2,
+    "old_count": 41,
+    "new_count": 40,
+    "ports": 14,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\reroute_mmw_ports\\probe.flyer ticks=240 distance=13 limit=1000 max_successful_action=154 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=14 displacement_mismatches=19"
+  },
+  {
+    "round": 0,
+    "body": 1,
+    "seed": 3,
+    "old_count": 41,
+    "new_count": 38,
+    "ports": 14,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\reroute_mmw_ports\\probe.flyer ticks=240 distance=13 limit=1000 max_successful_action=152 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=14 displacement_mismatches=19"
+  },
+  {
+    "round": 0,
+    "body": 1,
+    "seed": 5,
+    "old_count": 41,
+    "new_count": 39,
+    "ports": 14,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\reroute_mmw_ports\\probe.flyer ticks=240 distance=13 limit=1000 max_successful_action=153 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=14 displacement_mismatches=19"
+  },
+  {
+    "round": 0,
+    "body": 1,
+    "seed": 6,
+    "old_count": 41,
+    "new_count": 40,
+    "ports": 14,
+    "accepted": true,
+    "result": "verify pass=true file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\reroute_mmw_ports\\probe.flyer ticks=240 distance=80 limit=1000 max_successful_action=57 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=20 initial_matches=20 consecutive_matches=20 displacement_mismatches=0"
+  },
+  {
+    "round": 0,
+    "body": 1,
+    "seed": 8,
+    "old_count": 40,
+    "new_count": 39,
+    "ports": 14,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\reroute_mmw_ports\\probe.flyer ticks=240 distance=13 limit=1000 max_successful_action=153 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=14 displacement_mismatches=19"
+  },
+  {
+    "round": 0,
+    "body": 1,
+    "seed": 11,
+    "old_count": 40,
+    "new_count": 38,
+    "ports": 14,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\reroute_mmw_ports\\probe.flyer ticks=240 distance=13 limit=1000 max_successful_action=152 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=14 displacement_mismatches=19"
+  },
+  {
+    "round": 0,
+    "body": 1,
+    "seed": 12,
+    "old_count": 40,
+    "new_count": 38,
+    "ports": 14,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\reroute_mmw_ports\\probe.flyer ticks=240 distance=13 limit=1000 max_successful_action=152 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=14 displacement_mismatches=19"
+  },
+  {
+    "round": 0,
+    "body": 1,
+    "seed": 14,
+    "old_count": 40,
+    "new_count": 38,
+    "ports": 14,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\reroute_mmw_ports\\probe.flyer ticks=240 distance=13 limit=1000 max_successful_action=152 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=14 displacement_mismatches=19"
+  },
+  {
+    "round": 0,
+    "body": 1,
+    "seed": 15,
+    "old_count": 40,
+    "new_count": 39,
+    "ports": 14,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\reroute_mmw_ports\\probe.flyer ticks=240 distance=13 limit=1000 max_successful_action=153 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=14 displacement_mismatches=19"
+  },
+  {
+    "round": 1,
+    "body": 0,
+    "seed": 8,
+    "old_count": 47,
+    "new_count": 46,
+    "ports": 19,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\reroute_mmw_ports\\probe.flyer ticks=240 distance=2 limit=1000 max_successful_action=101 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=16 displacement_mismatches=20"
+  },
+  {
+    "round": 1,
+    "body": 0,
+    "seed": 15,
+    "old_count": 47,
+    "new_count": 46,
+    "ports": 19,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\reroute_mmw_ports\\probe.flyer ticks=240 distance=2 limit=1000 max_successful_action=101 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=16 displacement_mismatches=20"
+  },
+  {
+    "round": 1,
+    "body": 2,
+    "seed": 0,
+    "old_count": 47,
+    "new_count": 46,
+    "ports": 15,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\reroute_mmw_ports\\probe.flyer ticks=240 distance=3 limit=1000 max_successful_action=57 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=19 displacement_mismatches=20"
+  },
+  {
+    "round": 1,
+    "body": 2,
+    "seed": 1,
+    "old_count": 47,
+    "new_count": 45,
+    "ports": 15,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\reroute_mmw_ports\\probe.flyer ticks=240 distance=3 limit=1000 max_successful_action=57 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=19 displacement_mismatches=20"
+  },
+  {
+    "round": 1,
+    "body": 2,
+    "seed": 2,
+    "old_count": 47,
+    "new_count": 45,
+    "ports": 15,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\reroute_mmw_ports\\probe.flyer ticks=240 distance=3 limit=1000 max_successful_action=57 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=19 displacement_mismatches=20"
+  },
+  {
+    "round": 1,
+    "body": 2,
+    "seed": 3,
+    "old_count": 47,
+    "new_count": 46,
+    "ports": 15,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\reroute_mmw_ports\\probe.flyer ticks=240 distance=3 limit=1000 max_successful_action=57 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=19 displacement_mismatches=20"
+  },
+  {
+    "round": 1,
+    "body": 2,
+    "seed": 4,
+    "old_count": 47,
+    "new_count": 45,
+    "ports": 15,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\reroute_mmw_ports\\probe.flyer ticks=240 distance=3 limit=1000 max_successful_action=57 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=19 displacement_mismatches=20"
+  },
+  {
+    "round": 1,
+    "body": 2,
+    "seed": 5,
+    "old_count": 47,
+    "new_count": 45,
+    "ports": 15,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\reroute_mmw_ports\\probe.flyer ticks=240 distance=3 limit=1000 max_successful_action=57 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=19 displacement_mismatches=20"
+  },
+  {
+    "round": 1,
+    "body": 2,
+    "seed": 6,
+    "old_count": 47,
+    "new_count": 45,
+    "ports": 15,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\reroute_mmw_ports\\probe.flyer ticks=240 distance=3 limit=1000 max_successful_action=57 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=19 displacement_mismatches=20"
+  },
+  {
+    "round": 1,
+    "body": 2,
+    "seed": 7,
+    "old_count": 47,
+    "new_count": 45,
+    "ports": 15,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\reroute_mmw_ports\\probe.flyer ticks=240 distance=3 limit=1000 max_successful_action=57 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=19 displacement_mismatches=20"
+  },
+  {
+    "round": 1,
+    "body": 2,
+    "seed": 8,
+    "old_count": 47,
+    "new_count": 46,
+    "ports": 15,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\reroute_mmw_ports\\probe.flyer ticks=240 distance=3 limit=1000 max_successful_action=57 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=19 displacement_mismatches=20"
+  },
+  {
+    "round": 1,
+    "body": 2,
+    "seed": 9,
+    "old_count": 47,
+    "new_count": 45,
+    "ports": 15,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\reroute_mmw_ports\\probe.flyer ticks=240 distance=3 limit=1000 max_successful_action=57 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=19 displacement_mismatches=20"
+  },
+  {
+    "round": 1,
+    "body": 2,
+    "seed": 10,
+    "old_count": 47,
+    "new_count": 45,
+    "ports": 15,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\reroute_mmw_ports\\probe.flyer ticks=240 distance=3 limit=1000 max_successful_action=57 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=19 displacement_mismatches=20"
+  },
+  {
+    "round": 1,
+    "body": 2,
+    "seed": 11,
+    "old_count": 47,
+    "new_count": 45,
+    "ports": 15,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\reroute_mmw_ports\\probe.flyer ticks=240 distance=3 limit=1000 max_successful_action=57 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=19 displacement_mismatches=20"
+  },
+  {
+    "round": 1,
+    "body": 2,
+    "seed": 12,
+    "old_count": 47,
+    "new_count": 45,
+    "ports": 15,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\reroute_mmw_ports\\probe.flyer ticks=240 distance=3 limit=1000 max_successful_action=57 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=19 displacement_mismatches=20"
+  },
+  {
+    "round": 1,
+    "body": 2,
+    "seed": 13,
+    "old_count": 47,
+    "new_count": 45,
+    "ports": 15,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\reroute_mmw_ports\\probe.flyer ticks=240 distance=3 limit=1000 max_successful_action=57 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=19 displacement_mismatches=20"
+  },
+  {
+    "round": 1,
+    "body": 2,
+    "seed": 14,
+    "old_count": 47,
+    "new_count": 46,
+    "ports": 15,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\reroute_mmw_ports\\probe.flyer ticks=240 distance=3 limit=1000 max_successful_action=57 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=19 displacement_mismatches=20"
+  },
+  {
+    "round": 1,
+    "body": 2,
+    "seed": 15,
+    "old_count": 47,
+    "new_count": 45,
+    "ports": 15,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\reroute_mmw_ports\\probe.flyer ticks=240 distance=3 limit=1000 max_successful_action=57 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=19 displacement_mismatches=20"
+  },
+  {
+    "round": 1,
+    "body": 1,
+    "seed": 1,
+    "old_count": 40,
+    "new_count": 39,
+    "ports": 14,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\reroute_mmw_ports\\probe.flyer ticks=240 distance=13 limit=1000 max_successful_action=153 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=14 displacement_mismatches=19"
+  },
+  {
+    "round": 1,
+    "body": 1,
+    "seed": 6,
+    "old_count": 40,
+    "new_count": 39,
+    "ports": 14,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\reroute_mmw_ports\\probe.flyer ticks=240 distance=13 limit=1000 max_successful_action=153 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=14 displacement_mismatches=19"
+  },
+  {
+    "round": 1,
+    "body": 1,
+    "seed": 7,
+    "old_count": 40,
+    "new_count": 38,
+    "ports": 14,
+    "accepted": true,
+    "result": "verify pass=true file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\reroute_mmw_ports\\probe.flyer ticks=240 distance=80 limit=1000 max_successful_action=57 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=20 initial_matches=20 consecutive_matches=20 displacement_mismatches=0"
+  }
+]

@@ -1,0 +1,6 @@
+screen candidates=37 clean=37 ticks=240 out=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mixed3_compact_v3_screen.csv
+  distance=72 load=64 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mixed3_compact_v3_candidates\pentagon7_v0_s000.flyer
+  distance=72 load=57 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mixed3_compact_v3_candidates\pentagon7_v0_s002.flyer
+  distance=72 load=52 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mixed3_compact_v3_candidates\pentagon7_v0_s003.flyer
+  distance=72 load=56 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mixed3_compact_v3_candidates\pentagon7_v0_s004.flyer
+  distance=72 load=59 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mixed3_compact_v3_candidates\pentagon7_v0_s005.flyer

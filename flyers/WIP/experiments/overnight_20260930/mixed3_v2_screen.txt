@@ -1,0 +1,6 @@
+screen candidates=39 clean=39 ticks=200 out=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mixed3_v2_screen.csv
+  distance=60 load=61 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mixed3_v2_candidates\g3_s003.flyer
+  distance=60 load=57 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mixed3_v2_candidates\g3_s007.flyer
+  distance=60 load=58 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mixed3_v2_candidates\g3_s008.flyer
+  distance=60 load=61 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mixed3_v2_candidates\g3_s013.flyer
+  distance=60 load=52 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mixed3_v2_candidates\g3_s014.flyer

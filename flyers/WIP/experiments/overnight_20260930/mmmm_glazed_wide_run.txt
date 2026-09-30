@@ -1,0 +1,15 @@
+six 0 {'route': 1}
+six 1 {'route': 1, 'routed': 1}
+six 2 {'route': 2, 'routed': 1}
+six 3 {'route': 2, 'routed': 2}
+six 4 {'route': 2, 'routed': 3}
+six 5 {'route': 3, 'routed': 3}
+six 6 {'route': 3, 'routed': 4}
+six 7 {'route': 3, 'routed': 5}
+screen candidates=5 clean=5 ticks=240 out=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmmm_glazed_wide_screen.csv
+  distance=1 load=48 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmmm_glazed_wide_candidates\six_s003.flyer
+  distance=1 load=46 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmmm_glazed_wide_candidates\six_s007.flyer
+  distance=0 load=45 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmmm_glazed_wide_candidates\six_s001.flyer
+  distance=0 load=46 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmmm_glazed_wide_candidates\six_s004.flyer
+  distance=0 load=47 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmmm_glazed_wide_candidates\six_s006.flyer
+

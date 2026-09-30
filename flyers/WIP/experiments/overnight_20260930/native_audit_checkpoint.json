@@ -1,0 +1,31 @@
+{
+  "pulling3": {
+    "status": "passed",
+    "file": "pull3_reroute_pl102.flyer",
+    "bank_file": "flyers/bank/pl102/pulling3_tenbody.flyer"
+  },
+  "mixed_local11": {
+    "status": "passed",
+    "file": "mixed_chain_8tiles_pl217.flyer",
+    "copies": 8,
+    "full_cases": 80,
+    "ticks": 10000,
+    "period": 10,
+    "advance": 3,
+    "baseline_tagged_local_max": 11,
+    "whole_limit": 217,
+    "sha256": "75b32785b945fc26ab38cf30ef4ddc75ea52705999dc8550317b4eee9fb3579b"
+  },
+  "mixed_local8": {
+    "status": "passed",
+    "file": "compact_mixed_chain_8tiles_pl195.flyer",
+    "copies": 8,
+    "full_cases": 80,
+    "ticks": 10000,
+    "period": 10,
+    "advance": 3,
+    "baseline_tagged_local_max": 8,
+    "whole_limit": 195,
+    "sha256": "128fed44206db0802a41517aec5e3435e14bf58b0699291b83ff39e7ec45d84d"
+  }
+}

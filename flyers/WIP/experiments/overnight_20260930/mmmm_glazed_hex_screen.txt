@@ -1,0 +1,6 @@
+screen candidates=8 clean=8 ticks=240 out=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmmm_glazed_hex_screen.csv
+  distance=80 load=49 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmmm_glazed_hex_candidates\six_s000.flyer
+  distance=80 load=49 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmmm_glazed_hex_candidates\six_s001.flyer
+  distance=80 load=48 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmmm_glazed_hex_candidates\six_s002.flyer
+  distance=80 load=48 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmmm_glazed_hex_candidates\six_s003.flyer
+  distance=80 load=49 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmmm_glazed_hex_candidates\six_s004.flyer

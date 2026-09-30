@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\reroute_planar_mmw.py", line 58, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\reroute_planar_mmw.py", line 18, in main
+    assert len(ports)==3 and all(ports[i]<=ss[i] for i in range(3))
+           ^^^^^^^^^^^^^
+AssertionError

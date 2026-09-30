@@ -1,0 +1,26 @@
+(0, 12, 0) 0 {'mandatory': 1}
+(0, 12, 0) 1 {'mandatory': 2}
+(0, 12, 0) 2 {'mandatory': 3}
+(0, 12, 0) 3 {'mandatory': 4}
+(0, 12, 0) 4 {'mandatory': 5}
+(0, 12, 0) 5 {'mandatory': 6}
+(0, 12, 0) 6 {'mandatory': 7}
+(0, 12, 0) 7 {'mandatory': 8}
+(0, 15, 0) 0 {'mandatory': 9}
+(0, 15, 0) 1 {'mandatory': 10}
+(0, 15, 0) 2 {'mandatory': 11}
+(0, 15, 0) 3 {'mandatory': 12}
+(0, 15, 0) 4 {'mandatory': 13}
+(0, 15, 0) 5 {'mandatory': 14}
+(0, 15, 0) 6 {'mandatory': 15}
+(0, 15, 0) 7 {'mandatory': 16}
+(0, 0, 15) 0 {'mandatory': 17}
+(0, 0, 15) 1 {'mandatory': 18}
+(0, 0, 15) 2 {'mandatory': 19}
+(0, 0, 15) 3 {'mandatory': 20}
+(0, 0, 15) 4 {'mandatory': 21}
+(0, 0, 15) 5 {'mandatory': 22}
+(0, 0, 15) 6 {'mandatory': 23}
+(0, 0, 15) 7 {'mandatory': 24}
+screen candidates=0 clean=0 ticks=240 out=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\pull_first_extension_screen.csv
+

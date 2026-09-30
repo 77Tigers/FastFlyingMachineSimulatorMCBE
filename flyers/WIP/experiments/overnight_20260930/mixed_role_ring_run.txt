@@ -1,0 +1,26 @@
+5 uniform 0 {'cross_power': 1}
+5 uniform 1 {'cross_power': 1, 'mandatory': 1}
+5 uniform 2 {'cross_power': 1, 'mandatory': 2}
+5 uniform 3 {'cross_power': 2, 'mandatory': 2}
+5 radial 0 {'cross_power': 3, 'mandatory': 2}
+5 radial 1 {'cross_power': 4, 'mandatory': 2}
+5 radial 2 {'cross_power': 5, 'mandatory': 2}
+5 radial 3 {'cross_power': 6, 'mandatory': 2}
+6 uniform 0 {'cross_power': 7, 'mandatory': 2}
+6 uniform 1 {'cross_power': 8, 'mandatory': 2}
+6 uniform 2 {'cross_power': 9, 'mandatory': 2}
+6 uniform 3 {'cross_power': 10, 'mandatory': 2}
+6 radial 0 {'cross_power': 11, 'mandatory': 2}
+6 radial 1 {'cross_power': 12, 'mandatory': 2}
+6 radial 2 {'cross_power': 13, 'mandatory': 2}
+6 radial 3 {'cross_power': 14, 'mandatory': 2}
+7 uniform 0 {'cross_power': 15, 'mandatory': 2}
+7 uniform 1 {'cross_power': 16, 'mandatory': 2}
+7 uniform 2 {'cross_power': 17, 'mandatory': 2}
+7 uniform 3 {'cross_power': 18, 'mandatory': 2}
+7 radial 0 {'cross_power': 19, 'mandatory': 2}
+7 radial 1 {'cross_power': 20, 'mandatory': 2}
+7 radial 2 {'cross_power': 21, 'mandatory': 2}
+7 radial 3 {'cross_power': 22, 'mandatory': 2}
+screen candidates=0 clean=0 ticks=240 out=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mixed_role_ring_screen.csv
+

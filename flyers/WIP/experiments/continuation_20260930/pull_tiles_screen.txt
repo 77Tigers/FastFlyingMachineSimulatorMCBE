@@ -1,0 +1,7 @@
+screen candidates=167 clean=166 ticks=240 out=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\continuation_20260930\pull_tiles_screen.csv
+  distance=60 load=15 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\continuation_20260930\pull_tiles\c0000.flyer
+  distance=60 load=15 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\continuation_20260930\pull_tiles\c0001.flyer
+  distance=60 load=14 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\continuation_20260930\pull_tiles\c0002.flyer
+  distance=60 load=14 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\continuation_20260930\pull_tiles\c0003.flyer
+  distance=60 load=13 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\continuation_20260930\pull_tiles\c0004.flyer
+  earliest_failure tick=5 kind=(Coord { x: 19, y: 9, z: 15 }, "immovable obstruction") file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\continuation_20260930\pull_tiles\c0148.flyer

@@ -1,0 +1,9 @@
+{
+  "stats": {
+    "route": 16
+  },
+  "candidates": [],
+  "radius": 7,
+  "scheme": "radial",
+  "next_seed": 4
+}

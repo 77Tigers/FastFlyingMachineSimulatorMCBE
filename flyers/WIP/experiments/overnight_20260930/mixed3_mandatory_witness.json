@@ -1,0 +1,43 @@
+{
+  "seed": 0,
+  "spacing": 4,
+  "reason": "mandatory_conflict",
+  "failures": [
+    {
+      "line": 83,
+      "locals": {
+        "p": [
+          3,
+          4,
+          8
+        ],
+        "i": 1,
+        "q": [
+          3,
+          4,
+          8
+        ],
+        "delta": -1,
+        "rp": [
+          2,
+          4,
+          9
+        ],
+        "owner": 2,
+        "observer": true,
+        "j": 4,
+        "r": [
+          2,
+          4,
+          9
+        ],
+        "rel": [
+          4,
+          4,
+          8
+        ],
+        "t": 0
+      }
+    }
+  ]
+}

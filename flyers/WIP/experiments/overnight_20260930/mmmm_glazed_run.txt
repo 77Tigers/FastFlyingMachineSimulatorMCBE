@@ -1,0 +1,10 @@
+six 0 {'mandatory': 1}
+six 1 {'mandatory': 2}
+six 2 {'mandatory': 3}
+six 3 {'mandatory': 3, 'source_overlap': 1}
+six 4 {'mandatory': 4, 'source_overlap': 1}
+six 5 {'mandatory': 5, 'source_overlap': 1}
+six 6 {'mandatory': 6, 'source_overlap': 1}
+six 7 {'mandatory': 7, 'source_overlap': 1}
+screen candidates=0 clean=0 ticks=240 out=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmmm_glazed_screen.csv
+

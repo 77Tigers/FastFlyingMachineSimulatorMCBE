@@ -1,0 +1,640 @@
+[
+  {
+    "cycle": 0,
+    "position": [
+      -3,
+      0,
+      0
+    ],
+    "body": 0,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=9 limit=1000 max_successful_action=104 extension_failures=3 movement_failures=3 first_failure_tick=22 first_failure_kind=(Coord { x: 20, y: 1, z: 22 }, \"immovable obstruction\") conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=17 displacement_mismatches=20"
+  },
+  {
+    "cycle": 0,
+    "position": [
+      -2,
+      -1,
+      7
+    ],
+    "body": 2,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=16 limit=1000 max_successful_action=103 extension_failures=12 movement_failures=12 first_failure_tick=22 first_failure_kind=(Coord { x: 20, y: 1, z: 22 }, \"immovable obstruction\") conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=12 displacement_mismatches=20"
+  },
+  {
+    "cycle": 0,
+    "position": [
+      -2,
+      4,
+      2
+    ],
+    "body": 0,
+    "accepted": true,
+    "result": "verify pass=true file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=80 limit=1000 max_successful_action=37 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=20 initial_matches=20 consecutive_matches=20 displacement_mismatches=0"
+  },
+  {
+    "cycle": 0,
+    "position": [
+      -2,
+      0,
+      6
+    ],
+    "body": 1,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=37 limit=1000 max_successful_action=103 extension_failures=5 movement_failures=5 first_failure_tick=60 first_failure_kind=(Coord { x: 32, y: 1, z: 22 }, \"immovable obstruction\") conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=9 displacement_mismatches=20"
+  },
+  {
+    "cycle": 0,
+    "position": [
+      0,
+      -2,
+      6
+    ],
+    "body": 1,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=8 limit=1000 max_successful_action=103 extension_failures=4 movement_failures=4 first_failure_tick=18 first_failure_kind=(Coord { x: 19, y: 2, z: 21 }, \"immovable obstruction\") conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=17 displacement_mismatches=19"
+  },
+  {
+    "cycle": 0,
+    "position": [
+      0,
+      2,
+      6
+    ],
+    "body": 1,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=3 limit=1000 max_successful_action=101 extension_failures=9 movement_failures=9 first_failure_tick=32 first_failure_kind=(Coord { x: 24, y: 1, z: 22 }, \"immovable obstruction\") conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=11 displacement_mismatches=20"
+  },
+  {
+    "cycle": 0,
+    "position": [
+      0,
+      7,
+      3
+    ],
+    "body": 2,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=3 limit=1000 max_successful_action=67 extension_failures=208 movement_failures=208 first_failure_tick=22 first_failure_kind=(Coord { x: 20, y: 2, z: 17 }, \"immovable obstruction\") conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=13 displacement_mismatches=20"
+  },
+  {
+    "cycle": 0,
+    "position": [
+      -2,
+      1,
+      1
+    ],
+    "body": 1,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=11 limit=1000 max_successful_action=72 extension_failures=1 movement_failures=1 first_failure_tick=24 first_failure_kind=(Coord { x: 21, y: 2, z: 17 }, \"immovable obstruction\") conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=16 displacement_mismatches=19"
+  },
+  {
+    "cycle": 0,
+    "position": [
+      -2,
+      1,
+      5
+    ],
+    "body": 2,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=13 limit=1000 max_successful_action=103 extension_failures=203 movement_failures=203 first_failure_tick=18 first_failure_kind=(Coord { x: 19, y: 2, z: 21 }, \"immovable obstruction\") conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=16 displacement_mismatches=20"
+  },
+  {
+    "cycle": 0,
+    "position": [
+      -2,
+      -1,
+      1
+    ],
+    "body": 1,
+    "accepted": true,
+    "result": "verify pass=true file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=80 limit=1000 max_successful_action=37 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=20 initial_matches=20 consecutive_matches=20 displacement_mismatches=0"
+  },
+  {
+    "cycle": 0,
+    "position": [
+      -1,
+      -2,
+      0
+    ],
+    "body": 0,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=11 limit=1000 max_successful_action=72 extension_failures=1 movement_failures=1 first_failure_tick=20 first_failure_kind=(Coord { x: 20, y: 2, z: 21 }, \"immovable obstruction\") conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=16 displacement_mismatches=20"
+  },
+  {
+    "cycle": 0,
+    "position": [
+      0,
+      0,
+      8
+    ],
+    "body": 1,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=3 limit=1000 max_successful_action=100 extension_failures=2 movement_failures=2 first_failure_tick=38 first_failure_kind=(Coord { x: 25, y: 1, z: 22 }, \"immovable obstruction\") conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=16 displacement_mismatches=20"
+  },
+  {
+    "cycle": 0,
+    "position": [
+      -1,
+      0,
+      -2
+    ],
+    "body": 0,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=2 limit=1000 max_successful_action=101 extension_failures=3 movement_failures=3 first_failure_tick=14 first_failure_kind=(Coord { x: 17, y: 2, z: 17 }, \"immovable obstruction\") conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=4 displacement_mismatches=20"
+  },
+  {
+    "cycle": 0,
+    "position": [
+      -2,
+      4,
+      4
+    ],
+    "body": 0,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=7 limit=1000 max_successful_action=101 extension_failures=217 movement_failures=217 first_failure_tick=20 first_failure_kind=(Coord { x: 20, y: 7, z: 18 }, \"immovable obstruction\") conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=11 displacement_mismatches=20"
+  },
+  {
+    "cycle": 0,
+    "position": [
+      -2,
+      5,
+      3
+    ],
+    "body": 2,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=6 limit=1000 max_successful_action=70 extension_failures=219 movement_failures=219 first_failure_tick=20 first_failure_kind=(Coord { x: 21, y: 7, z: 18 }, \"immovable obstruction\") conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=16 displacement_mismatches=20"
+  },
+  {
+    "cycle": 0,
+    "position": [
+      -2,
+      6,
+      2
+    ],
+    "body": 0,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=19 limit=1000 max_successful_action=102 extension_failures=4 movement_failures=4 first_failure_tick=30 first_failure_kind=(Coord { x: 23, y: 2, z: 17 }, \"immovable obstruction\") conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=14 displacement_mismatches=20"
+  },
+  {
+    "cycle": 0,
+    "position": [
+      0,
+      5,
+      1
+    ],
+    "body": 2,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=1 limit=1000 max_successful_action=36 extension_failures=234 movement_failures=234 first_failure_tick=6 first_failure_kind=(Coord { x: 15, y: 7, z: 18 }, \"immovable obstruction\") conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=19 displacement_mismatches=20"
+  },
+  {
+    "cycle": 0,
+    "position": [
+      -2,
+      -1,
+      5
+    ],
+    "body": 2,
+    "accepted": true,
+    "result": "verify pass=true file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=80 limit=1000 max_successful_action=36 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=20 initial_matches=20 consecutive_matches=20 displacement_mismatches=0"
+  },
+  {
+    "cycle": 0,
+    "position": [
+      -2,
+      -1,
+      -1
+    ],
+    "body": 1,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=11 limit=1000 max_successful_action=70 extension_failures=1 movement_failures=1 first_failure_tick=24 first_failure_kind=(Coord { x: 21, y: 2, z: 17 }, \"immovable obstruction\") conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=17 displacement_mismatches=20"
+  },
+  {
+    "cycle": 0,
+    "position": [
+      -1,
+      0,
+      2
+    ],
+    "body": 0,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=1 limit=1000 max_successful_action=36 extension_failures=236 movement_failures=236 first_failure_tick=4 first_failure_kind=(Coord { x: 14, y: 2, z: 17 }, \"immovable obstruction\") conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=19 displacement_mismatches=20"
+  },
+  {
+    "cycle": 0,
+    "position": [
+      0,
+      5,
+      5
+    ],
+    "body": 2,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=3 limit=1000 max_successful_action=100 extension_failures=2 movement_failures=2 first_failure_tick=22 first_failure_kind=(Coord { x: 21, y: 7, z: 18 }, \"immovable obstruction\") conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=14 displacement_mismatches=20"
+  },
+  {
+    "cycle": 1,
+    "position": [
+      -2,
+      -1,
+      7
+    ],
+    "body": 2,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=33 limit=1000 max_successful_action=101 extension_failures=12 movement_failures=12 first_failure_tick=20 first_failure_kind=(Coord { x: 20, y: 2, z: 21 }, \"immovable obstruction\") conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=10 displacement_mismatches=20"
+  },
+  {
+    "cycle": 1,
+    "position": [
+      0,
+      2,
+      6
+    ],
+    "body": 1,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=3 limit=1000 max_successful_action=99 extension_failures=9 movement_failures=9 first_failure_tick=32 first_failure_kind=(Coord { x: 24, y: 1, z: 22 }, \"immovable obstruction\") conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=11 displacement_mismatches=20"
+  },
+  {
+    "cycle": 1,
+    "position": [
+      -3,
+      -1,
+      5
+    ],
+    "body": 2,
+    "accepted": true,
+    "result": "verify pass=true file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=80 limit=1000 max_successful_action=36 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=20 initial_matches=20 consecutive_matches=20 displacement_mismatches=0"
+  },
+  {
+    "cycle": 1,
+    "position": [
+      0,
+      5,
+      1
+    ],
+    "body": 2,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=1 limit=1000 max_successful_action=36 extension_failures=234 movement_failures=234 first_failure_tick=6 first_failure_kind=(Coord { x: 15, y: 7, z: 18 }, \"immovable obstruction\") conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=19 displacement_mismatches=20"
+  },
+  {
+    "cycle": 1,
+    "position": [
+      -2,
+      -1,
+      -1
+    ],
+    "body": 1,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=11 limit=1000 max_successful_action=70 extension_failures=1 movement_failures=1 first_failure_tick=24 first_failure_kind=(Coord { x: 21, y: 2, z: 17 }, \"immovable obstruction\") conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=17 displacement_mismatches=20"
+  },
+  {
+    "cycle": 1,
+    "position": [
+      -2,
+      1,
+      1
+    ],
+    "body": 1,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=16 limit=1000 max_successful_action=70 extension_failures=5 movement_failures=5 first_failure_tick=24 first_failure_kind=(Coord { x: 21, y: 1, z: 16 }, \"immovable obstruction\") conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=15 displacement_mismatches=19"
+  },
+  {
+    "cycle": 1,
+    "position": [
+      0,
+      0,
+      8
+    ],
+    "body": 1,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=3 limit=1000 max_successful_action=98 extension_failures=2 movement_failures=2 first_failure_tick=38 first_failure_kind=(Coord { x: 25, y: 1, z: 22 }, \"immovable obstruction\") conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=16 displacement_mismatches=20"
+  },
+  {
+    "cycle": 1,
+    "position": [
+      0,
+      7,
+      3
+    ],
+    "body": 2,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=3 limit=1000 max_successful_action=65 extension_failures=208 movement_failures=208 first_failure_tick=22 first_failure_kind=(Coord { x: 20, y: 2, z: 17 }, \"immovable obstruction\") conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=13 displacement_mismatches=20"
+  },
+  {
+    "cycle": 1,
+    "position": [
+      -1,
+      -2,
+      0
+    ],
+    "body": 0,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=11 limit=1000 max_successful_action=70 extension_failures=1 movement_failures=1 first_failure_tick=20 first_failure_kind=(Coord { x: 20, y: 2, z: 21 }, \"immovable obstruction\") conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=16 displacement_mismatches=20"
+  },
+  {
+    "cycle": 1,
+    "position": [
+      -2,
+      5,
+      3
+    ],
+    "body": 2,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=6 limit=1000 max_successful_action=68 extension_failures=219 movement_failures=219 first_failure_tick=20 first_failure_kind=(Coord { x: 21, y: 7, z: 18 }, \"immovable obstruction\") conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=16 displacement_mismatches=20"
+  },
+  {
+    "cycle": 1,
+    "position": [
+      -1,
+      0,
+      -2
+    ],
+    "body": 0,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=2 limit=1000 max_successful_action=99 extension_failures=3 movement_failures=3 first_failure_tick=14 first_failure_kind=(Coord { x: 17, y: 2, z: 17 }, \"immovable obstruction\") conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=4 displacement_mismatches=20"
+  },
+  {
+    "cycle": 1,
+    "position": [
+      -2,
+      6,
+      2
+    ],
+    "body": 0,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=19 limit=1000 max_successful_action=100 extension_failures=4 movement_failures=4 first_failure_tick=30 first_failure_kind=(Coord { x: 23, y: 2, z: 17 }, \"immovable obstruction\") conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=14 displacement_mismatches=20"
+  },
+  {
+    "cycle": 1,
+    "position": [
+      0,
+      5,
+      5
+    ],
+    "body": 2,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=3 limit=1000 max_successful_action=99 extension_failures=2 movement_failures=2 first_failure_tick=22 first_failure_kind=(Coord { x: 21, y: 7, z: 18 }, \"immovable obstruction\") conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=14 displacement_mismatches=20"
+  },
+  {
+    "cycle": 1,
+    "position": [
+      -1,
+      0,
+      2
+    ],
+    "body": 0,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=1 limit=1000 max_successful_action=36 extension_failures=236 movement_failures=236 first_failure_tick=4 first_failure_kind=(Coord { x: 14, y: 2, z: 17 }, \"immovable obstruction\") conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=19 displacement_mismatches=20"
+  },
+  {
+    "cycle": 1,
+    "position": [
+      -2,
+      0,
+      6
+    ],
+    "body": 1,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=37 limit=1000 max_successful_action=100 extension_failures=5 movement_failures=5 first_failure_tick=60 first_failure_kind=(Coord { x: 32, y: 1, z: 22 }, \"immovable obstruction\") conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=9 displacement_mismatches=20"
+  },
+  {
+    "cycle": 1,
+    "position": [
+      0,
+      -2,
+      6
+    ],
+    "body": 1,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=8 limit=1000 max_successful_action=100 extension_failures=4 movement_failures=4 first_failure_tick=18 first_failure_kind=(Coord { x: 19, y: 2, z: 21 }, \"immovable obstruction\") conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=17 displacement_mismatches=19"
+  },
+  {
+    "cycle": 1,
+    "position": [
+      -2,
+      4,
+      4
+    ],
+    "body": 0,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=7 limit=1000 max_successful_action=99 extension_failures=217 movement_failures=217 first_failure_tick=20 first_failure_kind=(Coord { x: 20, y: 7, z: 18 }, \"immovable obstruction\") conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=11 displacement_mismatches=20"
+  },
+  {
+    "cycle": 1,
+    "position": [
+      -3,
+      0,
+      0
+    ],
+    "body": 0,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=9 limit=1000 max_successful_action=100 extension_failures=3 movement_failures=3 first_failure_tick=22 first_failure_kind=(Coord { x: 20, y: 1, z: 22 }, \"immovable obstruction\") conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=17 displacement_mismatches=20"
+  },
+  {
+    "cycle": 1,
+    "position": [
+      -2,
+      1,
+      5
+    ],
+    "body": 2,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=33 limit=1000 max_successful_action=100 extension_failures=13 movement_failures=13 first_failure_tick=18 first_failure_kind=(Coord { x: 19, y: 1, z: 22 }, \"immovable obstruction\") conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=10 displacement_mismatches=20"
+  },
+  {
+    "cycle": 2,
+    "position": [
+      -2,
+      0,
+      6
+    ],
+    "body": 1,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=37 limit=1000 max_successful_action=100 extension_failures=5 movement_failures=5 first_failure_tick=60 first_failure_kind=(Coord { x: 32, y: 1, z: 22 }, \"immovable obstruction\") conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=9 displacement_mismatches=20"
+  },
+  {
+    "cycle": 2,
+    "position": [
+      -3,
+      0,
+      0
+    ],
+    "body": 0,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=9 limit=1000 max_successful_action=100 extension_failures=3 movement_failures=3 first_failure_tick=22 first_failure_kind=(Coord { x: 20, y: 1, z: 22 }, \"immovable obstruction\") conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=17 displacement_mismatches=20"
+  },
+  {
+    "cycle": 2,
+    "position": [
+      -2,
+      4,
+      4
+    ],
+    "body": 0,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=7 limit=1000 max_successful_action=99 extension_failures=217 movement_failures=217 first_failure_tick=20 first_failure_kind=(Coord { x: 20, y: 7, z: 18 }, \"immovable obstruction\") conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=11 displacement_mismatches=20"
+  },
+  {
+    "cycle": 2,
+    "position": [
+      0,
+      2,
+      6
+    ],
+    "body": 1,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=3 limit=1000 max_successful_action=98 extension_failures=9 movement_failures=9 first_failure_tick=32 first_failure_kind=(Coord { x: 24, y: 1, z: 22 }, \"immovable obstruction\") conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=11 displacement_mismatches=20"
+  },
+  {
+    "cycle": 2,
+    "position": [
+      -2,
+      -1,
+      7
+    ],
+    "body": 2,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=33 limit=1000 max_successful_action=100 extension_failures=12 movement_failures=12 first_failure_tick=20 first_failure_kind=(Coord { x: 20, y: 2, z: 21 }, \"immovable obstruction\") conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=10 displacement_mismatches=20"
+  },
+  {
+    "cycle": 2,
+    "position": [
+      -2,
+      6,
+      2
+    ],
+    "body": 0,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=19 limit=1000 max_successful_action=100 extension_failures=4 movement_failures=4 first_failure_tick=30 first_failure_kind=(Coord { x: 23, y: 2, z: 17 }, \"immovable obstruction\") conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=14 displacement_mismatches=20"
+  },
+  {
+    "cycle": 2,
+    "position": [
+      0,
+      7,
+      3
+    ],
+    "body": 2,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=3 limit=1000 max_successful_action=65 extension_failures=208 movement_failures=208 first_failure_tick=22 first_failure_kind=(Coord { x: 20, y: 2, z: 17 }, \"immovable obstruction\") conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=13 displacement_mismatches=20"
+  },
+  {
+    "cycle": 2,
+    "position": [
+      -1,
+      0,
+      -2
+    ],
+    "body": 0,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=2 limit=1000 max_successful_action=99 extension_failures=3 movement_failures=3 first_failure_tick=14 first_failure_kind=(Coord { x: 17, y: 2, z: 17 }, \"immovable obstruction\") conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=4 displacement_mismatches=20"
+  },
+  {
+    "cycle": 2,
+    "position": [
+      0,
+      0,
+      8
+    ],
+    "body": 1,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=3 limit=1000 max_successful_action=98 extension_failures=2 movement_failures=2 first_failure_tick=38 first_failure_kind=(Coord { x: 25, y: 1, z: 22 }, \"immovable obstruction\") conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=16 displacement_mismatches=20"
+  },
+  {
+    "cycle": 2,
+    "position": [
+      -2,
+      5,
+      3
+    ],
+    "body": 2,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=6 limit=1000 max_successful_action=68 extension_failures=219 movement_failures=219 first_failure_tick=20 first_failure_kind=(Coord { x: 21, y: 7, z: 18 }, \"immovable obstruction\") conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=16 displacement_mismatches=20"
+  },
+  {
+    "cycle": 2,
+    "position": [
+      0,
+      -2,
+      6
+    ],
+    "body": 1,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=8 limit=1000 max_successful_action=100 extension_failures=4 movement_failures=4 first_failure_tick=18 first_failure_kind=(Coord { x: 19, y: 2, z: 21 }, \"immovable obstruction\") conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=17 displacement_mismatches=19"
+  },
+  {
+    "cycle": 2,
+    "position": [
+      -2,
+      1,
+      5
+    ],
+    "body": 2,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=33 limit=1000 max_successful_action=100 extension_failures=13 movement_failures=13 first_failure_tick=18 first_failure_kind=(Coord { x: 19, y: 1, z: 22 }, \"immovable obstruction\") conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=10 displacement_mismatches=20"
+  },
+  {
+    "cycle": 2,
+    "position": [
+      -2,
+      1,
+      1
+    ],
+    "body": 1,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=16 limit=1000 max_successful_action=70 extension_failures=5 movement_failures=5 first_failure_tick=24 first_failure_kind=(Coord { x: 21, y: 1, z: 16 }, \"immovable obstruction\") conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=15 displacement_mismatches=19"
+  },
+  {
+    "cycle": 2,
+    "position": [
+      -2,
+      -1,
+      -1
+    ],
+    "body": 1,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=11 limit=1000 max_successful_action=70 extension_failures=1 movement_failures=1 first_failure_tick=24 first_failure_kind=(Coord { x: 21, y: 2, z: 17 }, \"immovable obstruction\") conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=17 displacement_mismatches=20"
+  },
+  {
+    "cycle": 2,
+    "position": [
+      0,
+      5,
+      1
+    ],
+    "body": 2,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=1 limit=1000 max_successful_action=36 extension_failures=234 movement_failures=234 first_failure_tick=6 first_failure_kind=(Coord { x: 15, y: 7, z: 18 }, \"immovable obstruction\") conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=19 displacement_mismatches=20"
+  },
+  {
+    "cycle": 2,
+    "position": [
+      0,
+      5,
+      5
+    ],
+    "body": 2,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=3 limit=1000 max_successful_action=99 extension_failures=2 movement_failures=2 first_failure_tick=22 first_failure_kind=(Coord { x: 21, y: 7, z: 18 }, \"immovable obstruction\") conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=14 displacement_mismatches=20"
+  },
+  {
+    "cycle": 2,
+    "position": [
+      -1,
+      0,
+      2
+    ],
+    "body": 0,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=1 limit=1000 max_successful_action=36 extension_failures=236 movement_failures=236 first_failure_tick=4 first_failure_kind=(Coord { x: 14, y: 2, z: 17 }, \"immovable obstruction\") conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=19 displacement_mismatches=20"
+  },
+  {
+    "cycle": 2,
+    "position": [
+      -1,
+      -2,
+      0
+    ],
+    "body": 0,
+    "accepted": false,
+    "result": "verify pass=false file=C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\overnight_20260930\\trim_planar_mmw\\probe.flyer ticks=240 distance=11 limit=1000 max_successful_action=70 extension_failures=1 movement_failures=1 first_failure_tick=20 first_failure_kind=(Coord { x: 20, y: 2, z: 21 }, \"immovable obstruction\") conservation_mismatch_ticks=0 boundaries=20 initial_matches=0 consecutive_matches=16 displacement_mismatches=20"
+  }
+]

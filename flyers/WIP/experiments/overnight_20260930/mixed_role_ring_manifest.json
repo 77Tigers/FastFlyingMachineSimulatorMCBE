@@ -1,0 +1,10 @@
+{
+  "stats": {
+    "cross_power": 22,
+    "mandatory": 2
+  },
+  "candidates": [],
+  "radius": 7,
+  "scheme": "radial",
+  "next_seed": 4
+}

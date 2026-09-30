@@ -1,0 +1,55 @@
+tight 0 {'cross_power': 1}
+tight 1 {'cross_power': 1, 'source_overlap': 1}
+tight 2 {'cross_power': 1, 'source_overlap': 2}
+tight 3 {'cross_power': 1, 'source_overlap': 3}
+tight 4 {'cross_power': 1, 'source_overlap': 4}
+tight 5 {'cross_power': 1, 'source_overlap': 5}
+tight 6 {'cross_power': 2, 'source_overlap': 5}
+tight 7 {'cross_power': 2, 'source_overlap': 6}
+tight 8 {'cross_power': 2, 'source_overlap': 7}
+tight 9 {'cross_power': 2, 'source_overlap': 8}
+tight 10 {'cross_power': 3, 'source_overlap': 8}
+tight 11 {'cross_power': 3, 'source_overlap': 9}
+tight 12 {'cross_power': 3, 'source_overlap': 10}
+tight 13 {'cross_power': 3, 'source_overlap': 11}
+tight 14 {'cross_power': 3, 'source_overlap': 12}
+tight 15 {'cross_power': 4, 'source_overlap': 12}
+medium 0 {'cross_power': 4, 'source_overlap': 12, 'mandatory': 1}
+medium 1 {'cross_power': 4, 'source_overlap': 12, 'mandatory': 2}
+medium 2 {'cross_power': 4, 'source_overlap': 12, 'mandatory': 3}
+medium 3 {'cross_power': 4, 'source_overlap': 12, 'mandatory': 4}
+medium 4 {'cross_power': 4, 'source_overlap': 12, 'mandatory': 5}
+medium 5 {'cross_power': 4, 'source_overlap': 12, 'mandatory': 6}
+medium 6 {'cross_power': 4, 'source_overlap': 12, 'mandatory': 7}
+medium 7 {'cross_power': 4, 'source_overlap': 12, 'mandatory': 8}
+medium 8 {'cross_power': 4, 'source_overlap': 12, 'mandatory': 9}
+medium 9 {'cross_power': 4, 'source_overlap': 12, 'mandatory': 10}
+medium 10 {'cross_power': 4, 'source_overlap': 12, 'mandatory': 11}
+medium 11 {'cross_power': 4, 'source_overlap': 12, 'mandatory': 12}
+medium 12 {'cross_power': 4, 'source_overlap': 12, 'mandatory': 13}
+medium 13 {'cross_power': 4, 'source_overlap': 12, 'mandatory': 14}
+medium 14 {'cross_power': 4, 'source_overlap': 12, 'mandatory': 15}
+medium 15 {'cross_power': 4, 'source_overlap': 12, 'mandatory': 16}
+safe 0 {'cross_power': 4, 'source_overlap': 12, 'mandatory': 16, 'routed': 1}
+safe 1 {'cross_power': 4, 'source_overlap': 12, 'mandatory': 16, 'routed': 2}
+safe 2 {'cross_power': 4, 'source_overlap': 12, 'mandatory': 16, 'routed': 3}
+safe 3 {'cross_power': 4, 'source_overlap': 12, 'mandatory': 16, 'routed': 4}
+safe 4 {'cross_power': 4, 'source_overlap': 12, 'mandatory': 16, 'routed': 5}
+safe 5 {'cross_power': 4, 'source_overlap': 12, 'mandatory': 16, 'routed': 5, 'pickup': 1}
+safe 6 {'cross_power': 4, 'source_overlap': 12, 'mandatory': 16, 'routed': 6, 'pickup': 1}
+safe 7 {'cross_power': 4, 'source_overlap': 12, 'mandatory': 16, 'routed': 7, 'pickup': 1}
+safe 8 {'cross_power': 4, 'source_overlap': 12, 'mandatory': 16, 'routed': 7, 'pickup': 1, 'route': 1}
+safe 9 {'cross_power': 4, 'source_overlap': 12, 'mandatory': 16, 'routed': 7, 'pickup': 1, 'route': 2}
+safe 10 {'cross_power': 4, 'source_overlap': 12, 'mandatory': 16, 'routed': 7, 'pickup': 1, 'route': 3}
+safe 11 {'cross_power': 4, 'source_overlap': 12, 'mandatory': 16, 'routed': 8, 'pickup': 1, 'route': 3}
+safe 12 {'cross_power': 4, 'source_overlap': 12, 'mandatory': 16, 'routed': 8, 'pickup': 1, 'route': 4}
+safe 13 {'cross_power': 4, 'source_overlap': 12, 'mandatory': 16, 'routed': 9, 'pickup': 1, 'route': 4}
+safe 14 {'cross_power': 4, 'source_overlap': 12, 'mandatory': 16, 'routed': 10, 'pickup': 1, 'route': 4}
+safe 15 {'cross_power': 4, 'source_overlap': 12, 'mandatory': 16, 'routed': 11, 'pickup': 1, 'route': 4}
+screen candidates=11 clean=11 ticks=240 out=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmw_planar_screen.csv
+  distance=80 load=46 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmw_planar_candidates\safe_s000.flyer
+  distance=80 load=37 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmw_planar_candidates\safe_s001.flyer
+  distance=80 load=44 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmw_planar_candidates\safe_s002.flyer
+  distance=80 load=42 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmw_planar_candidates\safe_s003.flyer
+  distance=80 load=46 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmw_planar_candidates\safe_s004.flyer
+

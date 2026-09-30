@@ -1,0 +1,26 @@
+{
+  "bank_file": "flyers/bank/pl9/pulling_loop4.flyer",
+  "sha256": "5c0f21e688f755bd8c188ae4926e3aa36760586e19fb692e4718579d7f19dc2d",
+  "generator": "build_pull_winner.py",
+  "period_ticks": 8,
+  "translation_x": 2,
+  "push_limit": 9,
+  "ticks": 10000,
+  "distance": 2500,
+  "speed_bps": 2.5,
+  "full_rng_phase_samples": 80,
+  "exact_block_owner_boundaries_per_sample": 1250,
+  "max_successful_action": 9,
+  "all_pistons_sticky_facing_minus_x": true,
+  "permanent_kinds": {
+    "SLIME": 12,
+    "HONEY": 12,
+    "OBSERVER": 4,
+    "PISTON": 8
+  },
+  "evidence": [
+    "pulling_loop4_pl9.verify.txt",
+    "pulling_loop4_pl9.samples.csv",
+    "pulling_loop4_pl9.audit.txt"
+  ]
+}

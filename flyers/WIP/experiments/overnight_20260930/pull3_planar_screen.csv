@@ -1,0 +1,5 @@
+file,limit,rng,phase_x,phase_z,ticks,distance,end_blocks,extensions,extension_failures,movement_failures,first_failure_tick,first_failure_kind,conservation_mismatch_ticks,max_successful_action,clean
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\pull3_planar_candidates\paired_grid_s003.flyer",1000,5,0,0,240,72,777,720,0,0,,"",0,105,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\pull3_planar_candidates\paired_grid_s004.flyer",1000,5,0,0,240,72,817,720,0,0,,"",0,104,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\pull3_planar_candidates\paired_grid_s005.flyer",1000,5,0,0,240,72,762,720,0,0,,"",0,106,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\pull3_planar_candidates\paired_grid_s007.flyer",1000,5,0,0,240,72,864,720,0,0,,"",0,103,true

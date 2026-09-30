@@ -1,0 +1,6 @@
+file,limit,rng,phase_x,phase_z,ticks,distance,end_blocks,extensions,extension_failures,movement_failures,first_failure_tick,first_failure_kind,conservation_mismatch_ticks,max_successful_action,clean
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmmm_glazed_wide_candidates\six_s001.flyer",1000,5,0,0,240,0,212,12,0,0,,"",0,45,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmmm_glazed_wide_candidates\six_s003.flyer",1000,5,0,0,240,1,221,8,0,0,,"",0,48,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmmm_glazed_wide_candidates\six_s004.flyer",1000,5,0,0,240,0,219,9,0,0,,"",0,46,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmmm_glazed_wide_candidates\six_s006.flyer",1000,5,0,0,240,0,210,8,0,0,,"",0,47,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmmm_glazed_wide_candidates\six_s007.flyer",1000,5,0,0,240,1,213,9,0,0,,"",0,46,true

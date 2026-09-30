@@ -1,0 +1,3 @@
+file,limit,rng,phase_x,phase_z,ticks,distance,end_blocks,extensions,extension_failures,movement_failures,first_failure_tick,first_failure_kind,conservation_mismatch_ticks,max_successful_action,clean
+"flyers/WIP/experiments/overnight_20260930/mixed3_compact_candidates\pentagon_v0_s007.flyer",1000,5,0,0,240,29,210,144,9,11,80,"(Coord { x: 41, y: 6, z: 21 }, ""immovable obstruction"")",0,208,false
+"flyers/WIP/experiments/overnight_20260930/mixed3_compact_candidates\pentagon_v0_s010.flyer",1000,5,0,0,240,23,206,114,2,2,70,"(Coord { x: 38, y: 7, z: 21 }, ""immovable obstruction"")",0,98,false

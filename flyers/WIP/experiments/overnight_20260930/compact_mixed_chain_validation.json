@@ -1,0 +1,41 @@
+{
+  "tile_translation": [
+    0,
+    12,
+    0
+  ],
+  "assemblies": [
+    {
+      "copies": 1,
+      "file": "compact_mixed_chain_1tiles_pl66.flyer",
+      "limit": 66,
+      "full_verify": true,
+      "tagged_ledger": true,
+      "local_extension_max": 8
+    },
+    {
+      "copies": 2,
+      "file": "compact_mixed_chain_2tiles_pl83.flyer",
+      "limit": 83,
+      "full_verify": true,
+      "tagged_ledger": true,
+      "local_extension_max": 8
+    },
+    {
+      "copies": 4,
+      "file": "compact_mixed_chain_4tiles_pl119.flyer",
+      "limit": 119,
+      "full_verify": true,
+      "tagged_ledger": true,
+      "local_extension_max": 8
+    },
+    {
+      "copies": 8,
+      "file": "compact_mixed_chain_8tiles_pl195.flyer",
+      "limit": 195,
+      "full_verify": true,
+      "tagged_ledger": true,
+      "local_extension_max": 8
+    }
+  ]
+}

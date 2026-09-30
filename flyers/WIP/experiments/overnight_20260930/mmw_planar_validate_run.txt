@@ -1,0 +1,6 @@
+verify pass=true file=flyers\WIP\experiments\overnight_20260930\mmw_planar_safe_s001_pl37.flyer ticks=10000 distance=3333 limit=37 max_successful_action=37 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=833 initial_matches=833 consecutive_matches=833 displacement_mismatches=0
+
+file=flyers\WIP\experiments\overnight_20260930\mmw_planar_safe_s001_pl37.flyer limit=37 rng_final=6269817706955863125 phase_x=0 phase_z=0 ticks=10000 start_min_x=12 end_min_x=3345 distance=3333 extensions=10000 extension_failures=0 end_blocks=109 initial_kinds=[0, 55, 28, 0, 0, 0, 6, 6, 0, 12, 0] final_kinds=[0, 55, 28, 0, 0, 0, 6, 6, 0, 12, 0] conservation_mismatch_ticks=0 period=12 translated_repeat_pairs=833 first_repeat=Some((0, 12, 4)) traced=true max_successful_action=37 movement_failures=0
+
+samples passed=80/80 file=flyers\WIP\experiments\overnight_20260930\mmw_planar_safe_s001_pl37.flyer ticks=10000 period=12 advance=4 first_failed=None out=flyers\WIP\experiments\overnight_20260930\mmw_planar_safe_s001_pl37.samples.csv
+

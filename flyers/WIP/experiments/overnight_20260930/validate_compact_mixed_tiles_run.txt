@@ -1,0 +1,67 @@
+verify pass=true file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\compact_mixed_tile_bridged\copies1.flyer ticks=10000 distance=3000 limit=1000 max_successful_action=66 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=1000 initial_matches=1000 consecutive_matches=1000 displacement_mismatches=0
+
+verify pass=true file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\compact_mixed_chain_1tiles_pl66.flyer ticks=10000 distance=3000 limit=66 max_successful_action=66 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=1000 initial_matches=1000 consecutive_matches=1000 displacement_mismatches=0
+
+body,phase,sticky_cells,successful_actions,min_load,max_load
+0,0,34,3000,40,40
+1,1,37,3000,42,43
+2,2,59,3000,65,66
+3,3,52,3000,59,62
+4,4,50,3000,57,57
+5,0,5,3000,7,8
+ticks=10000 empty_extensions=6000 empty_retractions=12000 movement_failures=0 unmatched_nonempty_actions=0
+
+verify pass=true file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\compact_mixed_tile_bridged\copies2.flyer ticks=10000 distance=3000 limit=1000 max_successful_action=83 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=1000 initial_matches=1000 consecutive_matches=1000 displacement_mismatches=0
+
+verify pass=true file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\compact_mixed_chain_2tiles_pl83.flyer ticks=10000 distance=3000 limit=83 max_successful_action=83 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=1000 initial_matches=1000 consecutive_matches=1000 displacement_mismatches=0
+
+body,phase,sticky_cells,successful_actions,min_load,max_load
+0,0,34,3000,40,40
+1,1,37,3000,42,43
+2,2,75,3000,82,83
+3,3,69,3000,77,81
+4,4,67,3000,75,75
+5,0,5,3000,7,8
+6,0,5,3000,7,8
+ticks=10000 empty_extensions=7000 empty_retractions=14000 movement_failures=0 unmatched_nonempty_actions=0
+
+verify pass=true file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\compact_mixed_tile_bridged\copies4.flyer ticks=10000 distance=3000 limit=1000 max_successful_action=119 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=1000 initial_matches=1000 consecutive_matches=1000 displacement_mismatches=0
+
+verify pass=true file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\compact_mixed_chain_4tiles_pl119.flyer ticks=10000 distance=3000 limit=119 max_successful_action=119 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=1000 initial_matches=1000 consecutive_matches=1000 displacement_mismatches=0
+
+body,phase,sticky_cells,successful_actions,min_load,max_load
+0,0,34,3000,40,40
+1,1,37,3000,42,43
+2,2,107,3000,116,117
+3,3,103,3000,113,119
+4,4,101,3000,111,111
+5,0,5,3000,7,8
+6,0,5,3000,7,8
+7,0,5,3000,7,8
+8,0,5,3000,7,8
+ticks=10000 empty_extensions=9000 empty_retractions=18000 movement_failures=0 unmatched_nonempty_actions=0
+
+verify pass=true file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\compact_mixed_tile_bridged\copies8.flyer ticks=10000 distance=3000 limit=1000 max_successful_action=195 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=1000 initial_matches=1000 consecutive_matches=1000 displacement_mismatches=0
+
+verify pass=true file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\compact_mixed_chain_8tiles_pl195.flyer ticks=10000 distance=3000 limit=195 max_successful_action=195 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=1000 initial_matches=1000 consecutive_matches=1000 displacement_mismatches=0
+
+body,phase,sticky_cells,successful_actions,min_load,max_load
+0,0,34,3000,40,40
+1,1,37,3000,42,43
+2,2,171,3000,184,185
+3,3,171,3000,185,195
+4,4,169,3000,183,183
+5,0,5,3000,7,8
+6,0,5,3000,7,8
+7,0,5,3000,7,8
+8,0,5,3000,7,8
+9,0,5,3000,7,8
+10,0,5,3000,7,8
+11,0,5,3000,7,8
+12,0,5,3000,7,8
+ticks=10000 empty_extensions=13000 empty_retractions=26000 movement_failures=0 unmatched_nonempty_actions=0
+
+samples passed=80/80 file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\compact_mixed_chain_1tiles_pl66.flyer ticks=10000 period=10 advance=3 first_failed=None out=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\compact_mixed_chain_1tiles_pl66.samples.csv
+
+samples passed=80/80 file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\compact_mixed_chain_8tiles_pl195.flyer ticks=10000 period=10 advance=3 first_failed=None out=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\compact_mixed_chain_8tiles_pl195.samples.csv
+

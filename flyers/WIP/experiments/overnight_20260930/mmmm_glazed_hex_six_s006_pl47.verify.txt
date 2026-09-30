@@ -1,0 +1,1 @@
+verify pass=true file=flyers\WIP\experiments\overnight_20260930\mmmm_glazed_hex_six_s006_pl47.flyer ticks=10000 distance=3334 limit=47 max_successful_action=47 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=833 initial_matches=833 consecutive_matches=833 displacement_mismatches=0

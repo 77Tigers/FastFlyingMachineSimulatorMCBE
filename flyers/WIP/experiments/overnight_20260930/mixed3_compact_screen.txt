@@ -1,0 +1,7 @@
+screen candidates=32 clean=27 ticks=240 out=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mixed3_compact_screen.csv
+  distance=72 load=52 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mixed3_compact_candidates\pentagon_wide_v0_s000.flyer
+  distance=72 load=56 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mixed3_compact_candidates\pentagon_wide_v0_s001.flyer
+  distance=72 load=49 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mixed3_compact_candidates\pentagon_wide_v0_s002.flyer
+  distance=72 load=46 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mixed3_compact_candidates\pentagon_wide_v0_s003.flyer
+  distance=72 load=53 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mixed3_compact_candidates\pentagon_wide_v0_s005.flyer
+  earliest_failure tick=12 kind=(Coord { x: 17, y: 5, z: 15 }, "immovable obstruction") file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mixed3_compact_candidates\pentagon_wide_v1_s007.flyer

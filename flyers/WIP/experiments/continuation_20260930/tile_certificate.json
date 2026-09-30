@@ -1,0 +1,26 @@
+[
+  {
+    "tiles": 1,
+    "path": "pull_chain_1tiles_pl11.flyer",
+    "sha256": "9b6760d39cedb059d45c43384b9b084a57a54952b0393c304d092f8dfc7f9ba4",
+    "verify_exit": 0
+  },
+  {
+    "tiles": 2,
+    "path": "pull_chain_2tiles_pl11.flyer",
+    "sha256": "edd7364f6b55b004c424cbd504efa9d7e5b939fa86bfd58ab833100f396236a8",
+    "verify_exit": 0
+  },
+  {
+    "tiles": 4,
+    "path": "pull_chain_4tiles_pl11.flyer",
+    "sha256": "b6ee7cf17bdd21046e491c1d5ca0ce72b7aa8bf29dc1963ca4859978bea72d38",
+    "verify_exit": 0
+  },
+  {
+    "tiles": 8,
+    "path": "pull_chain_8tiles_pl11.flyer",
+    "sha256": "6008aa2504938db86898a8ddd63d8ef41a04fdcf0c586b2a1dbe9517b66ad521",
+    "verify_exit": 0
+  }
+]

@@ -1,0 +1,1 @@
+samples passed=0/80 file=flyers/WIP/experiments/sol_reference_20260928/n4_copies4_s0_pl21.flyer ticks=10000 period=12 advance=4 first_failed=Some((0, 0, 0)) out=flyers/WIP/experiments/overnight_20260930/mmmmww_pl21_samples.csv

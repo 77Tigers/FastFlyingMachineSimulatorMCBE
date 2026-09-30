@@ -1,0 +1,1 @@
+samples passed=80/80 file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\continuation_20260930\pull_chain_8tiles_pl11.flyer ticks=10000 period=8 advance=2 first_failed=None out=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\continuation_20260930\pull_chain_8tiles_pl11.samples.csv

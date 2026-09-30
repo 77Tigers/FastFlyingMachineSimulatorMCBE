@@ -1,0 +1,10 @@
+file,limit,rng,phase_x,phase_z,ticks,distance,end_blocks,extensions,extension_failures,movement_failures,first_failure_tick,first_failure_kind,conservation_mismatch_ticks,max_successful_action,clean
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmw_layouts\grid4_s009.flyer",512,5,0,0,240,80,201,240,0,0,,"",0,74,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmw_layouts\grid4_s016.flyer",512,5,0,0,240,80,206,240,0,0,,"",0,74,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmw_layouts\grid4_s019.flyer",512,5,0,0,240,80,182,240,0,0,,"",0,65,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmw_layouts\grid4_s026.flyer",512,5,0,0,240,80,188,240,0,0,,"",0,69,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmw_layouts\hex4_s005.flyer",512,5,0,0,240,80,203,240,0,0,,"",0,75,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmw_layouts\hex4_s013.flyer",512,5,0,0,240,80,181,240,0,0,,"",0,71,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmw_layouts\hex4_s014.flyer",512,5,0,0,240,80,169,240,0,0,,"",0,62,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmw_layouts\hex4_s017.flyer",512,5,0,0,240,80,198,240,0,0,,"",0,73,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmw_layouts\hex4_s022.flyer",512,5,0,0,240,80,185,240,0,0,,"",0,67,true
