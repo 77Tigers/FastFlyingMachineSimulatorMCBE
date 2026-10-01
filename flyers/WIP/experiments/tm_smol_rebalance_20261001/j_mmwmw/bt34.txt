@@ -1,0 +1,45 @@
+distance 120 over 400 ticks; bodies (rear->front by mean x):
+  B0: n=1  P=1 S=0 word=mmwwm at(12,5,12) [normal piston]
+  B1: n=1  P=1 S=0 word=wmmmw at(13,1,15) [normal piston]
+  B2: n=1  P=1 S=0 word=mmmww at(13,7,16) [normal piston]
+  B3: n=30 sl27 P=1 S=2 word=mmmww box x10-16 y0-8 z13-16
+  B4: n=26 sl22 P=3 S=1 word=mwwmm box x12-17 y3-6 z12-19
+  B5: n=26 ho19 gz1 RB1 ob1 P=1 S=3 word=wmmmw box x12-16 y3-8 z12-16
+  B6: n=28 sl24 gz1 ob1 P=1 S=1 word=mmwwm box x11-18 y5-10 z16-20
+  B7: n=30 ho20 gz3 RB4 ob3 P=0 S=0 word=wmwmm box x13-17 y1-5 z12-17
+  B8: n=1  P=1 S=0 word=mmmww at(15,9,18) [normal piston]
+  B9: n=1  P=1 S=0 word=mmwwm at(16,5,18) [normal piston]
+  B10: n=1  P=1 S=0 word=wmmmw at(16,6,17) [normal piston]
+  B11: n=28 ho19 gz3 RB1 ob3 P=0 S=2 word=wwmmm box x13-21 y6-9 z16-19
+  B12: n=21 ho16 gz2 RB1 ob2 P=0 S=0 word=wmmwm box x17-19 y3-8 z14-19
+events in one period from tick 100 (slot actor(carriers|power) action load -> moved):
+  s0 B5(B5|) pull 30  -> B3x1,B6x28,B8x1 
+  s0 B11(B11|B6) ext0 0   ->  
+  s0 B11(B11/B12|B12) ext0 0   ->  
+  s0 B5(B3/B5/B7|) pull 29  -> B3x29 
+  s0 B5(B5|) pull 29  -> B0x1,B2x1,B4x26,B9x1 
+  s1 B11(B11/B12|) pull 33  -> B1x1,B3x30,B5x2 
+  s1 B4(B4/B5|B5) push 26  -> B0x1,B2x1,B5x24 
+  s1 B4(B4|B7) ext0 0   ->  
+  s1 B4(B4|B7) push 30  -> B7x30 
+  s1 B4(B4|B7) push 22  -> B9x1,B12x21 
+  s1 B11(B11|) pull 30  -> B6x28,B8x1,B10x1 
+  s2 B0(B4|B5) push 27  -> B2x1,B5x26 
+  s2 B4(B4/B7|) pull 32  -> B1x1,B3x30,B11x1 
+  s2 B6(B6/B11|B11) push 29  -> B8x1,B10x1,B11x27 
+  s2 B9(B4|B7) push 21  -> B12x21 
+  s2 B6(B6|B12) ext0 0   ->  
+  s3 B3(B3|B7) push 33  -> B1x1,B4x2,B7x30 
+  s3 B6(B6/B12|) pull 24  -> B4x24 
+  s3 B8(B6|B11) push 29  -> B10x1,B11x28 
+  s3 B2(B5/B6|B11) push 26  -> B5x26 
+  s3 B3(B3/B6|B11) ext0 0   ->  
+  s3 B3(B3|B7) ext0 0   ->  
+  s4 B1(B3|B7) push 32  -> B4x2,B7x30 
+  s4 B3(B3/B5|) pull 27  -> B0x1,B4x24,B6x1,B9x1 
+  s4 B5(B3/B5|B12) push 23  -> B6x1,B11x1,B12x21 
+  s4 B5(B3/B5|B7) ext0 0   ->  
+  s4 B5(B5|B7) ext0 0   ->  
+  s4 B5(B5|B12) ext0 0   ->  
+  s4 B10(B3|B7) push 27  -> B11x27 
+  s4 B3(B3/B5/B6|) pull 26  -> B6x26 

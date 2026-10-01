@@ -1,0 +1,73 @@
+pusher -> (slot,target):
+  B0: [(3, 9)]
+  B1: [(4, 9)]
+  B2: [(2, 10)]
+  B3: [(1, 10)]
+  B5: [(0, 11)]
+  B6: [(3, 18)]
+  B7: [(1, 11), (4, 11)]
+  B8: [(2, 18)]
+  B12: [(3, 19)]
+  B13: [(1, 19)]
+  B14: [(2, 19)]
+  B16: [(1, 15)]
+  B17: [(0, 15)]
+  B20: [(0, 24)]
+  B21: [(1, 24)]
+  B22: [(2, 24)]
+  B25: [(2, 36)]
+  B26: [(3, 36)]
+  B27: [(0, 29), (4, 29)]
+  B28: [(4, 35)]
+  B30: [(3, 35)]
+  B31: [(4, 36)]
+  B32: [(2, 37)]
+  B33: [(1, 37)]
+  B34: [(3, 37)]
+  B38: [(1, 41)]
+  B39: [(2, 41)]
+  B40: [(0, 41)]
+  B42: [(1, 45)]
+  B43: [(0, 45)]
+  B44: [(4, 45)]
+
+per glue-body move: slot kind actor load = glue + riders(serving)
+s0 push B11(mmwwm) by B5  load 12 = 9 + 3: B6->B18 B7->B11,B11 B8->B18
+s0 push B15(mmmww) by B17 load 12 = 10 + 2: B0->B9 B16->B15
+s0 pull B9 (mwwmm) by B19 load 12 = 7 + 5: B2->B10 B3->B10 B12->B19 B13->B19 B14->B19
+s0 push B24(mmmww) by B20 load 12 = 9 + 3: B21->B24 B22->B24 B28->B35
+s0 push B29(mmwwm) by B27 load 11 = 9 + 2: B25->B36 B26->B36
+s0 pull B35(mwwmm) by B37 load 12 = 9 + 3: B32->B37 B33->B37 B34->B37
+s0 push B41(mmmww) by B40 load  9 = 7 + 2: B38->B41 B39->B41
+s0 push B45(mmwwm) by B43 load  8 = 7 + 1: B42->B45
+s1 push B10(wmmmw) by B3  load 11 = 9 + 2: B2->B10 B4->
+s1 push B11(mmwwm) by B7  load 11 = 9 + 2: B6->B18 B8->B18
+s1 push B19(wmmmw) by B13 load 11 = 8 + 3: B12->B19 B14->B19 B23->
+s1 push B15(mmmww) by B16 load 12 = 10 + 2: B0->B9 B1->B9
+s1 push B24(mmmww) by B21 load 12 = 9 + 3: B22->B24 B28->B35 B30->B35
+s1 push B37(wmmmw) by B33 load 11 = 8 + 3: B32->B37 B34->B37 B44->B45
+s1 pull B29(mmwwm) by B36 load 12 = 9 + 3: B25->B36 B26->B36 B31->B36
+s1 push B41(mmmww) by B38 load  8 = 7 + 1: B39->B41
+s1 push B45(mmwwm) by B42 load  7 = 7 + 0: 
+s2 push B10(wmmmw) by B2  load 11 = 9 + 2: B4-> B5->B11
+s2 push B18(wwmmm) by B8  load 10 = 7 + 3: B6->B18 B17->B15 B20->B24
+s2 push B19(wmmmw) by B14 load 11 = 8 + 3: B12->B19 B23-> B27->B29,B29
+s2 push B24(mmmww) by B22 load 11 = 9 + 2: B28->B35 B30->B35
+s2 push B36(wwmmm) by B25 load 11 = 8 + 3: B26->B36 B31->B36 B40->B41
+s2 push B37(wmmmw) by B32 load 11 = 8 + 3: B34->B37 B43->B45 B44->B45
+s2 pull B15(mmmww) by B35 load 12 = 10 + 2: B0->B9 B1->B9
+s2 push B41(mmmww) by B39 load  7 = 7 + 0: 
+s3 push B9 (mwwmm) by B0  load 10 = 7 + 3: B1->B9 B3->B10 B13->B19
+s3 push B18(wwmmm) by B6  load 11 = 7 + 4: B16->B15 B17->B15 B20->B24 B21->B24
+s3 push B19(wmmmw) by B12 load 10 = 8 + 2: B23-> B27->B29,B29
+s3 push B36(wwmmm) by B26 load 11 = 8 + 3: B31->B36 B38->B41 B40->B41
+s3 pull B10(wmmmw) by B29 load 12 = 9 + 3: B4-> B5->B11 B7->B11,B11
+s3 push B35(mwwmm) by B30 load 11 = 9 + 2: B28->B35 B33->B37
+s3 push B37(wmmmw) by B34 load 11 = 8 + 3: B42->B45 B43->B45 B44->B45
+s4 push B9 (mwwmm) by B1  load 11 = 7 + 4: B2->B10 B3->B10 B13->B19 B14->B19
+s4 push B11(mmwwm) by B7  load 12 = 9 + 3: B4-> B5->B11 B8->B18
+s4 pull B18(wwmmm) by B24 load 12 = 7 + 5: B16->B15 B17->B15 B20->B24 B21->B24 B22->B24
+s4 push B29(mmwwm) by B27 load 11 = 9 + 2: B23-> B25->B36
+s4 push B35(mwwmm) by B28 load 11 = 9 + 2: B32->B37 B33->B37
+s4 push B36(wwmmm) by B31 load 11 = 8 + 3: B38->B41 B39->B41 B40->B41
+s4 push B45(mmwwm) by B44 load  9 = 7 + 2: B42->B45 B43->B45

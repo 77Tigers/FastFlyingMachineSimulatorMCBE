@@ -1,0 +1,6 @@
+85 cells
+start dist=  120 load= 32 ext=   360 extfail=0 movefail=0 cons=0 clean=true
+round 1 removed (17, 4, 15) load 32 cells 84 candidates 3
+round 2 removed (16, 6, 15) load 32 cells 83 candidates 3
+round 3 removed (13, 3, 17) load 32 cells 82 candidates 2
+round 4 removed (16, 6, 17) load 32 cells 81 candidates 1

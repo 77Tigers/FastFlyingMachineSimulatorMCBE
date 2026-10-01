@@ -1,0 +1,16 @@
+mmmww ('pull', 'pull', 'pull') INFEASIBLE
+mmmww ('pull', 'pull', 'push') INFEASIBLE
+mmmww ('pull', 'push', 'pull') INFEASIBLE
+mmmww ('pull', 'push', 'push') INFEASIBLE
+mmmww ('push', 'pull', 'pull') INFEASIBLE
+mmmww ('push', 'pull', 'push') INFEASIBLE
+mmmww ('push', 'push', 'pull') maxrid=3 sum=45 npat [1, 1, 1] 0.0s
+mmmww ('push', 'push', 'push') maxrid=3 sum=45 npat [1, 1, 1] 0.0s
+mmwmw ('pull', 'pull', 'pull') maxrid=4 sum=45 npat [2, 6, 6] 0.0s
+mmwmw ('pull', 'pull', 'push') maxrid=4 sum=45 npat [2, 6, 6] 0.0s
+mmwmw ('pull', 'push', 'pull') maxrid=3 sum=45 npat [2, 3, 6] 0.0s
+mmwmw ('pull', 'push', 'push') maxrid=3 sum=45 npat [2, 3, 6] 0.0s
+mmwmw ('push', 'pull', 'pull') maxrid=3 sum=45 npat [6, 6, 6] 0.0s
+mmwmw ('push', 'pull', 'push') maxrid=3 sum=45 npat [6, 6, 6] 0.0s
+mmwmw ('push', 'push', 'pull') maxrid=3 sum=45 npat [6, 3, 6] 0.0s
+mmwmw ('push', 'push', 'push') maxrid=3 sum=45 npat [6, 3, 6] 0.0s

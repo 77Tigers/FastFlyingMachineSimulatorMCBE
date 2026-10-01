@@ -1,0 +1,15 @@
+file,limit,rng,phase_x,phase_z,ticks,distance,end_blocks,extensions,extension_failures,movement_failures,first_failure_tick,first_failure_kind,conservation_mismatch_ticks,max_successful_action,clean
+"flyers/WIP/experiments/exclusive_roles_20261001/free_human\c0000.flyer",24,0,0,0,240,5,182,103,660,661,2,"(Coord { x: 7, y: 1, z: 1 }, ""push limit exceeded"")",0,21,false
+"flyers/WIP/experiments/exclusive_roles_20261001/free_human\c0001.flyer",24,0,0,0,240,3,191,984,0,0,,"",0,24,true
+"flyers/WIP/experiments/exclusive_roles_20261001/free_human\c0002.flyer",24,0,0,0,240,2,184,81,1142,1143,4,"(Coord { x: 4, y: 7, z: 4 }, ""immovable obstruction"")",0,19,false
+"flyers/WIP/experiments/exclusive_roles_20261001/free_human\c0003.flyer",24,0,0,0,240,1,188,94,1600,1600,8,"(Coord { x: 22, y: 6, z: 9 }, ""push limit exceeded"")",0,21,false
+"flyers/WIP/experiments/exclusive_roles_20261001/free_human\c0004.flyer",24,0,0,0,240,2,187,81,1142,1143,4,"(Coord { x: 4, y: 7, z: 4 }, ""immovable obstruction"")",0,20,false
+"flyers/WIP/experiments/exclusive_roles_20261001/free_human\c0005.flyer",24,0,0,0,240,72,183,1008,0,0,,"",0,19,true
+"flyers/WIP/experiments/exclusive_roles_20261001/free_human\c0006.flyer",24,0,0,0,240,3,176,57,1394,1395,2,"(Coord { x: 9, y: 4, z: 7 }, ""push limit exceeded"")",0,16,false
+"flyers/WIP/experiments/exclusive_roles_20261001/free_human\c0007.flyer",24,0,0,0,240,3,182,111,0,1,4,"(Coord { x: 20, y: 7, z: 4 }, ""immovable obstruction"")",0,24,false
+"flyers/WIP/experiments/exclusive_roles_20261001/free_human\c0008.flyer",24,0,0,0,240,3,184,104,1116,1118,12,"(Coord { x: 9, y: 5, z: 10 }, ""push limit exceeded"")",0,21,false
+"flyers/WIP/experiments/exclusive_roles_20261001/free_human\c0009.flyer",24,0,0,0,240,72,184,1008,0,0,,"",0,19,true
+"flyers/WIP/experiments/exclusive_roles_20261001/free_human\c0010.flyer",24,0,0,0,240,72,186,1008,0,0,,"",0,20,true
+"flyers/WIP/experiments/exclusive_roles_20261001/free_human\c0011.flyer",24,0,0,0,240,7,182,130,856,859,20,"(Coord { x: 24, y: 6, z: 19 }, ""immovable obstruction"")",0,18,false
+"flyers/WIP/experiments/exclusive_roles_20261001/free_human\c0012.flyer",24,0,0,0,240,2,175,55,1656,1656,0,"(Coord { x: 9, y: 4, z: 10 }, ""push limit exceeded"")",0,18,false
+"flyers/WIP/experiments/exclusive_roles_20261001/free_human\c0013.flyer",24,0,0,0,240,1,174,100,444,445,6,"(Coord { x: 7, y: 6, z: 10 }, ""push limit exceeded"")",0,20,false

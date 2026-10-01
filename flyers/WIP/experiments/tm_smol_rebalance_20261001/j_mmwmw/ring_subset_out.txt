@@ -1,0 +1,24 @@
+['pull', 'push', 'pull'] size 2 best (maxriders, D): None
+['pull', 'push', 'pull'] size 3 best (maxriders, D): (5, (0, 1, 2))
+['pull', 'push', 'pull'] size 4 best (maxriders, D): (4, (0, 1, 2, 3))
+['pull', 'push', 'pull'] size 5 best (maxriders, D): (3, (0, 1, 2, 3, 4))
+['push', 'pull', 'pull'] size 2 best (maxriders, D): None
+['push', 'pull', 'pull'] size 3 best (maxriders, D): (7, (0, 1, 2))
+['push', 'pull', 'pull'] size 4 best (maxriders, D): (4, (0, 1, 2, 3))
+['push', 'pull', 'pull'] size 5 best (maxriders, D): (3, (0, 1, 2, 3, 4))
+['pull', 'pull', 'push'] size 2 best (maxriders, D): None
+['pull', 'pull', 'push'] size 3 best (maxriders, D): (6, (0, 1, 2))
+['pull', 'pull', 'push'] size 4 best (maxriders, D): (4, (0, 1, 2, 3))
+['pull', 'pull', 'push'] size 5 best (maxriders, D): (4, (0, 1, 2, 3, 4))
+['pull', 'pull', 'pull'] size 2 best (maxriders, D): None
+['pull', 'pull', 'pull'] size 3 best (maxriders, D): (6, (0, 1, 2))
+['pull', 'pull', 'pull'] size 4 best (maxriders, D): (4, (0, 1, 2, 3))
+['pull', 'pull', 'pull'] size 5 best (maxriders, D): (4, (0, 1, 2, 3, 4))
+['push', 'push', 'pull'] size 2 best (maxriders, D): None
+['push', 'push', 'pull'] size 3 best (maxriders, D): (6, (0, 1, 2))
+['push', 'push', 'pull'] size 4 best (maxriders, D): (4, (0, 1, 2, 3))
+['push', 'push', 'pull'] size 5 best (maxriders, D): (3, (0, 1, 2, 3, 4))
+['push', 'push', 'push'] size 2 best (maxriders, D): None
+['push', 'push', 'push'] size 3 best (maxriders, D): (6, (0, 1, 2))
+['push', 'push', 'push'] size 4 best (maxriders, D): (4, (0, 1, 2, 3))
+['push', 'push', 'push'] size 5 best (maxriders, D): (3, (0, 1, 2, 3, 4))

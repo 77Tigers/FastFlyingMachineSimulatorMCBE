@@ -1,0 +1,4 @@
+file,limit,rng,phase_x,phase_z,ticks,distance,end_blocks,extensions,extension_failures,movement_failures,first_failure_tick,first_failure_kind,conservation_mismatch_ticks,max_successful_action,clean
+"exclusive_roles_20261001/j_light16/run15\c0000.flyer",15,0,0,0,240,1,169,57,1394,1396,2,"(Coord { x: 9, y: 5, z: 9 }, ""push limit exceeded"")",0,14,false
+"exclusive_roles_20261001/j_light16/run15\c0001.flyer",15,0,0,0,240,72,178,1008,0,0,,"",0,15,true
+"exclusive_roles_20261001/j_light16/run15\c0002.flyer",15,0,0,0,240,5,181,1008,0,1,14,"(Coord { x: 28, y: 7, z: 9 }, ""push limit exceeded"")",0,15,false

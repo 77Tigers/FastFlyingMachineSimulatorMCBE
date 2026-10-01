@@ -1,0 +1,3 @@
+file,limit,rng,phase_x,phase_z,ticks,distance,end_blocks,extensions,extension_failures,movement_failures,first_failure_tick,first_failure_kind,conservation_mismatch_ticks,max_successful_action,clean
+"flyers/WIP/experiments/exclusive_roles_20261001/sol_trim\17_pl16.flyer",16,0,0,0,240,4,175,142,1300,1301,8,"(Coord { x: 4, y: 2, z: 8 }, ""push limit exceeded"")",0,16,false
+"flyers/WIP/experiments/exclusive_roles_20261001/sol_trim\21_pl16.flyer",16,0,0,0,240,2,175,59,1394,1395,2,"(Coord { x: 21, y: 8, z: 8 }, ""push limit exceeded"")",0,16,false

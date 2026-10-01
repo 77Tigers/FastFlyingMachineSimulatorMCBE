@@ -1,0 +1,1 @@
+[2026-10-01 agent J-excl (subagent of J)] FINAL: exclusive-roles 3bps at PL15: WIP/experiments/exclusive_roles_20261001/j_light16/run15/c0001.flyer (10000t dist3000, role audit B18 pull-only/push-only B11,B20,B25,B37.., 80/80 samples). PL16 alternates run1/c0001,c0003 also 80/80. PL14 not found (see j_light16/NOTES.md). Not banked. Processes stopped.

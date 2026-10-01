@@ -1,0 +1,114 @@
+distance 3000 over 10000 ticks; bodies (rear->front by mean x):
+  B0: n=1  P=1 S=0 word=mmmmw at(16,6,4) [normal piston]
+  B1: n=1  P=1 S=0 word=mmmmw at(17,5,5) [normal piston]
+  B2: n=1  P=1 S=0 word=mmwmm at(17,5,6) [normal piston]
+  B3: n=1  P=1 S=0 word=mmwmm at(17,6,7) [normal piston]
+  B4: n=1  P=1 S=0 word=mmmmm at(18,3,8) [normal piston]
+  B5: n=15 ho15 P=0 S=0 word=mmmww box x14-22 y5-7 z6-10
+  B6: n=1  P=1 S=0 word=mmmmm at(17,3,6) [normal piston]
+  B7: n=1  P=1 S=0 word=mmmwm at(18,1,5) [normal piston]
+  B8: n=1  P=1 S=0 word=mmmwm at(18,2,4) [normal piston]
+  B9: n=1  P=1 S=0 word=mmmmm at(18,2,7) [normal piston]
+  B10: n=8 ho6 RB1 P=0 S=1 word=mwwmm box x17-19 y5-7 z4-6
+  B11: n=16 sl13 RB2 P=0 S=1 word=wmmmw box x17-20 y3-8 z6-10
+  B12: n=13 sl10 RB3 P=0 S=0 word=mmwwm box x18-20 y2-4 z5-10
+  B13: n=1  P=1 S=0 word=mmmmm at(19,6,3) [normal piston]
+  B14: n=1  P=1 S=0 word=mmmmm at(19,7,4) [normal piston]
+  B15: n=1  P=1 S=0 word=mmmmm at(19,7,5) [normal piston]
+  B16: n=10 sl9 RB1 P=0 S=0 word=mmmww box x16-21 y3-5 z3-4
+  B17: n=1  P=1 S=0 word=mwmmm at(20,3,4) [normal piston]
+  B18: n=1  P=1 S=0 word=mwmmm at(20,4,3) [normal piston]
+  B19: n=7 ho6 RB1 P=0 S=0 word=wwmmm box x20-21 y1-3 z3-5
+  B20: n=8 sl5 RB2 P=0 S=1 word=wmmmw box x20-21 y6-7 z3-6
+  B21: n=1  P=1 S=0 word=mmmmm at(21,0,4) [normal piston]
+  B22: n=1  P=1 S=0 word=mmmmm at(21,0,5) [normal piston]
+  B23: n=1  P=1 S=0 word=mmmmm at(21,1,3) [normal piston]
+  B24: n=1  P=1 S=0 word=wmmmm at(22,7,7) [normal piston]
+  B25: n=9 sl6 RB2 P=0 S=1 word=mmmww box x21-22 y0-2 z3-6
+  B26: n=1  P=1 S=0 word=wmmmm at(21,6,6) [normal piston]
+  B27: n=1  P=1 S=0 word=mmmmm at(22,4,7) [normal piston]
+  B28: n=1  P=1 S=0 word=mmmmm at(22,4,8) [normal piston]
+  B29: n=1  P=1 S=0 word=mmmmw at(23,2,3) [normal piston]
+  B30: n=9 ho6 RB2 P=0 S=1 word=mmwwm box x22-23 y5-7 z5-8
+  B31: n=1  P=1 S=0 word=mmmmw at(22,1,2) [normal piston]
+  B32: n=1  P=1 S=0 word=mmmmm at(23,5,9) [normal piston]
+  B33: n=1  P=1 S=0 word=mmmmm at(24,3,1) [normal piston]
+  B34: n=1  P=1 S=0 word=mmmmm at(24,4,2) [normal piston]
+  B35: n=1  P=1 S=0 word=mmmmm at(24,4,3) [normal piston]
+  B36: n=9 sl6 RB2 P=0 S=1 word=mwwmm box x24-25 y1-3 z2-4
+  B37: n=10 sl6 RB2 P=0 S=2 word=wwmmm box x24-25 y4-7 z6-9
+  B38: n=8 ho5 RB2 P=0 S=1 word=wmmmw box x25-26 y3-4 z1-4
+  B39: n=1  P=1 S=0 word=mmmmm at(26,4,7) [normal piston]
+  B40: n=1  P=1 S=0 word=mmmmm at(26,4,8) [normal piston]
+  B41: n=1  P=1 S=0 word=mmmmm at(26,5,9) [normal piston]
+  B42: n=12 sl9 RB3 P=0 S=0 word=mmmww box x25-27 y4-8 z7-9
+  B43: n=1  P=1 S=0 word=mmmmm at(28,4,3) [normal piston]
+  B44: n=1  P=1 S=0 word=mmmmm at(27,4,2) [normal piston]
+  B45: n=1  P=1 S=0 word=mmmmm at(28,3,1) [normal piston]
+  B46: n=7 sl5 RB2 P=0 S=0 word=mmwwm box x28-29 y3-4 z1-3
+events in one period from tick 0 (slot actor(carriers|power) action load -> moved):
+  s0 B21(B19|B25) push 12  -> B22x1,B23x1,B25x9,B31x1 
+  s0 B38(B38|) pull 12  -> B33x1,B34x1,B35x1,B36x9 
+  s0 B20(B20|) pull 13  -> B2x1,B3x1,B10x8,B13x1,B14x1,B15x1 
+  s0 B41(B37|B42) push 14  -> B39x1,B40x1,B42x12 
+  s0 B24(|B30) push 11  -> B27x1,B28x1,B30x9 
+  s0 B11(B11/B12|) pull 15  -> B5x15 
+  s0 B43(|B46) push 8   -> B45x1,B46x7 
+  s0 B18(B19|B16) push 12  -> B0x1,B16x10,B17x1 
+  s0 B4(|B12) push 16  -> B7x1,B8x1,B9x1,B12x13 
+  s0 B37(B37|B42) ext0 0   ->  
+  s0 B37(B37|B42) ext0 0   ->  
+  s1 B22(|B25) push 12  -> B23x1,B25x9,B29x1,B31x1 
+  s1 B3(B10|B11) push 18  -> B2x1,B6x1,B11x16 
+  s1 B36(B36|B38) ext0 0   ->  
+  s1 B35(B36|B38) push 11  -> B33x1,B34x1,B38x8,B44x1 
+  s1 B37(B37|) pull 12  -> B27x1,B28x1,B30x9,B32x1 
+  s1 B13(B10|B20) push 11  -> B14x1,B15x1,B20x8,B26x1 
+  s1 B37(B37|) pull 15  -> B5x15 
+  s1 B10(B10|B11) ext0 0   ->  
+  s1 B9(|B12) push 15  -> B7x1,B8x1,B12x13 
+  s1 B45(|B46) push 7   -> B46x7 
+  s1 B39(|B42) push 13  -> B40x1,B42x12 
+  s1 B17(B19|B16) push 12  -> B0x1,B1x1,B16x10 
+  s2 B10(B10|) pull 17  -> B5x15,B11x1,B37x1 
+  s2 B27(B30|B37) push 12  -> B28x1,B32x1,B37x9,B41x1 
+  s2 B40(|B42) push 12  -> B42x12 
+  s2 B8(B12|B19) push 10  -> B7x1,B18x1,B19x7,B21x1 
+  s2 B36(B36|) pull 12  -> B0x1,B1x1,B16x10 
+  s2 B34(|B38) push 11  -> B33x1,B38x8,B43x1,B44x1 
+  s2 B14(|B20) push 11  -> B15x1,B20x8,B24x1,B26x1 
+  s2 B23(|B25) push 11  -> B25x9,B29x1,B31x1 
+  s2 B30(B30|B37) ext0 0   ->  
+  s2 B2(B10|B11) push 17  -> B4x1,B6x1,B11x15 
+  s3 B7(B12|B19) push 11  -> B17x1,B18x1,B19x7,B21x1,B22x1 
+  s3 B1(B16|B10) push 11  -> B0x1,B3x1,B10x8,B13x1 
+  s3 B30(B30|) pull 19  -> B4x1,B6x1,B9x1,B11x16 
+  s3 B25(B25|B36) ext0 0   ->  
+  s3 B29(B25/B36|B36) push 11  -> B31x1,B35x1,B36x9 
+  s3 B32(|B37) push 13  -> B28x1,B37x10,B39x1,B41x1 
+  s3 B33(|B38) push 11  -> B38x8,B43x1,B44x1,B45x1 
+  s3 B15(|B20) push 10  -> B20x8,B24x1,B26x1 
+  s4 B38(B38|B46) ext0 0   ->  
+  s4 B25(B25|) pull 12  -> B17x1,B18x1,B19x7,B21x1,B22x1,B23x1 
+  s4 B0(B16|B10) push 12  -> B2x1,B3x1,B10x8,B13x1,B14x1 
+  s4 B31(|B36) push 11  -> B34x1,B35x1,B36x9 
+  s4 B24(B20|B30) push 11  -> B26x1,B27x1,B30x9 
+  s4 B43(B38|B46) push 9   -> B44x1,B45x1,B46x7 
+  s4 B6(B11|B12) push 16  -> B4x1,B8x1,B9x1,B12x13 
+  s4 B20(B20|B30) ext0 0   ->  
+  s4 B11(B11|B12) ext0 0   ->  
+  s4 B28(|B37) push 13  -> B37x10,B39x1,B40x1,B41x1 
+ROLE B5 PULL_ONLY glue=15 witness=(14,7,6) pushes=0 pulls=3000
+ROLE B10 MIXED glue=6 witness=(19,5,5) pushes=2000 pulls=1000
+ROLE B11 MIXED glue=13 witness=(17,3,7) pushes=2000 pulls=1000
+ROLE B12 PUSH_ONLY glue=10 witness=(18,2,5) pushes=3000 pulls=0
+ROLE B16 MIXED glue=9 witness=(21,3,4) pushes=2000 pulls=1000
+ROLE B19 MIXED glue=6 witness=(21,1,4) pushes=2000 pulls=1000
+ROLE B20 PUSH_ONLY glue=5 witness=(21,6,3) pushes=3000 pulls=0
+ROLE B25 PUSH_ONLY glue=6 witness=(22,0,3) pushes=3000 pulls=0
+ROLE B30 MIXED glue=6 witness=(22,5,7) pushes=2000 pulls=1000
+ROLE B36 MIXED glue=6 witness=(25,1,2) pushes=2000 pulls=1000
+ROLE B37 PUSH_ONLY glue=6 witness=(25,4,6) pushes=3000 pulls=0
+ROLE B38 PUSH_ONLY glue=5 witness=(26,3,1) pushes=3000 pulls=0
+ROLE B42 PUSH_ONLY glue=9 witness=(27,4,7) pushes=3000 pulls=0
+ROLE B46 PUSH_ONLY glue=5 witness=(29,3,1) pushes=3000 pulls=0

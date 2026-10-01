@@ -1,0 +1,22 @@
+pull slot 0 fire 4 REL [2, 1, 1, 2, 2] pm [0, 1, 1, 1, 0] npat(all) 5
+push slot 1 fire 1 REL [-1, -1, -2, -2, -2] pm [1, 0, 0, 1, 1] npat(all) 11
+pull slot 3 fire 2 REL [2, 2, 2, 2, 1] pm [1, 1, 0, 0, 1] npat(all) 39
+solutions with rider max 3: 5
+3 [1, 2, 4]
+4 [1, 2, 3, 4]
+4 [1, 2, 3, 4]
+4 [1, 2, 3, 4]
+4 [1, 2, 3, 4]
+--- best (fewest distinct neighbour bodies): [1, 2, 4]
+pull at 0 fire 4 REL [2, 1, 1, 2, 2] moves [0, 1, 1, 1, 0]
+   body V_0 (moves 11010) adj by slot 01100 ; carries at [1]
+   body V_2 (moves 10110) adj by slot 11111 ; carries at [2, 3]
+   body V_4 (moves 10101) adj by slot 11000 ; carries at []
+push at 1 fire 1 REL [-1, -1, -2, -2, -2] moves [1, 0, 0, 1, 1]
+   body V_0 (moves 11010) adj by slot 11111 ; carries at [0, 3]
+   body V_1 (moves 01101) adj by slot 10111 ; carries at [4]
+   body V_4 (moves 10101) adj by slot 00010 ; carries at []
+pull at 3 fire 2 REL [2, 2, 2, 2, 1] moves [1, 1, 0, 0, 1]
+   body V_0 (moves 11010) adj by slot 11111 ; carries at [0, 1]
+   body V_1 (moves 01101) adj by slot 10011 ; carries at [4]
+   body V_2 (moves 10110) adj by slot 00011 ; carries at []

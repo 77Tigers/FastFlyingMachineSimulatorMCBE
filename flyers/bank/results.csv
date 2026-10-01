@@ -73,3 +73,12 @@ push_limit,name,start_min_x,end_min_x,distance,end_blocks,extensions
 34,ab_push_pull_7body,10,3010,3000,201,21000
 85,ab_push_pull_9body,10,3343,3333,542,29999
 71,ab_push_pull_9body,9,3343,3334,502,30000
+12,human_tm_smol_3bps,2,3002,3000,148,39000
+12,human_3bps_original,0,3000,3000,204,59999
+10,human_observer_hop,1,2501,2500,18,5000
+11,human_hopping_pistons,1,2501,2500,23,5000
+12,human_hopping_pistons_uneven,2,2502,2500,19,5000
+9,human_observer_hop,1,2501,2500,16,5000
+19,exclusive_roles_3bps,14,3014,3000,183,42000
+26,exclusive_roles_3p333,10,3343,3333,296,43334
+15,exclusive_roles_3bps,0,3000,3000,178,42000

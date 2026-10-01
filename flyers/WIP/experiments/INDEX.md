@@ -4,6 +4,7 @@ Read [RESEARCH_LOG.md](../../RESEARCH_LOG.md) for priorities and proof standards
 
 | Question | Current status | Candidate or generator | Evidence |
 | --- | --- | --- | --- |
+| Human-built flyers from `mcstructures/` | Banked 3 bps PL12 ×2 (beats PL18), 2.5 bps PL9 observer-only, PL10/11/12. c5 repair: bounded negative. 3.33: 2-body ring infeasible; 3-body ring contract; `ring3.py` 3,000-sample run 0 working (router lacks +X sweep checks; fix before rerun) | [converter](human_mcstructure_20261001/convert.py), [bodytrack](human_mcstructure_20261001/bodytrack.rs) | [findings](human_mcstructure_20261001/FINDINGS.md) |
 | A/B segment flyers (A only pushes B, B only pulls A) | Banked 2.5 bps PL12 (2 bodies), 3 bps PL34 (7 bodies), 3.333 bps PL71 (9 bodies, proven minimum count); unaudited 3.333 lead load 61 | [generators](ab_20261001/abpr.py), [2.5 hand design](ab_20261001/gen25.py) | [findings](ab_20261001/FINDINGS.md) |
 | mmwmmw pull-twice (user idea) | Banked PL22 (was PL29); ILP says 22 optimal for its placement | [best](speed_range_b_20260930/mmwpull/best/) | [mmwpull](speed_range_b_20260930/mmwpull/) |
 | Overnight higher-speed optimization | Active; mmwmmwPL36 and pure-pull3bpsPL102 banked; mixed local8/11 full literal chains, endpoint sweeps80/80 complete; glazed mmmmww power ports work short, pure circular placements complete/no route | [mixed tile contract](overnight_20260930/MIXED_TILE_CONTRACT.md), [mmw winner](overnight_20260930/mmw_planar_trim_pl36.flyer) | [checkpoint findings](overnight_20260930/FINDINGS.md) |

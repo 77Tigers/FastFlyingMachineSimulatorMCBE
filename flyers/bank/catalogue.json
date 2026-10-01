@@ -21,6 +21,15 @@
       "extension_failures": 0,
       "endpoint_conserved": true
     },
+    "flyers/bank/pl10/human_observer_hop.flyer": {
+      "sha256": "3c7f095297d8f970e8c6f52c6133d932de4a39ac3d9a4015efddf9488781285d",
+      "ticks": 10000,
+      "distance": 2500,
+      "speed_bps": 2.5,
+      "extensions": 5000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
     "flyers/bank/pl10/pulling_alternating.flyer": {
       "sha256": "e826d12763f2c239d070fd54955726cc986f2d910411cfaa532fdd3b4b6ec0a4",
       "ticks": 10000,
@@ -36,6 +45,24 @@
       "distance": 1666,
       "speed_bps": 1.666,
       "extensions": 3334,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl102/pulling3_tenbody.flyer": {
+      "sha256": "3171d3cd54721ab8bd50d07d81bf894aaa1aaa7f79dabb0c3d0139f035f4bfd5",
+      "ticks": 10000,
+      "distance": 3000,
+      "speed_bps": 3.0,
+      "extensions": 30000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl106/pulling3_tenbody.flyer": {
+      "sha256": "bc7d2bfd86eef92825614a46b73ad7477048652f94736d2d8aa4ff4c3ef90ab0",
+      "ticks": 10000,
+      "distance": 3000,
+      "speed_bps": 3.0,
+      "extensions": 30000,
       "extension_failures": 0,
       "endpoint_conserved": true
     },
@@ -66,12 +93,30 @@
       "extension_failures": 0,
       "endpoint_conserved": true
     },
+    "flyers/bank/pl11/human_hopping_pistons.flyer": {
+      "sha256": "231b1899119acb64b5e999493bc007256a33a2707f38b88cc2d7c21d115c0c75",
+      "ticks": 10000,
+      "distance": 2500,
+      "speed_bps": 2.5,
+      "extensions": 5000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
     "flyers/bank/pl11/upright_pair.flyer": {
       "sha256": "a7c3ba2a00b9b4733f7953ed6ec70d3374505bcf5a9b6abb5817e3ee824e59fb",
       "ticks": 10000,
       "distance": 1666,
       "speed_bps": 1.666,
       "extensions": 3334,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl12/ab_push_pull_2body.flyer": {
+      "sha256": "7416f1f0b38192311209fd5f0a5c997bbfef60a71918ae5ede5fbd7684c49906",
+      "ticks": 10000,
+      "distance": 2500,
+      "speed_bps": 2.5,
+      "extensions": 5000,
       "extension_failures": 0,
       "endpoint_conserved": true
     },
@@ -102,12 +147,57 @@
       "extension_failures": 0,
       "endpoint_conserved": true
     },
+    "flyers/bank/pl12/human_3bps_original.flyer": {
+      "sha256": "76038b99c8df0b3b91611ba7f226ca2ab68f922a198c7430a2d1f00730cacb62",
+      "ticks": 10000,
+      "distance": 3000,
+      "speed_bps": 3.0,
+      "extensions": 59999,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl12/human_hopping_pistons_uneven.flyer": {
+      "sha256": "7a502050b87823a0316f8a1d93694fd73cf5733e8a9d04d298e22582db4f645c",
+      "ticks": 10000,
+      "distance": 2500,
+      "speed_bps": 2.5,
+      "extensions": 5000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl12/human_tm_smol_3bps.flyer": {
+      "sha256": "a870e1f32cc23aee9d52773aa178e04b4527ae916fbebafebe3a3a12add04659",
+      "ticks": 10000,
+      "distance": 3000,
+      "speed_bps": 3.0,
+      "extensions": 39000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
     "flyers/bank/pl12/upright_pair.flyer": {
       "sha256": "9e6809f0aaf28823d411b64337e0449e2a21be066acb79e26eecb404ae7d8949",
       "ticks": 10000,
       "distance": 1666,
       "speed_bps": 1.666,
       "extensions": 3334,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl126/pulling3_tenbody.flyer": {
+      "sha256": "0a7e35438d343494fa4fbece5a611565626451f1a8e85da10f490f8b7681dde7",
+      "ticks": 10000,
+      "distance": 3000,
+      "speed_bps": 3.0,
+      "extensions": 30000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl127/pulling3_tenbody.flyer": {
+      "sha256": "4a3f77459d670a75f06a1ce7f38d7f7164b8ec06325ef7be8d5846e2959c8223",
+      "ticks": 10000,
+      "distance": 3000,
+      "speed_bps": 3.0,
+      "extensions": 30000,
       "extension_failures": 0,
       "endpoint_conserved": true
     },
@@ -189,6 +279,15 @@
       "distance": 2500,
       "speed_bps": 2.5,
       "extensions": 5000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl15/exclusive_roles_3bps.flyer": {
+      "sha256": "704171a1132fab0741ff95af57539a4b54eda99e34c534c43952032d97bdedac",
+      "ticks": 10000,
+      "distance": 3000,
+      "speed_bps": 3.0,
+      "extensions": 42000,
       "extension_failures": 0,
       "endpoint_conserved": true
     },
@@ -345,6 +444,15 @@
       "extension_failures": 0,
       "endpoint_conserved": true
     },
+    "flyers/bank/pl18/n3_five_body.flyer": {
+      "sha256": "6aefe4eac9bd5d078a0f54035612afb6fcdf1addbd116d1b7ef11d953b16c31e",
+      "ticks": 10000,
+      "distance": 3000,
+      "speed_bps": 3.0,
+      "extensions": 15000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
     "flyers/bank/pl19/crossfeed_compact.flyer": {
       "sha256": "dd43fc56b08e2b3e1b8d295b25462d8e805755a20d494619120a542a8259997c",
       "ticks": 10000,
@@ -396,6 +504,15 @@
       "distance": 2500,
       "speed_bps": 2.5,
       "extensions": 5000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl19/exclusive_roles_3bps.flyer": {
+      "sha256": "2c4721c01484655b5933ae18e2120a5c958307ddd6d6f2c311c063f0687d7021",
+      "ticks": 10000,
+      "distance": 3000,
+      "speed_bps": 3.0,
+      "extensions": 42000,
       "extension_failures": 0,
       "endpoint_conserved": true
     },
@@ -498,8 +615,26 @@
       "extension_failures": 0,
       "endpoint_conserved": true
     },
+    "flyers/bank/pl21/n4_twelve_body.flyer": {
+      "sha256": "9cb30fcff1717e9c9ec0a8512128aecf1ca6b56012a6e23e0d00c991706f4eee",
+      "ticks": 10000,
+      "distance": 3333,
+      "speed_bps": 3.333,
+      "extensions": 40000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
     "flyers/bank/pl22/four_push_ring.flyer": {
       "sha256": "cc63a735092ec575ce1d49b65ccec188057a7f59ff157610a00ba9ab461dfaa7",
+      "ticks": 10000,
+      "distance": 3333,
+      "speed_bps": 3.333,
+      "extensions": 10000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl22/pull_twice_mmwmmw.flyer": {
+      "sha256": "3b881be218ed3bc48a2281b1956bba2ebde0aaaaa34597a85095abefb99dc108",
       "ticks": 10000,
       "distance": 3333,
       "speed_bps": 3.333,
@@ -516,114 +651,41 @@
       "extension_failures": 0,
       "endpoint_conserved": true
     },
-    "flyers/bank/pl9/pulling_loop4.flyer": {
-      "sha256": "5c0f21e688f755bd8c188ae4926e3aa36760586e19fb692e4718579d7f19dc2d",
-      "ticks": 10000,
-      "distance": 2500,
-      "speed_bps": 2.5,
-      "extensions": 10000,
-      "extension_failures": 0,
-      "endpoint_conserved": true,
-      "cycle_ticks": 8,
-      "cycle_advance": 2,
-      "full_rng_phase_samples": 80,
-      "exact_block_owner_recurrence": true,
-      "max_successful_action": 9
-    },
-    "flyers/bank/pl57/three_segment_mmwmmw.flyer": {
-      "sha256": "f8e949eaf914de75a2e1564737b41756deb5f2b5ad21514aa8785b910f7c6496",
+    "flyers/bank/pl24/pull_twice_mmwmmw.flyer": {
+      "sha256": "03e3c523f8bfcc144a9b9ee0f0a51829ba13f04519cf06de52ffc19fc24eb262",
       "ticks": 10000,
       "distance": 3333,
       "speed_bps": 3.333,
       "extensions": 10000,
       "extension_failures": 0,
-      "endpoint_conserved": true,
-      "cycle_ticks": 12,
-      "cycle_advance": 4,
-      "full_rng_phase_samples": 80,
-      "exact_block_owner_recurrence": true,
-      "max_successful_action": 57,
-      "movement_words": [
-        "mmwmmw",
-        "wmmwmm",
-        "mwmmwm"
-      ]
+      "endpoint_conserved": true
     },
-    "flyers/bank/pl127/pulling3_tenbody.flyer": {
-      "sha256": "4a3f77459d670a75f06a1ce7f38d7f7164b8ec06325ef7be8d5846e2959c8223",
+    "flyers/bank/pl26/exclusive_roles_3p333.flyer": {
+      "sha256": "9ab47638469a41b920cb393867066a10817263dabb81f8720aff62f3151d61be",
       "ticks": 10000,
-      "distance": 3000,
-      "speed_bps": 3.0,
-      "extensions": 30000,
+      "distance": 3333,
+      "speed_bps": 3.333,
+      "extensions": 43334,
       "extension_failures": 0,
-      "endpoint_conserved": true,
-      "cycle_ticks": 10,
-      "cycle_advance": 3,
-      "full_rng_phase_samples": 80,
-      "exact_block_owner_recurrence": true,
-      "max_successful_action": 127,
-      "pulling_only": true,
-      "pistons": 30,
-      "piston_direction": "-X",
-      "sticky_pistons_only": true
+      "endpoint_conserved": true
     },
-    "flyers/bank/pl126/pulling3_tenbody.flyer": {
-      "sha256": "0a7e35438d343494fa4fbece5a611565626451f1a8e85da10f490f8b7681dde7",
-      "ticks": 10000,
-      "distance": 3000,
-      "speed_bps": 3.0,
-      "extensions": 30000,
-      "extension_failures": 0,
-      "endpoint_conserved": true,
-      "cycle_ticks": 10,
-      "cycle_advance": 3,
-      "full_rng_phase_samples": 80,
-      "exact_block_owner_recurrence": true,
-      "max_successful_action": 126,
-      "pulling_only": true,
-      "pistons": 30,
-      "piston_direction": "-X",
-      "sticky_pistons_only": true
-    },
-    "flyers/bank/pl106/pulling3_tenbody.flyer": {
-      "sha256": "bc7d2bfd86eef92825614a46b73ad7477048652f94736d2d8aa4ff4c3ef90ab0",
-      "ticks": 10000,
-      "distance": 3000,
-      "speed_bps": 3.0,
-      "extensions": 30000,
-      "extension_failures": 0,
-      "endpoint_conserved": true,
-      "cycle_ticks": 10,
-      "cycle_advance": 3,
-      "full_rng_phase_samples": 80,
-      "exact_block_owner_recurrence": true,
-      "max_successful_action": 106,
-      "pulling_only": true,
-      "pistons": 30,
-      "piston_direction": "-X",
-      "sticky_pistons_only": true
-    },
-    "flyers/bank/pl37/planar_mmwmmw.flyer": {
-      "sha256": "2ce20fd6bdf1a51feff6cd3b019c20d1a73e51d23801464f331b25b3faf38563",
+    "flyers/bank/pl29/shared_source_mmwmmw.flyer": {
+      "sha256": "88964ecefd71413c8bdc48e072402ac0d0942552c589baa7a877245d35612e29",
       "ticks": 10000,
       "distance": 3333,
       "speed_bps": 3.333,
       "extensions": 10000,
       "extension_failures": 0,
-      "endpoint_conserved": true,
-      "cycle_ticks": 12,
-      "cycle_advance": 4,
-      "full_rng_phase_samples": 80,
-      "exact_block_owner_recurrence": true,
-      "max_successful_action": 37,
-      "movement_words": [
-        "mmwmmw",
-        "wmmwmm",
-        "mwmmwm"
-      ],
-      "pistons": 12,
-      "piston_direction": "+X",
-      "normal_pistons_only": true
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl34/ab_push_pull_7body.flyer": {
+      "sha256": "9316c2553eda59f15ab3869cff02bf62178f22ce9becbfd34e279a68b7649d1a",
+      "ticks": 10000,
+      "distance": 3000,
+      "speed_bps": 3.0,
+      "extensions": 21000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
     },
     "flyers/bank/pl36/planar_mmwmmw.flyer": {
       "sha256": "30793bbea94549f6347680bfbef707cda5de8524bbabe7587c93c3ccb7d38470",
@@ -632,182 +694,61 @@
       "speed_bps": 3.333,
       "extensions": 10000,
       "extension_failures": 0,
-      "endpoint_conserved": true,
-      "cycle_ticks": 12,
-      "cycle_advance": 4,
-      "full_rng_phase_samples": 80,
-      "exact_block_owner_recurrence": true,
-      "max_successful_action": 36,
-      "movement_words": [
-        "mmwmmw",
-        "wmmwmm",
-        "mwmmwm"
-      ],
-      "pistons": 12,
-      "piston_direction": "+X",
-      "normal_pistons_only": true
+      "endpoint_conserved": true
     },
-    "flyers/bank/pl102/pulling3_tenbody.flyer": {
-      "sha256": "3171d3cd54721ab8bd50d07d81bf894aaa1aaa7f79dabb0c3d0139f035f4bfd5",
+    "flyers/bank/pl37/planar_mmwmmw.flyer": {
+      "sha256": "2ce20fd6bdf1a51feff6cd3b019c20d1a73e51d23801464f331b25b3faf38563",
       "ticks": 10000,
-      "distance": 3000,
-      "speed_bps": 3.0,
+      "distance": 3333,
+      "speed_bps": 3.333,
+      "extensions": 10000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl57/three_segment_mmwmmw.flyer": {
+      "sha256": "f8e949eaf914de75a2e1564737b41756deb5f2b5ad21514aa8785b910f7c6496",
+      "ticks": 10000,
+      "distance": 3333,
+      "speed_bps": 3.333,
+      "extensions": 10000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl71/ab_push_pull_9body.flyer": {
+      "sha256": "75bd1d8d46928c07cff29d13afcc889a464db83d2685e586892dee4a8e898664",
+      "ticks": 10000,
+      "distance": 3334,
+      "speed_bps": 3.334,
       "extensions": 30000,
       "extension_failures": 0,
-      "endpoint_conserved": true,
-      "cycle_ticks": 10,
-      "cycle_advance": 3,
-      "full_rng_phase_samples": 80,
-      "exact_block_owner_recurrence": true,
-      "max_successful_action": 102,
-      "pulling_only": true,
-      "pistons": 30,
-      "piston_direction": "-X",
-      "sticky_pistons_only": true
+      "endpoint_conserved": true
     },
-  "flyers/bank/pl18/n3_five_body.flyer": {
-    "sha256": "6aefe4eac9bd5d078a0f54035612afb6fcdf1addbd116d1b7ef11d953b16c31e",
-    "ticks": 10000,
-    "distance": 3000,
-    "speed_bps": 3.0,
-    "extensions": 15000,
-    "extension_failures": 0,
-    "endpoint_conserved": true,
-    "cycle_ticks": 10,
-    "cycle_advance": 3,
-    "full_rng_phase_samples": 80,
-    "exact_block_owner_recurrence": false,
-    "speed_conservation_audit_only": true,
-    "max_successful_action": 18,
-    "note": "3 bps five carriers; 80/80 speed+conservation, exact recurrence varies"
-  },
-  "flyers/bank/pl21/n4_twelve_body.flyer": {
-    "sha256": "9cb30fcff1717e9c9ec0a8512128aecf1ca6b56012a6e23e0d00c991706f4eee",
-    "ticks": 10000,
-    "distance": 3333,
-    "speed_bps": 3.333,
-    "extensions": 40000,
-    "extension_failures": 0,
-    "endpoint_conserved": true,
-    "cycle_ticks": 12,
-    "cycle_advance": 4,
-    "full_rng_phase_samples": 80,
-    "exact_block_owner_recurrence": false,
-    "speed_conservation_audit_only": true,
-    "max_successful_action": 21,
-    "note": "3.333 bps twelve carriers; 80/80 speed+conservation, no exact recurrence"
-  },
-  "flyers/bank/pl29/shared_source_mmwmmw.flyer": {
-    "sha256": "88964ecefd71413c8bdc48e072402ac0d0942552c589baa7a877245d35612e29",
-    "ticks": 10000,
-    "distance": 3333,
-    "speed_bps": 3.333,
-    "extensions": 10000,
-    "extension_failures": 0,
-    "endpoint_conserved": true,
-    "cycle_ticks": 12,
-    "cycle_advance": 4,
-    "full_rng_phase_samples": 80,
-    "exact_block_owner_recurrence": false,
-    "speed_conservation_audit_only": true,
-    "max_successful_action": 29,
-    "note": "mmwmmw 3 bodies; shared diagonal redstone + shared observer via hard-powered glue; 80/80 speed+conservation"
-  },
-  "flyers/bank/pl12/ab_push_pull_2body.flyer": {
-    "sha256": "7416f1f0b38192311209fd5f0a5c997bbfef60a71918ae5ede5fbd7684c49906",
-    "ticks": 10000,
-    "distance": 2500,
-    "speed_bps": 2.5,
-    "extensions": 5000,
-    "extension_failures": 0,
-    "endpoint_conserved": true,
-    "cycle_ticks": 8,
-    "cycle_advance": 2,
-    "full_rng_phase_samples": 80,
-    "exact_block_owner_recurrence": false,
-    "speed_conservation_audit_only": true,
-    "max_successful_action": 12,
-    "note": "A/B category (A honey only pulled by stickies anchored on B; B slime only pushed by pistons anchored on A). Two bodies, mwmw/wmwm, two {P,Q} groups shared/transported; A observer pulses power both groups. 80/80 exact +2/8-tick recurrence. Agent E 2026-10-01."
-  },
-  "flyers/bank/pl24/pull_twice_mmwmmw.flyer": {
-    "sha256": "03e3c523f8bfcc144a9b9ee0f0a51829ba13f04519cf06de52ffc19fc24eb262",
-    "ticks": 10000,
-    "distance": 3333,
-    "speed_bps": 3.333,
-    "extensions": 10000,
-    "extension_failures": 0,
-    "endpoint_conserved": true,
-    "cycle_ticks": 12,
-    "cycle_advance": 4,
-    "full_rng_phase_samples": 80,
-    "exact_block_owner_recurrence": false,
-    "speed_conservation_audit_only": true,
-    "max_successful_action": 24,
-    "note": "mmwmmw 3.333 bps via user's pull-twice idea: each segment pulled twice per cycle by front stickies that extend in its wait slots, pushed twice by back normals. 12 pistons, 3 RS + 3 obs. 80/80 full cases, exact 833 +4/12 recurrences. Built by subagent F of agent E, 2026-10-01 (mmwpull/)."
-  },
-  "flyers/bank/pl22/pull_twice_mmwmmw.flyer": {
-    "sha256": "3b881be218ed3bc48a2281b1956bba2ebde0aaaaa34597a85095abefb99dc108",
-    "ticks": 10000,
-    "distance": 3333,
-    "speed_bps": 3.333,
-    "extensions": 10000,
-    "extension_failures": 0,
-    "endpoint_conserved": true,
-    "cycle_ticks": 12,
-    "cycle_advance": 4,
-    "full_rng_phase_samples": 80,
-    "exact_block_owner_recurrence": false,
-    "speed_conservation_audit_only": true,
-    "max_successful_action": 22,
-    "note": "mmwmmw 3.333 bps, user's pull-twice idea (2 front-sticky pulls + 2 back pushes per segment per cycle). 80/80 full cases. Subagent F of agent E, 2026-10-01 (mmwpull/). Supersedes pl24 entry."
-  },
-  "flyers/bank/pl34/ab_push_pull_7body.flyer": {
-    "sha256": "9316c2553eda59f15ab3869cff02bf62178f22ce9becbfd34e279a68b7649d1a",
-    "ticks": 10000,
-    "distance": 3000,
-    "speed_bps": 3.0,
-    "extensions": 21000,
-    "extension_failures": 0,
-    "endpoint_conserved": true,
-    "cycle_ticks": 10,
-    "cycle_advance": 3,
-    "full_rng_phase_samples": 80,
-    "exact_block_owner_recurrence": false,
-    "speed_conservation_audit_only": true,
-    "max_successful_action": 34,
-    "note": "A/B category 3 bps: 7 bodies (A mmmww,mmwwm,mwwmm only pulled; B wmmmw,wmmwm,wmwmm,wwmmm only pushed), 21 pistons, observer/glazed + redstone triggers. Generated by ab_20261001/abpr.py (place&route, stack=1, seed 379). 80/80 exact +3/10. Agent E 2026-10-01."
-  },
-  "flyers/bank/pl85/ab_push_pull_9body.flyer": {
-    "sha256": "7bb3c7209edd3de66e8173de782012c5982d596122878b887963320f06d0cdbe",
-    "ticks": 10000,
-    "distance": 3333,
-    "speed_bps": 3.333,
-    "extensions": 29999,
-    "extension_failures": 0,
-    "endpoint_conserved": true,
-    "cycle_ticks": 12,
-    "cycle_advance": 4,
-    "full_rng_phase_samples": 80,
-    "exact_block_owner_recurrence": false,
-    "speed_conservation_audit_only": true,
-    "max_successful_action": 85,
-    "note": "A/B category 3.333 bps: 9 bodies (A wmmmmw,mwwmmm,mmwwmm,mmmwwm,mmmmww only pulled; B wmmmwm,mwwmmm,mwmwmm,mwmmmw only pushed), 36 pistons; 9 bodies is the minimum under the stationary-anchor rules (ab_20261001/feas2.py). abpr.py seed 125. 80/80 exact +4/12. Agent E 2026-10-01."
-  },
-  "flyers/bank/pl71/ab_push_pull_9body.flyer": {
-    "sha256": "75bd1d8d46928c07cff29d13afcc889a464db83d2685e586892dee4a8e898664",
-    "ticks": 10000,
-    "distance": 3334,
-    "speed_bps": 3.334,
-    "extensions": 30000,
-    "extension_failures": 0,
-    "endpoint_conserved": true,
-    "cycle_ticks": 12,
-    "cycle_advance": 4,
-    "full_rng_phase_samples": 80,
-    "exact_block_owner_recurrence": false,
-    "speed_conservation_audit_only": true,
-    "max_successful_action": 71,
-    "note": "A/B 3.333 bps, 9 bodies (A wwmmmm,mwwmmm,mmwwmm,mmmwwm,mmmmww; B wmmwmm,mwmmmw,mmwmmw,mmmmww), 36 pistons. abpr.py seed 2. 80/80 exact. Improves pl85 entry. Agent E 2026-10-01."
-  }
+    "flyers/bank/pl85/ab_push_pull_9body.flyer": {
+      "sha256": "7bb3c7209edd3de66e8173de782012c5982d596122878b887963320f06d0cdbe",
+      "ticks": 10000,
+      "distance": 3333,
+      "speed_bps": 3.333,
+      "extensions": 29999,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl9/human_observer_hop.flyer": {
+      "sha256": "a1d6caa4ba5340b38244cde1bfe883fc5dc6cde49859b024ae0b3c8ff0710724",
+      "ticks": 10000,
+      "distance": 2500,
+      "speed_bps": 2.5,
+      "extensions": 5000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl9/pulling_loop4.flyer": {
+      "sha256": "5c0f21e688f755bd8c188ae4926e3aa36760586e19fb692e4718579d7f19dc2d",
+      "ticks": 10000,
+      "distance": 2500,
+      "speed_bps": 2.5,
+      "extensions": 10000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    }
   }
 }

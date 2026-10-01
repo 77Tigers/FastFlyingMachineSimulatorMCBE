@@ -1,0 +1,30 @@
+file,limit,rng,phase_x,phase_z,ticks,distance,end_blocks,extensions,extension_failures,movement_failures,first_failure_tick,first_failure_kind,conservation_mismatch_ticks,max_successful_action,clean
+"flyers/WIP/experiments/exclusive_roles_20261001/sol_n4/raised36\c0000.flyer",36,0,0,0,240,1,297,22,6090,6090,0,"(Coord { x: 17, y: 14, z: 16 }, ""push limit exceeded"")",0,27,false
+"flyers/WIP/experiments/exclusive_roles_20261001/sol_n4/raised36\c0001.flyer",36,0,0,0,240,3,295,1020,0,0,,"",0,27,true
+"flyers/WIP/experiments/exclusive_roles_20261001/sol_n4/raised36\c0002.flyer",36,0,0,0,240,80,295,1040,0,0,,"",0,26,true
+"flyers/WIP/experiments/exclusive_roles_20261001/sol_n4/raised36\c0003.flyer",36,0,0,0,240,1,295,814,1548,1548,132,"(Coord { x: 57, y: 13, z: 17 }, ""push limit exceeded"")",0,29,false
+"flyers/WIP/experiments/exclusive_roles_20261001/sol_n4/raised36\c0004.flyer",36,0,0,0,240,2,288,57,7264,7264,6,"(Coord { x: 16, y: 6, z: 16 }, ""push limit exceeded"")",0,28,false
+"flyers/WIP/experiments/exclusive_roles_20261001/sol_n4/raised36\c0005.flyer",36,0,0,0,240,2,290,47,5927,5927,0,"(Coord { x: 15, y: 8, z: 16 }, ""push limit exceeded"")",0,27,false
+"flyers/WIP/experiments/exclusive_roles_20261001/sol_n4/raised36\c0006.flyer",36,0,0,0,240,1,289,1039,0,0,,"",0,27,true
+"flyers/WIP/experiments/exclusive_roles_20261001/sol_n4/raised36\c0007.flyer",36,0,0,0,240,0,293,24,6090,6091,0,"(Coord { x: 16, y: 13, z: 16 }, ""push limit exceeded"")",0,24,false
+"flyers/WIP/experiments/exclusive_roles_20261001/sol_n4/raised36\c0008.flyer",36,0,0,0,240,1,293,1037,0,0,,"",0,27,true
+"flyers/WIP/experiments/exclusive_roles_20261001/sol_n4/raised36\c0009.flyer",36,0,0,0,240,80,297,1040,0,0,,"",0,27,true
+"flyers/WIP/experiments/exclusive_roles_20261001/sol_n4/raised36\c0010.flyer",36,0,0,0,240,1,299,1033,0,0,,"",0,33,true
+"flyers/WIP/experiments/exclusive_roles_20261001/sol_n4/raised36\c0011.flyer",36,0,0,0,240,4,292,1037,0,0,,"",0,26,true
+"flyers/WIP/experiments/exclusive_roles_20261001/sol_n4/raised36\c0012.flyer",36,0,0,0,240,1,298,531,3528,3528,0,"(Coord { x: 17, y: 15, z: 21 }, ""push limit exceeded"")",0,28,false
+"flyers/WIP/experiments/exclusive_roles_20261001/sol_n4/raised36\c0013.flyer",36,0,0,0,240,1,291,19,5874,5874,0,"(Coord { x: 16, y: 14, z: 16 }, ""push limit exceeded"")",0,25,false
+"flyers/WIP/experiments/exclusive_roles_20261001/sol_n4/raised36\c0014.flyer",36,0,0,0,240,2,291,1035,0,0,,"",0,27,true
+"flyers/WIP/experiments/exclusive_roles_20261001/sol_n4/raised36\c0015.flyer",36,0,0,0,240,1,294,16,5418,5418,0,"(Coord { x: 16, y: 14, z: 16 }, ""push limit exceeded"")",0,29,false
+"flyers/WIP/experiments/exclusive_roles_20261001/sol_n4/raised36\c0016.flyer",36,0,0,0,240,1,293,544,2951,2951,6,"(Coord { x: 17, y: 8, z: 19 }, ""push limit exceeded"")",0,27,false
+"flyers/WIP/experiments/exclusive_roles_20261001/sol_n4/raised36\c0017.flyer",36,0,0,0,240,1,291,23,6090,6090,0,"(Coord { x: 16, y: 14, z: 16 }, ""push limit exceeded"")",0,26,false
+"flyers/WIP/experiments/exclusive_roles_20261001/sol_n4/raised36\c0018.flyer",36,0,0,0,240,80,295,1040,0,0,,"",0,27,true
+"flyers/WIP/experiments/exclusive_roles_20261001/sol_n4/raised36\c0019.flyer",36,0,0,0,240,80,299,1040,0,0,,"",0,27,true
+"flyers/WIP/experiments/exclusive_roles_20261001/sol_n4/raised36\c0020.flyer",36,0,0,0,240,1,289,15,5418,5418,0,"(Coord { x: 16, y: 13, z: 16 }, ""push limit exceeded"")",0,27,false
+"flyers/WIP/experiments/exclusive_roles_20261001/sol_n4/raised36\c0021.flyer",36,0,0,0,240,0,290,1035,0,0,,"",0,25,true
+"flyers/WIP/experiments/exclusive_roles_20261001/sol_n4/raised36\c0022.flyer",36,0,0,0,240,80,303,1040,0,0,,"",0,29,true
+"flyers/WIP/experiments/exclusive_roles_20261001/sol_n4/raised36\c0023.flyer",36,0,0,0,240,1,289,23,7272,7272,0,"(Coord { x: 15, y: 14, z: 22 }, ""push limit exceeded"")",0,24,false
+"flyers/WIP/experiments/exclusive_roles_20261001/sol_n4/raised36\c0024.flyer",36,0,0,0,240,1,293,582,2918,2919,0,"(Coord { x: 12, y: 11, z: 19 }, ""immovable obstruction"")",0,36,false
+"flyers/WIP/experiments/exclusive_roles_20261001/sol_n4/raised36\c0025.flyer",36,0,0,0,240,1,286,11,6160,6160,0,"(Coord { x: 12, y: 9, z: 17 }, ""push limit exceeded"")",0,21,false
+"flyers/WIP/experiments/exclusive_roles_20261001/sol_n4/raised36\c0026.flyer",36,0,0,0,240,1,289,17,5418,5419,0,"(Coord { x: 16, y: 13, z: 16 }, ""push limit exceeded"")",0,26,false
+"flyers/WIP/experiments/exclusive_roles_20261001/sol_n4/raised36\c0027.flyer",36,0,0,0,240,4,285,1037,0,0,,"",0,26,true
+"flyers/WIP/experiments/exclusive_roles_20261001/sol_n4/raised36\c0028.flyer",36,0,0,0,240,5,293,1021,0,1,14,"(Coord { x: 15, y: 10, z: 22 }, ""immovable obstruction"")",0,28,false

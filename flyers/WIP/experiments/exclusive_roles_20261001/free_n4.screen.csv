@@ -1,0 +1,19 @@
+file,limit,rng,phase_x,phase_z,ticks,distance,end_blocks,extensions,extension_failures,movement_failures,first_failure_tick,first_failure_kind,conservation_mismatch_ticks,max_successful_action,clean
+"flyers/WIP/experiments/exclusive_roles_20261001/free_n4\c0000.flyer",24,0,0,0,240,0,298,21,6336,6336,0,"(Coord { x: 12, y: 7, z: 17 }, ""push limit exceeded"")",0,23,false
+"flyers/WIP/experiments/exclusive_roles_20261001/free_n4\c0001.flyer",24,0,0,0,240,1,291,510,3528,3528,0,"(Coord { x: 14, y: 14, z: 17 }, ""push limit exceeded"")",0,23,false
+"flyers/WIP/experiments/exclusive_roles_20261001/free_n4\c0002.flyer",24,0,0,0,240,1,289,38,6046,6046,2,"(Coord { x: 13, y: 13, z: 23 }, ""push limit exceeded"")",0,24,false
+"flyers/WIP/experiments/exclusive_roles_20261001/free_n4\c0003.flyer",24,0,0,0,240,1,294,28,7240,7240,0,"(Coord { x: 13, y: 21, z: 20 }, ""push limit exceeded"")",0,23,false
+"flyers/WIP/experiments/exclusive_roles_20261001/free_n4\c0004.flyer",24,0,0,0,240,1,286,39,7144,7144,0,"(Coord { x: 14, y: 12, z: 17 }, ""push limit exceeded"")",0,23,false
+"flyers/WIP/experiments/exclusive_roles_20261001/free_n4\c0005.flyer",24,0,0,0,240,1,292,15,5456,5456,0,"(Coord { x: 12, y: 1, z: 20 }, ""push limit exceeded"")",0,24,false
+"flyers/WIP/experiments/exclusive_roles_20261001/free_n4\c0006.flyer",24,0,0,0,240,1,285,536,3036,3036,2,"(Coord { x: 13, y: 13, z: 22 }, ""push limit exceeded"")",0,24,false
+"flyers/WIP/experiments/exclusive_roles_20261001/free_n4\c0007.flyer",24,0,0,0,240,0,293,24,6090,6091,0,"(Coord { x: 17, y: 13, z: 18 }, ""push limit exceeded"")",0,24,false
+"flyers/WIP/experiments/exclusive_roles_20261001/free_n4\c0008.flyer",24,0,0,0,240,1,287,30,6760,6760,2,"(Coord { x: 14, y: 19, z: 15 }, ""push limit exceeded"")",0,24,false
+"flyers/WIP/experiments/exclusive_roles_20261001/free_n4\c0009.flyer",24,0,0,0,240,0,295,534,3744,3744,0,"(Coord { x: 13, y: 7, z: 17 }, ""push limit exceeded"")",0,24,false
+"flyers/WIP/experiments/exclusive_roles_20261001/free_n4\c0010.flyer",24,0,0,0,240,1,295,508,3066,3066,0,"(Coord { x: 13, y: 4, z: 19 }, ""push limit exceeded"")",0,23,false
+"flyers/WIP/experiments/exclusive_roles_20261001/free_n4\c0011.flyer",24,0,0,0,240,2,284,75,6705,6706,0,"(Coord { x: 14, y: 12, z: 17 }, ""push limit exceeded"")",0,24,false
+"flyers/WIP/experiments/exclusive_roles_20261001/free_n4\c0012.flyer",24,0,0,0,240,1,295,24,7272,7272,0,"(Coord { x: 13, y: 7, z: 17 }, ""push limit exceeded"")",0,23,false
+"flyers/WIP/experiments/exclusive_roles_20261001/free_n4\c0013.flyer",24,0,0,0,240,0,292,15,5906,5906,0,"(Coord { x: 12, y: 1, z: 21 }, ""push limit exceeded"")",0,23,false
+"flyers/WIP/experiments/exclusive_roles_20261001/free_n4\c0014.flyer",24,0,0,0,240,1,286,505,2372,2372,0,"(Coord { x: 14, y: 14, z: 17 }, ""push limit exceeded"")",0,24,false
+"flyers/WIP/experiments/exclusive_roles_20261001/free_n4\c0015.flyer",24,0,0,0,240,1,294,11,6160,6160,0,"(Coord { x: 13, y: 10, z: 18 }, ""push limit exceeded"")",0,21,false
+"flyers/WIP/experiments/exclusive_roles_20261001/free_n4\c0016.flyer",24,0,0,0,240,0,290,31,6780,6780,0,"(Coord { x: 12, y: 8, z: 16 }, ""push limit exceeded"")",0,23,false
+"flyers/WIP/experiments/exclusive_roles_20261001/free_n4\c0017.flyer",24,0,0,0,240,0,292,15,6384,6384,0,"(Coord { x: 12, y: 8, z: 16 }, ""push limit exceeded"")",0,23,false

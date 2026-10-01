@@ -1,0 +1,36 @@
+carrier 9 slot 2 ports 86
+carrier 10 slot 0 ports 93
+carrier 11 slot 3 ports 61
+carrier 15 slot 4 ports 15
+carrier 18 slot 1 ports 60
+carrier 19 slot 0 ports 157
+carrier 24 slot 4 ports 89
+carrier 29 slot 3 ports 97
+carrier 35 slot 2 ports 125
+carrier 36 slot 1 ports 202
+carrier 37 slot 0 ports 269
+carrier 41 slot 4 ports 89
+carrier 45 slot 3 ports 97
+ports totals {0: 269, 1: 202, 2: 125, 3: 97, 4: 89}
+eligible mmmww 1 [149, 109, 107]
+eligible mmmww 2 [175, 133, 73]
+eligible mmwmw 1 [143, 109, 39]
+eligible mmwmw 2 [175, 122, 51]
+eligible mmwwm 1 [143, 107, 39]
+eligible mmwwm 2 [161, 122, 53]
+eligible mwmmw 1 [138, 107, 39]
+eligible mwmmw 2 [173, 73, 39]
+eligible mwmwm 1 [138, 107, 36]
+eligible mwmwm 2 [159, 73, 52]
+eligible mwwmm 1 [138, 35, 36]
+eligible mwwmm 2 [153, 47, 41]
+eligible wmmmw 1 [109, 107, 39]
+eligible wmmmw 2 [133, 73, 39]
+eligible wmmwm 1 [109, 107, 36]
+eligible wmmwm 2 [133, 73, 52]
+eligible wmwmm 1 [109, 39, 36]
+eligible wmwmm 2 [122, 51, 41]
+eligible wwmmm 1 [104, 39, 36]
+eligible wwmmm 2 [70, 39, 40]
+budget triples 15654
+c0000 mmmww rail 11

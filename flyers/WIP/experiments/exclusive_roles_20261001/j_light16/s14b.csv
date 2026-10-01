@@ -1,0 +1,2 @@
+file,limit,rng,phase_x,phase_z,ticks,distance,end_blocks,extensions,extension_failures,movement_failures,first_failure_tick,first_failure_kind,conservation_mismatch_ticks,max_successful_action,clean
+"exclusive_roles_20261001/j_light16/run14b\c0000.flyer",14,0,0,0,240,2,164,40,1638,1639,0,"(Coord { x: 10, y: 2, z: 1 }, ""push limit exceeded"")",0,14,false
