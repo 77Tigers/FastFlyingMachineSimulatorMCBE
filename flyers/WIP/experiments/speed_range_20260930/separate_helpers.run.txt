@@ -1,0 +1,39 @@
+500 {'piston_overlap': 488, 'mandatory': 4, 'power_contract': 8}
+1000 {'piston_overlap': 852, 'mandatory': 36, 'power_contract': 92, 'source_overlap': 20}
+1500 {'piston_overlap': 1288, 'mandatory': 100, 'power_contract': 92, 'source_overlap': 20}
+2000 {'piston_overlap': 1736, 'mandatory': 104, 'power_contract': 120, 'source_overlap': 40}
+2500 {'piston_overlap': 2124, 'mandatory': 152, 'power_contract': 184, 'source_overlap': 40}
+3000 {'piston_overlap': 2576, 'mandatory': 200, 'power_contract': 184, 'source_overlap': 40}
+3500 {'piston_overlap': 2992, 'mandatory': 204, 'power_contract': 244, 'source_overlap': 60}
+4000 {'piston_overlap': 3396, 'mandatory': 268, 'power_contract': 276, 'source_overlap': 60}
+4500 {'piston_overlap': 3864, 'mandatory': 300, 'power_contract': 276, 'source_overlap': 60}
+5000 {'piston_overlap': 4260, 'mandatory': 300, 'power_contract': 360, 'source_overlap': 80}
+5500 {'piston_overlap': 4680, 'mandatory': 380, 'power_contract': 360, 'source_overlap': 80}
+6000 {'piston_overlap': 5164, 'mandatory': 396, 'power_contract': 360, 'source_overlap': 80}
+6500 {'piston_overlap': 5598, 'mandatory': 396, 'power_contract': 406, 'source_overlap': 100}
+7000 {'piston_overlap': 6098, 'mandatory': 396, 'power_contract': 406, 'source_overlap': 100}
+7500 {'piston_overlap': 6584, 'mandatory': 396, 'power_contract': 420, 'source_overlap': 100}
+8000 {'piston_overlap': 6964, 'mandatory': 428, 'power_contract': 488, 'source_overlap': 120}
+8500 {'piston_overlap': 7400, 'mandatory': 492, 'power_contract': 488, 'source_overlap': 120}
+9000 {'piston_overlap': 7840, 'mandatory': 492, 'power_contract': 496, 'source_overlap': 160, 'arm_overlap': 12}
+9500 {'piston_overlap': 8240, 'mandatory': 536, 'power_contract': 552, 'source_overlap': 160, 'arm_overlap': 12}
+10000 {'piston_overlap': 8692, 'mandatory': 584, 'power_contract': 552, 'source_overlap': 160, 'arm_overlap': 12}
+10500 {'piston_overlap': 9106, 'mandatory': 588, 'power_contract': 614, 'source_overlap': 180, 'arm_overlap': 12}
+11000 {'piston_overlap': 9510, 'mandatory': 646, 'power_contract': 652, 'source_overlap': 180, 'arm_overlap': 12}
+11500 {'piston_overlap': 9978, 'mandatory': 678, 'power_contract': 652, 'source_overlap': 180, 'arm_overlap': 12}
+12000 {'piston_overlap': 10358, 'mandatory': 680, 'power_contract': 726, 'source_overlap': 220, 'arm_overlap': 16}
+12500 {'piston_overlap': 10774, 'mandatory': 752, 'power_contract': 738, 'source_overlap': 220, 'arm_overlap': 16}
+13000 {'piston_overlap': 11258, 'mandatory': 768, 'power_contract': 738, 'source_overlap': 220, 'arm_overlap': 16}
+13500 {'piston_overlap': 11624, 'mandatory': 788, 'power_contract': 830, 'source_overlap': 240, 'arm_overlap': 18}
+14000 {'piston_overlap': 12044, 'mandatory': 862, 'power_contract': 836, 'source_overlap': 240, 'arm_overlap': 18}
+14500 {'piston_overlap': 12532, 'mandatory': 866, 'power_contract': 844, 'source_overlap': 240, 'arm_overlap': 18}
+15000 {'piston_overlap': 12896, 'mandatory': 898, 'power_contract': 928, 'source_overlap': 260, 'arm_overlap': 18}
+15500 {'piston_overlap': 13328, 'mandatory': 956, 'power_contract': 938, 'source_overlap': 260, 'arm_overlap': 18}
+16000 {'piston_overlap': 13774, 'mandatory': 956, 'power_contract': 956, 'source_overlap': 280, 'arm_overlap': 34}
+16500 {'piston_overlap': 14180, 'mandatory': 998, 'power_contract': 1008, 'source_overlap': 280, 'arm_overlap': 34}
+17000 {'piston_overlap': 14628, 'mandatory': 1042, 'power_contract': 1016, 'source_overlap': 280, 'arm_overlap': 34}
+17500 {'piston_overlap': 15068, 'mandatory': 1046, 'power_contract': 1048, 'source_overlap': 300, 'arm_overlap': 38}
+18000 {'piston_overlap': 15484, 'mandatory': 1106, 'power_contract': 1072, 'source_overlap': 300, 'arm_overlap': 38}
+18000 {'piston_overlap': 15484, 'mandatory': 1106, 'power_contract': 1072, 'source_overlap': 300, 'arm_overlap': 38}
+screen candidates=0 clean=0 ticks=240 out=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\separate_helpers.screen.csv
+

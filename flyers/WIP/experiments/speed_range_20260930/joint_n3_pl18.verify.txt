@@ -1,0 +1,1 @@
+verify pass=false file=flyers/WIP/experiments/speed_range_20260930/joint_n3_pl18.flyer ticks=10000 distance=3000 limit=18 max_successful_action=18 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=1000 initial_matches=9 consecutive_matches=25 displacement_mismatches=0

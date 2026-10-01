@@ -1,0 +1,15 @@
+file,limit,rng,phase_x,phase_z,ticks,distance,end_blocks,extensions,extension_failures,movement_failures,first_failure_tick,first_failure_kind,conservation_mismatch_ticks,max_successful_action,clean
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\side_n3_adjacent_rod\c0000.flyer",24,5,0,0,240,72,98,360,0,0,,"",0,21,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\side_n3_adjacent_rod\c0001.flyer",24,5,0,0,240,72,98,360,0,0,,"",0,21,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\side_n3_adjacent_rod\c0002.flyer",24,5,0,0,240,72,96,360,0,0,,"",0,20,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\side_n3_adjacent_rod\c0004.flyer",24,5,0,0,240,72,97,360,0,0,,"",0,22,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\side_n3_adjacent_rod\c0010.flyer",24,5,0,0,240,72,100,360,0,0,,"",0,23,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\side_n3_adjacent_rod\c0012.flyer",24,5,0,0,240,72,94,360,0,0,,"",0,19,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\side_n3_adjacent_rod\c0013.flyer",24,5,0,0,240,72,98,360,0,0,,"",0,20,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\side_n3_adjacent_rod\c0027.flyer",24,5,0,0,240,72,100,360,0,0,,"",0,21,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\side_n3_adjacent_rod\c0028.flyer",24,5,0,0,240,72,102,360,0,0,,"",0,23,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\side_n3_adjacent_rod\c0031.flyer",24,5,0,0,240,72,101,360,0,0,,"",0,22,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\side_n3_adjacent_rod\c0032.flyer",24,5,0,0,240,72,99,360,0,0,,"",0,22,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\side_n3_adjacent_rod\c0034.flyer",24,5,0,0,240,72,97,360,0,0,,"",0,21,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\side_n3_adjacent_rod\c0042.flyer",24,5,0,0,240,72,96,360,0,0,,"",0,20,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\side_n3_adjacent_rod\c0043.flyer",24,5,0,0,240,72,99,360,0,0,,"",0,22,true

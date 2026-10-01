@@ -1,0 +1,11 @@
+0 route
+1 route
+2 route
+3 route
+4 pickup
+5 route
+6 route
+7 ok [11, 19, 41, 43, 24, 11]
+8 route
+9 pickup
+L3 {'route': 7, 'pickup': 2, 'routed': 1}

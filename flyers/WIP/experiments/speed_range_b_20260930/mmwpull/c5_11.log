@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_b_20260930\mmwpull\climb2.py", line 55, in <module>
+    print('start', cur[0], place, flush=True)
+                   ~~~^^^
+TypeError: 'NoneType' object is not subscriptable

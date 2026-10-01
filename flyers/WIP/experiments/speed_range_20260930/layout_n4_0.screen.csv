@@ -1,0 +1,54 @@
+file,limit,rng,phase_x,phase_z,ticks,distance,end_blocks,extensions,extension_failures,movement_failures,first_failure_tick,first_failure_kind,conservation_mismatch_ticks,max_successful_action,clean
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0000.flyer",24,5,0,0,240,80,64,240,0,0,,"",0,23,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0001.flyer",24,5,0,0,240,80,126,480,0,0,,"",0,22,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0002.flyer",24,5,0,0,240,12,126,79,2991,2991,26,"(Coord { x: 22, y: 2, z: 18 }, ""push limit exceeded"")",0,23,false
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0003.flyer",24,5,0,0,240,80,68,240,0,0,,"",0,24,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0005.flyer",24,5,0,0,240,80,130,480,9,9,14,"(Coord { x: 18, y: 8, z: 19 }, ""push limit exceeded"")",0,22,false
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0006.flyer",24,5,0,0,240,80,66,240,0,0,,"",0,23,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0009.flyer",24,5,0,0,240,10,252,155,5240,5240,0,"(Coord { x: 13, y: 11, z: 11 }, ""push limit exceeded"")",0,23,false
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0011.flyer",24,5,0,0,240,13,256,216,5976,5976,0,"(Coord { x: 13, y: 12, z: 12 }, ""push limit exceeded"")",0,24,false
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0012.flyer",24,5,0,0,240,80,66,240,0,0,,"",0,23,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0013.flyer",24,5,0,0,240,80,70,240,0,0,,"",0,23,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0014.flyer",24,5,0,0,240,80,68,240,0,0,,"",0,23,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0015.flyer",24,5,0,0,240,11,256,171,6103,6103,0,"(Coord { x: 16, y: 14, z: 18 }, ""push limit exceeded"")",0,24,false
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0016.flyer",24,5,0,0,240,80,268,960,0,0,,"",0,24,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0017.flyer",24,5,0,0,240,80,256,960,0,0,,"",0,22,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0018.flyer",24,5,0,0,240,69,124,418,349,349,8,"(Coord { x: 18, y: 5, z: 17 }, ""push limit exceeded"")",0,24,false
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0019.flyer",24,5,0,0,240,1,66,3,1658,1658,2,"(Coord { x: 14, y: 1, z: 16 }, ""push limit exceeded"")",0,23,false
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0020.flyer",24,5,0,0,240,80,68,240,0,0,,"",0,24,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0021.flyer",24,5,0,0,240,0,64,0,1440,1440,0,"(Coord { x: 16, y: 2, z: 18 }, ""push limit exceeded"")",0,0,false
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0022.flyer",24,5,0,0,240,80,66,240,0,0,,"",0,23,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0023.flyer",24,5,0,0,240,80,66,240,0,0,,"",0,24,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0024.flyer",24,5,0,0,240,49,248,628,2268,2268,8,"(Coord { x: 19, y: 3, z: 18 }, ""push limit exceeded"")",0,23,false
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0025.flyer",24,5,0,0,240,0,64,1,1198,1198,0,"(Coord { x: 14, y: 1, z: 14 }, ""push limit exceeded"")",0,22,false
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0026.flyer",24,5,0,0,240,80,66,240,0,0,,"",0,22,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0027.flyer",24,5,0,0,240,80,132,480,0,0,,"",0,23,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0028.flyer",24,5,0,0,240,13,126,88,2919,2919,4,"(Coord { x: 14, y: 6, z: 21 }, ""push limit exceeded"")",0,23,false
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0029.flyer",24,5,0,0,240,30,254,381,4459,4459,60,"(Coord { x: 33, y: 15, z: 20 }, ""push limit exceeded"")",0,24,false
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0030.flyer",24,5,0,0,240,10,124,72,2457,2457,12,"(Coord { x: 17, y: 2, z: 4 }, ""push limit exceeded"")",0,23,false
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0031.flyer",24,5,0,0,240,1,64,3,1659,1659,0,"(Coord { x: 15, y: 2, z: 3 }, ""push limit exceeded"")",0,22,false
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0032.flyer",24,5,0,0,240,1,62,3,1659,1659,0,"(Coord { x: 16, y: 3, z: 3 }, ""push limit exceeded"")",0,22,false
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0035.flyer",24,5,0,0,240,2,66,4,1416,1416,4,"(Coord { x: 14, y: 2, z: 19 }, ""push limit exceeded"")",0,23,false
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0036.flyer",24,5,0,0,240,80,126,480,0,0,,"",0,21,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0038.flyer",24,5,0,0,240,80,66,240,0,0,,"",0,22,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0039.flyer",24,5,0,0,240,6,124,46,2579,2579,0,"(Coord { x: 13, y: 2, z: 19 }, ""push limit exceeded"")",0,23,false
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0041.flyer",24,5,0,0,240,80,262,960,0,0,,"",0,23,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0042.flyer",24,5,0,0,240,38,254,489,3241,3241,12,"(Coord { x: 18, y: 5, z: 24 }, ""push limit exceeded"")",0,23,false
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0043.flyer",24,5,0,0,240,80,66,240,0,0,,"",0,22,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0044.flyer",24,5,0,0,240,16,252,234,5613,5613,8,"(Coord { x: 17, y: 2, z: 19 }, ""push limit exceeded"")",0,23,false
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0046.flyer",24,5,0,0,240,79,273,953,100,100,12,"(Coord { x: 17, y: 17, z: 18 }, ""push limit exceeded"")",0,24,false
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0047.flyer",24,5,0,0,240,80,260,960,0,0,,"",0,24,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0049.flyer",24,5,0,0,240,80,128,480,0,0,,"",0,22,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0050.flyer",24,5,0,0,240,13,250,190,5143,5143,20,"(Coord { x: 24, y: 14, z: 13 }, ""push limit exceeded"")",0,23,false
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0051.flyer",24,5,0,0,240,80,130,480,0,0,,"",0,24,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0052.flyer",24,5,0,0,240,80,66,240,0,0,,"",0,23,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0053.flyer",24,5,0,0,240,80,266,960,0,0,,"",0,24,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0054.flyer",24,5,0,0,240,13,128,84,2735,2735,0,"(Coord { x: 13, y: 0, z: 19 }, ""push limit exceeded"")",0,24,false
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0056.flyer",24,5,0,0,240,15,250,203,5459,5459,10,"(Coord { x: 17, y: 12, z: 13 }, ""push limit exceeded"")",0,24,false
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0059.flyer",24,5,0,0,240,80,66,240,0,0,,"",0,23,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0061.flyer",24,5,0,0,240,0,64,4,1416,1416,4,"(Coord { x: 16, y: 3, z: 14 }, ""push limit exceeded"")",0,21,false
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0062.flyer",24,5,0,0,240,15,124,97,2483,2483,14,"(Coord { x: 21, y: 6, z: 17 }, ""push limit exceeded"")",0,23,false
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0063.flyer",24,5,0,0,240,80,132,480,0,0,,"",0,23,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0067.flyer",24,5,0,0,240,80,66,240,0,0,,"",0,24,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0069.flyer",24,5,0,0,240,80,260,960,51,51,10,"(Coord { x: 20, y: 17, z: 17 }, ""push limit exceeded"")",0,22,false
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0070.flyer",24,5,0,0,240,80,130,476,78,78,58,"(Coord { x: 36, y: 6, z: 22 }, ""push limit exceeded"")",0,23,false

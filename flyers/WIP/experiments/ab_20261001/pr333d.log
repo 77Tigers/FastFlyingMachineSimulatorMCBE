@@ -1,0 +1,8 @@
+valid colourings 0
+Traceback (most recent call last):
+  File "C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\ab_20261001\abpr.py", line 281, in <module>
+    generate3(Aw, Bw, sys.argv[3], range(int(sys.argv[4]), int(sys.argv[5])), **kw)
+  File "C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\ab_20261001\abpr.py", line 260, in generate3
+    glue = cols[seed % len(cols)]
+                ~~~~~^~~~~~~~~~~
+ZeroDivisionError: integer modulo by zero

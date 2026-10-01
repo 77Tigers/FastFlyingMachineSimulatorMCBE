@@ -1,0 +1,42 @@
+file,limit,rng,phase_x,phase_z,ticks,distance,end_blocks,extensions,extension_failures,movement_failures,first_failure_tick,first_failure_kind,conservation_mismatch_ticks,max_successful_action,clean
+"flyers/WIP/experiments/speed_range_20260930/layout_n3_0\c0000.flyer",24,5,0,0,240,72,93,360,0,0,,"",0,20,true
+"flyers/WIP/experiments/speed_range_20260930/layout_n3_0\c0001.flyer",24,5,0,0,240,1,88,6,1418,1418,2,"(Coord { x: 15, y: 2, z: 15 }, ""immovable obstruction"")",0,20,false
+"flyers/WIP/experiments/speed_range_20260930/layout_n3_0\c0002.flyer",24,5,0,0,240,72,91,360,0,0,,"",0,20,true
+"flyers/WIP/experiments/speed_range_20260930/layout_n3_0\c0004.flyer",24,5,0,0,240,1,93,7,1646,1646,2,"(Coord { x: 16, y: 0, z: 22 }, ""push limit exceeded"")",0,20,false
+"flyers/WIP/experiments/speed_range_20260930/layout_n3_0\c0005.flyer",24,5,0,0,240,17,91,85,1285,1285,28,"(Coord { x: 24, y: 3, z: 17 }, ""push limit exceeded"")",0,20,false
+"flyers/WIP/experiments/speed_range_20260930/layout_n3_0\c0007.flyer",24,5,0,0,240,1,89,7,1880,1880,2,"(Coord { x: 15, y: 2, z: 17 }, ""immovable obstruction"")",0,18,false
+"flyers/WIP/experiments/speed_range_20260930/layout_n3_0\c0008.flyer",24,5,0,0,240,11,87,58,1402,1402,28,"(Coord { x: 22, y: 5, z: 15 }, ""push limit exceeded"")",0,19,false
+"flyers/WIP/experiments/speed_range_20260930/layout_n3_0\c0009.flyer",24,5,0,0,240,72,94,360,0,0,,"",0,20,true
+"flyers/WIP/experiments/speed_range_20260930/layout_n3_0\c0010.flyer",24,5,0,0,240,72,93,360,0,0,,"",0,19,true
+"flyers/WIP/experiments/speed_range_20260930/layout_n3_0\c0011.flyer",24,5,0,0,240,72,93,360,0,0,,"",0,19,true
+"flyers/WIP/experiments/speed_range_20260930/layout_n3_0\c0013.flyer",24,5,0,0,240,72,91,357,31,31,16,"(Coord { x: 18, y: 3, z: 21 }, ""push limit exceeded"")",0,19,false
+"flyers/WIP/experiments/speed_range_20260930/layout_n3_0\c0014.flyer",24,5,0,0,240,4,87,19,1821,1821,8,"(Coord { x: 17, y: 5, z: 16 }, ""push limit exceeded"")",0,19,false
+"flyers/WIP/experiments/speed_range_20260930/layout_n3_0\c0015.flyer",24,5,0,0,240,72,93,360,0,0,,"",0,19,true
+"flyers/WIP/experiments/speed_range_20260930/layout_n3_0\c0016.flyer",24,5,0,0,240,71,94,357,29,29,16,"(Coord { x: 18, y: 2, z: 22 }, ""push limit exceeded"")",0,19,false
+"flyers/WIP/experiments/speed_range_20260930/layout_n3_0\c0017.flyer",24,5,0,0,240,72,91,360,0,0,,"",0,18,true
+"flyers/WIP/experiments/speed_range_20260930/layout_n3_0\c0018.flyer",24,5,0,0,240,72,95,360,0,0,,"",0,20,true
+"flyers/WIP/experiments/speed_range_20260930/layout_n3_0\c0019.flyer",24,5,0,0,240,72,95,360,0,0,,"",0,20,true
+"flyers/WIP/experiments/speed_range_20260930/layout_n3_0\c0020.flyer",24,5,0,0,240,72,92,360,0,0,,"",0,19,true
+"flyers/WIP/experiments/speed_range_20260930/layout_n3_0\c0021.flyer",24,5,0,0,240,69,89,342,95,95,36,"(Coord { x: 23, y: 6, z: 21 }, ""push limit exceeded"")",0,21,false
+"flyers/WIP/experiments/speed_range_20260930/layout_n3_0\c0022.flyer",24,5,0,0,240,72,94,357,19,19,18,"(Coord { x: 21, y: 4, z: 16 }, ""push limit exceeded"")",0,20,false
+"flyers/WIP/experiments/speed_range_20260930/layout_n3_0\c0024.flyer",24,5,0,0,240,1,90,8,1640,1640,4,"(Coord { x: 14, y: 1, z: 16 }, ""push limit exceeded"")",0,20,false
+"flyers/WIP/experiments/speed_range_20260930/layout_n3_0\c0025.flyer",24,5,0,0,240,72,92,357,30,30,2,"(Coord { x: 16, y: 6, z: 17 }, ""push limit exceeded"")",0,19,false
+"flyers/WIP/experiments/speed_range_20260930/layout_n3_0\c0026.flyer",24,5,0,0,240,72,91,360,0,0,,"",0,19,true
+"flyers/WIP/experiments/speed_range_20260930/layout_n3_0\c0027.flyer",24,5,0,0,240,0,89,8,1640,1640,4,"(Coord { x: 14, y: 2, z: 16 }, ""push limit exceeded"")",0,18,false
+"flyers/WIP/experiments/speed_range_20260930/layout_n3_0\c0028.flyer",24,5,0,0,240,1,88,7,1880,1880,2,"(Coord { x: 15, y: 0, z: 17 }, ""immovable obstruction"")",0,18,false
+"flyers/WIP/experiments/speed_range_20260930/layout_n3_0\c0029.flyer",24,5,0,0,240,71,90,357,16,16,28,"(Coord { x: 21, y: 5, z: 14 }, ""push limit exceeded"")",0,18,false
+"flyers/WIP/experiments/speed_range_20260930/layout_n3_0\c0030.flyer",24,5,0,0,240,72,90,360,0,0,,"",0,20,true
+"flyers/WIP/experiments/speed_range_20260930/layout_n3_0\c0031.flyer",24,5,0,0,240,72,93,360,0,0,,"",0,19,true
+"flyers/WIP/experiments/speed_range_20260930/layout_n3_0\c0032.flyer",24,5,0,0,240,1,93,8,1640,1640,4,"(Coord { x: 14, y: 2, z: 14 }, ""push limit exceeded"")",0,20,false
+"flyers/WIP/experiments/speed_range_20260930/layout_n3_0\c0033.flyer",24,5,0,0,240,1,88,6,2124,2124,0,"(Coord { x: 14, y: 0, z: 16 }, ""push limit exceeded"")",0,19,false
+"flyers/WIP/experiments/speed_range_20260930/layout_n3_0\c0035.flyer",24,5,0,0,240,17,88,86,1450,1450,6,"(Coord { x: 16, y: 6, z: 20 }, ""push limit exceeded"")",0,19,false
+"flyers/WIP/experiments/speed_range_20260930/layout_n3_0\c0037.flyer",24,5,0,0,240,72,92,360,0,0,,"",0,21,true
+"flyers/WIP/experiments/speed_range_20260930/layout_n3_0\c0040.flyer",24,5,0,0,240,1,90,8,1640,1640,4,"(Coord { x: 14, y: 2, z: 14 }, ""push limit exceeded"")",0,19,false
+"flyers/WIP/experiments/speed_range_20260930/layout_n3_0\c0041.flyer",24,5,0,0,240,2,87,8,1640,1640,4,"(Coord { x: 14, y: 2, z: 15 }, ""push limit exceeded"")",0,20,false
+"flyers/WIP/experiments/speed_range_20260930/layout_n3_0\c0042.flyer",24,5,0,0,240,72,90,360,0,0,,"",0,19,true
+"flyers/WIP/experiments/speed_range_20260930/layout_n3_0\c0043.flyer",24,5,0,0,240,11,90,58,31,31,8,"(Coord { x: 17, y: 6, z: 14 }, ""push limit exceeded"")",0,21,false
+"flyers/WIP/experiments/speed_range_20260930/layout_n3_0\c0044.flyer",24,5,0,0,240,72,94,360,0,0,,"",0,20,true
+"flyers/WIP/experiments/speed_range_20260930/layout_n3_0\c0045.flyer",24,5,0,0,240,5,88,27,1759,1759,6,"(Coord { x: 16, y: 2, z: 21 }, ""push limit exceeded"")",0,19,false
+"flyers/WIP/experiments/speed_range_20260930/layout_n3_0\c0047.flyer",24,5,0,0,240,72,91,360,0,0,,"",0,20,true
+"flyers/WIP/experiments/speed_range_20260930/layout_n3_0\c0048.flyer",24,5,0,0,240,1,89,7,1880,1880,2,"(Coord { x: 15, y: 1, z: 17 }, ""immovable obstruction"")",0,19,false
+"flyers/WIP/experiments/speed_range_20260930/layout_n3_0\c0049.flyer",24,5,0,0,240,72,96,360,6,6,136,"(Coord { x: 54, y: 4, z: 21 }, ""push limit exceeded"")",0,22,false

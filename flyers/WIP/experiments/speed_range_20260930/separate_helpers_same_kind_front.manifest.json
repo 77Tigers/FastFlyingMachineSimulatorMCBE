@@ -1,0 +1,11 @@
+{
+  "attempts": 18000,
+  "stats": {
+    "piston_overlap": 15406,
+    "mandatory": 1126,
+    "power_contract": 1130,
+    "source_overlap": 300,
+    "arm_overlap": 38
+  },
+  "routed": []
+}

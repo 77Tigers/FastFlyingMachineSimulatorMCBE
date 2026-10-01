@@ -1,0 +1,16 @@
+file,limit,rng,phase_x,phase_z,ticks,distance,end_blocks,extensions,extension_failures,movement_failures,first_failure_tick,first_failure_kind,conservation_mismatch_ticks,max_successful_action,clean
+"speed_range_b_20260930/mmwhelp/cand5\both_L6_4_3_s03007.flyer",200,5,0,0,240,80,113,240,0,0,,"",0,38,true
+"speed_range_b_20260930/mmwhelp/cand5\rs_L6_3_3_s03029.flyer",200,5,0,0,240,80,100,240,0,0,,"",0,35,true
+"speed_range_b_20260930/mmwhelp/cand5\rs_L6_3_3_s03036.flyer",200,5,0,0,240,80,94,240,0,0,,"",0,35,true
+"speed_range_b_20260930/mmwhelp/cand5\rs_L6_3_3_s03050.flyer",200,5,0,0,240,80,99,240,0,0,,"",0,35,true
+"speed_range_b_20260930/mmwhelp/cand5\rs_L6_3_3_s03121.flyer",200,5,0,0,240,80,100,240,0,0,,"",0,34,true
+"speed_range_b_20260930/mmwhelp/cand5\rs_L6_3_3_s03140.flyer",200,5,0,0,240,80,102,240,0,0,,"",0,35,true
+"speed_range_b_20260930/mmwhelp/cand5\rs_L6_3_3_s03197.flyer",200,5,0,0,240,80,100,240,0,0,,"",0,35,true
+"speed_range_b_20260930/mmwhelp/cand5\rs_L6_4_3_s03050.flyer",200,5,0,0,240,80,99,240,0,0,,"",0,34,true
+"speed_range_b_20260930/mmwhelp/cand5\rs_L6_4_3_s03085.flyer",200,5,0,0,240,80,97,240,0,0,,"",0,34,true
+"speed_range_b_20260930/mmwhelp/cand5\rs_L6_4_3_s03102.flyer",200,5,0,0,240,80,101,240,0,0,,"",0,35,true
+"speed_range_b_20260930/mmwhelp/cand5\rs_L6_4_3_s03113.flyer",200,5,0,0,240,80,99,240,0,0,,"",0,35,true
+"speed_range_b_20260930/mmwhelp/cand5\rs_L6_4_3_s03115.flyer",200,5,0,0,240,80,103,240,0,0,,"",0,35,true
+"speed_range_b_20260930/mmwhelp/cand5\rs_L6_4_3_s03121.flyer",200,5,0,0,240,80,102,240,0,0,,"",0,35,true
+"speed_range_b_20260930/mmwhelp/cand5\rs_L6_4_3_s03140.flyer",200,5,0,0,240,80,100,240,0,0,,"",0,35,true
+"speed_range_b_20260930/mmwhelp/cand5\rs_L6_4_3_s03151.flyer",200,5,0,0,240,80,100,240,0,0,,"",0,35,true

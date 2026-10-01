@@ -1,0 +1,182 @@
+[
+  {
+    "base": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\speed_range_20260930\\two_normal_fixture\\c004.flyer",
+    "anchor": [
+      19,
+      1,
+      16
+    ],
+    "removed": [
+      17,
+      3,
+      16
+    ],
+    "source": [
+      18,
+      2,
+      16
+    ],
+    "J_source": [
+      23,
+      1,
+      16
+    ],
+    "F_source": [
+      24,
+      -1,
+      15
+    ],
+    "J_sticky": [
+      23,
+      0,
+      15
+    ],
+    "J_glue": 10,
+    "F_glue": 4,
+    "conflicts": [
+      [
+        "new",
+        [
+          23,
+          -1,
+          16
+        ]
+      ]
+    ]
+  },
+  {
+    "base": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\speed_range_20260930\\two_normal_fixture\\c005.flyer",
+    "anchor": [
+      19,
+      1,
+      16
+    ],
+    "removed": [
+      17,
+      3,
+      16
+    ],
+    "source": [
+      18,
+      2,
+      16
+    ],
+    "J_source": [
+      23,
+      1,
+      16
+    ],
+    "F_source": [
+      24,
+      -1,
+      17
+    ],
+    "J_sticky": [
+      23,
+      0,
+      17
+    ],
+    "J_glue": 10,
+    "F_glue": 4,
+    "conflicts": [
+      [
+        "new",
+        [
+          23,
+          -1,
+          16
+        ]
+      ]
+    ]
+  },
+  {
+    "base": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\speed_range_20260930\\two_normal_fixture\\c006.flyer",
+    "anchor": [
+      19,
+      1,
+      17
+    ],
+    "removed": [
+      17,
+      2,
+      16
+    ],
+    "source": [
+      18,
+      1,
+      16
+    ],
+    "J_source": [
+      23,
+      1,
+      17
+    ],
+    "F_source": [
+      24,
+      -1,
+      18
+    ],
+    "J_sticky": [
+      23,
+      0,
+      18
+    ],
+    "J_glue": 10,
+    "F_glue": 4,
+    "conflicts": [
+      [
+        "new",
+        [
+          23,
+          -1,
+          17
+        ]
+      ]
+    ]
+  },
+  {
+    "base": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\speed_range_20260930\\two_normal_fixture\\c007.flyer",
+    "anchor": [
+      19,
+      2,
+      17
+    ],
+    "removed": [
+      17,
+      2,
+      16
+    ],
+    "source": [
+      18,
+      1,
+      16
+    ],
+    "J_source": [
+      23,
+      2,
+      17
+    ],
+    "F_source": [
+      24,
+      4,
+      18
+    ],
+    "J_sticky": [
+      23,
+      3,
+      18
+    ],
+    "J_glue": 10,
+    "F_glue": 4,
+    "conflicts": [
+      [
+        "new",
+        [
+          23,
+          4,
+          17
+        ]
+      ]
+    ]
+  }
+]

@@ -1,0 +1,4 @@
+file,limit,rng,phase_x,phase_z,ticks,distance,end_blocks,extensions,extension_failures,movement_failures,first_failure_tick,first_failure_kind,conservation_mismatch_ticks,max_successful_action,clean
+"flyers/WIP/experiments/frontier_pull_20261001/b7\s000023_L32.flyer",32,5,0,0,240,72,147,360,0,0,,"",0,32,true
+"flyers/WIP/experiments/frontier_pull_20261001/b7\s000036_L37.flyer",37,5,0,0,240,72,162,360,0,0,,"",0,37,true
+"flyers/WIP/experiments/frontier_pull_20261001/b7\s000037_L38.flyer",38,5,0,0,240,72,149,360,0,0,,"",0,38,true

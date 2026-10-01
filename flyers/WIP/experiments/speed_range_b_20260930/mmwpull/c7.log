@@ -1,0 +1,234 @@
+c4/climb1_L23_g46.json 0 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb1_L23_g46.json 1 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+best/pull_pl22.place.json 2 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+best/pull_pl22.place.json 0 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+best/pull_pl22.place.json 1 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb1_L24_g47.json 0 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb1_L23_g46.json 2 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb1_L24_g47.json 1 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb1_L24_g47.json 2 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb1_L25_g50.json 0 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb1_L25_g50.json 1 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb1_L25_g50.json 2 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb1_L25_g53.json 0 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb1_L25_g53.json 1 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb1_L26_g52.json 0 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb1_L26_g52.json 1 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb1_L26_g54.json 0 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb1_L26_g52.json 2 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb1_L25_g53.json 2 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb1_L26_g54.json 1 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb1_L26_g54.json 2 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb1_L28_g53.json 0 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb1_L28_g53.json 1 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb1_L28_g53.json 2 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb1_L28_g57.json 0 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb1_L28_g57.json 1 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb1_L28_g57.json 2 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb1_L28_g56.json 0 infeasible:Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)
+c4/climb1_L28_g56.json 1 infeasible:Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)
+c4/climb1_L28_g60.json 0 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb1_L28_g56.json 2 infeasible:Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)
+c4/climb1_L28_g60.json 1 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb1_L28_g62.json 0 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb1_L28_g62.json 1 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb1_L28_g62.json 2 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb1_L29_g62.json 0 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb2_L22_g44.json 0 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb1_L29_g62.json 1 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb1_L29_g62.json 2 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb2_L22_g44.json 1 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb1_L28_g60.json 2 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb2_L22_g44.json 2 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb2_L23_g43.json 0 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb2_L23_g43.json 1 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb2_L23_g43.json 2 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb2_L23_g45.json 0 infeasible:Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)
+c4/climb2_L23_g45.json 1 infeasible:Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)
+c4/climb2_L23_g45.json 2 infeasible:Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)
+c4/climb2_L23_g46.json 0 infeasible:Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)
+c4/climb2_L23_g46.json 1 infeasible:Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)
+c4/climb2_L24_g48.json 0 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb2_L24_g48.json 1 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb2_L24_g48.json 2 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb2_L24_g50.json 0 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb3_L26_g51.json 0 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb2_L24_g50.json 1 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb2_L24_g50.json 2 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb3_L26_g54.json 0 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb3_L26_g54.json 1 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb3_L26_g51.json 1 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb3_L26_g51.json 2 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb2_L23_g46.json 2 infeasible:Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)
+c4/climb3_L27_g56.json 0 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb3_L27_g56.json 1 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb3_L27_g56.json 2 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb3_L26_g54.json 2 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb3_L27_g57.json 0 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb3_L28_g54.json 0 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb3_L27_g57.json 1 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb3_L27_g57.json 2 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb3_L28_g54.json 1 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb3_L28_g54.json 2 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb3_L29_g59.json 0 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb3_L29_g59.json 1 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb3_L29_g59.json 2 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb4_L24_g50.json 0 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb4_L24_g50.json 1 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb4_L24_g49.json 0 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb4_L24_g49.json 1 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb4_L24_g49.json 2 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb4_L25_g51.json 0 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb4_L24_g50.json 2 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb4_L25_g51.json 1 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+c4/climb4_L25_g51.json 2 infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+Process SpawnPoolWorker-1:
+Traceback (most recent call last):
+  File "C:\Users\Ruben\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\pool.py", line 131, in worker
+    put((job, i, result))
+  File "C:\Users\Ruben\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\queues.py", line 396, in put
+    self._writer.send_bytes(obj)
+  File "C:\Users\Ruben\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "C:\Users\Ruben\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\connection.py", line 289, in _send_bytes
+    ov, err = _winapi.WriteFile(self._handle, buf, overlapped=True)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [WinError 232] The pipe is being closed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Ruben\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\process.py", line 314, in _bootstrap
+    self.run()
+  File "C:\Users\Ruben\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\Ruben\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\pool.py", line 136, in worker
+    put((job, i, (False, wrapped)))
+  File "C:\Users\Ruben\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\queues.py", line 396, in put
+    self._writer.send_bytes(obj)
+  File "C:\Users\Ruben\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "C:\Users\Ruben\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\connection.py", line 289, in _send_bytes
+    ov, err = _winapi.WriteFile(self._handle, buf, overlapped=True)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [WinError 232] The pipe is being closed
+Process SpawnPoolWorker-5:
+Traceback (most recent call last):
+  File "C:\Users\Ruben\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\pool.py", line 131, in worker
+    put((job, i, result))
+  File "C:\Users\Ruben\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\queues.py", line 396, in put
+    self._writer.send_bytes(obj)
+  File "C:\Users\Ruben\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "C:\Users\Ruben\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\connection.py", line 289, in _send_bytes
+    ov, err = _winapi.WriteFile(self._handle, buf, overlapped=True)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [WinError 232] The pipe is being closed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Ruben\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\process.py", line 314, in _bootstrap
+    self.run()
+  File "C:\Users\Ruben\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\Ruben\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\pool.py", line 136, in worker
+    put((job, i, (False, wrapped)))
+  File "C:\Users\Ruben\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\queues.py", line 396, in put
+    self._writer.send_bytes(obj)
+  File "C:\Users\Ruben\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "C:\Users\Ruben\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\connection.py", line 289, in _send_bytes
+    ov, err = _winapi.WriteFile(self._handle, buf, overlapped=True)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [WinError 232] The pipe is being closed
+Process SpawnPoolWorker-4:
+Traceback (most recent call last):
+  File "C:\Users\Ruben\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\pool.py", line 131, in worker
+    put((job, i, result))
+  File "C:\Users\Ruben\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\queues.py", line 396, in put
+    self._writer.send_bytes(obj)
+  File "C:\Users\Ruben\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "C:\Users\Ruben\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\connection.py", line 289, in _send_bytes
+    ov, err = _winapi.WriteFile(self._handle, buf, overlapped=True)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [WinError 232] The pipe is being closed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Ruben\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\process.py", line 314, in _bootstrap
+    self.run()
+  File "C:\Users\Ruben\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\Ruben\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\pool.py", line 136, in worker
+    put((job, i, (False, wrapped)))
+  File "C:\Users\Ruben\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\queues.py", line 396, in put
+    self._writer.send_bytes(obj)
+  File "C:\Users\Ruben\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "C:\Users\Ruben\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\connection.py", line 289, in _send_bytes
+    ov, err = _winapi.WriteFile(self._handle, buf, overlapped=True)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [WinError 232] The pipe is being closed
+Process SpawnPoolWorker-2:
+Traceback (most recent call last):
+  File "C:\Users\Ruben\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\pool.py", line 131, in worker
+    put((job, i, result))
+  File "C:\Users\Ruben\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\queues.py", line 396, in put
+    self._writer.send_bytes(obj)
+  File "C:\Users\Ruben\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "C:\Users\Ruben\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\connection.py", line 289, in _send_bytes
+    ov, err = _winapi.WriteFile(self._handle, buf, overlapped=True)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [WinError 232] The pipe is being closed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Ruben\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\process.py", line 314, in _bootstrap
+    self.run()
+  File "C:\Users\Ruben\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\Ruben\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\pool.py", line 136, in worker
+    put((job, i, (False, wrapped)))
+  File "C:\Users\Ruben\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\queues.py", line 396, in put
+    self._writer.send_bytes(obj)
+  File "C:\Users\Ruben\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "C:\Users\Ruben\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\connection.py", line 289, in _send_bytes
+    ov, err = _winapi.WriteFile(self._handle, buf, overlapped=True)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [WinError 232] The pipe is being closed
+Process SpawnPoolWorker-3:
+Traceback (most recent call last):
+  File "C:\Users\Ruben\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\pool.py", line 131, in worker
+    put((job, i, result))
+  File "C:\Users\Ruben\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\queues.py", line 396, in put
+    self._writer.send_bytes(obj)
+  File "C:\Users\Ruben\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "C:\Users\Ruben\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\connection.py", line 289, in _send_bytes
+    ov, err = _winapi.WriteFile(self._handle, buf, overlapped=True)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [WinError 232] The pipe is being closed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Ruben\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\process.py", line 314, in _bootstrap
+    self.run()
+  File "C:\Users\Ruben\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\Ruben\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\pool.py", line 136, in worker
+    put((job, i, (False, wrapped)))
+  File "C:\Users\Ruben\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\queues.py", line 396, in put
+    self._writer.send_bytes(obj)
+  File "C:\Users\Ruben\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "C:\Users\Ruben\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\connection.py", line 289, in _send_bytes
+    ov, err = _winapi.WriteFile(self._handle, buf, overlapped=True)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [WinError 232] The pipe is being closed

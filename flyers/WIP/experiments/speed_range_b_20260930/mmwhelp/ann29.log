@@ -1,0 +1,23 @@
+base score Score { excess: 18, maxload: 29, glue: 63, sumload: 2699 }
+thread 0 evals 2000 accepted 30 cur Score { excess: 18, maxload: 29, glue: 63, sumload: 2693 }
+thread 0 evals 4000 accepted 47 cur Score { excess: 18, maxload: 29, glue: 63, sumload: 2694 }
+thread 0 evals 6000 accepted 73 cur Score { excess: 18, maxload: 29, glue: 63, sumload: 2694 }
+thread 0 evals 8000 accepted 112 cur Score { excess: 18, maxload: 29, glue: 63, sumload: 2692 }
+thread 0 evals 10000 accepted 146 cur Score { excess: 18, maxload: 29, glue: 63, sumload: 2690 }
+thread 0 evals 12000 accepted 187 cur Score { excess: 18, maxload: 29, glue: 63, sumload: 2687 }
+thread 0 evals 14000 accepted 215 cur Score { excess: 18, maxload: 29, glue: 63, sumload: 2685 }
+thread 0 evals 16000 accepted 262 cur Score { excess: 18, maxload: 29, glue: 63, sumload: 2694 }
+thread 0 evals 18000 accepted 291 cur Score { excess: 18, maxload: 29, glue: 63, sumload: 2692 }
+thread 0 evals 20000 accepted 313 cur Score { excess: 18, maxload: 29, glue: 63, sumload: 2692 }
+thread 0 evals 22000 accepted 337 cur Score { excess: 18, maxload: 29, glue: 63, sumload: 2693 }
+thread 0 evals 24000 accepted 360 cur Score { excess: 18, maxload: 29, glue: 63, sumload: 2689 }
+thread 0 evals 26000 accepted 398 cur Score { excess: 18, maxload: 29, glue: 63, sumload: 2688 }
+thread 0 evals 28000 accepted 431 cur Score { excess: 18, maxload: 29, glue: 63, sumload: 2693 }
+thread 0 evals 30000 accepted 468 cur Score { excess: 18, maxload: 29, glue: 63, sumload: 2689 }
+thread 0 evals 32000 accepted 497 cur Score { excess: 18, maxload: 29, glue: 63, sumload: 2694 }
+thread 0 evals 34000 accepted 537 cur Score { excess: 18, maxload: 29, glue: 63, sumload: 2688 }
+thread 0 evals 36000 accepted 580 cur Score { excess: 19, maxload: 29, glue: 63, sumload: 2687 }
+thread 0 evals 38000 accepted 615 cur Score { excess: 18, maxload: 29, glue: 63, sumload: 2682 }
+thread 0 evals 40000 accepted 646 cur Score { excess: 18, maxload: 29, glue: 63, sumload: 2679 }
+thread 0 evals 42000 accepted 684 cur Score { excess: 18, maxload: 29, glue: 63, sumload: 2687 }
+thread 0 evals 44000 accepted 725 cur Score { excess: 18, maxload: 29, glue: 63, sumload: 2684 }

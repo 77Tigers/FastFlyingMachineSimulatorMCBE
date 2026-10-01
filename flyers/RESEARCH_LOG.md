@@ -6,6 +6,12 @@ Keep this active handoff below **5,000 words**. Prior evidence is preserved in [
 
 **Maintain the handoff yourself:** Before finishing a research turn, update this log and the [active-experiment index](WIP/experiments/INDEX.md) when priorities, leads, status, best candidates, evidence paths, or next steps change. Update the experiment's `FINDINGS.md` with its bounds and outcome, and update [RESEARCH_RUNNER.md](WIP/experiments/RESEARCH_RUNNER.md) whenever runner commands or output meanings change. Keep the index short by moving completed detail to findings; do not leave stale pointers or ask the user to maintain these files.
 
+## Update — 2026-10-01 (agent E, overnight)
+
+- **mmwmmw 3.333 bps: PL29 -> PL22** with the user's pull-twice idea (each segment is pulled twice per cycle by front stickies firing in its wait slots). Banked `bank/pl22/pull_twice_mmwmmw.flyer`, 80/80. Evidence: `WIP/experiments/speed_range_b_20260930/mmwpull/`.
+- **New A/B category** (A segments only push B, B only pull A): banked 2.5 bps PL12 (`bank/pl12/ab_push_pull_2body.flyer`), 3 bps PL34 (`bank/pl34/ab_push_pull_7body.flyer`), and 3.333 bps PL71 (`bank/pl71/ab_push_pull_9body.flyer`). Under the stationary-anchor and order-hazard rules, the minimum body counts are 2 / 6 / 9. Theory, generator (`abpr.py`) and validators: `WIP/experiments/ab_20261001/FINDINGS.md`.
+- 3 bps mmmww push+pull lifecycle is verified in the simulator but has no record yet: `WIP/experiments/frontier_pull_20261001/`.
+
 ## Current continuation — 2026-09-30
 
 **Overnight instruction:** Continue until the account usage limit. Prioritize lower push limits for3bps and3.333bps in **both `mmmmww` and `mmwmmw`**, plus a **pulling-only3bps flyer**. Use separate front helpers, the two-push/one-pull trick, abstraction contracts and literal chained extensions before closure. Do not buy credits or use an account usage reset. An active goal and an idle-chat follow-up (`overnight-flyer-research`) are configured; pause the latter after an account usage-limit stop. [Overnight checkpoints and next steps](WIP/experiments/overnight_20260930/FINDINGS.md).
@@ -150,3 +156,18 @@ Preferred portable workflow: run `WIP/experiments/build_research_runner.ps1`, th
 TEMP helpers are host-local. Keep scripts, representative candidates, compact results, and findings. Never bank a diagnostic copy or a short-lived lead.
 
 Latest completed front-interface result: pull/push/push five-cell target uses glazed power separation, tagged loads6–8, and passes full exact10000 ticks plus80/80 cases at wholePL59. Hybrid separate-back/front closure did not route in16 bounded attempts; global3bpsPL19 remains unchanged. Native final results: `WIP/experiments/overnight_20260930/NATIVE_AUDIT_CHECKPOINT.md`.
+
+## User direction — 2026-09-30, helper helpers
+
+Current goal: lower the minimum push limits for **3 bps and 3.333 bps**, improving the PL12–20 speed frontier. Do not pursue designs above **PL24** or try to shrink a PL30 architecture into PL18; stop unpromising bounded families. Shared coordination: `flyers/chat.txt`. Final user cutoff: **70% used**, or **20% used in the new window** if it resets first; then summarize.
+
+**New explicit suggestion:** put a **helper-helper segment directly in front of each helper**. It has two jobs: **provide the power source for the helper's sticky piston**, and **pull the helper forward one block**, so the main back chain does not have to supply that push. These are independent of compact side pickup and can be combined. A segment in front of a helper can supply its power; it need not be routed back from a distant circular placement. Keep the helper/pull target axially aligned. The user warns that slime/honey behind a piston being transported generally signals a poor pickup arrangement; prefer side contacts and short connections.
+
+This is a proposed architecture, not a new verified flyer. Every added helper/helper-helper still needs a complete movement, recovery and power contract; check actual action loads and source ownership. Current experiments and bounded negative results: `WIP/experiments/speed_range_20260930/FINDINGS.md`. The separate agent reports banking the existing PL18/3 bps and PL21/3.333 bps leads under the speed/conservation/80-sample standard agreed in its chat; strict nominal-cycle recurrence remains a separate property.
+User clarification: begin with PL18 and one segment (possibly the segment after the highest-load one). Add two FORWARD NORMAL pistons sharing a redstone block, at most two extra piston passengers on one existing segment. Do not add a six-cell power route to that segment. Helpers are separate bodies; the helper pushes the helper-helper. New generators distinguish original-body loads from separate-helper loads. Enlarged-existing-body variants atPL22/24 are closed. Current proposed seven-body/no-added-original-glue construction: `WIP/experiments/speed_range_20260930/separate_helpers.py`; findings retain exact bounds and corrected group/pull contracts.
+2026-09-30 run stopped at requested40% usage. No lower minimum limit was verified. Smaller six-body126-block PL21 candidate passes80 speed/conservation/load samples. Separate-helper timing/ports and bounded failed geometries are preserved in `WIP/experiments/speed_range_20260930/FRONT_HELPER_CONTRACT.md`; goal remains unfinished and paused.
+
+Budget correction from user: stop at **40% remaining = 60% used** in the shared five-hour window. The earlier40%-used stop was a misunderstanding. Current check:43% used. This supersedes the earlier cutoff for this research task.
+
+
+Final checkpoint (supersedes earlier budget notes): user confirmed 70% used, or 80% left after a reset. Usage jumped from last observed69% to74%; experiments stopped at that check. No new lower-PL record. Local two-normal interface on the segment AFTER the heaviest passed240 fixture cases (three pull contacts x80 RNG/phase samples), 1,000 ticks each, max whole load20 and helper pull4. No original glue added. External pull fixture means this is not yet a self-propelled flyer. Eight-body helper/helper-helper/front-extension closure remains unbuilt due to one connector overlapping a normal piston; precise coordinates and an untested bypass are saved in `WIP/experiments/speed_range_20260930/FINDINGS.md`. No owned research jobs remain running.

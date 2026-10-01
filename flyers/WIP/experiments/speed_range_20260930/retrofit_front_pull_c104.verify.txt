@@ -1,0 +1,2 @@
+verify pass=false file=flyers/WIP/experiments/speed_range_20260930/retrofit_front_pull_flexible/c104.flyer ticks=10000 distance=3000 limit=24 max_successful_action=24 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=1000 initial_matches=23 consecutive_matches=19 displacement_mismatches=0
+Error: "verification failed; inspect the summary above"

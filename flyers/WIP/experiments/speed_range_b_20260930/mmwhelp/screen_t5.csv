@@ -1,0 +1,4 @@
+file,limit,rng,phase_x,phase_z,ticks,distance,end_blocks,extensions,extension_failures,movement_failures,first_failure_tick,first_failure_kind,conservation_mismatch_ticks,max_successful_action,clean
+"mmwhelp/t5\d3002.flyer",1000,5,0,0,240,80,94,240,0,0,,"",0,33,true
+"mmwhelp/t5\d3004.flyer",1000,5,0,0,240,80,98,240,0,0,,"",0,35,true
+"mmwhelp/t5\d3007.flyer",1000,5,0,0,240,80,91,240,0,0,,"",0,32,true

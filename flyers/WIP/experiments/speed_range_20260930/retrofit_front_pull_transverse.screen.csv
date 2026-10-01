@@ -1,0 +1,9 @@
+file,limit,rng,phase_x,phase_z,ticks,distance,end_blocks,extensions,extension_failures,movement_failures,first_failure_tick,first_failure_kind,conservation_mismatch_ticks,max_successful_action,clean
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\retrofit_front_pull_transverse\c1035.flyer",24,5,0,0,240,72,97,360,0,0,,"",0,24,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\retrofit_front_pull_transverse\c1036.flyer",24,5,0,0,240,72,97,360,0,0,,"",0,24,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\retrofit_front_pull_transverse\c1177.flyer",24,5,0,0,240,72,96,360,0,0,,"",0,24,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\retrofit_front_pull_transverse\c352.flyer",24,5,0,0,240,72,98,360,0,0,,"",0,22,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\retrofit_front_pull_transverse\c353.flyer",24,5,0,0,240,72,98,360,0,0,,"",0,22,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\retrofit_front_pull_transverse\c354.flyer",24,5,0,0,240,72,98,360,0,0,,"",0,22,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\retrofit_front_pull_transverse\c356.flyer",24,5,0,0,240,72,98,360,0,0,,"",0,22,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\retrofit_front_pull_transverse\c965.flyer",24,5,0,0,240,72,96,360,0,0,,"",0,23,true

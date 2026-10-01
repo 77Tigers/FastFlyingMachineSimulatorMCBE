@@ -1,0 +1,10 @@
+file,limit,rng,phase_x,phase_z,ticks,distance,end_blocks,extensions,extension_failures,movement_failures,first_failure_tick,first_failure_kind,conservation_mismatch_ticks,max_successful_action,clean
+"ab_20261001/gi25\s00000.flyer",100,5,0,0,400,100,90,200,0,0,,"",0,46,true
+"ab_20261001/gi25\s00001.flyer",100,5,0,0,400,100,80,200,0,0,,"",0,41,true
+"ab_20261001/gi25\s00003.flyer",100,5,0,0,400,100,80,200,0,0,,"",0,41,true
+"ab_20261001/gi25\s00004.flyer",100,5,0,0,400,100,79,200,0,0,,"",0,45,true
+"ab_20261001/gi25\s00005.flyer",100,5,0,0,400,100,75,200,0,0,,"",0,37,true
+"ab_20261001/gi25\s00006.flyer",100,5,0,0,400,100,83,200,0,0,,"",0,48,true
+"ab_20261001/gi25\s00007.flyer",100,5,0,0,400,100,74,200,0,0,,"",0,38,true
+"ab_20261001/gi25\s00008.flyer",100,5,0,0,400,100,87,200,0,0,,"",0,45,true
+"ab_20261001/gi25\s00009.flyer",100,5,0,0,400,100,80,200,0,0,,"",0,45,true

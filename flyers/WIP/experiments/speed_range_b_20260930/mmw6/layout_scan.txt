@@ -1,0 +1,24 @@
+hex4 ring fails {'source_overlap': 6} est [] 0
+hex4 twinadj fails {'source_overlap': 3, 'cross_power': 3} est [] 0
+hex4 alt fails {'cross_power': 1, 'source_overlap': 5} est [] 0
+hex4 alt2 fails {'source_overlap': 6} est [] 0
+hex5 ring fails {'mandatory': 6} est [] 0
+hex5 twinadj fails {'mandatory': 6} est [] 0
+hex5 alt fails {'mandatory': 6} est [] 0
+hex5 alt2 fails {'mandatory': 6} est [] 0
+hex6 ring fails {'pickup': 1} est [(143, 29), (144, 27), (145, 27)] 4
+hex6 twinadj fails {} est [(145, 38), (149, 40), (154, 41)] 7
+hex6 alt fails {'pickup': 1} est [(147, 41), (151, 39), (156, 41)] 6
+hex6 alt2 fails {} est [(153, 30), (154, 35), (155, 32)] 7
+g4_4 ring fails {'source_overlap': 6} est [] 0
+g4_4 twinadj fails {'source_overlap': 5, 'cross_power': 1} est [] 0
+g4_4 alt fails {'source_overlap': 6} est [] 0
+g4_4 alt2 fails {'source_overlap': 6} est [] 0
+g4_5 ring fails {'source_overlap': 5, 'cross_power': 1} est [] 0
+g4_5 twinadj fails {'source_overlap': 5, 'cross_power': 1} est [] 0
+g4_5 alt fails {'source_overlap': 5, 'cross_power': 1} est [] 0
+g4_5 alt2 fails {'source_overlap': 5, 'cross_power': 1} est [] 0
+g5_5 ring fails {'mandatory': 6} est [] 0
+g5_5 twinadj fails {'mandatory': 6} est [] 0
+g5_5 alt fails {'mandatory': 6} est [] 0
+g5_5 alt2 fails {'mandatory': 6} est [] 0

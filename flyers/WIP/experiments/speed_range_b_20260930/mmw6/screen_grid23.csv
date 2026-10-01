@@ -1,0 +1,2 @@
+file,limit,rng,phase_x,phase_z,ticks,distance,end_blocks,extensions,extension_failures,movement_failures,first_failure_tick,first_failure_kind,conservation_mismatch_ticks,max_successful_action,clean
+"flyers/WIP/experiments/speed_range_b_20260930/mmw6/cands_grid23\grid23_s005.flyer",1000,5,0,0,240,80,238,480,0,0,,"",0,64,true

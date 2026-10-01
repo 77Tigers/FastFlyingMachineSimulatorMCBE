@@ -1,0 +1,2 @@
+samples passed=0/80 file=flyers/WIP/experiments/speed_range_20260930/joint_n4_six_pl21.flyer ticks=10000 period=12 advance=4 first_failed=Some((0, 0, 0)) out=flyers/WIP/experiments/speed_range_20260930/joint_n4_six_pl21.samples.csv
+Error: "sample audit failed; inspect the CSV"

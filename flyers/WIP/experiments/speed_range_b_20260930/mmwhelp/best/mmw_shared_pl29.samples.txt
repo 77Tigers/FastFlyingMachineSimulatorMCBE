@@ -1,0 +1,1 @@
+samples passed=80/80 file=best/mmw_shared_pl29.flyer ticks=10000 period=12 advance=4 first_failed=None out=best/mmw_shared_pl29.samples.csv

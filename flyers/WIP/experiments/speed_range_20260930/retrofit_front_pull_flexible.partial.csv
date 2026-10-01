@@ -1,0 +1,8 @@
+file,limit,rng,phase_x,phase_z,ticks,distance,end_blocks,extensions,extension_failures,movement_failures,first_failure_tick,first_failure_kind,conservation_mismatch_ticks,max_successful_action,clean
+"flyers/WIP/experiments/speed_range_20260930/retrofit_front_pull_flexible\c065.flyer",24,5,0,0,240,69,99,346,49,50,6,"(Coord { x: 18, y: 6, z: 21 }, ""push limit exceeded"")",0,23,false
+"flyers/WIP/experiments/speed_range_20260930/retrofit_front_pull_flexible\c104.flyer",24,5,0,0,240,72,100,360,0,0,,"",0,24,true
+"flyers/WIP/experiments/speed_range_20260930/retrofit_front_pull_flexible\c105.flyer",24,5,0,0,240,72,100,360,0,0,,"",0,24,true
+"flyers/WIP/experiments/speed_range_20260930/retrofit_front_pull_flexible\c106.flyer",24,5,0,0,240,72,100,360,0,0,,"",0,24,true
+"flyers/WIP/experiments/speed_range_20260930/retrofit_front_pull_flexible\c107.flyer",24,5,0,0,240,72,100,360,0,0,,"",0,24,true
+"flyers/WIP/experiments/speed_range_20260930/retrofit_front_pull_flexible\c126.flyer",24,5,0,0,240,72,102,360,0,0,,"",0,24,true
+"flyers/WIP/experiments/speed_range_20260930/retrofit_front_pull_flexible\c127.flyer",24,5,0,0,240,72,102,360,0,0,,"",0,24,true

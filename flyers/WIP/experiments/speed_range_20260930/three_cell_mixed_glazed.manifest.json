@@ -1,0 +1,8173 @@
+{
+  "stats": {
+    "route": 74,
+    "driver_cross_power": 73,
+    "fixed_overlap": 76,
+    "mandatory": 279,
+    "arm_overlap": 36,
+    "terminal_cross_power": 6
+  },
+  "candidates": [
+    {
+      "attempt": 0,
+      "origin": [
+        11,
+        -1,
+        16
+      ],
+      "phase": 1,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 1,
+      "origin": [
+        11,
+        -1,
+        16
+      ],
+      "phase": 1,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 2,
+      "origin": [
+        11,
+        0,
+        15
+      ],
+      "phase": 1,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 3,
+      "origin": [
+        11,
+        0,
+        15
+      ],
+      "phase": 1,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 4,
+      "origin": [
+        11,
+        0,
+        16
+      ],
+      "phase": 1,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 5,
+      "origin": [
+        11,
+        0,
+        16
+      ],
+      "phase": 1,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 6,
+      "origin": [
+        11,
+        0,
+        17
+      ],
+      "phase": 1,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 7,
+      "origin": [
+        11,
+        0,
+        17
+      ],
+      "phase": 1,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 8,
+      "origin": [
+        11,
+        0,
+        17
+      ],
+      "phase": 1,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 9,
+      "origin": [
+        11,
+        0,
+        17
+      ],
+      "phase": 1,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 10,
+      "origin": [
+        11,
+        1,
+        15
+      ],
+      "phase": 1,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 11,
+      "origin": [
+        11,
+        1,
+        15
+      ],
+      "phase": 1,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 12,
+      "origin": [
+        11,
+        1,
+        16
+      ],
+      "phase": 1,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 13,
+      "origin": [
+        11,
+        1,
+        16
+      ],
+      "phase": 1,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 14,
+      "origin": [
+        11,
+        1,
+        16
+      ],
+      "phase": 1,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 15,
+      "origin": [
+        11,
+        1,
+        16
+      ],
+      "phase": 1,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 16,
+      "origin": [
+        11,
+        1,
+        16
+      ],
+      "phase": 1,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 17,
+      "origin": [
+        11,
+        1,
+        16
+      ],
+      "phase": 1,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 18,
+      "origin": [
+        11,
+        1,
+        17
+      ],
+      "phase": 1,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 19,
+      "origin": [
+        11,
+        1,
+        17
+      ],
+      "phase": 1,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 20,
+      "origin": [
+        11,
+        1,
+        18
+      ],
+      "phase": 1,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 21,
+      "origin": [
+        11,
+        1,
+        18
+      ],
+      "phase": 1,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 22,
+      "origin": [
+        11,
+        2,
+        15
+      ],
+      "phase": 1,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 23,
+      "origin": [
+        11,
+        2,
+        15
+      ],
+      "phase": 1,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 24,
+      "origin": [
+        11,
+        2,
+        16
+      ],
+      "phase": 1,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 25,
+      "origin": [
+        11,
+        2,
+        16
+      ],
+      "phase": 1,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 26,
+      "origin": [
+        11,
+        2,
+        16
+      ],
+      "phase": 1,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 27,
+      "origin": [
+        11,
+        2,
+        16
+      ],
+      "phase": 1,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 28,
+      "origin": [
+        11,
+        2,
+        17
+      ],
+      "phase": 1,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 29,
+      "origin": [
+        11,
+        2,
+        17
+      ],
+      "phase": 1,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 30,
+      "origin": [
+        11,
+        2,
+        17
+      ],
+      "phase": 1,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 31,
+      "origin": [
+        11,
+        2,
+        17
+      ],
+      "phase": 1,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 32,
+      "origin": [
+        11,
+        2,
+        21
+      ],
+      "phase": 0,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 33,
+      "origin": [
+        11,
+        2,
+        21
+      ],
+      "phase": 0,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 34,
+      "origin": [
+        11,
+        2,
+        22
+      ],
+      "phase": 0,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 35,
+      "origin": [
+        11,
+        2,
+        22
+      ],
+      "phase": 0,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 36,
+      "origin": [
+        11,
+        3,
+        15
+      ],
+      "phase": 1,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 37,
+      "origin": [
+        11,
+        3,
+        15
+      ],
+      "phase": 1,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 38,
+      "origin": [
+        11,
+        3,
+        16
+      ],
+      "phase": 1,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 39,
+      "origin": [
+        11,
+        3,
+        16
+      ],
+      "phase": 1,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 40,
+      "origin": [
+        11,
+        3,
+        16
+      ],
+      "phase": 1,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 41,
+      "origin": [
+        11,
+        3,
+        16
+      ],
+      "phase": 1,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 42,
+      "origin": [
+        11,
+        3,
+        17
+      ],
+      "phase": 1,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 43,
+      "origin": [
+        11,
+        3,
+        17
+      ],
+      "phase": 1,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 44,
+      "origin": [
+        11,
+        3,
+        20
+      ],
+      "phase": 0,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 45,
+      "origin": [
+        11,
+        3,
+        20
+      ],
+      "phase": 0,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 46,
+      "origin": [
+        11,
+        3,
+        21
+      ],
+      "phase": 0,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 47,
+      "origin": [
+        11,
+        3,
+        21
+      ],
+      "phase": 0,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 48,
+      "origin": [
+        11,
+        3,
+        21
+      ],
+      "phase": 0,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 49,
+      "origin": [
+        11,
+        3,
+        21
+      ],
+      "phase": 0,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 50,
+      "origin": [
+        11,
+        3,
+        22
+      ],
+      "phase": 0,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 51,
+      "origin": [
+        11,
+        3,
+        22
+      ],
+      "phase": 0,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 52,
+      "origin": [
+        11,
+        3,
+        22
+      ],
+      "phase": 0,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 53,
+      "origin": [
+        11,
+        3,
+        22
+      ],
+      "phase": 0,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 54,
+      "origin": [
+        11,
+        3,
+        23
+      ],
+      "phase": 0,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 55,
+      "origin": [
+        11,
+        3,
+        23
+      ],
+      "phase": 0,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 56,
+      "origin": [
+        11,
+        4,
+        15
+      ],
+      "phase": 1,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 57,
+      "origin": [
+        11,
+        4,
+        15
+      ],
+      "phase": 1,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 58,
+      "origin": [
+        11,
+        4,
+        16
+      ],
+      "phase": 1,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 59,
+      "origin": [
+        11,
+        4,
+        16
+      ],
+      "phase": 1,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 60,
+      "origin": [
+        11,
+        4,
+        17
+      ],
+      "phase": 1,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 61,
+      "origin": [
+        11,
+        4,
+        17
+      ],
+      "phase": 1,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 62,
+      "origin": [
+        11,
+        4,
+        20
+      ],
+      "phase": 0,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 63,
+      "origin": [
+        11,
+        4,
+        20
+      ],
+      "phase": 0,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 64,
+      "origin": [
+        11,
+        4,
+        21
+      ],
+      "phase": 0,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 65,
+      "origin": [
+        11,
+        4,
+        21
+      ],
+      "phase": 0,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 66,
+      "origin": [
+        11,
+        4,
+        21
+      ],
+      "phase": 0,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 67,
+      "origin": [
+        11,
+        4,
+        21
+      ],
+      "phase": 0,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 68,
+      "origin": [
+        11,
+        4,
+        21
+      ],
+      "phase": 0,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 69,
+      "origin": [
+        11,
+        4,
+        21
+      ],
+      "phase": 0,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 70,
+      "origin": [
+        11,
+        4,
+        22
+      ],
+      "phase": 0,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 71,
+      "origin": [
+        11,
+        4,
+        22
+      ],
+      "phase": 0,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 72,
+      "origin": [
+        11,
+        4,
+        22
+      ],
+      "phase": 0,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 73,
+      "origin": [
+        11,
+        4,
+        22
+      ],
+      "phase": 0,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 74,
+      "origin": [
+        11,
+        4,
+        23
+      ],
+      "phase": 0,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 75,
+      "origin": [
+        11,
+        4,
+        23
+      ],
+      "phase": 0,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 76,
+      "origin": [
+        11,
+        5,
+        16
+      ],
+      "phase": 1,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 77,
+      "origin": [
+        11,
+        5,
+        16
+      ],
+      "phase": 1,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 78,
+      "origin": [
+        11,
+        5,
+        20
+      ],
+      "phase": 0,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 79,
+      "origin": [
+        11,
+        5,
+        20
+      ],
+      "phase": 0,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 80,
+      "origin": [
+        11,
+        5,
+        21
+      ],
+      "phase": 0,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 81,
+      "origin": [
+        11,
+        5,
+        21
+      ],
+      "phase": 0,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 82,
+      "origin": [
+        11,
+        5,
+        22
+      ],
+      "phase": 0,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 83,
+      "origin": [
+        11,
+        5,
+        22
+      ],
+      "phase": 0,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 84,
+      "origin": [
+        11,
+        5,
+        22
+      ],
+      "phase": 0,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 85,
+      "origin": [
+        11,
+        5,
+        22
+      ],
+      "phase": 0,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 86,
+      "origin": [
+        11,
+        6,
+        21
+      ],
+      "phase": 0,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 87,
+      "origin": [
+        11,
+        6,
+        21
+      ],
+      "phase": 0,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 88,
+      "origin": [
+        12,
+        0,
+        19
+      ],
+      "phase": 3,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 89,
+      "origin": [
+        12,
+        0,
+        19
+      ],
+      "phase": 3,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 90,
+      "origin": [
+        12,
+        0,
+        20
+      ],
+      "phase": 3,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 91,
+      "origin": [
+        12,
+        0,
+        20
+      ],
+      "phase": 3,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 92,
+      "origin": [
+        12,
+        0,
+        21
+      ],
+      "phase": 3,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 93,
+      "origin": [
+        12,
+        0,
+        21
+      ],
+      "phase": 3,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 94,
+      "origin": [
+        12,
+        1,
+        18
+      ],
+      "phase": 3,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 95,
+      "origin": [
+        12,
+        1,
+        18
+      ],
+      "phase": 3,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 96,
+      "origin": [
+        12,
+        1,
+        18
+      ],
+      "phase": 3,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 97,
+      "origin": [
+        12,
+        1,
+        18
+      ],
+      "phase": 3,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 98,
+      "origin": [
+        12,
+        1,
+        19
+      ],
+      "phase": 3,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 99,
+      "origin": [
+        12,
+        1,
+        19
+      ],
+      "phase": 3,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 100,
+      "origin": [
+        12,
+        1,
+        19
+      ],
+      "phase": 3,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 101,
+      "origin": [
+        12,
+        1,
+        19
+      ],
+      "phase": 3,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 102,
+      "origin": [
+        12,
+        1,
+        20
+      ],
+      "phase": 3,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 103,
+      "origin": [
+        12,
+        1,
+        20
+      ],
+      "phase": 3,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 104,
+      "origin": [
+        12,
+        1,
+        20
+      ],
+      "phase": 3,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 105,
+      "origin": [
+        12,
+        1,
+        20
+      ],
+      "phase": 3,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 106,
+      "origin": [
+        12,
+        1,
+        20
+      ],
+      "phase": 3,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 107,
+      "origin": [
+        12,
+        1,
+        20
+      ],
+      "phase": 3,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 108,
+      "origin": [
+        12,
+        1,
+        21
+      ],
+      "phase": 3,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 109,
+      "origin": [
+        12,
+        1,
+        21
+      ],
+      "phase": 3,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 110,
+      "origin": [
+        12,
+        1,
+        22
+      ],
+      "phase": 3,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 111,
+      "origin": [
+        12,
+        1,
+        22
+      ],
+      "phase": 3,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 112,
+      "origin": [
+        12,
+        2,
+        15
+      ],
+      "phase": 4,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 113,
+      "origin": [
+        12,
+        2,
+        15
+      ],
+      "phase": 4,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 114,
+      "origin": [
+        12,
+        2,
+        17
+      ],
+      "phase": 3,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 115,
+      "origin": [
+        12,
+        2,
+        17
+      ],
+      "phase": 3,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 116,
+      "origin": [
+        12,
+        2,
+        18
+      ],
+      "phase": 3,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 117,
+      "origin": [
+        12,
+        2,
+        18
+      ],
+      "phase": 3,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 118,
+      "origin": [
+        12,
+        2,
+        19
+      ],
+      "phase": 3,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 119,
+      "origin": [
+        12,
+        2,
+        19
+      ],
+      "phase": 3,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 120,
+      "origin": [
+        12,
+        2,
+        19
+      ],
+      "phase": 3,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 121,
+      "origin": [
+        12,
+        2,
+        19
+      ],
+      "phase": 3,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 122,
+      "origin": [
+        12,
+        2,
+        19
+      ],
+      "phase": 3,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 123,
+      "origin": [
+        12,
+        2,
+        19
+      ],
+      "phase": 3,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 124,
+      "origin": [
+        12,
+        2,
+        20
+      ],
+      "phase": 3,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 125,
+      "origin": [
+        12,
+        2,
+        20
+      ],
+      "phase": 3,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 126,
+      "origin": [
+        12,
+        2,
+        20
+      ],
+      "phase": 3,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 127,
+      "origin": [
+        12,
+        2,
+        20
+      ],
+      "phase": 3,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 128,
+      "origin": [
+        12,
+        2,
+        21
+      ],
+      "phase": 3,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 129,
+      "origin": [
+        12,
+        2,
+        21
+      ],
+      "phase": 3,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 130,
+      "origin": [
+        12,
+        2,
+        21
+      ],
+      "phase": 3,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 131,
+      "origin": [
+        12,
+        2,
+        21
+      ],
+      "phase": 3,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 132,
+      "origin": [
+        12,
+        2,
+        22
+      ],
+      "phase": 0,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 133,
+      "origin": [
+        12,
+        2,
+        22
+      ],
+      "phase": 0,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 134,
+      "origin": [
+        12,
+        3,
+        14
+      ],
+      "phase": 4,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 135,
+      "origin": [
+        12,
+        3,
+        14
+      ],
+      "phase": 4,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 136,
+      "origin": [
+        12,
+        3,
+        14
+      ],
+      "phase": 4,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 137,
+      "origin": [
+        12,
+        3,
+        14
+      ],
+      "phase": 4,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 138,
+      "origin": [
+        12,
+        3,
+        15
+      ],
+      "phase": 4,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 139,
+      "origin": [
+        12,
+        3,
+        15
+      ],
+      "phase": 4,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 140,
+      "origin": [
+        12,
+        3,
+        16
+      ],
+      "phase": 1,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 141,
+      "origin": [
+        12,
+        3,
+        16
+      ],
+      "phase": 1,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 142,
+      "origin": [
+        12,
+        3,
+        16
+      ],
+      "phase": 4,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 143,
+      "origin": [
+        12,
+        3,
+        16
+      ],
+      "phase": 4,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 144,
+      "origin": [
+        12,
+        3,
+        18
+      ],
+      "phase": 3,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 145,
+      "origin": [
+        12,
+        3,
+        18
+      ],
+      "phase": 3,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 146,
+      "origin": [
+        12,
+        3,
+        19
+      ],
+      "phase": 3,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 147,
+      "origin": [
+        12,
+        3,
+        19
+      ],
+      "phase": 3,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 148,
+      "origin": [
+        12,
+        3,
+        20
+      ],
+      "phase": 3,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 149,
+      "origin": [
+        12,
+        3,
+        20
+      ],
+      "phase": 3,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 150,
+      "origin": [
+        12,
+        3,
+        21
+      ],
+      "phase": 0,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 151,
+      "origin": [
+        12,
+        3,
+        21
+      ],
+      "phase": 0,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 152,
+      "origin": [
+        12,
+        3,
+        23
+      ],
+      "phase": 0,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 153,
+      "origin": [
+        12,
+        3,
+        23
+      ],
+      "phase": 0,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 154,
+      "origin": [
+        12,
+        4,
+        13
+      ],
+      "phase": 4,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 155,
+      "origin": [
+        12,
+        4,
+        13
+      ],
+      "phase": 4,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 156,
+      "origin": [
+        12,
+        4,
+        14
+      ],
+      "phase": 4,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 157,
+      "origin": [
+        12,
+        4,
+        14
+      ],
+      "phase": 4,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 158,
+      "origin": [
+        12,
+        4,
+        15
+      ],
+      "phase": 4,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 159,
+      "origin": [
+        12,
+        4,
+        15
+      ],
+      "phase": 4,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 160,
+      "origin": [
+        12,
+        4,
+        15
+      ],
+      "phase": 4,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 161,
+      "origin": [
+        12,
+        4,
+        15
+      ],
+      "phase": 4,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 162,
+      "origin": [
+        12,
+        4,
+        15
+      ],
+      "phase": 1,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 163,
+      "origin": [
+        12,
+        4,
+        15
+      ],
+      "phase": 4,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 164,
+      "origin": [
+        12,
+        4,
+        15
+      ],
+      "phase": 1,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 165,
+      "origin": [
+        12,
+        4,
+        15
+      ],
+      "phase": 4,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 166,
+      "origin": [
+        12,
+        4,
+        16
+      ],
+      "phase": 4,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 167,
+      "origin": [
+        12,
+        4,
+        16
+      ],
+      "phase": 4,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 168,
+      "origin": [
+        12,
+        4,
+        16
+      ],
+      "phase": 4,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 169,
+      "origin": [
+        12,
+        4,
+        16
+      ],
+      "phase": 4,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 170,
+      "origin": [
+        12,
+        4,
+        17
+      ],
+      "phase": 1,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 171,
+      "origin": [
+        12,
+        4,
+        17
+      ],
+      "phase": 1,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 172,
+      "origin": [
+        12,
+        4,
+        22
+      ],
+      "phase": 0,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 173,
+      "origin": [
+        12,
+        4,
+        22
+      ],
+      "phase": 0,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 174,
+      "origin": [
+        12,
+        5,
+        14
+      ],
+      "phase": 4,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 175,
+      "origin": [
+        12,
+        5,
+        14
+      ],
+      "phase": 4,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 176,
+      "origin": [
+        12,
+        5,
+        14
+      ],
+      "phase": 4,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 177,
+      "origin": [
+        12,
+        5,
+        14
+      ],
+      "phase": 4,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 178,
+      "origin": [
+        12,
+        5,
+        15
+      ],
+      "phase": 4,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 179,
+      "origin": [
+        12,
+        5,
+        15
+      ],
+      "phase": 4,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 180,
+      "origin": [
+        12,
+        5,
+        15
+      ],
+      "phase": 4,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 181,
+      "origin": [
+        12,
+        5,
+        15
+      ],
+      "phase": 4,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 182,
+      "origin": [
+        12,
+        5,
+        16
+      ],
+      "phase": 1,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 183,
+      "origin": [
+        12,
+        5,
+        16
+      ],
+      "phase": 1,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 184,
+      "origin": [
+        12,
+        5,
+        16
+      ],
+      "phase": 4,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 185,
+      "origin": [
+        12,
+        5,
+        16
+      ],
+      "phase": 4,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 186,
+      "origin": [
+        12,
+        5,
+        17
+      ],
+      "phase": 2,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 187,
+      "origin": [
+        12,
+        5,
+        17
+      ],
+      "phase": 2,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 188,
+      "origin": [
+        12,
+        5,
+        17
+      ],
+      "phase": 4,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 189,
+      "origin": [
+        12,
+        5,
+        17
+      ],
+      "phase": 4,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 190,
+      "origin": [
+        12,
+        5,
+        18
+      ],
+      "phase": 2,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 191,
+      "origin": [
+        12,
+        5,
+        18
+      ],
+      "phase": 2,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 192,
+      "origin": [
+        12,
+        5,
+        19
+      ],
+      "phase": 2,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 193,
+      "origin": [
+        12,
+        5,
+        19
+      ],
+      "phase": 2,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 194,
+      "origin": [
+        12,
+        5,
+        20
+      ],
+      "phase": 2,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 195,
+      "origin": [
+        12,
+        5,
+        20
+      ],
+      "phase": 2,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 196,
+      "origin": [
+        12,
+        6,
+        15
+      ],
+      "phase": 4,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 197,
+      "origin": [
+        12,
+        6,
+        15
+      ],
+      "phase": 4,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 198,
+      "origin": [
+        12,
+        6,
+        16
+      ],
+      "phase": 4,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 199,
+      "origin": [
+        12,
+        6,
+        16
+      ],
+      "phase": 4,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 200,
+      "origin": [
+        12,
+        6,
+        16
+      ],
+      "phase": 2,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 201,
+      "origin": [
+        12,
+        6,
+        16
+      ],
+      "phase": 2,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 202,
+      "origin": [
+        12,
+        6,
+        17
+      ],
+      "phase": 2,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 203,
+      "origin": [
+        12,
+        6,
+        17
+      ],
+      "phase": 2,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 204,
+      "origin": [
+        12,
+        6,
+        18
+      ],
+      "phase": 2,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 205,
+      "origin": [
+        12,
+        6,
+        18
+      ],
+      "phase": 2,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 206,
+      "origin": [
+        12,
+        6,
+        18
+      ],
+      "phase": 2,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 207,
+      "origin": [
+        12,
+        6,
+        18
+      ],
+      "phase": 2,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 208,
+      "origin": [
+        12,
+        6,
+        18
+      ],
+      "phase": 2,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 209,
+      "origin": [
+        12,
+        6,
+        18
+      ],
+      "phase": 2,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 210,
+      "origin": [
+        12,
+        6,
+        19
+      ],
+      "phase": 2,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 211,
+      "origin": [
+        12,
+        6,
+        19
+      ],
+      "phase": 2,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 212,
+      "origin": [
+        12,
+        6,
+        19
+      ],
+      "phase": 2,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 213,
+      "origin": [
+        12,
+        6,
+        19
+      ],
+      "phase": 2,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 214,
+      "origin": [
+        12,
+        6,
+        20
+      ],
+      "phase": 2,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 215,
+      "origin": [
+        12,
+        6,
+        20
+      ],
+      "phase": 2,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 216,
+      "origin": [
+        12,
+        6,
+        21
+      ],
+      "phase": 2,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 217,
+      "origin": [
+        12,
+        6,
+        21
+      ],
+      "phase": 2,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 218,
+      "origin": [
+        12,
+        7,
+        17
+      ],
+      "phase": 2,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 219,
+      "origin": [
+        12,
+        7,
+        17
+      ],
+      "phase": 2,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 220,
+      "origin": [
+        12,
+        7,
+        17
+      ],
+      "phase": 2,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 221,
+      "origin": [
+        12,
+        7,
+        17
+      ],
+      "phase": 2,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 222,
+      "origin": [
+        12,
+        7,
+        18
+      ],
+      "phase": 2,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 223,
+      "origin": [
+        12,
+        7,
+        18
+      ],
+      "phase": 2,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 224,
+      "origin": [
+        12,
+        7,
+        19
+      ],
+      "phase": 2,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 225,
+      "origin": [
+        12,
+        7,
+        19
+      ],
+      "phase": 2,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 226,
+      "origin": [
+        12,
+        7,
+        19
+      ],
+      "phase": 2,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 227,
+      "origin": [
+        12,
+        7,
+        19
+      ],
+      "phase": 2,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 228,
+      "origin": [
+        12,
+        7,
+        20
+      ],
+      "phase": 2,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 229,
+      "origin": [
+        12,
+        7,
+        20
+      ],
+      "phase": 2,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 230,
+      "origin": [
+        12,
+        8,
+        18
+      ],
+      "phase": 2,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 231,
+      "origin": [
+        12,
+        8,
+        18
+      ],
+      "phase": 2,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 232,
+      "origin": [
+        13,
+        0,
+        22
+      ],
+      "phase": 0,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 233,
+      "origin": [
+        13,
+        0,
+        22
+      ],
+      "phase": 0,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 234,
+      "origin": [
+        13,
+        1,
+        18
+      ],
+      "phase": 3,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 235,
+      "origin": [
+        13,
+        1,
+        18
+      ],
+      "phase": 3,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 236,
+      "origin": [
+        13,
+        1,
+        21
+      ],
+      "phase": 0,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 237,
+      "origin": [
+        13,
+        1,
+        21
+      ],
+      "phase": 0,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 238,
+      "origin": [
+        13,
+        1,
+        22
+      ],
+      "phase": 0,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 239,
+      "origin": [
+        13,
+        1,
+        22
+      ],
+      "phase": 0,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 240,
+      "origin": [
+        13,
+        1,
+        23
+      ],
+      "phase": 0,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 241,
+      "origin": [
+        13,
+        1,
+        23
+      ],
+      "phase": 0,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 242,
+      "origin": [
+        13,
+        2,
+        17
+      ],
+      "phase": 3,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 243,
+      "origin": [
+        13,
+        2,
+        17
+      ],
+      "phase": 3,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 244,
+      "origin": [
+        13,
+        2,
+        19
+      ],
+      "phase": 3,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 245,
+      "origin": [
+        13,
+        2,
+        19
+      ],
+      "phase": 3,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 246,
+      "origin": [
+        13,
+        2,
+        21
+      ],
+      "phase": 0,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 247,
+      "origin": [
+        13,
+        2,
+        21
+      ],
+      "phase": 0,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 248,
+      "origin": [
+        13,
+        2,
+        22
+      ],
+      "phase": 0,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 249,
+      "origin": [
+        13,
+        2,
+        22
+      ],
+      "phase": 0,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 250,
+      "origin": [
+        13,
+        2,
+        22
+      ],
+      "phase": 0,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 251,
+      "origin": [
+        13,
+        2,
+        22
+      ],
+      "phase": 0,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 252,
+      "origin": [
+        13,
+        2,
+        23
+      ],
+      "phase": 0,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 253,
+      "origin": [
+        13,
+        2,
+        23
+      ],
+      "phase": 0,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 254,
+      "origin": [
+        13,
+        3,
+        16
+      ],
+      "phase": 1,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 255,
+      "origin": [
+        13,
+        3,
+        16
+      ],
+      "phase": 1,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 256,
+      "origin": [
+        13,
+        3,
+        18
+      ],
+      "phase": 3,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 257,
+      "origin": [
+        13,
+        3,
+        18
+      ],
+      "phase": 3,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 258,
+      "origin": [
+        13,
+        3,
+        21
+      ],
+      "phase": 0,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 259,
+      "origin": [
+        13,
+        3,
+        21
+      ],
+      "phase": 0,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 260,
+      "origin": [
+        13,
+        3,
+        22
+      ],
+      "phase": 0,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 261,
+      "origin": [
+        13,
+        3,
+        22
+      ],
+      "phase": 0,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 262,
+      "origin": [
+        13,
+        3,
+        23
+      ],
+      "phase": 0,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 263,
+      "origin": [
+        13,
+        3,
+        23
+      ],
+      "phase": 0,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 264,
+      "origin": [
+        13,
+        4,
+        15
+      ],
+      "phase": 1,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 265,
+      "origin": [
+        13,
+        4,
+        15
+      ],
+      "phase": 1,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 266,
+      "origin": [
+        13,
+        4,
+        16
+      ],
+      "phase": 4,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 267,
+      "origin": [
+        13,
+        4,
+        16
+      ],
+      "phase": 4,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 268,
+      "origin": [
+        13,
+        4,
+        17
+      ],
+      "phase": 1,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 269,
+      "origin": [
+        13,
+        4,
+        17
+      ],
+      "phase": 1,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 270,
+      "origin": [
+        13,
+        4,
+        22
+      ],
+      "phase": 0,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 271,
+      "origin": [
+        13,
+        4,
+        22
+      ],
+      "phase": 0,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 272,
+      "origin": [
+        13,
+        5,
+        15
+      ],
+      "phase": 4,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 273,
+      "origin": [
+        13,
+        5,
+        15
+      ],
+      "phase": 4,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 274,
+      "origin": [
+        13,
+        5,
+        16
+      ],
+      "phase": 1,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 275,
+      "origin": [
+        13,
+        5,
+        16
+      ],
+      "phase": 1,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 276,
+      "origin": [
+        13,
+        5,
+        17
+      ],
+      "phase": 4,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 277,
+      "origin": [
+        13,
+        5,
+        17
+      ],
+      "phase": 4,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 278,
+      "origin": [
+        13,
+        5,
+        20
+      ],
+      "phase": 2,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 279,
+      "origin": [
+        13,
+        5,
+        20
+      ],
+      "phase": 2,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 280,
+      "origin": [
+        13,
+        5,
+        21
+      ],
+      "phase": 2,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 281,
+      "origin": [
+        13,
+        5,
+        21
+      ],
+      "phase": 2,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 282,
+      "origin": [
+        13,
+        6,
+        16
+      ],
+      "phase": 4,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 283,
+      "origin": [
+        13,
+        6,
+        16
+      ],
+      "phase": 4,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 284,
+      "origin": [
+        13,
+        6,
+        19
+      ],
+      "phase": 2,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 285,
+      "origin": [
+        13,
+        6,
+        19
+      ],
+      "phase": 2,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 286,
+      "origin": [
+        13,
+        6,
+        20
+      ],
+      "phase": 2,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 287,
+      "origin": [
+        13,
+        6,
+        20
+      ],
+      "phase": 2,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 288,
+      "origin": [
+        13,
+        6,
+        21
+      ],
+      "phase": 2,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 289,
+      "origin": [
+        13,
+        6,
+        21
+      ],
+      "phase": 2,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 290,
+      "origin": [
+        13,
+        6,
+        22
+      ],
+      "phase": 2,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 291,
+      "origin": [
+        13,
+        6,
+        22
+      ],
+      "phase": 2,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 292,
+      "origin": [
+        13,
+        7,
+        20
+      ],
+      "phase": 2,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 293,
+      "origin": [
+        13,
+        7,
+        20
+      ],
+      "phase": 2,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 294,
+      "origin": [
+        13,
+        7,
+        21
+      ],
+      "phase": 2,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 295,
+      "origin": [
+        13,
+        7,
+        21
+      ],
+      "phase": 2,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "route"
+    },
+    {
+      "attempt": 296,
+      "origin": [
+        14,
+        0,
+        19
+      ],
+      "phase": 0,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 297,
+      "origin": [
+        14,
+        0,
+        19
+      ],
+      "phase": 0,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 298,
+      "origin": [
+        14,
+        0,
+        20
+      ],
+      "phase": 0,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 299,
+      "origin": [
+        14,
+        0,
+        20
+      ],
+      "phase": 0,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 300,
+      "origin": [
+        14,
+        0,
+        21
+      ],
+      "phase": 0,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 301,
+      "origin": [
+        14,
+        0,
+        21
+      ],
+      "phase": 0,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 302,
+      "origin": [
+        14,
+        0,
+        22
+      ],
+      "phase": 0,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 303,
+      "origin": [
+        14,
+        0,
+        22
+      ],
+      "phase": 0,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 304,
+      "origin": [
+        14,
+        1,
+        17
+      ],
+      "phase": 3,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 305,
+      "origin": [
+        14,
+        1,
+        17
+      ],
+      "phase": 3,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 306,
+      "origin": [
+        14,
+        1,
+        18
+      ],
+      "phase": 3,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 307,
+      "origin": [
+        14,
+        1,
+        18
+      ],
+      "phase": 3,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 308,
+      "origin": [
+        14,
+        1,
+        18
+      ],
+      "phase": 0,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 309,
+      "origin": [
+        14,
+        1,
+        18
+      ],
+      "phase": 0,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 310,
+      "origin": [
+        14,
+        1,
+        19
+      ],
+      "phase": 0,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 311,
+      "origin": [
+        14,
+        1,
+        19
+      ],
+      "phase": 0,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 312,
+      "origin": [
+        14,
+        1,
+        20
+      ],
+      "phase": 0,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "arm_overlap"
+    },
+    {
+      "attempt": 313,
+      "origin": [
+        14,
+        1,
+        20
+      ],
+      "phase": 0,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "arm_overlap"
+    },
+    {
+      "attempt": 314,
+      "origin": [
+        14,
+        1,
+        20
+      ],
+      "phase": 0,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "arm_overlap"
+    },
+    {
+      "attempt": 315,
+      "origin": [
+        14,
+        1,
+        20
+      ],
+      "phase": 0,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "arm_overlap"
+    },
+    {
+      "attempt": 316,
+      "origin": [
+        14,
+        1,
+        20
+      ],
+      "phase": 0,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "arm_overlap"
+    },
+    {
+      "attempt": 317,
+      "origin": [
+        14,
+        1,
+        20
+      ],
+      "phase": 0,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "arm_overlap"
+    },
+    {
+      "attempt": 318,
+      "origin": [
+        14,
+        1,
+        21
+      ],
+      "phase": 0,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 319,
+      "origin": [
+        14,
+        1,
+        21
+      ],
+      "phase": 0,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 320,
+      "origin": [
+        14,
+        1,
+        21
+      ],
+      "phase": 0,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "terminal_cross_power"
+    },
+    {
+      "attempt": 321,
+      "origin": [
+        14,
+        1,
+        21
+      ],
+      "phase": 0,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 322,
+      "origin": [
+        14,
+        1,
+        22
+      ],
+      "phase": 0,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 323,
+      "origin": [
+        14,
+        1,
+        22
+      ],
+      "phase": 0,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 324,
+      "origin": [
+        14,
+        1,
+        23
+      ],
+      "phase": 0,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 325,
+      "origin": [
+        14,
+        1,
+        23
+      ],
+      "phase": 0,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 326,
+      "origin": [
+        14,
+        2,
+        16
+      ],
+      "phase": 3,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 327,
+      "origin": [
+        14,
+        2,
+        16
+      ],
+      "phase": 3,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 328,
+      "origin": [
+        14,
+        2,
+        17
+      ],
+      "phase": 3,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 329,
+      "origin": [
+        14,
+        2,
+        17
+      ],
+      "phase": 3,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 330,
+      "origin": [
+        14,
+        2,
+        18
+      ],
+      "phase": 3,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 331,
+      "origin": [
+        14,
+        2,
+        18
+      ],
+      "phase": 3,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 332,
+      "origin": [
+        14,
+        2,
+        19
+      ],
+      "phase": 0,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 333,
+      "origin": [
+        14,
+        2,
+        19
+      ],
+      "phase": 0,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 334,
+      "origin": [
+        14,
+        2,
+        19
+      ],
+      "phase": 0,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 335,
+      "origin": [
+        14,
+        2,
+        19
+      ],
+      "phase": 3,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 336,
+      "origin": [
+        14,
+        2,
+        19
+      ],
+      "phase": 0,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 337,
+      "origin": [
+        14,
+        2,
+        19
+      ],
+      "phase": 3,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 338,
+      "origin": [
+        14,
+        2,
+        20
+      ],
+      "phase": 0,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 339,
+      "origin": [
+        14,
+        2,
+        20
+      ],
+      "phase": 0,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 340,
+      "origin": [
+        14,
+        2,
+        21
+      ],
+      "phase": 0,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 341,
+      "origin": [
+        14,
+        2,
+        21
+      ],
+      "phase": 0,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 342,
+      "origin": [
+        14,
+        2,
+        21
+      ],
+      "phase": 0,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 343,
+      "origin": [
+        14,
+        2,
+        21
+      ],
+      "phase": 0,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 344,
+      "origin": [
+        14,
+        2,
+        22
+      ],
+      "phase": 0,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 345,
+      "origin": [
+        14,
+        2,
+        22
+      ],
+      "phase": 0,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 346,
+      "origin": [
+        14,
+        3,
+        16
+      ],
+      "phase": 1,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 347,
+      "origin": [
+        14,
+        3,
+        16
+      ],
+      "phase": 1,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 348,
+      "origin": [
+        14,
+        3,
+        17
+      ],
+      "phase": 3,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 349,
+      "origin": [
+        14,
+        3,
+        17
+      ],
+      "phase": 3,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 350,
+      "origin": [
+        14,
+        3,
+        18
+      ],
+      "phase": 3,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 351,
+      "origin": [
+        14,
+        3,
+        18
+      ],
+      "phase": 3,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 352,
+      "origin": [
+        14,
+        3,
+        20
+      ],
+      "phase": 0,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 353,
+      "origin": [
+        14,
+        3,
+        20
+      ],
+      "phase": 0,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 354,
+      "origin": [
+        14,
+        4,
+        15
+      ],
+      "phase": 1,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 355,
+      "origin": [
+        14,
+        4,
+        15
+      ],
+      "phase": 1,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 356,
+      "origin": [
+        14,
+        4,
+        16
+      ],
+      "phase": 4,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 357,
+      "origin": [
+        14,
+        4,
+        16
+      ],
+      "phase": 4,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 358,
+      "origin": [
+        14,
+        4,
+        17
+      ],
+      "phase": 4,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 359,
+      "origin": [
+        14,
+        4,
+        17
+      ],
+      "phase": 4,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 360,
+      "origin": [
+        14,
+        4,
+        17
+      ],
+      "phase": 1,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 361,
+      "origin": [
+        14,
+        4,
+        17
+      ],
+      "phase": 1,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 362,
+      "origin": [
+        14,
+        5,
+        15
+      ],
+      "phase": 4,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 363,
+      "origin": [
+        14,
+        5,
+        15
+      ],
+      "phase": 4,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 364,
+      "origin": [
+        14,
+        5,
+        16
+      ],
+      "phase": 1,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 365,
+      "origin": [
+        14,
+        5,
+        16
+      ],
+      "phase": 1,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 366,
+      "origin": [
+        14,
+        5,
+        16
+      ],
+      "phase": 4,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 367,
+      "origin": [
+        14,
+        5,
+        16
+      ],
+      "phase": 4,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 368,
+      "origin": [
+        14,
+        5,
+        17
+      ],
+      "phase": 4,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 369,
+      "origin": [
+        14,
+        5,
+        17
+      ],
+      "phase": 4,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 370,
+      "origin": [
+        14,
+        5,
+        18
+      ],
+      "phase": 4,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 371,
+      "origin": [
+        14,
+        5,
+        18
+      ],
+      "phase": 4,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 372,
+      "origin": [
+        14,
+        5,
+        21
+      ],
+      "phase": 2,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "arm_overlap"
+    },
+    {
+      "attempt": 373,
+      "origin": [
+        14,
+        5,
+        21
+      ],
+      "phase": 2,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "arm_overlap"
+    },
+    {
+      "attempt": 374,
+      "origin": [
+        14,
+        6,
+        16
+      ],
+      "phase": 4,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 375,
+      "origin": [
+        14,
+        6,
+        16
+      ],
+      "phase": 4,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 376,
+      "origin": [
+        14,
+        6,
+        17
+      ],
+      "phase": 4,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 377,
+      "origin": [
+        14,
+        6,
+        17
+      ],
+      "phase": 4,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "fixed_overlap"
+    },
+    {
+      "attempt": 378,
+      "origin": [
+        14,
+        6,
+        20
+      ],
+      "phase": 2,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 379,
+      "origin": [
+        14,
+        6,
+        20
+      ],
+      "phase": 2,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 380,
+      "origin": [
+        14,
+        6,
+        22
+      ],
+      "phase": 2,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 381,
+      "origin": [
+        14,
+        6,
+        22
+      ],
+      "phase": 2,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 382,
+      "origin": [
+        14,
+        7,
+        21
+      ],
+      "phase": 2,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 383,
+      "origin": [
+        14,
+        7,
+        21
+      ],
+      "phase": 2,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 384,
+      "origin": [
+        15,
+        -1,
+        16
+      ],
+      "phase": 3,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 385,
+      "origin": [
+        15,
+        -1,
+        16
+      ],
+      "phase": 3,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 386,
+      "origin": [
+        15,
+        0,
+        15
+      ],
+      "phase": 3,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 387,
+      "origin": [
+        15,
+        0,
+        15
+      ],
+      "phase": 3,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 388,
+      "origin": [
+        15,
+        0,
+        16
+      ],
+      "phase": 3,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 389,
+      "origin": [
+        15,
+        0,
+        16
+      ],
+      "phase": 3,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 390,
+      "origin": [
+        15,
+        0,
+        17
+      ],
+      "phase": 3,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 391,
+      "origin": [
+        15,
+        0,
+        17
+      ],
+      "phase": 3,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 392,
+      "origin": [
+        15,
+        0,
+        17
+      ],
+      "phase": 3,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 393,
+      "origin": [
+        15,
+        0,
+        17
+      ],
+      "phase": 3,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 394,
+      "origin": [
+        15,
+        1,
+        15
+      ],
+      "phase": 3,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 395,
+      "origin": [
+        15,
+        1,
+        15
+      ],
+      "phase": 3,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 396,
+      "origin": [
+        15,
+        1,
+        16
+      ],
+      "phase": 3,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "arm_overlap"
+    },
+    {
+      "attempt": 397,
+      "origin": [
+        15,
+        1,
+        16
+      ],
+      "phase": 3,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "arm_overlap"
+    },
+    {
+      "attempt": 398,
+      "origin": [
+        15,
+        1,
+        16
+      ],
+      "phase": 3,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "arm_overlap"
+    },
+    {
+      "attempt": 399,
+      "origin": [
+        15,
+        1,
+        16
+      ],
+      "phase": 3,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "arm_overlap"
+    },
+    {
+      "attempt": 400,
+      "origin": [
+        15,
+        1,
+        16
+      ],
+      "phase": 3,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "arm_overlap"
+    },
+    {
+      "attempt": 401,
+      "origin": [
+        15,
+        1,
+        16
+      ],
+      "phase": 3,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "arm_overlap"
+    },
+    {
+      "attempt": 402,
+      "origin": [
+        15,
+        1,
+        17
+      ],
+      "phase": 3,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "terminal_cross_power"
+    },
+    {
+      "attempt": 403,
+      "origin": [
+        15,
+        1,
+        17
+      ],
+      "phase": 3,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 404,
+      "origin": [
+        15,
+        1,
+        17
+      ],
+      "phase": 3,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 405,
+      "origin": [
+        15,
+        1,
+        17
+      ],
+      "phase": 3,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 406,
+      "origin": [
+        15,
+        1,
+        18
+      ],
+      "phase": 3,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 407,
+      "origin": [
+        15,
+        1,
+        18
+      ],
+      "phase": 3,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 408,
+      "origin": [
+        15,
+        2,
+        15
+      ],
+      "phase": 1,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 409,
+      "origin": [
+        15,
+        2,
+        15
+      ],
+      "phase": 1,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 410,
+      "origin": [
+        15,
+        2,
+        15
+      ],
+      "phase": 3,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 411,
+      "origin": [
+        15,
+        2,
+        15
+      ],
+      "phase": 3,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 412,
+      "origin": [
+        15,
+        2,
+        16
+      ],
+      "phase": 3,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 413,
+      "origin": [
+        15,
+        2,
+        16
+      ],
+      "phase": 3,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 414,
+      "origin": [
+        15,
+        2,
+        16
+      ],
+      "phase": 3,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 415,
+      "origin": [
+        15,
+        2,
+        16
+      ],
+      "phase": 3,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 416,
+      "origin": [
+        15,
+        2,
+        17
+      ],
+      "phase": 3,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 417,
+      "origin": [
+        15,
+        2,
+        17
+      ],
+      "phase": 3,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 418,
+      "origin": [
+        15,
+        2,
+        17
+      ],
+      "phase": 3,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 419,
+      "origin": [
+        15,
+        2,
+        17
+      ],
+      "phase": 3,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 420,
+      "origin": [
+        15,
+        2,
+        18
+      ],
+      "phase": 3,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 421,
+      "origin": [
+        15,
+        2,
+        18
+      ],
+      "phase": 3,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 422,
+      "origin": [
+        15,
+        2,
+        21
+      ],
+      "phase": 2,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 423,
+      "origin": [
+        15,
+        2,
+        21
+      ],
+      "phase": 2,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "arm_overlap"
+    },
+    {
+      "attempt": 424,
+      "origin": [
+        15,
+        3,
+        14
+      ],
+      "phase": 1,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 425,
+      "origin": [
+        15,
+        3,
+        14
+      ],
+      "phase": 1,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 426,
+      "origin": [
+        15,
+        3,
+        14
+      ],
+      "phase": 1,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 427,
+      "origin": [
+        15,
+        3,
+        14
+      ],
+      "phase": 1,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 428,
+      "origin": [
+        15,
+        3,
+        15
+      ],
+      "phase": 1,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 429,
+      "origin": [
+        15,
+        3,
+        15
+      ],
+      "phase": 1,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "terminal_cross_power"
+    },
+    {
+      "attempt": 430,
+      "origin": [
+        15,
+        3,
+        16
+      ],
+      "phase": 1,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 431,
+      "origin": [
+        15,
+        3,
+        16
+      ],
+      "phase": 1,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "driver_cross_power"
+    },
+    {
+      "attempt": 432,
+      "origin": [
+        15,
+        3,
+        16
+      ],
+      "phase": 3,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 433,
+      "origin": [
+        15,
+        3,
+        16
+      ],
+      "phase": 3,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 434,
+      "origin": [
+        15,
+        3,
+        16
+      ],
+      "phase": 1,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 435,
+      "origin": [
+        15,
+        3,
+        16
+      ],
+      "phase": 1,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 436,
+      "origin": [
+        15,
+        3,
+        17
+      ],
+      "phase": 3,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 437,
+      "origin": [
+        15,
+        3,
+        17
+      ],
+      "phase": 3,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 438,
+      "origin": [
+        15,
+        3,
+        20
+      ],
+      "phase": 2,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 439,
+      "origin": [
+        15,
+        3,
+        20
+      ],
+      "phase": 2,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "arm_overlap"
+    },
+    {
+      "attempt": 440,
+      "origin": [
+        15,
+        3,
+        21
+      ],
+      "phase": 2,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "terminal_cross_power"
+    },
+    {
+      "attempt": 441,
+      "origin": [
+        15,
+        3,
+        21
+      ],
+      "phase": 2,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 442,
+      "origin": [
+        15,
+        3,
+        22
+      ],
+      "phase": 2,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 443,
+      "origin": [
+        15,
+        3,
+        22
+      ],
+      "phase": 2,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 444,
+      "origin": [
+        15,
+        3,
+        22
+      ],
+      "phase": 2,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 445,
+      "origin": [
+        15,
+        3,
+        22
+      ],
+      "phase": 2,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 446,
+      "origin": [
+        15,
+        4,
+        13
+      ],
+      "phase": 1,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 447,
+      "origin": [
+        15,
+        4,
+        13
+      ],
+      "phase": 1,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 448,
+      "origin": [
+        15,
+        4,
+        14
+      ],
+      "phase": 1,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 449,
+      "origin": [
+        15,
+        4,
+        14
+      ],
+      "phase": 1,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 450,
+      "origin": [
+        15,
+        4,
+        15
+      ],
+      "phase": 1,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "arm_overlap"
+    },
+    {
+      "attempt": 451,
+      "origin": [
+        15,
+        4,
+        15
+      ],
+      "phase": 1,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "arm_overlap"
+    },
+    {
+      "attempt": 452,
+      "origin": [
+        15,
+        4,
+        15
+      ],
+      "phase": 1,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "arm_overlap"
+    },
+    {
+      "attempt": 453,
+      "origin": [
+        15,
+        4,
+        15
+      ],
+      "phase": 1,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "arm_overlap"
+    },
+    {
+      "attempt": 454,
+      "origin": [
+        15,
+        4,
+        15
+      ],
+      "phase": 1,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "arm_overlap"
+    },
+    {
+      "attempt": 455,
+      "origin": [
+        15,
+        4,
+        15
+      ],
+      "phase": 1,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "arm_overlap"
+    },
+    {
+      "attempt": 456,
+      "origin": [
+        15,
+        4,
+        15
+      ],
+      "phase": 1,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "arm_overlap"
+    },
+    {
+      "attempt": 457,
+      "origin": [
+        15,
+        4,
+        15
+      ],
+      "phase": 1,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "arm_overlap"
+    },
+    {
+      "attempt": 458,
+      "origin": [
+        15,
+        4,
+        16
+      ],
+      "phase": 1,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 459,
+      "origin": [
+        15,
+        4,
+        16
+      ],
+      "phase": 1,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 460,
+      "origin": [
+        15,
+        4,
+        17
+      ],
+      "phase": 4,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 461,
+      "origin": [
+        15,
+        4,
+        17
+      ],
+      "phase": 4,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 462,
+      "origin": [
+        15,
+        4,
+        17
+      ],
+      "phase": 1,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 463,
+      "origin": [
+        15,
+        4,
+        17
+      ],
+      "phase": 1,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 464,
+      "origin": [
+        15,
+        4,
+        20
+      ],
+      "phase": 2,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 465,
+      "origin": [
+        15,
+        4,
+        20
+      ],
+      "phase": 2,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 466,
+      "origin": [
+        15,
+        4,
+        21
+      ],
+      "phase": 2,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "arm_overlap"
+    },
+    {
+      "attempt": 467,
+      "origin": [
+        15,
+        4,
+        21
+      ],
+      "phase": 2,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "arm_overlap"
+    },
+    {
+      "attempt": 468,
+      "origin": [
+        15,
+        4,
+        21
+      ],
+      "phase": 2,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "arm_overlap"
+    },
+    {
+      "attempt": 469,
+      "origin": [
+        15,
+        4,
+        21
+      ],
+      "phase": 2,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "arm_overlap"
+    },
+    {
+      "attempt": 470,
+      "origin": [
+        15,
+        4,
+        21
+      ],
+      "phase": 2,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "arm_overlap"
+    },
+    {
+      "attempt": 471,
+      "origin": [
+        15,
+        4,
+        21
+      ],
+      "phase": 2,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "arm_overlap"
+    },
+    {
+      "attempt": 472,
+      "origin": [
+        15,
+        4,
+        22
+      ],
+      "phase": 2,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 473,
+      "origin": [
+        15,
+        4,
+        22
+      ],
+      "phase": 2,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 474,
+      "origin": [
+        15,
+        4,
+        23
+      ],
+      "phase": 2,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 475,
+      "origin": [
+        15,
+        4,
+        23
+      ],
+      "phase": 2,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 476,
+      "origin": [
+        15,
+        5,
+        14
+      ],
+      "phase": 1,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 477,
+      "origin": [
+        15,
+        5,
+        14
+      ],
+      "phase": 1,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 478,
+      "origin": [
+        15,
+        5,
+        14
+      ],
+      "phase": 1,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 479,
+      "origin": [
+        15,
+        5,
+        14
+      ],
+      "phase": 1,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 480,
+      "origin": [
+        15,
+        5,
+        15
+      ],
+      "phase": 1,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 481,
+      "origin": [
+        15,
+        5,
+        15
+      ],
+      "phase": 1,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 482,
+      "origin": [
+        15,
+        5,
+        16
+      ],
+      "phase": 1,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 483,
+      "origin": [
+        15,
+        5,
+        16
+      ],
+      "phase": 1,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 484,
+      "origin": [
+        15,
+        5,
+        16
+      ],
+      "phase": 4,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 485,
+      "origin": [
+        15,
+        5,
+        16
+      ],
+      "phase": 1,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 486,
+      "origin": [
+        15,
+        5,
+        16
+      ],
+      "phase": 4,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 487,
+      "origin": [
+        15,
+        5,
+        16
+      ],
+      "phase": 1,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 488,
+      "origin": [
+        15,
+        5,
+        17
+      ],
+      "phase": 4,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 489,
+      "origin": [
+        15,
+        5,
+        17
+      ],
+      "phase": 4,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 490,
+      "origin": [
+        15,
+        5,
+        18
+      ],
+      "phase": 4,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 491,
+      "origin": [
+        15,
+        5,
+        18
+      ],
+      "phase": 4,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 492,
+      "origin": [
+        15,
+        5,
+        18
+      ],
+      "phase": 4,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 493,
+      "origin": [
+        15,
+        5,
+        18
+      ],
+      "phase": 4,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "terminal_cross_power"
+    },
+    {
+      "attempt": 494,
+      "origin": [
+        15,
+        5,
+        19
+      ],
+      "phase": 4,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 495,
+      "origin": [
+        15,
+        5,
+        19
+      ],
+      "phase": 4,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 496,
+      "origin": [
+        15,
+        5,
+        20
+      ],
+      "phase": 2,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 497,
+      "origin": [
+        15,
+        5,
+        20
+      ],
+      "phase": 2,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 498,
+      "origin": [
+        15,
+        5,
+        21
+      ],
+      "phase": 2,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 499,
+      "origin": [
+        15,
+        5,
+        21
+      ],
+      "phase": 2,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 500,
+      "origin": [
+        15,
+        5,
+        21
+      ],
+      "phase": 2,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 501,
+      "origin": [
+        15,
+        5,
+        21
+      ],
+      "phase": 2,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 502,
+      "origin": [
+        15,
+        5,
+        22
+      ],
+      "phase": 2,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 503,
+      "origin": [
+        15,
+        5,
+        22
+      ],
+      "phase": 2,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 504,
+      "origin": [
+        15,
+        5,
+        22
+      ],
+      "phase": 2,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 505,
+      "origin": [
+        15,
+        5,
+        22
+      ],
+      "phase": 2,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 506,
+      "origin": [
+        15,
+        6,
+        15
+      ],
+      "phase": 1,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 507,
+      "origin": [
+        15,
+        6,
+        15
+      ],
+      "phase": 1,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 508,
+      "origin": [
+        15,
+        6,
+        16
+      ],
+      "phase": 4,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 509,
+      "origin": [
+        15,
+        6,
+        16
+      ],
+      "phase": 4,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 510,
+      "origin": [
+        15,
+        6,
+        17
+      ],
+      "phase": 4,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 511,
+      "origin": [
+        15,
+        6,
+        17
+      ],
+      "phase": 4,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "terminal_cross_power"
+    },
+    {
+      "attempt": 512,
+      "origin": [
+        15,
+        6,
+        17
+      ],
+      "phase": 4,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 513,
+      "origin": [
+        15,
+        6,
+        17
+      ],
+      "phase": 4,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 514,
+      "origin": [
+        15,
+        6,
+        18
+      ],
+      "phase": 4,
+      "transform": [
+        0,
+        -1,
+        -1
+      ],
+      "reason": "arm_overlap"
+    },
+    {
+      "attempt": 515,
+      "origin": [
+        15,
+        6,
+        18
+      ],
+      "phase": 4,
+      "transform": [
+        0,
+        -1,
+        1
+      ],
+      "reason": "arm_overlap"
+    },
+    {
+      "attempt": 516,
+      "origin": [
+        15,
+        6,
+        18
+      ],
+      "phase": 4,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "arm_overlap"
+    },
+    {
+      "attempt": 517,
+      "origin": [
+        15,
+        6,
+        18
+      ],
+      "phase": 4,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "arm_overlap"
+    },
+    {
+      "attempt": 518,
+      "origin": [
+        15,
+        6,
+        18
+      ],
+      "phase": 4,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "arm_overlap"
+    },
+    {
+      "attempt": 519,
+      "origin": [
+        15,
+        6,
+        18
+      ],
+      "phase": 4,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "arm_overlap"
+    },
+    {
+      "attempt": 520,
+      "origin": [
+        15,
+        6,
+        19
+      ],
+      "phase": 4,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 521,
+      "origin": [
+        15,
+        6,
+        19
+      ],
+      "phase": 4,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 522,
+      "origin": [
+        15,
+        6,
+        20
+      ],
+      "phase": 2,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 523,
+      "origin": [
+        15,
+        6,
+        20
+      ],
+      "phase": 4,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 524,
+      "origin": [
+        15,
+        6,
+        20
+      ],
+      "phase": 2,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 525,
+      "origin": [
+        15,
+        6,
+        20
+      ],
+      "phase": 4,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 526,
+      "origin": [
+        15,
+        6,
+        21
+      ],
+      "phase": 2,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 527,
+      "origin": [
+        15,
+        6,
+        21
+      ],
+      "phase": 2,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 528,
+      "origin": [
+        15,
+        6,
+        22
+      ],
+      "phase": 2,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 529,
+      "origin": [
+        15,
+        6,
+        22
+      ],
+      "phase": 2,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 530,
+      "origin": [
+        15,
+        7,
+        17
+      ],
+      "phase": 4,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 531,
+      "origin": [
+        15,
+        7,
+        17
+      ],
+      "phase": 4,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 532,
+      "origin": [
+        15,
+        7,
+        17
+      ],
+      "phase": 4,
+      "transform": [
+        1,
+        -1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 533,
+      "origin": [
+        15,
+        7,
+        17
+      ],
+      "phase": 4,
+      "transform": [
+        1,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 534,
+      "origin": [
+        15,
+        7,
+        18
+      ],
+      "phase": 4,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 535,
+      "origin": [
+        15,
+        7,
+        18
+      ],
+      "phase": 4,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 536,
+      "origin": [
+        15,
+        7,
+        19
+      ],
+      "phase": 4,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 537,
+      "origin": [
+        15,
+        7,
+        19
+      ],
+      "phase": 4,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 538,
+      "origin": [
+        15,
+        7,
+        19
+      ],
+      "phase": 4,
+      "transform": [
+        1,
+        -1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 539,
+      "origin": [
+        15,
+        7,
+        19
+      ],
+      "phase": 4,
+      "transform": [
+        1,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 540,
+      "origin": [
+        15,
+        7,
+        21
+      ],
+      "phase": 2,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 541,
+      "origin": [
+        15,
+        7,
+        21
+      ],
+      "phase": 2,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 542,
+      "origin": [
+        15,
+        8,
+        18
+      ],
+      "phase": 4,
+      "transform": [
+        0,
+        1,
+        -1
+      ],
+      "reason": "mandatory"
+    },
+    {
+      "attempt": 543,
+      "origin": [
+        15,
+        8,
+        18
+      ],
+      "phase": 4,
+      "transform": [
+        0,
+        1,
+        1
+      ],
+      "reason": "mandatory"
+    }
+  ],
+  "scope": "unchangedPL18 driver plus local three-cell target"
+}

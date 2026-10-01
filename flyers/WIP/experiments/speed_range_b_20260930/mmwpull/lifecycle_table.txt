@@ -1,0 +1,16 @@
+slot           0         1         2         3         4         5
+b0 move         M         M         w         M         M         w   X=b2 Z=b1
+  As      own@+2    own@+2   FIRE@+2    frz@+2    own@+1 FOREIGN@+1
+  Bs      frz@+2    own@+1 FOREIGN@+1    own@+2    own@+2   FIRE@+2
+  Pn      own@-2    own@-2 FOREIGN@-2    own@-1   FIRE@-1    frz@-2
+  Qn      own@-1   FIRE@-1    frz@-2    own@-2    own@-2 FOREIGN@-2
+b1 move         w         M         M         w         M         M   X=b0 Z=b2
+  As     FIRE@+2    frz@+2    own@+1 FOREIGN@+1    own@+2    own@+2
+  Bs   FOREIGN@+1    own@+2    own@+2   FIRE@+2    frz@+2    own@+1
+  Pn   FOREIGN@-2    own@-1   FIRE@-1    frz@-2    own@-2    own@-2
+  Qn      frz@-2    own@-2    own@-2 FOREIGN@-2    own@-1   FIRE@-1
+b2 move         M         w         M         M         w         M   X=b1 Z=b0
+  As      own@+2   FIRE@+2    frz@+2    own@+1 FOREIGN@+1    own@+2
+  Bs      own@+1 FOREIGN@+1    own@+2    own@+2   FIRE@+2    frz@+2
+  Pn      own@-2 FOREIGN@-2    own@-1   FIRE@-1    frz@-2    own@-2
+  Qn     FIRE@-1    frz@-2    own@-2    own@-2 FOREIGN@-2    own@-1

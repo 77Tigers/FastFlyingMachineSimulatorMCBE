@@ -64,3 +64,12 @@ push_limit,name,start_min_x,end_min_x,distance,end_blocks,extensions
 37,planar_mmwmmw,12,3345,3333,109,10000
 36,planar_mmwmmw,12,3345,3333,105,10000
 102,pulling3_tenbody,11,3011,3000,845,30000
+18,n3_five_body,13,3013,3000,91,15000
+21,n4_twelve_body,13,3346,3333,256,40000
+29,shared_source_mmwmmw,12,3345,3333,83,10000
+12,ab_push_pull_2body,1,2501,2500,22,5000
+24,pull_twice_mmwmmw,1,3334,3333,69,10000
+22,pull_twice_mmwmmw,0,3333,3333,64,10000
+34,ab_push_pull_7body,10,3010,3000,201,21000
+85,ab_push_pull_9body,10,3343,3333,542,29999
+71,ab_push_pull_9body,9,3343,3334,502,30000

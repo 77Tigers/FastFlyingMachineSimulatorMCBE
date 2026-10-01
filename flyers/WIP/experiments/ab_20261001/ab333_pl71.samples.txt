@@ -1,0 +1,1 @@
+samples passed=80/80 file=ab_20261001/ab333_pl71.flyer ticks=10000 period=12 advance=4 first_failed=None out=ab_20261001/ab333_pl71.samples.csv

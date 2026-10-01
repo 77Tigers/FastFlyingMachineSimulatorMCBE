@@ -1,0 +1,6 @@
+screen candidates=8 clean=8 ticks=240 out=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\retrofit_front_pull_transverse.screen.csv
+  distance=72 load=24 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\retrofit_front_pull_transverse\c1035.flyer
+  distance=72 load=24 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\retrofit_front_pull_transverse\c1036.flyer
+  distance=72 load=24 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\retrofit_front_pull_transverse\c1177.flyer
+  distance=72 load=22 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\retrofit_front_pull_transverse\c352.flyer
+  distance=72 load=22 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\retrofit_front_pull_transverse\c353.flyer

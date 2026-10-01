@@ -1,0 +1,407 @@
+{
+  "stats": {
+    "mandatory": 40
+  },
+  "attempts": [
+    {
+      "q": 0,
+      "side": [
+        0,
+        1,
+        0
+      ],
+      "prune": false,
+      "reason": "mandatory"
+    },
+    {
+      "q": 0,
+      "side": [
+        0,
+        1,
+        0
+      ],
+      "prune": true,
+      "reason": "mandatory"
+    },
+    {
+      "q": 0,
+      "side": [
+        0,
+        -1,
+        0
+      ],
+      "prune": false,
+      "reason": "mandatory"
+    },
+    {
+      "q": 0,
+      "side": [
+        0,
+        -1,
+        0
+      ],
+      "prune": true,
+      "reason": "mandatory"
+    },
+    {
+      "q": 0,
+      "side": [
+        0,
+        0,
+        1
+      ],
+      "prune": false,
+      "reason": "mandatory"
+    },
+    {
+      "q": 0,
+      "side": [
+        0,
+        0,
+        1
+      ],
+      "prune": true,
+      "reason": "mandatory"
+    },
+    {
+      "q": 0,
+      "side": [
+        0,
+        0,
+        -1
+      ],
+      "prune": false,
+      "reason": "mandatory"
+    },
+    {
+      "q": 0,
+      "side": [
+        0,
+        0,
+        -1
+      ],
+      "prune": true,
+      "reason": "mandatory"
+    },
+    {
+      "q": 1,
+      "side": [
+        0,
+        1,
+        0
+      ],
+      "prune": false,
+      "reason": "mandatory"
+    },
+    {
+      "q": 1,
+      "side": [
+        0,
+        1,
+        0
+      ],
+      "prune": true,
+      "reason": "mandatory"
+    },
+    {
+      "q": 1,
+      "side": [
+        0,
+        -1,
+        0
+      ],
+      "prune": false,
+      "reason": "mandatory"
+    },
+    {
+      "q": 1,
+      "side": [
+        0,
+        -1,
+        0
+      ],
+      "prune": true,
+      "reason": "mandatory"
+    },
+    {
+      "q": 1,
+      "side": [
+        0,
+        0,
+        1
+      ],
+      "prune": false,
+      "reason": "mandatory"
+    },
+    {
+      "q": 1,
+      "side": [
+        0,
+        0,
+        1
+      ],
+      "prune": true,
+      "reason": "mandatory"
+    },
+    {
+      "q": 1,
+      "side": [
+        0,
+        0,
+        -1
+      ],
+      "prune": false,
+      "reason": "mandatory"
+    },
+    {
+      "q": 1,
+      "side": [
+        0,
+        0,
+        -1
+      ],
+      "prune": true,
+      "reason": "mandatory"
+    },
+    {
+      "q": 2,
+      "side": [
+        0,
+        1,
+        0
+      ],
+      "prune": false,
+      "reason": "mandatory"
+    },
+    {
+      "q": 2,
+      "side": [
+        0,
+        1,
+        0
+      ],
+      "prune": true,
+      "reason": "mandatory"
+    },
+    {
+      "q": 2,
+      "side": [
+        0,
+        -1,
+        0
+      ],
+      "prune": false,
+      "reason": "mandatory"
+    },
+    {
+      "q": 2,
+      "side": [
+        0,
+        -1,
+        0
+      ],
+      "prune": true,
+      "reason": "mandatory"
+    },
+    {
+      "q": 2,
+      "side": [
+        0,
+        0,
+        1
+      ],
+      "prune": false,
+      "reason": "mandatory"
+    },
+    {
+      "q": 2,
+      "side": [
+        0,
+        0,
+        1
+      ],
+      "prune": true,
+      "reason": "mandatory"
+    },
+    {
+      "q": 2,
+      "side": [
+        0,
+        0,
+        -1
+      ],
+      "prune": false,
+      "reason": "mandatory"
+    },
+    {
+      "q": 2,
+      "side": [
+        0,
+        0,
+        -1
+      ],
+      "prune": true,
+      "reason": "mandatory"
+    },
+    {
+      "q": 3,
+      "side": [
+        0,
+        1,
+        0
+      ],
+      "prune": false,
+      "reason": "mandatory"
+    },
+    {
+      "q": 3,
+      "side": [
+        0,
+        1,
+        0
+      ],
+      "prune": true,
+      "reason": "mandatory"
+    },
+    {
+      "q": 3,
+      "side": [
+        0,
+        -1,
+        0
+      ],
+      "prune": false,
+      "reason": "mandatory"
+    },
+    {
+      "q": 3,
+      "side": [
+        0,
+        -1,
+        0
+      ],
+      "prune": true,
+      "reason": "mandatory"
+    },
+    {
+      "q": 3,
+      "side": [
+        0,
+        0,
+        1
+      ],
+      "prune": false,
+      "reason": "mandatory"
+    },
+    {
+      "q": 3,
+      "side": [
+        0,
+        0,
+        1
+      ],
+      "prune": true,
+      "reason": "mandatory"
+    },
+    {
+      "q": 3,
+      "side": [
+        0,
+        0,
+        -1
+      ],
+      "prune": false,
+      "reason": "mandatory"
+    },
+    {
+      "q": 3,
+      "side": [
+        0,
+        0,
+        -1
+      ],
+      "prune": true,
+      "reason": "mandatory"
+    },
+    {
+      "q": 4,
+      "side": [
+        0,
+        1,
+        0
+      ],
+      "prune": false,
+      "reason": "mandatory"
+    },
+    {
+      "q": 4,
+      "side": [
+        0,
+        1,
+        0
+      ],
+      "prune": true,
+      "reason": "mandatory"
+    },
+    {
+      "q": 4,
+      "side": [
+        0,
+        -1,
+        0
+      ],
+      "prune": false,
+      "reason": "mandatory"
+    },
+    {
+      "q": 4,
+      "side": [
+        0,
+        -1,
+        0
+      ],
+      "prune": true,
+      "reason": "mandatory"
+    },
+    {
+      "q": 4,
+      "side": [
+        0,
+        0,
+        1
+      ],
+      "prune": false,
+      "reason": "mandatory"
+    },
+    {
+      "q": 4,
+      "side": [
+        0,
+        0,
+        1
+      ],
+      "prune": true,
+      "reason": "mandatory"
+    },
+    {
+      "q": 4,
+      "side": [
+        0,
+        0,
+        -1
+      ],
+      "prune": false,
+      "reason": "mandatory"
+    },
+    {
+      "q": 4,
+      "side": [
+        0,
+        0,
+        -1
+      ],
+      "prune": true,
+      "reason": "mandatory"
+    }
+  ]
+}

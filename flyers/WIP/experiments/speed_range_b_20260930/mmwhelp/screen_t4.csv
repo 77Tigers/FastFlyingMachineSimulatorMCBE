@@ -1,0 +1,10 @@
+file,limit,rng,phase_x,phase_z,ticks,distance,end_blocks,extensions,extension_failures,movement_failures,first_failure_tick,first_failure_kind,conservation_mismatch_ticks,max_successful_action,clean
+"speed_range_b_20260930/mmwhelp/t4\o0.flyer",1000,5,0,0,240,80,154,240,0,0,,"",0,53,true
+"speed_range_b_20260930/mmwhelp/t4\o10.flyer",1000,5,0,0,240,80,112,240,0,0,,"",0,41,true
+"speed_range_b_20260930/mmwhelp/t4\o11.flyer",1000,5,0,0,240,80,126,240,0,0,,"",0,44,true
+"speed_range_b_20260930/mmwhelp/t4\o15.flyer",1000,5,0,0,240,80,134,240,0,0,,"",0,51,true
+"speed_range_b_20260930/mmwhelp/t4\o3.flyer",1000,5,0,0,240,80,118,240,0,0,,"",0,47,true
+"speed_range_b_20260930/mmwhelp/t4\o4.flyer",1000,5,0,0,240,80,137,240,0,0,,"",0,53,true
+"speed_range_b_20260930/mmwhelp/t4\o5.flyer",1000,5,0,0,240,80,128,240,0,0,,"",0,49,true
+"speed_range_b_20260930/mmwhelp/t4\o6.flyer",1000,5,0,0,240,80,122,240,0,0,,"",0,46,true
+"speed_range_b_20260930/mmwhelp/t4\o8.flyer",1000,5,0,0,240,80,119,240,0,0,,"",0,49,true
