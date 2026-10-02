@@ -657,6 +657,7 @@ function setMode(mode) {
   $('mode-detailed').classList.toggle('active',mode==='detailed');
   $('mode-ticks').setAttribute('aria-pressed',String(mode==='ticks'));
   $('mode-detailed').setAttribute('aria-pressed',String(mode==='detailed'));
+  $('viewport-label').hidden=mode!=='detailed';
   if(trace)showBoundary(tickIndex);
 }
 function stopPlayback() {playing=false;playbackAccumulator=0;$('play').textContent='▶';$('play').setAttribute('aria-label','Play');}
@@ -814,6 +815,14 @@ async function loadBank() {
 $('open-bank').disabled=true;
 $('open-bank').onclick=()=>{setDisplayFocused(false);$('bank-dialog').showModal();};
 $('close-bank').onclick=()=>$('bank-dialog').close();
+$('open-help').onclick=()=>{setDisplayFocused(false);$('help-dialog').showModal();};
+$('close-help').onclick=()=>$('help-dialog').close();
+$('help-got-it').onclick=()=>$('help-dialog').close();
+$('help-dialog').addEventListener('click',event=>{
+  if(event.target!==$('help-dialog'))return;
+  const rect=$('help-dialog').getBoundingClientRect();
+  if(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom)$('help-dialog').close();
+});
 $('bank-dialog').addEventListener('click',event=>{
   if(event.target!==$('bank-dialog'))return;
   const rect=$('bank-dialog').getBoundingClientRect();
@@ -871,7 +880,7 @@ document.addEventListener('pointerdown',event=>{
   setDisplayFocused(false);renderer.domElement.blur();
 },true);
 window.addEventListener('keydown',event=>{
-  if($('bank-dialog').open)return;
+  if($('bank-dialog').open||$('help-dialog').open)return;
   if(event.target instanceof HTMLElement&&(event.target.matches('input, textarea, select')||event.target.isContentEditable))return;
   if(event.key==='ArrowRight'){event.preventDefault();advance(1);return;}
   if(event.key==='ArrowLeft'){event.preventDefault();advance(-1);return;}
@@ -915,7 +924,7 @@ function animate(now){
   const dt=Math.min((now-lastFrame)/1000,.1);lastFrame=now;
   moveCamera(dt);
   if(ground){ground.position.x=camera.position.x;ground.position.z=camera.position.z;}
-  if(playing&&trace&&!$('bank-dialog').open){
+  if(playing&&trace&&!$('bank-dialog').open&&!$('help-dialog').open){
     playbackAccumulator+=dt*10*playbackSpeed();
     let count=Math.min(Math.floor(playbackAccumulator),100);
     if(count){

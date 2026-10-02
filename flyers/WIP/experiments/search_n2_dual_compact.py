@@ -3,7 +3,7 @@ from pathlib import Path
 import os,sys,subprocess
 ROOT=Path(__file__).resolve().parents[3];sys.path.insert(0,str(ROOT))
 from fastflyer import Flyer,Block,Kind
-unit=Flyer.load(ROOT/'flyers/bank/pl12/compact_slime.flyer')
+unit=Flyer.load(ROOT/'flyers/bank/pl3/compact_slime.flyer')
 out=Path(os.environ['TEMP'])/'n2_dual_compact';out.mkdir(exist_ok=True)
 for dx in range(-3,4):
  for dy in range(-2,3):

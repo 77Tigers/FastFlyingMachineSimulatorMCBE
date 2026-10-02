@@ -11,8 +11,8 @@
   <header class="topbar">
     <div class="brand"><span class="brand-mark">◈</span><div><strong id="run-title">FastFlyer</strong><small id="flyer-meta">Push limit —</small></div></div>
     <div class="top-actions">
-      <button id="open-bank" class="subtle">Browse flyer bank</button>
-      <label class="load-button">Open .flyer<input id="file" type="file" accept=".flyer,application/octet-stream"></label>
+      <button id="open-bank" class="top-btn primary">Browse flyer bank</button>
+      <label class="top-btn secondary">Open .flyer<input id="file" type="file" accept=".flyer,application/octet-stream"></label>
     </div>
   </header>
   <main class="layout">
@@ -21,19 +21,15 @@
         <div class="timeline-top">
           <div><span class="eyebrow">PLAYBACK</span><div id="step-counter">Initial state</div></div>
           <div class="playback-actions">
-            <div class="segmented mode-select" role="group" aria-label="Playback detail">
-              <button id="mode-ticks" class="active" aria-pressed="true">Ticks</button>
-              <button id="mode-detailed" aria-pressed="false">Detailed</button>
-            </div>
             <label class="speed-control" for="speed">Speed <input id="speed" type="range" min="0" max="26" step="1" value="11" aria-valuetext="1×"><output id="speed-label" for="speed">1×</output></label>
             <div class="player"><button id="reset" aria-label="Reset to start" title="Reset to start">↺</button><button id="direction" aria-label="Direction: forward" title="Toggle playback direction">→</button><button id="step" aria-label="Step forward" title="Step once">›</button><button id="play" aria-label="Play" title="Play / pause">▶</button></div>
           </div>
         </div>
       </div>
       <div id="viewport">
-        <div class="viewport-label"><span id="step-badge">INITIAL</span><span id="step-title">Initial configuration</span></div>
+        <div id="viewport-label" class="viewport-label" hidden><span id="step-badge">INITIAL</span><span id="step-title">Initial configuration</span></div>
         <div id="canvas"></div>
-        <div class="viewport-hint">Drag to look · Scroll to move · WASD to move · Space/Shift vertically · Click to inspect</div>
+        <button id="open-help" class="help-btn" type="button" aria-label="Need help?" title="Need help?"><span class="help-mark" aria-hidden="true">?</span><span class="help-text">Need help?</span></button>
       </div>
     </section>
     <aside class="right-panel">
@@ -49,6 +45,7 @@
       <div id="details-panel" class="panel-section" hidden><div class="section-head"><span id="details-title">ACTION DETAILS</span></div><div id="details" class="details"></div></div>
       <div id="order-panel" class="panel-section" hidden><div class="section-head"><span>UPDATE ORDER</span></div><div id="update-order" class="update-order"></div></div>
       <details class="panel-section slice-panel"><summary>Slice filter <span>optional</span></summary><div class="slice-footer-controls"><div class="slice-row"><label><input id="slice-x-on" type="checkbox"> X</label><input id="slice-x" type="number" value="0"></div><div class="slice-row"><label><input id="slice-y-on" type="checkbox"> Y</label><input id="slice-y" type="number" value="1"></div><div class="slice-row"><label><input id="slice-z-on" type="checkbox"> Z</label><input id="slice-z" type="number" value="0"></div></div></details>
+      <div class="panel-section mode-panel"><div class="section-head"><span>PLAYBACK DETAIL</span></div><div class="segmented mode-select" role="group" aria-label="Playback detail"><button id="mode-ticks" class="active" aria-pressed="true">Ticks</button><button id="mode-detailed" aria-pressed="false">Detailed</button></div></div>
     </aside>
   </main>
   <dialog id="bank-dialog" aria-labelledby="bank-title">
@@ -63,6 +60,44 @@
       <div class="bank-tag-filters" role="group" aria-label="Flyer categories"><span>Match all selected:</span><label><input type="checkbox" id="filter-pushing"> Pushing-only</label><label><input type="checkbox" id="filter-pulling"> Pulling-only</label><label><input type="checkbox" id="filter-observer"> Observer-only</label><label><input type="checkbox" id="filter-no-observer"> No observers</label><button id="bank-clear" class="subtle">Clear filters</button></div>
       <div class="bank-list-heading"><span id="bank-count"></span><span>Choose a flyer to open it paused</span></div>
       <div id="bank-list" class="bank-list"></div>
+    </div>
+  </dialog>
+  <dialog id="help-dialog" aria-labelledby="help-title">
+    <div class="help-modal">
+      <header class="help-header"><div><span class="eyebrow">QUICK GUIDE</span><h1 id="help-title">Getting around</h1></div><button id="close-help" class="subtle" aria-label="Close help">✕</button></header>
+      <div class="help-body">
+        <section><h2>Moving the camera</h2>
+          <dl>
+            <dt>Drag</dt><dd>Look around. Click the scene first so it has focus.</dd>
+            <dt>Scroll wheel</dt><dd>Move forward or backward in the direction you are looking.</dd>
+            <dt>W A S D</dt><dd>Walk forward, left, backward and right.</dd>
+            <dt>Space or E</dt><dd>Fly up.</dd>
+            <dt>Shift or Q</dt><dd>Fly down.</dd>
+            <dt>Click a block</dt><dd>Inspect it: its state, owner and coordinates appear in the right panel. Click empty space to deselect.</dd>
+          </dl>
+          <p class="help-note">Movement keys only work while the scene is focused. Clicking anywhere else, or opening a popup, releases them.</p>
+        </section>
+        <section><h2>Playback</h2>
+          <dl>
+            <dt>▶ / Ⅱ</dt><dd>Play or pause.</dd>
+            <dt>›  ‹</dt><dd>Step once. The Left and Right arrow keys step backward and forward too.</dd>
+            <dt>→ / ←</dt><dd>Switch between playing forward and backward.</dd>
+            <dt>↺</dt><dd>Reset to the starting state.</dd>
+            <dt>Speed</dt><dd>0.1× to 30×. At 1× the simulation runs 10 ticks per second.</dd>
+          </dl>
+        </section>
+        <section><h2>Ticks or Detailed</h2>
+          <p>The switch at the bottom of the right panel picks how finely you step. <strong>Ticks</strong> advances a whole game tick at a time. <strong>Detailed</strong> breaks one tick into its individual power and piston actions, adds a label with the current action to the scene, and lets you show or hide power paths, move discovery, moving owners and chunk boundaries.</p>
+        </section>
+        <section><h2>Flyers and tools</h2>
+          <dl>
+            <dt>Browse flyer bank</dt><dd>Search, filter and sort the collection, or click a bar in the chart to open a fastest flyer at that push limit. Flyers open paused.</dd>
+            <dt>Open .flyer</dt><dd>Load a file from your computer. It stays in your browser and is never uploaded.</dd>
+            <dt>Slice filter</dt><dd>Optional. Tick X, Y or Z and enter a coordinate to show only the blocks on that layer.</dd>
+          </dl>
+        </section>
+      </div>
+      <footer class="help-footer"><button id="help-got-it" class="top-btn primary" type="button" autofocus>Got it</button></footer>
     </div>
   </dialog>
   <script type="module" src="./app.js?v=__APP_HASH__"></script>
