@@ -20,3 +20,17 @@ alone loads a pull at 13+.
 Next: exhaust run14b (stopped early at ~13 min), or generate ports with smaller rails (rail pull load ~ rail glue + attached) / allow
 carrier extension on light B41/B45 only; PL13/12 likely needs a shorter rail (<=10 glue) which needs closer ports.
 All my processes stopped. No bank/src changes.
+
+## PL14 result (agent J-excl14, subagent of J, 2026-10-02)
+VERIFIED PL14: j_light16/ver14/cand14.flyer (push_limit 14; copy of run14g/s8/c0000.flyer, geometry in cand14.json: word mmmww, ports carriers B37,B18,B35 / sources B45,B15,B37).
+- measure 10000 10 (ver14/measure.txt): distance 3000, extension_failures 0, movement_failures 0, conservation_mismatch_ticks 0.
+- roles.exe FILE 10000 0 10 (ver14/roles.txt): B20 PULL_ONLY glue12 (pulls 3000, pushes 0); PUSH_ONLY B11,B18,B25,B37,B38,B42,B46 (3000/0); rest MIXED.
+- 80 cases (ver14/cand14.samples.csv): 80/80 distance 3000, failures 0, conserved true (limit column 14).
+- At limit 13 it fails (extension failures); several bodies and a rail pull (12 rail + 2 pistons) sit at load 14.
+Why earlier PL14 runs found nothing, and what fixed it (this is the lesson):
+1. The 3-sticky rail pull load is rail glue + 1 adhered earlier sticky piston on pulls 2 and 3 (ho13 P1 = 14; sl12 P2 = 14), so at PL14 the rail must be <=12-13 glue, not 14. RAILMAX 14 candidates fail at the push limit.
+2. jports*.py ports/rails that passed its checks all abandoned the rail after the first pull (distance 2-3): the rail moved at slot 0 while touching the f=0 port's sticky piston (5,3,1), dragging it (moving piston cannot extend), so port 2 missed its first extension. Fix in jports_st.py: rail_ok_port forbids a rail cell adjacent to the sticky at slot f when the rail moves (k==f).
+3. Screening each port alone in the real simulator (portscreen.py: base + one port, ledger first 60 ticks at LIM, require extend at 2f and retract at 2s, no FAIL) cut 782 cached ports to 140 valid at LIM=14 (64/60/9/4/3 per slot) and 63->58 at LIM=13.
+4. jports_st.py: exact 3-terminal Steiner rail (BFS from each face + best meeting cell, rail_base/rail_port caches), port-conflict prefilter, SHARD/NSH sharding. 15 shards x ~10 min on run14g found cand14 (shard 8) after ~1 candidate rail-11 (shard 12 fails: rail abandoned). ~1/15000 triples routes a rail <=13.
+Other runs: run14c (sharded jports14.py on unscreened ports): 7 candidates, all abandon the rail. run14e/run14f: with RAILMAX 14 / before the slot-f adjacency fix: 6+ candidates, all fail. PL13: run13g (screened ports at LIM 13, 286 budget triples, rail <=11): 0 candidates.
+Scripts: jports14.py (sharded jports400), jports_st.py, portscreen.py, screen.sh.

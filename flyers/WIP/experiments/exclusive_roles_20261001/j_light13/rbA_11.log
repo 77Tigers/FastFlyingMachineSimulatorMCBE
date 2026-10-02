@@ -1,0 +1,24 @@
+pool {0: {'D': 27, 'R': 29}, 1: {'D': 26, 'R': 13, 'E': 1}, 2: {'D': 1, 'E': 1, 'R': 9}, 3: {'D': 2, 'R': 26}, 4: {'D': 2, 'R': 34}}
+mmmww 1 [27, 40, 11]
+mmmww 2 [27, 40, 11]
+mmwmw 1 [27, 40, 2]
+mmwmw 2 [27, 40, 2]
+mmwwm 1 [56, 40, 2]
+mmwwm 2 [56, 40, 2]
+mwmmw 1 [27, 2, 28]
+mwmmw 2 [27, 2, 28]
+mwmwm 1 [56, 2, 2]
+mwmwm 2 [56, 2, 2]
+mwwmm 1 [56, 2, 36]
+mwwmm 2 [56, 2, 36]
+wmmmw 1 [27, 11, 28]
+wmmmw 2 [27, 11, 28]
+wmmwm 1 [27, 11, 2]
+wmmwm 2 [27, 11, 2]
+wmwmm 1 [27, 2, 36]
+wmwmm 2 [27, 2, 36]
+wwmmm 1 [2, 28, 36]
+wwmmm 2 [2, 28, 36]
+combos 6193
+prog 0 {}
+prog 2000 {'face': 1710, 'rail17': 2, 'budget': 222, 'conflict': 20, 'rail29': 7, 'rail21': 7, 'rail22': 2, 'rail23': 1, 'rail27': 3, 'rail32': 2, 'rail35': 2, 'rail28': 2, 'rail30': 4, 'rail20': 2, 'rail19': 1, 'rail25': 2, 'rail24': 5, 'rail31': 1, 'rail34': 2, 'norail': 1, 'rail36': 1, 'rail41': 1}

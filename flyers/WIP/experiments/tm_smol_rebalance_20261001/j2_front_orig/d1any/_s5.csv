@@ -1,0 +1,53 @@
+file,limit,rng,phase_x,phase_z,ticks,distance,end_blocks,extensions,extension_failures,movement_failures,first_failure_tick,first_failure_kind,conservation_mismatch_ticks,max_successful_action,clean
+"d1any/_s5\B15_d0.5.9_a1.4.9B15.flyer",13,0,0,0,300,0,192,157,0,0,,"",0,12,true
+"d1any/_s5\B15_d1.5.9_a1.3.10B17.flyer",13,0,0,0,300,0,192,157,0,0,,"",0,12,true
+"d1any/_s5\B15_d2.5.9_a0.5.8B15.flyer",13,0,0,0,300,0,192,157,0,0,,"",0,12,true
+"d1any/_s5\B15_d2.5.9_a3.5.8B15.flyer",13,0,0,0,300,0,193,109,9,12,4,"(Coord { x: 8, y: 4, z: 8 }, ""immovable obstruction"")",0,12,false
+"d1any/_s5\B15_d3.3.9_a1.4.9B15.flyer",13,0,0,0,300,1,192,112,572,572,14,"(Coord { x: 5, y: 5, z: 9 }, ""push limit exceeded"")",0,12,false
+"d1any/_s5\B15_d3.3.9_a4.4.9B15.flyer",13,0,0,0,300,1,193,92,868,870,8,"(Coord { x: 4, y: 4, z: 9 }, ""push limit exceeded"")",0,12,false
+"d1any/_s5\B15_d3.4.10_a2.2.11B17.flyer",13,0,0,0,300,1,192,67,588,590,2,"(Coord { x: 3, y: 2, z: 11 }, ""push limit exceeded"")",0,12,false
+"d1any/_s5\B15_d3.4.10_a3.6.12B9.flyer",13,0,0,0,300,1,193,103,1156,1156,8,"(Coord { x: 4, y: 5, z: 13 }, ""push limit exceeded"")",0,13,false
+"d1any/_s5\B15_d3.4.9_a1.3.10B17.flyer",13,0,0,0,300,0,194,124,0,0,,"",0,13,true
+"d1any/_s5\B15_d3.4.9_a3.6.8B16.flyer",13,0,0,0,300,0,194,124,0,0,,"",0,13,true
+"d1any/_s5\B15_d3.5.9_a1.5.11B9.flyer",13,0,0,0,300,0,192,81,1,2,0,"(Coord { x: 2, y: 5, z: 11 }, ""push limit exceeded"")",0,12,false
+"d1any/_s5\B15_d3.5.9_a4.4.9B15.flyer",13,0,0,0,300,0,192,90,1161,1163,2,"(Coord { x: 6, y: 4, z: 9 }, ""immovable obstruction"")",0,12,false
+"d1any/_s5\B16_d0.6.11_a0.4.9B15.flyer",13,0,0,0,300,0,192,77,584,586,4,"(Coord { x: 2, y: 3, z: 9 }, ""push limit exceeded"")",0,13,false
+"d1any/_s5\B16_d1.6.11_a-1.4.13B9.flyer",13,0,0,0,300,0,192,133,0,0,,"",0,12,true
+"d1any/_s5\B16_d1.6.11_a1.6.9B15.flyer",13,0,0,0,300,0,192,77,584,586,4,"(Coord { x: 3, y: 6, z: 10 }, ""push limit exceeded"")",0,13,false
+"d1any/_s5\B16_d2.6.11_a0.5.12B9.flyer",13,0,0,0,300,0,192,133,0,0,,"",0,12,true
+"d1any/_s5\B16_d2.6.11_a3.5.11B9.flyer",13,0,0,0,300,0,192,133,0,0,,"",0,12,true
+"d1any/_s5\B16_d2.6.11_a4.7.9B29.flyer",13,0,0,0,300,0,192,67,1176,1179,0,"(Coord { x: 4, y: 8, z: 10 }, ""push limit exceeded"")",0,12,false
+"d1any/_s5\B16_d3.5.10_a2.7.12B9.flyer",13,0,0,0,300,2,193,107,575,577,2,"(Coord { x: 3, y: 7, z: 12 }, ""immovable obstruction"")",0,13,false
+"d1any/_s5\B16_d3.5.10_a4.6.11B16.flyer",13,0,0,0,300,3,192,160,0,0,,"",0,12,true
+"d1any/_s5\B16_d3.6.10_a1.6.12B9.flyer",13,0,0,0,300,0,194,84,1,2,4,"(Coord { x: 3, y: 5, z: 10 }, ""push limit exceeded"")",0,12,false
+"d1any/_s5\B16_d3.6.10_a3.7.11B16.flyer",13,0,0,0,300,0,194,84,1,2,4,"(Coord { x: 3, y: 5, z: 10 }, ""push limit exceeded"")",0,12,false
+"d1any/_s5\B16_d3.6.10_a5.7.8B29.flyer",13,0,0,0,300,0,194,84,1,2,4,"(Coord { x: 3, y: 5, z: 10 }, ""push limit exceeded"")",0,12,false
+"d1any/_s5\B16_d3.6.11_a3.5.11B9.flyer",13,0,0,0,300,0,192,133,0,0,,"",0,12,true
+"d1any/_s5\B16_d3.6.11_a5.6.13B24.flyer",13,0,0,0,300,0,193,126,888,888,4,"(Coord { x: 6, y: 6, z: 13 }, ""push limit exceeded"")",0,12,false
+"d1any/_s5\B16_d3.6.9_a3.5.11B9.flyer",13,0,0,0,300,3,193,147,0,1,12,"(Coord { x: 9, y: 9, z: 11 }, ""push limit exceeded"")",0,13,false
+"d1any/_s5\B16_d3.6.9_a5.8.8B29.flyer",13,0,0,0,300,3,193,147,0,1,12,"(Coord { x: 9, y: 9, z: 11 }, ""push limit exceeded"")",0,12,false
+"d1any/_s5\B8_d0.2.12_a2.2.11B17.flyer",13,0,0,0,300,0,192,145,0,0,,"",0,12,true
+"d1any/_s5\B8_d0.2.13_a2.1.12B17.flyer",13,0,0,0,300,0,192,145,0,0,,"",0,12,true
+"d1any/_s5\B8_d1.2.13_a1.3.11B17.flyer",13,0,0,0,300,0,192,145,0,0,,"",0,12,true
+"d1any/_s5\B8_d1.2.13_a3.4.14B8.flyer",13,0,0,0,300,0,192,145,0,0,,"",0,12,true
+"d1any/_s5\B8_d2.2.13_a2.4.15B8.flyer",13,0,0,0,300,0,192,145,0,0,,"",0,12,true
+"d1any/_s5\B8_d2.3.13_a0.3.12B8.flyer",13,0,0,0,300,0,192,100,576,576,12,"(Coord { x: 3, y: 2, z: 14 }, ""push limit exceeded"")",0,12,false
+"d1any/_s5\B8_d2.3.13_a2.2.14B8.flyer",13,0,0,0,300,1,192,101,576,576,12,"(Coord { x: 3, y: 2, z: 14 }, ""push limit exceeded"")",0,12,false
+"d1any/_s5\B8_d2.3.13_a4.2.14B30.flyer",13,0,0,0,300,0,192,100,576,576,12,"(Coord { x: 3, y: 2, z: 14 }, ""push limit exceeded"")",0,12,false
+"d1any/_s5\B8_d2.3.14_a2.1.12B17.flyer",13,0,0,0,300,1,194,100,576,576,12,"(Coord { x: 2, y: 2, z: 13 }, ""push limit exceeded"")",0,12,false
+"d1any/_s5\B8_d2.3.14_a4.3.15B30.flyer",13,0,0,0,300,1,194,100,576,576,12,"(Coord { x: 2, y: 2, z: 13 }, ""push limit exceeded"")",0,12,false
+"d1any/_s5\B8_d2.4.14_a2.5.14B9.flyer",13,0,0,0,300,4,192,154,1,2,14,"(Coord { x: 5, y: 2, z: 13 }, ""push limit exceeded"")",0,13,false
+"d1any/_s5\B9_d0.4.13_a-1.2.13B8.flyer",13,0,0,0,300,1,192,169,0,0,,"",0,13,true
+"d1any/_s5\B9_d0.4.13_a1.6.12B9.flyer",13,0,0,0,300,0,192,67,1176,1179,0,"(Coord { x: 2, y: 6, z: 12 }, ""push limit exceeded"")",0,12,false
+"d1any/_s5\B9_d0.5.13_a1.5.14B9.flyer",13,0,0,0,300,0,192,133,1144,1144,12,"(Coord { x: 4, y: 3, z: 13 }, ""push limit exceeded"")",0,12,false
+"d1any/_s5\B9_d1.5.13_a0.7.11B16.flyer",13,0,0,0,300,0,192,169,0,0,,"",0,13,true
+"d1any/_s5\B9_d1.5.13_a3.5.11B9.flyer",13,0,0,0,300,0,192,169,0,0,,"",0,12,true
+"d1any/_s5\B9_d2.5.11_a1.3.11B17.flyer",13,0,0,0,300,2,192,136,0,0,,"",0,12,true
+"d1any/_s5\B9_d2.5.11_a3.5.12B9.flyer",13,0,0,0,300,2,192,136,0,0,,"",0,12,true
+"d1any/_s5\B9_d2.5.11_a4.7.11B24.flyer",13,0,0,0,300,1,192,81,1764,1765,2,"(Coord { x: 5, y: 8, z: 13 }, ""push limit exceeded"")",0,12,false
+"d1any/_s5\B9_d2.5.12_a1.6.10B16.flyer",13,0,0,0,300,0,194,135,0,0,,"",0,13,true
+"d1any/_s5\B9_d2.5.12_a3.7.11B16.flyer",13,0,0,0,300,0,192,67,1176,1179,0,"(Coord { x: 0, y: 5, z: 11 }, ""push limit exceeded"")",0,12,false
+"d1any/_s5\B9_d2.5.13_a1.4.14B8.flyer",13,0,0,0,300,0,192,83,0,2,2,"(Coord { x: 1, y: 2, z: 11 }, ""push limit exceeded"")",0,12,false
+"d1any/_s5\B9_d2.5.13_a3.5.11B16.flyer",13,0,0,0,300,0,192,98,1464,1464,4,"(Coord { x: 4, y: 6, z: 9 }, ""push limit exceeded"")",0,13,false
+"d1any/_s5\B9_d2.6.12_a0.6.10B16.flyer",13,0,0,0,300,2,193,119,1,2,8,"(Coord { x: 3, y: 5, z: 12 }, ""push limit exceeded"")",0,13,false
+"d1any/_s5\B9_d2.6.12_a3.5.13B9.flyer",13,0,0,0,300,3,193,139,288,288,12,"(Coord { x: 3, y: 4, z: 13 }, ""push limit exceeded"")",0,12,false

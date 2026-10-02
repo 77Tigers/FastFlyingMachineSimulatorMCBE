@@ -1,0 +1,29 @@
+file,limit,rng,phase_x,phase_z,ticks,distance,end_blocks,extensions,extension_failures,movement_failures,first_failure_tick,first_failure_kind,conservation_mismatch_ticks,max_successful_action,clean
+"s_del1/_s0\B15_d14.5.9.flyer",13,0,0,0,300,0,191,158,0,0,,"",0,12,true
+"s_del1/_s0\B8_d14.2.12.flyer",13,0,0,0,300,0,191,146,0,0,,"",0,12,true
+"s_del1/_s1\B15_d15.5.9.flyer",13,0,0,0,300,0,191,158,0,0,,"",0,12,true
+"s_del1/_s1\B8_d14.2.13.flyer",13,0,0,0,300,0,191,146,0,0,,"",0,12,true
+"s_del1/_s2\B15_d16.5.9.flyer",13,0,0,0,300,0,191,158,0,0,,"",0,12,true
+"s_del1/_s2\B8_d15.2.13.flyer",13,0,0,0,300,0,191,146,0,0,,"",0,12,true
+"s_del1/_s3\B15_d17.3.9.flyer",13,0,0,0,300,1,191,114,572,572,14,"(Coord { x: 18, y: 5, z: 9 }, ""push limit exceeded"")",0,12,false
+"s_del1/_s3\B8_d16.2.13.flyer",13,0,0,0,300,0,191,146,0,0,,"",0,12,true
+"s_del1/_s4\B15_d17.4.10.flyer",13,0,0,0,300,1,191,114,572,572,14,"(Coord { x: 19, y: 5, z: 9 }, ""push limit exceeded"")",0,12,false
+"s_del1/_s4\B8_d16.3.13.flyer",13,0,0,0,300,0,191,126,0,0,,"",0,12,true
+"s_del1/_s5\B15_d17.4.9.flyer",13,0,0,0,300,0,193,125,0,0,,"",0,13,true
+"s_del1/_s5\B8_d16.3.14.flyer",13,0,0,0,300,1,193,101,576,576,12,"(Coord { x: 16, y: 2, z: 13 }, ""push limit exceeded"")",0,12,false
+"s_del1/_s6\B15_d17.5.9.flyer",13,0,0,0,300,0,191,118,283,284,12,"(Coord { x: 22, y: 5, z: 9 }, ""push limit exceeded"")",0,12,false
+"s_del1/_s6\B8_d16.4.14.flyer",13,0,0,0,300,1,191,101,576,576,12,"(Coord { x: 16, y: 2, z: 13 }, ""push limit exceeded"")",0,12,false
+"s_del1/_s7\B16_d14.6.11.flyer",13,0,0,0,300,0,191,134,0,0,,"",0,12,true
+"s_del1/_s7\B9_d14.4.13.flyer",13,0,0,0,300,0,191,170,0,0,,"",0,12,true
+"s_del1/_s8\B16_d15.6.11.flyer",13,0,0,0,300,0,191,134,0,0,,"",0,12,true
+"s_del1/_s8\B9_d14.5.13.flyer",13,0,0,0,300,0,191,170,0,0,,"",0,12,true
+"s_del1/_s9\B16_d16.6.11.flyer",13,0,0,0,300,0,191,134,0,0,,"",0,12,true
+"s_del1/_s9\B9_d15.5.13.flyer",13,0,0,0,300,0,191,170,0,0,,"",0,12,true
+"s_del1/_s10\B16_d17.5.10.flyer",13,0,0,0,300,3,191,161,0,0,,"",0,12,true
+"s_del1/_s10\B9_d16.5.11.flyer",13,0,0,0,300,2,191,119,1,2,8,"(Coord { x: 17, y: 7, z: 12 }, ""push limit exceeded"")",0,12,false
+"s_del1/_s11\B16_d17.6.10.flyer",13,0,0,0,300,0,192,102,0,0,,"",0,13,true
+"s_del1/_s11\B9_d16.5.12.flyer",13,0,0,0,300,0,193,136,0,0,,"",0,12,true
+"s_del1/_s12\B16_d17.6.11.flyer",13,0,0,0,300,0,191,134,0,0,,"",0,12,true
+"s_del1/_s12\B9_d16.5.13.flyer",13,0,0,0,300,0,191,150,0,0,,"",0,12,true
+"s_del1/_s13\B16_d17.6.9.flyer",13,0,0,0,300,3,192,148,0,1,12,"(Coord { x: 24, y: 8, z: 11 }, ""push limit exceeded"")",0,12,false
+"s_del1/_s13\B9_d16.6.12.flyer",13,0,0,0,300,2,192,120,1,2,8,"(Coord { x: 17, y: 5, z: 12 }, ""push limit exceeded"")",0,12,false

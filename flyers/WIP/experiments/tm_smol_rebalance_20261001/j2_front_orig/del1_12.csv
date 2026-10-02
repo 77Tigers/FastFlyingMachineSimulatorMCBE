@@ -1,0 +1,29 @@
+file,limit,rng,phase_x,phase_z,ticks,distance,end_blocks,extensions,extension_failures,movement_failures,first_failure_tick,first_failure_kind,conservation_mismatch_ticks,max_successful_action,clean
+"WIP/experiments/tm_smol_rebalance_20261001/j2_front_orig/del1_12\B15_d0.5.9.flyer",12,0,0,0,300,0,191,157,0,0,,"",0,12,true
+"WIP/experiments/tm_smol_rebalance_20261001/j2_front_orig/del1_12\B15_d1.5.9.flyer",12,0,0,0,300,0,191,157,0,0,,"",0,12,true
+"WIP/experiments/tm_smol_rebalance_20261001/j2_front_orig/del1_12\B15_d2.5.9.flyer",12,0,0,0,300,0,191,157,0,0,,"",0,12,true
+"WIP/experiments/tm_smol_rebalance_20261001/j2_front_orig/del1_12\B15_d3.3.9.flyer",12,0,0,0,300,1,191,112,572,572,14,"(Coord { x: 4, y: 4, z: 9 }, ""push limit exceeded"")",0,12,false
+"WIP/experiments/tm_smol_rebalance_20261001/j2_front_orig/del1_12\B15_d3.4.10.flyer",12,0,0,0,300,1,192,113,572,572,14,"(Coord { x: 4, y: 4, z: 9 }, ""push limit exceeded"")",0,12,false
+"WIP/experiments/tm_smol_rebalance_20261001/j2_front_orig/del1_12\B15_d3.4.9.flyer",12,0,0,0,300,0,193,124,0,0,,"",0,12,true
+"WIP/experiments/tm_smol_rebalance_20261001/j2_front_orig/del1_12\B15_d3.5.9.flyer",12,0,0,0,300,0,191,117,564,565,18,"(Coord { x: 9, y: 3, z: 8 }, ""push limit exceeded"")",0,12,false
+"WIP/experiments/tm_smol_rebalance_20261001/j2_front_orig/del1_12\B16_d0.6.11.flyer",12,0,0,0,300,0,191,133,0,0,,"",0,12,true
+"WIP/experiments/tm_smol_rebalance_20261001/j2_front_orig/del1_12\B16_d1.6.11.flyer",12,0,0,0,300,0,191,133,0,0,,"",0,12,true
+"WIP/experiments/tm_smol_rebalance_20261001/j2_front_orig/del1_12\B16_d2.6.11.flyer",12,0,0,0,300,0,191,133,0,0,,"",0,12,true
+"WIP/experiments/tm_smol_rebalance_20261001/j2_front_orig/del1_12\B16_d3.5.10.flyer",12,0,0,0,300,3,191,160,0,0,,"",0,12,true
+"WIP/experiments/tm_smol_rebalance_20261001/j2_front_orig/del1_12\B16_d3.6.10.flyer",12,0,0,0,300,0,193,84,1,2,4,"(Coord { x: 3, y: 6, z: 9 }, ""push limit exceeded"")",0,12,false
+"WIP/experiments/tm_smol_rebalance_20261001/j2_front_orig/del1_12\B16_d3.6.11.flyer",12,0,0,0,300,0,191,133,0,0,,"",0,12,true
+"WIP/experiments/tm_smol_rebalance_20261001/j2_front_orig/del1_12\B16_d3.6.9.flyer",12,0,0,0,300,3,192,147,0,1,12,"(Coord { x: 9, y: 7, z: 10 }, ""push limit exceeded"")",0,12,false
+"WIP/experiments/tm_smol_rebalance_20261001/j2_front_orig/del1_12\B8_d0.2.12.flyer",12,0,0,0,300,0,191,145,0,0,,"",0,12,true
+"WIP/experiments/tm_smol_rebalance_20261001/j2_front_orig/del1_12\B8_d0.2.13.flyer",12,0,0,0,300,0,191,145,0,0,,"",0,12,true
+"WIP/experiments/tm_smol_rebalance_20261001/j2_front_orig/del1_12\B8_d1.2.13.flyer",12,0,0,0,300,0,191,145,0,0,,"",0,12,true
+"WIP/experiments/tm_smol_rebalance_20261001/j2_front_orig/del1_12\B8_d2.2.13.flyer",12,0,0,0,300,0,191,145,0,0,,"",0,12,true
+"WIP/experiments/tm_smol_rebalance_20261001/j2_front_orig/del1_12\B8_d2.3.13.flyer",12,0,0,0,300,0,191,100,576,576,12,"(Coord { x: 2, y: 3, z: 14 }, ""push limit exceeded"")",0,12,false
+"WIP/experiments/tm_smol_rebalance_20261001/j2_front_orig/del1_12\B8_d2.3.14.flyer",12,0,0,0,300,1,193,100,576,576,12,"(Coord { x: 3, y: 2, z: 13 }, ""push limit exceeded"")",0,12,false
+"WIP/experiments/tm_smol_rebalance_20261001/j2_front_orig/del1_12\B8_d2.4.14.flyer",12,0,0,0,300,4,191,154,1,2,14,"(Coord { x: 5, y: 2, z: 13 }, ""push limit exceeded"")",0,12,false
+"WIP/experiments/tm_smol_rebalance_20261001/j2_front_orig/del1_12\B9_d0.4.13.flyer",12,0,0,0,300,0,191,169,0,0,,"",0,12,true
+"WIP/experiments/tm_smol_rebalance_20261001/j2_front_orig/del1_12\B9_d0.5.13.flyer",12,0,0,0,300,0,191,169,0,0,,"",0,12,true
+"WIP/experiments/tm_smol_rebalance_20261001/j2_front_orig/del1_12\B9_d1.5.13.flyer",12,0,0,0,300,0,191,169,0,0,,"",0,12,true
+"WIP/experiments/tm_smol_rebalance_20261001/j2_front_orig/del1_12\B9_d2.5.11.flyer",12,0,0,0,300,2,191,136,0,0,,"",0,12,true
+"WIP/experiments/tm_smol_rebalance_20261001/j2_front_orig/del1_12\B9_d2.5.12.flyer",12,0,0,0,300,0,193,135,0,0,,"",0,12,true
+"WIP/experiments/tm_smol_rebalance_20261001/j2_front_orig/del1_12\B9_d2.5.13.flyer",12,0,0,0,300,0,191,149,0,0,,"",0,12,true
+"WIP/experiments/tm_smol_rebalance_20261001/j2_front_orig/del1_12\B9_d2.6.12.flyer",12,0,0,0,300,2,192,119,1,2,8,"(Coord { x: 3, y: 5, z: 12 }, ""push limit exceeded"")",0,12,false

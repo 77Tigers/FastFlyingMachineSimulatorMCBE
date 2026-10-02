@@ -1,0 +1,3 @@
+file,limit,rng,phase_x,phase_z,ticks,distance,end_blocks,extensions,extension_failures,movement_failures,first_failure_tick,first_failure_kind,conservation_mismatch_ticks,max_successful_action,clean
+"xfer14/_s4\B15to35_4.5.9_5.5.9.flyer",14,0,0,0,300,0,193,111,1740,1740,6,"(Coord { x: 9, y: 5, z: 9 }, ""immovable obstruction"")",0,12,false
+"xfer14/_s4\B8to30_3.2.13_4.2.13.flyer",14,0,0,0,300,0,193,145,0,0,,"",0,13,true

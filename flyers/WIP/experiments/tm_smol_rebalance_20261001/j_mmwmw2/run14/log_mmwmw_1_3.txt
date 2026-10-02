@@ -1,0 +1,77 @@
+ports totals {'pull0': 250, 'pull1': 202, 'pull2': 125, 'pull3': 97, 'pull4': 89, 'push0': 52, 'push1': 50, 'push2': 117, 'push3': 122, 'push4': 105}
+stage1 mmwmw 1 push@ 3 PL 294 Q [130, 109]
+pl 0 294 0 {}
+pl 1 294 1 {'PLtried': 1, 'PLwithQ': 1, 'budget': 300}
+pl 2 294 1 {'PLtried': 2, 'PLwithQ': 2, 'budget': 600}
+pl 3 294 1 {'PLtried': 3, 'PLwithQ': 3, 'budget': 900}
+pl 4 294 2 {'PLtried': 4, 'PLwithQ': 4, 'budget': 1200}
+pl 5 294 2 {'PLtried': 5, 'PLwithQ': 5, 'budget': 1500}
+pl 6 294 3 {'PLtried': 6, 'PLwithQ': 6, 'budget': 1800}
+pl 7 294 3 {'PLtried': 7, 'PLwithQ': 7, 'budget': 2100}
+pl 8 294 4 {'PLtried': 8, 'PLwithQ': 8, 'budget': 2400}
+pl 9 294 4 {'PLtried': 9, 'PLwithQ': 9, 'budget': 2700}
+pl 10 294 4 {'PLtried': 10, 'PLwithQ': 10, 'budget': 3000}
+pl 11 294 5 {'PLtried': 11, 'PLwithQ': 11, 'budget': 3300}
+pl 12 294 22 {'PLtried': 12, 'PLwithQ': 12, 'budget': 3584, 'build': 16}
+pl 13 294 23 {'PLtried': 13, 'PLwithQ': 13, 'budget': 3884, 'build': 16}
+pl 14 294 23 {'PLtried': 14, 'PLwithQ': 14, 'budget': 4184, 'build': 16}
+pl 15 294 24 {'PLtried': 15, 'PLwithQ': 15, 'budget': 4484, 'build': 16}
+pl 16 294 24 {'PLtried': 16, 'PLwithQ': 16, 'budget': 4784, 'build': 16}
+pl 17 294 25 {'PLtried': 17, 'PLwithQ': 17, 'budget': 5084, 'build': 16}
+pl 18 294 25 {'PLtried': 18, 'PLwithQ': 18, 'budget': 5384, 'build': 16}
+pl 19 294 26 {'PLtried': 19, 'PLwithQ': 19, 'budget': 5684, 'build': 16}
+pl 20 294 26 {'PLtried': 20, 'PLwithQ': 20, 'budget': 5984, 'build': 16}
+pl 21 294 26 {'PLtried': 21, 'PLwithQ': 21, 'budget': 6284, 'build': 16}
+pl 22 294 27 {'PLtried': 22, 'PLwithQ': 22, 'budget': 6584, 'build': 16}
+pl 23 294 27 {'PLtried': 23, 'PLwithQ': 23, 'budget': 6884, 'build': 16}
+pl 24 294 28 {'PLtried': 24, 'PLwithQ': 24, 'budget': 7184, 'build': 16}
+pl 25 294 28 {'PLtried': 25, 'PLwithQ': 25, 'budget': 7484, 'build': 16}
+pl 26 294 28 {'PLtried': 26, 'PLwithQ': 26, 'budget': 7784, 'build': 16}
+pl 27 294 29 {'PLtried': 27, 'PLwithQ': 27, 'budget': 8084, 'build': 16}
+pl 28 294 29 {'PLtried': 28, 'PLwithQ': 28, 'budget': 8384, 'build': 16}
+pl 29 294 30 {'PLtried': 29, 'PLwithQ': 29, 'budget': 8684, 'build': 16}
+pl 30 294 30 {'PLtried': 30, 'PLwithQ': 30, 'budget': 8984, 'build': 16}
+pl 31 294 31 {'PLtried': 31, 'PLwithQ': 31, 'budget': 9284, 'build': 16}
+pl 32 294 31 {'PLtried': 32, 'PLwithQ': 32, 'budget': 9584, 'build': 16}
+pl 33 294 32 {'PLtried': 33, 'PLwithQ': 33, 'budget': 9884, 'build': 16}
+pl 34 294 32 {'PLtried': 34, 'PLwithQ': 34, 'budget': 10184, 'build': 16}
+pl 35 294 33 {'PLtried': 35, 'PLwithQ': 35, 'budget': 10484, 'build': 16}
+pl 36 294 33 {'PLtried': 36, 'PLwithQ': 36, 'budget': 10784, 'build': 16}
+pl 37 294 33 {'PLtried': 37, 'PLwithQ': 37, 'budget': 11084, 'build': 16}
+pl 38 294 49 {'PLtried': 38, 'PLwithQ': 38, 'budget': 11370, 'build': 30}
+pl 39 294 63 {'PLtried': 39, 'PLwithQ': 39, 'budget': 11656, 'build': 44}
+pl 40 294 64 {'PLtried': 40, 'PLwithQ': 40, 'budget': 11956, 'build': 44}
+pl 41 294 64 {'PLtried': 41, 'PLwithQ': 41, 'budget': 12256, 'build': 44}
+pl 42 294 65 {'PLtried': 42, 'PLwithQ': 42, 'budget': 12556, 'build': 44}
+pl 43 294 65 {'PLtried': 43, 'PLwithQ': 43, 'budget': 12856, 'build': 44}
+pl 44 294 66 {'PLtried': 44, 'PLwithQ': 44, 'budget': 13156, 'build': 44}
+pl 45 294 66 {'PLtried': 45, 'PLwithQ': 45, 'budget': 13456, 'build': 44}
+pl 46 294 66 {'PLtried': 46, 'PLwithQ': 46, 'budget': 13756, 'build': 44}
+pl 47 294 67 {'PLtried': 47, 'PLwithQ': 47, 'budget': 14056, 'build': 44}
+pl 48 294 67 {'PLtried': 48, 'PLwithQ': 48, 'budget': 14356, 'build': 44}
+pl 49 294 68 {'PLtried': 49, 'PLwithQ': 49, 'budget': 14656, 'build': 44}
+pl 50 294 85 {'PLtried': 50, 'PLwithQ': 50, 'budget': 14937, 'build': 63}
+pl 51 294 99 {'PLtried': 51, 'PLwithQ': 51, 'budget': 15219, 'build': 81}
+pl 52 294 115 {'PLtried': 52, 'PLwithQ': 52, 'budget': 15501, 'build': 99}
+pl 53 294 132 {'PLtried': 53, 'PLwithQ': 53, 'budget': 15782, 'build': 118}
+pl 54 294 144 {'PLtried': 54, 'PLwithQ': 54, 'budget': 16069, 'build': 131}
+pl 55 294 159 {'PLtried': 55, 'PLwithQ': 55, 'budget': 16350, 'build': 150}
+pl 56 294 159 {'PLtried': 56, 'PLwithQ': 56, 'budget': 16650, 'build': 150}
+pl 57 294 159 {'PLtried': 57, 'PLwithQ': 57, 'budget': 16950, 'build': 150}
+pl 58 294 160 {'PLtried': 58, 'PLwithQ': 58, 'budget': 17250, 'build': 150}
+pl 59 294 160 {'PLtried': 59, 'PLwithQ': 59, 'budget': 17550, 'build': 150}
+pl 60 294 161 {'PLtried': 60, 'PLwithQ': 60, 'budget': 17850, 'build': 150}
+pl 61 294 175 {'PLtried': 61, 'PLwithQ': 61, 'budget': 18136, 'build': 164}
+pl 62 294 192 {'PLtried': 62, 'PLwithQ': 62, 'budget': 18422, 'build': 178}
+pl 63 294 213 {'PLtried': 63, 'PLwithQ': 63, 'budget': 18703, 'build': 197}
+pl 64 294 214 {'PLtried': 64, 'PLwithQ': 64, 'budget': 19003, 'build': 197}
+pl 65 294 214 {'PLtried': 65, 'PLwithQ': 65, 'budget': 19303, 'build': 197}
+pl 66 294 215 {'PLtried': 66, 'PLwithQ': 66, 'budget': 19603, 'build': 197}
+pl 67 294 215 {'PLtried': 67, 'PLwithQ': 67, 'budget': 19903, 'build': 197}
+pl 68 294 228 {'PLtried': 68, 'PLwithQ': 68, 'budget': 20191, 'build': 209}
+pl 69 294 246 {'PLtried': 69, 'PLwithQ': 69, 'budget': 20476, 'build': 224}
+pl 70 294 265 {'PLtried': 70, 'PLwithQ': 70, 'budget': 20759, 'build': 241}
+pl 71 294 277 {'PLtried': 71, 'PLwithQ': 71, 'budget': 21049, 'build': 251}
+pl 72 294 298 {'PLtried': 72, 'PLwithQ': 72, 'budget': 21333, 'build': 267}
+pl 73 294 318 {'PLtried': 73, 'PLwithQ': 73, 'budget': 21618, 'build': 282}
+pl 74 294 332 {'PLtried': 74, 'PLwithQ': 74, 'budget': 21907, 'build': 293}

@@ -1,0 +1,58 @@
+carrier 9 fire 1 push ports 20
+carrier 9 fire 1 pull ports 86
+carrier 10 fire 4 push ports 31
+carrier 10 fire 4 pull ports 93
+carrier 11 fire 2 push ports 31
+carrier 11 fire 2 pull ports 61
+carrier 15 fire 3 push ports 23
+carrier 15 fire 3 pull ports 15
+carrier 18 fire 0 push ports 19
+carrier 18 fire 0 pull ports 60
+carrier 19 fire 4 push ports 69
+carrier 19 fire 4 pull ports 157
+carrier 24 fire 3 push ports 69
+carrier 24 fire 3 pull ports 89
+carrier 29 fire 2 push ports 63
+carrier 29 fire 2 pull ports 97
+carrier 35 fire 1 push ports 50
+carrier 35 fire 1 pull ports 125
+carrier 36 fire 0 push ports 52
+carrier 36 fire 0 pull ports 202
+carrier 37 fire 4 push ports 105
+carrier 37 fire 4 pull ports 250
+carrier 41 fire 3 push ports 122
+carrier 41 fire 3 pull ports 89
+carrier 45 fire 2 push ports 117
+carrier 45 fire 2 pull ports 97
+ports totals {'pull0': 250, 'pull1': 202, 'pull2': 125, 'pull3': 97, 'pull4': 89, 'push0': 52, 'push1': 50, 'push2': 117, 'push3': 122, 'push4': 105}
+eligible mmwmw 1 push@ (0,) [46, 109, 39]
+eligible mmwmw 1 push@ (1,) [130, 0, 39]
+eligible mmwmw 1 push@ (3,) [130, 109, 113]
+eligible mmwmw 2 push@ (0,) [51, 122, 51]
+eligible mmwmw 2 push@ (1,) [162, 0, 51]
+eligible mmwmw 2 push@ (3,) [162, 122, 122]
+eligible mwmmw 1 push@ (0,) [46, 107, 39]
+eligible mwmmw 1 push@ (2,) [125, 113, 39]
+eligible mwmmw 1 push@ (3,) [125, 107, 0]
+eligible mwmmw 2 push@ (0,) [49, 73, 39]
+eligible mwmmw 2 push@ (2,) [160, 111, 39]
+eligible mwmmw 2 push@ (3,) [160, 73, 0]
+eligible mwmwm 1 push@ (0,) [0, 107, 36]
+eligible mwmwm 1 push@ (2,) [125, 114, 36]
+eligible mwmwm 1 push@ (4,) [125, 107, 89]
+eligible mwmwm 2 push@ (0,) [0, 73, 52]
+eligible mwmwm 2 push@ (2,) [146, 112, 52]
+eligible mwmwm 2 push@ (4,) [146, 73, 100]
+eligible wmmwm 1 push@ (1,) [34, 107, 36]
+eligible wmmwm 1 push@ (2,) [109, 0, 36]
+eligible wmmwm 1 push@ (4,) [109, 107, 90]
+eligible wmmwm 2 push@ (1,) [48, 73, 52]
+eligible wmmwm 2 push@ (2,) [133, 0, 52]
+eligible wmmwm 2 push@ (4,) [133, 73, 99]
+eligible wmwmm 1 push@ (1,) [34, 39, 36]
+eligible wmwmm 1 push@ (3,) [109, 112, 36]
+eligible wmwmm 1 push@ (4,) [109, 39, 0]
+eligible wmwmm 2 push@ (1,) [47, 51, 41]
+eligible wmwmm 2 push@ (3,) [122, 121, 41]
+eligible wmwmm 2 push@ (4,) [122, 51, 0]
+budget triples 9636485

@@ -1,0 +1,113 @@
+distance 120 over 400 ticks; bodies (rear->front by mean x):
+  B0: n=1  P=1 S=0 word=mmmmw at(1,7,5) [normal piston]
+  B1: n=1  P=1 S=0 word=mmmmw at(0,8,4) [normal piston]
+  B2: n=1  P=1 S=0 word=mmmmm at(1,5,6) [normal piston]
+  B3: n=1  P=1 S=0 word=mmwmm at(1,7,6) [normal piston]
+  B4: n=1  P=1 S=0 word=mmwmm at(1,8,7) [normal piston]
+  B5: n=1  P=1 S=0 word=mmmwm at(2,3,5) [normal piston]
+  B6: n=1  P=1 S=0 word=mmmwm at(2,4,4) [normal piston]
+  B7: n=1  P=1 S=0 word=mmmmm at(2,4,7) [normal piston]
+  B8: n=1  P=1 S=0 word=mmmmm at(2,5,8) [normal piston]
+  B9: n=7 ho6 RB1 P=0 S=0 word=mwwmm box x1-3 y7-8 z4-6
+      cells: (1,8,6)ho (2,8,5)RB (2,8,6)ho (3,7,5)ho (3,8,4)ho (3,8,5)ho (3,8,6)ho
+  B10: n=9 sl8 RB1 P=0 S=0 word=wmmmw box x1-4 y5-8 z6-7
+      cells: (1,5,7)sl (1,6,7)sl (2,6,7)sl (2,7,7)RB (3,6,7)sl (3,7,6)sl (3,7,7)sl (3,8,7)sl (4,7,6)sl
+  B11: n=9 sl7 RB2 P=0 S=0 word=mmwwm box x2-3 y4-5 z5-8
+      cells: (2,4,5)sl (2,4,6)RB (2,4,8)RB (3,4,5)sl (3,4,6)sl (3,4,7)sl (3,4,8)sl (3,5,6)sl (3,5,8)sl
+  B12: n=1  P=1 S=0 word=mmmmm at(3,8,3) [normal piston]
+  B13: n=1  P=1 S=0 word=mmmmm at(3,9,4) [normal piston]
+  B14: n=1  P=1 S=0 word=mmmmm at(3,9,5) [normal piston]
+  B15: n=10 sl9 RB1 P=0 S=0 word=mmmww box x0-5 y5-7 z3-4
+      cells: (0,7,4)sl (1,7,4)sl (2,7,4)sl (3,7,4)sl (4,6,4)RB (4,7,4)sl (5,5,4)sl (5,6,3)sl (5,6,4)sl (5,7,4)sl
+  B16: n=1  P=1 S=0 word=mwmmm at(4,5,4) [normal piston]
+  B17: n=1  P=1 S=0 word=mwmmm at(4,6,3) [normal piston]
+  B18: n=8 sl5 RB2 P=0 S=1 word=wmmmw box x4-5 y8-9 z3-6
+      cells: (4,9,3)RB (4,9,6)RB (5,8,3)sl (5,8,5)S-x (5,9,3)sl (5,9,4)sl (5,9,5)sl (5,9,6)sl
+  B19: n=13 ho11 RB1 P=1 S=0 word=wwmmm box x4-5 y1-5 z3-7
+      cells: (4,3,4)RB (4,5,3)ho (5,1,5)P+x (5,1,6)ho (5,1,7)ho (5,2,7)ho (5,3,4)ho (5,3,5)ho (5,3,6)ho (5,3,7)ho (5,4,3)ho (5,4,4)ho (5,5,3)ho
+  B20: n=1  P=1 S=0 word=mmmmm at(5,2,4) [normal piston]
+  B21: n=1  P=1 S=0 word=mmmmm at(5,2,5) [normal piston]
+  B22: n=1  P=1 S=0 word=mmmmm at(5,3,3) [normal piston]
+  B23: n=1  P=1 S=0 word=wmmmm at(6,9,7) [normal piston]
+  B24: n=17 ho16 RB1 P=0 S=0 word=mmwmw box x5-6 y0-8 z5-10
+      cells: (5,0,5)RB (5,5,10)ho (5,6,10)ho (5,7,10)ho (5,8,10)ho (6,0,5)ho (6,0,6)ho (6,0,7)ho (6,0,8)ho (6,0,9)ho (6,1,5)ho (6,1,9)ho (6,2,9)ho (6,3,9)ho (6,4,10)ho (6,4,9)ho (6,5,10)ho
+  B25: n=9 sl6 RB2 P=0 S=1 word=mmmww box x5-6 y2-4 z3-6
+      cells: (5,2,3)RB (5,2,6)RB (6,2,3)sl (6,2,4)sl (6,2,5)sl (6,2,6)sl (6,3,3)sl (6,3,4)sl (6,4,4)S-x
+  B26: n=1  P=1 S=0 word=wmmmm at(5,8,6) [normal piston]
+  B27: n=1  P=1 S=0 word=mmmmw at(6,3,2) [normal piston]
+  B28: n=1  P=1 S=0 word=mmmmm at(6,6,7) [normal piston]
+  B29: n=1  P=1 S=0 word=mmmmm at(7,7,9) [normal piston]
+  B30: n=12 ho8 RB2 P=0 S=2 word=mmwwm box x6-7 y7-9 z5-10
+      cells: (6,7,6)S-x (6,7,7)ho (6,7,8)ho (6,8,7)RB (7,7,7)ho (7,8,10)S-x (7,8,5)RB (7,8,6)ho (7,8,7)ho (7,8,8)ho (7,8,9)ho (7,9,7)ho
+  B31: n=1  P=1 S=0 word=mmmmm at(6,6,8) [normal piston]
+  B32: n=1  P=1 S=0 word=mmmmw at(7,4,3) [normal piston]
+  B33: n=1  P=1 S=0 word=mmmmm at(8,5,1) [normal piston]
+  B34: n=1  P=1 S=0 word=mmmmm at(8,6,2) [normal piston]
+  B35: n=1  P=1 S=0 word=mmmmm at(8,6,3) [normal piston]
+  B36: n=9 sl6 RB2 P=0 S=1 word=mwwmm box x8-9 y3-5 z2-4
+      cells: (8,4,2)RB (8,5,2)sl (8,5,3)sl (8,5,4)S-x (9,3,2)sl (9,4,2)sl (9,4,3)sl (9,4,4)RB (9,5,3)sl
+  B37: n=14 sl9 RB3 P=0 S=2 word=wwmmm box x8-9 y4-8 z6-11
+      cells: (8,6,6)RB (8,6,9)RB (9,4,9)S-x (9,5,9)sl (9,6,10)sl (9,6,11)sl (9,6,6)sl (9,6,7)sl (9,6,8)sl (9,6,9)sl (9,7,11)sl (9,7,8)S-x (9,7,9)sl (9,8,11)RB
+  B38: n=8 ho5 RB2 P=0 S=1 word=wmmmw box x9-10 y5-6 z1-4
+      cells: (10,5,1)ho (10,5,2)S-x (10,6,1)ho (10,6,2)ho (10,6,3)ho (10,6,4)ho (9,6,1)RB (9,6,4)RB
+  B39: n=1  P=1 S=0 word=mmmmm at(10,6,7) [normal piston]
+  B40: n=1  P=1 S=0 word=mmmmm at(10,6,8) [normal piston]
+  B41: n=1  P=1 S=0 word=mmmmm at(10,7,9) [normal piston]
+  B42: n=11 sl8 RB3 P=0 S=0 word=mmmww box x10-11 y4-7 z7-9
+      cells: (10,4,9)RB (10,7,7)RB (10,7,8)RB (11,4,9)sl (11,5,9)sl (11,6,7)sl (11,6,8)sl (11,6,9)sl (11,7,7)sl (11,7,8)sl (11,7,9)sl
+  B43: n=1  P=1 S=0 word=mmmmm at(12,6,3) [normal piston]
+  B44: n=1  P=1 S=0 word=mmmmm at(11,6,2) [normal piston]
+  B45: n=1  P=1 S=0 word=mmmmm at(12,5,1) [normal piston]
+  B46: n=7 sl5 RB2 P=0 S=0 word=mmwwm box x12-13 y5-6 z1-3
+      cells: (12,5,2)RB (12,5,3)RB (13,5,1)sl (13,5,2)sl (13,5,3)sl (13,6,2)sl (13,6,3)sl
+events in one period from tick 100 (slot actor(carriers|power) action load -> moved):
+  s0 B26(|B30) push 14  -> B28x1,B30x12,B31x1 
+  s0 B7(|B11) push 12  -> B2x1,B5x1,B6x1,B11x9 
+  s0 B43(|B46) push 8   -> B44x1,B46x7 
+  s0 B22(B19|B25) push 12  -> B20x1,B21x1,B25x9,B27x1 
+  s0 B40(B37|B42) push 13  -> B39x1,B41x1,B42x11 
+  s0 B38(B38|) pull 12  -> B33x1,B34x1,B35x1,B36x9 
+  s0 B16(B19|B15) push 12  -> B0x1,B15x10,B17x1 
+  s0 B18(B18|) pull 12  -> B3x1,B4x1,B9x7,B12x1,B13x1,B14x1 
+  s0 B19(B19|B24) push 17  -> B24x17 
+  s0 B37(B37|B42) ext0 0   ->  
+  s0 B37(B37|B42) ext0 0   ->  
+  s1 B21(|B25) push 12  -> B20x1,B25x9,B27x1,B32x1 
+  s1 B33(B36|B38) push 11  -> B34x1,B35x1,B38x8,B45x1 
+  s1 B41(|B42) push 12  -> B39x1,B42x11 
+  s1 B13(B9|B18) push 11  -> B12x1,B14x1,B18x8,B23x1 
+  s1 B37(B37|) pull 17  -> B24x17 
+  s1 B37(B37|) pull 15  -> B28x1,B29x1,B30x12,B31x1 
+  s1 B36(B36|B38) ext0 0   ->  
+  s1 B3(B9|B10) push 11  -> B4x1,B8x1,B10x9 
+  s1 B2(|B11) push 11  -> B5x1,B6x1,B11x9 
+  s1 B44(|B46) push 7   -> B46x7 
+  s1 B17(B19|B15) push 12  -> B0x1,B1x1,B15x10 
+  s2 B29(B30|B37) push 17  -> B28x1,B31x1,B37x14,B40x1 
+  s2 B34(|B38) push 11  -> B35x1,B38x8,B43x1,B45x1 
+  s2 B12(|B18) push 11  -> B14x1,B18x8,B23x1,B26x1 
+  s2 B20(|B25) push 11  -> B25x9,B27x1,B32x1 
+  s2 B36(B36|) pull 12  -> B0x1,B1x1,B15x10 
+  s2 B4(B9|B10) push 11  -> B7x1,B8x1,B10x9 
+  s2 B6(B11|B19) push 16  -> B5x1,B16x1,B19x13,B22x1 
+  s2 B30(B30|B37) ext0 0   ->  
+  s2 B39(|B42) push 11  -> B42x11 
+  s2 B30(B30|B37) ext0 0   ->  
+  s3 B1(B15|B9) push 10  -> B0x1,B3x1,B9x7,B13x1 
+  s3 B14(|B18) push 10  -> B18x8,B23x1,B26x1 
+  s3 B25(B25|B36) ext0 0   ->  
+  s3 B30(B30|) pull 12  -> B2x1,B7x1,B8x1,B10x9 
+  s3 B35(|B38) push 11  -> B38x8,B43x1,B44x1,B45x1 
+  s3 B28(B30|B37) push 17  -> B31x1,B37x14,B40x1,B41x1 
+  s3 B32(B25/B36|B36) push 11  -> B27x1,B33x1,B36x9 
+  s3 B5(B11|B19) push 17  -> B16x1,B17x1,B19x13,B21x1,B22x1 
+  s3 B30(B30|) pull 17  -> B24x17 
+  s4 B18(B18|B30) ext0 0   ->  
+  s4 B2(B10|B11) push 12  -> B6x1,B7x1,B8x1,B11x9 
+  s4 B27(|B36) push 11  -> B33x1,B34x1,B36x9 
+  s4 B26(B18|B30) push 14  -> B23x1,B29x1,B30x12 
+  s4 B44(B38|B46) push 9   -> B43x1,B45x1,B46x7 
+  s4 B31(|B37) push 17  -> B37x14,B39x1,B40x1,B41x1 
+  s4 B38(B38|B46) ext0 0   ->  
+  s4 B0(B15|B9) push 11  -> B3x1,B4x1,B9x7,B12x1,B13x1 
+  s4 B25(B25|) pull 18  -> B16x1,B17x1,B19x13,B20x1,B21x1,B22x1 

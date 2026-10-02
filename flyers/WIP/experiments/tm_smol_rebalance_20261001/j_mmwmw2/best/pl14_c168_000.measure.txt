@@ -1,0 +1,1 @@
+file=best/pl14_c168_000.flyer limit=14 rng_final=6269817706955863120 phase_x=0 phase_z=0 ticks=10000 start_min_x=0 end_min_x=3000 distance=3000 extensions=42000 extension_failures=0 end_blocks=173 initial_kinds=[0, 73, 25, 0, 0, 0, 25, 0, 0, 42, 0] final_kinds=[0, 73, 25, 0, 0, 0, 25, 0, 0, 42, 0] conservation_mismatch_ticks=0 p

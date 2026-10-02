@@ -1,0 +1,5 @@
+carrier 2 slot 5 ports 13
+carrier 19 slot 4 ports 13
+carrier 21 slot 3 ports 0
+carrier 49 slot 2 ports 0
+ports totals {0: 0, 1: 0, 2: 0, 3: 0, 4: 13, 5: 13}

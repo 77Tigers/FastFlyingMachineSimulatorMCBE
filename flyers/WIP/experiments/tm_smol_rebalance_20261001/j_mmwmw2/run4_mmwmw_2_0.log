@@ -1,0 +1,41 @@
+ports totals {'pull0': 250, 'pull1': 202, 'pull2': 125, 'pull3': 97, 'pull4': 89, 'push0': 52, 'push1': 50, 'push2': 117, 'push3': 122, 'push4': 105}
+stage1 mmwmw 2 push@ 0 PL 122 Q [122, 51]
+pl 0 122 0 {}
+c552_000 mmwmw push@ 0 rail 16 {'PLtried': 1, 'PLwithQ': 1, 'budget': 23, 'build': 6}
+c552_001 mmwmw push@ 0 rail 16 {'PLtried': 1, 'PLwithQ': 1, 'budget': 47, 'build': 10}
+c552_002 mmwmw push@ 0 rail 16 {'PLtried': 1, 'PLwithQ': 1, 'budget': 52, 'build': 14}
+c552_003 mmwmw push@ 0 rail 16 {'PLtried': 1, 'PLwithQ': 1, 'budget': 68, 'build': 19}
+c552_004 mmwmw push@ 0 rail 14 {'PLtried': 1, 'PLwithQ': 1, 'budget': 70, 'build': 20}
+c552_005 mmwmw push@ 0 rail 16 {'PLtried': 1, 'PLwithQ': 1, 'budget': 130, 'build': 40}
+c552_006 mmwmw push@ 0 rail 16 {'PLtried': 1, 'PLwithQ': 1, 'budget': 142, 'build': 46}
+pl 1 122 88 {'PLtried': 1, 'PLwithQ': 1, 'budget': 145, 'build': 48}
+pl 2 122 186 {'PLtried': 2, 'PLwithQ': 2, 'budget': 248, 'build': 145}
+pl 3 122 285 {'PLtried': 3, 'PLwithQ': 3, 'budget': 337, 'build': 256}
+pl 4 122 354 {'PLtried': 4, 'PLwithQ': 4, 'budget': 452, 'build': 341}
+pl 5 122 444 {'PLtried': 5, 'PLwithQ': 5, 'budget': 557, 'build': 436}
+pl 6 122 564 {'PLtried': 6, 'PLwithQ': 6, 'budget': 666, 'build': 527}
+pl 7 122 650 {'PLtried': 7, 'PLwithQ': 7, 'budget': 784, 'build': 609}
+c552_007 mmwmw push@ 0 rail 11 {'PLtried': 8, 'PLwithQ': 8, 'budget': 784, 'build': 610}
+c552_008 mmwmw push@ 0 rail 10 {'PLtried': 8, 'PLwithQ': 8, 'budget': 785, 'build': 611}
+c552_009 mmwmw push@ 0 rail 12 {'PLtried': 8, 'PLwithQ': 8, 'budget': 785, 'build': 611}
+c552_010 mmwmw push@ 0 rail 11 {'PLtried': 8, 'PLwithQ': 8, 'budget': 785, 'build': 611}
+c552_011 mmwmw push@ 0 rail 11 {'PLtried': 8, 'PLwithQ': 8, 'budget': 786, 'build': 611}
+c552_012 mmwmw push@ 0 rail 9 {'PLtried': 8, 'PLwithQ': 8, 'budget': 789, 'build': 612}
+c552_013 mmwmw push@ 0 rail 11 {'PLtried': 8, 'PLwithQ': 8, 'budget': 791, 'build': 612}
+c552_014 mmwmw push@ 0 rail 12 {'PLtried': 8, 'PLwithQ': 8, 'budget': 793, 'build': 612}
+c552_015 mmwmw push@ 0 rail 11 {'PLtried': 8, 'PLwithQ': 8, 'budget': 794, 'build': 612}
+c552_016 mmwmw push@ 0 rail 13 {'PLtried': 8, 'PLwithQ': 8, 'budget': 794, 'build': 612}
+c552_017 mmwmw push@ 0 rail 10 {'PLtried': 8, 'PLwithQ': 8, 'budget': 795, 'build': 615}
+c552_018 mmwmw push@ 0 rail 11 {'PLtried': 8, 'PLwithQ': 8, 'budget': 804, 'build': 621}
+c552_019 mmwmw push@ 0 rail 10 {'PLtried': 8, 'PLwithQ': 8, 'budget': 805, 'build': 621}
+c552_020 mmwmw push@ 0 rail 12 {'PLtried': 8, 'PLwithQ': 8, 'budget': 805, 'build': 622}
+c552_021 mmwmw push@ 0 rail 11 {'PLtried': 8, 'PLwithQ': 8, 'budget': 806, 'build': 623}
+c552_022 mmwmw push@ 0 rail 10 {'PLtried': 8, 'PLwithQ': 8, 'budget': 811, 'build': 627}
+c552_023 mmwmw push@ 0 rail 9 {'PLtried': 8, 'PLwithQ': 8, 'budget': 811, 'build': 627}
+c552_024 mmwmw push@ 0 rail 10 {'PLtried': 8, 'PLwithQ': 8, 'budget': 814, 'build': 627}
+c552_025 mmwmw push@ 0 rail 12 {'PLtried': 8, 'PLwithQ': 8, 'budget': 817, 'build': 628}
+c552_026 mmwmw push@ 0 rail 10 {'PLtried': 8, 'PLwithQ': 8, 'budget': 817, 'build': 628}
+c552_027 mmwmw push@ 0 rail 13 {'PLtried': 8, 'PLwithQ': 8, 'budget': 817, 'build': 629}
+c552_028 mmwmw push@ 0 rail 12 {'PLtried': 8, 'PLwithQ': 8, 'budget': 818, 'build': 632}
+c552_029 mmwmw push@ 0 rail 8 {'PLtried': 8, 'PLwithQ': 8, 'budget': 819, 'build': 634}
+done {'PLtried': 8, 'PLwithQ': 8, 'budget': 819, 'build': 634}

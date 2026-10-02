@@ -32,12 +32,16 @@ def main():
                 g = clone(f); g.remove(p); g.set(e, Block(k))
                 vs[f'd{p[0]}_{p[1]}_{p[2]}_a{e[0]}_{e[1]}_{e[2]}{k.name[0]}'] = g
     print(len(dels), 'deletions x', len(empties), 'empties ->', len(vs), 'variants', flush=True)
-    names = sorted(vs); rows = []
-    for i in range(0, len(names), 2000):  # batches keep temp dirs small
-        rows += rebalance.screen({n: vs[n] for n in names[i:i+2000]}, outdir, ticks, limit)
-        print('screened', len(rows), flush=True)
-    with open(outdir / 'pairs.csv', 'w', newline='') as fh:
-        w = csv.DictWriter(fh, fieldnames=list(rows[0].keys())); w.writeheader(); w.writerows(rows)
+    names = sorted(vs, key=lambda n: ('_a' in n, n)); rows = []   # deletions alone first
+    fh = open(outdir / 'pairs.csv', 'w', newline=''); w = None
+    for i in range(0, len(names), 2000):  # batches keep temp dirs small; results flushed per batch
+        batch = rebalance.screen({n: vs[n] for n in names[i:i+2000]}, outdir, ticks, limit)
+        if w is None: w = csv.DictWriter(fh, fieldnames=list(batch[0].keys())); w.writeheader()
+        w.writerows(batch); fh.flush(); rows += batch
+        good = [r for r in batch if ok(r, ticks, limit)]
+        print('screened', len(rows), 'clean so far in batch', len(good),
+              [(r['name'], r['n_at_limit']) for r in sorted(good, key=lambda r: int(r['n_at_limit']))[:3]], flush=True)
+    fh.close()
     good = sorted((r for r in rows if ok(r, ticks, limit)), key=lambda r: (int(r['n_at_limit']), int(r['n_at_limit_m1'])))
     print(len(good), 'run clean')
     for r in good[:15]: print('  ', r['name'], r['n_at_limit'], r['n_at_limit_m1'], r['hist'])

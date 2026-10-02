@@ -1,0 +1,27 @@
+ports totals {'pull0': 250, 'pull1': 202, 'pull2': 125, 'pull3': 97, 'pull4': 89, 'push0': 52, 'push1': 50, 'push2': 117, 'push3': 122, 'push4': 105}
+stage1 mmwmw 2 push@ 3 PL 305 Q [162, 122]
+pl 0 305 1 {}
+c460_000 mmwmw push@ 3 rail 13 {'PLtried': 1, 'PLwithQ': 1, 'budget': 197, 'build': 91}
+pl 1 305 125 {'PLtried': 1, 'PLwithQ': 1, 'budget': 205, 'build': 94}
+pl 2 305 125 {'PLtried': 2, 'PLwithQ': 2, 'budget': 505, 'build': 94}
+pl 3 305 126 {'PLtried': 3, 'PLwithQ': 3, 'budget': 805, 'build': 94}
+pl 4 305 126 {'PLtried': 4, 'PLwithQ': 4, 'budget': 1105, 'build': 94}
+pl 5 305 173 {'PLtried': 5, 'PLwithQ': 5, 'budget': 1311, 'build': 188}
+pl 6 305 219 {'PLtried': 6, 'PLwithQ': 6, 'budget': 1517, 'build': 282}
+pl 7 305 268 {'PLtried': 7, 'PLwithQ': 7, 'budget': 1731, 'build': 368}
+c460_001 mmwmw push@ 3 rail 13 {'PLtried': 8, 'PLwithQ': 8, 'budget': 1817, 'build': 398}
+pl 8 305 323 {'PLtried': 8, 'PLwithQ': 8, 'budget': 1946, 'build': 452}
+c460_002 mmwmw push@ 3 rail 14 {'PLtried': 9, 'PLwithQ': 9, 'budget': 2103, 'build': 534}
+pl 9 305 372 {'PLtried': 9, 'PLwithQ': 9, 'budget': 2146, 'build': 551}
+pl 10 305 430 {'PLtried': 10, 'PLwithQ': 10, 'budget': 2364, 'build': 633}
+c460_003 mmwmw push@ 3 rail 12 {'PLtried': 11, 'PLwithQ': 11, 'budget': 2475, 'build': 696}
+pl 11 305 478 {'PLtried': 11, 'PLwithQ': 11, 'budget': 2559, 'build': 737}
+pl 12 305 523 {'PLtried': 12, 'PLwithQ': 12, 'budget': 2764, 'build': 832}
+c460_004 mmwmw push@ 3 rail 13 {'PLtried': 13, 'PLwithQ': 13, 'budget': 2783, 'build': 842}
+pl 13 305 587 {'PLtried': 13, 'PLwithQ': 13, 'budget': 2975, 'build': 920}
+pl 14 305 587 {'PLtried': 14, 'PLwithQ': 14, 'budget': 3275, 'build': 920}
+pl 15 305 588 {'PLtried': 15, 'PLwithQ': 15, 'budget': 3575, 'build': 920}
+pl 16 305 588 {'PLtried': 16, 'PLwithQ': 16, 'budget': 3875, 'build': 920}
+pl 17 305 645 {'PLtried': 17, 'PLwithQ': 17, 'budget': 4091, 'build': 1004}
+pl 18 305 695 {'PLtried': 18, 'PLwithQ': 18, 'budget': 4313, 'build': 1082}
+c460_005 mmwmw push@ 3 rail 13 {'PLtried': 19, 'PLwithQ': 19, 'budget': 4314, 'build': 1086}

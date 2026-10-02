@@ -1,0 +1,106 @@
+distance 120 over 400 ticks; bodies (rear->front by mean x):
+  B0: n=1  P=1 S=0 word=mmmmw at(1,5,5) [normal piston]
+  B1: n=1  P=1 S=0 word=mmmmw at(0,6,4) [normal piston]
+  B2: n=1  P=1 S=0 word=mmwmm at(1,5,6) [normal piston]
+  B3: n=1  P=1 S=0 word=mmwmm at(1,6,7) [normal piston]
+  B4: n=1  P=1 S=0 word=mmmmm at(2,2,7) [normal piston]
+  B5: n=1  P=1 S=0 word=mmmmm at(1,3,6) [normal piston]
+  B6: n=1  P=1 S=0 word=mmmwm at(2,1,5) [normal piston]
+  B7: n=1  P=1 S=0 word=mmmwm at(2,2,4) [normal piston]
+  B8: n=1  P=1 S=0 word=mmmmm at(2,3,8) [normal piston]
+  B9: n=7 ho6 RB1 P=0 S=0 word=mwwmm box x1-3 y5-6 z4-6
+  B10: n=9 sl8 RB1 P=0 S=0 word=wmmmw box x1-4 y3-6 z6-7
+  B11: n=9 sl7 RB2 P=0 S=0 word=mmwwm box x2-3 y2-3 z5-8
+  B12: n=1  P=1 S=0 word=mmmmm at(3,6,3) [normal piston]
+  B13: n=1  P=1 S=0 word=mmmmm at(3,7,4) [normal piston]
+  B14: n=1  P=1 S=0 word=mmmmm at(3,7,5) [normal piston]
+  B15: n=10 sl9 RB1 P=0 S=0 word=mmmww box x0-5 y3-5 z3-4
+  B16: n=1  P=1 S=0 word=mwmmm at(4,3,4) [normal piston]
+  B17: n=1  P=1 S=0 word=mwmmm at(4,4,3) [normal piston]
+  B18: n=7 ho6 RB1 P=0 S=0 word=wwmmm box x4-5 y1-3 z3-5
+  B19: n=8 sl5 RB2 P=0 S=1 word=wmmmw box x4-5 y6-7 z3-6
+  B20: n=1  P=1 S=0 word=mmmmm at(5,0,4) [normal piston]
+  B21: n=1  P=1 S=0 word=mmmmm at(5,0,5) [normal piston]
+  B22: n=1  P=1 S=0 word=mmmmm at(5,1,3) [normal piston]
+  B23: n=1  P=1 S=0 word=wmmmm at(6,7,7) [normal piston]
+  B24: n=9 sl6 RB2 P=0 S=1 word=mmmww box x5-6 y0-2 z3-6
+  B25: n=1  P=1 S=0 word=wmmmm at(5,6,6) [normal piston]
+  B26: n=1  P=1 S=0 word=mmmmm at(6,4,7) [normal piston]
+  B27: n=1  P=1 S=0 word=mmmmm at(6,4,8) [normal piston]
+  B28: n=1  P=1 S=0 word=mmmmw at(7,2,3) [normal piston]
+  B29: n=9 ho6 RB2 P=0 S=1 word=mmwwm box x6-7 y5-7 z5-8
+  B30: n=1  P=1 S=0 word=mmmmw at(6,1,2) [normal piston]
+  B31: n=1  P=1 S=0 word=mmmmm at(7,5,9) [normal piston]
+  B32: n=1  P=1 S=0 word=mmmmm at(8,3,1) [normal piston]
+  B33: n=1  P=1 S=0 word=mmmmm at(8,4,2) [normal piston]
+  B34: n=1  P=1 S=0 word=mmmmm at(8,4,3) [normal piston]
+  B35: n=9 sl6 RB2 P=0 S=1 word=mwwmm box x8-9 y1-3 z2-4
+  B36: n=8 sl5 RB2 P=0 S=1 word=wwmmm box x8-9 y4-5 z6-9
+  B37: n=8 ho5 RB2 P=0 S=1 word=wmmmw box x9-10 y3-4 z1-4
+  B38: n=1  P=1 S=0 word=mmmmm at(10,4,7) [normal piston]
+  B39: n=1  P=1 S=0 word=mmmmm at(10,4,8) [normal piston]
+  B40: n=1  P=1 S=0 word=mmmmm at(10,5,9) [normal piston]
+  B41: n=7 sl5 RB2 P=0 S=0 word=mmmww box x10-11 y4-5 z7-9
+  B42: n=1  P=1 S=0 word=mmmmm at(12,4,3) [normal piston]
+  B43: n=1  P=1 S=0 word=mmmmm at(11,4,2) [normal piston]
+  B44: n=1  P=1 S=0 word=mmmmm at(12,3,1) [normal piston]
+  B45: n=7 sl5 RB2 P=0 S=0 word=mmwwm box x12-13 y3-4 z1-3
+events in one period from tick 0 (slot actor(carriers|power) action load -> moved):
+  s0 B19(B19|) pull 12  -> B2x1,B3x1,B9x7,B12x1,B13x1,B14x1 
+  s0 B39(B36|B41) push 9   -> B38x1,B40x1,B41x7 
+  s0 B44(|B45) push 8   -> B42x1,B45x7 
+  s0 B20(B18|B24) push 12  -> B21x1,B22x1,B24x9,B30x1 
+  s0 B17(B18|B15) push 12  -> B1x1,B15x10,B16x1 
+  s0 B36(B36|B41) ext0 0   ->  
+  s0 B37(B37|) pull 12  -> B32x1,B33x1,B34x1,B35x9 
+  s0 B23(|B29) push 11  -> B26x1,B27x1,B29x9 
+  s0 B8(|B11) push 12  -> B4x1,B6x1,B7x1,B11x9 
+  s1 B40(|B41) push 8   -> B38x1,B41x7 
+  s1 B3(B9|B10) push 11  -> B2x1,B5x1,B10x9 
+  s1 B42(|B45) push 7   -> B45x7 
+  s1 B35(B35|B37) ext0 0   ->  
+  s1 B14(B9|B19) push 11  -> B12x1,B13x1,B19x8,B25x1 
+  s1 B33(B35|B37) push 11  -> B32x1,B34x1,B37x8,B43x1 
+  s1 B21(|B24) push 12  -> B22x1,B24x9,B28x1,B30x1 
+  s1 B16(B18|B15) push 12  -> B0x1,B1x1,B15x10 
+  s1 B4(|B11) push 11  -> B6x1,B7x1,B11x9 
+  s1 B36(B36|) pull 12  -> B26x1,B27x1,B29x9,B31x1 
+  s2 B13(|B19) push 11  -> B12x1,B19x8,B23x1,B25x1 
+  s2 B7(B11|B18) push 10  -> B6x1,B17x1,B18x7,B20x1 
+  s2 B29(B29|B36) ext0 0   ->  
+  s2 B34(B35|B37) push 11  -> B32x1,B37x8,B43x1,B44x1 
+  s2 B38(|B41) push 7   -> B41x7 
+  s2 B35(B35|) pull 12  -> B0x1,B1x1,B15x10 
+  s2 B2(B9|B10) push 11  -> B5x1,B8x1,B10x9 
+  s2 B27(B29|B36) push 11  -> B26x1,B31x1,B36x8,B39x1 
+  s2 B22(|B24) push 11  -> B24x9,B28x1,B30x1 
+  s3 B30(B24|B35) push 11  -> B28x1,B33x1,B35x9 
+  s3 B6(B11|B18) push 11  -> B16x1,B17x1,B18x7,B20x1,B21x1 
+  s3 B0(B15|B9) push 10  -> B1x1,B3x1,B9x7,B14x1 
+  s3 B32(|B37) push 11  -> B37x8,B42x1,B43x1,B44x1 
+  s3 B12(|B19) push 10  -> B19x8,B23x1,B25x1 
+  s3 B24(B24|B35) ext0 0   ->  
+  s3 B26(B29|B36) push 11  -> B31x1,B36x8,B39x1,B40x1 
+  s3 B29(B29|) pull 12  -> B4x1,B5x1,B8x1,B10x9 
+  s4 B1(B15|B9) push 11  -> B2x1,B3x1,B9x7,B13x1,B14x1 
+  s4 B25(B19|B29) push 11  -> B23x1,B27x1,B29x9 
+  s4 B31(|B36) push 11  -> B36x8,B38x1,B39x1,B40x1 
+  s4 B19(B19|B29) ext0 0   ->  
+  s4 B5(B10|B11) push 12  -> B4x1,B7x1,B8x1,B11x9 
+  s4 B44(B37|B45) push 9   -> B42x1,B43x1,B45x7 
+  s4 B37(B37|B45) ext0 0   ->  
+  s4 B28(B35|B35) push 11  -> B33x1,B34x1,B35x9 
+  s4 B24(B24|) pull 12  -> B16x1,B17x1,B18x7,B20x1,B21x1,B22x1 
+ROLE B9 MIXED glue=6 witness=(3,5,5) pushes=80 pulls=40
+ROLE B10 MIXED glue=8 witness=(1,3,7) pushes=80 pulls=40
+ROLE B11 PUSH_ONLY glue=7 witness=(2,2,5) pushes=120 pulls=0
+ROLE B15 MIXED glue=9 witness=(5,3,4) pushes=80 pulls=40
+ROLE B18 MIXED glue=6 witness=(5,1,4) pushes=80 pulls=40
+ROLE B19 PUSH_ONLY glue=5 witness=(5,6,3) pushes=120 pulls=0
+ROLE B24 PUSH_ONLY glue=6 witness=(6,0,3) pushes=120 pulls=0
+ROLE B29 MIXED glue=6 witness=(6,5,7) pushes=80 pulls=40
+ROLE B35 MIXED glue=6 witness=(9,1,2) pushes=80 pulls=40
+ROLE B36 PUSH_ONLY glue=5 witness=(9,4,6) pushes=120 pulls=0
+ROLE B37 PUSH_ONLY glue=5 witness=(10,3,1) pushes=120 pulls=0
+ROLE B41 PUSH_ONLY glue=5 witness=(11,4,7) pushes=120 pulls=0
+ROLE B45 PUSH_ONLY glue=5 witness=(13,3,1) pushes=120 pulls=0

@@ -1,0 +1,15 @@
+rng,phase_x,phase_z,limit,distance,extension_failures,movement_failures,conservation_mismatch_ticks,max_successful_action,boundaries,initial_matches,consecutive_matches,displacement_mismatches,pass
+0,0,0,17,3000,0,0,0,17,1000,2,5,0,false
+0,0,7,17,3000,0,0,0,17,1000,4,7,0,false
+0,0,8,17,3000,0,0,0,17,1000,3,9,0,false
+0,0,15,17,3000,0,0,0,17,1000,3,6,0,false
+0,7,0,17,3000,0,0,0,17,1000,4,3,0,false
+0,7,7,17,3000,0,0,0,17,1000,2,5,0,false
+0,7,8,17,3000,0,0,0,17,1000,2,6,0,false
+0,7,15,17,3000,0,0,0,17,1000,6,9,0,false
+0,8,0,17,3000,0,0,0,17,1000,6,8,0,false
+0,8,7,17,3000,0,0,0,17,1000,2,3,0,false
+0,8,8,17,3000,0,0,0,17,1000,3,2,0,false
+0,8,15,17,3000,0,0,0,17,1000,3,9,0,false
+0,15,0,17,3000,0,0,0,17,1000,4,6,0,false
+0,15,7,17,3000,0,0,0,17,1000,5,4,0,false

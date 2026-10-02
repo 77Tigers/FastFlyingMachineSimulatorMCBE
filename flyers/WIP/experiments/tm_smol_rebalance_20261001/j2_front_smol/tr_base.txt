@@ -1,0 +1,1611 @@
+TICK 0 x=3 ext=7 fail=0 ret=5
+INITIAL Coord { x: 2, y: 5, z: 4 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 2, y: 6, z: 4 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 3, y: 3, z: 7 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 3, y: 3, z: 8 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 3, y: 4, z: 7 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 3, y: 5, z: 4 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 3, y: 5, z: 5 } Piston cell=2057 dir=0 sticky=false state=2 moving=false
+INITIAL Coord { x: 3, y: 5, z: 6 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 3, y: 6, z: 6 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 3, y: 6, z: 7 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 4, y: 2, z: 4 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 4, y: 2, z: 5 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 4, y: 2, z: 6 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 4, y: 2, z: 7 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 4, y: 2, z: 8 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 4, y: 3, z: 6 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 4, y: 4, z: 7 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 4, y: 5, z: 4 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 4, y: 5, z: 5 } PistonArm cell=10 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 4, y: 5, z: 7 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 4, y: 6, z: 5 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 4, y: 6, z: 6 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 5, y: 1, z: 5 } Piston cell=2057 dir=0 sticky=false state=2 moving=false
+INITIAL Coord { x: 5, y: 2, z: 5 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 5, y: 2, z: 6 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 5, y: 2, z: 7 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 5, y: 2, z: 8 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 5, y: 3, z: 6 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 5, y: 3, z: 8 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 5, y: 4, z: 7 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 5, y: 5, z: 4 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 5, y: 5, z: 5 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 5, y: 5, z: 6 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 5, y: 5, z: 7 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 5, y: 6, z: 3 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 5, y: 6, z: 4 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 5, y: 6, z: 5 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 5, y: 6, z: 6 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 5, y: 6, z: 7 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 5, y: 7, z: 4 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 5, y: 7, z: 5 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 6, y: 1, z: 4 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 6, y: 1, z: 5 } PistonArm cell=10 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 6, y: 3, z: 3 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 6, y: 3, z: 4 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 6, y: 4, z: 3 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 6, y: 4, z: 4 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 6, y: 5, z: 4 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 6, y: 5, z: 6 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 6, y: 6, z: 5 } PistonArm cell=10 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 6, y: 7, z: 3 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 6, y: 7, z: 6 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 7, y: 0, z: 3 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 7, y: 0, z: 4 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 7, y: 0, z: 5 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 7, y: 0, z: 6 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 7, y: 1, z: 3 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 7, y: 1, z: 4 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 7, y: 1, z: 5 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 7, y: 2, z: 3 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 7, y: 2, z: 4 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 7, y: 3, z: 3 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 7, y: 3, z: 4 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 7, y: 4, z: 3 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 7, y: 4, z: 4 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 7, y: 5, z: 4 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 7, y: 6, z: 3 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 7, y: 6, z: 5 } Piston cell=2345 dir=1 sticky=true state=2 moving=false
+INITIAL Coord { x: 7, y: 6, z: 6 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 7, y: 7, z: 3 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 7, y: 7, z: 4 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 7, y: 7, z: 5 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 7, y: 7, z: 6 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 8, y: 0, z: 3 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 8, y: 0, z: 4 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 8, y: 0, z: 5 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 8, y: 0, z: 6 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 8, y: 1, z: 3 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 8, y: 1, z: 4 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 8, y: 2, z: 3 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 8, y: 2, z: 4 } Piston cell=297 dir=1 sticky=true state=0 moving=false
+INITIAL Coord { x: 8, y: 4, z: 7 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 8, y: 4, z: 8 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 8, y: 5, z: 6 } Piston cell=297 dir=1 sticky=true state=0 moving=false
+INITIAL Coord { x: 8, y: 5, z: 7 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 8, y: 5, z: 8 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 8, y: 6, z: 7 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 8, y: 7, z: 7 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 9, y: 1, z: 2 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 9, y: 5, z: 7 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 9, y: 5, z: 9 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 9, y: 6, z: 5 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 9, y: 6, z: 6 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 9, y: 6, z: 7 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 9, y: 7, z: 7 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 10, y: 2, z: 2 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 10, y: 3, z: 1 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 10, y: 3, z: 2 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 10, y: 3, z: 3 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 10, y: 3, z: 4 } Piston cell=297 dir=1 sticky=true state=0 moving=false
+INITIAL Coord { x: 10, y: 4, z: 2 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 10, y: 4, z: 3 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 10, y: 4, z: 6 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 10, y: 4, z: 9 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 11, y: 1, z: 2 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 11, y: 2, z: 2 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 11, y: 2, z: 3 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 11, y: 2, z: 4 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 11, y: 3, z: 2 } PistonArm cell=10 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 11, y: 3, z: 3 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 11, y: 4, z: 1 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 11, y: 4, z: 4 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 11, y: 4, z: 6 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 11, y: 4, z: 7 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 11, y: 4, z: 8 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 11, y: 4, z: 9 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 11, y: 5, z: 8 } Piston cell=297 dir=1 sticky=true state=0 moving=false
+INITIAL Coord { x: 11, y: 5, z: 9 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 12, y: 3, z: 1 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 12, y: 3, z: 2 } Piston cell=2345 dir=1 sticky=true state=2 moving=false
+INITIAL Coord { x: 12, y: 4, z: 1 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 12, y: 4, z: 2 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 12, y: 4, z: 3 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 12, y: 4, z: 4 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 12, y: 4, z: 7 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 12, y: 4, z: 8 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 12, y: 5, z: 7 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 12, y: 5, z: 8 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 12, y: 5, z: 9 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 13, y: 3, z: 1 } Piston cell=2057 dir=0 sticky=false state=2 moving=false
+INITIAL Coord { x: 13, y: 4, z: 7 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 13, y: 4, z: 8 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 13, y: 5, z: 7 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 13, y: 5, z: 8 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 13, y: 5, z: 9 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 14, y: 3, z: 1 } PistonArm cell=10 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 14, y: 3, z: 2 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 14, y: 3, z: 3 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 14, y: 4, z: 2 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 14, y: 4, z: 3 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 15, y: 3, z: 1 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 15, y: 3, z: 2 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 15, y: 3, z: 3 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 15, y: 4, z: 2 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+INITIAL Coord { x: 15, y: 4, z: 3 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+POWER soft Coord { x: 7, y: 0, z: 3 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 7, y: 1, z: 3 }
+POWER soft Coord { x: 7, y: 0, z: 3 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 7, y: 0, z: 4 }
+POWER soft Coord { x: 7, y: 0, z: 6 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 7, y: 0, z: 5 }
+POWER soft Coord { x: 4, y: 2, z: 6 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 4, y: 3, z: 6 }
+POWER soft Coord { x: 4, y: 2, z: 6 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 4, y: 2, z: 7 }
+POWER soft Coord { x: 4, y: 2, z: 8 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 4, y: 2, z: 7 }
+POWER soft Coord { x: 14, y: 3, z: 2 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 14, y: 4, z: 2 }
+POWER soft Coord { x: 14, y: 3, z: 3 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 14, y: 4, z: 3 }
+POWER soft Coord { x: 6, y: 4, z: 4 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 6, y: 3, z: 4 }
+POWER soft Coord { x: 6, y: 4, z: 4 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 6, y: 4, z: 3 }
+POWER soft Coord { x: 12, y: 5, z: 7 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 12, y: 4, z: 7 }
+POWER soft Coord { x: 12, y: 5, z: 8 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 11, y: 5, z: 8 }
+POWER soft Coord { x: 12, y: 5, z: 8 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 12, y: 4, z: 8 }
+POWER soft Coord { x: 12, y: 5, z: 8 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 12, y: 5, z: 9 }
+POWER soft Coord { x: 8, y: 6, z: 7 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 8, y: 7, z: 7 }
+ACTION Tick 0 · retract @ (7, 6, 5) piston=Some(Coord { x: 7, y: 6, z: 5 }) sources=12 failure=None
+SOURCE Coord { x: 3, y: 5, z: 6 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 3, y: 6, z: 6 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 3, y: 6, z: 7 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 4, y: 6, z: 5 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 4, y: 6, z: 6 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 5, y: 5, z: 5 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 5, y: 6, z: 3 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 5, y: 6, z: 4 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 5, y: 6, z: 5 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 5, y: 6, z: 6 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 5, y: 7, z: 4 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 5, y: 7, z: 5 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+LINK stick Coord { x: 5, y: 6, z: 5 } -> Coord { x: 4, y: 6, z: 5 }
+LINK stick Coord { x: 5, y: 6, z: 5 } -> Coord { x: 5, y: 7, z: 5 }
+LINK stick Coord { x: 5, y: 6, z: 5 } -> Coord { x: 5, y: 5, z: 5 }
+LINK stick Coord { x: 5, y: 6, z: 5 } -> Coord { x: 5, y: 6, z: 6 }
+LINK stick Coord { x: 5, y: 6, z: 5 } -> Coord { x: 5, y: 6, z: 4 }
+LINK stick Coord { x: 5, y: 5, z: 5 } -> Coord { x: 5, y: 6, z: 5 }
+LINK stick Coord { x: 5, y: 6, z: 6 } -> Coord { x: 4, y: 6, z: 6 }
+LINK stick Coord { x: 5, y: 6, z: 6 } -> Coord { x: 5, y: 6, z: 5 }
+LINK stick Coord { x: 5, y: 6, z: 4 } -> Coord { x: 5, y: 7, z: 4 }
+LINK stick Coord { x: 5, y: 6, z: 4 } -> Coord { x: 5, y: 6, z: 5 }
+LINK stick Coord { x: 5, y: 6, z: 4 } -> Coord { x: 5, y: 6, z: 3 }
+LINK stick Coord { x: 4, y: 6, z: 6 } -> Coord { x: 5, y: 6, z: 6 }
+LINK stick Coord { x: 4, y: 6, z: 6 } -> Coord { x: 3, y: 6, z: 6 }
+LINK stick Coord { x: 4, y: 6, z: 6 } -> Coord { x: 4, y: 6, z: 5 }
+LINK stick Coord { x: 3, y: 6, z: 6 } -> Coord { x: 4, y: 6, z: 6 }
+LINK stick Coord { x: 3, y: 6, z: 6 } -> Coord { x: 3, y: 5, z: 6 }
+LINK stick Coord { x: 3, y: 6, z: 6 } -> Coord { x: 3, y: 6, z: 7 }
+ACTION Tick 0 · extend @ (12, 4, 8) piston=Some(Coord { x: 12, y: 4, z: 8 }) sources=9 failure=None
+SOURCE Coord { x: 12, y: 4, z: 7 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 12, y: 5, z: 7 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 12, y: 5, z: 8 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 12, y: 5, z: 9 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 13, y: 4, z: 7 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 13, y: 4, z: 8 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 13, y: 5, z: 7 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 13, y: 5, z: 8 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 13, y: 5, z: 9 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+LINK stick Coord { x: 13, y: 4, z: 8 } -> Coord { x: 13, y: 5, z: 8 }
+LINK stick Coord { x: 13, y: 4, z: 8 } -> Coord { x: 13, y: 4, z: 7 }
+LINK stick Coord { x: 13, y: 5, z: 8 } -> Coord { x: 12, y: 5, z: 8 }
+LINK stick Coord { x: 13, y: 5, z: 8 } -> Coord { x: 13, y: 4, z: 8 }
+LINK stick Coord { x: 13, y: 5, z: 8 } -> Coord { x: 13, y: 5, z: 9 }
+LINK stick Coord { x: 13, y: 5, z: 8 } -> Coord { x: 13, y: 5, z: 7 }
+LINK stick Coord { x: 13, y: 4, z: 7 } -> Coord { x: 12, y: 4, z: 7 }
+LINK stick Coord { x: 13, y: 4, z: 7 } -> Coord { x: 13, y: 5, z: 7 }
+LINK stick Coord { x: 13, y: 4, z: 7 } -> Coord { x: 13, y: 4, z: 8 }
+LINK stick Coord { x: 13, y: 5, z: 9 } -> Coord { x: 12, y: 5, z: 9 }
+LINK stick Coord { x: 13, y: 5, z: 9 } -> Coord { x: 13, y: 5, z: 8 }
+LINK stick Coord { x: 13, y: 5, z: 7 } -> Coord { x: 12, y: 5, z: 7 }
+LINK stick Coord { x: 13, y: 5, z: 7 } -> Coord { x: 13, y: 4, z: 7 }
+LINK stick Coord { x: 13, y: 5, z: 7 } -> Coord { x: 13, y: 5, z: 8 }
+ACTION Tick 0 · extend @ (14, 4, 2) piston=Some(Coord { x: 14, y: 4, z: 2 }) sources=8 failure=None
+SOURCE Coord { x: 14, y: 3, z: 2 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 14, y: 3, z: 3 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 14, y: 4, z: 3 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 15, y: 3, z: 1 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 15, y: 3, z: 2 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 15, y: 3, z: 3 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 15, y: 4, z: 2 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 15, y: 4, z: 3 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+LINK stick Coord { x: 15, y: 4, z: 2 } -> Coord { x: 15, y: 3, z: 2 }
+LINK stick Coord { x: 15, y: 4, z: 2 } -> Coord { x: 15, y: 4, z: 3 }
+LINK stick Coord { x: 15, y: 3, z: 2 } -> Coord { x: 14, y: 3, z: 2 }
+LINK stick Coord { x: 15, y: 3, z: 2 } -> Coord { x: 15, y: 4, z: 2 }
+LINK stick Coord { x: 15, y: 3, z: 2 } -> Coord { x: 15, y: 3, z: 3 }
+LINK stick Coord { x: 15, y: 3, z: 2 } -> Coord { x: 15, y: 3, z: 1 }
+LINK stick Coord { x: 15, y: 4, z: 3 } -> Coord { x: 14, y: 4, z: 3 }
+LINK stick Coord { x: 15, y: 4, z: 3 } -> Coord { x: 15, y: 3, z: 3 }
+LINK stick Coord { x: 15, y: 4, z: 3 } -> Coord { x: 15, y: 4, z: 2 }
+LINK stick Coord { x: 15, y: 3, z: 3 } -> Coord { x: 14, y: 3, z: 3 }
+LINK stick Coord { x: 15, y: 3, z: 3 } -> Coord { x: 15, y: 4, z: 3 }
+LINK stick Coord { x: 15, y: 3, z: 3 } -> Coord { x: 15, y: 3, z: 2 }
+LINK stick Coord { x: 15, y: 3, z: 1 } -> Coord { x: 15, y: 3, z: 2 }
+ACTION Tick 0 · extend @ (7, 0, 4) piston=Some(Coord { x: 7, y: 0, z: 4 }) sources=12 failure=None
+SOURCE Coord { x: 7, y: 0, z: 3 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 7, y: 0, z: 5 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 7, y: 0, z: 6 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 7, y: 1, z: 3 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 8, y: 0, z: 3 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 8, y: 0, z: 4 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 8, y: 0, z: 5 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 8, y: 0, z: 6 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 8, y: 1, z: 3 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 8, y: 1, z: 4 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 8, y: 2, z: 3 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 8, y: 2, z: 4 } Piston cell=297 dir=1 sticky=true state=0 moving=false
+LINK stick Coord { x: 8, y: 0, z: 4 } -> Coord { x: 8, y: 1, z: 4 }
+LINK stick Coord { x: 8, y: 0, z: 4 } -> Coord { x: 8, y: 0, z: 5 }
+LINK stick Coord { x: 8, y: 0, z: 4 } -> Coord { x: 8, y: 0, z: 3 }
+LINK stick Coord { x: 8, y: 1, z: 4 } -> Coord { x: 8, y: 2, z: 4 }
+LINK stick Coord { x: 8, y: 1, z: 4 } -> Coord { x: 8, y: 0, z: 4 }
+LINK stick Coord { x: 8, y: 1, z: 4 } -> Coord { x: 8, y: 1, z: 3 }
+LINK stick Coord { x: 8, y: 0, z: 5 } -> Coord { x: 7, y: 0, z: 5 }
+LINK stick Coord { x: 8, y: 0, z: 5 } -> Coord { x: 8, y: 0, z: 6 }
+LINK stick Coord { x: 8, y: 0, z: 5 } -> Coord { x: 8, y: 0, z: 4 }
+LINK stick Coord { x: 8, y: 0, z: 3 } -> Coord { x: 7, y: 0, z: 3 }
+LINK stick Coord { x: 8, y: 0, z: 3 } -> Coord { x: 8, y: 1, z: 3 }
+LINK stick Coord { x: 8, y: 0, z: 3 } -> Coord { x: 8, y: 0, z: 4 }
+LINK stick Coord { x: 8, y: 1, z: 3 } -> Coord { x: 7, y: 1, z: 3 }
+LINK stick Coord { x: 8, y: 1, z: 3 } -> Coord { x: 8, y: 2, z: 3 }
+LINK stick Coord { x: 8, y: 1, z: 3 } -> Coord { x: 8, y: 0, z: 3 }
+LINK stick Coord { x: 8, y: 1, z: 3 } -> Coord { x: 8, y: 1, z: 4 }
+LINK stick Coord { x: 8, y: 0, z: 6 } -> Coord { x: 7, y: 0, z: 6 }
+LINK stick Coord { x: 8, y: 0, z: 6 } -> Coord { x: 8, y: 0, z: 5 }
+ACTION Tick 0 · extend @ (6, 4, 3) piston=Some(Coord { x: 6, y: 4, z: 3 }) sources=12 failure=None
+SOURCE Coord { x: 2, y: 5, z: 4 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 2, y: 6, z: 4 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 3, y: 5, z: 4 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 4, y: 5, z: 4 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 5, y: 5, z: 4 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 6, y: 3, z: 4 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 6, y: 4, z: 4 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 6, y: 5, z: 4 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 7, y: 3, z: 4 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 7, y: 4, z: 3 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 7, y: 4, z: 4 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 7, y: 5, z: 4 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+LINK stick Coord { x: 7, y: 4, z: 3 } -> Coord { x: 7, y: 4, z: 4 }
+LINK stick Coord { x: 7, y: 4, z: 4 } -> Coord { x: 6, y: 4, z: 4 }
+LINK stick Coord { x: 7, y: 4, z: 4 } -> Coord { x: 7, y: 5, z: 4 }
+LINK stick Coord { x: 7, y: 4, z: 4 } -> Coord { x: 7, y: 3, z: 4 }
+LINK stick Coord { x: 7, y: 4, z: 4 } -> Coord { x: 7, y: 4, z: 3 }
+LINK stick Coord { x: 7, y: 5, z: 4 } -> Coord { x: 6, y: 5, z: 4 }
+LINK stick Coord { x: 7, y: 5, z: 4 } -> Coord { x: 7, y: 4, z: 4 }
+LINK stick Coord { x: 7, y: 3, z: 4 } -> Coord { x: 6, y: 3, z: 4 }
+LINK stick Coord { x: 7, y: 3, z: 4 } -> Coord { x: 7, y: 4, z: 4 }
+LINK stick Coord { x: 6, y: 5, z: 4 } -> Coord { x: 7, y: 5, z: 4 }
+LINK stick Coord { x: 6, y: 5, z: 4 } -> Coord { x: 5, y: 5, z: 4 }
+LINK stick Coord { x: 6, y: 5, z: 4 } -> Coord { x: 6, y: 4, z: 4 }
+LINK stick Coord { x: 5, y: 5, z: 4 } -> Coord { x: 6, y: 5, z: 4 }
+LINK stick Coord { x: 5, y: 5, z: 4 } -> Coord { x: 4, y: 5, z: 4 }
+LINK stick Coord { x: 4, y: 5, z: 4 } -> Coord { x: 5, y: 5, z: 4 }
+LINK stick Coord { x: 4, y: 5, z: 4 } -> Coord { x: 3, y: 5, z: 4 }
+LINK stick Coord { x: 3, y: 5, z: 4 } -> Coord { x: 4, y: 5, z: 4 }
+LINK stick Coord { x: 3, y: 5, z: 4 } -> Coord { x: 2, y: 5, z: 4 }
+LINK stick Coord { x: 2, y: 5, z: 4 } -> Coord { x: 3, y: 5, z: 4 }
+LINK stick Coord { x: 2, y: 5, z: 4 } -> Coord { x: 2, y: 6, z: 4 }
+ACTION Tick 0 · retract @ (3, 5, 5) piston=Some(Coord { x: 3, y: 5, z: 5 }) sources=0 failure=None
+ACTION Tick 0 · extend @ (11, 5, 8) piston=Some(Coord { x: 11, y: 5, z: 8 }) sources=0 failure=None
+ACTION Tick 0 · retract @ (12, 3, 2) piston=Some(Coord { x: 12, y: 3, z: 2 }) sources=12 failure=None
+SOURCE Coord { x: 10, y: 2, z: 2 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 10, y: 3, z: 1 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 10, y: 3, z: 2 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 10, y: 3, z: 3 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 10, y: 3, z: 4 } Piston cell=297 dir=1 sticky=true state=0 moving=false
+SOURCE Coord { x: 10, y: 4, z: 2 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 10, y: 4, z: 3 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 11, y: 1, z: 2 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 11, y: 2, z: 2 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 11, y: 2, z: 3 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 11, y: 2, z: 4 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 11, y: 3, z: 3 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+LINK stick Coord { x: 10, y: 3, z: 2 } -> Coord { x: 10, y: 4, z: 2 }
+LINK stick Coord { x: 10, y: 3, z: 2 } -> Coord { x: 10, y: 2, z: 2 }
+LINK stick Coord { x: 10, y: 3, z: 2 } -> Coord { x: 10, y: 3, z: 3 }
+LINK stick Coord { x: 10, y: 3, z: 2 } -> Coord { x: 10, y: 3, z: 1 }
+LINK obstruction Coord { x: 10, y: 2, z: 2 } -> Coord { x: 11, y: 2, z: 2 }
+LINK stick Coord { x: 10, y: 3, z: 3 } -> Coord { x: 11, y: 3, z: 3 }
+LINK stick Coord { x: 10, y: 3, z: 3 } -> Coord { x: 10, y: 4, z: 3 }
+LINK stick Coord { x: 10, y: 3, z: 3 } -> Coord { x: 10, y: 3, z: 4 }
+LINK stick Coord { x: 10, y: 3, z: 3 } -> Coord { x: 10, y: 3, z: 2 }
+LINK obstruction Coord { x: 10, y: 3, z: 3 } -> Coord { x: 11, y: 3, z: 3 }
+LINK stick Coord { x: 11, y: 2, z: 2 } -> Coord { x: 10, y: 2, z: 2 }
+LINK stick Coord { x: 11, y: 2, z: 2 } -> Coord { x: 11, y: 1, z: 2 }
+LINK stick Coord { x: 11, y: 2, z: 2 } -> Coord { x: 11, y: 2, z: 3 }
+LINK stick Coord { x: 11, y: 3, z: 3 } -> Coord { x: 10, y: 3, z: 3 }
+LINK stick Coord { x: 11, y: 3, z: 3 } -> Coord { x: 11, y: 2, z: 3 }
+LINK stick Coord { x: 11, y: 1, z: 2 } -> Coord { x: 11, y: 2, z: 2 }
+LINK stick Coord { x: 11, y: 2, z: 3 } -> Coord { x: 11, y: 3, z: 3 }
+LINK stick Coord { x: 11, y: 2, z: 3 } -> Coord { x: 11, y: 2, z: 4 }
+LINK stick Coord { x: 11, y: 2, z: 3 } -> Coord { x: 11, y: 2, z: 2 }
+ACTION Tick 0 · extend @ (8, 7, 7) piston=Some(Coord { x: 8, y: 7, z: 7 }) sources=11 failure=None
+SOURCE Coord { x: 8, y: 4, z: 7 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 8, y: 4, z: 8 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 8, y: 5, z: 6 } Piston cell=297 dir=1 sticky=true state=0 moving=false
+SOURCE Coord { x: 8, y: 5, z: 7 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 8, y: 5, z: 8 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 8, y: 6, z: 7 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 9, y: 5, z: 7 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 9, y: 6, z: 5 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 9, y: 6, z: 6 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 9, y: 6, z: 7 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 9, y: 7, z: 7 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+LINK stick Coord { x: 9, y: 7, z: 7 } -> Coord { x: 9, y: 6, z: 7 }
+LINK stick Coord { x: 9, y: 6, z: 7 } -> Coord { x: 8, y: 6, z: 7 }
+LINK stick Coord { x: 9, y: 6, z: 7 } -> Coord { x: 9, y: 7, z: 7 }
+LINK stick Coord { x: 9, y: 6, z: 7 } -> Coord { x: 9, y: 5, z: 7 }
+LINK stick Coord { x: 9, y: 6, z: 7 } -> Coord { x: 9, y: 6, z: 6 }
+LINK stick Coord { x: 9, y: 5, z: 7 } -> Coord { x: 8, y: 5, z: 7 }
+LINK stick Coord { x: 9, y: 5, z: 7 } -> Coord { x: 9, y: 6, z: 7 }
+LINK stick Coord { x: 9, y: 6, z: 6 } -> Coord { x: 9, y: 6, z: 7 }
+LINK stick Coord { x: 9, y: 6, z: 6 } -> Coord { x: 9, y: 6, z: 5 }
+LINK stick Coord { x: 8, y: 5, z: 7 } -> Coord { x: 9, y: 5, z: 7 }
+LINK stick Coord { x: 8, y: 5, z: 7 } -> Coord { x: 8, y: 6, z: 7 }
+LINK stick Coord { x: 8, y: 5, z: 7 } -> Coord { x: 8, y: 4, z: 7 }
+LINK stick Coord { x: 8, y: 5, z: 7 } -> Coord { x: 8, y: 5, z: 8 }
+LINK stick Coord { x: 8, y: 5, z: 7 } -> Coord { x: 8, y: 5, z: 6 }
+LINK stick Coord { x: 8, y: 5, z: 8 } -> Coord { x: 8, y: 4, z: 8 }
+LINK stick Coord { x: 8, y: 5, z: 8 } -> Coord { x: 8, y: 5, z: 7 }
+ACTION Tick 0 · retract @ (13, 3, 1) piston=Some(Coord { x: 13, y: 3, z: 1 }) sources=0 failure=None
+ACTION Tick 0 · extend @ (4, 2, 7) piston=Some(Coord { x: 4, y: 2, z: 7 }) sources=11 failure=None
+SOURCE Coord { x: 4, y: 2, z: 4 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 4, y: 2, z: 5 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 4, y: 2, z: 6 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 4, y: 2, z: 8 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 4, y: 3, z: 6 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 5, y: 2, z: 5 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 5, y: 2, z: 6 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 5, y: 2, z: 7 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 5, y: 2, z: 8 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 5, y: 3, z: 6 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 5, y: 3, z: 8 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+LINK stick Coord { x: 5, y: 2, z: 7 } -> Coord { x: 5, y: 2, z: 8 }
+LINK stick Coord { x: 5, y: 2, z: 7 } -> Coord { x: 5, y: 2, z: 6 }
+LINK stick Coord { x: 5, y: 2, z: 8 } -> Coord { x: 4, y: 2, z: 8 }
+LINK stick Coord { x: 5, y: 2, z: 8 } -> Coord { x: 5, y: 3, z: 8 }
+LINK stick Coord { x: 5, y: 2, z: 8 } -> Coord { x: 5, y: 2, z: 7 }
+LINK stick Coord { x: 5, y: 2, z: 6 } -> Coord { x: 4, y: 2, z: 6 }
+LINK stick Coord { x: 5, y: 2, z: 6 } -> Coord { x: 5, y: 3, z: 6 }
+LINK stick Coord { x: 5, y: 2, z: 6 } -> Coord { x: 5, y: 2, z: 7 }
+LINK stick Coord { x: 5, y: 2, z: 6 } -> Coord { x: 5, y: 2, z: 5 }
+LINK stick Coord { x: 5, y: 3, z: 8 } -> Coord { x: 5, y: 2, z: 8 }
+LINK stick Coord { x: 5, y: 3, z: 6 } -> Coord { x: 4, y: 3, z: 6 }
+LINK stick Coord { x: 5, y: 3, z: 6 } -> Coord { x: 5, y: 2, z: 6 }
+LINK stick Coord { x: 5, y: 2, z: 5 } -> Coord { x: 4, y: 2, z: 5 }
+LINK stick Coord { x: 5, y: 2, z: 5 } -> Coord { x: 5, y: 2, z: 6 }
+LINK stick Coord { x: 4, y: 2, z: 5 } -> Coord { x: 5, y: 2, z: 5 }
+LINK stick Coord { x: 4, y: 2, z: 5 } -> Coord { x: 4, y: 2, z: 6 }
+LINK stick Coord { x: 4, y: 2, z: 5 } -> Coord { x: 4, y: 2, z: 4 }
+ACTION Tick 0 · retract @ (5, 1, 5) piston=Some(Coord { x: 5, y: 1, z: 5 }) sources=0 failure=None
+TICK 1 x=3 ext=0 fail=0 ret=0
+TICK 2 x=4 ext=9 fail=0 ret=7
+POWER soft Coord { x: 8, y: 0, z: 3 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 8, y: 1, z: 3 }
+POWER soft Coord { x: 8, y: 0, z: 6 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 8, y: 0, z: 5 }
+POWER soft Coord { x: 5, y: 2, z: 6 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 5, y: 3, z: 6 }
+POWER soft Coord { x: 15, y: 3, z: 3 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 15, y: 4, z: 3 }
+POWER soft Coord { x: 11, y: 4, z: 1 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 11, y: 3, z: 1 }
+POWER soft Coord { x: 11, y: 4, z: 1 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 11, y: 4, z: 2 }
+POWER soft Coord { x: 7, y: 4, z: 4 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 7, y: 3, z: 4 }
+POWER soft Coord { x: 11, y: 4, z: 4 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 11, y: 3, z: 4 }
+POWER soft Coord { x: 11, y: 4, z: 4 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 11, y: 4, z: 3 }
+POWER soft Coord { x: 4, y: 5, z: 7 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 4, y: 6, z: 7 }
+POWER soft Coord { x: 4, y: 5, z: 7 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 4, y: 5, z: 6 }
+POWER soft Coord { x: 13, y: 5, z: 7 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 13, y: 4, z: 7 }
+POWER soft Coord { x: 13, y: 5, z: 8 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 13, y: 5, z: 9 }
+POWER soft Coord { x: 6, y: 7, z: 3 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 6, y: 6, z: 3 }
+POWER soft Coord { x: 6, y: 7, z: 3 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 6, y: 7, z: 4 }
+POWER soft Coord { x: 6, y: 7, z: 6 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 6, y: 7, z: 5 }
+ACTION Tick 2 · extend @ (13, 5, 9) piston=Some(Coord { x: 13, y: 5, z: 9 }) sources=8 failure=None
+SOURCE Coord { x: 13, y: 4, z: 7 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 13, y: 5, z: 7 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 13, y: 5, z: 8 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 14, y: 4, z: 7 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 14, y: 4, z: 8 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 14, y: 5, z: 7 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 14, y: 5, z: 8 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 14, y: 5, z: 9 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+LINK stick Coord { x: 14, y: 5, z: 9 } -> Coord { x: 14, y: 5, z: 8 }
+LINK stick Coord { x: 14, y: 5, z: 8 } -> Coord { x: 13, y: 5, z: 8 }
+LINK stick Coord { x: 14, y: 5, z: 8 } -> Coord { x: 14, y: 4, z: 8 }
+LINK stick Coord { x: 14, y: 5, z: 8 } -> Coord { x: 14, y: 5, z: 9 }
+LINK stick Coord { x: 14, y: 5, z: 8 } -> Coord { x: 14, y: 5, z: 7 }
+LINK stick Coord { x: 14, y: 4, z: 8 } -> Coord { x: 14, y: 5, z: 8 }
+LINK stick Coord { x: 14, y: 4, z: 8 } -> Coord { x: 14, y: 4, z: 7 }
+LINK stick Coord { x: 14, y: 5, z: 7 } -> Coord { x: 13, y: 5, z: 7 }
+LINK stick Coord { x: 14, y: 5, z: 7 } -> Coord { x: 14, y: 4, z: 7 }
+LINK stick Coord { x: 14, y: 5, z: 7 } -> Coord { x: 14, y: 5, z: 8 }
+LINK stick Coord { x: 14, y: 4, z: 7 } -> Coord { x: 13, y: 4, z: 7 }
+LINK stick Coord { x: 14, y: 4, z: 7 } -> Coord { x: 14, y: 5, z: 7 }
+LINK stick Coord { x: 14, y: 4, z: 7 } -> Coord { x: 14, y: 4, z: 8 }
+ACTION Tick 2 · retract @ (7, 0, 4) piston=Some(Coord { x: 7, y: 0, z: 4 }) sources=0 failure=None
+ACTION Tick 2 · retract @ (14, 4, 2) piston=Some(Coord { x: 14, y: 4, z: 2 }) sources=0 failure=None
+ACTION Tick 2 · retract @ (8, 7, 7) piston=Some(Coord { x: 8, y: 7, z: 7 }) sources=0 failure=None
+ACTION Tick 2 · extend @ (4, 6, 7) piston=Some(Coord { x: 4, y: 6, z: 7 }) sources=11 failure=None
+SOURCE Coord { x: 3, y: 3, z: 7 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 3, y: 3, z: 8 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 3, y: 4, z: 7 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 4, y: 4, z: 7 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 4, y: 5, z: 6 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 4, y: 5, z: 7 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 5, y: 4, z: 7 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 5, y: 5, z: 6 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 5, y: 5, z: 7 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 5, y: 6, z: 7 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 6, y: 5, z: 6 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+LINK stick Coord { x: 5, y: 6, z: 7 } -> Coord { x: 5, y: 5, z: 7 }
+LINK stick Coord { x: 5, y: 5, z: 7 } -> Coord { x: 4, y: 5, z: 7 }
+LINK stick Coord { x: 5, y: 5, z: 7 } -> Coord { x: 5, y: 6, z: 7 }
+LINK stick Coord { x: 5, y: 5, z: 7 } -> Coord { x: 5, y: 4, z: 7 }
+LINK stick Coord { x: 5, y: 5, z: 7 } -> Coord { x: 5, y: 5, z: 6 }
+LINK stick Coord { x: 5, y: 4, z: 7 } -> Coord { x: 4, y: 4, z: 7 }
+LINK stick Coord { x: 5, y: 4, z: 7 } -> Coord { x: 5, y: 5, z: 7 }
+LINK stick Coord { x: 5, y: 5, z: 6 } -> Coord { x: 6, y: 5, z: 6 }
+LINK stick Coord { x: 5, y: 5, z: 6 } -> Coord { x: 4, y: 5, z: 6 }
+LINK stick Coord { x: 5, y: 5, z: 6 } -> Coord { x: 5, y: 5, z: 7 }
+LINK obstruction Coord { x: 5, y: 5, z: 6 } -> Coord { x: 6, y: 5, z: 6 }
+LINK stick Coord { x: 4, y: 4, z: 7 } -> Coord { x: 5, y: 4, z: 7 }
+LINK stick Coord { x: 4, y: 4, z: 7 } -> Coord { x: 3, y: 4, z: 7 }
+LINK stick Coord { x: 4, y: 4, z: 7 } -> Coord { x: 4, y: 5, z: 7 }
+LINK stick Coord { x: 6, y: 5, z: 6 } -> Coord { x: 5, y: 5, z: 6 }
+LINK stick Coord { x: 3, y: 4, z: 7 } -> Coord { x: 4, y: 4, z: 7 }
+LINK stick Coord { x: 3, y: 4, z: 7 } -> Coord { x: 3, y: 3, z: 7 }
+LINK stick Coord { x: 3, y: 3, z: 7 } -> Coord { x: 3, y: 4, z: 7 }
+LINK stick Coord { x: 3, y: 3, z: 7 } -> Coord { x: 3, y: 3, z: 8 }
+ACTION Tick 2 · extend @ (15, 4, 3) piston=Some(Coord { x: 15, y: 4, z: 3 }) sources=7 failure=None
+SOURCE Coord { x: 15, y: 3, z: 2 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 15, y: 3, z: 3 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 16, y: 3, z: 1 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 16, y: 3, z: 2 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 16, y: 3, z: 3 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 16, y: 4, z: 2 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 16, y: 4, z: 3 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+LINK stick Coord { x: 16, y: 4, z: 3 } -> Coord { x: 16, y: 3, z: 3 }
+LINK stick Coord { x: 16, y: 4, z: 3 } -> Coord { x: 16, y: 4, z: 2 }
+LINK stick Coord { x: 16, y: 3, z: 3 } -> Coord { x: 15, y: 3, z: 3 }
+LINK stick Coord { x: 16, y: 3, z: 3 } -> Coord { x: 16, y: 4, z: 3 }
+LINK stick Coord { x: 16, y: 3, z: 3 } -> Coord { x: 16, y: 3, z: 2 }
+LINK stick Coord { x: 16, y: 4, z: 2 } -> Coord { x: 16, y: 3, z: 2 }
+LINK stick Coord { x: 16, y: 4, z: 2 } -> Coord { x: 16, y: 4, z: 3 }
+LINK stick Coord { x: 16, y: 3, z: 2 } -> Coord { x: 15, y: 3, z: 2 }
+LINK stick Coord { x: 16, y: 3, z: 2 } -> Coord { x: 16, y: 4, z: 2 }
+LINK stick Coord { x: 16, y: 3, z: 2 } -> Coord { x: 16, y: 3, z: 3 }
+LINK stick Coord { x: 16, y: 3, z: 2 } -> Coord { x: 16, y: 3, z: 1 }
+LINK stick Coord { x: 16, y: 3, z: 1 } -> Coord { x: 16, y: 3, z: 2 }
+ACTION Tick 2 · extend @ (11, 3, 4) piston=Some(Coord { x: 11, y: 3, z: 4 }) sources=0 failure=None
+ACTION Tick 2 · retract @ (12, 4, 8) piston=Some(Coord { x: 12, y: 4, z: 8 }) sources=0 failure=None
+ACTION Tick 2 · extend @ (6, 7, 5) piston=Some(Coord { x: 6, y: 7, z: 5 }) sources=11 failure=None
+SOURCE Coord { x: 6, y: 6, z: 3 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 6, y: 7, z: 3 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 6, y: 7, z: 4 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 6, y: 7, z: 6 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 7, y: 6, z: 3 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 7, y: 6, z: 5 } Piston cell=297 dir=1 sticky=true state=0 moving=false
+SOURCE Coord { x: 7, y: 6, z: 6 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 7, y: 7, z: 3 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 7, y: 7, z: 4 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 7, y: 7, z: 5 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 7, y: 7, z: 6 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+LINK stick Coord { x: 7, y: 7, z: 5 } -> Coord { x: 7, y: 6, z: 5 }
+LINK stick Coord { x: 7, y: 7, z: 5 } -> Coord { x: 7, y: 7, z: 6 }
+LINK stick Coord { x: 7, y: 7, z: 5 } -> Coord { x: 7, y: 7, z: 4 }
+LINK stick Coord { x: 7, y: 7, z: 6 } -> Coord { x: 6, y: 7, z: 6 }
+LINK stick Coord { x: 7, y: 7, z: 6 } -> Coord { x: 7, y: 6, z: 6 }
+LINK stick Coord { x: 7, y: 7, z: 6 } -> Coord { x: 7, y: 7, z: 5 }
+LINK stick Coord { x: 7, y: 7, z: 4 } -> Coord { x: 6, y: 7, z: 4 }
+LINK stick Coord { x: 7, y: 7, z: 4 } -> Coord { x: 7, y: 7, z: 5 }
+LINK stick Coord { x: 7, y: 7, z: 4 } -> Coord { x: 7, y: 7, z: 3 }
+LINK stick Coord { x: 7, y: 7, z: 3 } -> Coord { x: 6, y: 7, z: 3 }
+LINK stick Coord { x: 7, y: 7, z: 3 } -> Coord { x: 7, y: 6, z: 3 }
+LINK stick Coord { x: 7, y: 7, z: 3 } -> Coord { x: 7, y: 7, z: 4 }
+LINK stick Coord { x: 7, y: 6, z: 3 } -> Coord { x: 6, y: 6, z: 3 }
+LINK stick Coord { x: 7, y: 6, z: 3 } -> Coord { x: 7, y: 7, z: 3 }
+ACTION Tick 2 · retract @ (6, 4, 3) piston=Some(Coord { x: 6, y: 4, z: 3 }) sources=0 failure=None
+ACTION Tick 2 · extend @ (11, 4, 2) piston=Some(Coord { x: 11, y: 4, z: 2 }) sources=11 failure=None
+SOURCE Coord { x: 11, y: 3, z: 1 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 11, y: 4, z: 1 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 11, y: 4, z: 3 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 11, y: 4, z: 4 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 12, y: 3, z: 1 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 12, y: 3, z: 2 } Piston cell=297 dir=1 sticky=true state=0 moving=false
+SOURCE Coord { x: 12, y: 4, z: 1 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 12, y: 4, z: 2 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 12, y: 4, z: 3 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 12, y: 4, z: 4 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 13, y: 3, z: 1 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+LINK stick Coord { x: 12, y: 4, z: 2 } -> Coord { x: 12, y: 3, z: 2 }
+LINK stick Coord { x: 12, y: 4, z: 2 } -> Coord { x: 12, y: 4, z: 3 }
+LINK stick Coord { x: 12, y: 4, z: 2 } -> Coord { x: 12, y: 4, z: 1 }
+LINK stick Coord { x: 12, y: 4, z: 3 } -> Coord { x: 11, y: 4, z: 3 }
+LINK stick Coord { x: 12, y: 4, z: 3 } -> Coord { x: 12, y: 4, z: 4 }
+LINK stick Coord { x: 12, y: 4, z: 3 } -> Coord { x: 12, y: 4, z: 2 }
+LINK stick Coord { x: 12, y: 4, z: 1 } -> Coord { x: 11, y: 4, z: 1 }
+LINK stick Coord { x: 12, y: 4, z: 1 } -> Coord { x: 12, y: 3, z: 1 }
+LINK stick Coord { x: 12, y: 4, z: 1 } -> Coord { x: 12, y: 4, z: 2 }
+LINK stick Coord { x: 12, y: 4, z: 4 } -> Coord { x: 11, y: 4, z: 4 }
+LINK stick Coord { x: 12, y: 4, z: 4 } -> Coord { x: 12, y: 4, z: 3 }
+LINK stick Coord { x: 12, y: 3, z: 1 } -> Coord { x: 13, y: 3, z: 1 }
+LINK stick Coord { x: 12, y: 3, z: 1 } -> Coord { x: 11, y: 3, z: 1 }
+LINK stick Coord { x: 12, y: 3, z: 1 } -> Coord { x: 12, y: 4, z: 1 }
+LINK stick Coord { x: 12, y: 3, z: 1 } -> Coord { x: 12, y: 3, z: 2 }
+LINK obstruction Coord { x: 12, y: 3, z: 1 } -> Coord { x: 13, y: 3, z: 1 }
+ACTION Tick 2 · extend @ (8, 0, 5) piston=Some(Coord { x: 8, y: 0, z: 5 }) sources=12 failure=None
+SOURCE Coord { x: 8, y: 0, z: 3 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 8, y: 0, z: 6 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 8, y: 1, z: 3 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 9, y: 0, z: 3 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 9, y: 0, z: 4 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 9, y: 0, z: 5 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 9, y: 0, z: 6 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 9, y: 1, z: 2 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 9, y: 1, z: 3 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 9, y: 1, z: 4 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 9, y: 2, z: 3 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 9, y: 2, z: 4 } Piston cell=297 dir=1 sticky=true state=0 moving=false
+LINK stick Coord { x: 9, y: 0, z: 5 } -> Coord { x: 9, y: 0, z: 6 }
+LINK stick Coord { x: 9, y: 0, z: 5 } -> Coord { x: 9, y: 0, z: 4 }
+LINK stick Coord { x: 9, y: 0, z: 6 } -> Coord { x: 8, y: 0, z: 6 }
+LINK stick Coord { x: 9, y: 0, z: 6 } -> Coord { x: 9, y: 0, z: 5 }
+LINK stick Coord { x: 9, y: 0, z: 4 } -> Coord { x: 9, y: 1, z: 4 }
+LINK stick Coord { x: 9, y: 0, z: 4 } -> Coord { x: 9, y: 0, z: 5 }
+LINK stick Coord { x: 9, y: 0, z: 4 } -> Coord { x: 9, y: 0, z: 3 }
+LINK stick Coord { x: 9, y: 1, z: 4 } -> Coord { x: 9, y: 2, z: 4 }
+LINK stick Coord { x: 9, y: 1, z: 4 } -> Coord { x: 9, y: 0, z: 4 }
+LINK stick Coord { x: 9, y: 1, z: 4 } -> Coord { x: 9, y: 1, z: 3 }
+LINK stick Coord { x: 9, y: 0, z: 3 } -> Coord { x: 8, y: 0, z: 3 }
+LINK stick Coord { x: 9, y: 0, z: 3 } -> Coord { x: 9, y: 1, z: 3 }
+LINK stick Coord { x: 9, y: 0, z: 3 } -> Coord { x: 9, y: 0, z: 4 }
+LINK stick Coord { x: 9, y: 1, z: 3 } -> Coord { x: 8, y: 1, z: 3 }
+LINK stick Coord { x: 9, y: 1, z: 3 } -> Coord { x: 9, y: 2, z: 3 }
+LINK stick Coord { x: 9, y: 1, z: 3 } -> Coord { x: 9, y: 0, z: 3 }
+LINK stick Coord { x: 9, y: 1, z: 3 } -> Coord { x: 9, y: 1, z: 4 }
+LINK stick Coord { x: 9, y: 1, z: 3 } -> Coord { x: 9, y: 1, z: 2 }
+ACTION Tick 2 · extend @ (7, 3, 4) piston=Some(Coord { x: 7, y: 3, z: 4 }) sources=12 failure=None
+SOURCE Coord { x: 3, y: 5, z: 4 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 3, y: 5, z: 5 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 3, y: 6, z: 4 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 4, y: 5, z: 4 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 5, y: 5, z: 4 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 6, y: 5, z: 4 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 7, y: 4, z: 4 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 7, y: 5, z: 4 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 8, y: 3, z: 4 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 8, y: 4, z: 3 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 8, y: 4, z: 4 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 8, y: 5, z: 4 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+LINK stick Coord { x: 8, y: 3, z: 4 } -> Coord { x: 8, y: 4, z: 4 }
+LINK stick Coord { x: 8, y: 4, z: 4 } -> Coord { x: 7, y: 4, z: 4 }
+LINK stick Coord { x: 8, y: 4, z: 4 } -> Coord { x: 8, y: 5, z: 4 }
+LINK stick Coord { x: 8, y: 4, z: 4 } -> Coord { x: 8, y: 3, z: 4 }
+LINK stick Coord { x: 8, y: 4, z: 4 } -> Coord { x: 8, y: 4, z: 3 }
+LINK stick Coord { x: 8, y: 5, z: 4 } -> Coord { x: 7, y: 5, z: 4 }
+LINK stick Coord { x: 8, y: 5, z: 4 } -> Coord { x: 8, y: 4, z: 4 }
+LINK stick Coord { x: 8, y: 4, z: 3 } -> Coord { x: 8, y: 4, z: 4 }
+LINK stick Coord { x: 7, y: 5, z: 4 } -> Coord { x: 8, y: 5, z: 4 }
+LINK stick Coord { x: 7, y: 5, z: 4 } -> Coord { x: 6, y: 5, z: 4 }
+LINK stick Coord { x: 7, y: 5, z: 4 } -> Coord { x: 7, y: 4, z: 4 }
+LINK stick Coord { x: 6, y: 5, z: 4 } -> Coord { x: 7, y: 5, z: 4 }
+LINK stick Coord { x: 6, y: 5, z: 4 } -> Coord { x: 5, y: 5, z: 4 }
+LINK stick Coord { x: 5, y: 5, z: 4 } -> Coord { x: 6, y: 5, z: 4 }
+LINK stick Coord { x: 5, y: 5, z: 4 } -> Coord { x: 4, y: 5, z: 4 }
+LINK stick Coord { x: 4, y: 5, z: 4 } -> Coord { x: 5, y: 5, z: 4 }
+LINK stick Coord { x: 4, y: 5, z: 4 } -> Coord { x: 3, y: 5, z: 4 }
+LINK stick Coord { x: 3, y: 5, z: 4 } -> Coord { x: 4, y: 5, z: 4 }
+LINK stick Coord { x: 3, y: 5, z: 4 } -> Coord { x: 3, y: 6, z: 4 }
+LINK stick Coord { x: 3, y: 5, z: 4 } -> Coord { x: 3, y: 5, z: 5 }
+ACTION Tick 2 · extend @ (5, 3, 6) piston=Some(Coord { x: 5, y: 3, z: 6 }) sources=11 failure=None
+SOURCE Coord { x: 5, y: 1, z: 5 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 5, y: 2, z: 4 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 5, y: 2, z: 5 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 5, y: 2, z: 6 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 5, y: 2, z: 8 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 6, y: 2, z: 5 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 6, y: 2, z: 6 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 6, y: 2, z: 7 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 6, y: 2, z: 8 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 6, y: 3, z: 6 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 6, y: 3, z: 8 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+LINK stick Coord { x: 6, y: 3, z: 6 } -> Coord { x: 6, y: 2, z: 6 }
+LINK stick Coord { x: 6, y: 2, z: 6 } -> Coord { x: 5, y: 2, z: 6 }
+LINK stick Coord { x: 6, y: 2, z: 6 } -> Coord { x: 6, y: 3, z: 6 }
+LINK stick Coord { x: 6, y: 2, z: 6 } -> Coord { x: 6, y: 2, z: 7 }
+LINK stick Coord { x: 6, y: 2, z: 6 } -> Coord { x: 6, y: 2, z: 5 }
+LINK stick Coord { x: 6, y: 2, z: 7 } -> Coord { x: 6, y: 2, z: 8 }
+LINK stick Coord { x: 6, y: 2, z: 7 } -> Coord { x: 6, y: 2, z: 6 }
+LINK stick Coord { x: 6, y: 2, z: 5 } -> Coord { x: 5, y: 2, z: 5 }
+LINK stick Coord { x: 6, y: 2, z: 5 } -> Coord { x: 6, y: 2, z: 6 }
+LINK stick Coord { x: 6, y: 2, z: 8 } -> Coord { x: 5, y: 2, z: 8 }
+LINK stick Coord { x: 6, y: 2, z: 8 } -> Coord { x: 6, y: 3, z: 8 }
+LINK stick Coord { x: 6, y: 2, z: 8 } -> Coord { x: 6, y: 2, z: 7 }
+LINK stick Coord { x: 5, y: 2, z: 5 } -> Coord { x: 6, y: 2, z: 5 }
+LINK stick Coord { x: 5, y: 2, z: 5 } -> Coord { x: 5, y: 1, z: 5 }
+LINK stick Coord { x: 5, y: 2, z: 5 } -> Coord { x: 5, y: 2, z: 6 }
+LINK stick Coord { x: 5, y: 2, z: 5 } -> Coord { x: 5, y: 2, z: 4 }
+LINK stick Coord { x: 6, y: 3, z: 8 } -> Coord { x: 6, y: 2, z: 8 }
+ACTION Tick 2 · retract @ (11, 5, 8) piston=Some(Coord { x: 11, y: 5, z: 8 }) sources=12 failure=None
+SOURCE Coord { x: 9, y: 4, z: 7 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 9, y: 4, z: 8 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 9, y: 5, z: 6 } Piston cell=297 dir=1 sticky=true state=0 moving=false
+SOURCE Coord { x: 9, y: 5, z: 7 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 9, y: 5, z: 8 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 9, y: 5, z: 9 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 9, y: 6, z: 7 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 10, y: 5, z: 7 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 10, y: 6, z: 5 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 10, y: 6, z: 6 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 10, y: 6, z: 7 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 10, y: 7, z: 7 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+LINK stick Coord { x: 9, y: 5, z: 8 } -> Coord { x: 9, y: 4, z: 8 }
+LINK stick Coord { x: 9, y: 5, z: 8 } -> Coord { x: 9, y: 5, z: 9 }
+LINK stick Coord { x: 9, y: 5, z: 8 } -> Coord { x: 9, y: 5, z: 7 }
+LINK stick Coord { x: 9, y: 5, z: 7 } -> Coord { x: 10, y: 5, z: 7 }
+LINK stick Coord { x: 9, y: 5, z: 7 } -> Coord { x: 9, y: 6, z: 7 }
+LINK stick Coord { x: 9, y: 5, z: 7 } -> Coord { x: 9, y: 4, z: 7 }
+LINK stick Coord { x: 9, y: 5, z: 7 } -> Coord { x: 9, y: 5, z: 8 }
+LINK stick Coord { x: 9, y: 5, z: 7 } -> Coord { x: 9, y: 5, z: 6 }
+LINK obstruction Coord { x: 9, y: 5, z: 7 } -> Coord { x: 10, y: 5, z: 7 }
+LINK stick Coord { x: 10, y: 5, z: 7 } -> Coord { x: 9, y: 5, z: 7 }
+LINK stick Coord { x: 10, y: 5, z: 7 } -> Coord { x: 10, y: 6, z: 7 }
+LINK obstruction Coord { x: 9, y: 6, z: 7 } -> Coord { x: 10, y: 6, z: 7 }
+LINK stick Coord { x: 10, y: 6, z: 7 } -> Coord { x: 9, y: 6, z: 7 }
+LINK stick Coord { x: 10, y: 6, z: 7 } -> Coord { x: 10, y: 7, z: 7 }
+LINK stick Coord { x: 10, y: 6, z: 7 } -> Coord { x: 10, y: 5, z: 7 }
+LINK stick Coord { x: 10, y: 6, z: 7 } -> Coord { x: 10, y: 6, z: 6 }
+LINK stick Coord { x: 10, y: 7, z: 7 } -> Coord { x: 10, y: 6, z: 7 }
+LINK stick Coord { x: 10, y: 6, z: 6 } -> Coord { x: 10, y: 6, z: 7 }
+LINK stick Coord { x: 10, y: 6, z: 6 } -> Coord { x: 10, y: 6, z: 5 }
+ACTION Tick 2 · retract @ (4, 2, 7) piston=Some(Coord { x: 4, y: 2, z: 7 }) sources=0 failure=None
+TICK 3 x=4 ext=0 fail=0 ret=0
+TICK 4 x=4 ext=8 fail=0 ret=9
+POWER soft Coord { x: 9, y: 0, z: 3 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 9, y: 1, z: 3 }
+POWER soft Coord { x: 6, y: 1, z: 4 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 6, y: 2, z: 4 }
+POWER soft Coord { x: 6, y: 1, z: 4 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 6, y: 1, z: 5 }
+POWER soft Coord { x: 12, y: 4, z: 1 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 12, y: 3, z: 1 }
+POWER soft Coord { x: 12, y: 4, z: 4 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 12, y: 4, z: 3 }
+POWER soft Coord { x: 10, y: 4, z: 6 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 10, y: 5, z: 6 }
+POWER soft Coord { x: 10, y: 4, z: 6 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 10, y: 4, z: 7 }
+POWER soft Coord { x: 10, y: 4, z: 9 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 10, y: 5, z: 9 }
+POWER soft Coord { x: 10, y: 4, z: 9 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 10, y: 4, z: 8 }
+POWER soft Coord { x: 5, y: 5, z: 7 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 5, y: 5, z: 6 }
+POWER soft Coord { x: 14, y: 5, z: 7 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 14, y: 4, z: 7 }
+POWER soft Coord { x: 7, y: 7, z: 3 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 7, y: 6, z: 3 }
+POWER soft Coord { x: 7, y: 7, z: 3 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 7, y: 7, z: 4 }
+ACTION Tick 4 · extend @ (7, 7, 4) piston=Some(Coord { x: 7, y: 7, z: 4 }) sources=11 failure=None
+SOURCE Coord { x: 7, y: 6, z: 3 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 7, y: 7, z: 3 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 7, y: 7, z: 6 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 8, y: 6, z: 3 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 8, y: 6, z: 5 } Piston cell=297 dir=1 sticky=true state=0 moving=false
+SOURCE Coord { x: 8, y: 6, z: 6 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 8, y: 7, z: 3 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 8, y: 7, z: 4 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 8, y: 7, z: 5 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 8, y: 7, z: 6 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 8, y: 7, z: 7 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+LINK stick Coord { x: 8, y: 7, z: 4 } -> Coord { x: 8, y: 7, z: 5 }
+LINK stick Coord { x: 8, y: 7, z: 4 } -> Coord { x: 8, y: 7, z: 3 }
+LINK stick Coord { x: 8, y: 7, z: 5 } -> Coord { x: 8, y: 6, z: 5 }
+LINK stick Coord { x: 8, y: 7, z: 5 } -> Coord { x: 8, y: 7, z: 6 }
+LINK stick Coord { x: 8, y: 7, z: 5 } -> Coord { x: 8, y: 7, z: 4 }
+LINK stick Coord { x: 8, y: 7, z: 3 } -> Coord { x: 7, y: 7, z: 3 }
+LINK stick Coord { x: 8, y: 7, z: 3 } -> Coord { x: 8, y: 6, z: 3 }
+LINK stick Coord { x: 8, y: 7, z: 3 } -> Coord { x: 8, y: 7, z: 4 }
+LINK stick Coord { x: 8, y: 7, z: 6 } -> Coord { x: 7, y: 7, z: 6 }
+LINK stick Coord { x: 8, y: 7, z: 6 } -> Coord { x: 8, y: 6, z: 6 }
+LINK stick Coord { x: 8, y: 7, z: 6 } -> Coord { x: 8, y: 7, z: 7 }
+LINK stick Coord { x: 8, y: 7, z: 6 } -> Coord { x: 8, y: 7, z: 5 }
+LINK stick Coord { x: 8, y: 6, z: 3 } -> Coord { x: 7, y: 6, z: 3 }
+LINK stick Coord { x: 8, y: 6, z: 3 } -> Coord { x: 8, y: 7, z: 3 }
+ACTION Tick 4 · retract @ (15, 4, 3) piston=Some(Coord { x: 15, y: 4, z: 3 }) sources=0 failure=None
+ACTION Tick 4 · retract @ (4, 6, 7) piston=Some(Coord { x: 4, y: 6, z: 7 }) sources=0 failure=None
+ACTION Tick 4 · extend @ (6, 2, 4) piston=Some(Coord { x: 6, y: 2, z: 4 }) sources=10 failure=None
+SOURCE Coord { x: 6, y: 1, z: 4 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 6, y: 1, z: 5 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 6, y: 3, z: 3 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 6, y: 4, z: 3 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 7, y: 0, z: 4 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 7, y: 1, z: 4 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 7, y: 1, z: 5 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 7, y: 2, z: 3 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 7, y: 2, z: 4 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 7, y: 3, z: 3 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+LINK stick Coord { x: 7, y: 2, z: 4 } -> Coord { x: 7, y: 1, z: 4 }
+LINK stick Coord { x: 7, y: 2, z: 4 } -> Coord { x: 7, y: 2, z: 3 }
+LINK stick Coord { x: 7, y: 1, z: 4 } -> Coord { x: 6, y: 1, z: 4 }
+LINK stick Coord { x: 7, y: 1, z: 4 } -> Coord { x: 7, y: 2, z: 4 }
+LINK stick Coord { x: 7, y: 1, z: 4 } -> Coord { x: 7, y: 0, z: 4 }
+LINK stick Coord { x: 7, y: 1, z: 4 } -> Coord { x: 7, y: 1, z: 5 }
+LINK stick Coord { x: 7, y: 2, z: 3 } -> Coord { x: 7, y: 3, z: 3 }
+LINK stick Coord { x: 7, y: 2, z: 3 } -> Coord { x: 7, y: 2, z: 4 }
+LINK stick Coord { x: 7, y: 1, z: 5 } -> Coord { x: 6, y: 1, z: 5 }
+LINK stick Coord { x: 7, y: 1, z: 5 } -> Coord { x: 7, y: 1, z: 4 }
+LINK stick Coord { x: 7, y: 3, z: 3 } -> Coord { x: 6, y: 3, z: 3 }
+LINK stick Coord { x: 7, y: 3, z: 3 } -> Coord { x: 7, y: 2, z: 3 }
+LINK stick Coord { x: 6, y: 3, z: 3 } -> Coord { x: 7, y: 3, z: 3 }
+LINK stick Coord { x: 6, y: 3, z: 3 } -> Coord { x: 6, y: 4, z: 3 }
+ACTION Tick 4 · extend @ (10, 5, 6) piston=Some(Coord { x: 10, y: 5, z: 6 }) sources=0 failure=None
+ACTION Tick 4 · extend @ (12, 4, 3) piston=Some(Coord { x: 12, y: 4, z: 3 }) sources=11 failure=None
+SOURCE Coord { x: 12, y: 3, z: 1 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 12, y: 4, z: 1 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 12, y: 4, z: 4 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 13, y: 3, z: 1 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 13, y: 3, z: 2 } Piston cell=297 dir=1 sticky=true state=0 moving=false
+SOURCE Coord { x: 13, y: 4, z: 1 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 13, y: 4, z: 2 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 13, y: 4, z: 3 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 13, y: 4, z: 4 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 14, y: 3, z: 1 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 14, y: 4, z: 2 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+LINK stick Coord { x: 13, y: 4, z: 3 } -> Coord { x: 13, y: 4, z: 4 }
+LINK stick Coord { x: 13, y: 4, z: 3 } -> Coord { x: 13, y: 4, z: 2 }
+LINK stick Coord { x: 13, y: 4, z: 4 } -> Coord { x: 12, y: 4, z: 4 }
+LINK stick Coord { x: 13, y: 4, z: 4 } -> Coord { x: 13, y: 4, z: 3 }
+LINK stick Coord { x: 13, y: 4, z: 2 } -> Coord { x: 14, y: 4, z: 2 }
+LINK stick Coord { x: 13, y: 4, z: 2 } -> Coord { x: 13, y: 3, z: 2 }
+LINK stick Coord { x: 13, y: 4, z: 2 } -> Coord { x: 13, y: 4, z: 3 }
+LINK stick Coord { x: 13, y: 4, z: 2 } -> Coord { x: 13, y: 4, z: 1 }
+LINK obstruction Coord { x: 13, y: 4, z: 2 } -> Coord { x: 14, y: 4, z: 2 }
+LINK stick Coord { x: 13, y: 4, z: 1 } -> Coord { x: 12, y: 4, z: 1 }
+LINK stick Coord { x: 13, y: 4, z: 1 } -> Coord { x: 13, y: 3, z: 1 }
+LINK stick Coord { x: 13, y: 4, z: 1 } -> Coord { x: 13, y: 4, z: 2 }
+LINK stick Coord { x: 13, y: 3, z: 1 } -> Coord { x: 14, y: 3, z: 1 }
+LINK stick Coord { x: 13, y: 3, z: 1 } -> Coord { x: 12, y: 3, z: 1 }
+LINK stick Coord { x: 13, y: 3, z: 1 } -> Coord { x: 13, y: 4, z: 1 }
+LINK stick Coord { x: 13, y: 3, z: 1 } -> Coord { x: 13, y: 3, z: 2 }
+LINK obstruction Coord { x: 13, y: 3, z: 1 } -> Coord { x: 14, y: 3, z: 1 }
+ACTION Tick 4 · retract @ (8, 0, 5) piston=Some(Coord { x: 8, y: 0, z: 5 }) sources=0 failure=None
+ACTION Tick 4 · extend @ (14, 4, 7) piston=Some(Coord { x: 14, y: 4, z: 7 }) sources=7 failure=None
+SOURCE Coord { x: 14, y: 5, z: 7 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 14, y: 5, z: 8 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 15, y: 4, z: 7 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 15, y: 4, z: 8 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 15, y: 5, z: 7 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 15, y: 5, z: 8 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 15, y: 5, z: 9 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+LINK stick Coord { x: 15, y: 4, z: 7 } -> Coord { x: 15, y: 5, z: 7 }
+LINK stick Coord { x: 15, y: 4, z: 7 } -> Coord { x: 15, y: 4, z: 8 }
+LINK stick Coord { x: 15, y: 5, z: 7 } -> Coord { x: 14, y: 5, z: 7 }
+LINK stick Coord { x: 15, y: 5, z: 7 } -> Coord { x: 15, y: 4, z: 7 }
+LINK stick Coord { x: 15, y: 5, z: 7 } -> Coord { x: 15, y: 5, z: 8 }
+LINK stick Coord { x: 15, y: 4, z: 8 } -> Coord { x: 15, y: 5, z: 8 }
+LINK stick Coord { x: 15, y: 4, z: 8 } -> Coord { x: 15, y: 4, z: 7 }
+LINK stick Coord { x: 15, y: 5, z: 8 } -> Coord { x: 14, y: 5, z: 8 }
+LINK stick Coord { x: 15, y: 5, z: 8 } -> Coord { x: 15, y: 4, z: 8 }
+LINK stick Coord { x: 15, y: 5, z: 8 } -> Coord { x: 15, y: 5, z: 9 }
+LINK stick Coord { x: 15, y: 5, z: 8 } -> Coord { x: 15, y: 5, z: 7 }
+LINK stick Coord { x: 15, y: 5, z: 9 } -> Coord { x: 15, y: 5, z: 8 }
+ACTION Tick 4 · retract @ (6, 7, 5) piston=Some(Coord { x: 6, y: 7, z: 5 }) sources=0 failure=None
+ACTION Tick 4 · retract @ (11, 3, 4) piston=Some(Coord { x: 11, y: 3, z: 4 }) sources=12 failure=None
+SOURCE Coord { x: 4, y: 5, z: 4 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 4, y: 5, z: 5 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 4, y: 6, z: 4 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 5, y: 5, z: 4 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 6, y: 5, z: 4 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 7, y: 5, z: 4 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 8, y: 4, z: 4 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 8, y: 5, z: 4 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 9, y: 3, z: 4 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 9, y: 4, z: 3 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 9, y: 4, z: 4 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 9, y: 5, z: 4 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+LINK stick Coord { x: 9, y: 3, z: 4 } -> Coord { x: 9, y: 4, z: 4 }
+LINK stick Coord { x: 9, y: 4, z: 4 } -> Coord { x: 8, y: 4, z: 4 }
+LINK stick Coord { x: 9, y: 4, z: 4 } -> Coord { x: 9, y: 5, z: 4 }
+LINK stick Coord { x: 9, y: 4, z: 4 } -> Coord { x: 9, y: 3, z: 4 }
+LINK stick Coord { x: 9, y: 4, z: 4 } -> Coord { x: 9, y: 4, z: 3 }
+LINK stick Coord { x: 9, y: 5, z: 4 } -> Coord { x: 8, y: 5, z: 4 }
+LINK stick Coord { x: 9, y: 5, z: 4 } -> Coord { x: 9, y: 4, z: 4 }
+LINK stick Coord { x: 9, y: 4, z: 3 } -> Coord { x: 9, y: 4, z: 4 }
+LINK stick Coord { x: 8, y: 5, z: 4 } -> Coord { x: 9, y: 5, z: 4 }
+LINK stick Coord { x: 8, y: 5, z: 4 } -> Coord { x: 7, y: 5, z: 4 }
+LINK stick Coord { x: 8, y: 5, z: 4 } -> Coord { x: 8, y: 4, z: 4 }
+LINK stick Coord { x: 7, y: 5, z: 4 } -> Coord { x: 8, y: 5, z: 4 }
+LINK stick Coord { x: 7, y: 5, z: 4 } -> Coord { x: 6, y: 5, z: 4 }
+LINK stick Coord { x: 6, y: 5, z: 4 } -> Coord { x: 7, y: 5, z: 4 }
+LINK stick Coord { x: 6, y: 5, z: 4 } -> Coord { x: 5, y: 5, z: 4 }
+LINK stick Coord { x: 5, y: 5, z: 4 } -> Coord { x: 6, y: 5, z: 4 }
+LINK stick Coord { x: 5, y: 5, z: 4 } -> Coord { x: 4, y: 5, z: 4 }
+LINK stick Coord { x: 4, y: 5, z: 4 } -> Coord { x: 5, y: 5, z: 4 }
+LINK stick Coord { x: 4, y: 5, z: 4 } -> Coord { x: 4, y: 6, z: 4 }
+LINK stick Coord { x: 4, y: 5, z: 4 } -> Coord { x: 4, y: 5, z: 5 }
+ACTION Tick 4 · retract @ (5, 3, 6) piston=Some(Coord { x: 5, y: 3, z: 6 }) sources=0 failure=None
+ACTION Tick 4 · extend @ (5, 5, 6) piston=Some(Coord { x: 5, y: 5, z: 6 }) sources=11 failure=None
+SOURCE Coord { x: 4, y: 2, z: 7 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 4, y: 3, z: 7 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 4, y: 3, z: 8 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 4, y: 4, z: 7 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 5, y: 4, z: 7 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 5, y: 5, z: 7 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 6, y: 4, z: 7 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 6, y: 5, z: 6 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 6, y: 5, z: 7 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 6, y: 6, z: 7 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 7, y: 5, z: 6 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+LINK stick Coord { x: 6, y: 5, z: 6 } -> Coord { x: 7, y: 5, z: 6 }
+LINK stick Coord { x: 6, y: 5, z: 6 } -> Coord { x: 6, y: 5, z: 7 }
+LINK obstruction Coord { x: 6, y: 5, z: 6 } -> Coord { x: 7, y: 5, z: 6 }
+LINK stick Coord { x: 7, y: 5, z: 6 } -> Coord { x: 6, y: 5, z: 6 }
+LINK stick Coord { x: 6, y: 5, z: 7 } -> Coord { x: 5, y: 5, z: 7 }
+LINK stick Coord { x: 6, y: 5, z: 7 } -> Coord { x: 6, y: 6, z: 7 }
+LINK stick Coord { x: 6, y: 5, z: 7 } -> Coord { x: 6, y: 4, z: 7 }
+LINK stick Coord { x: 6, y: 5, z: 7 } -> Coord { x: 6, y: 5, z: 6 }
+LINK stick Coord { x: 6, y: 6, z: 7 } -> Coord { x: 6, y: 5, z: 7 }
+LINK stick Coord { x: 6, y: 4, z: 7 } -> Coord { x: 5, y: 4, z: 7 }
+LINK stick Coord { x: 6, y: 4, z: 7 } -> Coord { x: 6, y: 5, z: 7 }
+LINK stick Coord { x: 5, y: 4, z: 7 } -> Coord { x: 6, y: 4, z: 7 }
+LINK stick Coord { x: 5, y: 4, z: 7 } -> Coord { x: 4, y: 4, z: 7 }
+LINK stick Coord { x: 5, y: 4, z: 7 } -> Coord { x: 5, y: 5, z: 7 }
+LINK stick Coord { x: 4, y: 4, z: 7 } -> Coord { x: 5, y: 4, z: 7 }
+LINK stick Coord { x: 4, y: 4, z: 7 } -> Coord { x: 4, y: 3, z: 7 }
+LINK stick Coord { x: 4, y: 3, z: 7 } -> Coord { x: 4, y: 4, z: 7 }
+LINK stick Coord { x: 4, y: 3, z: 7 } -> Coord { x: 4, y: 2, z: 7 }
+LINK stick Coord { x: 4, y: 3, z: 7 } -> Coord { x: 4, y: 3, z: 8 }
+ACTION Tick 4 · extend @ (10, 4, 8) piston=Some(Coord { x: 10, y: 4, z: 8 }) sources=11 failure=None
+SOURCE Coord { x: 10, y: 4, z: 6 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 10, y: 4, z: 7 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 10, y: 4, z: 9 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 10, y: 5, z: 9 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 11, y: 4, z: 6 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 11, y: 4, z: 7 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 11, y: 4, z: 8 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 11, y: 4, z: 9 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 11, y: 5, z: 8 } Piston cell=297 dir=1 sticky=true state=0 moving=false
+SOURCE Coord { x: 11, y: 5, z: 9 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 12, y: 4, z: 8 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+LINK stick Coord { x: 11, y: 4, z: 8 } -> Coord { x: 12, y: 4, z: 8 }
+LINK stick Coord { x: 11, y: 4, z: 8 } -> Coord { x: 11, y: 5, z: 8 }
+LINK stick Coord { x: 11, y: 4, z: 8 } -> Coord { x: 11, y: 4, z: 9 }
+LINK stick Coord { x: 11, y: 4, z: 8 } -> Coord { x: 11, y: 4, z: 7 }
+LINK obstruction Coord { x: 11, y: 4, z: 8 } -> Coord { x: 12, y: 4, z: 8 }
+LINK stick Coord { x: 11, y: 4, z: 9 } -> Coord { x: 10, y: 4, z: 9 }
+LINK stick Coord { x: 11, y: 4, z: 9 } -> Coord { x: 11, y: 5, z: 9 }
+LINK stick Coord { x: 11, y: 4, z: 9 } -> Coord { x: 11, y: 4, z: 8 }
+LINK stick Coord { x: 11, y: 4, z: 7 } -> Coord { x: 10, y: 4, z: 7 }
+LINK stick Coord { x: 11, y: 4, z: 7 } -> Coord { x: 11, y: 4, z: 8 }
+LINK stick Coord { x: 11, y: 4, z: 7 } -> Coord { x: 11, y: 4, z: 6 }
+LINK stick Coord { x: 11, y: 5, z: 9 } -> Coord { x: 10, y: 5, z: 9 }
+LINK stick Coord { x: 11, y: 5, z: 9 } -> Coord { x: 11, y: 4, z: 9 }
+LINK stick Coord { x: 11, y: 5, z: 9 } -> Coord { x: 11, y: 5, z: 8 }
+LINK stick Coord { x: 11, y: 4, z: 6 } -> Coord { x: 10, y: 4, z: 6 }
+LINK stick Coord { x: 11, y: 4, z: 6 } -> Coord { x: 11, y: 4, z: 7 }
+ACTION Tick 4 · retract @ (11, 4, 2) piston=Some(Coord { x: 11, y: 4, z: 2 }) sources=0 failure=None
+ACTION Tick 4 · retract @ (13, 5, 9) piston=Some(Coord { x: 13, y: 5, z: 9 }) sources=0 failure=None
+ACTION Tick 4 · retract @ (7, 3, 4) piston=Some(Coord { x: 7, y: 3, z: 4 }) sources=0 failure=None
+ACTION Tick 4 · extend @ (9, 1, 3) piston=Some(Coord { x: 9, y: 1, z: 3 }) sources=11 failure=None
+SOURCE Coord { x: 9, y: 0, z: 3 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 9, y: 0, z: 6 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 10, y: 0, z: 3 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 10, y: 0, z: 4 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 10, y: 0, z: 5 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 10, y: 0, z: 6 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 10, y: 1, z: 2 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 10, y: 1, z: 3 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 10, y: 1, z: 4 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 10, y: 2, z: 3 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 10, y: 2, z: 4 } Piston cell=297 dir=1 sticky=true state=0 moving=false
+LINK stick Coord { x: 10, y: 1, z: 3 } -> Coord { x: 10, y: 2, z: 3 }
+LINK stick Coord { x: 10, y: 1, z: 3 } -> Coord { x: 10, y: 0, z: 3 }
+LINK stick Coord { x: 10, y: 1, z: 3 } -> Coord { x: 10, y: 1, z: 4 }
+LINK stick Coord { x: 10, y: 1, z: 3 } -> Coord { x: 10, y: 1, z: 2 }
+LINK stick Coord { x: 10, y: 0, z: 3 } -> Coord { x: 9, y: 0, z: 3 }
+LINK stick Coord { x: 10, y: 0, z: 3 } -> Coord { x: 10, y: 1, z: 3 }
+LINK stick Coord { x: 10, y: 0, z: 3 } -> Coord { x: 10, y: 0, z: 4 }
+LINK stick Coord { x: 10, y: 1, z: 4 } -> Coord { x: 10, y: 2, z: 4 }
+LINK stick Coord { x: 10, y: 1, z: 4 } -> Coord { x: 10, y: 0, z: 4 }
+LINK stick Coord { x: 10, y: 1, z: 4 } -> Coord { x: 10, y: 1, z: 3 }
+LINK stick Coord { x: 10, y: 0, z: 4 } -> Coord { x: 10, y: 1, z: 4 }
+LINK stick Coord { x: 10, y: 0, z: 4 } -> Coord { x: 10, y: 0, z: 5 }
+LINK stick Coord { x: 10, y: 0, z: 4 } -> Coord { x: 10, y: 0, z: 3 }
+LINK stick Coord { x: 10, y: 0, z: 5 } -> Coord { x: 10, y: 0, z: 6 }
+LINK stick Coord { x: 10, y: 0, z: 5 } -> Coord { x: 10, y: 0, z: 4 }
+LINK stick Coord { x: 10, y: 0, z: 6 } -> Coord { x: 9, y: 0, z: 6 }
+LINK stick Coord { x: 10, y: 0, z: 6 } -> Coord { x: 10, y: 0, z: 5 }
+TICK 5 x=4 ext=0 fail=0 ret=0
+TICK 6 x=5 ext=7 fail=0 ret=8
+POWER soft Coord { x: 7, y: 1, z: 4 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 7, y: 1, z: 5 }
+POWER soft Coord { x: 11, y: 2, z: 2 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 11, y: 1, z: 2 }
+POWER soft Coord { x: 11, y: 2, z: 2 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 11, y: 2, z: 3 }
+POWER soft Coord { x: 12, y: 2, z: 4 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 11, y: 2, z: 4 }
+POWER soft Coord { x: 13, y: 4, z: 1 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 13, y: 3, z: 1 }
+POWER soft Coord { x: 11, y: 4, z: 6 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 11, y: 4, z: 7 }
+POWER soft Coord { x: 11, y: 4, z: 9 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 11, y: 5, z: 9 }
+POWER soft Coord { x: 5, y: 6, z: 5 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 5, y: 5, z: 5 }
+POWER soft Coord { x: 5, y: 6, z: 5 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 5, y: 6, z: 4 }
+POWER soft Coord { x: 8, y: 7, z: 3 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 8, y: 6, z: 3 }
+ACTION Tick 6 · extend @ (11, 1, 2) piston=Some(Coord { x: 11, y: 1, z: 2 }) sources=11 failure=None
+SOURCE Coord { x: 11, y: 2, z: 2 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 11, y: 2, z: 3 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 11, y: 3, z: 2 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 11, y: 3, z: 3 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 11, y: 3, z: 4 } Piston cell=297 dir=1 sticky=true state=0 moving=false
+SOURCE Coord { x: 11, y: 4, z: 2 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 12, y: 1, z: 2 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 12, y: 2, z: 2 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 12, y: 2, z: 3 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 12, y: 2, z: 4 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 12, y: 3, z: 3 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+LINK stick Coord { x: 12, y: 1, z: 2 } -> Coord { x: 12, y: 2, z: 2 }
+LINK stick Coord { x: 12, y: 2, z: 2 } -> Coord { x: 11, y: 2, z: 2 }
+LINK stick Coord { x: 12, y: 2, z: 2 } -> Coord { x: 12, y: 1, z: 2 }
+LINK stick Coord { x: 12, y: 2, z: 2 } -> Coord { x: 12, y: 2, z: 3 }
+LINK stick Coord { x: 12, y: 2, z: 3 } -> Coord { x: 11, y: 2, z: 3 }
+LINK stick Coord { x: 12, y: 2, z: 3 } -> Coord { x: 12, y: 3, z: 3 }
+LINK stick Coord { x: 12, y: 2, z: 3 } -> Coord { x: 12, y: 2, z: 4 }
+LINK stick Coord { x: 12, y: 2, z: 3 } -> Coord { x: 12, y: 2, z: 2 }
+LINK stick Coord { x: 12, y: 3, z: 3 } -> Coord { x: 11, y: 3, z: 3 }
+LINK stick Coord { x: 12, y: 3, z: 3 } -> Coord { x: 12, y: 2, z: 3 }
+LINK stick Coord { x: 11, y: 3, z: 3 } -> Coord { x: 12, y: 3, z: 3 }
+LINK stick Coord { x: 11, y: 3, z: 3 } -> Coord { x: 11, y: 2, z: 3 }
+LINK stick Coord { x: 11, y: 3, z: 3 } -> Coord { x: 11, y: 3, z: 4 }
+LINK stick Coord { x: 11, y: 3, z: 3 } -> Coord { x: 11, y: 3, z: 2 }
+LINK stick Coord { x: 11, y: 3, z: 2 } -> Coord { x: 11, y: 4, z: 2 }
+LINK stick Coord { x: 11, y: 3, z: 2 } -> Coord { x: 11, y: 2, z: 2 }
+LINK stick Coord { x: 11, y: 3, z: 2 } -> Coord { x: 11, y: 3, z: 3 }
+ACTION Tick 6 · extend @ (7, 1, 5) piston=Some(Coord { x: 7, y: 1, z: 5 }) sources=11 failure=None
+SOURCE Coord { x: 7, y: 1, z: 4 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 7, y: 3, z: 3 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 7, y: 3, z: 4 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 7, y: 4, z: 3 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 8, y: 0, z: 4 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 8, y: 0, z: 5 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 8, y: 1, z: 4 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 8, y: 1, z: 5 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 8, y: 2, z: 3 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 8, y: 2, z: 4 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 8, y: 3, z: 3 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+LINK stick Coord { x: 8, y: 1, z: 5 } -> Coord { x: 8, y: 0, z: 5 }
+LINK stick Coord { x: 8, y: 1, z: 5 } -> Coord { x: 8, y: 1, z: 4 }
+LINK stick Coord { x: 8, y: 1, z: 4 } -> Coord { x: 7, y: 1, z: 4 }
+LINK stick Coord { x: 8, y: 1, z: 4 } -> Coord { x: 8, y: 2, z: 4 }
+LINK stick Coord { x: 8, y: 1, z: 4 } -> Coord { x: 8, y: 0, z: 4 }
+LINK stick Coord { x: 8, y: 1, z: 4 } -> Coord { x: 8, y: 1, z: 5 }
+LINK stick Coord { x: 8, y: 2, z: 4 } -> Coord { x: 8, y: 1, z: 4 }
+LINK stick Coord { x: 8, y: 2, z: 4 } -> Coord { x: 8, y: 2, z: 3 }
+LINK stick Coord { x: 8, y: 2, z: 3 } -> Coord { x: 8, y: 3, z: 3 }
+LINK stick Coord { x: 8, y: 2, z: 3 } -> Coord { x: 8, y: 2, z: 4 }
+LINK stick Coord { x: 8, y: 3, z: 3 } -> Coord { x: 7, y: 3, z: 3 }
+LINK stick Coord { x: 8, y: 3, z: 3 } -> Coord { x: 8, y: 2, z: 3 }
+LINK stick Coord { x: 7, y: 3, z: 3 } -> Coord { x: 8, y: 3, z: 3 }
+LINK stick Coord { x: 7, y: 3, z: 3 } -> Coord { x: 7, y: 4, z: 3 }
+LINK stick Coord { x: 7, y: 3, z: 3 } -> Coord { x: 7, y: 3, z: 4 }
+ACTION Tick 6 · extend @ (5, 5, 5) piston=Some(Coord { x: 5, y: 5, z: 5 }) sources=10 failure=None
+SOURCE Coord { x: 4, y: 6, z: 6 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 4, y: 6, z: 7 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 5, y: 6, z: 4 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 5, y: 6, z: 5 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 5, y: 6, z: 6 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 6, y: 5, z: 5 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 6, y: 6, z: 4 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 6, y: 6, z: 5 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 6, y: 6, z: 6 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 6, y: 7, z: 5 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+LINK stick Coord { x: 6, y: 5, z: 5 } -> Coord { x: 6, y: 6, z: 5 }
+LINK stick Coord { x: 6, y: 6, z: 5 } -> Coord { x: 5, y: 6, z: 5 }
+LINK stick Coord { x: 6, y: 6, z: 5 } -> Coord { x: 6, y: 7, z: 5 }
+LINK stick Coord { x: 6, y: 6, z: 5 } -> Coord { x: 6, y: 5, z: 5 }
+LINK stick Coord { x: 6, y: 6, z: 5 } -> Coord { x: 6, y: 6, z: 6 }
+LINK stick Coord { x: 6, y: 6, z: 5 } -> Coord { x: 6, y: 6, z: 4 }
+LINK stick Coord { x: 6, y: 6, z: 6 } -> Coord { x: 5, y: 6, z: 6 }
+LINK stick Coord { x: 6, y: 6, z: 6 } -> Coord { x: 6, y: 6, z: 5 }
+LINK stick Coord { x: 6, y: 6, z: 4 } -> Coord { x: 5, y: 6, z: 4 }
+LINK stick Coord { x: 6, y: 6, z: 4 } -> Coord { x: 6, y: 6, z: 5 }
+LINK stick Coord { x: 5, y: 6, z: 6 } -> Coord { x: 6, y: 6, z: 6 }
+LINK stick Coord { x: 5, y: 6, z: 6 } -> Coord { x: 4, y: 6, z: 6 }
+LINK stick Coord { x: 5, y: 6, z: 6 } -> Coord { x: 5, y: 6, z: 5 }
+LINK stick Coord { x: 4, y: 6, z: 6 } -> Coord { x: 5, y: 6, z: 6 }
+LINK stick Coord { x: 4, y: 6, z: 6 } -> Coord { x: 4, y: 6, z: 7 }
+ACTION Tick 6 · retract @ (7, 7, 4) piston=Some(Coord { x: 7, y: 7, z: 4 }) sources=0 failure=None
+ACTION Tick 6 · retract @ (5, 5, 6) piston=Some(Coord { x: 5, y: 5, z: 6 }) sources=0 failure=None
+ACTION Tick 6 · extend @ (13, 3, 1) piston=Some(Coord { x: 13, y: 3, z: 1 }) sources=11 failure=None
+SOURCE Coord { x: 13, y: 4, z: 1 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 13, y: 4, z: 4 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 14, y: 3, z: 1 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 14, y: 3, z: 2 } Piston cell=297 dir=1 sticky=true state=0 moving=false
+SOURCE Coord { x: 14, y: 4, z: 1 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 14, y: 4, z: 2 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 14, y: 4, z: 3 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 14, y: 4, z: 4 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 15, y: 3, z: 1 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 15, y: 4, z: 2 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 15, y: 4, z: 3 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+LINK stick Coord { x: 14, y: 3, z: 1 } -> Coord { x: 15, y: 3, z: 1 }
+LINK stick Coord { x: 14, y: 3, z: 1 } -> Coord { x: 14, y: 4, z: 1 }
+LINK stick Coord { x: 14, y: 3, z: 1 } -> Coord { x: 14, y: 3, z: 2 }
+LINK obstruction Coord { x: 14, y: 3, z: 1 } -> Coord { x: 15, y: 3, z: 1 }
+LINK stick Coord { x: 14, y: 4, z: 1 } -> Coord { x: 13, y: 4, z: 1 }
+LINK stick Coord { x: 14, y: 4, z: 1 } -> Coord { x: 14, y: 3, z: 1 }
+LINK stick Coord { x: 14, y: 4, z: 1 } -> Coord { x: 14, y: 4, z: 2 }
+LINK stick Coord { x: 14, y: 4, z: 2 } -> Coord { x: 15, y: 4, z: 2 }
+LINK stick Coord { x: 14, y: 4, z: 2 } -> Coord { x: 14, y: 3, z: 2 }
+LINK stick Coord { x: 14, y: 4, z: 2 } -> Coord { x: 14, y: 4, z: 3 }
+LINK stick Coord { x: 14, y: 4, z: 2 } -> Coord { x: 14, y: 4, z: 1 }
+LINK obstruction Coord { x: 14, y: 4, z: 2 } -> Coord { x: 15, y: 4, z: 2 }
+LINK stick Coord { x: 14, y: 4, z: 3 } -> Coord { x: 15, y: 4, z: 3 }
+LINK stick Coord { x: 14, y: 4, z: 3 } -> Coord { x: 14, y: 4, z: 4 }
+LINK stick Coord { x: 14, y: 4, z: 3 } -> Coord { x: 14, y: 4, z: 2 }
+LINK obstruction Coord { x: 14, y: 4, z: 3 } -> Coord { x: 15, y: 4, z: 3 }
+LINK stick Coord { x: 14, y: 4, z: 4 } -> Coord { x: 13, y: 4, z: 4 }
+LINK stick Coord { x: 14, y: 4, z: 4 } -> Coord { x: 14, y: 4, z: 3 }
+ACTION Tick 6 · retract @ (9, 1, 3) piston=Some(Coord { x: 9, y: 1, z: 3 }) sources=0 failure=None
+ACTION Tick 6 · retract @ (14, 4, 7) piston=Some(Coord { x: 14, y: 4, z: 7 }) sources=0 failure=None
+ACTION Tick 6 · retract @ (12, 4, 3) piston=Some(Coord { x: 12, y: 4, z: 3 }) sources=0 failure=None
+ACTION Tick 6 · extend @ (8, 6, 3) piston=Some(Coord { x: 8, y: 6, z: 3 }) sources=10 failure=None
+SOURCE Coord { x: 8, y: 7, z: 3 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 8, y: 7, z: 6 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 9, y: 6, z: 3 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 9, y: 6, z: 5 } Piston cell=297 dir=1 sticky=true state=0 moving=false
+SOURCE Coord { x: 9, y: 6, z: 6 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 9, y: 7, z: 3 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 9, y: 7, z: 4 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 9, y: 7, z: 5 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 9, y: 7, z: 6 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 9, y: 7, z: 7 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+LINK stick Coord { x: 9, y: 6, z: 3 } -> Coord { x: 9, y: 7, z: 3 }
+LINK stick Coord { x: 9, y: 7, z: 3 } -> Coord { x: 8, y: 7, z: 3 }
+LINK stick Coord { x: 9, y: 7, z: 3 } -> Coord { x: 9, y: 6, z: 3 }
+LINK stick Coord { x: 9, y: 7, z: 3 } -> Coord { x: 9, y: 7, z: 4 }
+LINK stick Coord { x: 9, y: 7, z: 4 } -> Coord { x: 9, y: 7, z: 5 }
+LINK stick Coord { x: 9, y: 7, z: 4 } -> Coord { x: 9, y: 7, z: 3 }
+LINK stick Coord { x: 9, y: 7, z: 5 } -> Coord { x: 9, y: 6, z: 5 }
+LINK stick Coord { x: 9, y: 7, z: 5 } -> Coord { x: 9, y: 7, z: 6 }
+LINK stick Coord { x: 9, y: 7, z: 5 } -> Coord { x: 9, y: 7, z: 4 }
+LINK stick Coord { x: 9, y: 7, z: 6 } -> Coord { x: 8, y: 7, z: 6 }
+LINK stick Coord { x: 9, y: 7, z: 6 } -> Coord { x: 9, y: 6, z: 6 }
+LINK stick Coord { x: 9, y: 7, z: 6 } -> Coord { x: 9, y: 7, z: 7 }
+LINK stick Coord { x: 9, y: 7, z: 6 } -> Coord { x: 9, y: 7, z: 5 }
+ACTION Tick 6 · extend @ (11, 2, 4) piston=Some(Coord { x: 11, y: 2, z: 4 }) sources=0 failure=None
+ACTION Tick 6 · retract @ (6, 2, 4) piston=Some(Coord { x: 6, y: 2, z: 4 }) sources=0 failure=None
+ACTION Tick 6 · retract @ (10, 4, 8) piston=Some(Coord { x: 10, y: 4, z: 8 }) sources=0 failure=None
+ACTION Tick 6 · extend @ (11, 4, 7) piston=Some(Coord { x: 11, y: 4, z: 7 }) sources=11 failure=None
+SOURCE Coord { x: 11, y: 4, z: 6 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 11, y: 4, z: 9 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 11, y: 5, z: 9 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 12, y: 4, z: 6 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 12, y: 4, z: 7 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 12, y: 4, z: 8 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 12, y: 4, z: 9 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 12, y: 5, z: 8 } Piston cell=297 dir=1 sticky=true state=0 moving=false
+SOURCE Coord { x: 12, y: 5, z: 9 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 13, y: 4, z: 8 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 13, y: 5, z: 9 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+LINK stick Coord { x: 12, y: 4, z: 7 } -> Coord { x: 12, y: 4, z: 8 }
+LINK stick Coord { x: 12, y: 4, z: 7 } -> Coord { x: 12, y: 4, z: 6 }
+LINK stick Coord { x: 12, y: 4, z: 8 } -> Coord { x: 13, y: 4, z: 8 }
+LINK stick Coord { x: 12, y: 4, z: 8 } -> Coord { x: 12, y: 5, z: 8 }
+LINK stick Coord { x: 12, y: 4, z: 8 } -> Coord { x: 12, y: 4, z: 9 }
+LINK stick Coord { x: 12, y: 4, z: 8 } -> Coord { x: 12, y: 4, z: 7 }
+LINK obstruction Coord { x: 12, y: 4, z: 8 } -> Coord { x: 13, y: 4, z: 8 }
+LINK stick Coord { x: 12, y: 4, z: 6 } -> Coord { x: 11, y: 4, z: 6 }
+LINK stick Coord { x: 12, y: 4, z: 6 } -> Coord { x: 12, y: 4, z: 7 }
+LINK stick Coord { x: 12, y: 4, z: 9 } -> Coord { x: 11, y: 4, z: 9 }
+LINK stick Coord { x: 12, y: 4, z: 9 } -> Coord { x: 12, y: 5, z: 9 }
+LINK stick Coord { x: 12, y: 4, z: 9 } -> Coord { x: 12, y: 4, z: 8 }
+LINK stick Coord { x: 12, y: 5, z: 9 } -> Coord { x: 13, y: 5, z: 9 }
+LINK stick Coord { x: 12, y: 5, z: 9 } -> Coord { x: 11, y: 5, z: 9 }
+LINK stick Coord { x: 12, y: 5, z: 9 } -> Coord { x: 12, y: 4, z: 9 }
+LINK stick Coord { x: 12, y: 5, z: 9 } -> Coord { x: 12, y: 5, z: 8 }
+LINK obstruction Coord { x: 12, y: 5, z: 9 } -> Coord { x: 13, y: 5, z: 9 }
+ACTION Tick 6 · retract @ (10, 5, 6) piston=Some(Coord { x: 10, y: 5, z: 6 }) sources=12 failure=None
+SOURCE Coord { x: 5, y: 2, z: 7 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 5, y: 3, z: 6 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 5, y: 3, z: 7 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 5, y: 3, z: 8 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 5, y: 4, z: 7 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 6, y: 4, z: 7 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 6, y: 5, z: 7 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 7, y: 4, z: 7 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 7, y: 5, z: 6 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 7, y: 5, z: 7 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 7, y: 6, z: 7 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 8, y: 5, z: 6 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+LINK stick Coord { x: 8, y: 5, z: 6 } -> Coord { x: 7, y: 5, z: 6 }
+LINK stick Coord { x: 7, y: 5, z: 6 } -> Coord { x: 8, y: 5, z: 6 }
+LINK stick Coord { x: 7, y: 5, z: 6 } -> Coord { x: 7, y: 5, z: 7 }
+LINK stick Coord { x: 7, y: 5, z: 7 } -> Coord { x: 6, y: 5, z: 7 }
+LINK stick Coord { x: 7, y: 5, z: 7 } -> Coord { x: 7, y: 6, z: 7 }
+LINK stick Coord { x: 7, y: 5, z: 7 } -> Coord { x: 7, y: 4, z: 7 }
+LINK stick Coord { x: 7, y: 5, z: 7 } -> Coord { x: 7, y: 5, z: 6 }
+LINK stick Coord { x: 7, y: 6, z: 7 } -> Coord { x: 7, y: 5, z: 7 }
+LINK stick Coord { x: 7, y: 4, z: 7 } -> Coord { x: 6, y: 4, z: 7 }
+LINK stick Coord { x: 7, y: 4, z: 7 } -> Coord { x: 7, y: 5, z: 7 }
+LINK stick Coord { x: 6, y: 4, z: 7 } -> Coord { x: 7, y: 4, z: 7 }
+LINK stick Coord { x: 6, y: 4, z: 7 } -> Coord { x: 5, y: 4, z: 7 }
+LINK stick Coord { x: 6, y: 4, z: 7 } -> Coord { x: 6, y: 5, z: 7 }
+LINK stick Coord { x: 5, y: 4, z: 7 } -> Coord { x: 6, y: 4, z: 7 }
+LINK stick Coord { x: 5, y: 4, z: 7 } -> Coord { x: 5, y: 3, z: 7 }
+LINK stick Coord { x: 5, y: 3, z: 7 } -> Coord { x: 5, y: 4, z: 7 }
+LINK stick Coord { x: 5, y: 3, z: 7 } -> Coord { x: 5, y: 2, z: 7 }
+LINK stick Coord { x: 5, y: 3, z: 7 } -> Coord { x: 5, y: 3, z: 8 }
+LINK stick Coord { x: 5, y: 3, z: 7 } -> Coord { x: 5, y: 3, z: 6 }
+TICK 7 x=5 ext=0 fail=0 ret=0
+TICK 8 x=5 ext=8 fail=0 ret=7
+POWER soft Coord { x: 12, y: 2, z: 2 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 12, y: 2, z: 3 }
+POWER soft Coord { x: 6, y: 2, z: 6 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 6, y: 3, z: 6 }
+POWER soft Coord { x: 6, y: 2, z: 6 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 6, y: 2, z: 7 }
+POWER soft Coord { x: 6, y: 2, z: 8 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 6, y: 3, z: 8 }
+POWER soft Coord { x: 6, y: 2, z: 8 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 6, y: 2, z: 7 }
+POWER soft Coord { x: 12, y: 4, z: 9 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 12, y: 5, z: 9 }
+POWER soft Coord { x: 6, y: 6, z: 5 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 6, y: 6, z: 4 }
+POWER soft Coord { x: 11, y: 6, z: 5 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 10, y: 6, z: 5 }
+POWER soft Coord { x: 10, y: 6, z: 7 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 10, y: 7, z: 7 }
+POWER soft Coord { x: 10, y: 6, z: 7 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 10, y: 6, z: 6 }
+POWER soft Coord { x: 16, y: 3, z: 2 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 15, y: 3, z: 2 }
+POWER soft Coord { x: 16, y: 3, z: 2 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 16, y: 4, z: 2 }
+POWER soft Coord { x: 16, y: 3, z: 2 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 16, y: 3, z: 1 }
+POWER soft Coord { x: 16, y: 3, z: 3 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 16, y: 4, z: 3 }
+ACTION Tick 8 · extend @ (6, 2, 7) piston=Some(Coord { x: 6, y: 2, z: 7 }) sources=12 failure=None
+SOURCE Coord { x: 6, y: 2, z: 4 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 6, y: 2, z: 5 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 6, y: 2, z: 6 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 6, y: 2, z: 8 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 6, y: 3, z: 6 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 6, y: 3, z: 8 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 7, y: 2, z: 5 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 7, y: 2, z: 6 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 7, y: 2, z: 7 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 7, y: 2, z: 8 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 7, y: 3, z: 6 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 7, y: 3, z: 8 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+LINK stick Coord { x: 7, y: 2, z: 7 } -> Coord { x: 7, y: 2, z: 8 }
+LINK stick Coord { x: 7, y: 2, z: 7 } -> Coord { x: 7, y: 2, z: 6 }
+LINK stick Coord { x: 7, y: 2, z: 8 } -> Coord { x: 6, y: 2, z: 8 }
+LINK stick Coord { x: 7, y: 2, z: 8 } -> Coord { x: 7, y: 3, z: 8 }
+LINK stick Coord { x: 7, y: 2, z: 8 } -> Coord { x: 7, y: 2, z: 7 }
+LINK stick Coord { x: 7, y: 2, z: 6 } -> Coord { x: 6, y: 2, z: 6 }
+LINK stick Coord { x: 7, y: 2, z: 6 } -> Coord { x: 7, y: 3, z: 6 }
+LINK stick Coord { x: 7, y: 2, z: 6 } -> Coord { x: 7, y: 2, z: 7 }
+LINK stick Coord { x: 7, y: 2, z: 6 } -> Coord { x: 7, y: 2, z: 5 }
+LINK stick Coord { x: 7, y: 3, z: 8 } -> Coord { x: 6, y: 3, z: 8 }
+LINK stick Coord { x: 7, y: 3, z: 8 } -> Coord { x: 7, y: 2, z: 8 }
+LINK stick Coord { x: 7, y: 3, z: 6 } -> Coord { x: 6, y: 3, z: 6 }
+LINK stick Coord { x: 7, y: 3, z: 6 } -> Coord { x: 7, y: 2, z: 6 }
+LINK stick Coord { x: 7, y: 2, z: 5 } -> Coord { x: 6, y: 2, z: 5 }
+LINK stick Coord { x: 7, y: 2, z: 5 } -> Coord { x: 7, y: 2, z: 6 }
+LINK stick Coord { x: 6, y: 2, z: 5 } -> Coord { x: 7, y: 2, z: 5 }
+LINK stick Coord { x: 6, y: 2, z: 5 } -> Coord { x: 6, y: 2, z: 6 }
+LINK stick Coord { x: 6, y: 2, z: 5 } -> Coord { x: 6, y: 2, z: 4 }
+ACTION Tick 8 · extend @ (10, 6, 5) piston=Some(Coord { x: 10, y: 6, z: 5 }) sources=0 failure=None
+ACTION Tick 8 · extend @ (10, 6, 6) piston=Some(Coord { x: 10, y: 6, z: 6 }) sources=11 failure=None
+SOURCE Coord { x: 10, y: 4, z: 8 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 10, y: 5, z: 6 } Piston cell=297 dir=1 sticky=true state=0 moving=false
+SOURCE Coord { x: 10, y: 5, z: 7 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 10, y: 5, z: 8 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 10, y: 6, z: 7 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 10, y: 7, z: 7 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 11, y: 5, z: 7 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 11, y: 6, z: 5 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 11, y: 6, z: 6 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 11, y: 6, z: 7 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 11, y: 7, z: 7 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+LINK stick Coord { x: 11, y: 6, z: 6 } -> Coord { x: 11, y: 6, z: 7 }
+LINK stick Coord { x: 11, y: 6, z: 6 } -> Coord { x: 11, y: 6, z: 5 }
+LINK stick Coord { x: 11, y: 6, z: 7 } -> Coord { x: 10, y: 6, z: 7 }
+LINK stick Coord { x: 11, y: 6, z: 7 } -> Coord { x: 11, y: 7, z: 7 }
+LINK stick Coord { x: 11, y: 6, z: 7 } -> Coord { x: 11, y: 5, z: 7 }
+LINK stick Coord { x: 11, y: 6, z: 7 } -> Coord { x: 11, y: 6, z: 6 }
+LINK stick Coord { x: 11, y: 7, z: 7 } -> Coord { x: 10, y: 7, z: 7 }
+LINK stick Coord { x: 11, y: 7, z: 7 } -> Coord { x: 11, y: 6, z: 7 }
+LINK stick Coord { x: 11, y: 5, z: 7 } -> Coord { x: 10, y: 5, z: 7 }
+LINK stick Coord { x: 11, y: 5, z: 7 } -> Coord { x: 11, y: 6, z: 7 }
+LINK stick Coord { x: 10, y: 5, z: 7 } -> Coord { x: 11, y: 5, z: 7 }
+LINK stick Coord { x: 10, y: 5, z: 7 } -> Coord { x: 10, y: 6, z: 7 }
+LINK stick Coord { x: 10, y: 5, z: 7 } -> Coord { x: 10, y: 5, z: 8 }
+LINK stick Coord { x: 10, y: 5, z: 7 } -> Coord { x: 10, y: 5, z: 6 }
+LINK stick Coord { x: 10, y: 5, z: 8 } -> Coord { x: 10, y: 4, z: 8 }
+LINK stick Coord { x: 10, y: 5, z: 8 } -> Coord { x: 10, y: 5, z: 7 }
+ACTION Tick 8 · extend @ (6, 6, 4) piston=Some(Coord { x: 6, y: 6, z: 4 }) sources=11 failure=None
+SOURCE Coord { x: 5, y: 5, z: 6 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 5, y: 6, z: 6 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 5, y: 6, z: 7 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 6, y: 6, z: 5 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 6, y: 6, z: 6 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 7, y: 5, z: 5 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 7, y: 6, z: 4 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 7, y: 6, z: 5 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 7, y: 6, z: 6 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 7, y: 7, z: 4 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 7, y: 7, z: 5 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+LINK stick Coord { x: 7, y: 6, z: 4 } -> Coord { x: 7, y: 7, z: 4 }
+LINK stick Coord { x: 7, y: 6, z: 4 } -> Coord { x: 7, y: 6, z: 5 }
+LINK stick Coord { x: 7, y: 6, z: 5 } -> Coord { x: 6, y: 6, z: 5 }
+LINK stick Coord { x: 7, y: 6, z: 5 } -> Coord { x: 7, y: 7, z: 5 }
+LINK stick Coord { x: 7, y: 6, z: 5 } -> Coord { x: 7, y: 5, z: 5 }
+LINK stick Coord { x: 7, y: 6, z: 5 } -> Coord { x: 7, y: 6, z: 6 }
+LINK stick Coord { x: 7, y: 6, z: 5 } -> Coord { x: 7, y: 6, z: 4 }
+LINK stick Coord { x: 7, y: 5, z: 5 } -> Coord { x: 7, y: 6, z: 5 }
+LINK stick Coord { x: 7, y: 6, z: 6 } -> Coord { x: 6, y: 6, z: 6 }
+LINK stick Coord { x: 7, y: 6, z: 6 } -> Coord { x: 7, y: 6, z: 5 }
+LINK stick Coord { x: 6, y: 6, z: 6 } -> Coord { x: 7, y: 6, z: 6 }
+LINK stick Coord { x: 6, y: 6, z: 6 } -> Coord { x: 5, y: 6, z: 6 }
+LINK stick Coord { x: 6, y: 6, z: 6 } -> Coord { x: 6, y: 6, z: 5 }
+LINK stick Coord { x: 5, y: 6, z: 6 } -> Coord { x: 6, y: 6, z: 6 }
+LINK stick Coord { x: 5, y: 6, z: 6 } -> Coord { x: 5, y: 5, z: 6 }
+LINK stick Coord { x: 5, y: 6, z: 6 } -> Coord { x: 5, y: 6, z: 7 }
+ACTION Tick 8 · retract @ (11, 4, 7) piston=Some(Coord { x: 11, y: 4, z: 7 }) sources=0 failure=None
+ACTION Tick 8 · extend @ (15, 3, 2) piston=Some(Coord { x: 15, y: 3, z: 2 }) sources=0 failure=None
+ACTION Tick 8 · retract @ (7, 1, 5) piston=Some(Coord { x: 7, y: 1, z: 5 }) sources=0 failure=None
+ACTION Tick 8 · retract @ (11, 2, 4) piston=Some(Coord { x: 11, y: 2, z: 4 }) sources=12 failure=None
+SOURCE Coord { x: 8, y: 1, z: 4 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 8, y: 3, z: 3 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 8, y: 3, z: 4 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 8, y: 4, z: 3 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 9, y: 0, z: 4 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 9, y: 0, z: 5 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 9, y: 1, z: 3 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 9, y: 1, z: 4 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 9, y: 1, z: 5 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 9, y: 2, z: 3 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 9, y: 2, z: 4 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 9, y: 3, z: 3 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+LINK stick Coord { x: 9, y: 2, z: 4 } -> Coord { x: 9, y: 1, z: 4 }
+LINK stick Coord { x: 9, y: 2, z: 4 } -> Coord { x: 9, y: 2, z: 3 }
+LINK stick Coord { x: 9, y: 1, z: 4 } -> Coord { x: 8, y: 1, z: 4 }
+LINK stick Coord { x: 9, y: 1, z: 4 } -> Coord { x: 9, y: 2, z: 4 }
+LINK stick Coord { x: 9, y: 1, z: 4 } -> Coord { x: 9, y: 0, z: 4 }
+LINK stick Coord { x: 9, y: 1, z: 4 } -> Coord { x: 9, y: 1, z: 5 }
+LINK stick Coord { x: 9, y: 1, z: 4 } -> Coord { x: 9, y: 1, z: 3 }
+LINK stick Coord { x: 9, y: 2, z: 3 } -> Coord { x: 9, y: 3, z: 3 }
+LINK stick Coord { x: 9, y: 2, z: 3 } -> Coord { x: 9, y: 1, z: 3 }
+LINK stick Coord { x: 9, y: 2, z: 3 } -> Coord { x: 9, y: 2, z: 4 }
+LINK stick Coord { x: 9, y: 1, z: 5 } -> Coord { x: 9, y: 0, z: 5 }
+LINK stick Coord { x: 9, y: 1, z: 5 } -> Coord { x: 9, y: 1, z: 4 }
+LINK stick Coord { x: 9, y: 3, z: 3 } -> Coord { x: 8, y: 3, z: 3 }
+LINK stick Coord { x: 9, y: 3, z: 3 } -> Coord { x: 9, y: 2, z: 3 }
+LINK stick Coord { x: 8, y: 3, z: 3 } -> Coord { x: 9, y: 3, z: 3 }
+LINK stick Coord { x: 8, y: 3, z: 3 } -> Coord { x: 8, y: 4, z: 3 }
+LINK stick Coord { x: 8, y: 3, z: 3 } -> Coord { x: 8, y: 3, z: 4 }
+ACTION Tick 8 · extend @ (12, 2, 3) piston=Some(Coord { x: 12, y: 2, z: 3 }) sources=11 failure=None
+SOURCE Coord { x: 12, y: 2, z: 2 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 12, y: 3, z: 2 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 12, y: 3, z: 3 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 12, y: 3, z: 4 } Piston cell=297 dir=1 sticky=true state=0 moving=false
+SOURCE Coord { x: 12, y: 4, z: 2 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 12, y: 4, z: 3 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 13, y: 1, z: 2 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 13, y: 2, z: 2 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 13, y: 2, z: 3 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 13, y: 2, z: 4 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 13, y: 3, z: 3 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+LINK stick Coord { x: 13, y: 2, z: 3 } -> Coord { x: 13, y: 3, z: 3 }
+LINK stick Coord { x: 13, y: 2, z: 3 } -> Coord { x: 13, y: 2, z: 4 }
+LINK stick Coord { x: 13, y: 2, z: 3 } -> Coord { x: 13, y: 2, z: 2 }
+LINK stick Coord { x: 13, y: 3, z: 3 } -> Coord { x: 12, y: 3, z: 3 }
+LINK stick Coord { x: 13, y: 3, z: 3 } -> Coord { x: 13, y: 2, z: 3 }
+LINK stick Coord { x: 13, y: 2, z: 2 } -> Coord { x: 12, y: 2, z: 2 }
+LINK stick Coord { x: 13, y: 2, z: 2 } -> Coord { x: 13, y: 1, z: 2 }
+LINK stick Coord { x: 13, y: 2, z: 2 } -> Coord { x: 13, y: 2, z: 3 }
+LINK stick Coord { x: 12, y: 3, z: 3 } -> Coord { x: 13, y: 3, z: 3 }
+LINK stick Coord { x: 12, y: 3, z: 3 } -> Coord { x: 12, y: 4, z: 3 }
+LINK stick Coord { x: 12, y: 3, z: 3 } -> Coord { x: 12, y: 3, z: 4 }
+LINK stick Coord { x: 12, y: 3, z: 3 } -> Coord { x: 12, y: 3, z: 2 }
+LINK stick Coord { x: 13, y: 1, z: 2 } -> Coord { x: 13, y: 2, z: 2 }
+LINK stick Coord { x: 12, y: 3, z: 2 } -> Coord { x: 12, y: 4, z: 2 }
+LINK stick Coord { x: 12, y: 3, z: 2 } -> Coord { x: 12, y: 2, z: 2 }
+LINK stick Coord { x: 12, y: 3, z: 2 } -> Coord { x: 12, y: 3, z: 3 }
+ACTION Tick 8 · retract @ (8, 6, 3) piston=Some(Coord { x: 8, y: 6, z: 3 }) sources=0 failure=None
+ACTION Tick 8 · retract @ (5, 5, 5) piston=Some(Coord { x: 5, y: 5, z: 5 }) sources=0 failure=None
+ACTION Tick 8 · retract @ (11, 1, 2) piston=Some(Coord { x: 11, y: 1, z: 2 }) sources=0 failure=None
+ACTION Tick 8 · retract @ (13, 3, 1) piston=Some(Coord { x: 13, y: 3, z: 1 }) sources=0 failure=None
+ACTION Tick 8 · extend @ (12, 5, 9) piston=Some(Coord { x: 12, y: 5, z: 9 }) sources=11 failure=None
+SOURCE Coord { x: 12, y: 4, z: 6 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 12, y: 4, z: 9 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 13, y: 4, z: 6 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 13, y: 4, z: 7 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 13, y: 4, z: 8 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 13, y: 4, z: 9 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 13, y: 5, z: 8 } Piston cell=297 dir=1 sticky=true state=0 moving=false
+SOURCE Coord { x: 13, y: 5, z: 9 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 14, y: 4, z: 7 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 14, y: 4, z: 8 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 14, y: 5, z: 9 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+LINK stick Coord { x: 13, y: 5, z: 9 } -> Coord { x: 14, y: 5, z: 9 }
+LINK stick Coord { x: 13, y: 5, z: 9 } -> Coord { x: 13, y: 4, z: 9 }
+LINK stick Coord { x: 13, y: 5, z: 9 } -> Coord { x: 13, y: 5, z: 8 }
+LINK obstruction Coord { x: 13, y: 5, z: 9 } -> Coord { x: 14, y: 5, z: 9 }
+LINK stick Coord { x: 13, y: 4, z: 9 } -> Coord { x: 12, y: 4, z: 9 }
+LINK stick Coord { x: 13, y: 4, z: 9 } -> Coord { x: 13, y: 5, z: 9 }
+LINK stick Coord { x: 13, y: 4, z: 9 } -> Coord { x: 13, y: 4, z: 8 }
+LINK stick Coord { x: 13, y: 4, z: 8 } -> Coord { x: 14, y: 4, z: 8 }
+LINK stick Coord { x: 13, y: 4, z: 8 } -> Coord { x: 13, y: 5, z: 8 }
+LINK stick Coord { x: 13, y: 4, z: 8 } -> Coord { x: 13, y: 4, z: 9 }
+LINK stick Coord { x: 13, y: 4, z: 8 } -> Coord { x: 13, y: 4, z: 7 }
+LINK obstruction Coord { x: 13, y: 4, z: 8 } -> Coord { x: 14, y: 4, z: 8 }
+LINK stick Coord { x: 13, y: 4, z: 7 } -> Coord { x: 14, y: 4, z: 7 }
+LINK stick Coord { x: 13, y: 4, z: 7 } -> Coord { x: 13, y: 4, z: 8 }
+LINK stick Coord { x: 13, y: 4, z: 7 } -> Coord { x: 13, y: 4, z: 6 }
+LINK obstruction Coord { x: 13, y: 4, z: 7 } -> Coord { x: 14, y: 4, z: 7 }
+LINK stick Coord { x: 13, y: 4, z: 6 } -> Coord { x: 12, y: 4, z: 6 }
+LINK stick Coord { x: 13, y: 4, z: 6 } -> Coord { x: 13, y: 4, z: 7 }
+ACTION Tick 8 · extend @ (16, 4, 3) piston=Some(Coord { x: 16, y: 4, z: 3 }) sources=9 failure=None
+SOURCE Coord { x: 16, y: 3, z: 1 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 16, y: 3, z: 2 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 16, y: 3, z: 3 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 16, y: 4, z: 2 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 17, y: 3, z: 1 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 17, y: 3, z: 2 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 17, y: 3, z: 3 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 17, y: 4, z: 2 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 17, y: 4, z: 3 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+LINK stick Coord { x: 17, y: 4, z: 3 } -> Coord { x: 17, y: 3, z: 3 }
+LINK stick Coord { x: 17, y: 4, z: 3 } -> Coord { x: 17, y: 4, z: 2 }
+LINK stick Coord { x: 17, y: 3, z: 3 } -> Coord { x: 16, y: 3, z: 3 }
+LINK stick Coord { x: 17, y: 3, z: 3 } -> Coord { x: 17, y: 4, z: 3 }
+LINK stick Coord { x: 17, y: 3, z: 3 } -> Coord { x: 17, y: 3, z: 2 }
+LINK stick Coord { x: 17, y: 4, z: 2 } -> Coord { x: 16, y: 4, z: 2 }
+LINK stick Coord { x: 17, y: 4, z: 2 } -> Coord { x: 17, y: 3, z: 2 }
+LINK stick Coord { x: 17, y: 4, z: 2 } -> Coord { x: 17, y: 4, z: 3 }
+LINK stick Coord { x: 17, y: 3, z: 2 } -> Coord { x: 16, y: 3, z: 2 }
+LINK stick Coord { x: 17, y: 3, z: 2 } -> Coord { x: 17, y: 4, z: 2 }
+LINK stick Coord { x: 17, y: 3, z: 2 } -> Coord { x: 17, y: 3, z: 3 }
+LINK stick Coord { x: 17, y: 3, z: 2 } -> Coord { x: 17, y: 3, z: 1 }
+LINK stick Coord { x: 17, y: 3, z: 1 } -> Coord { x: 16, y: 3, z: 1 }
+LINK stick Coord { x: 17, y: 3, z: 1 } -> Coord { x: 17, y: 3, z: 2 }
+TICK 9 x=5 ext=0 fail=0 ret=0
+TICK 10 x=6 ext=7 fail=0 ret=8
+POWER soft Coord { x: 10, y: 0, z: 3 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 10, y: 1, z: 3 }
+POWER soft Coord { x: 10, y: 0, z: 3 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 10, y: 0, z: 4 }
+POWER soft Coord { x: 10, y: 0, z: 6 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 10, y: 0, z: 5 }
+POWER soft Coord { x: 7, y: 2, z: 6 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 7, y: 3, z: 6 }
+POWER soft Coord { x: 7, y: 2, z: 8 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 7, y: 3, z: 8 }
+POWER soft Coord { x: 9, y: 4, z: 4 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 9, y: 3, z: 4 }
+POWER soft Coord { x: 9, y: 4, z: 4 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 9, y: 4, z: 3 }
+POWER soft Coord { x: 15, y: 5, z: 7 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 15, y: 4, z: 7 }
+POWER soft Coord { x: 15, y: 5, z: 8 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 14, y: 5, z: 8 }
+POWER soft Coord { x: 15, y: 5, z: 8 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 15, y: 4, z: 8 }
+POWER soft Coord { x: 15, y: 5, z: 8 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 15, y: 5, z: 9 }
+POWER soft Coord { x: 11, y: 6, z: 7 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 11, y: 7, z: 7 }
+POWER soft Coord { x: 17, y: 3, z: 2 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 17, y: 4, z: 2 }
+POWER soft Coord { x: 17, y: 3, z: 2 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false -> Coord { x: 17, y: 3, z: 1 }
+ACTION Tick 10 · extend @ (14, 5, 8) piston=Some(Coord { x: 14, y: 5, z: 8 }) sources=0 failure=None
+ACTION Tick 10 · extend @ (15, 4, 7) piston=Some(Coord { x: 15, y: 4, z: 7 }) sources=9 failure=None
+SOURCE Coord { x: 15, y: 4, z: 8 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 15, y: 5, z: 7 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 15, y: 5, z: 8 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 15, y: 5, z: 9 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 16, y: 4, z: 7 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 16, y: 4, z: 8 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 16, y: 5, z: 7 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 16, y: 5, z: 8 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 16, y: 5, z: 9 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+LINK stick Coord { x: 16, y: 4, z: 7 } -> Coord { x: 16, y: 5, z: 7 }
+LINK stick Coord { x: 16, y: 4, z: 7 } -> Coord { x: 16, y: 4, z: 8 }
+LINK stick Coord { x: 16, y: 5, z: 7 } -> Coord { x: 15, y: 5, z: 7 }
+LINK stick Coord { x: 16, y: 5, z: 7 } -> Coord { x: 16, y: 4, z: 7 }
+LINK stick Coord { x: 16, y: 5, z: 7 } -> Coord { x: 16, y: 5, z: 8 }
+LINK stick Coord { x: 16, y: 4, z: 8 } -> Coord { x: 15, y: 4, z: 8 }
+LINK stick Coord { x: 16, y: 4, z: 8 } -> Coord { x: 16, y: 5, z: 8 }
+LINK stick Coord { x: 16, y: 4, z: 8 } -> Coord { x: 16, y: 4, z: 7 }
+LINK stick Coord { x: 16, y: 5, z: 8 } -> Coord { x: 15, y: 5, z: 8 }
+LINK stick Coord { x: 16, y: 5, z: 8 } -> Coord { x: 16, y: 4, z: 8 }
+LINK stick Coord { x: 16, y: 5, z: 8 } -> Coord { x: 16, y: 5, z: 9 }
+LINK stick Coord { x: 16, y: 5, z: 8 } -> Coord { x: 16, y: 5, z: 7 }
+LINK stick Coord { x: 16, y: 5, z: 9 } -> Coord { x: 15, y: 5, z: 9 }
+LINK stick Coord { x: 16, y: 5, z: 9 } -> Coord { x: 16, y: 5, z: 8 }
+ACTION Tick 10 · extend @ (10, 0, 5) piston=Some(Coord { x: 10, y: 0, z: 5 }) sources=12 failure=None
+SOURCE Coord { x: 10, y: 0, z: 3 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 10, y: 0, z: 4 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 10, y: 0, z: 6 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 10, y: 1, z: 3 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 11, y: 0, z: 3 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 11, y: 0, z: 4 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 11, y: 0, z: 5 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 11, y: 0, z: 6 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 11, y: 1, z: 2 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 11, y: 1, z: 3 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 11, y: 1, z: 4 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 11, y: 2, z: 4 } Piston cell=297 dir=1 sticky=true state=0 moving=false
+LINK stick Coord { x: 11, y: 0, z: 5 } -> Coord { x: 11, y: 0, z: 6 }
+LINK stick Coord { x: 11, y: 0, z: 5 } -> Coord { x: 11, y: 0, z: 4 }
+LINK stick Coord { x: 11, y: 0, z: 6 } -> Coord { x: 10, y: 0, z: 6 }
+LINK stick Coord { x: 11, y: 0, z: 6 } -> Coord { x: 11, y: 0, z: 5 }
+LINK stick Coord { x: 11, y: 0, z: 4 } -> Coord { x: 10, y: 0, z: 4 }
+LINK stick Coord { x: 11, y: 0, z: 4 } -> Coord { x: 11, y: 1, z: 4 }
+LINK stick Coord { x: 11, y: 0, z: 4 } -> Coord { x: 11, y: 0, z: 5 }
+LINK stick Coord { x: 11, y: 0, z: 4 } -> Coord { x: 11, y: 0, z: 3 }
+LINK stick Coord { x: 11, y: 1, z: 4 } -> Coord { x: 11, y: 2, z: 4 }
+LINK stick Coord { x: 11, y: 1, z: 4 } -> Coord { x: 11, y: 0, z: 4 }
+LINK stick Coord { x: 11, y: 1, z: 4 } -> Coord { x: 11, y: 1, z: 3 }
+LINK stick Coord { x: 11, y: 0, z: 3 } -> Coord { x: 10, y: 0, z: 3 }
+LINK stick Coord { x: 11, y: 0, z: 3 } -> Coord { x: 11, y: 1, z: 3 }
+LINK stick Coord { x: 11, y: 0, z: 3 } -> Coord { x: 11, y: 0, z: 4 }
+LINK stick Coord { x: 11, y: 1, z: 3 } -> Coord { x: 10, y: 1, z: 3 }
+LINK stick Coord { x: 11, y: 1, z: 3 } -> Coord { x: 11, y: 0, z: 3 }
+LINK stick Coord { x: 11, y: 1, z: 3 } -> Coord { x: 11, y: 1, z: 4 }
+LINK stick Coord { x: 11, y: 1, z: 3 } -> Coord { x: 11, y: 1, z: 2 }
+ACTION Tick 10 · retract @ (10, 6, 5) piston=Some(Coord { x: 10, y: 6, z: 5 }) sources=12 failure=None
+SOURCE Coord { x: 6, y: 5, z: 6 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 6, y: 6, z: 6 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 6, y: 6, z: 7 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 7, y: 6, z: 5 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 7, y: 6, z: 6 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 8, y: 5, z: 5 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 8, y: 6, z: 3 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 8, y: 6, z: 4 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 8, y: 6, z: 5 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 8, y: 6, z: 6 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 8, y: 7, z: 4 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 8, y: 7, z: 5 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+LINK stick Coord { x: 8, y: 6, z: 5 } -> Coord { x: 7, y: 6, z: 5 }
+LINK stick Coord { x: 8, y: 6, z: 5 } -> Coord { x: 8, y: 7, z: 5 }
+LINK stick Coord { x: 8, y: 6, z: 5 } -> Coord { x: 8, y: 5, z: 5 }
+LINK stick Coord { x: 8, y: 6, z: 5 } -> Coord { x: 8, y: 6, z: 6 }
+LINK stick Coord { x: 8, y: 6, z: 5 } -> Coord { x: 8, y: 6, z: 4 }
+LINK stick Coord { x: 8, y: 5, z: 5 } -> Coord { x: 8, y: 6, z: 5 }
+LINK stick Coord { x: 8, y: 6, z: 6 } -> Coord { x: 7, y: 6, z: 6 }
+LINK stick Coord { x: 8, y: 6, z: 6 } -> Coord { x: 8, y: 6, z: 5 }
+LINK stick Coord { x: 8, y: 6, z: 4 } -> Coord { x: 8, y: 7, z: 4 }
+LINK stick Coord { x: 8, y: 6, z: 4 } -> Coord { x: 8, y: 6, z: 5 }
+LINK stick Coord { x: 8, y: 6, z: 4 } -> Coord { x: 8, y: 6, z: 3 }
+LINK stick Coord { x: 7, y: 6, z: 6 } -> Coord { x: 8, y: 6, z: 6 }
+LINK stick Coord { x: 7, y: 6, z: 6 } -> Coord { x: 6, y: 6, z: 6 }
+LINK stick Coord { x: 7, y: 6, z: 6 } -> Coord { x: 7, y: 6, z: 5 }
+LINK stick Coord { x: 6, y: 6, z: 6 } -> Coord { x: 7, y: 6, z: 6 }
+LINK stick Coord { x: 6, y: 6, z: 6 } -> Coord { x: 6, y: 5, z: 6 }
+LINK stick Coord { x: 6, y: 6, z: 6 } -> Coord { x: 6, y: 6, z: 7 }
+ACTION Tick 10 · extend @ (7, 3, 8) piston=Some(Coord { x: 7, y: 3, z: 8 }) sources=12 failure=None
+SOURCE Coord { x: 7, y: 1, z: 5 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 7, y: 2, z: 4 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 7, y: 2, z: 5 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 7, y: 2, z: 6 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 7, y: 2, z: 8 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 7, y: 3, z: 6 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 8, y: 2, z: 5 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 8, y: 2, z: 6 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 8, y: 2, z: 7 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 8, y: 2, z: 8 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 8, y: 3, z: 6 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 8, y: 3, z: 8 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+LINK stick Coord { x: 8, y: 3, z: 8 } -> Coord { x: 8, y: 2, z: 8 }
+LINK stick Coord { x: 8, y: 2, z: 8 } -> Coord { x: 7, y: 2, z: 8 }
+LINK stick Coord { x: 8, y: 2, z: 8 } -> Coord { x: 8, y: 3, z: 8 }
+LINK stick Coord { x: 8, y: 2, z: 8 } -> Coord { x: 8, y: 2, z: 7 }
+LINK stick Coord { x: 8, y: 2, z: 7 } -> Coord { x: 8, y: 2, z: 8 }
+LINK stick Coord { x: 8, y: 2, z: 7 } -> Coord { x: 8, y: 2, z: 6 }
+LINK stick Coord { x: 8, y: 2, z: 6 } -> Coord { x: 7, y: 2, z: 6 }
+LINK stick Coord { x: 8, y: 2, z: 6 } -> Coord { x: 8, y: 3, z: 6 }
+LINK stick Coord { x: 8, y: 2, z: 6 } -> Coord { x: 8, y: 2, z: 7 }
+LINK stick Coord { x: 8, y: 2, z: 6 } -> Coord { x: 8, y: 2, z: 5 }
+LINK stick Coord { x: 8, y: 3, z: 6 } -> Coord { x: 7, y: 3, z: 6 }
+LINK stick Coord { x: 8, y: 3, z: 6 } -> Coord { x: 8, y: 2, z: 6 }
+LINK stick Coord { x: 8, y: 2, z: 5 } -> Coord { x: 7, y: 2, z: 5 }
+LINK stick Coord { x: 8, y: 2, z: 5 } -> Coord { x: 8, y: 2, z: 6 }
+LINK stick Coord { x: 7, y: 2, z: 5 } -> Coord { x: 8, y: 2, z: 5 }
+LINK stick Coord { x: 7, y: 2, z: 5 } -> Coord { x: 7, y: 1, z: 5 }
+LINK stick Coord { x: 7, y: 2, z: 5 } -> Coord { x: 7, y: 2, z: 6 }
+LINK stick Coord { x: 7, y: 2, z: 5 } -> Coord { x: 7, y: 2, z: 4 }
+ACTION Tick 10 · extend @ (9, 4, 3) piston=Some(Coord { x: 9, y: 4, z: 3 }) sources=12 failure=None
+SOURCE Coord { x: 5, y: 5, z: 4 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 5, y: 5, z: 5 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 6, y: 5, z: 4 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 7, y: 5, z: 4 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 8, y: 5, z: 4 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 9, y: 3, z: 4 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 9, y: 4, z: 4 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 9, y: 5, z: 4 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 10, y: 3, z: 4 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 10, y: 4, z: 3 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 10, y: 4, z: 4 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 10, y: 5, z: 4 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+LINK stick Coord { x: 10, y: 4, z: 3 } -> Coord { x: 10, y: 4, z: 4 }
+LINK stick Coord { x: 10, y: 4, z: 4 } -> Coord { x: 9, y: 4, z: 4 }
+LINK stick Coord { x: 10, y: 4, z: 4 } -> Coord { x: 10, y: 5, z: 4 }
+LINK stick Coord { x: 10, y: 4, z: 4 } -> Coord { x: 10, y: 3, z: 4 }
+LINK stick Coord { x: 10, y: 4, z: 4 } -> Coord { x: 10, y: 4, z: 3 }
+LINK stick Coord { x: 10, y: 5, z: 4 } -> Coord { x: 9, y: 5, z: 4 }
+LINK stick Coord { x: 10, y: 5, z: 4 } -> Coord { x: 10, y: 4, z: 4 }
+LINK stick Coord { x: 10, y: 3, z: 4 } -> Coord { x: 9, y: 3, z: 4 }
+LINK stick Coord { x: 10, y: 3, z: 4 } -> Coord { x: 10, y: 4, z: 4 }
+LINK stick Coord { x: 9, y: 5, z: 4 } -> Coord { x: 10, y: 5, z: 4 }
+LINK stick Coord { x: 9, y: 5, z: 4 } -> Coord { x: 8, y: 5, z: 4 }
+LINK stick Coord { x: 9, y: 5, z: 4 } -> Coord { x: 9, y: 4, z: 4 }
+LINK stick Coord { x: 8, y: 5, z: 4 } -> Coord { x: 9, y: 5, z: 4 }
+LINK stick Coord { x: 8, y: 5, z: 4 } -> Coord { x: 7, y: 5, z: 4 }
+LINK stick Coord { x: 7, y: 5, z: 4 } -> Coord { x: 8, y: 5, z: 4 }
+LINK stick Coord { x: 7, y: 5, z: 4 } -> Coord { x: 6, y: 5, z: 4 }
+LINK stick Coord { x: 6, y: 5, z: 4 } -> Coord { x: 7, y: 5, z: 4 }
+LINK stick Coord { x: 6, y: 5, z: 4 } -> Coord { x: 5, y: 5, z: 4 }
+LINK stick Coord { x: 5, y: 5, z: 4 } -> Coord { x: 6, y: 5, z: 4 }
+LINK stick Coord { x: 5, y: 5, z: 4 } -> Coord { x: 5, y: 5, z: 5 }
+ACTION Tick 10 · retract @ (15, 3, 2) piston=Some(Coord { x: 15, y: 3, z: 2 }) sources=12 failure=None
+SOURCE Coord { x: 13, y: 2, z: 2 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 13, y: 3, z: 1 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 13, y: 3, z: 2 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 13, y: 3, z: 3 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 13, y: 3, z: 4 } Piston cell=297 dir=1 sticky=true state=0 moving=false
+SOURCE Coord { x: 13, y: 4, z: 2 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 13, y: 4, z: 3 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 14, y: 1, z: 2 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 14, y: 2, z: 2 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 14, y: 2, z: 3 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 14, y: 2, z: 4 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 14, y: 3, z: 3 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+LINK stick Coord { x: 13, y: 3, z: 2 } -> Coord { x: 13, y: 4, z: 2 }
+LINK stick Coord { x: 13, y: 3, z: 2 } -> Coord { x: 13, y: 2, z: 2 }
+LINK stick Coord { x: 13, y: 3, z: 2 } -> Coord { x: 13, y: 3, z: 3 }
+LINK stick Coord { x: 13, y: 3, z: 2 } -> Coord { x: 13, y: 3, z: 1 }
+LINK obstruction Coord { x: 13, y: 2, z: 2 } -> Coord { x: 14, y: 2, z: 2 }
+LINK stick Coord { x: 13, y: 3, z: 3 } -> Coord { x: 14, y: 3, z: 3 }
+LINK stick Coord { x: 13, y: 3, z: 3 } -> Coord { x: 13, y: 4, z: 3 }
+LINK stick Coord { x: 13, y: 3, z: 3 } -> Coord { x: 13, y: 3, z: 4 }
+LINK stick Coord { x: 13, y: 3, z: 3 } -> Coord { x: 13, y: 3, z: 2 }
+LINK obstruction Coord { x: 13, y: 3, z: 3 } -> Coord { x: 14, y: 3, z: 3 }
+LINK stick Coord { x: 14, y: 2, z: 2 } -> Coord { x: 13, y: 2, z: 2 }
+LINK stick Coord { x: 14, y: 2, z: 2 } -> Coord { x: 14, y: 1, z: 2 }
+LINK stick Coord { x: 14, y: 2, z: 2 } -> Coord { x: 14, y: 2, z: 3 }
+LINK stick Coord { x: 14, y: 3, z: 3 } -> Coord { x: 13, y: 3, z: 3 }
+LINK stick Coord { x: 14, y: 3, z: 3 } -> Coord { x: 14, y: 2, z: 3 }
+LINK stick Coord { x: 14, y: 1, z: 2 } -> Coord { x: 14, y: 2, z: 2 }
+LINK stick Coord { x: 14, y: 2, z: 3 } -> Coord { x: 14, y: 3, z: 3 }
+LINK stick Coord { x: 14, y: 2, z: 3 } -> Coord { x: 14, y: 2, z: 4 }
+LINK stick Coord { x: 14, y: 2, z: 3 } -> Coord { x: 14, y: 2, z: 2 }
+ACTION Tick 10 · retract @ (12, 2, 3) piston=Some(Coord { x: 12, y: 2, z: 3 }) sources=0 failure=None
+ACTION Tick 10 · retract @ (10, 6, 6) piston=Some(Coord { x: 10, y: 6, z: 6 }) sources=0 failure=None
+ACTION Tick 10 · retract @ (12, 5, 9) piston=Some(Coord { x: 12, y: 5, z: 9 }) sources=0 failure=None
+ACTION Tick 10 · retract @ (6, 2, 7) piston=Some(Coord { x: 6, y: 2, z: 7 }) sources=0 failure=None
+ACTION Tick 10 · extend @ (11, 7, 7) piston=Some(Coord { x: 11, y: 7, z: 7 }) sources=11 failure=None
+SOURCE Coord { x: 11, y: 4, z: 7 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 11, y: 4, z: 8 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 11, y: 5, z: 6 } Piston cell=297 dir=1 sticky=true state=0 moving=false
+SOURCE Coord { x: 11, y: 5, z: 7 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 11, y: 5, z: 8 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 11, y: 6, z: 7 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 12, y: 5, z: 7 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 12, y: 6, z: 5 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 12, y: 6, z: 6 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 12, y: 6, z: 7 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 12, y: 7, z: 7 } Honey cell=2 dir=0 sticky=false state=0 moving=false
+LINK stick Coord { x: 12, y: 7, z: 7 } -> Coord { x: 12, y: 6, z: 7 }
+LINK stick Coord { x: 12, y: 6, z: 7 } -> Coord { x: 11, y: 6, z: 7 }
+LINK stick Coord { x: 12, y: 6, z: 7 } -> Coord { x: 12, y: 7, z: 7 }
+LINK stick Coord { x: 12, y: 6, z: 7 } -> Coord { x: 12, y: 5, z: 7 }
+LINK stick Coord { x: 12, y: 6, z: 7 } -> Coord { x: 12, y: 6, z: 6 }
+LINK stick Coord { x: 12, y: 5, z: 7 } -> Coord { x: 11, y: 5, z: 7 }
+LINK stick Coord { x: 12, y: 5, z: 7 } -> Coord { x: 12, y: 6, z: 7 }
+LINK stick Coord { x: 12, y: 6, z: 6 } -> Coord { x: 12, y: 6, z: 7 }
+LINK stick Coord { x: 12, y: 6, z: 6 } -> Coord { x: 12, y: 6, z: 5 }
+LINK stick Coord { x: 11, y: 5, z: 7 } -> Coord { x: 12, y: 5, z: 7 }
+LINK stick Coord { x: 11, y: 5, z: 7 } -> Coord { x: 11, y: 6, z: 7 }
+LINK stick Coord { x: 11, y: 5, z: 7 } -> Coord { x: 11, y: 4, z: 7 }
+LINK stick Coord { x: 11, y: 5, z: 7 } -> Coord { x: 11, y: 5, z: 8 }
+LINK stick Coord { x: 11, y: 5, z: 7 } -> Coord { x: 11, y: 5, z: 6 }
+LINK stick Coord { x: 11, y: 5, z: 8 } -> Coord { x: 11, y: 4, z: 8 }
+LINK stick Coord { x: 11, y: 5, z: 8 } -> Coord { x: 11, y: 5, z: 7 }
+ACTION Tick 10 · retract @ (6, 6, 4) piston=Some(Coord { x: 6, y: 6, z: 4 }) sources=0 failure=None
+ACTION Tick 10 · retract @ (16, 4, 3) piston=Some(Coord { x: 16, y: 4, z: 3 }) sources=0 failure=None
+ACTION Tick 10 · extend @ (17, 4, 2) piston=Some(Coord { x: 17, y: 4, z: 2 }) sources=8 failure=None
+SOURCE Coord { x: 17, y: 3, z: 1 } Piston cell=9 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 17, y: 3, z: 2 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 17, y: 3, z: 3 } RedstoneBlock cell=6 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 18, y: 3, z: 1 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 18, y: 3, z: 2 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 18, y: 3, z: 3 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 18, y: 4, z: 2 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+SOURCE Coord { x: 18, y: 4, z: 3 } Slime cell=1 dir=0 sticky=false state=0 moving=false
+LINK stick Coord { x: 18, y: 4, z: 2 } -> Coord { x: 18, y: 3, z: 2 }
+LINK stick Coord { x: 18, y: 4, z: 2 } -> Coord { x: 18, y: 4, z: 3 }
+LINK stick Coord { x: 18, y: 3, z: 2 } -> Coord { x: 17, y: 3, z: 2 }
+LINK stick Coord { x: 18, y: 3, z: 2 } -> Coord { x: 18, y: 4, z: 2 }
+LINK stick Coord { x: 18, y: 3, z: 2 } -> Coord { x: 18, y: 3, z: 3 }
+LINK stick Coord { x: 18, y: 3, z: 2 } -> Coord { x: 18, y: 3, z: 1 }
+LINK stick Coord { x: 18, y: 4, z: 3 } -> Coord { x: 18, y: 3, z: 3 }
+LINK stick Coord { x: 18, y: 4, z: 3 } -> Coord { x: 18, y: 4, z: 2 }
+LINK stick Coord { x: 18, y: 3, z: 3 } -> Coord { x: 17, y: 3, z: 3 }
+LINK stick Coord { x: 18, y: 3, z: 3 } -> Coord { x: 18, y: 4, z: 3 }
+LINK stick Coord { x: 18, y: 3, z: 3 } -> Coord { x: 18, y: 3, z: 2 }
+LINK stick Coord { x: 18, y: 3, z: 1 } -> Coord { x: 17, y: 3, z: 1 }
+LINK stick Coord { x: 18, y: 3, z: 1 } -> Coord { x: 18, y: 3, z: 2 }
+TICK 11 x=6 ext=0 fail=0 ret=0

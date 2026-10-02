@@ -25,3 +25,17 @@ Candidate generation is conservative in some places and permissive in others: so
 3. For3.333, the grafts overburden PL21 carriers. Reduce added carrier/source glue or choose a lighter base; do not increase PL above24. free_n4.screen.csv identifies first overloads. Cached ports and per-candidate metadata are preserved. Do not rerun unchanged failed candidates.
 
 Portable tools: states.rs/exe (absolute slot states), roles.rs/exe (adapted from human bodytrack; persistent identities, all-time push/pull classification), mixed.py, graft.py, free_ports.py. Python C:/Users/Ruben/anaconda3/python.exe. Role syntax: roles.exe FILE 10000 0 PERIOD. Trace and conservation are simulator evidence, not an in-game claim.
+
+## Continuation (agent J, 2026-10-02)
+BANKED: bank/pl19/exclusive_roles_3bps.flyer (exclusive_3_pl19, 80/80 pl19.fast.csv), bank/pl26/exclusive_roles_3p333.flyer
+(sol_n4/exclusive_3p333_pl26, 80/80 sol_n4/pl26.fast.csv), bank/pl15/exclusive_roles_3bps.flyer (j_light16/run15/c0001,
+80/80, B18 13-honey word mmwmw pull-only, 7 push-only bodies). Method: jports.py adds a per-body load budget to
+free_ports.py. PL14: cached ports route nothing; uncapped jports400.py run14b stopped at ~13/16 min (not exhausted);
+PL13 has 0 budget triples. See j_light16/NOTES.md.
+
+## Overnight (agent J + Sonnet subagents, 2026-10-02)
+BANKED 3 bps PL14 `bank/pl14/exclusive_roles_3bps.flyer` (j_light16/ver14/cand14: 12-slime pull-only rail B20; per-port
+simulator screening portscreen.py, exact Steiner rail + sticky-adjacency fix in jports_st.py; 80/80) and 3.333 PL22
+`bank/pl22/exclusive_roles_3p333.flyer` (j_333/exclusive_3p333_pl22: per-body budget on the n4 base, B0 16-glue
+pull-only; 80/80 at 3334). Bounds: 3 bps PL13 run13g 286 budget triples, 0 rails <=11; 3.333 PL21 0 light-carrier
+ports. PL13 BANKED `bank/pl13/exclusive_roles_3bps.flyer` (j_light13/ver13/cand13, base 3bps_original which has more slack; 8-slime pull-only B41; budget from roles.exe events, triples ordered by L1 Steiner proxy; 80/80). PL12 on that base: 4 budget combos, 0 candidates (bounded). See j_light13/NOTES.md.

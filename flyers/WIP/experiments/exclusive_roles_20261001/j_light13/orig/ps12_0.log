@@ -1,0 +1,4 @@
+drop 0 0 fail [(0, 'retract')] {(0, 'retract'), (8, 'extend')} [(0, 'retract')]
+drop 0 1 fail [(0, 'retract')] {(0, 'retract'), (8, 'extend')} [(0, 'retract')]
+drop 0 2 fail [(0, 'retract')] {(0, 'retract'), (8, 'extend')} [(0, 'retract')]
+slot 0 243 -> 51

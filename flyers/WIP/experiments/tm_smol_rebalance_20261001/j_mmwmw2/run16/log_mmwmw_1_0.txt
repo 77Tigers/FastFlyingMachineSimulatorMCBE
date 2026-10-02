@@ -1,0 +1,20 @@
+ports totals {'pull0': 250, 'pull1': 202, 'pull2': 125, 'pull3': 97, 'pull4': 89, 'push0': 52, 'push1': 50, 'push2': 117, 'push3': 122, 'push4': 105}
+stage1 mmwmw 1 push@ 0 PL 118 Q [109, 39]
+pl 0 118 0 {}
+pl 1 118 41 {'PLtried': 1, 'PLwithQ': 1, 'budget': 262, 'build': 38}
+pl 2 118 73 {'PLtried': 2, 'PLwithQ': 2, 'budget': 536, 'build': 64}
+pl 3 118 105 {'PLtried': 3, 'PLwithQ': 3, 'budget': 806, 'build': 94}
+pl 4 118 133 {'PLtried': 4, 'PLwithQ': 4, 'budget': 1070, 'build': 130}
+pl 5 118 157 {'PLtried': 5, 'PLwithQ': 5, 'budget': 1325, 'build': 175}
+pl 6 118 171 {'PLtried': 6, 'PLwithQ': 6, 'budget': 1593, 'build': 207}
+c780_000 mmwmw push@ 0 rail 12 {'PLtried': 7, 'PLwithQ': 7, 'budget': 1600, 'build': 208}
+c780_001 mmwmw push@ 0 rail 12 {'PLtried': 7, 'PLwithQ': 7, 'budget': 1602, 'build': 208}
+c780_002 mmwmw push@ 0 rail 10 {'PLtried': 7, 'PLwithQ': 7, 'budget': 1602, 'build': 208}
+c780_003 mmwmw push@ 0 rail 11 {'PLtried': 7, 'PLwithQ': 7, 'budget': 1614, 'build': 208}
+c780_004 mmwmw push@ 0 rail 13 {'PLtried': 7, 'PLwithQ': 7, 'budget': 1615, 'build': 208}
+c780_005 mmwmw push@ 0 rail 11 {'PLtried': 7, 'PLwithQ': 7, 'budget': 1620, 'build': 208}
+c780_006 mmwmw push@ 0 rail 12 {'PLtried': 7, 'PLwithQ': 7, 'budget': 1620, 'build': 208}
+c780_007 mmwmw push@ 0 rail 13 {'PLtried': 7, 'PLwithQ': 7, 'budget': 1625, 'build': 208}
+c780_008 mmwmw push@ 0 rail 11 {'PLtried': 7, 'PLwithQ': 7, 'budget': 1632, 'build': 208}
+c780_009 mmwmw push@ 0 rail 13 {'PLtried': 7, 'PLwithQ': 7, 'budget': 1634, 'build': 208}
+done {'PLtried': 7, 'PLwithQ': 7, 'budget': 1634, 'build': 208}

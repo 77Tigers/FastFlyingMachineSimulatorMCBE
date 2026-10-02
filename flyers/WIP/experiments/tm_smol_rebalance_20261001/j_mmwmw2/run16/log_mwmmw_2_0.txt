@@ -1,0 +1,10 @@
+ports totals {'pull0': 250, 'pull1': 202, 'pull2': 125, 'pull3': 97, 'pull4': 89, 'push0': 52, 'push1': 50, 'push2': 117, 'push3': 122, 'push4': 105}
+stage1 mwmmw 2 push@ 0 PL 116 Q [73, 39]
+pl 0 116 0 {}
+pl 1 116 45 {'PLtried': 1, 'PLwithQ': 1, 'budget': 207, 'build': 93}
+pl 2 116 99 {'PLtried': 2, 'PLwithQ': 2, 'budget': 417, 'build': 183}
+pl 3 116 160 {'PLtried': 3, 'PLwithQ': 3, 'budget': 621, 'build': 279}
+pl 4 116 207 {'PLtried': 4, 'PLwithQ': 4, 'budget': 840, 'build': 360}
+pl 5 116 274 {'PLtried': 5, 'PLwithQ': 5, 'budget': 1055, 'build': 445}
+pl 6 116 343 {'PLtried': 6, 'PLwithQ': 6, 'budget': 1261, 'build': 539}
+pl 7 116 465 {'PLtried': 7, 'PLwithQ': 7, 'budget': 1454, 'build': 646}

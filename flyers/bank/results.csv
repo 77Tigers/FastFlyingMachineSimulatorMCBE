@@ -82,3 +82,8 @@ push_limit,name,start_min_x,end_min_x,distance,end_blocks,extensions
 19,exclusive_roles_3bps,14,3014,3000,183,42000
 26,exclusive_roles_3p333,10,3343,3333,296,43334
 15,exclusive_roles_3bps,0,3000,3000,178,42000
+15,human_original_victim_observer,0,3000,3000,199,57000
+22,exclusive_roles_3p333,10,3344,3334,277,43333
+14,exclusive_roles_3bps,0,3000,3000,174,42000
+14,mmwmw_two_pulls,0,3000,3000,173,42000
+13,exclusive_roles_3bps,0,3000,3000,232,62999

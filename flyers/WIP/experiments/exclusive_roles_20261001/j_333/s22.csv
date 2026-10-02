@@ -1,0 +1,61 @@
+file,limit,rng,phase_x,phase_z,ticks,distance,end_blocks,extensions,extension_failures,movement_failures,first_failure_tick,first_failure_kind,conservation_mismatch_ticks,max_successful_action,clean
+"j_333/run22\c0000.flyer",22,0,0,0,240,2,276,57,7264,7264,6,"(Coord { x: 16, y: 15, z: 16 }, ""push limit exceeded"")",0,22,false
+"j_333/run22\c0001.flyer",22,0,0,0,240,1,277,527,3498,3498,2,"(Coord { x: 14, y: 7, z: 17 }, ""push limit exceeded"")",0,22,false
+"j_333/run22\c0002.flyer",22,0,0,0,240,2,277,648,1613,1613,0,"(Coord { x: 13, y: 7, z: 17 }, ""push limit exceeded"")",0,22,false
+"j_333/run22\c0003.flyer",22,0,0,0,240,80,278,1040,0,0,,"",0,22,true
+"j_333/run22\c0004.flyer",22,0,0,0,240,2,273,21,6562,6562,0,"(Coord { x: 17, y: 13, z: 17 }, ""push limit exceeded"")",0,22,false
+"j_333/run22\c0005.flyer",22,0,0,0,240,80,285,1040,0,0,,"",0,22,true
+"j_333/run22\c0006.flyer",22,0,0,0,240,80,282,1040,0,0,,"",0,22,true
+"j_333/run22\c0007.flyer",22,0,0,0,240,2,281,1035,0,0,,"",0,22,true
+"j_333/run22\c0008.flyer",22,0,0,0,240,80,286,1040,0,0,,"",0,22,true
+"j_333/run22\c0009.flyer",22,0,0,0,240,2,278,536,2549,2550,0,"(Coord { x: 17, y: 12, z: 17 }, ""push limit exceeded"")",0,22,false
+"j_333/run22\c0010.flyer",22,0,0,0,240,1,282,541,2989,2989,2,"(Coord { x: 13, y: 8, z: 15 }, ""push limit exceeded"")",0,22,false
+"j_333/run22\c0011.flyer",22,0,0,0,240,2,274,21,6562,6562,0,"(Coord { x: 17, y: 13, z: 17 }, ""push limit exceeded"")",0,22,false
+"j_333/run22\c0012.flyer",22,0,0,0,240,2,272,808,1321,1321,12,"(Coord { x: 16, y: 8, z: 16 }, ""push limit exceeded"")",0,22,false
+"j_333/run22\c0013.flyer",22,0,0,0,240,80,282,1040,0,0,,"",0,22,true
+"j_333/run22\c0014.flyer",22,0,0,0,240,1,275,22,6090,6091,0,"(Coord { x: 17, y: 13, z: 17 }, ""push limit exceeded"")",0,22,false
+"j_333/run22\c0015.flyer",22,0,0,0,240,80,281,1040,0,0,,"",0,22,true
+"j_333/run22\c0016.flyer",22,0,0,0,240,24,280,1039,48,48,10,"(Coord { x: 16, y: 11, z: 17 }, ""push limit exceeded"")",0,22,false
+"j_333/run22\c0017.flyer",22,0,0,0,240,2,275,644,2362,2362,22,"(Coord { x: 20, y: 15, z: 17 }, ""push limit exceeded"")",0,22,false
+"j_333/run22\c0018.flyer",22,0,0,0,240,1,271,125,4699,4699,2,"(Coord { x: 14, y: 7, z: 17 }, ""push limit exceeded"")",0,22,false
+"j_333/run22\c0019.flyer",22,0,0,0,240,4,281,633,2813,2813,22,"(Coord { x: 21, y: 13, z: 16 }, ""push limit exceeded"")",0,22,false
+"j_333/run22\c0020.flyer",22,0,0,0,240,1,279,541,2989,2989,2,"(Coord { x: 13, y: 8, z: 15 }, ""push limit exceeded"")",0,22,false
+"j_333/run22\c0021.flyer",22,0,0,0,240,1,282,541,2989,2989,2,"(Coord { x: 13, y: 8, z: 15 }, ""push limit exceeded"")",0,22,false
+"j_333/run22\c0022.flyer",22,0,0,0,240,4,278,633,2813,2813,22,"(Coord { x: 21, y: 13, z: 16 }, ""push limit exceeded"")",0,22,false
+"j_333/run22\c0023.flyer",22,0,0,0,240,80,282,1040,0,0,,"",0,22,true
+"j_333/run22\c0024.flyer",22,0,0,0,240,80,282,1040,0,0,,"",0,22,true
+"j_333/run22\c0025.flyer",22,0,0,0,240,80,283,1040,0,0,,"",0,22,true
+"j_333/run22\c0026.flyer",22,0,0,0,240,80,282,1040,0,0,,"",0,22,true
+"j_333/run22\c0027.flyer",22,0,0,0,240,4,280,212,5800,5800,0,"(Coord { x: 12, y: 8, z: 15 }, ""push limit exceeded"")",0,22,false
+"j_333/run22\c0028.flyer",22,0,0,0,240,80,285,1040,0,0,,"",0,22,true
+"j_333/run22\c0029.flyer",22,0,0,0,240,1,274,22,6093,6094,0,"(Coord { x: 13, y: 7, z: 17 }, ""push limit exceeded"")",0,22,false
+"j_333/run22\c0030.flyer",22,0,0,0,240,4,277,212,5800,5800,0,"(Coord { x: 12, y: 8, z: 15 }, ""push limit exceeded"")",0,22,false
+"j_333/run22\c0031.flyer",22,0,0,0,240,80,285,1040,0,0,,"",0,22,true
+"j_333/run22\c0032.flyer",22,0,0,0,240,4,277,212,5800,5800,0,"(Coord { x: 12, y: 8, z: 15 }, ""push limit exceeded"")",0,22,false
+"j_333/run22\c0033.flyer",22,0,0,0,240,80,282,1040,0,0,,"",0,22,true
+"j_333/run22\c0034.flyer",22,0,0,0,240,80,282,1040,0,0,,"",0,22,true
+"j_333/run22\c0035.flyer",22,0,0,0,240,1,279,541,2989,2989,2,"(Coord { x: 13, y: 8, z: 15 }, ""push limit exceeded"")",0,22,false
+"j_333/run22\c0036.flyer",22,0,0,0,240,1,275,22,6090,6090,0,"(Coord { x: 17, y: 13, z: 17 }, ""push limit exceeded"")",0,22,false
+"j_333/run22\c0037.flyer",22,0,0,0,240,2,273,21,6565,6565,0,"(Coord { x: 13, y: 7, z: 17 }, ""push limit exceeded"")",0,22,false
+"j_333/run22\c0038.flyer",22,0,0,0,240,4,280,212,5800,5800,0,"(Coord { x: 12, y: 8, z: 15 }, ""push limit exceeded"")",0,22,false
+"j_333/run22\c0039.flyer",22,0,0,0,240,4,271,433,3907,3907,10,"(Coord { x: 16, y: 11, z: 17 }, ""push limit exceeded"")",0,22,false
+"j_333/run22\c0040.flyer",22,0,0,0,240,4,281,633,2813,2813,22,"(Coord { x: 21, y: 13, z: 16 }, ""push limit exceeded"")",0,22,false
+"j_333/run22\c0041.flyer",22,0,0,0,240,2,281,1035,0,0,,"",0,22,true
+"j_333/run22\c0042.flyer",22,0,0,0,240,1,275,22,6090,6091,0,"(Coord { x: 17, y: 13, z: 17 }, ""push limit exceeded"")",0,22,false
+"j_333/run22\c0043.flyer",22,0,0,0,240,2,272,21,6562,6562,0,"(Coord { x: 17, y: 13, z: 17 }, ""push limit exceeded"")",0,22,false
+"j_333/run22\c0044.flyer",22,0,0,0,240,2,275,648,1613,1613,0,"(Coord { x: 13, y: 7, z: 17 }, ""push limit exceeded"")",0,22,false
+"j_333/run22\c0045.flyer",22,0,0,0,240,2,278,693,1895,1895,22,"(Coord { x: 20, y: 15, z: 17 }, ""push limit exceeded"")",0,22,false
+"j_333/run22\c0046.flyer",22,0,0,0,240,13,280,1031,95,95,0,"(Coord { x: 13, y: 7, z: 17 }, ""push limit exceeded"")",0,22,false
+"j_333/run22\c0047.flyer",22,0,0,0,240,2,280,1035,0,0,,"",0,22,true
+"j_333/run22\c0048.flyer",22,0,0,0,240,2,285,1038,0,0,,"",0,22,true
+"j_333/run22\c0049.flyer",22,0,0,0,240,0,276,81,6090,6090,0,"(Coord { x: 17, y: 13, z: 17 }, ""push limit exceeded"")",0,22,false
+"j_333/run22\c0050.flyer",22,0,0,0,240,80,286,1040,0,0,,"",0,22,true
+"j_333/run22\c0051.flyer",22,0,0,0,240,2,280,1035,0,0,,"",0,22,true
+"j_333/run22\c0052.flyer",22,0,0,0,240,2,281,1035,0,0,,"",0,22,true
+"j_333/run22\c0053.flyer",22,0,0,0,240,24,280,1039,48,48,10,"(Coord { x: 16, y: 11, z: 17 }, ""push limit exceeded"")",0,22,false
+"j_333/run22\c0054.flyer",22,0,0,0,240,4,272,333,5242,5242,0,"(Coord { x: 13, y: 7, z: 17 }, ""push limit exceeded"")",0,22,false
+"j_333/run22\c0055.flyer",22,0,0,0,240,1,273,125,4699,4699,2,"(Coord { x: 14, y: 7, z: 17 }, ""push limit exceeded"")",0,22,false
+"j_333/run22\c0056.flyer",22,0,0,0,240,80,286,1040,0,0,,"",0,22,true
+"j_333/run22\c0057.flyer",22,0,0,0,240,1,275,22,6090,6091,0,"(Coord { x: 17, y: 13, z: 17 }, ""push limit exceeded"")",0,22,false
+"j_333/run22\c0058.flyer",22,0,0,0,240,80,282,1040,0,0,,"",0,22,true
+"j_333/run22\c0059.flyer",22,0,0,0,240,80,280,1040,0,0,,"",0,22,true

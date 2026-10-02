@@ -1,0 +1,8 @@
+ports totals {'pull0': 250, 'pull1': 202, 'pull2': 125, 'pull3': 97, 'pull4': 89, 'push0': 52, 'push1': 50, 'push2': 117, 'push3': 122, 'push4': 105}
+stage1 wmmwm 1 push@ 4 PL 220 Q [109, 107]
+pl 0 220 0 {}
+pl 1 220 1 {'PLtried': 1, 'PLwithQ': 1, 'budget': 300}
+pl 2 220 1 {'PLtried': 2, 'PLwithQ': 2, 'budget': 600}
+pl 3 220 2 {'PLtried': 3, 'PLwithQ': 3, 'budget': 900}
+pl 4 220 2 {'PLtried': 4, 'PLwithQ': 4, 'budget': 1200}
+pl 5 220 2 {'PLtried': 5, 'PLwithQ': 5, 'budget': 1500}

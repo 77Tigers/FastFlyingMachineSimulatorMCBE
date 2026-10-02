@@ -1,0 +1,32 @@
+file,limit,rng,phase_x,phase_z,ticks,distance,end_blocks,extensions,extension_failures,movement_failures,first_failure_tick,first_failure_kind,conservation_mismatch_ticks,max_successful_action,clean
+"flyers/WIP/experiments/tm_smol_rebalance_20261001/j2_mmwmw3/r2\c148_000.flyer",17,0,0,0,400,3,197,86,1160,1164,2,"(Coord { x: 10, y: 7, z: 2 }, ""push limit exceeded"")",0,17,false
+"flyers/WIP/experiments/tm_smol_rebalance_20261001/j2_mmwmw3/r2\c148_001.flyer",17,0,0,0,400,120,209,1800,0,0,,"",0,17,true
+"flyers/WIP/experiments/tm_smol_rebalance_20261001/j2_mmwmw3/r2\c148_002.flyer",17,0,0,0,400,2,192,72,1948,1951,4,"(Coord { x: 5, y: 5, z: 16 }, ""push limit exceeded"")",0,17,false
+"flyers/WIP/experiments/tm_smol_rebalance_20261001/j2_mmwmw3/r2\c148_003.flyer",17,0,0,0,400,120,207,1800,0,0,,"",0,17,true
+"flyers/WIP/experiments/tm_smol_rebalance_20261001/j2_mmwmw3/r2\c148_004.flyer",17,0,0,0,400,14,192,251,1748,1750,44,"(Coord { x: 16, y: 5, z: 0 }, ""push limit exceeded"")",0,17,false
+"flyers/WIP/experiments/tm_smol_rebalance_20261001/j2_mmwmw3/r2\c148_005.flyer",17,0,0,0,400,3,199,86,1160,1164,2,"(Coord { x: 10, y: 7, z: 2 }, ""push limit exceeded"")",0,17,false
+"flyers/WIP/experiments/tm_smol_rebalance_20261001/j2_mmwmw3/r2\c148_006.flyer",17,0,0,0,400,120,206,1800,0,0,,"",0,17,true
+"flyers/WIP/experiments/tm_smol_rebalance_20261001/j2_mmwmw3/r2\c148_007.flyer",17,0,0,0,400,5,191,116,1898,1900,14,"(Coord { x: 7, y: 5, z: 16 }, ""push limit exceeded"")",0,17,false
+"flyers/WIP/experiments/tm_smol_rebalance_20261001/j2_mmwmw3/r2\c148_008.flyer",17,0,0,0,400,120,209,1800,0,0,,"",0,17,true
+"flyers/WIP/experiments/tm_smol_rebalance_20261001/j2_mmwmw3/r2\c148_009.flyer",17,0,0,0,400,5,198,153,2629,2630,6,"(Coord { x: 10, y: 3, z: 13 }, ""push limit exceeded"")",0,17,false
+"flyers/WIP/experiments/tm_smol_rebalance_20261001/j2_mmwmw3/r2\c148_010.flyer",17,0,0,0,400,9,201,175,1100,1104,22,"(Coord { x: 16, y: 7, z: 18 }, ""push limit exceeded"")",0,17,false
+"flyers/WIP/experiments/tm_smol_rebalance_20261001/j2_mmwmw3/r2\c148_011.flyer",17,0,0,0,400,120,206,1800,0,0,,"",0,17,true
+"flyers/WIP/experiments/tm_smol_rebalance_20261001/j2_mmwmw3/r2\c148_012.flyer",17,0,0,0,400,120,205,1800,0,0,,"",0,17,true
+"flyers/WIP/experiments/tm_smol_rebalance_20261001/j2_mmwmw3/r2\c148_013.flyer",17,0,0,0,400,18,196,328,2352,2353,60,"(Coord { x: 24, y: 4, z: 2 }, ""immovable obstruction"")",0,17,false
+"flyers/WIP/experiments/tm_smol_rebalance_20261001/j2_mmwmw3/r2\c148_014.flyer",17,0,0,0,400,120,208,1800,0,0,,"",0,17,true
+"flyers/WIP/experiments/tm_smol_rebalance_20261001/j2_mmwmw3/r2\c148_015.flyer",17,0,0,0,400,120,209,1800,0,0,,"",0,17,true
+"flyers/WIP/experiments/tm_smol_rebalance_20261001/j2_mmwmw3/r2\c148_016.flyer",17,0,0,0,400,2,196,110,2306,2307,4,"(Coord { x: 4, y: 3, z: 2 }, ""immovable obstruction"")",0,17,false
+"flyers/WIP/experiments/tm_smol_rebalance_20261001/j2_mmwmw3/r2\c148_017.flyer",17,0,0,0,400,12,195,238,2492,2493,40,"(Coord { x: 18, y: 4, z: 18 }, ""immovable obstruction"")",0,17,false
+"flyers/WIP/experiments/tm_smol_rebalance_20261001/j2_mmwmw3/r2\c148_018.flyer",17,0,0,0,400,8,195,185,2918,2919,22,"(Coord { x: 16, y: 6, z: 19 }, ""push limit exceeded"")",0,17,false
+"flyers/WIP/experiments/tm_smol_rebalance_20261001/j2_mmwmw3/r2\c148_019.flyer",17,0,0,0,400,120,200,1800,0,0,,"",0,17,true
+"flyers/WIP/experiments/tm_smol_rebalance_20261001/j2_mmwmw3/r2\c148_020.flyer",17,0,0,0,400,11,196,244,2126,2127,32,"(Coord { x: 14, y: 10, z: 6 }, ""push limit exceeded"")",0,17,false
+"flyers/WIP/experiments/tm_smol_rebalance_20261001/j2_mmwmw3/r2\c148_021.flyer",17,0,0,0,400,63,191,1004,1301,1301,210,"(Coord { x: 69, y: 4, z: 18 }, ""immovable obstruction"")",0,16,false
+"flyers/WIP/experiments/tm_smol_rebalance_20261001/j2_mmwmw3/r2\c148_022.flyer",17,0,0,0,400,18,192,328,2352,2353,60,"(Coord { x: 24, y: 4, z: 2 }, ""immovable obstruction"")",0,16,false
+"flyers/WIP/experiments/tm_smol_rebalance_20261001/j2_mmwmw3/r2\c148_023.flyer",17,0,0,0,400,120,205,1800,0,0,,"",0,17,true
+"flyers/WIP/experiments/tm_smol_rebalance_20261001/j2_mmwmw3/r2\c148_024.flyer",17,0,0,0,400,120,200,1800,0,0,,"",0,17,true
+"flyers/WIP/experiments/tm_smol_rebalance_20261001/j2_mmwmw3/r2\c148_025.flyer",17,0,0,0,400,120,206,1800,0,0,,"",0,17,true
+"flyers/WIP/experiments/tm_smol_rebalance_20261001/j2_mmwmw3/r2\c148_026.flyer",17,0,0,0,400,2,192,72,1948,1950,4,"(Coord { x: 3, y: 5, z: 17 }, ""push limit exceeded"")",0,17,false
+"flyers/WIP/experiments/tm_smol_rebalance_20261001/j2_mmwmw3/r2\c148_027.flyer",17,0,0,0,400,120,201,1800,0,0,,"",0,17,true
+"flyers/WIP/experiments/tm_smol_rebalance_20261001/j2_mmwmw3/r2\c148_028.flyer",17,0,0,0,400,2,192,110,2306,2307,4,"(Coord { x: 4, y: 3, z: 2 }, ""immovable obstruction"")",0,16,false
+"flyers/WIP/experiments/tm_smol_rebalance_20261001/j2_mmwmw3/r2\c148_029.flyer",17,0,0,0,400,120,201,1800,0,0,,"",0,17,true
+"flyers/WIP/experiments/tm_smol_rebalance_20261001/j2_mmwmw3/r2\c148_030.flyer",17,0,0,0,400,120,205,1800,0,0,,"",0,17,true

@@ -246,6 +246,24 @@
       "extension_failures": 0,
       "endpoint_conserved": true
     },
+    "flyers/bank/pl13/exclusive_roles_3bps.flyer": {
+      "sha256": "59b2fe708522e5b1d8899c94c86835f1a264a584cfd49cadc2a91639852371ad",
+      "ticks": 10000,
+      "distance": 3000,
+      "speed_bps": 3.0,
+      "extensions": 62999,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl14/exclusive_roles_3bps.flyer": {
+      "sha256": "bcb2eb3a45bda2495cb2d590f373e3926bf25a15ea326537e04cdd42a8f4cdeb",
+      "ticks": 10000,
+      "distance": 3000,
+      "speed_bps": 3.0,
+      "extensions": 42000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
     "flyers/bank/pl14/lightning_rods.flyer": {
       "sha256": "15e8408cea8d5f9d76930440d297182618f83131c8df6d864c272b611f708170",
       "ticks": 10000,
@@ -261,6 +279,15 @@
       "distance": 2500,
       "speed_bps": 2.5,
       "extensions": 5000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl14/mmwmw_two_pulls.flyer": {
+      "sha256": "a2abc950a39407a9cd349239301fb60096f1496ce04dc2b96678887cbf4dd224",
+      "ticks": 10000,
+      "distance": 3000,
+      "speed_bps": 3.0,
+      "extensions": 42000,
       "extension_failures": 0,
       "endpoint_conserved": true
     },
@@ -297,6 +324,15 @@
       "distance": 2500,
       "speed_bps": 2.5,
       "extensions": 10000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl15/human_original_victim_observer.flyer": {
+      "sha256": "fe6053d08a130071c4cde0eeeb5eb2214ef6a5c8ac18113d4808e7e21de13ef9",
+      "ticks": 10000,
+      "distance": 3000,
+      "speed_bps": 3.0,
+      "extensions": 57000,
       "extension_failures": 0,
       "endpoint_conserved": true
     },
@@ -621,6 +657,15 @@
       "distance": 3333,
       "speed_bps": 3.333,
       "extensions": 40000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl22/exclusive_roles_3p333.flyer": {
+      "sha256": "afb929b6353979bbe86003e751e915e943313a8d985a97d5d1295b7148988837",
+      "ticks": 10000,
+      "distance": 3334,
+      "speed_bps": 3.334,
+      "extensions": 43333,
       "extension_failures": 0,
       "endpoint_conserved": true
     },

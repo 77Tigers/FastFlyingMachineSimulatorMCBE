@@ -1,0 +1,39 @@
+ports totals {'pull0': 250, 'pull1': 202, 'pull2': 125, 'pull3': 97, 'pull4': 89, 'push0': 52, 'push1': 50, 'push2': 117, 'push3': 122, 'push4': 105}
+stage1 mwmwm 1 push@ 4 PL 215 Q [125, 107]
+pl 0 215 0 {}
+pl 1 215 1 {'PLtried': 1, 'PLwithQ': 1, 'budget': 300}
+pl 2 215 2 {'PLtried': 2, 'PLwithQ': 2, 'budget': 600}
+pl 3 215 2 {'PLtried': 3, 'PLwithQ': 3, 'budget': 900}
+pl 4 215 3 {'PLtried': 4, 'PLwithQ': 4, 'budget': 1200}
+pl 5 215 3 {'PLtried': 5, 'PLwithQ': 5, 'budget': 1500}
+pl 6 215 4 {'PLtried': 6, 'PLwithQ': 6, 'budget': 1800}
+pl 7 215 4 {'PLtried': 7, 'PLwithQ': 7, 'budget': 2100}
+pl 8 215 5 {'PLtried': 8, 'PLwithQ': 8, 'budget': 2400}
+pl 9 215 5 {'PLtried': 9, 'PLwithQ': 9, 'budget': 2700}
+pl 10 215 6 {'PLtried': 10, 'PLwithQ': 10, 'budget': 3000}
+pl 11 215 6 {'PLtried': 11, 'PLwithQ': 11, 'budget': 3300}
+pl 12 215 6 {'PLtried': 12, 'PLwithQ': 12, 'budget': 3600}
+pl 13 215 7 {'PLtried': 13, 'PLwithQ': 13, 'budget': 3900}
+pl 14 215 8 {'PLtried': 14, 'PLwithQ': 14, 'budget': 4200}
+pl 15 215 9 {'PLtried': 15, 'PLwithQ': 15, 'budget': 4499, 'build': 1}
+pl 16 215 13 {'PLtried': 16, 'PLwithQ': 16, 'budget': 4797, 'build': 3}
+pl 17 215 15 {'PLtried': 17, 'PLwithQ': 17, 'budget': 5095, 'build': 5}
+pl 18 215 16 {'PLtried': 18, 'PLwithQ': 18, 'budget': 5395, 'build': 5}
+pl 19 215 16 {'PLtried': 19, 'PLwithQ': 19, 'budget': 5695, 'build': 5}
+pl 20 215 17 {'PLtried': 20, 'PLwithQ': 20, 'budget': 5995, 'build': 5}
+pl 21 215 17 {'PLtried': 21, 'PLwithQ': 21, 'budget': 6295, 'build': 5}
+pl 22 215 18 {'PLtried': 22, 'PLwithQ': 22, 'budget': 6595, 'build': 5}
+pl 23 215 18 {'PLtried': 23, 'PLwithQ': 23, 'budget': 6895, 'build': 5}
+pl 24 215 19 {'PLtried': 24, 'PLwithQ': 24, 'budget': 7195, 'build': 5}
+pl 25 215 19 {'PLtried': 25, 'PLwithQ': 25, 'budget': 7495, 'build': 5}
+pl 26 215 19 {'PLtried': 26, 'PLwithQ': 26, 'budget': 7795, 'build': 5}
+pl 27 215 20 {'PLtried': 27, 'PLwithQ': 27, 'budget': 8095, 'build': 5}
+pl 28 215 20 {'PLtried': 28, 'PLwithQ': 28, 'budget': 8395, 'build': 5}
+pl 29 215 21 {'PLtried': 29, 'PLwithQ': 29, 'budget': 8695, 'build': 5}
+pl 30 215 21 {'PLtried': 30, 'PLwithQ': 30, 'budget': 8995, 'build': 5}
+pl 31 215 22 {'PLtried': 31, 'PLwithQ': 31, 'budget': 9295, 'build': 5}
+pl 32 215 22 {'PLtried': 32, 'PLwithQ': 32, 'budget': 9595, 'build': 5}
+pl 33 215 23 {'PLtried': 33, 'PLwithQ': 33, 'budget': 9895, 'build': 5}
+pl 34 215 23 {'PLtried': 34, 'PLwithQ': 34, 'budget': 10195, 'build': 5}
+pl 35 215 24 {'PLtried': 35, 'PLwithQ': 35, 'budget': 10495, 'build': 5}
+pl 36 215 24 {'PLtried': 36, 'PLwithQ': 36, 'budget': 10795, 'build': 5}
