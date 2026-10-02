@@ -1,0 +1,5 @@
+rng,phase_x,phase_z,limit,distance,extension_failures,movement_failures,conservation_mismatch_ticks,max_successful_action,boundaries,initial_matches,consecutive_matches,displacement_mismatches,pass
+0,0,0,14,3000,0,0,0,14,1000,7,5,0,false
+0,0,7,14,3000,0,0,0,14,1000,2,5,0,false
+0,0,8,14,3000,0,0,0,14,1000,8,5,0,false
+0,0,15,14,3000,0,0,0,14,1000,7,5,0,false

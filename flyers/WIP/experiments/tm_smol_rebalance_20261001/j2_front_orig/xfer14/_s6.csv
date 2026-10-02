@@ -1,3 +1,0 @@
-file,limit,rng,phase_x,phase_z,ticks,distance,end_blocks,extensions,extension_failures,movement_failures,first_failure_tick,first_failure_kind,conservation_mismatch_ticks,max_successful_action,clean
-"xfer14/_s6\B16to29_3.7.11_3.8.11_4.8.11.flyer",14,0,0,0,300,0,193,91,1,2,12,"(Coord { x: 6, y: 7, z: 9 }, ""push limit exceeded"")",0,14,false
-"xfer14/_s6\B8to30_3.3.13_3.3.14_4.3.13.flyer",14,0,0,0,300,0,194,94,578,579,0,"(Coord { x: 4, y: 3, z: 14 }, ""immovable obstruction"")",0,12,false

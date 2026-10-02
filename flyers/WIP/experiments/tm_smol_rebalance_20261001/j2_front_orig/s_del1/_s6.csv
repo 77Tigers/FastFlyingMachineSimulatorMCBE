@@ -1,3 +1,0 @@
-file,limit,rng,phase_x,phase_z,ticks,distance,end_blocks,extensions,extension_failures,movement_failures,first_failure_tick,first_failure_kind,conservation_mismatch_ticks,max_successful_action,clean
-"s_del1/_s6\B15_d17.5.9.flyer",13,0,0,0,300,0,191,118,283,284,12,"(Coord { x: 22, y: 5, z: 9 }, ""push limit exceeded"")",0,12,false
-"s_del1/_s6\B8_d16.4.14.flyer",13,0,0,0,300,1,191,101,576,576,12,"(Coord { x: 16, y: 2, z: 13 }, ""push limit exceeded"")",0,12,false

@@ -1,3 +1,0 @@
-file,limit,rng,phase_x,phase_z,ticks,distance,end_blocks,extensions,extension_failures,movement_failures,first_failure_tick,first_failure_kind,conservation_mismatch_ticks,max_successful_action,clean
-"s_del1/_s0\B15_d14.5.9.flyer",13,0,0,0,300,0,191,158,0,0,,"",0,12,true
-"s_del1/_s0\B8_d14.2.12.flyer",13,0,0,0,300,0,191,146,0,0,,"",0,12,true

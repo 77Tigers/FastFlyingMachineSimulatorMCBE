@@ -1,3 +1,0 @@
-file,limit,rng,phase_x,phase_z,ticks,distance,end_blocks,extensions,extension_failures,movement_failures,first_failure_tick,first_failure_kind,conservation_mismatch_ticks,max_successful_action,clean
-"xfer14/_s2\B15to35_4.5.7_5.4.7_5.5.7.flyer",14,0,0,0,300,0,194,117,564,565,18,"(Coord { x: 10, y: 3, z: 8 }, ""push limit exceeded"")",0,12,false
-"xfer14/_s2\B8to30_3.1.14_4.1.14_5.1.14.flyer",14,0,0,0,300,0,194,145,0,0,,"",0,14,true
