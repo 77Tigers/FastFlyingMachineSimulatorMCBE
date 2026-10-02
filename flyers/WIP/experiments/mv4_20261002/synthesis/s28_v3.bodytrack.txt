@@ -1,0 +1,29 @@
+distance 40 over 120 ticks; bodies (rear->front by mean x):
+  B0: n=1  P=1 S=0 start_mask=111110111111 at(13,2,16) [normal piston]
+  B1: n=1  P=1 S=0 start_mask=111110111110 at(13,6,16) [normal piston]
+  B2: n=1  P=1 S=0 start_mask=111111111111 at(13,6,20) [normal piston]
+  B3: n=1  P=1 S=0 start_mask=111111101001 at(13,10,20) [normal piston]
+  B4: n=1  P=1 S=0 start_mask=111001111111 at(13,10,24) [normal piston]
+  B5: n=78 sl74 ob4 P=0 S=0 start_mask=100100100100 box x12-15 y2-14 z14-25
+  B6: n=93 ho89 ob4 P=0 S=0 start_mask=010010010010 box x11-17 y1-16 z15-25
+  B7: n=1  P=1 S=0 start_mask=111111111111 at(12,6,24) [normal piston]
+  B8: n=1  P=1 S=0 start_mask=111111111110 at(14,10,16) [normal piston]
+  B9: n=1  P=1 S=0 start_mask=110111111111 at(14,14,20) [normal piston]
+  B10: n=90 sl86 ob4 P=0 S=0 start_mask=001001001001 box x12-16 y0-15 z15-25
+  B11: n=1  P=1 S=0 start_mask=111111001111 at(15,2,24) [normal piston]
+  B12: n=1  P=1 S=0 start_mask=111111111010 at(15,14,16) [normal piston]
+  B13: n=1  P=1 S=0 start_mask=111111111011 at(16,14,24) [normal piston]
+  B14: n=1  P=1 S=0 start_mask=010111111111 at(15,2,20) [normal piston]
+events in one period from tick 0 (tick actor(carriers|power) action load -> moved):
+  t0 B8(B6|B6) push 83  -> B0x1,B1x1,B4x1,B5x78,B7x1,B12x1 
+  t1 B13(B5/B10|B10) push 101 -> B0x1,B1x1,B2x1,B6x93,B7x1,B9x1,B11x1,B12x1,B14x1 
+  t2 B4(B5|B5) push 90  -> B10x90 
+  t3 B9(B6|B6) push 85  -> B0x1,B1x1,B2x1,B3x1,B5x78,B7x1,B11x1,B14x1 
+  t4 B12(B5/B10|B10) push 97  -> B3x1,B6x93,B8x1,B11x1,B14x1 
+  t5 B2(B5|B5) push 93  -> B4x1,B7x1,B10x90,B13x1 
+  t6 B1(B6|B6) push 81  -> B0x1,B3x1,B5x78,B8x1 
+  t7 B11(B5/B10|B10) push 99  -> B4x1,B6x93,B8x1,B9x1,B12x1,B13x1,B14x1 
+  t8 B3(B5/B6|B5) push 95  -> B4x1,B7x1,B9x1,B10x90,B12x1,B13x1 
+  t9 B8(B6/B10|B6) push 82  -> B0x1,B1x1,B2x1,B5x78,B9x1 
+  t10 B12(B5/B10|B10) push 98  -> B1x1,B2x1,B6x93,B11x1,B13x1,B14x1 
+  t11 B7(B5|B5) push 92  -> B3x1,B4x1,B10x90 

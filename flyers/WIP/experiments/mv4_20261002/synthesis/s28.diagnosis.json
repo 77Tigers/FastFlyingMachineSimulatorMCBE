@@ -1,0 +1,138 @@
+{
+  "seed": 28,
+  "normalization": [
+    16,
+    1,
+    16
+  ],
+  "first_multiple_core_action": {
+    "tick": 7,
+    "actor": "ACTION Tick 7 \u00b7 extend @ (18, 1, 24) piston=Some(Coord { x: 18, y: 1, z: 24 }) sources=193 failure=None",
+    "counts": {
+      "core1": 87,
+      "core2": 98,
+      "P2": 1,
+      "P3": 1,
+      "P8": 1,
+      "P0": 1,
+      "P11": 1,
+      "P4": 1,
+      "P1": 1,
+      "P7": 1
+    },
+    "bridges": [
+      {
+        "kind": "obstruction",
+        "source": [
+          16,
+          9,
+          20
+        ],
+        "source_identity": "P11",
+        "destination": [
+          17,
+          9,
+          20
+        ],
+        "destination_identity": "core2"
+      }
+    ]
+  },
+  "events": [
+    {
+      "tick": 0,
+      "actor": "ACTION Tick 0 \u00b7 extend @ (14, 9, 16) piston=Some(Coord { x: 14, y: 9, z: 16 }) sources=90 failure=None",
+      "counts": {
+        "core0": 85,
+        "P8": 1,
+        "P6": 1,
+        "P9": 1,
+        "P2": 1,
+        "P4": 1
+      }
+    },
+    {
+      "tick": 1,
+      "actor": "ACTION Tick 1 \u00b7 extend @ (16, 13, 24) piston=Some(Coord { x: 16, y: 13, z: 24 }) sources=95 failure=None",
+      "counts": {
+        "core1": 87,
+        "P5": 1,
+        "P8": 1,
+        "P6": 1,
+        "P9": 1,
+        "P3": 1,
+        "P7": 1,
+        "P10": 1,
+        "P4": 1
+      }
+    },
+    {
+      "tick": 2,
+      "actor": "ACTION Tick 2 \u00b7 extend @ (14, 9, 24) piston=Some(Coord { x: 14, y: 9, z: 24 }) sources=98 failure=None",
+      "counts": {
+        "core2": 98
+      }
+    },
+    {
+      "tick": 3,
+      "actor": "ACTION Tick 3 \u00b7 extend @ (15, 13, 20) piston=Some(Coord { x: 15, y: 13, z: 20 }) sources=92 failure=None",
+      "counts": {
+        "core0": 85,
+        "P11": 1,
+        "P5": 1,
+        "P8": 1,
+        "P6": 1,
+        "P9": 1,
+        "P7": 1,
+        "P10": 1
+      }
+    },
+    {
+      "tick": 4,
+      "actor": "ACTION Tick 4 \u00b7 extend @ (17, 13, 16) piston=Some(Coord { x: 17, y: 13, z: 16 }) sources=91 failure=None",
+      "counts": {
+        "core1": 87,
+        "P0": 1,
+        "P11": 1,
+        "P7": 1,
+        "P10": 1
+      }
+    },
+    {
+      "tick": 5,
+      "actor": "ACTION Tick 5 \u00b7 extend @ (15, 5, 20) piston=Some(Coord { x: 15, y: 5, z: 20 }) sources=101 failure=None",
+      "counts": {
+        "core2": 98,
+        "P2": 1,
+        "P8": 1,
+        "P1": 1
+      }
+    },
+    {
+      "tick": 6,
+      "actor": "ACTION Tick 6 \u00b7 extend @ (16, 5, 16) piston=Some(Coord { x: 16, y: 5, z: 16 }) sources=88 failure=None",
+      "counts": {
+        "core0": 85,
+        "P0": 1,
+        "P11": 1,
+        "P6": 1
+      }
+    },
+    {
+      "tick": 7,
+      "actor": "ACTION Tick 7 \u00b7 extend @ (18, 1, 24) piston=Some(Coord { x: 18, y: 1, z: 24 }) sources=193 failure=None",
+      "counts": {
+        "core1": 87,
+        "core2": 98,
+        "P2": 1,
+        "P3": 1,
+        "P8": 1,
+        "P0": 1,
+        "P11": 1,
+        "P4": 1,
+        "P1": 1,
+        "P7": 1
+      }
+    }
+  ]
+}

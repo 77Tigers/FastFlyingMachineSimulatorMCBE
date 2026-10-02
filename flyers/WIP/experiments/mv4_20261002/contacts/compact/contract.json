@@ -1,0 +1,381 @@
+{
+  "modules": [
+    {
+      "phase": 0,
+      "passenger_transverse_coordinates": [
+        [
+          1,
+          0
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "glue_by_core": [
+        [
+          [
+            -1,
+            -2,
+            0
+          ],
+          [
+            -1,
+            1,
+            1
+          ],
+          [
+            1,
+            -1,
+            0
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            -1,
+            0,
+            0
+          ],
+          [
+            -1,
+            3,
+            1
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            -1,
+            1
+          ],
+          [
+            0,
+            2,
+            0
+          ]
+        ]
+      ],
+      "observers": [
+        {
+          "coordinate": [
+            0,
+            0,
+            -1
+          ],
+          "facing": [
+            0,
+            0,
+            1
+          ],
+          "owner": 1,
+          "mode": "hard power shared center hub"
+        },
+        {
+          "coordinate": [
+            0,
+            2,
+            2
+          ],
+          "facing": [
+            0,
+            0,
+            -1
+          ],
+          "owner": 1,
+          "mode": "direct soft power fourth passenger"
+        }
+      ],
+      "terminal_glue_count": 12,
+      "observer_count": 2,
+      "isolated_terminal_check": {
+        "ok": true,
+        "scope": "mandatory foreign glue/observer contacts only"
+      }
+    },
+    {
+      "phase": 1,
+      "passenger_transverse_coordinates": [
+        [
+          1,
+          0
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "glue_by_core": [
+        [
+          [
+            -1,
+            -1,
+            1
+          ],
+          [
+            -1,
+            2,
+            0
+          ]
+        ],
+        [
+          [
+            -1,
+            -2,
+            0
+          ],
+          [
+            -1,
+            1,
+            1
+          ],
+          [
+            1,
+            -1,
+            0
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            -1,
+            0,
+            0
+          ],
+          [
+            -1,
+            3,
+            1
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            3,
+            1
+          ]
+        ]
+      ],
+      "observers": [
+        {
+          "coordinate": [
+            0,
+            0,
+            -1
+          ],
+          "facing": [
+            0,
+            0,
+            1
+          ],
+          "owner": 2,
+          "mode": "hard power shared center hub"
+        },
+        {
+          "coordinate": [
+            0,
+            2,
+            2
+          ],
+          "facing": [
+            0,
+            0,
+            -1
+          ],
+          "owner": 2,
+          "mode": "direct soft power fourth passenger"
+        }
+      ],
+      "terminal_glue_count": 12,
+      "observer_count": 2,
+      "isolated_terminal_check": {
+        "ok": true,
+        "scope": "mandatory foreign glue/observer contacts only"
+      }
+    },
+    {
+      "phase": 2,
+      "passenger_transverse_coordinates": [
+        [
+          1,
+          0
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "glue_by_core": [
+        [
+          [
+            -2,
+            0,
+            0
+          ],
+          [
+            -2,
+            3,
+            1
+          ],
+          [
+            -1,
+            0,
+            0
+          ],
+          [
+            -1,
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            -1,
+            -1,
+            1
+          ],
+          [
+            -1,
+            2,
+            0
+          ]
+        ],
+        [
+          [
+            -1,
+            -2,
+            0
+          ],
+          [
+            -1,
+            1,
+            1
+          ],
+          [
+            1,
+            -1,
+            0
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            2,
+            1
+          ]
+        ]
+      ],
+      "observers": [
+        {
+          "coordinate": [
+            -1,
+            0,
+            -1
+          ],
+          "facing": [
+            0,
+            0,
+            1
+          ],
+          "owner": 0,
+          "mode": "hard power shared center hub"
+        },
+        {
+          "coordinate": [
+            -1,
+            2,
+            2
+          ],
+          "facing": [
+            0,
+            0,
+            -1
+          ],
+          "owner": 0,
+          "mode": "direct soft power fourth passenger"
+        }
+      ],
+      "terminal_glue_count": 12,
+      "observer_count": 2,
+      "isolated_terminal_check": {
+        "ok": true,
+        "scope": "mandatory foreign glue/observer contacts only"
+      }
+    }
+  ],
+  "routing_certified": false,
+  "notes": "12 glue terminals and2 observers per bank; four normals"
+}

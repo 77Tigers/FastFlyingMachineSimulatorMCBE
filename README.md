@@ -90,7 +90,7 @@ browser and the bank is bundled into the published site.
 
 Open `http://127.0.0.1:8765/`. The six-block demo opens paused at tick 0.
 Use **Browse flyer bank** to open the large bank popup and filter across its push-limit
-range of 8–24 (some limits may have no verified flyers yet), or
+range (computed from the bank's flyers, so it grows as new limits are added), or
 open a local `.flyer`. Playback computes new ticks on demand and retains the
 latest 200 preceding tick states for bounded rewind; already-computed future
 states are replayed exactly. Direction toggles between forward and backward;

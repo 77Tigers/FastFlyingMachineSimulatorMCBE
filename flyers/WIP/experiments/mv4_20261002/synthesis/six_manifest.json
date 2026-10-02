@@ -1,0 +1,146 @@
+{
+  "stats": {
+    "hardware": 10,
+    "route": 2
+  },
+  "layouts": [
+    {
+      "seed": 0,
+      "failure": [
+        "hardware",
+        0,
+        [
+          -2,
+          -4,
+          0
+        ]
+      ]
+    },
+    {
+      "seed": 1,
+      "failure": [
+        "route",
+        3,
+        22,
+        15
+      ]
+    },
+    {
+      "seed": 2,
+      "failure": [
+        "hardware",
+        0,
+        [
+          0,
+          1,
+          4
+        ]
+      ]
+    },
+    {
+      "seed": 3,
+      "failure": [
+        "hardware",
+        2,
+        [
+          -1,
+          -1,
+          4
+        ]
+      ]
+    },
+    {
+      "seed": 4,
+      "failure": [
+        "hardware",
+        0,
+        [
+          -2,
+          -5,
+          -1
+        ]
+      ]
+    },
+    {
+      "seed": 5,
+      "failure": [
+        "hardware",
+        2,
+        [
+          -1,
+          -1,
+          4
+        ]
+      ]
+    },
+    {
+      "seed": 6,
+      "failure": [
+        "hardware",
+        0,
+        [
+          -2,
+          -2,
+          -2
+        ]
+      ]
+    },
+    {
+      "seed": 7,
+      "failure": [
+        "hardware",
+        0,
+        [
+          -2,
+          -2,
+          3
+        ]
+      ]
+    },
+    {
+      "seed": 8,
+      "failure": [
+        "hardware",
+        1,
+        [
+          -2,
+          5,
+          1
+        ]
+      ]
+    },
+    {
+      "seed": 9,
+      "failure": [
+        "hardware",
+        2,
+        [
+          -1,
+          2,
+          1
+        ]
+      ]
+    },
+    {
+      "seed": 10,
+      "failure": [
+        "hardware",
+        0,
+        [
+          -2,
+          -4,
+          0
+        ]
+      ]
+    },
+    {
+      "seed": 11,
+      "failure": [
+        "route",
+        4,
+        21,
+        17
+      ]
+    }
+  ]
+}

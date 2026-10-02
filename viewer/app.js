@@ -727,9 +727,12 @@ async function loadBank() {
   if(!response.ok)throw Error(`Could not load flyer bank (${response.status})`);
   const items=await response.json();
   for(const item of items)bankVersions.set(item.path,item.version);
-  const limits=Array.from({length:17},(_,index)=>index+8);
+  // Push-limit range comes from the manifest (each flyer's own push_limit, regenerated on every build),
+  // so adding a flyer at a new limit extends the filters and chart without editing this file.
+  const limits=[...new Set(items.map(item=>item.push_limit))].sort((a,b)=>a-b);
+  const resetRange=()=>{if(!limits.length)return;$('bank-min').value=String(limits[0]);$('bank-max').value=String(limits.at(-1));};
   for(const id of ['bank-min','bank-max'])$(id).innerHTML=limits.map(limit=>`<option value="${limit}">${limit}</option>`).join('');
-  $('bank-max').value=String(limits.at(-1));
+  resetRange();
   const list=$('bank-list');
   const previews=new Map();
   const categoryNames={pushing_only:'Pushing-only',pulling_only:'Pulling-only',observer_only:'Observer-only',no_observer:'No observers'};
@@ -769,9 +772,10 @@ async function loadBank() {
     $('bank-count').textContent=`${filtered.length} of ${items.length} flyers`;
     const measured=filtered.filter(item=>item.speed_bps!==null&&item.speed_bps!==undefined);
     const top=measured.length?Math.max(...measured.map(item=>item.speed_bps)):null;
-    $('bank-summary').textContent=`${items.length} machines · ${new Set(items.map(item=>item.push_limit)).size}/17 push limits populated${top!==null?` · best matching speed ${formatSpeed(top)} bps`:''}`;
+    $('bank-summary').textContent=`${items.length} machines · ${limits.length} push limits populated${limits.length?` (PL ${limits[0]}–${limits.at(-1)})`:''}${top!==null?` · best matching speed ${formatSpeed(top)} bps`:''}`;
     const chart=$('bank-chart');chart.replaceChildren();
     const chartMax=Math.max(1,top??0);
+    // One column per push limit that has a flyer in the bank; limits with no match for the current filters are greyed out.
     for(const limit of limits){
       const candidates=measured.filter(item=>item.push_limit===limit);
       const best=candidates.length?Math.max(...candidates.map(item=>item.speed_bps)):null;
@@ -804,7 +808,7 @@ async function loadBank() {
   }
   for(const id of ['bank-min','bank-max','bank-sort',...filterTags.map(([id])=>id)])$(id).onchange=update;
   $('bank-search').oninput=update;
-  $('bank-clear').onclick=()=>{$('bank-min').value='8';$('bank-max').value='24';$('bank-search').value='';for(const [id] of filterTags)$(id).checked=false;update();};
+  $('bank-clear').onclick=()=>{resetRange();$('bank-search').value='';for(const [id] of filterTags)$(id).checked=false;update();};
   update();$('open-bank').disabled=false;
 }
 $('open-bank').disabled=true;

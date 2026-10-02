@@ -1,0 +1,159 @@
+{
+  "stats": {
+    "foreign_source_contact": 1,
+    "same_material_contact": 3,
+    "unplanned_pickup": 3,
+    "route": 4,
+    "body_overlap": 1
+  },
+  "layouts": [
+    {
+      "seed": 18,
+      "failure": [
+        "foreign_source_contact",
+        0,
+        0,
+        1,
+        [
+          -2,
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "seed": 19,
+      "failure": [
+        "same_material_contact",
+        0,
+        0,
+        2,
+        [
+          -2,
+          2,
+          0
+        ]
+      ]
+    },
+    {
+      "seed": 20,
+      "failure": [
+        "unplanned_pickup",
+        1,
+        1,
+        5,
+        [
+          -1,
+          1,
+          3
+        ]
+      ]
+    },
+    {
+      "seed": 21,
+      "failure": [
+        "route",
+        0,
+        25,
+        20
+      ]
+    },
+    {
+      "seed": 22,
+      "failure": [
+        "unplanned_pickup",
+        1,
+        1,
+        6,
+        [
+          -2,
+          2,
+          0
+        ]
+      ]
+    },
+    {
+      "seed": 23,
+      "failure": [
+        "route",
+        2,
+        25,
+        16
+      ]
+    },
+    {
+      "seed": 24,
+      "failure": [
+        "body_overlap",
+        0,
+        0,
+        1,
+        [
+          -1,
+          3,
+          1
+        ]
+      ]
+    },
+    {
+      "seed": 25,
+      "failure": [
+        "same_material_contact",
+        0,
+        0,
+        2,
+        [
+          -1,
+          1,
+          2
+        ]
+      ]
+    },
+    {
+      "seed": 26,
+      "failure": [
+        "unplanned_pickup",
+        2,
+        2,
+        10,
+        [
+          -1,
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "seed": 27,
+      "failure": [
+        "route",
+        0,
+        22,
+        15
+      ]
+    },
+    {
+      "seed": 28,
+      "failure": [
+        "same_material_contact",
+        0,
+        0,
+        2,
+        [
+          -1,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "seed": 29,
+      "failure": [
+        "route",
+        2,
+        24,
+        15
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+screen candidates=16 clean=13 ticks=120 out=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\mv4_20261002\synthesis\screen.csv
+  distance=23 load=280 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\mv4_20261002\synthesis\candidates\s28_diagnostic_pl512.flyer
+  distance=10 load=293 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\mv4_20261002\synthesis\candidates\s8_diagnostic_pl512.flyer
+  distance=7 load=282 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\mv4_20261002\synthesis\candidates\s4_diagnostic_pl512.flyer
+  distance=5 load=286 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\mv4_20261002\synthesis\candidates\s16_diagnostic_pl512.flyer
+  distance=5 load=326 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\mv4_20261002\synthesis\candidates\s23_diagnostic_pl512.flyer
+  earliest_failure tick=3 kind=(Coord { x: 13, y: 12, z: 16 }, "immovable obstruction") file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\mv4_20261002\synthesis\candidates\s29_diagnostic_pl512.flyer

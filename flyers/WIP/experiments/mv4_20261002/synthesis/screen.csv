@@ -1,0 +1,17 @@
+file,limit,rng,phase_x,phase_z,ticks,distance,end_blocks,extensions,extension_failures,movement_failures,first_failure_tick,first_failure_kind,conservation_mismatch_ticks,max_successful_action,clean
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\mv4_20261002\synthesis\candidates\s11_diagnostic_pl512.flyer",512,5,0,0,120,4,301,12,0,0,,"",0,298,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\mv4_20261002\synthesis\candidates\s13_diagnostic_pl512.flyer",512,5,0,0,120,4,281,10,0,0,,"",0,278,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\mv4_20261002\synthesis\candidates\s14_diagnostic_pl512.flyer",512,5,0,0,120,4,321,10,0,0,,"",0,318,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\mv4_20261002\synthesis\candidates\s16_diagnostic_pl512.flyer",512,5,0,0,120,5,289,28,0,0,,"",0,286,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\mv4_20261002\synthesis\candidates\s17_diagnostic_pl512.flyer",512,5,0,0,120,4,310,13,0,0,,"",0,307,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\mv4_20261002\synthesis\candidates\s22_diagnostic_pl512.flyer",512,5,0,0,120,3,290,6,0,0,,"",0,287,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\mv4_20261002\synthesis\candidates\s23_diagnostic_pl512.flyer",512,5,0,0,120,5,328,40,0,0,,"",0,326,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\mv4_20261002\synthesis\candidates\s25_diagnostic_pl512.flyer",512,5,0,0,120,3,318,7,0,0,,"",0,202,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\mv4_20261002\synthesis\candidates\s26_diagnostic_pl512.flyer",512,5,0,0,120,2,303,9,1,1,4,"(Coord { x: 16, y: 11, z: 21 }, ""immovable obstruction"")",0,300,false
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\mv4_20261002\synthesis\candidates\s28_diagnostic_pl512.flyer",512,5,0,0,120,23,282,51,0,0,,"",0,280,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\mv4_20261002\synthesis\candidates\s29_diagnostic_pl512.flyer",512,5,0,0,120,3,330,8,2,2,3,"(Coord { x: 13, y: 12, z: 16 }, ""immovable obstruction"")",0,327,false
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\mv4_20261002\synthesis\candidates\s2_diagnostic_pl512.flyer",512,5,0,0,120,3,297,20,0,0,,"",0,294,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\mv4_20261002\synthesis\candidates\s4_diagnostic_pl512.flyer",512,5,0,0,120,7,284,19,0,0,,"",0,282,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\mv4_20261002\synthesis\candidates\s5_diagnostic_pl512.flyer",512,5,0,0,120,4,309,11,0,0,,"",0,306,true
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\mv4_20261002\synthesis\candidates\s7_diagnostic_pl512.flyer",512,5,0,0,120,5,278,7,2,2,10,"(Coord { x: 18, y: 2, z: 20 }, ""immovable obstruction"")",0,276,false
+"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\mv4_20261002\synthesis\candidates\s8_diagnostic_pl512.flyer",512,5,0,0,120,10,296,32,0,0,,"",0,293,true
