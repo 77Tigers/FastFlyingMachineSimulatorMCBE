@@ -1,0 +1,6 @@
+FEAS B9 mwmwm None pulls (0, 2) maxrear 12 maxall 13 n>=12 12
+FEAS B10 mwmmw None pulls (0, 3) maxrear 12 maxall 12 n>=12 14
+FEAS B11 wmwmm None pulls (1, 4) maxrear 13 maxall 13 n>=12 12
+FEAS B15 mwmwm None pulls (0, 2) maxrear 13 maxall 13 n>=12 7
+FEAS B15 wmmwm None pulls (2, 4) maxrear 12 maxall 13 n>=12 10
+FEAS B18 wmwmm None pulls (1, 4) maxrear 13 maxall 14 n>=12 15

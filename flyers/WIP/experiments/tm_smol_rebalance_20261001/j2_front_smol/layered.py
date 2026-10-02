@@ -63,7 +63,7 @@ def options(vm, mvd, is_v, kind, f, frozen, pm, rel):
 
 
 def solve(bodies, kinds=None, rear=(), W_REAR=1000, W_ALL=30, cap=None, time_limit=60, allow=None, K=None, base=11,
-          excess=False, ref_kinds=None, ref_allow=None, c_kind=5, c_edge=2):
+          excess=False, seg=False, front_push_cost=0, ref_kinds=None, ref_allow=None, c_kind=5, c_edge=2):
     """bodies: dict name -> (word, glue).  kinds: dict (name,slot)->'push'/'pull' to fix, else free.
     allow: optional dict piston-target-name -> set of body names allowed to touch its pistons (adjacency limit)."""
     names = list(bodies)
@@ -121,7 +121,8 @@ def solve(bodies, kinds=None, rear=(), W_REAR=1000, W_ALL=30, cap=None, time_lim
     lid = {m: nv + j for j, m in enumerate(lmoves)}
     MR, MA = nv + len(lmoves), nv + len(lmoves) + 1
     eid = {m: MA + 1 + j for j, m in enumerate(lmoves)}
-    N = MA + 1 + len(lmoves)
+    hid = {b: MA + 1 + len(lmoves) + j for j, b in enumerate(rear)}
+    N = MA + 1 + len(lmoves) + len(hid)
     for (n, t) in lmoves:
         c = {nk + j: 1 for j, (i, d, b) in enumerate(var) if d == n and b[t] and kvars[i][3][2][t]}
         c[lid[(n, t)]] = -1
@@ -130,6 +131,7 @@ def solve(bodies, kinds=None, rear=(), W_REAR=1000, W_ALL=30, cap=None, time_lim
         if n in rear: rows.append(({MR: 1, lid[(n, t)]: -1}, 0, np.inf))
         if cap is not None: rows.append(({lid[(n, t)]: 1}, -np.inf, cap))
         rows.append(({eid[(n, t)]: 1, lid[(n, t)]: -1}, -base, np.inf))  # excess >= load - base
+        if seg and n in hid: rows.append(({lid[(n, t)]: 1, hid[n]: 20}, -np.inf, base + 20))  # h=1 -> load<=base
     A = np.zeros((len(rows), N)); lo = np.zeros(len(rows)); hi = np.zeros(len(rows))
     for r, (c, a, b) in enumerate(rows):
         for k, v in c.items(): A[r, k] += v
@@ -142,6 +144,10 @@ def solve(bodies, kinds=None, rear=(), W_REAR=1000, W_ALL=30, cap=None, time_lim
             obj[lid[m]] = 0.01
             obj[eid[m]] = W_REAR if m[0] in rear else W_ALL
     integ = np.zeros(N); integ[:nv] = 1
+    for b in hid: integ[hid[b]] = 1
+    if front_push_cost:
+        for i, (V, s_, kind, _) in enumerate(kvars):
+            if V not in rear and kind == 'push': obj[i] += front_push_cost
     if ref_kinds:
         for i, (V, s_, kind, _) in enumerate(kvars):
             if ref_kinds.get((V, s_)) != kind: obj[i] += c_kind
@@ -149,6 +155,9 @@ def solve(bodies, kinds=None, rear=(), W_REAR=1000, W_ALL=30, cap=None, time_lim
         for (V, d), j in zid.items():
             if d not in ref_allow.get(V, set()): obj[j] += c_edge
     ub = np.full(N, np.inf); ub[:nv] = 1
+    for b in hid: ub[hid[b]] = 1; integ_h = True
+    if seg:
+        for b in hid: obj[hid[b]] = -10 * W_REAR
     for m in lmoves: ub[eid[m]] = np.inf
     res = milp(obj, constraints=LinearConstraint(A, lo, hi), integrality=integ, bounds=Bounds(0, ub),
                options={'time_limit': time_limit})
@@ -307,3 +316,29 @@ if __name__ == '__main__' and 'subsets' in sys.argv:
         n12r = sum(1 for (n, t), v in r['loads'].items() if n in TM_REAR and v >= 12)
         n12 = sum(1 for v in r['loads'].values() if v >= 12)
         print(len(sub), f'rear12 {n12r} all12 {n12}', [f'{a}s{b}' for a, b in sub])
+
+if __name__ == '__main__' and 'b0' in sys.argv:
+    DG = directed_graph('../base.bodytrack.txt', 2, TM)
+    for (V, k) in list(DG): DG[(V, k)] |= TM_ALLOW[V]
+    T = dict(TM); T['B15'] = ('mmmww', 9)
+    kk = dict(kinds); kk[('B24', 2)] = 'pull'
+    r = solve(T, kk, TM_REAR, allow=DG, K=2, cap=14, excess=True, time_limit=60, ref_allow=TM_ALLOW, c_edge=25)
+    report(r, T, TM_REAR)
+    for k, v in sorted(r['carry'].items()):
+        if k[0] in ('B9', 'B15'): print(k, v)
+
+if __name__ == '__main__' and 'seg' in sys.argv:
+    DG = directed_graph('../base.bodytrack.txt', 2, TM)
+    for (V, k) in list(DG): DG[(V, k)] |= TM_ALLOW[V]
+    for g15 in (10, 9):
+        for cap in (12, 13, 14):
+            for fpc in (0, 40):
+                T = dict(TM); T['B15'] = ('mmmww', g15)
+                r = solve(T, None, TM_REAR, allow=DG, K=2, cap=cap, excess=True, seg=True, front_push_cost=fpc,
+                          time_limit=120, ref_kinds=kinds, ref_allow=TM_ALLOW, c_kind=5, c_edge=3)
+                if r is None: print(g15, cap, fpc, 'INFEASIBLE'); continue
+                segs = [max(v for (n, t), v in r['loads'].items() if n == b) for b in TM_REAR]
+                fr = [max(v for (n, t), v in r['loads'].items() if n == b) for b in TM if b not in TM_REAR]
+                fp = sum(1 for k in r['kinds'] if k[0] not in TM_REAR and k[2] == 'push')
+                flips = [f'{k[0]}s{k[1]}{k[2][:2]}' for k in r['kinds'] if kinds[(k[0], k[1])] != k[2]]
+                print(f'B15g{g15} cap{cap} fpc{fpc}: back {segs} front {fr} frontpushers {fp} flips {flips}')

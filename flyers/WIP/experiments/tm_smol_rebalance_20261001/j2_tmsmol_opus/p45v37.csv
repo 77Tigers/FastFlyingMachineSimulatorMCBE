@@ -1,0 +1,19 @@
+file,limit,rng,phase_x,phase_z,ticks,distance,end_blocks,extensions,extension_failures,movement_failures,first_failure_tick,first_failure_kind,conservation_mismatch_ticks,max_successful_action,clean
+"p45v37/_s0\P45V37s3_o000_L14.flyer",14,0,0,0,300,6,152,100,3274,3275,18,"(Coord { x: 14, y: 0, z: 3 }, ""push limit exceeded"")",0,14,false
+"p45v37/_s0\P45V37s3_o015_L14.flyer",14,0,0,0,300,5,156,49,2889,2889,0,"(Coord { x: 13, y: 5, z: 4 }, ""push limit exceeded"")",0,14,false
+"p45v37/_s1\P45V37s3_o001_L14.flyer",14,0,0,0,300,4,153,71,2574,2575,6,"(Coord { x: 11, y: 4, z: 4 }, ""push limit exceeded"")",0,14,false
+"p45v37/_s1\P45V37s3_o016_L14.flyer",14,0,0,0,300,6,155,100,3274,3275,18,"(Coord { x: 14, y: 0, z: 3 }, ""push limit exceeded"")",0,14,false
+"p45v37/_s2\P45V37s3_o002_L14.flyer",14,0,0,0,300,4,153,71,2574,2575,6,"(Coord { x: 15, y: 4, z: 0 }, ""push limit exceeded"")",0,14,false
+"p45v37/_s2\P45V37s3_o017_L14.flyer",14,0,0,0,300,5,156,49,2889,2889,0,"(Coord { x: 13, y: 4, z: 5 }, ""push limit exceeded"")",0,14,false
+"p45v37/_s3\P45V37s3_o003_L14.flyer",14,0,0,0,300,4,153,71,2574,2575,6,"(Coord { x: 13, y: 3, z: 1 }, ""push limit exceeded"")",0,14,false
+"p45v37/_s4\P45V37s3_o004_L14.flyer",14,0,0,0,300,4,153,71,2574,2575,6,"(Coord { x: 13, y: 3, z: 1 }, ""push limit exceeded"")",0,14,false
+"p45v37/_s5\P45V37s3_o005_L14.flyer",14,0,0,0,300,6,153,100,3274,3275,18,"(Coord { x: 14, y: 0, z: 3 }, ""push limit exceeded"")",0,14,false
+"p45v37/_s6\P45V37s3_o006_L14.flyer",14,0,0,0,300,5,154,49,2889,2889,0,"(Coord { x: 13, y: 4, z: 4 }, ""push limit exceeded"")",0,14,false
+"p45v37/_s7\P45V37s3_o007_L14.flyer",14,0,0,0,300,6,153,100,3274,3275,18,"(Coord { x: 14, y: 0, z: 3 }, ""push limit exceeded"")",0,14,false
+"p45v37/_s8\P45V37s3_o008_L14.flyer",14,0,0,0,300,4,154,71,2574,2575,4,"(Coord { x: 10, y: 4, z: 4 }, ""push limit exceeded"")",0,14,false
+"p45v37/_s9\P45V37s3_o009_L14.flyer",14,0,0,0,300,4,154,71,2574,2575,6,"(Coord { x: 13, y: 3, z: 1 }, ""push limit exceeded"")",0,14,false
+"p45v37/_s10\P45V37s3_o010_L14.flyer",14,0,0,0,300,4,154,71,2574,2575,6,"(Coord { x: 15, y: 5, z: 4 }, ""push limit exceeded"")",0,14,false
+"p45v37/_s11\P45V37s3_o011_L14.flyer",14,0,0,0,300,6,154,100,3274,3275,18,"(Coord { x: 14, y: 0, z: 3 }, ""push limit exceeded"")",0,14,false
+"p45v37/_s12\P45V37s3_o012_L14.flyer",14,0,0,0,300,6,154,100,3274,3275,18,"(Coord { x: 14, y: 0, z: 3 }, ""push limit exceeded"")",0,14,false
+"p45v37/_s13\P45V37s3_o013_L14.flyer",14,0,0,0,300,6,154,100,3274,3275,18,"(Coord { x: 14, y: 0, z: 3 }, ""push limit exceeded"")",0,14,false
+"p45v37/_s14\P45V37s3_o014_L14.flyer",14,0,0,0,300,5,155,49,2889,2889,0,"(Coord { x: 13, y: 4, z: 4 }, ""push limit exceeded"")",0,14,false

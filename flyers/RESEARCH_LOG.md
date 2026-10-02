@@ -6,6 +6,15 @@ Keep this active handoff below **5,000 words**. Prior evidence is preserved in [
 
 **Maintain the handoff yourself:** Before finishing a research turn, update this log and the [active-experiment index](WIP/experiments/INDEX.md) when priorities, leads, status, best candidates, evidence paths, or next steps change. Update the experiment's `FINDINGS.md` with its bounds and outcome, and update [RESEARCH_RUNNER.md](WIP/experiments/RESEARCH_RUNNER.md) whenever runner commands or output meanings change. Keep the index short by moving completed detail to findings; do not leave stale pointers or ask the user to maintain these files.
 
+## Update — 2026-10-02 evening (agent J2): back segments to 11, role ILP
+
+- **User metric now:** max push limit per segment, back->front; get tm_smol's 5 back segments to 11 (PL13/14 allowed, never above 14, then shrink). Hint: minimise pistons pushing front segments, maximise front segments pulling back segments.
+- **Banked `bank/pl14/human_tm_smol_back11x2.flyer`** (80/80): tm_smol + B35 pulls B24 @s2 + B29 pulls B19 @s3, both powered by victim observers, replaced pushers deleted. Back segments [11,12,12,12,11] (was all 12), front [13,14,13,13,11,11,9,9]; front-segment pushers 22->20, front pulls 6->8. Builds: `j2_front_smol/b24pull/`, `j2_tmsmol_opus/`.
+- **Banked `bank/pl13/human_tm_smol_back11.flyer`** (80/80): only the B29->B19 pull; back [11,12,12,12,12], front [13,12,13,12,11,11,9,9]. Two back@11 at PL13 blocked: B35->B24 always costs B24 +3 cells (~1,650 attempts, `j2_tmsmol_opus/NOTES.md` Step 3).
+- **Role ILP** `tm_smol_rebalance_20261001/j2_front_smol/layered.py` (scipy milp): any words, push/pull per move, carrier timelines; validated (reproduces tm_smol's ledger exactly). `ledger_ilp.py` builds it from any bodytrack ledger. Best paper plan for tm_smol: 3 back@11 at PL12; remaining pulls (B41->B36, B45->B37) fail on observer adhesion/pulse hazards (planner3 lacked a cross-body adhesion check; fixed in `j2_tmsmol_opus/planner3x.py`).
+- **Banked `bank/pl17/mmwmw_two_bodies_pulled_twice.flyer`** (80/80): two mmwmw rails each pulled twice + pushed once (added rails, not back segments: user only counts back-chain segments).
+- Bounded negatives: 3bps_original fresh front cannot change rear loads (no front piston rides a rear body; `j2_front_orig/`). B15's 10th cell only carries B9's s3 pusher B0 (714 relocations fail). Back-segment word changes (e.g. B15 -> mwmwm, ILP-feasible) need pushers that change carrier mid-cycle; no generator supports this (`j2_mmwmw3/`). mmwmw_two_pulls: its back segment 14 -> 13 via the same pull (`j2_front_smol/m14t/`), flyer still PL14; dropped.
+
 ## Update — 2026-10-02 (agent J, incl. overnight): exclusive roles, mmwmw, victim-observer power
 
 - **Exclusive roles** (one glue body only pulled, another only pushed), all 80/80: 3 bps **PL13** `bank/pl13/exclusive_roles_3bps.flyer` (on 3bps_original, 8-slime pull-only B41; also PL14/15/19 on tm_smol), 3.333 bps **PL22** `bank/pl22/exclusive_roles_3p333.flyer` (also PL26). Method: per-body load budget on port triples (`exclusive_roles_20261001/j_light16/jports*.py`, `j_333/jports333.py`); PL14 needed per-port simulator screening (`portscreen.py`), exact Steiner rails and forbidding rail cells next to a sticky at its fire slot (else the rail drags it). Rail pull load = rail glue + 1-2 adhered stickies; tm_smol is too tight for PL13, but 3bps_original has slack (only 6 bodies at 12) and gave PL13 with an 8-glue rail (`j_light13/`). PL12 there: 0 candidates (bounded). 3.333 PL21 blocked (base engine already 21).
@@ -98,15 +107,7 @@ PL10 local screen: c58 cannot start its 11-cell move. All eight generated 7/7-st
 
 ## Pulling-only exploration — 2026-09-27
 
-All artifacts are under `WIP/experiments/astra_pullonly_20260927/`. The PL10 winner has **7 slime, 7 honey, 2 observers, 4 -X sticky pistons**, plus one sampled arm. Its extensions move no blocks; each alternating retraction moves 10. Retracted pistons transfer between the two carriers. Generator `pull_mwmw.py`, candidate `mwmw/c448.flyer`; offset `(1,-1,2)`, transform `(swap=0,sy=1,sz=-1)`, both observer choices 0, geometry seed 0. Encoded-limit copy `mwmw_best.flyer`; evidence `mwmw_audit.csv`, `mwmw_load_audit.txt`, `mwmw_cycle.txt`.
-
-Local target rail: `{(2,0,0),(1,0,0),(0,0,0),(0,0,1),(0,1,0)}`. Opposite-material support: `(2,1,1)`. Sticky P0 `(2,0,1)` starts extended, P1 `(2,1,0)` retracted. Target observer `(2,-1,0)` outputs +Y. Target moves slots 0/2, support 1/3. P0 extends in slot 3 and pulls in 0; P1 extends in 1 and pulls in 2. Two routed interfaces close the cycle.
-
-Search: 504 layouts, 272 travelled 40/160 at diagnostic PL100. Ranking short successful loads found PL10; the winner then passed the full 80 × 10,000 audit. All 14 single sticky-cell deletions failed to preserve 40/160 at both PL9 and PL100. A cap-six-per-material closure screen over offsets `[-3,3]^3`, eight transverse transforms, and four observer combinations routed no candidates (10,976 parameter sets); this is not a global lower bound.
-
-Earlier baselines: `baseline.flyer` repeats at 1.25 bps (short audit, load 10). `ring3_best.flyer` achieves 1,666/10,000 at encoded PL8, full six-tick recurrence and all 80 samples passed. The three-carrier generator routed 407 of 600 seeds. These are retained as simpler mechanisms, not banked speed improvements.
-
-Faster lead: `three_pull_burst.flyer` makes three consecutive +X pulls at ticks 0/2/4, loads 17/18/19, then **stalls**. All 80 short samples conserve blocks and advance three; a 10,000-tick run still advances only three. `burst.py` and traces preserve the finite mechanism. It is not a repeating flyer or a speed record. Closing the piston reset/transport cycle is the next speed question; a naive shared support can recapture a piston during its intended extension slot.
+Moved to [the archive](RESEARCH_LOG_ARCHIVE_2026-09-26.md) (section "Pulling-only exploration — 2026-09-27", moved 2026-10-02): PL10 c448 details, local rail, 504-layout search, deletion/closure negatives, `three_pull_burst.flyer` lead.
 
 ## Friend's 3 bps mechanism
 

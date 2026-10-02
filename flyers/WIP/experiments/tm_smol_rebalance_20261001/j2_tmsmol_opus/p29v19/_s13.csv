@@ -1,0 +1,4 @@
+file,limit,rng,phase_x,phase_z,ticks,distance,end_blocks,extensions,extension_failures,movement_failures,first_failure_tick,first_failure_kind,conservation_mismatch_ticks,max_successful_action,clean
+"p29v19/_s13\P29V19s3_o013_L14.flyer",14,0,0,0,300,2,150,52,2060,2060,0,"(Coord { x: 8, y: 6, z: 3 }, ""push limit exceeded"")",0,14,false
+"p29v19/_s13\P29V19s3_o029_L14.flyer",14,0,0,0,300,2,153,21,2958,2958,0,"(Coord { x: 6, y: 4, z: 8 }, ""push limit exceeded"")",0,14,false
+"p29v19/_s13\P29V19s3_o045_L14.flyer",14,0,0,0,300,2,151,50,2358,2358,0,"(Coord { x: 8, y: 7, z: 4 }, ""push limit exceeded"")",0,14,false

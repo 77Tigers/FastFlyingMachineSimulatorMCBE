@@ -1,0 +1,16 @@
+file,limit,rng,phase_x,phase_z,ticks,distance,end_blocks,extensions,extension_failures,movement_failures,first_failure_tick,first_failure_kind,conservation_mismatch_ticks,max_successful_action,clean
+"p41v36/_s0\P41V36s4_o000_L14.flyer",14,0,0,0,300,42,150,561,819,820,34,"(Coord { x: 19, y: 4, z: 6 }, ""immovable obstruction"")",0,14,false
+"p41v36/_s1\P41V36s4_o001_L14.flyer",14,0,0,0,300,9,151,130,1351,1352,14,"(Coord { x: 15, y: 3, z: 1 }, ""push limit exceeded"")",0,14,false
+"p41v36/_s2\P41V36s4_o002_L14.flyer",14,0,0,0,300,13,152,205,750,750,34,"(Coord { x: 19, y: 4, z: 5 }, ""immovable obstruction"")",0,14,false
+"p41v36/_s3\P41V36s4_o003_L14.flyer",14,0,0,0,300,3,153,50,2360,2360,0,"(Coord { x: 9, y: 3, z: 6 }, ""push limit exceeded"")",0,14,false
+"p41v36/_s4\P41V36s4_o004_L14.flyer",14,0,0,0,300,42,154,544,1601,1602,34,"(Coord { x: 19, y: 4, z: 6 }, ""immovable obstruction"")",0,14,false
+"p41v36/_s5\P41V36s4_o005_L14.flyer",14,0,0,0,300,3,153,50,2360,2360,0,"(Coord { x: 10, y: 4, z: 7 }, ""push limit exceeded"")",0,14,false
+"p41v36/_s6\P41V36s4_o006_L14.flyer",14,0,0,0,300,3,153,50,2360,2360,0,"(Coord { x: 10, y: 4, z: 7 }, ""push limit exceeded"")",0,14,false
+"p41v36/_s7\P41V36s4_o007_L14.flyer",14,0,0,0,300,90,160,1170,12,12,6,"(Coord { x: 11, y: 3, z: 6 }, ""immovable obstruction"")",0,14,false
+"p41v36/_s8\P41V36s4_o008_L14.flyer",14,0,0,0,300,13,154,205,750,750,34,"(Coord { x: 19, y: 4, z: 5 }, ""immovable obstruction"")",0,14,false
+"p41v36/_s9\P41V36s4_o009_L14.flyer",14,0,0,0,300,3,154,50,2360,2360,0,"(Coord { x: 9, y: 3, z: 6 }, ""push limit exceeded"")",0,14,false
+"p41v36/_s10\P41V36s4_o010_L14.flyer",14,0,0,0,300,90,160,1170,12,12,6,"(Coord { x: 11, y: 3, z: 7 }, ""immovable obstruction"")",0,14,false
+"p41v36/_s11\P41V36s4_o011_L14.flyer",14,0,0,0,300,3,154,50,2360,2360,0,"(Coord { x: 9, y: 3, z: 9 }, ""push limit exceeded"")",0,14,false
+"p41v36/_s12\P41V36s4_o012_L14.flyer",14,0,0,0,300,3,154,50,2360,2360,0,"(Coord { x: 10, y: 4, z: 7 }, ""push limit exceeded"")",0,14,false
+"p41v36/_s13\P41V36s4_o013_L14.flyer",14,0,0,0,300,4,155,71,2869,2869,6,"(Coord { x: 11, y: 3, z: 6 }, ""immovable obstruction"")",0,14,false
+"p41v36/_s14\P41V36s4_o014_L14.flyer",14,0,0,0,300,4,156,45,3170,3171,6,"(Coord { x: 14, y: 5, z: 5 }, ""push limit exceeded"")",0,14,false

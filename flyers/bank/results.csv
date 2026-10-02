@@ -87,3 +87,6 @@ push_limit,name,start_min_x,end_min_x,distance,end_blocks,extensions
 14,exclusive_roles_3bps,0,3000,3000,174,42000
 14,mmwmw_two_pulls,0,3000,3000,173,42000
 13,exclusive_roles_3bps,0,3000,3000,232,62999
+17,mmwmw_two_bodies_pulled_twice,0,3000,3000,209,45000
+14,human_tm_smol_back11x2,0,3000,3000,154,39000
+13,human_tm_smol_back11,0,3000,3000,151,39000

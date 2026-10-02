@@ -1,0 +1,34 @@
+FEAS cap 14 B9 mmwmw maxrear 14 maxall 14 n>=12 11 rear>=12 4
+FEAS cap 14 B9 mmwwm maxrear 14 maxall 14 n>=12 5 rear>=12 3
+FEAS cap 14 B9 mwmmw maxrear 14 maxall 14 n>=12 9 rear>=12 5
+FEAS cap 14 B9 mwmwm maxrear 12 maxall 14 n>=12 8 rear>=12 2
+FEAS cap 14 B9 wmwmm maxrear 14 maxall 14 n>=12 10 rear>=12 6
+FEAS cap 14 B9 wwmmm maxrear 14 maxall 14 n>=12 12 rear>=12 6
+FEAS cap 14 B18 wmmwm maxrear 14 maxall 14 n>=12 12 rear>=12 6
+FEAS cap 14 B18 wmwmm maxrear 13 maxall 14 n>=12 7 rear>=12 2
+FEAS cap 14 B10 mwmmw maxrear 14 maxall 14 n>=12 9 rear>=12 3
+BEST B18 wmwmm 2 7
+  status 0 max_rear 13 max_all 14 rear>=12: 2 all>=12: 7
+   B9   mwwmm g 7 s0p s3p s4p      loads 11 11 11  REAR
+   B10  wmmmw g 9 s1p s2p s3P      loads 11 11 12  REAR
+   B11  mmwwm g 9 s0p s1p s4p      loads 11 11 11  REAR
+   B15  mwmwm g10 s0P s2P s4p      loads 11 13 11  REAR
+   B18  wmwmm g 7 s1P s3p s4p      loads 7 11 11  REAR
+   B19  wmmmw g 7 s1p s2P s3p      loads 11 12 12
+   B24  mmmww g 8 s0p s1p s2p      loads 12 13 14
+   B29  mmwwm g 8 s0p s1P s4p      loads 11 11 11
+   B35  mwwmm g 8 s0P s3p s4p      loads 11 11 11
+   B36  wwmmm g 7 s2p s3p s4P      loads 10 10 11
+   B37  wmmmw g 7 s1p s2p s3P      loads 10 10 11
+   B41  mmmww g 7 s0p s1p s2p      loads 10 9 8
+   B45  mmwwm g 7 s0p s1p s4p      loads 9 8 10
+new edges [('B9', 'B11'), ('B15', 'B19'), ('B19', 'B15'), ('B36', 'B41'), ('B37', 'B45')] dropped [('B9', 'B19'), ('B15', 'B18'), ('B18', 'B11')]
+carry ('B15', 0, 'pull') [('B19', '11111')]
+carry ('B15', 2, 'pull') [('B35', '11111')]
+carry ('B15', 4, 'push') [('B19', '11111')]
+carry ('B18', 1, 'pull') [('B18', '11111'), ('B24', '01110')]
+carry ('B18', 3, 'push') [('B24', '11111')]
+carry ('B18', 4, 'push') [('B18', '00011'), ('B24', '11111')]
+carry ('B9', 0, 'push') [('B9', '10011'), ('B15', '01110')]
+carry ('B9', 3, 'push') [('B11', '11100'), ('B15', '00111')]
+carry ('B9', 4, 'push') [('B9', '00011'), ('B11', '01100'), ('B15', '00110')]

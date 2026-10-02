@@ -255,12 +255,30 @@
       "extension_failures": 0,
       "endpoint_conserved": true
     },
+    "flyers/bank/pl13/human_tm_smol_back11.flyer": {
+      "sha256": "a13c5845b7d8c918fefa3181b135da6ba9fb7d2620c18c5c6082e06c8e255111",
+      "ticks": 10000,
+      "distance": 3000,
+      "speed_bps": 3.0,
+      "extensions": 39000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
     "flyers/bank/pl14/exclusive_roles_3bps.flyer": {
       "sha256": "bcb2eb3a45bda2495cb2d590f373e3926bf25a15ea326537e04cdd42a8f4cdeb",
       "ticks": 10000,
       "distance": 3000,
       "speed_bps": 3.0,
       "extensions": 42000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl14/human_tm_smol_back11x2.flyer": {
+      "sha256": "a8d6b86fe637f401e82599eb749ccf856802af99ff7e5b323a9acb1661691fa7",
+      "ticks": 10000,
+      "distance": 3000,
+      "speed_bps": 3.0,
+      "extensions": 39000,
       "extension_failures": 0,
       "endpoint_conserved": true
     },
@@ -432,6 +450,15 @@
       "distance": 2500,
       "speed_bps": 2.5,
       "extensions": 5000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl17/mmwmw_two_bodies_pulled_twice.flyer": {
+      "sha256": "93f35292ddaaca5e9d2f7e49439cb5354b6c550a013fa76fe30b9d23094643da",
+      "ticks": 10000,
+      "distance": 3000,
+      "speed_bps": 3.0,
+      "extensions": 45000,
       "extension_failures": 0,
       "endpoint_conserved": true
     },

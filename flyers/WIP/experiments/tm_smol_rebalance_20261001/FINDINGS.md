@@ -95,3 +95,7 @@ slot, and victims with contact protrusions, rather than a retrofit of this clust
   deleting up to 2 puller glue cells (3 placements at 3 support, none run at PL13). The lane next to a puller's
   sticky is occupied by the puller's own pusher column (pushers live in the gap between victim face and puller).
   A fresh layout must reserve an observer lane beside the pusher lanes (see FRESH_LAYOUT_CONTRACT.md).
+
+## 2026-10-02 evening (agent J2): back segments to 11
+See RESEARCH_LOG top update. Banked pl14/human_tm_smol_back11x2 (back [11,12,12,12,11]). Role ILP: j2_front_smol/layered.py
+(+ ledger_ilp.py, segpl.py, score2.py). Details: j2_front_smol/NOTES.md, j2_tmsmol_opus/NOTES.md, j2_front_orig/NOTES.md, j2_mmwmw3/.

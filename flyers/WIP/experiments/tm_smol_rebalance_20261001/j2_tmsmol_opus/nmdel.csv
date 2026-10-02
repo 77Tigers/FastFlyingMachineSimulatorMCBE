@@ -1,0 +1,34 @@
+file,limit,rng,phase_x,phase_z,ticks,distance,end_blocks,extensions,extension_failures,movement_failures,first_failure_tick,first_failure_kind,conservation_mismatch_ticks,max_successful_action,clean
+"nmdel/_s0\d10.3.1_L16.flyer",16,0,0,0,300,4,152,76,2274,2274,12,"(Coord { x: 10, y: 3, z: 4 }, ""immovable obstruction"")",0,15,false
+"nmdel/_s0\d11.4.7_L16.flyer",16,0,0,0,300,6,151,113,1418,1422,8,"(Coord { x: 12, y: 4, z: 7 }, ""immovable obstruction"")",0,16,false
+"nmdel/_s0\d12.5.4_L16.flyer",16,0,0,0,300,90,158,1170,16,16,24,"(Coord { x: 18, y: 4, z: 4 }, ""immovable obstruction"")",0,14,false
+"nmdel/_s0\d8.4.6_L16.flyer",16,0,0,0,300,4,151,71,1430,1430,10,"(Coord { x: 11, y: 4, z: 6 }, ""push limit exceeded"")",0,16,false
+"nmdel/_s0\d9.5.9_L16.flyer",16,0,0,0,300,8,152,134,1643,1643,14,"(Coord { x: 9, y: 5, z: 6 }, ""immovable obstruction"")",0,16,false
+"nmdel/_s1\d10.4.1_L16.flyer",16,0,0,0,300,3,153,73,2566,2566,10,"(Coord { x: 9, y: 3, z: 4 }, ""immovable obstruction"")",0,15,false
+"nmdel/_s1\d11.4.8_L16.flyer",16,0,0,0,300,6,151,113,1418,1422,8,"(Coord { x: 12, y: 4, z: 7 }, ""immovable obstruction"")",0,16,false
+"nmdel/_s1\d13.3.1_L16.flyer",16,0,0,0,300,9,150,146,13,16,6,"(Coord { x: 14, y: 3, z: 3 }, ""push limit exceeded"")",0,16,false
+"nmdel/_s1\d8.4.9_L16.flyer",16,0,0,0,300,5,152,89,1982,1982,14,"(Coord { x: 9, y: 5, z: 6 }, ""immovable obstruction"")",0,16,false
+"nmdel/_s2\d10.4.2_L16.flyer",16,0,0,0,300,2,151,51,1448,1449,8,"(Coord { x: 8, y: 3, z: 4 }, ""immovable obstruction"")",0,14,false
+"nmdel/_s2\d11.5.4_L16.flyer",16,0,0,0,300,90,158,1170,16,16,24,"(Coord { x: 18, y: 4, z: 4 }, ""immovable obstruction"")",0,14,false
+"nmdel/_s2\d13.3.2_L16.flyer",16,0,0,0,300,3,154,66,2316,2318,4,"(Coord { x: 12, y: 4, z: 2 }, ""immovable obstruction"")",0,14,false
+"nmdel/_s2\d9.4.1_L16.flyer",16,0,0,0,300,2,152,45,2036,2036,6,"(Coord { x: 10, y: 4, z: 3 }, ""push limit exceeded"")",0,14,false
+"nmdel/_s3\d10.4.3_L16.flyer",16,0,0,0,300,2,151,59,1452,1453,8,"(Coord { x: 8, y: 3, z: 4 }, ""immovable obstruction"")",0,14,false
+"nmdel/_s3\d11.5.7_L16.flyer",16,0,0,0,300,7,150,119,1117,1117,8,"(Coord { x: 12, y: 5, z: 9 }, ""immovable obstruction"")",0,16,false
+"nmdel/_s3\d13.3.3_L16.flyer",16,0,0,0,300,3,153,69,3454,3454,4,"(Coord { x: 12, y: 4, z: 3 }, ""immovable obstruction"")",0,15,false
+"nmdel/_s3\d9.4.4_L16.flyer",16,0,0,0,300,3,151,85,0,1,8,"(Coord { x: 6, y: 5, z: 4 }, ""push limit exceeded"")",0,15,false
+"nmdel/_s4\d10.4.4_L16.flyer",16,0,0,0,300,2,151,57,1452,1453,8,"(Coord { x: 8, y: 3, z: 4 }, ""immovable obstruction"")",0,14,false
+"nmdel/_s4\d11.5.8_L16.flyer",16,0,0,0,300,3,154,56,1460,1460,6,"(Coord { x: 8, y: 5, z: 8 }, ""immovable obstruction"")",0,16,false
+"nmdel/_s4\d13.4.2_L16.flyer",16,0,0,0,300,12,152,198,2039,2042,16,"(Coord { x: 16, y: 4, z: 4 }, ""push limit exceeded"")",0,16,false
+"nmdel/_s4\d9.4.6_L16.flyer",16,0,0,0,300,3,151,64,1442,1444,10,"(Coord { x: 7, y: 5, z: 6 }, ""immovable obstruction"")",0,16,false
+"nmdel/_s5\d10.5.4_L16.flyer",16,0,0,0,300,90,158,1170,16,16,24,"(Coord { x: 18, y: 4, z: 4 }, ""immovable obstruction"")",0,14,false
+"nmdel/_s5\d11.5.9_L16.flyer",16,0,0,0,300,6,151,113,1418,1422,8,"(Coord { x: 12, y: 4, z: 7 }, ""immovable obstruction"")",0,16,false
+"nmdel/_s5\d13.4.3_L16.flyer",16,0,0,0,300,4,152,75,2864,2864,4,"(Coord { x: 12, y: 4, z: 4 }, ""immovable obstruction"")",0,16,false
+"nmdel/_s5\d9.4.7_L16.flyer",16,0,0,0,300,3,152,75,1156,1158,10,"(Coord { x: 7, y: 5, z: 6 }, ""immovable obstruction"")",0,16,false
+"nmdel/_s6\d10.5.7_L16.flyer",16,0,0,0,300,6,151,110,1414,1418,8,"(Coord { x: 12, y: 5, z: 9 }, ""immovable obstruction"")",0,16,false
+"nmdel/_s6\d12.3.2_L16.flyer",16,0,0,0,300,4,152,72,2862,2862,6,"(Coord { x: 13, y: 4, z: 4 }, ""push limit exceeded"")",0,15,false
+"nmdel/_s6\d13.4.4_L16.flyer",16,0,0,0,300,4,152,72,2858,2858,10,"(Coord { x: 14, y: 4, z: 4 }, ""push limit exceeded"")",0,15,false
+"nmdel/_s6\d9.4.8_L16.flyer",16,0,0,0,300,5,155,100,1965,1965,14,"(Coord { x: 9, y: 5, z: 6 }, ""immovable obstruction"")",0,16,false
+"nmdel/_s7\d10.5.8_L16.flyer",16,0,0,0,300,4,151,80,23,25,8,"(Coord { x: 6, y: 6, z: 5 }, ""immovable obstruction"")",0,16,false
+"nmdel/_s7\d12.3.3_L16.flyer",16,0,0,0,300,8,150,136,275,276,6,"(Coord { x: 11, y: 4, z: 4 }, ""push limit exceeded"")",0,15,false
+"nmdel/_s7\d13.5.4_L16.flyer",16,0,0,0,300,4,152,72,2858,2858,10,"(Coord { x: 15, y: 4, z: 4 }, ""push limit exceeded"")",0,15,false
+"nmdel/_s7\d9.4.9_L16.flyer",16,0,0,0,300,8,156,132,1365,1365,14,"(Coord { x: 9, y: 5, z: 6 }, ""immovable obstruction"")",0,16,false

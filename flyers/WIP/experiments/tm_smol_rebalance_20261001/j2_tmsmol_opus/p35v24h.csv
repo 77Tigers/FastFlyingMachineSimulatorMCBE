@@ -1,0 +1,9 @@
+file,limit,rng,phase_x,phase_z,ticks,distance,end_blocks,extensions,extension_failures,movement_failures,first_failure_tick,first_failure_kind,conservation_mismatch_ticks,max_successful_action,clean
+"p35v24h/_s0\P35V24s2_o000_L13.flyer",13,0,0,0,300,3,147,59,2644,2644,0,"(Coord { x: 6, y: 1, z: 2 }, ""push limit exceeded"")",0,13,false
+"p35v24h/_s1\P35V24s2_o000_L14.flyer",14,0,0,0,300,3,148,69,1438,1440,0,"(Coord { x: 9, y: 0, z: 3 }, ""push limit exceeded"")",0,14,false
+"p35v24h/_s2\P35V24s2_o001_L13.flyer",13,0,0,0,300,3,147,59,2644,2644,0,"(Coord { x: 6, y: 1, z: 2 }, ""push limit exceeded"")",0,13,false
+"p35v24h/_s3\P35V24s2_o001_L14.flyer",14,0,0,0,300,3,148,69,1438,1440,0,"(Coord { x: 9, y: 1, z: 4 }, ""push limit exceeded"")",0,14,false
+"p35v24h/_s4\P35V24s2_o002_L13.flyer",13,0,0,0,300,8,148,118,1643,1644,18,"(Coord { x: 18, y: 2, z: 3 }, ""push limit exceeded"")",0,13,false
+"p35v24h/_s5\P35V24s2_o002_L14.flyer",14,0,0,0,300,9,148,133,810,811,18,"(Coord { x: 17, y: 3, z: 3 }, ""push limit exceeded"")",0,14,false
+"p35v24h/_s6\P35V24s2_o003_L13.flyer",13,0,0,0,300,2,148,35,2068,2069,0,"(Coord { x: 9, y: 0, z: 4 }, ""push limit exceeded"")",0,13,false
+"p35v24h/_s7\P35V24s2_o003_L14.flyer",14,0,0,0,300,3,149,69,1438,1440,0,"(Coord { x: 6, y: 1, z: 2 }, ""push limit exceeded"")",0,14,false

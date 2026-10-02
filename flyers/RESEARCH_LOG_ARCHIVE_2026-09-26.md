@@ -370,3 +370,17 @@ The author's notes describe a 2.5 bps `mwmw` engine using two slime segments, tw
 Promising ideas to test: a 3.33 bps extension that advances very little (or even retreats) relative to the main flyer so it can repeat; adding an rt of delay to reduce load; an `mmwmmw` segment to obtain two pulls and interoperate with `mmmmww`; or `push–push–push–pull` with an explicit way to reset the last support. Multiple side pulls may help, but ambiguous moving-block ownership and push-limit costs make them difficult. Chunk-border ordering might supply an extra pull, but reliability is a separate proof obligation. For every proposal, write the segment schedule and load counts before building geometry.
 
 **Provenance:** Mechanical details specific to this project come from the author's supplied research notes and `SIMULATION.md`. The linked official Minecraft sources support general timing, piston, observer, edition, and honey/slime basics; they do not verify the claimed 2.5/3 bps builds or chunk-order exploits.
+
+<!-- moved from RESEARCH_LOG.md on 2026-10-02 -->
+## Pulling-only exploration — 2026-09-27
+
+All artifacts are under `WIP/experiments/astra_pullonly_20260927/`. The PL10 winner has **7 slime, 7 honey, 2 observers, 4 -X sticky pistons**, plus one sampled arm. Its extensions move no blocks; each alternating retraction moves 10. Retracted pistons transfer between the two carriers. Generator `pull_mwmw.py`, candidate `mwmw/c448.flyer`; offset `(1,-1,2)`, transform `(swap=0,sy=1,sz=-1)`, both observer choices 0, geometry seed 0. Encoded-limit copy `mwmw_best.flyer`; evidence `mwmw_audit.csv`, `mwmw_load_audit.txt`, `mwmw_cycle.txt`.
+
+Local target rail: `{(2,0,0),(1,0,0),(0,0,0),(0,0,1),(0,1,0)}`. Opposite-material support: `(2,1,1)`. Sticky P0 `(2,0,1)` starts extended, P1 `(2,1,0)` retracted. Target observer `(2,-1,0)` outputs +Y. Target moves slots 0/2, support 1/3. P0 extends in slot 3 and pulls in 0; P1 extends in 1 and pulls in 2. Two routed interfaces close the cycle.
+
+Search: 504 layouts, 272 travelled 40/160 at diagnostic PL100. Ranking short successful loads found PL10; the winner then passed the full 80 × 10,000 audit. All 14 single sticky-cell deletions failed to preserve 40/160 at both PL9 and PL100. A cap-six-per-material closure screen over offsets `[-3,3]^3`, eight transverse transforms, and four observer combinations routed no candidates (10,976 parameter sets); this is not a global lower bound.
+
+Earlier baselines: `baseline.flyer` repeats at 1.25 bps (short audit, load 10). `ring3_best.flyer` achieves 1,666/10,000 at encoded PL8, full six-tick recurrence and all 80 samples passed. The three-carrier generator routed 407 of 600 seeds. These are retained as simpler mechanisms, not banked speed improvements.
+
+Faster lead: `three_pull_burst.flyer` makes three consecutive +X pulls at ticks 0/2/4, loads 17/18/19, then **stalls**. All 80 short samples conserve blocks and advance three; a 10,000-tick run still advances only three. `burst.py` and traces preserve the finite mechanism. It is not a repeating flyer or a speed record. Closing the piston reset/transport cycle is the next speed question; a naive shared support can recapture a piston during its intended extension slot.
+

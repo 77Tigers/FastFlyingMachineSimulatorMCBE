@@ -20,3 +20,18 @@ pistons), K = max foreign touchers per target.
   B11 s1, B19 s3, B24 s2, B36 s4, B37 s3). Remaining rear 12s: B15 x3 (glue 10) + B9 x2.
 - What-if (`whatif`): B15 glue 9 -> rear12 2, all12 6. Changing only B9's word to an mmwmw rotation: 4/5 infeasible,
   mwmwm worse (rear12 4): mmwmw rear needs a whole-structure redesign, not single-body swaps.
+
+## Per-segment objective + user hint (front pushers) (`python layered.py seg`)
+Max load per back segment (B9,B10,B11,B15,B18 order): best plan = same 5 pull flips (B11s1, B19s3, B24s2, B36s4,
+B37s3), back [11,11,11,12,12] even at cap 12; front-segment pushers 22 -> 18. With B15 at 9 glue: [11,11,11,11,12].
+A cost on front-segment pushes changes nothing: within tm_smol's neighbour graph no further front pull is feasible.
+Built so far: B24s2 (b24pull/o0_d1_L14, o1_d1_L14) at PL14: segpl back [12,12,12,12,11] (B18), front [11,14,12,13,...].
+User: don't bank PL14 until more back segments are at 11. Opus (j2_tmsmol_opus/) builds the other flips on o0.
+
+## mmwmw flyer (bank/pl14/mmwmw_two_pulls) for back-at-11 (user asked; then "brief try, drop if unsuccessful")
+- `ledger_ilp.py BT rear... [fix=B]`: builds the role ILP from any bodytrack ledger; validation on m14.bt.txt matches
+  13/14 segment maxima (one off by 1). Best plan: back 5 [11,11,11,12,14] at PL14: its wwmmm back segment stays 14
+  because it also carries the rail's pistons. Not better than tm_smol for this goal.
+- `transplant24.py`: o0's B24-pull edit transplanted (alignment offset (-2,0,0), 136/145 cells match): m14t/o0_sh0_L14_c0
+  runs 180/600 clean at PL14; that back segment 14 -> 13, mmwmw still pulled twice, flyer still PL14. 13 is the floor via
+  pulls (both rider owners already use their one pull). Dropped per user.

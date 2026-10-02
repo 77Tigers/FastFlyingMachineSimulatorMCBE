@@ -1,0 +1,39 @@
+FEAS cap 17 B9 mmwmw maxrear 14 maxall 14 n>=12 11 rear>=12 4
+FEAS cap 17 B9 mmwwm maxrear 14 maxall 14 n>=12 5 rear>=12 3
+FEAS cap 17 B9 mwmmw maxrear 15 maxall 15 n>=12 9 rear>=12 5
+FEAS cap 17 B9 mwmwm maxrear 12 maxall 15 n>=12 9 rear>=12 1
+FEAS cap 17 B9 wmmmw maxrear 17 maxall 17 n>=12 8 rear>=12 2
+FEAS cap 17 B9 wmmwm maxrear 16 maxall 16 n>=12 8 rear>=12 3
+FEAS cap 17 B9 wmwmm maxrear 15 maxall 15 n>=12 9 rear>=12 4
+FEAS cap 17 B9 wwmmm maxrear 14 maxall 14 n>=12 12 rear>=12 6
+FEAS cap 17 B18 wmmwm maxrear 14 maxall 14 n>=12 12 rear>=12 6
+FEAS cap 17 B18 wmwmm maxrear 13 maxall 14 n>=12 7 rear>=12 2
+FEAS cap 17 B10 mmwmw maxrear 16 maxall 16 n>=12 9 rear>=12 6
+FEAS cap 17 B10 mwmmw maxrear 14 maxall 14 n>=12 9 rear>=12 3
+FEAS cap 17 B11 mmwmw maxrear 15 maxall 15 n>=12 6 rear>=12 3
+FEAS cap 17 B11 wmwmm maxrear 15 maxall 15 n>=12 11 rear>=12 5
+BEST B9 mwmwm 1 9
+  status 0 max_rear 12 max_all 15 rear>=12: 1 all>=12: 9
+   B9   mwmwm g 7 s0P s2P s4p      loads 11 7 11  REAR
+   B10  wmmmw g 9 s1p s2p s3P      loads 11 11 12  REAR
+   B11  mmwwm g 9 s0p s1P s4p      loads 11 11 11  REAR
+   B15  mwmwm g10 s0P s2P s4p      loads 11 10 11  REAR
+   B18  wwmmm g 7 s2p s3p s4P      loads 10 10 11  REAR
+   B19  wmmmw g 7 s1p s2p s3P      loads 13 13 15
+   B24  mmmww g 8 s0p s1p s2p      loads 12 12 11
+   B29  mmwwm g 8 s0p s1P s4p      loads 12 12 12
+   B35  mwwmm g 8 s0P s3p s4p      loads 11 11 11
+   B36  wwmmm g 7 s2p s3p s4P      loads 10 10 11
+   B37  wmmmw g 7 s1p s2p s3P      loads 10 10 11
+   B41  mmmww g 7 s0p s1p s2p      loads 10 9 8
+   B45  mmwwm g 7 s0p s1p s4p      loads 9 8 10
+new edges [('B11', 'B18'), ('B15', 'B19'), ('B19', 'B29'), ('B36', 'B41'), ('B37', 'B45')] dropped [('B15', 'B18')]
+carry ('B15', 0, 'pull') [('B19', '11111')]
+carry ('B15', 2, 'pull') [('B35', '11111')]
+carry ('B15', 4, 'push') [('B19', '11111')]
+carry ('B18', 2, 'push') [('B11', '11111')]
+carry ('B18', 3, 'push') [('B11', '11100'), ('B18', '00110')]
+carry ('B18', 4, 'pull') [('B24', '11111')]
+carry ('B9', 0, 'pull') [('B19', '11111')]
+carry ('B9', 2, 'pull') [('B15', '11111'), ('B19', '10111')]
+carry ('B9', 4, 'push') [('B19', '11111')]

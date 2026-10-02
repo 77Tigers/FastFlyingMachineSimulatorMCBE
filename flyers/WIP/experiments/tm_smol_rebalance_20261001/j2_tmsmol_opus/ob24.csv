@@ -1,0 +1,14 @@
+file,limit,rng,phase_x,phase_z,ticks,distance,end_blocks,extensions,extension_failures,movement_failures,first_failure_tick,first_failure_kind,conservation_mismatch_ticks,max_successful_action,clean
+"ob24/_s0\o10.1.2d1s10.2.2S_L13.flyer",13,0,0,0,300,2,146,39,1762,1763,0,"(Coord { x: 9, y: 1, z: 3 }, ""push limit exceeded"")",0,13,false
+"ob24/_s1\o10.1.2d1_L13.flyer",13,0,0,0,300,2,145,39,1762,1763,0,"(Coord { x: 9, y: 2, z: 4 }, ""push limit exceeded"")",0,13,false
+"ob24/_s2\o10.1.3d1s10.1.2S_L13.flyer",13,0,0,0,300,2,146,39,1762,1763,0,"(Coord { x: 9, y: 2, z: 4 }, ""push limit exceeded"")",0,13,false
+"ob24/_s3\o10.1.3d1s10.2.3S_L13.flyer",13,0,0,0,300,2,146,39,1762,1763,0,"(Coord { x: 9, y: 2, z: 4 }, ""push limit exceeded"")",0,13,false
+"ob24/_s4\o10.2.3d1s10.2.2S_L13.flyer",13,0,0,0,300,2,146,39,1762,1763,0,"(Coord { x: 9, y: 1, z: 3 }, ""push limit exceeded"")",0,13,false
+"ob24/_s5\o10.2.3d1s10.3.3H_L13.flyer",13,0,0,0,300,2,146,39,1762,1763,0,"(Coord { x: 10, y: 2, z: 3 }, ""push limit exceeded"")",0,13,false
+"ob24/_s6\o10.2.3d1s10.3.3S_L13.flyer",13,0,0,0,300,2,146,39,1762,1763,0,"(Coord { x: 10, y: 2, z: 3 }, ""push limit exceeded"")",0,13,false
+"ob24/_s7\o10.2.3d1_L13.flyer",13,0,0,0,300,2,145,39,1762,1763,0,"(Coord { x: 9, y: 2, z: 4 }, ""push limit exceeded"")",0,13,false
+"ob24/_s8\o8.1.2d0_L13.flyer",13,0,0,0,300,2,144,37,1762,1763,0,"(Coord { x: 9, y: 2, z: 4 }, ""push limit exceeded"")",0,13,false
+"ob24/_s9\o9.0.2d2_L13.flyer",13,0,0,0,300,2,145,39,1762,1763,0,"(Coord { x: 9, y: 2, z: 4 }, ""push limit exceeded"")",0,13,false
+"ob24/_s10\o9.0.3d2s9.0.2S_L13.flyer",13,0,0,0,300,2,146,39,1762,1763,0,"(Coord { x: 9, y: 2, z: 4 }, ""push limit exceeded"")",0,13,false
+"ob24/_s11\o9.1.1d4s9.2.1S_L13.flyer",13,0,0,0,300,2,146,39,1762,1763,0,"(Coord { x: 9, y: 1, z: 1 }, ""push limit exceeded"")",0,13,false
+"ob24/_s12\o9.1.1d4_L13.flyer",13,0,0,0,300,2,145,39,1762,1763,0,"(Coord { x: 9, y: 2, z: 4 }, ""push limit exceeded"")",0,13,false
