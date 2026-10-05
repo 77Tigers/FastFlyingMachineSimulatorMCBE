@@ -81,6 +81,7 @@ html,body{height:100%;overflow:hidden}
 /* top buttons: Browse flyer bank is the primary action, Open .flyer is secondary */
 .top-btn{border:1px solid #36464d;padding:9px 13px;background:#1c292e;border-radius:7px;text-decoration:none;color:#d8e3e5;font-weight:600;font-size:12px;cursor:pointer}
 .top-btn:hover{background:#2a3b40}
+.top-btn:disabled:hover{background:#1c292e}
 .top-btn.primary{background:#4acdbc;border-color:#4acdbc;color:#092324}
 .top-btn.primary:hover{background:#68e0d0}
 .top-btn:disabled{opacity:.55;cursor:default}
@@ -91,9 +92,43 @@ html,body{height:100%;overflow:hidden}
 /* ticks/detailed chooser pinned to the bottom of the right panel */
 .mode-panel{position:sticky;bottom:0;z-index:3;background:#172126;border-top:1px solid #2b373d;border-bottom:0}
 .mode-panel .section-head{margin-bottom:9px}
+.mode-panel .playback-detail-head{margin-top:18px}
 .mode-panel .mode-select{min-width:0;width:100%}
 .mode-panel .mode-select button{padding:9px 12px}
+.floor-panel{padding-top:10px;padding-bottom:10px}
+.floor-panel .toggle{margin:0}
 @media(min-width:681px){.right-panel{display:flex;flex-direction:column}.right-panel>*{flex:none}.mode-panel{margin-top:auto}}
+.fullscreen-btn{position:absolute;z-index:3;top:16px;right:17px;display:grid;place-items:center;width:36px;height:36px;padding:6px;border:1px solid #45616a;border-radius:7px;background:#142126d9;color:#d7f4ec;backdrop-filter:blur(3px)}
+.fullscreen-btn:hover{background:#284349;border-color:#64d8c9}
+.fullscreen-btn:focus-visible{outline:2px solid #7cf3dd;outline-offset:2px}
+.fullscreen-btn svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter}
+#viewport:fullscreen{width:100vw;height:100vh;min-height:0;cursor:none}
+#viewport:fullscreen #canvas,#viewport:fullscreen #canvas canvas{cursor:none}
+#viewport:fullscreen #canvas canvas.display-focused{outline:none}
+#viewport:fullscreen .fullscreen-btn{opacity:0;pointer-events:none}
+#viewport:fullscreen .help-btn{display:none}
+#viewport{background:#050c19}
+#viewport:fullscreen:not(.pointer-locked),#viewport:fullscreen:not(.pointer-locked) #canvas canvas{cursor:default}
+.navigation-panel{padding-top:15px;padding-bottom:14px}
+.navigation-panel .section-head{margin-bottom:12px}
+.range-setting{display:grid;grid-template-columns:minmax(0,1fr) 52px;align-items:center;gap:6px 8px;margin:10px 0;color:#bacacc;font-size:11px}
+.range-setting output{width:52px;text-align:right;font:11px 'DM Mono',Consolas,monospace;font-variant-numeric:tabular-nums;color:#d9eee9}
+.range-setting input[type=range]{grid-column:1/-1;width:100%;margin:0;accent-color:#56ddcb}
+.moving-setting{margin:15px 0 4px;color:#bacacc;font-size:11px}
+.moving-setting>span{display:block;margin-bottom:8px}
+.moving-select{width:100%;min-width:0}
+.moving-select button{min-width:0;padding:8px 2px}
+.follow-toggle{margin:16px 0 7px}
+.middle-readout{display:flex;justify-content:space-between;gap:10px;color:#81979d;font-size:10px}
+.middle-readout span{font:10px 'DM Mono',Consolas,monospace;color:#bdcfce;text-align:right;font-variant-numeric:tabular-nums}
+.sprint-indicator{margin-top:10px;color:#f0d685;font:10px 'DM Mono',Consolas,monospace;letter-spacing:.08em}
+.sprint-indicator[hidden]{display:none}
+.capture-prompt{position:absolute;z-index:5;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;flex-wrap:wrap;justify-content:center;gap:10px;width:min(370px,calc(100% - 32px));padding:22px;border:1px solid #4d7785;border-radius:12px;background:#10202df0;box-shadow:0 18px 50px #0009;text-align:center}
+.capture-prompt[hidden]{display:none}
+.capture-prompt strong,.capture-prompt p{flex:0 0 100%;margin:0}
+.capture-prompt strong{font-size:15px}.capture-prompt p{color:#b2c7ce;font-size:12px;line-height:1.5}
+.capture-prompt button{border:1px solid #45646d;border-radius:6px;background:#263f49;padding:8px 12px}
+.capture-prompt #capture-mouse{background:#4acdbc;border-color:#4acdbc;color:#092324;font-weight:700}
 /* help button and popup */
 .help-btn{position:absolute;z-index:2;bottom:17px;left:23px;display:flex;align-items:center;gap:8px;border:1px solid #36505a;background:#142126cc;color:#bdd6d7;border-radius:20px;padding:4px 12px 4px 4px;font-size:11px;backdrop-filter:blur(3px)}
 .help-btn:hover{background:#1c3235;border-color:#4acdbc;color:#e3f8ef}
