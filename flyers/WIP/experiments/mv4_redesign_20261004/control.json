@@ -1,0 +1,163 @@
+{
+  "control": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_redesign_20261004\\control_pl43.flyer",
+  "source": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\bank\\pl43\\mv4_symmetric_easy_compact.flyer",
+  "same_content_hash": true,
+  "short80_pass": true,
+  "counts": [
+    33,
+    31,
+    33,
+    33,
+    31,
+    33
+  ],
+  "baseline_sha256": "bbcdbe089b3f63630af21cb4bd04aa8fb80d6abe7870a5ce40c1bfb4bae41c47",
+  "config": {
+    "piston_sites": [
+      [
+        1,
+        0
+      ],
+      [
+        -1,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        1
+      ]
+    ],
+    "own": [
+      [
+        1,
+        1
+      ],
+      [
+        -2,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "previous": [
+      [
+        2,
+        0
+      ],
+      [
+        -1,
+        1
+      ],
+      [
+        -1,
+        1
+      ],
+      [
+        2,
+        0
+      ]
+    ],
+    "following_ribbons": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        3,
+        1
+      ]
+    ],
+    "observers": [
+      [
+        0,
+        -1,
+        0,
+        1
+      ],
+      [
+        3,
+        2,
+        0,
+        -1
+      ]
+    ],
+    "following": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      0
+    ],
+    "previous_carrier": [
+      2,
+      3,
+      4,
+      5,
+      0,
+      1
+    ]
+  },
+  "placement": [
+    [
+      [
+        6,
+        0
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        -3,
+        3
+      ],
+      [
+        -6,
+        0
+      ],
+      [
+        -3,
+        -3
+      ],
+      [
+        3,
+        -3
+      ]
+    ],
+    [
+      3,
+      0,
+      0,
+      1,
+      2,
+      2
+    ],
+    [
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+    ]
+  ]
+}

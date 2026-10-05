@@ -1,0 +1,9 @@
+{
+  "status": "completed",
+  "elapsed_seconds": 62.6,
+  "cases_total": 20,
+  "cases_done": 20,
+  "statistics": {
+    "joint_route": 20
+  }
+}

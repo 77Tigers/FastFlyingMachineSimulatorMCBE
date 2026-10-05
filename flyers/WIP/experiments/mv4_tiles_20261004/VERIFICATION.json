@@ -1,0 +1,43 @@
+{
+  "artifact": "ring_payload.flyer",
+  "encoded_limit": 64,
+  "cores": 12,
+  "phase_templates": 3,
+  "rotational_copies": 4,
+  "exact_initial_geometry_symmetry": true,
+  "symmetry_center_yz": [
+    12,
+    16
+  ],
+  "glue_per_template": [
+    42,
+    38,
+    43
+  ],
+  "total_glue": 492,
+  "pistons": 48,
+  "observers": 24,
+  "lower_payload_blocks": 3,
+  "payload_depth": 3,
+  "samples": {
+    "passed": 80,
+    "total": 80,
+    "ticks_each": 10000,
+    "distance_each": 3333,
+    "proof": "core geometry, move duration, conservation, extension success"
+  },
+  "trace": {
+    "ticks": 10000,
+    "encoded_limit": 128,
+    "max_successful_action": 53,
+    "movement_failures": 0,
+    "extension_failures": 0,
+    "conservation_mismatch_ticks": 0,
+    "translated_repeat_pairs_period12": 0
+  },
+  "limitations": [
+    "Backwards tileability and independent terminal payload remain unproved.",
+    "Full piston/owner recurrence is unproved.",
+    "Minimum required push limit not determined."
+  ]
+}

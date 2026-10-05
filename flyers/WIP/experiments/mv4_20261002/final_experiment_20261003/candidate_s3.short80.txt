@@ -1,0 +1,1 @@
+mv4 core timing + movement duration + conservation + no-failure audit: 80/80, ticks=120, core_sizes=[79, 79, 79]; full passenger-state recurrence is NOT asserted

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="600" viewBox="0 0 900 600">
+<rect width="900" height="600" fill="#faf9f6"/>
+<g font-family="Arial,sans-serif" fill="#222">
+<text x="36" y="44" font-size="26">mv4: three templates, each repeated opposite</text>
+<text x="36" y="74" font-size="17">Transverse layout; every core moves +1 over 2rt, then waits 1rt.</text>
+<path d="M 702,295 L 576,169 L 324,169 L 198,295 L 324,421 L 576,421 Z" fill="none" stroke="#bbb" stroke-width="2"/>
+<line x1="702" y1="295" x2="198" y2="295" stroke="#007a99" stroke-width="1" stroke-dasharray="5 6" opacity=".35"/>
+<line x1="576" y1="169" x2="324" y2="421" stroke="#ba6100" stroke-width="1" stroke-dasharray="5 6" opacity=".35"/>
+<line x1="324" y1="169" x2="576" y2="421" stroke="#7c4a9e" stroke-width="1" stroke-dasharray="5 6" opacity=".35"/>
+<circle cx="702" cy="295" r="44" fill="#007a99"/>
+<text x="702" y="290" text-anchor="middle" fill="white" font-size="22">A1</text>
+<text x="702" y="313" text-anchor="middle" fill="white" font-size="14">33 glue</text>
+<circle cx="576" cy="169" r="44" fill="#ba6100"/>
+<text x="576" y="164" text-anchor="middle" fill="white" font-size="22">B1</text>
+<text x="576" y="187" text-anchor="middle" fill="white" font-size="14">31 glue</text>
+<circle cx="324" cy="169" r="44" fill="#7c4a9e"/>
+<text x="324" y="164" text-anchor="middle" fill="white" font-size="22">C1</text>
+<text x="324" y="187" text-anchor="middle" fill="white" font-size="14">33 glue</text>
+<circle cx="198" cy="295" r="44" fill="#007a99"/>
+<text x="198" y="290" text-anchor="middle" fill="white" font-size="22">A2</text>
+<text x="198" y="313" text-anchor="middle" fill="white" font-size="14">33 glue</text>
+<circle cx="324" cy="421" r="44" fill="#ba6100"/>
+<text x="324" y="416" text-anchor="middle" fill="white" font-size="22">B2</text>
+<text x="324" y="439" text-anchor="middle" fill="white" font-size="14">31 glue</text>
+<circle cx="576" cy="421" r="44" fill="#7c4a9e"/>
+<text x="576" y="416" text-anchor="middle" fill="white" font-size="22">C2</text>
+<text x="576" y="439" text-anchor="middle" fill="white" font-size="14">33 glue</text>
+<text x="36" y="510" fill="#007a99" font-size="18">Template A: phase 0rt</text>
+<text x="321" y="510" fill="#ba6100" font-size="18">Template B: phase 1rt</text>
+<text x="606" y="510" fill="#7c4a9e" font-size="18">Template C: phase 2rt</text>
+<text x="36" y="550" font-size="16">Opposite copies rotate 180°; slime and honey exchange. Pistons all point +X.</text>
+<text x="36" y="578" font-size="15">This diagram shows bank structure, not a block-by-block construction plan.</text></g></svg>

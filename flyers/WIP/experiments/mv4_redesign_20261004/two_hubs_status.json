@@ -1,0 +1,27 @@
+{
+  "status": "completed",
+  "done": 15756,
+  "total": 15756,
+  "elapsed": 257,
+  "motifs": [
+    "square_columns",
+    "offset_pairs"
+  ],
+  "cover_counts": [
+    46,
+    56
+  ],
+  "outcomes": {
+    "hardware": 7713,
+    "body_contact": 8042,
+    "interface_valid": 1
+  },
+  "valid_face_pairs": 1,
+  "first_failure": {
+    "graph": 0,
+    "motif": 0,
+    "own": 0,
+    "previous": 0,
+    "outcome": "hardware"
+  }
+}

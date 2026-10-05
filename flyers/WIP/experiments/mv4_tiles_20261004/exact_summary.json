@@ -1,0 +1,59 @@
+{
+  "placement": {
+    "score": [
+      999,
+      999,
+      31,
+      999
+    ],
+    "case": 187,
+    "radius": 6,
+    "spacing": 4,
+    "rotations": [
+      3,
+      2,
+      3
+    ],
+    "reflections": [
+      1,
+      1,
+      1
+    ],
+    "axial": [
+      1,
+      -1
+    ],
+    "mandatory": [
+      12,
+      12,
+      12,
+      12,
+      12,
+      12,
+      12,
+      12,
+      12,
+      12,
+      12,
+      12
+    ],
+    "independent_failure": {
+      "body": 0,
+      "reason": "cap",
+      "count": 31
+    }
+  },
+  "results": [
+    {
+      "body": 0,
+      "mandatory": 12,
+      "components": 10,
+      "allowed_nodes": 5998,
+      "cap": 36,
+      "seconds": 92.53,
+      "status": "optimal_within_box",
+      "minimum": 34
+    }
+  ],
+  "note": "Exact result captured from process output. Remaining body solves interrupted after body0 rejected this interface at PL36; route cells not retained."
+}

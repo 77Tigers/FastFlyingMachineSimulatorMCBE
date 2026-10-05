@@ -1,0 +1,20 @@
+{"case": 0, "parent": 0, "profile": {"name": "flat"}, "cap": 32, "seed": 0, "report": {"best": [18, 0, 32, 148], "iteration": 0}, "outcome": "joint_route"}
+{"case": 1, "parent": 0, "profile": {"name": "flat"}, "cap": 32, "seed": 1, "report": {"best": [18, 0, 32, 152], "iteration": 0}, "outcome": "joint_route"}
+{"case": 2, "parent": 0, "profile": {"name": "flat"}, "cap": 31, "seed": 0, "report": {"best": [36, 0, 30, 108], "iteration": 0}, "outcome": "joint_route"}
+{"case": 3, "parent": 0, "profile": {"name": "flat"}, "cap": 31, "seed": 1, "report": {"best": [18, 0, 31, 148], "iteration": 0}, "outcome": "joint_route"}
+{"case": 4, "parent": 0, "profile": {"name": "bend.15", "bend": 0.15}, "cap": 32, "seed": 0, "report": {"best": [18, 0, 32, 148], "iteration": 0}, "outcome": "joint_route"}
+{"case": 5, "parent": 0, "profile": {"name": "bend.15", "bend": 0.15}, "cap": 32, "seed": 1, "report": {"best": [18, 0, 32, 148], "iteration": 0}, "outcome": "joint_route"}
+{"case": 6, "parent": 0, "profile": {"name": "bend.15", "bend": 0.15}, "cap": 31, "seed": 0, "report": {"best": [36, 0, 30, 108], "iteration": 0}, "outcome": "joint_route"}
+{"case": 7, "parent": 0, "profile": {"name": "bend.15", "bend": 0.15}, "cap": 31, "seed": 1, "report": {"best": [36, 0, 30, 108], "iteration": 0}, "outcome": "joint_route"}
+{"case": 8, "parent": 0, "profile": {"name": "rail-3", "rail": -3}, "cap": 32, "seed": 0, "report": {"best": [18, 0, 32, 148], "iteration": 0}, "outcome": "joint_route"}
+{"case": 9, "parent": 0, "profile": {"name": "rail-3", "rail": -3}, "cap": 32, "seed": 1, "report": {"best": [18, 0, 31, 148], "iteration": 0}, "outcome": "joint_route"}
+{"case": 10, "parent": 0, "profile": {"name": "rail-3", "rail": -3}, "cap": 31, "seed": 0, "report": {"best": [18, 0, 31, 148], "iteration": 0}, "outcome": "joint_route"}
+{"case": 11, "parent": 0, "profile": {"name": "rail-3", "rail": -3}, "cap": 31, "seed": 1, "report": {"best": [18, 0, 31, 148], "iteration": 0}, "outcome": "joint_route"}
+{"case": 12, "parent": 0, "profile": {"name": "rail1", "rail": 1}, "cap": 32, "seed": 0, "report": {"best": [36, 0, 32, 112], "iteration": 0}, "outcome": "joint_route"}
+{"case": 13, "parent": 0, "profile": {"name": "rail1", "rail": 1}, "cap": 32, "seed": 1, "report": {"best": [36, 0, 32, 112], "iteration": 0}, "outcome": "joint_route"}
+{"case": 14, "parent": 0, "profile": {"name": "rail1", "rail": 1}, "cap": 31, "seed": 0, "report": {"best": [54, 0, 12, 72], "iteration": 0}, "outcome": "joint_route"}
+{"case": 15, "parent": 0, "profile": {"name": "rail1", "rail": 1}, "cap": 31, "seed": 1, "report": {"best": [54, 0, 12, 72], "iteration": 0}, "outcome": "joint_route"}
+{"case": 16, "parent": 0, "profile": {"name": "two_backbones", "allowed_rails": [-3, 1]}, "cap": 32, "seed": 0, "report": {"best": [54, 0, 12, 72], "iteration": 0}, "outcome": "joint_route"}
+{"case": 17, "parent": 0, "profile": {"name": "two_backbones", "allowed_rails": [-3, 1]}, "cap": 32, "seed": 1, "report": {"best": [54, 0, 12, 72], "iteration": 0}, "outcome": "joint_route"}
+{"case": 18, "parent": 0, "profile": {"name": "two_backbones", "allowed_rails": [-3, 1]}, "cap": 31, "seed": 0, "report": {"best": [54, 0, 12, 72], "iteration": 0}, "outcome": "joint_route"}
+{"case": 19, "parent": 0, "profile": {"name": "two_backbones", "allowed_rails": [-3, 1]}, "cap": 31, "seed": 1, "report": {"best": [54, 0, 12, 72], "iteration": 0}, "outcome": "joint_route"}

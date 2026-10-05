@@ -1,0 +1,20 @@
+{
+  "cases": 80,
+  "passed": 80,
+  "ticks": 10000,
+  "distance": 3333,
+  "max_action": 46,
+  "encoded_limit": 46,
+  "glue_cells": 198,
+  "core_glue_counts": [
+    36,
+    30,
+    33,
+    36,
+    30,
+    33
+  ],
+  "sha256": "e82b00ec0024fcbd59ecc2ba1be5a915227f0df00b19b4572f0acd0cb182a8cc",
+  "artifact": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\bank\\pl46\\mv4_symmetric.flyer",
+  "full_passenger_state_recurrence": false
+}

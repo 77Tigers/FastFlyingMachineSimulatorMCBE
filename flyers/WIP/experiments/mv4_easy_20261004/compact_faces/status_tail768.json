@@ -1,0 +1,11 @@
+{
+  "stage": "routing",
+  "status": "completed",
+  "offset": 768,
+  "done": 216,
+  "total": 216,
+  "elapsed": 690,
+  "statistics": {
+    "joint_route": 216
+  }
+}

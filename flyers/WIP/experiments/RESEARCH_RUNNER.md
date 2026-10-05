@@ -46,3 +46,45 @@ This simulates the first six ticks at the **original encoded limit**, changes th
 Validated on the banked PL11 machine: 10,000 ticks, distance 2,500, 5,000 extensions, zero conservation mismatches, 1,250 +2/eight-tick repeats, maximum successful action 11, zero movement failures. Evidence: `astra_diagonal/portable_runner_audit.txt`.
 
 Still useful to add: persistent block identities, automated first-divergence comparison, and checkpoint metadata beyond the per-case flushed CSV. Existing `astra_diagonal/verify.rs` retains the complete PL11/PL12 80-case audit.
+
+For the all-mv4 normal +X architecture, [the local core checker](mv4_elegant_20261004/audit_cores.rs) checks every core cell's geometry, two-tick moving duration, permanent-kind conservation and extension failures across the same80 cases:
+
+```powershell
+& flyers/WIP/experiments/mv4_elegant_20261004/audit_cores.exe flyers/bank/pl46/mv4_symmetric.flyer 10000 flyers/WIP/experiments/MY_EXPERIMENT/mv4.csv
+```
+
+This checker treats observers as leaves attached to their glue component; adjacent observers alone do not join cores. It fixes a classification limitation in `mv4_20261002/audit_mv4_fast.rs`, which could report "Missing initial core phase" before simulation for such layouts. It rejects an observer attached to multiple cores or an untagged persistent block. `encoded_action_limit` is the simulated bound, not a measured maximum; pair it with `audit` for actual loads. Powered observer bits and full piston/owner-state recurrence are not compared. Core timing success must not be described as exact full-state recurrence. Source and compile instructions are in [the elegance findings](mv4_elegant_20261004/FINDINGS.md).
+
+For rear mv4 cores **without observers**, and experimental sticky banks,
+[audit_chain.rs](mv4_tiles_20261004/audit_chain.rs) reads explicit core phase tags
+instead of inferring phases from observer leaves. Its Python wrapper rebuilds
+saved geometry, generates temporary tags/CSV and retains all80 rows in one JSON:
+
+```powershell
+rustc --edition 2021 -O flyers/WIP/experiments/mv4_tiles_20261004/audit_chain.rs --extern fastflyer=target/release/libfastflyer.rlib -L dependency=target/release/deps -o flyers/WIP/experiments/bin/mv4_chain_audit.exe
+python flyers/WIP/experiments/mv4_tiles_20261004/check_backward.py backward_prototype --ticks 300 --limit 160
+```
+
+This inspector checks exact tagged core motion/moving duration, conservation,
+extension failures and a broad passenger transport window; it does not require
+passenger identity recurrence. Untagged observer passengers are counted and
+bounded spatially, not assigned a rigid core cadence. Failed sticky pulls and
+measured action loads still require `audit`. Results in `BACKWARD_CHECKS.json`
+distinguish failing sticky attempts from the passing normal-piston control;
+none establishes a backwards tile. See [the handoff](mv4_tiles_20261004/HANDOFF.md).
+
+For cheap negative checks of an already routed mv4 candidate at a smaller limit,
+[audit_one.rs](mv4_easy_20261004/audit_one.rs) is the same core checker restricted
+to RNG5 and X/Z phase0. It stops at the first failure. Compile and run with:
+
+```powershell
+rustc --edition 2021 -O flyers/WIP/experiments/mv4_easy_20261004/audit_one.rs --extern fastflyer=target/release/libfastflyer.rlib -L dependency=target/release/deps -o flyers/WIP/experiments/mv4_easy_20261004/audit_one.exe
+& flyers/WIP/experiments/mv4_easy_20261004/audit_one.exe INPUT.flyer 10000 OUTPUT.csv
+```
+
+A failure disproves the 80-case claim for that geometry/limit. A pass requires
+the full 80-case checker and traced load audit before banking. This avoids
+spending a long traced batch on obviously stalled candidates. The partial
+`mv4_easy_20261004/limits42/run000.csv` deliberately retains only14 negatives;
+its interrupted batch is not a completed matrix. `limit_scan.py` deduplicates
+geometries and retains both this partial evidence and subsequent focused checks.

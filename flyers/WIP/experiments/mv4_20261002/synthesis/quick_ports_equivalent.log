@@ -1,0 +1,9 @@
+0 {'route': 16}
+1 {'route': 32}
+2 {'route': 32, 'body_contact': 16}
+3 {'route': 48, 'body_contact': 16}
+4 {'route': 48, 'body_contact': 32}
+5 {'route': 64, 'body_contact': 32}
+6 {'route': 80, 'body_contact': 32}
+7 {'route': 80, 'body_contact': 48}
+8 {'route': 80, 'body_contact': 64}

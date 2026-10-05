@@ -24,3 +24,4 @@ __pycache__/
 *.obj
 *.wasm
 /flyers/WIP/experiments/bin/
+*.pkl

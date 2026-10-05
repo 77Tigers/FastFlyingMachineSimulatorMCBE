@@ -1,0 +1,2 @@
+tried 958792
+[('overlap', 449640), ('power_K1_t0_missing', 351920), ('adhesion_O0', 20856), ('adhesion_O2', 20856), ('adhesion_O3', 20856), ('adhesion_O4', 20856), ('adhesion_O5', 20856), ('adhesion_O1', 20848), ('adhesion_R', 17956), ('power_K2_t1_extra', 13044), ('kin', 9994), ('power_K2_t0_extra', 1104)]

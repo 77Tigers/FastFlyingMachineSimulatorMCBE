@@ -1,0 +1,456 @@
+[
+  {
+    "kind": "six",
+    "seed": 0,
+    "failure": [
+      "hardware",
+      4,
+      [
+        -2,
+        2,
+        7
+      ]
+    ]
+  },
+  {
+    "kind": "six",
+    "seed": 1,
+    "failure": [
+      "hardware",
+      4,
+      [
+        -2,
+        2,
+        7
+      ]
+    ]
+  },
+  {
+    "kind": "six",
+    "seed": 2,
+    "failure": [
+      "hardware",
+      4,
+      [
+        -2,
+        2,
+        7
+      ]
+    ]
+  },
+  {
+    "kind": "six",
+    "seed": 3,
+    "failure": [
+      "hardware",
+      4,
+      [
+        -2,
+        2,
+        7
+      ]
+    ]
+  },
+  {
+    "kind": "six",
+    "seed": 4,
+    "failure": [
+      "hardware",
+      4,
+      [
+        -2,
+        2,
+        7
+      ]
+    ]
+  },
+  {
+    "kind": "six",
+    "seed": 5,
+    "failure": [
+      "hardware",
+      4,
+      [
+        -2,
+        2,
+        7
+      ]
+    ]
+  },
+  {
+    "kind": "six",
+    "seed": 6,
+    "failure": [
+      "hardware",
+      4,
+      [
+        -2,
+        2,
+        7
+      ]
+    ]
+  },
+  {
+    "kind": "six",
+    "seed": 7,
+    "failure": [
+      "hardware",
+      4,
+      [
+        -2,
+        2,
+        7
+      ]
+    ]
+  },
+  {
+    "kind": "three",
+    "seed": 0,
+    "failure": [
+      "route",
+      0,
+      34,
+      33
+    ]
+  },
+  {
+    "kind": "three",
+    "seed": 1,
+    "failure": [
+      "route",
+      1,
+      38,
+      36
+    ]
+  },
+  {
+    "kind": "three",
+    "seed": 2,
+    "failure": [
+      "route",
+      2,
+      33,
+      31
+    ]
+  },
+  {
+    "kind": "three",
+    "seed": 3,
+    "failure": [
+      "route",
+      1,
+      34,
+      33
+    ]
+  },
+  {
+    "kind": "three",
+    "seed": 4,
+    "failure": [
+      "body_overlap",
+      0,
+      1,
+      2,
+      [
+        -2,
+        3,
+        -1
+      ]
+    ]
+  },
+  {
+    "kind": "three",
+    "seed": 5,
+    "failure": [
+      "route",
+      0,
+      37,
+      32
+    ]
+  },
+  {
+    "kind": "three",
+    "seed": 6,
+    "failure": [
+      "route",
+      2,
+      37,
+      35
+    ]
+  },
+  {
+    "kind": "three",
+    "seed": 7,
+    "failure": [
+      "route",
+      1,
+      33,
+      29
+    ]
+  },
+  {
+    "kind": "three",
+    "seed": 8,
+    "failure": [
+      "route",
+      1,
+      31,
+      27
+    ]
+  },
+  {
+    "kind": "three",
+    "seed": 9,
+    "failure": [
+      "route",
+      0,
+      33,
+      32
+    ]
+  },
+  {
+    "kind": "three",
+    "seed": 10,
+    "failure": [
+      "route",
+      0,
+      32,
+      31
+    ]
+  },
+  {
+    "kind": "three",
+    "seed": 11,
+    "failure": [
+      "route",
+      0,
+      33,
+      31
+    ]
+  },
+  {
+    "kind": "three",
+    "seed": 12,
+    "failure": [
+      "route",
+      1,
+      38,
+      36
+    ]
+  },
+  {
+    "kind": "three",
+    "seed": 13,
+    "failure": [
+      "route",
+      2,
+      35,
+      33
+    ]
+  },
+  {
+    "kind": "three",
+    "seed": 14,
+    "failure": [
+      "route",
+      0,
+      36,
+      35
+    ]
+  },
+  {
+    "kind": "three",
+    "seed": 15,
+    "failure": [
+      "route",
+      0,
+      35,
+      34
+    ]
+  },
+  {
+    "kind": "three",
+    "seed": 16,
+    "failure": [
+      "route",
+      0,
+      35,
+      34
+    ]
+  },
+  {
+    "kind": "three",
+    "seed": 17,
+    "failure": [
+      "route",
+      0,
+      34,
+      33
+    ]
+  },
+  {
+    "kind": "three",
+    "seed": 18,
+    "failure": [
+      "foreign_source_contact",
+      0,
+      0,
+      1,
+      [
+        -2,
+        4,
+        -2
+      ]
+    ]
+  },
+  {
+    "kind": "three",
+    "seed": 19,
+    "failure": [
+      "same_material_contact",
+      0,
+      0,
+      2,
+      [
+        -2,
+        2,
+        0
+      ]
+    ]
+  },
+  {
+    "kind": "three",
+    "seed": 20,
+    "failure": [
+      "foreign_source_contact",
+      0,
+      0,
+      1,
+      [
+        -2,
+        2,
+        4
+      ]
+    ]
+  },
+  {
+    "kind": "three",
+    "seed": 21,
+    "failure": [
+      "route",
+      0,
+      38,
+      37
+    ]
+  },
+  {
+    "kind": "three",
+    "seed": 22,
+    "failure": [
+      "unplanned_pickup",
+      1,
+      1,
+      6,
+      [
+        -2,
+        2,
+        0
+      ]
+    ]
+  },
+  {
+    "kind": "three",
+    "seed": 23,
+    "failure": [
+      "route",
+      2,
+      38,
+      37
+    ]
+  },
+  {
+    "kind": "three",
+    "seed": 24,
+    "failure": [
+      "body_overlap",
+      0,
+      0,
+      1,
+      [
+        -1,
+        3,
+        1
+      ]
+    ]
+  },
+  {
+    "kind": "three",
+    "seed": 25,
+    "failure": [
+      "same_material_contact",
+      0,
+      0,
+      2,
+      [
+        -1,
+        1,
+        2
+      ]
+    ]
+  },
+  {
+    "kind": "three",
+    "seed": 26,
+    "failure": [
+      "foreign_source_contact",
+      0,
+      0,
+      2,
+      [
+        -2,
+        2,
+        4
+      ]
+    ]
+  },
+  {
+    "kind": "three",
+    "seed": 27,
+    "failure": [
+      "foreign_source_contact",
+      0,
+      1,
+      0,
+      [
+        -2,
+        5,
+        2
+      ]
+    ]
+  },
+  {
+    "kind": "three",
+    "seed": 28,
+    "failure": [
+      "same_material_contact",
+      0,
+      0,
+      2,
+      [
+        -1,
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "kind": "three",
+    "seed": 29,
+    "failure": [
+      "route",
+      1,
+      33,
+      32
+    ]
+  }
+]

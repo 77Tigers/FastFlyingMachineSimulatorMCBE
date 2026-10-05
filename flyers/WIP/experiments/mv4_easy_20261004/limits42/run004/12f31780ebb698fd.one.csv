@@ -1,0 +1,2 @@
+rng,phase_x,phase_z,limit,ticks,distance,encoded_action_limit,core_sizes,pass,first_failure
+5,0,0,42,1,0,42,"[72, 74, 68]",false,"tick 0 extension or conservation failure"

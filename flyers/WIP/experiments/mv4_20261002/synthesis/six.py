@@ -1,11 +1,50 @@
 """Six distinct mv cores, alternating glue, bounded compact shared-hub routing."""
-from search import OUT,ROOT,D,COMPETITION,add,shift,disp,connected,canonical
+from search import OUT,ROOT,D,COMPETITION,add,shift,connected,canonical
 from fastflyer import Flyer,Block,Kind
 import random,heapq,json,collections,subprocess,sys
 N=6
 K=[Kind.SLIME if i%2==0 else Kind.HONEY for i in range(N)]
+OWN=((1,1),(-2,0),(1,1),(1,1))
+PREVIOUS=((2,0),(-1,1),(-1,1),(2,0))
+def disp(t,i):return (t+2-(i%3))//3
 
-def build(seed,placement=None,cap=25):
+def shortest_component_bridge(cells,blocked,bounds,rng):
+ groups=[];left=set(cells)
+ while left:
+  root=min(left);part={root};stack=[root];left.remove(root)
+  while stack:
+   p=stack.pop()
+   for d in D:
+    q=add(p,d)
+    if q in left:left.remove(q);part.add(q);stack.append(q)
+  groups.append(part)
+ if len(groups)==1:return set()
+ pq=[];dist={};owner={};prev={}
+ for j,part in enumerate(groups):
+  for p in sorted(part):dist[p]=0;owner[p]=j;prev[p]=None;heapq.heappush(pq,(0,rng.random(),p))
+ bestcost=100000;meeting=None
+ while pq:
+  cost,_,p=heapq.heappop(pq)
+  if cost!=dist[p]:continue
+  if cost>bestcost:break
+  for d in D:
+   q=add(p,d)
+   if not all(bounds[2*k]<=q[k]<=bounds[2*k+1] for k in range(3)):continue
+   if q not in cells and q in blocked:continue
+   if q in owner and owner[q]!=owner[p]:
+    total=cost+dist[q]
+    if total<bestcost:bestcost=total;meeting=(p,q)
+   elif cost+int(q not in cells)<dist.get(q,100000):
+    dist[q]=cost+int(q not in cells);owner[q]=owner[p];prev[q]=p;heapq.heappush(pq,(dist[q],rng.random(),q))
+ if meeting is None:return None
+ path=set()
+ for p in meeting:
+  while p is not None:
+   if p not in cells:path.add(p)
+   p=prev[p]
+ return path
+
+def build(seed,placement=None,cap=25,joint_router=None):
  rng=random.Random(seed);ss=[set() for _ in range(N)];ports={};ps=[];sources=[]
  if placement is None:
   radius=4+(seed%2)
@@ -21,7 +60,7 @@ def build(seed,placement=None,cap=25):
    return cy+y,cz+z
   def local(owner,x,y,z):
    yy,zz=yz(y,z);return (base+x-disp(ph,owner),yy,zz)
-  for m,((y,z),own,previous) in enumerate(zip(((1,0),(-1,0),(0,1),(2,1)),((1,1),(-2,0),(1,1),(1,1)),((2,0),(-1,1),(-1,1),(2,0)))):
+  for m,((y,z),own,previous) in enumerate(zip(((1,0),(-1,0),(0,1),(2,1)),OWN,PREVIOUS)):
    pid=4*bank+m;f=ph+3*m;a=base+m;yy,zz=yz(y,z);ps.append(dict(pid=pid,bank=bank,f=f,anchor=a,y=yy,z=zz))
    ss[bank].add(local(bank,1,y,z))
    for owner,x,site in ((bank,-1,own),((bank+2)%N,0,previous)):
@@ -52,7 +91,8 @@ def build(seed,placement=None,cap=25):
      redundant=i==bank and shift(pp,1-dx) in ss[i]
      for d in D:
       p=shift(add(pp,d),-dx)
-      if p in ports.get((i,pid),()) or redundant:continue
+      equivalent_side=d[0]==0 and any(q[0]==p[0] for q in ports.get((i,pid),()))
+      if equivalent_side or redundant:continue
       fixedbad[i].add(p)
    for source in sources:
     j=source['owner'];r=shift(source['pos'],disp(t,j)-dx)
@@ -85,26 +125,21 @@ def build(seed,placement=None,cap=25):
   p=add(source['pos'],D[source['direction']])
   if p not in ss[source['owner']]:return None,('source_attachment',source)
  bounds=(-5,5,min(y for y,z in centers)-6,max(y for y,z in centers)+6,min(z for y,z in centers)-6,max(z for y,z in centers)+6)
- for i in rng.sample(range(N),N):
+ if joint_router is not None:
+  routed=joint_router(ss,fixedbad,bounds,cap,rng)
+  if routed is None:return None,('joint_route',)
+  ss=routed
+ # Interleave short connections so one completed body cannot monopolize all
+ # corridors around the other bodies' mandatory terminals.
+ for i in (rng.sample(range(N),N)*16 if joint_router is None else []):
   refresh()
-  while len(connected(ss[i]))<len(ss[i]):
+  if len(connected(ss[i]))<len(ss[i]):
    reached=connected(ss[i]);goals=ss[i]-reached
-   pq=[(0,rng.random(),p) for p in reached];heapq.heapify(pq);best={p:0 for p in reached};prev={};end=None
-   while pq:
-    cost,_,p=heapq.heappop(pq)
-    if cost!=best[p]:continue
-    if p in goals:end=p;break
-    if cost>cap-len(ss[i]):continue
-    for d in rng.sample(D,6):
-     q=add(p,d)
-     if not all(bounds[2*k]<=q[k]<=bounds[2*k+1] for k in range(3)):continue
-     if q not in ss[i] and (q in fixedbad[i] or q in bodybad[i]):continue
-     nc=cost+int(q not in ss[i])
-     if nc<best.get(q,10000):best[q]=nc;prev[q]=p;heapq.heappush(pq,(nc,rng.random(),q))
-   if end is None:
-    report=dict(seed=seed,carrier=i,counts=list(map(len,ss)),segments=[sorted(s) for s in ss],centers=centers,rotations=rotations,reflections=reflections,pistons=ps,sources=sources)
+   path=shortest_component_bridge(ss[i],fixedbad[i]|bodybad[i],bounds,rng)
+   if path is None or len(ss[i])+len(path)>cap:
+    report=dict(seed=seed,carrier=i,counts=list(map(len,ss)),segments=[sorted(s) for s in ss],centers=centers,rotations=rotations,reflections=reflections,pistons=ps,sources=sources,unreached=sorted(goals),neighbor_reasons=[dict(point=q,hardware=q in fixedbad[i],body=q in bodybad[i]) for p in goals for q in [add(p,d) for d in D]])
     (OUT/f'six_route_failure_s{seed}.json').write_text(json.dumps(report,indent=2));return None,('route',i,len(ss[i]),len(reached))
-   while end not in reached:ss[i].add(end);end=prev[end]
+   ss[i].update(path)
  flyer=Flyer(rng_state=5,push_limit=512);owners={};movingowners={}
  for pspec in ps:
   bank=pspec['bank'];x,s,ophase=canonical(0,pspec['f'],pspec['anchor']);q=(x,pspec['y'],pspec['z'])

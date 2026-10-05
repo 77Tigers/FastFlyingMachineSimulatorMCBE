@@ -1,0 +1,31 @@
+{
+  "status": "completed",
+  "elapsed": 41,
+  "statistics": {
+    "attempts": 360,
+    "screened": 1,
+    "accepted": 1
+  },
+  "passes": 2,
+  "score": [
+    34,
+    196,
+    34,
+    14
+  ],
+  "history": [
+    {
+      "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\faces_local\\reroute_0001.flyer",
+      "limit": 44,
+      "score": [
+        34,
+        196,
+        34,
+        14
+      ],
+      "body": 0,
+      "mode": "flat",
+      "seed": 2
+    }
+  ]
+}

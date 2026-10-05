@@ -1,0 +1,2 @@
+mv4 exact core geometry + moving-duration + conservation + extension audit: 0/1, ticks=10000, core_sizes=[72, 66, 68]; full passenger-state recurrence is NOT asserted
+Error: "mv4 audit failed"

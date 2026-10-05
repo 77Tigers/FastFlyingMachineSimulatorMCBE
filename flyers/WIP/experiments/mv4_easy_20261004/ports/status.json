@@ -1,0 +1,12 @@
+{
+  "status": "completed",
+  "elapsed_seconds": 745.6,
+  "cases_total": 648,
+  "cases_done": 648,
+  "statistics": {
+    "short80_pass": 9,
+    "joint_route": 207,
+    "body_contact": 372,
+    "hardware": 60
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "stage": "routing",
+  "status": "completed",
+  "done": 984,
+  "total": 984,
+  "missing_cases": [],
+  "statistics": {
+    "short80_pass": 6,
+    "joint_route": 978
+  },
+  "raw_tail_ledgers_retained": false,
+  "cleanup_manifest": "../CLEANUP.json"
+}

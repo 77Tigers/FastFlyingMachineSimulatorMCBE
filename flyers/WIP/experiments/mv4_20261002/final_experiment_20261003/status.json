@@ -1,0 +1,124 @@
+{
+  "status": "verified",
+  "search_limit_seconds": 2700,
+  "elapsed_seconds": 76.1,
+  "statistics": {
+    "placements": 4,
+    "hardware": 1,
+    "routing_attempts": 3,
+    "joint_route": 2,
+    "routed": 1,
+    "screened": 1
+  },
+  "best": {
+    "seed": 3,
+    "score": [
+      0,
+      0,
+      39,
+      225
+    ],
+    "placement": [
+      [
+        [
+          -1,
+          -1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          0,
+          7
+        ],
+        [
+          -4,
+          5
+        ]
+      ],
+      [
+        1,
+        1,
+        2,
+        1,
+        0,
+        2
+      ],
+      [
+        -1,
+        1,
+        -1,
+        1,
+        -1,
+        1
+      ]
+    ],
+    "report": {
+      "best": [
+        0,
+        0,
+        39,
+        225
+      ],
+      "iteration": 3,
+      "counts": [
+        38,
+        36,
+        39,
+        37,
+        39,
+        36
+      ]
+    },
+    "own": [
+      [
+        1,
+        1
+      ],
+      [
+        -2,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "previous": [
+      [
+        2,
+        0
+      ],
+      [
+        -1,
+        1
+      ],
+      [
+        -1,
+        1
+      ],
+      [
+        2,
+        0
+      ]
+    ]
+  },
+  "candidate": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\mv4_pl49.flyer",
+  "full80_pass": true,
+  "validation": "exact core geometry, moving duration, conservation and no extension failures; normal +X actuators; full passenger-state recurrence not asserted",
+  "max_successful_action": 49,
+  "search_elapsed_seconds": 76.1
+}

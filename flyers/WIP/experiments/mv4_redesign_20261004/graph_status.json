@@ -1,0 +1,11 @@
+{
+  "elapsed": 63,
+  "attempts": 2390,
+  "outcomes": {
+    "interface_valid": 1592,
+    "body_contact": 347,
+    "hardware": 451
+  },
+  "distinct_valid": 60,
+  "relaxed_motif_valid": 0
+}

@@ -1,0 +1,34 @@
+{
+  "control_passed": true,
+  "totals": {
+    "wrong_firing_plane": 96,
+    "observer_overlaps_required_ribbon": 16,
+    "body_contact": 37,
+    "hardware": 43
+  },
+  "checked": 192,
+  "first_failure": {
+    "hub_x": -1,
+    "direction": [
+      1,
+      0,
+      0
+    ],
+    "source": [
+      -2,
+      0,
+      0
+    ],
+    "own_d": [
+      1,
+      -1
+    ],
+    "previous_d": [
+      1,
+      -1
+    ],
+    "outcome": "wrong_firing_plane"
+  },
+  "first_survivor": null,
+  "no_global_route_requested": true
+}

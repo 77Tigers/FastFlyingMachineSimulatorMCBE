@@ -1,0 +1,1 @@
+mv4 exact core geometry + moving-duration + conservation + extension audit: 80/80, ticks=300, core_sizes=[74, 64, 70]; full passenger-state recurrence is NOT asserted

@@ -1,0 +1,20 @@
+freeF8	freeF 8 900 10	OPTIMAL	89.9s	maxload=8	
+freeF7	freeF 7 900 10	INFEASIBLE	23.5s	maxload=-	
+ASSEMBLE+VERIFY freeF8 -> runs/assembled/mirror_freeF_L8.flyer: verify pass=true 10000 ticks 2500 dist, recurrence 1250/1250, max_successful_action=8 (PL8, samples skipped: >7)
+twinF8	twinF 8 900 10	INFEASIBLE	373.4s	maxload=-	
+twinF7	twinF 7 900 10	INFEASIBLE	32.6s	maxload=-	
+freeK3F8	freeK3F 8 1200 10	UNKNOWN	1201.8s	maxload=-	
+twinK3F8	twinK3F 8 1200 10	UNKNOWN	1201.2s	maxload=-	
+planes_freeF8_-1_0_9	freeF 8 600 10 -1,0,9	OPTIMAL	272.0s	maxload=8	
+ASSEMBLE+VERIFY planes_freeF8_-1_0_9 -> runs/assembled/mirror_planes_freeF_L8_m1_0_9.flyer: verify pass=true 10000 ticks 2500 dist, recurrence 1250/1250, max_successful_action=8 (PL8; samples skipped: >7)
+planes_twinF8_-1_0_9	twinF 8 600 10 -1,0,9	UNKNOWN	600.2s	maxload=-	
+planes_freeF8_-1_1_8	freeF 8 479 10 -1,1,8	OPTIMAL	236.9s	maxload=8	
+planes_twinF8_-1_1_8	twinF 8 600 10 -1,1,8	SKIPPED(time cutoff 02:55)
+planes_freeF8_-1_-1_8	freeF 8 600 10 -1,-1,8	SKIPPED(time cutoff 02:55)
+planes_twinF8_-1_-1_8	twinF 8 600 10 -1,-1,8	SKIPPED(time cutoff 02:55)
+planes_freeF8_-1_1_9	freeF 8 600 10 -1,1,9	SKIPPED(time cutoff 02:55)
+planes_twinF8_-1_1_9	twinF 8 600 10 -1,1,9	SKIPPED(time cutoff 02:55)
+planes_freeF8_-1_-1_9	freeF 8 600 10 -1,-1,9	SKIPPED(time cutoff 02:55)
+planes_twinF8_-1_-1_9	twinF 8 600 10 -1,-1,9	SKIPPED(time cutoff 02:55)
+ASSEMBLE+VERIFY planes_freeF8_-1_1_8 -> runs/assembled/mirror_planes_freeF_L8_m1_1_8.flyer: verify pass=true 10000 ticks 2500 dist, max_successful_action=8 (PL8)
+NOTE runs/assembled/mirror_freeF_L8.samples.csv (not created by this agent; 80 rows) pass count: 80/80

@@ -1,0 +1,10 @@
+{
+  "status": "completed",
+  "elapsed_seconds": 1160.9,
+  "cases_total": 360,
+  "cases_done": 360,
+  "statistics": {
+    "short80_pass": 8,
+    "joint_route": 352
+  }
+}

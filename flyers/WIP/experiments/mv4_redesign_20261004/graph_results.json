@@ -1,0 +1,499 @@
+{
+  "status": "completed",
+  "attempted": 3427,
+  "distinct_valid": 63,
+  "relaxed_motif_valid": 3,
+  "selected": [
+    {
+      "mask": 3164,
+      "placement": 13,
+      "score": [
+        14,
+        15,
+        72,
+        1
+      ],
+      "following": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        0
+      ],
+      "previous": [
+        5,
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "symmetric": true,
+      "motifs": 1,
+      "outcome": "interface_valid",
+      "mandatory_counts": [
+        12,
+        12,
+        12,
+        12,
+        12,
+        12
+      ],
+      "component_counts": [
+        10,
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "max_mandatory": 12,
+      "sum_mandatory": 72
+    },
+    {
+      "mask": 1372,
+      "placement": 49,
+      "score": [
+        14,
+        15,
+        72,
+        2
+      ],
+      "following": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        0
+      ],
+      "previous": [
+        5,
+        0,
+        4,
+        2,
+        3,
+        1
+      ],
+      "symmetric": true,
+      "motifs": 2,
+      "outcome": "interface_valid",
+      "mandatory_counts": [
+        12,
+        12,
+        12,
+        12,
+        12,
+        12
+      ],
+      "component_counts": [
+        10,
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "max_mandatory": 12,
+      "sum_mandatory": 72
+    },
+    {
+      "mask": 3150,
+      "placement": 49,
+      "score": [
+        14,
+        15,
+        72,
+        2
+      ],
+      "following": [
+        1,
+        5,
+        3,
+        4,
+        2,
+        0
+      ],
+      "previous": [
+        5,
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "symmetric": true,
+      "motifs": 2,
+      "outcome": "interface_valid",
+      "mandatory_counts": [
+        12,
+        12,
+        12,
+        12,
+        12,
+        12
+      ],
+      "component_counts": [
+        10,
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "max_mandatory": 12,
+      "sum_mandatory": 72
+    },
+    {
+      "mask": 3192,
+      "placement": 13,
+      "score": [
+        14,
+        15,
+        72,
+        2
+      ],
+      "following": [
+        1,
+        2,
+        0,
+        4,
+        5,
+        3
+      ],
+      "previous": [
+        5,
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "symmetric": true,
+      "motifs": 2,
+      "outcome": "interface_valid",
+      "mandatory_counts": [
+        12,
+        12,
+        12,
+        12,
+        12,
+        12
+      ],
+      "component_counts": [
+        10,
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "max_mandatory": 12,
+      "sum_mandatory": 72
+    },
+    {
+      "mask": 3612,
+      "placement": 13,
+      "score": [
+        14,
+        15,
+        72,
+        2
+      ],
+      "following": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        0
+      ],
+      "previous": [
+        2,
+        0,
+        1,
+        5,
+        3,
+        4
+      ],
+      "symmetric": true,
+      "motifs": 2,
+      "outcome": "interface_valid",
+      "mandatory_counts": [
+        12,
+        12,
+        12,
+        12,
+        12,
+        12
+      ],
+      "component_counts": [
+        10,
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "max_mandatory": 12,
+      "sum_mandatory": 72
+    },
+    {
+      "mask": 476,
+      "placement": 49,
+      "score": [
+        14,
+        15,
+        84,
+        2
+      ],
+      "following": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        0
+      ],
+      "previous": [
+        5,
+        3,
+        4,
+        2,
+        0,
+        1
+      ],
+      "symmetric": true,
+      "motifs": 2,
+      "outcome": "interface_valid",
+      "mandatory_counts": [
+        12,
+        12,
+        12,
+        12,
+        12,
+        12
+      ],
+      "component_counts": [
+        10,
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "max_mandatory": 12,
+      "sum_mandatory": 72
+    },
+    {
+      "mask": 1400,
+      "placement": 13,
+      "score": [
+        14,
+        15,
+        84,
+        2
+      ],
+      "following": [
+        1,
+        2,
+        0,
+        4,
+        5,
+        3
+      ],
+      "previous": [
+        5,
+        0,
+        4,
+        2,
+        3,
+        1
+      ],
+      "symmetric": true,
+      "motifs": 2,
+      "outcome": "interface_valid",
+      "mandatory_counts": [
+        12,
+        12,
+        12,
+        12,
+        12,
+        12
+      ],
+      "component_counts": [
+        10,
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "max_mandatory": 12,
+      "sum_mandatory": 72
+    },
+    {
+      "mask": 1116,
+      "placement": 49,
+      "score": [
+        16,
+        18,
+        72,
+        2
+      ],
+      "following": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        0
+      ],
+      "previous": [
+        5,
+        0,
+        1,
+        2,
+        3,
+        1
+      ],
+      "symmetric": false,
+      "motifs": 2,
+      "outcome": "interface_valid",
+      "mandatory_counts": [
+        12,
+        14,
+        12,
+        12,
+        10,
+        12
+      ],
+      "component_counts": [
+        10,
+        12,
+        10,
+        10,
+        8,
+        10
+      ],
+      "max_mandatory": 14,
+      "sum_mandatory": 72
+    },
+    {
+      "mask": 3100,
+      "placement": 13,
+      "score": [
+        16,
+        18,
+        72,
+        2
+      ],
+      "following": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        0
+      ],
+      "previous": [
+        2,
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "symmetric": false,
+      "motifs": 2,
+      "outcome": "interface_valid",
+      "mandatory_counts": [
+        12,
+        12,
+        14,
+        12,
+        12,
+        10
+      ],
+      "component_counts": [
+        10,
+        10,
+        12,
+        10,
+        10,
+        8
+      ],
+      "max_mandatory": 14,
+      "sum_mandatory": 72
+    },
+    {
+      "mask": 3420,
+      "placement": 49,
+      "score": [
+        16,
+        18,
+        72,
+        2
+      ],
+      "following": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        0
+      ],
+      "previous": [
+        5,
+        0,
+        4,
+        2,
+        3,
+        4
+      ],
+      "symmetric": false,
+      "motifs": 2,
+      "outcome": "interface_valid",
+      "mandatory_counts": [
+        12,
+        10,
+        12,
+        12,
+        14,
+        12
+      ],
+      "component_counts": [
+        10,
+        8,
+        10,
+        10,
+        12,
+        10
+      ],
+      "max_mandatory": 14,
+      "sum_mandatory": 72
+    }
+  ],
+  "control": {
+    "mask": 924,
+    "placement": null,
+    "following": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      0
+    ],
+    "previous": [
+      2,
+      3,
+      4,
+      5,
+      0,
+      1
+    ],
+    "source": "compact43/reroute_best.json"
+  }
+}

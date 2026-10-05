@@ -1,0 +1,575 @@
+{
+  "reason": "Disposable debug/cache files, merged tail ledger, duplicate display text, and lower-limit clones reproducible from manifest source paths",
+  "files": [
+    {
+      "path": "audit_one.pdb",
+      "bytes": 1421312
+    },
+    {
+      "path": "load_profile.pdb",
+      "bytes": 1413120
+    },
+    {
+      "path": "__pycache__\\bend_bridge.cpython-311.pyc",
+      "bytes": 4018
+    },
+    {
+      "path": "__pycache__\\common.cpython-311.pyc",
+      "bytes": 9123
+    },
+    {
+      "path": "__pycache__\\compact_faces.cpython-311.pyc",
+      "bytes": 17331
+    },
+    {
+      "path": "__pycache__\\faces32.cpython-311.pyc",
+      "bytes": 6490
+    },
+    {
+      "path": "__pycache__\\layout.cpython-311.pyc",
+      "bytes": 7864
+    },
+    {
+      "path": "__pycache__\\limit_scan.cpython-311.pyc",
+      "bytes": 7309
+    },
+    {
+      "path": "__pycache__\\merge_faces.cpython-311.pyc",
+      "bytes": 3790
+    },
+    {
+      "path": "__pycache__\\progress.cpython-311.pyc",
+      "bytes": 2695
+    },
+    {
+      "path": "geometry_comparison.txt",
+      "bytes": 1800
+    },
+    {
+      "path": "compact_faces\\attempts_tail768.jsonl",
+      "bytes": 31161
+    },
+    {
+      "path": "limits42\\run000\\02b9296c301b3738.flyer",
+      "bytes": 1235
+    },
+    {
+      "path": "limits42\\run000\\02b9296c301b3738.json",
+      "bytes": 17634
+    },
+    {
+      "path": "limits42\\run000\\0d7fd3825aacd8bc.flyer",
+      "bytes": 1213
+    },
+    {
+      "path": "limits42\\run000\\0d7fd3825aacd8bc.json",
+      "bytes": 17387
+    },
+    {
+      "path": "limits42\\run000\\14bd0fb19d38522c.flyer",
+      "bytes": 1275
+    },
+    {
+      "path": "limits42\\run000\\14bd0fb19d38522c.json",
+      "bytes": 18295
+    },
+    {
+      "path": "limits42\\run000\\2a49566d781c9c92.flyer",
+      "bytes": 1217
+    },
+    {
+      "path": "limits42\\run000\\2a49566d781c9c92.json",
+      "bytes": 17211
+    },
+    {
+      "path": "limits42\\run000\\2ee19a8296614a35.flyer",
+      "bytes": 1227
+    },
+    {
+      "path": "limits42\\run000\\2ee19a8296614a35.json",
+      "bytes": 17867
+    },
+    {
+      "path": "limits42\\run000\\2fec36e3dbb1312e.flyer",
+      "bytes": 1257
+    },
+    {
+      "path": "limits42\\run000\\2fec36e3dbb1312e.json",
+      "bytes": 17696
+    },
+    {
+      "path": "limits42\\run000\\341b1b8807b3ac33.flyer",
+      "bytes": 1211
+    },
+    {
+      "path": "limits42\\run000\\341b1b8807b3ac33.json",
+      "bytes": 17276
+    },
+    {
+      "path": "limits42\\run000\\3b3e6892ef93a4ed.flyer",
+      "bytes": 1213
+    },
+    {
+      "path": "limits42\\run000\\3b3e6892ef93a4ed.json",
+      "bytes": 17387
+    },
+    {
+      "path": "limits42\\run000\\3fa8a536a8bc3aa4.flyer",
+      "bytes": 1235
+    },
+    {
+      "path": "limits42\\run000\\3fa8a536a8bc3aa4.json",
+      "bytes": 17976
+    },
+    {
+      "path": "limits42\\run000\\432d756e8e9b2deb.flyer",
+      "bytes": 1275
+    },
+    {
+      "path": "limits42\\run000\\432d756e8e9b2deb.json",
+      "bytes": 18313
+    },
+    {
+      "path": "limits42\\run000\\45ae50501551b52d.flyer",
+      "bytes": 1257
+    },
+    {
+      "path": "limits42\\run000\\45ae50501551b52d.json",
+      "bytes": 17749
+    },
+    {
+      "path": "limits42\\run000\\4885b256673cde32.flyer",
+      "bytes": 1257
+    },
+    {
+      "path": "limits42\\run000\\4885b256673cde32.json",
+      "bytes": 17743
+    },
+    {
+      "path": "limits42\\run000\\54680e465f36d934.flyer",
+      "bytes": 1239
+    },
+    {
+      "path": "limits42\\run000\\54680e465f36d934.json",
+      "bytes": 17482
+    },
+    {
+      "path": "limits42\\run000\\575d60fb8d8eea51.flyer",
+      "bytes": 1205
+    },
+    {
+      "path": "limits42\\run000\\575d60fb8d8eea51.json",
+      "bytes": 17276
+    },
+    {
+      "path": "limits42\\run000\\588ebd68deeaa54a.flyer",
+      "bytes": 1225
+    },
+    {
+      "path": "limits42\\run000\\588ebd68deeaa54a.json",
+      "bytes": 17367
+    },
+    {
+      "path": "limits42\\run000\\743df15fa85e37c7.flyer",
+      "bytes": 1217
+    },
+    {
+      "path": "limits42\\run000\\743df15fa85e37c7.json",
+      "bytes": 17210
+    },
+    {
+      "path": "limits42\\run000\\789a24246d1d08c2.flyer",
+      "bytes": 1235
+    },
+    {
+      "path": "limits42\\run000\\789a24246d1d08c2.json",
+      "bytes": 17634
+    },
+    {
+      "path": "limits42\\run000\\87f80559649784c9.flyer",
+      "bytes": 1275
+    },
+    {
+      "path": "limits42\\run000\\87f80559649784c9.json",
+      "bytes": 17909
+    },
+    {
+      "path": "limits42\\run000\\990e81b87525112e.flyer",
+      "bytes": 1211
+    },
+    {
+      "path": "limits42\\run000\\990e81b87525112e.json",
+      "bytes": 17276
+    },
+    {
+      "path": "limits42\\run000\\9aba755afb84ce9f.flyer",
+      "bytes": 1205
+    },
+    {
+      "path": "limits42\\run000\\9aba755afb84ce9f.json",
+      "bytes": 17276
+    },
+    {
+      "path": "limits42\\run000\\9b27d6c266333849.flyer",
+      "bytes": 1225
+    },
+    {
+      "path": "limits42\\run000\\9b27d6c266333849.json",
+      "bytes": 17322
+    },
+    {
+      "path": "limits42\\run000\\9d27aa79a7d6ed57.flyer",
+      "bytes": 1205
+    },
+    {
+      "path": "limits42\\run000\\9d27aa79a7d6ed57.json",
+      "bytes": 17302
+    },
+    {
+      "path": "limits42\\run000\\a52b3752b95ee473.flyer",
+      "bytes": 1211
+    },
+    {
+      "path": "limits42\\run000\\a52b3752b95ee473.json",
+      "bytes": 17645
+    },
+    {
+      "path": "limits42\\run000\\b06bd61216806dc4.flyer",
+      "bytes": 1225
+    },
+    {
+      "path": "limits42\\run000\\b06bd61216806dc4.json",
+      "bytes": 17387
+    },
+    {
+      "path": "limits42\\run000\\b1d5bfc42576bc39.flyer",
+      "bytes": 1239
+    },
+    {
+      "path": "limits42\\run000\\b1d5bfc42576bc39.json",
+      "bytes": 17499
+    },
+    {
+      "path": "limits42\\run000\\b8e1581cb861e86a.flyer",
+      "bytes": 1255
+    },
+    {
+      "path": "limits42\\run000\\b8e1581cb861e86a.json",
+      "bytes": 17721
+    },
+    {
+      "path": "limits42\\run000\\ba970b0d3f86c4c3.flyer",
+      "bytes": 1227
+    },
+    {
+      "path": "limits42\\run000\\ba970b0d3f86c4c3.json",
+      "bytes": 17869
+    },
+    {
+      "path": "limits42\\run000\\bc2e2f47e1d7da63.flyer",
+      "bytes": 1239
+    },
+    {
+      "path": "limits42\\run000\\bc2e2f47e1d7da63.json",
+      "bytes": 17868
+    },
+    {
+      "path": "limits42\\run000\\bdd754c97e060880.flyer",
+      "bytes": 1235
+    },
+    {
+      "path": "limits42\\run000\\bdd754c97e060880.json",
+      "bytes": 17634
+    },
+    {
+      "path": "limits42\\run000\\cea99b9238d5382d.flyer",
+      "bytes": 1225
+    },
+    {
+      "path": "limits42\\run000\\cea99b9238d5382d.json",
+      "bytes": 17321
+    },
+    {
+      "path": "limits42\\run000\\dfa5ad5da39f2372.flyer",
+      "bytes": 1217
+    },
+    {
+      "path": "limits42\\run000\\dfa5ad5da39f2372.json",
+      "bytes": 17645
+    },
+    {
+      "path": "limits42\\run000\\e3793c63a4bdd938.flyer",
+      "bytes": 1225
+    },
+    {
+      "path": "limits42\\run000\\e3793c63a4bdd938.json",
+      "bytes": 17321
+    },
+    {
+      "path": "limits42\\run000\\fd12d3489231b22c.flyer",
+      "bytes": 1233
+    },
+    {
+      "path": "limits42\\run000\\fd12d3489231b22c.json",
+      "bytes": 17526
+    },
+    {
+      "path": "limits42\\run000\\ff0e03de2867c311.flyer",
+      "bytes": 1205
+    },
+    {
+      "path": "limits42\\run000\\ff0e03de2867c311.json",
+      "bytes": 17277
+    },
+    {
+      "path": "limits42\\run002\\588ebd68deeaa54a.flyer",
+      "bytes": 1225
+    },
+    {
+      "path": "limits42\\run002\\588ebd68deeaa54a.json",
+      "bytes": 17367
+    },
+    {
+      "path": "limits42\\run002\\743df15fa85e37c7.flyer",
+      "bytes": 1217
+    },
+    {
+      "path": "limits42\\run002\\743df15fa85e37c7.json",
+      "bytes": 17210
+    },
+    {
+      "path": "limits42\\run002\\789a24246d1d08c2.flyer",
+      "bytes": 1235
+    },
+    {
+      "path": "limits42\\run002\\789a24246d1d08c2.json",
+      "bytes": 17634
+    },
+    {
+      "path": "limits42\\run002\\87f80559649784c9.flyer",
+      "bytes": 1275
+    },
+    {
+      "path": "limits42\\run002\\87f80559649784c9.json",
+      "bytes": 17909
+    },
+    {
+      "path": "limits42\\run002\\990e81b87525112e.flyer",
+      "bytes": 1211
+    },
+    {
+      "path": "limits42\\run002\\990e81b87525112e.json",
+      "bytes": 17276
+    },
+    {
+      "path": "limits42\\run002\\9aba755afb84ce9f.flyer",
+      "bytes": 1205
+    },
+    {
+      "path": "limits42\\run002\\9aba755afb84ce9f.json",
+      "bytes": 17276
+    },
+    {
+      "path": "limits42\\run002\\9b27d6c266333849.flyer",
+      "bytes": 1225
+    },
+    {
+      "path": "limits42\\run002\\9b27d6c266333849.json",
+      "bytes": 17322
+    },
+    {
+      "path": "limits42\\run002\\9d27aa79a7d6ed57.flyer",
+      "bytes": 1205
+    },
+    {
+      "path": "limits42\\run002\\9d27aa79a7d6ed57.json",
+      "bytes": 17302
+    },
+    {
+      "path": "limits42\\run002\\a52b3752b95ee473.flyer",
+      "bytes": 1211
+    },
+    {
+      "path": "limits42\\run002\\a52b3752b95ee473.json",
+      "bytes": 17645
+    },
+    {
+      "path": "limits42\\run002\\b06bd61216806dc4.flyer",
+      "bytes": 1225
+    },
+    {
+      "path": "limits42\\run002\\b06bd61216806dc4.json",
+      "bytes": 17387
+    },
+    {
+      "path": "limits42\\run002\\b1d5bfc42576bc39.flyer",
+      "bytes": 1239
+    },
+    {
+      "path": "limits42\\run002\\b1d5bfc42576bc39.json",
+      "bytes": 17499
+    },
+    {
+      "path": "limits42\\run002\\b8e1581cb861e86a.flyer",
+      "bytes": 1255
+    },
+    {
+      "path": "limits42\\run002\\b8e1581cb861e86a.json",
+      "bytes": 17721
+    },
+    {
+      "path": "limits42\\run002\\ba970b0d3f86c4c3.flyer",
+      "bytes": 1227
+    },
+    {
+      "path": "limits42\\run002\\ba970b0d3f86c4c3.json",
+      "bytes": 17869
+    },
+    {
+      "path": "limits42\\run002\\bc2e2f47e1d7da63.flyer",
+      "bytes": 1239
+    },
+    {
+      "path": "limits42\\run002\\bc2e2f47e1d7da63.json",
+      "bytes": 17868
+    },
+    {
+      "path": "limits42\\run002\\bdd754c97e060880.flyer",
+      "bytes": 1235
+    },
+    {
+      "path": "limits42\\run002\\bdd754c97e060880.json",
+      "bytes": 17634
+    },
+    {
+      "path": "limits42\\run002\\c0e7627de20bd46a.flyer",
+      "bytes": 1275
+    },
+    {
+      "path": "limits42\\run002\\c0e7627de20bd46a.json",
+      "bytes": 17926
+    },
+    {
+      "path": "limits42\\run002\\cea99b9238d5382d.flyer",
+      "bytes": 1225
+    },
+    {
+      "path": "limits42\\run002\\cea99b9238d5382d.json",
+      "bytes": 17321
+    },
+    {
+      "path": "limits42\\run002\\dfa5ad5da39f2372.flyer",
+      "bytes": 1217
+    },
+    {
+      "path": "limits42\\run002\\dfa5ad5da39f2372.json",
+      "bytes": 17645
+    },
+    {
+      "path": "limits42\\run002\\e3793c63a4bdd938.flyer",
+      "bytes": 1225
+    },
+    {
+      "path": "limits42\\run002\\e3793c63a4bdd938.json",
+      "bytes": 17321
+    },
+    {
+      "path": "limits42\\run002\\fd12d3489231b22c.flyer",
+      "bytes": 1233
+    },
+    {
+      "path": "limits42\\run002\\fd12d3489231b22c.json",
+      "bytes": 17526
+    },
+    {
+      "path": "limits42\\run002\\ff0e03de2867c311.flyer",
+      "bytes": 1205
+    },
+    {
+      "path": "limits42\\run002\\ff0e03de2867c311.json",
+      "bytes": 17277
+    },
+    {
+      "path": "limits42\\run004\\0c36c6bfb7ffeb09.flyer",
+      "bytes": 1225
+    },
+    {
+      "path": "limits42\\run004\\0c36c6bfb7ffeb09.json",
+      "bytes": 17702
+    },
+    {
+      "path": "limits42\\run004\\12f31780ebb698fd.flyer",
+      "bytes": 1243
+    },
+    {
+      "path": "limits42\\run004\\12f31780ebb698fd.json",
+      "bytes": 17830
+    },
+    {
+      "path": "limits42\\run004\\60c3af7f48e8c6ac.flyer",
+      "bytes": 1225
+    },
+    {
+      "path": "limits42\\run004\\60c3af7f48e8c6ac.json",
+      "bytes": 17497
+    },
+    {
+      "path": "limits42\\run004\\60e97edccfdd63f6.flyer",
+      "bytes": 1265
+    },
+    {
+      "path": "limits42\\run004\\60e97edccfdd63f6.json",
+      "bytes": 17936
+    },
+    {
+      "path": "limits42\\run004\\835912063d9b8617.flyer",
+      "bytes": 1225
+    },
+    {
+      "path": "limits42\\run004\\835912063d9b8617.json",
+      "bytes": 17699
+    },
+    {
+      "path": "limits42\\run004\\f794ac01b223df22.flyer",
+      "bytes": 1225
+    },
+    {
+      "path": "limits42\\run004\\f794ac01b223df22.json",
+      "bytes": 17700
+    },
+    {
+      "path": "limits42\\run006\\45ca73fd5965142a.flyer",
+      "bytes": 1225
+    },
+    {
+      "path": "limits42\\run006\\45ca73fd5965142a.json",
+      "bytes": 17492
+    },
+    {
+      "path": "limits42\\run007\\140d207f44d417f4.flyer",
+      "bytes": 1233
+    },
+    {
+      "path": "limits42\\run007\\140d207f44d417f4.json",
+      "bytes": 17433
+    },
+    {
+      "path": "limits42\\run007\\25931cc09d2b2a5f.flyer",
+      "bytes": 1233
+    },
+    {
+      "path": "limits42\\run007\\25931cc09d2b2a5f.json",
+      "bytes": 17433
+    },
+    {
+      "path": "limits42\\run007\\f421cd5f9a6136f5.flyer",
+      "bytes": 1233
+    },
+    {
+      "path": "limits42\\run007\\f421cd5f9a6136f5.json",
+      "bytes": 17433
+    }
+  ],
+  "count": 142,
+  "bytes": 4147395.0
+}

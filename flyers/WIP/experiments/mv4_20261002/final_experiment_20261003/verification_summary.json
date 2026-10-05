@@ -1,0 +1,10 @@
+{
+  "cases": 80,
+  "passed": 80,
+  "distances": [
+    3333
+  ],
+  "encoded_limit": 49,
+  "sha256": "e6dc209fffffa2ba87bd035990981034c204d334473fa2555e678df088dac397",
+  "artifact": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\mv4_pl49.flyer"
+}

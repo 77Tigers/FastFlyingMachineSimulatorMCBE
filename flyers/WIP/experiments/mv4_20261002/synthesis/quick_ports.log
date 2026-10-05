@@ -1,0 +1,9 @@
+0 {'route': 16}
+1 {'route': 16, 'hardware': 16}
+2 {'route': 16, 'hardware': 32}
+3 {'route': 16, 'hardware': 48}
+4 {'route': 16, 'hardware': 64}
+5 {'route': 16, 'hardware': 80}
+6 {'route': 32, 'hardware': 80}
+7 {'route': 32, 'hardware': 96}
+8 {'route': 32, 'hardware': 112}

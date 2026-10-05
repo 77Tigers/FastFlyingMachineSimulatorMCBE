@@ -1,0 +1,57 @@
+{
+  "status": "completed",
+  "elapsed": 121,
+  "statistics": {
+    "attempts": 540,
+    "screened": 3,
+    "accepted": 3
+  },
+  "passes": 3,
+  "score": [
+    33,
+    196,
+    36,
+    15
+  ],
+  "history": [
+    {
+      "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\local43\\reroute_0001.flyer",
+      "limit": 43,
+      "score": [
+        33,
+        196,
+        38,
+        15
+      ],
+      "body": 2,
+      "mode": "flat",
+      "seed": 0
+    },
+    {
+      "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\local43\\reroute_0002.flyer",
+      "limit": 43,
+      "score": [
+        33,
+        196,
+        37,
+        15
+      ],
+      "body": 1,
+      "mode": "flat",
+      "seed": 0
+    },
+    {
+      "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\local43\\reroute_0003.flyer",
+      "limit": 43,
+      "score": [
+        33,
+        196,
+        36,
+        15
+      ],
+      "body": 0,
+      "mode": "flat",
+      "seed": 0
+    }
+  ]
+}

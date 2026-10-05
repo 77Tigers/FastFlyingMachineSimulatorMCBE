@@ -1,0 +1,10 @@
+{
+  "status": "completed",
+  "elapsed_seconds": 105.2,
+  "cases_total": 216,
+  "cases_done": 216,
+  "statistics": {
+    "joint_route": 74,
+    "backbone_domain_disconnected": 142
+  }
+}

@@ -59,3 +59,8 @@ push_limit,name,start_min_x,end_min_x,distance,end_blocks,extensions
 106,pulling3_tenbody,11,3011,3000,852,30000
 126,pulling3_tenbody,11,3011,3000,882,30000
 127,pulling3_tenbody,11,3011,3000,890,30000
+49,mv4,12,3345,3333,265,20000
+46,mv4_symmetric,12,3345,3333,238,20000
+45,mv4_symmetric_easy,12,3345,3333,242,20000
+43,mv4_symmetric_easy,12,3345,3333,236,20000
+43,mv4_symmetric_easy_compact,12,3345,3333,234,20000

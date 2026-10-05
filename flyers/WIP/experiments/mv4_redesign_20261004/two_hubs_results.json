@@ -1,0 +1,141 @@
+{
+  "status": "completed",
+  "done": 15756,
+  "total": 15756,
+  "elapsed": 257,
+  "motifs": [
+    "square_columns",
+    "offset_pairs"
+  ],
+  "cover_counts": [
+    46,
+    56
+  ],
+  "outcomes": {
+    "hardware": 7713,
+    "body_contact": 8042,
+    "interface_valid": 1
+  },
+  "valid_face_pairs": 1,
+  "selected": [
+    {
+      "motif": 1,
+      "motif_name": "offset_pairs",
+      "own": 38,
+      "previous": 12,
+      "valid_graphs": [
+        0
+      ],
+      "score": [
+        14,
+        84,
+        12,
+        68
+      ],
+      "config": {
+        "piston_sites": [
+          [
+            -1,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "following_ribbons": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            0
+          ]
+        ],
+        "observers": [
+          [
+            0,
+            -1,
+            0,
+            1
+          ],
+          [
+            2,
+            -1,
+            0,
+            1
+          ]
+        ],
+        "own": [
+          [
+            -1,
+            1
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            4,
+            0
+          ]
+        ],
+        "previous": [
+          [
+            -2,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            1
+          ]
+        ]
+      }
+    }
+  ],
+  "first_failure": {
+    "graph": 0,
+    "motif": 0,
+    "own": 0,
+    "previous": 0,
+    "outcome": "hardware",
+    "detail": [
+      "hardware",
+      0,
+      [
+        -2,
+        3,
+        2
+      ]
+    ]
+  }
+}

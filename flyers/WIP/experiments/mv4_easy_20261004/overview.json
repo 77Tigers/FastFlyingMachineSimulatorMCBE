@@ -1,0 +1,139 @@
+{
+  "groups": {
+    "backbone": {
+      "done": 216,
+      "counts": {
+        "joint_route": 74,
+        "backbone_domain_disconnected": 142
+      }
+    },
+    "bend": {
+      "done": 360,
+      "counts": {
+        "short80_pass": 8,
+        "joint_route": 352
+      }
+    },
+    "compact_faces": {
+      "done": 984,
+      "counts": {
+        "short80_pass": 6,
+        "joint_route": 978
+      }
+    },
+    "faces32": {
+      "done": 328,
+      "counts": {
+        "joint_route": 328
+      }
+    },
+    "flat": {
+      "done": 342,
+      "counts": {
+        "short80_pass": 4,
+        "joint_route": 338
+      }
+    },
+    "lower32": {
+      "done": 20,
+      "counts": {
+        "joint_route": 20
+      }
+    },
+    "ports": {
+      "done": 648,
+      "counts": {
+        "short80_pass": 9,
+        "joint_route": 207,
+        "body_contact": 372,
+        "hardware": 60
+      }
+    },
+    "rail": {
+      "done": 360,
+      "counts": {
+        "joint_route": 349,
+        "short80_pass": 11
+      }
+    }
+  },
+  "verified": [
+    {
+      "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\validation\\case0000_pl45\\summary.json",
+      "limit": 45,
+      "artifact": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\bank\\pl45\\mv4_symmetric_easy.flyer"
+    },
+    {
+      "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\validation\\case0006_pl43\\summary.json",
+      "limit": 43,
+      "artifact": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\bank\\pl43\\mv4_symmetric_easy.flyer"
+    },
+    {
+      "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\validation\\compact43_reroute_best\\summary.json",
+      "limit": 43,
+      "artifact": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\bank\\pl43\\mv4_symmetric_easy_compact.flyer"
+    }
+  ],
+  "best_short": [
+    {
+      "category": "ports",
+      "case": 95,
+      "limit": 43,
+      "score": [
+        33,
+        194,
+        34,
+        16
+      ],
+      "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\ports\\case0095_pl43.flyer"
+    },
+    {
+      "category": "flat",
+      "case": 6,
+      "limit": 43,
+      "score": [
+        33,
+        196,
+        39,
+        15
+      ],
+      "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\flat\\case0006_pl43.flyer"
+    },
+    {
+      "category": "bend",
+      "case": 44,
+      "limit": 43,
+      "score": [
+        33,
+        198,
+        38,
+        17
+      ],
+      "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\bend\\case0044_pl43.flyer"
+    },
+    {
+      "category": "rail",
+      "case": 36,
+      "limit": 44,
+      "score": [
+        34,
+        194,
+        32,
+        15
+      ],
+      "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\rail\\case0036_pl44.flyer"
+    },
+    {
+      "category": "bend",
+      "case": 56,
+      "limit": 44,
+      "score": [
+        34,
+        194,
+        34,
+        15
+      ],
+      "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\bend\\case0056_pl44.flyer"
+    }
+  ]
+}

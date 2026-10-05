@@ -1,0 +1,1 @@
+ticks=10000 movement_failures=0 limit=43

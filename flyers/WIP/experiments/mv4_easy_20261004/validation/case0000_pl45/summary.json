@@ -1,0 +1,26 @@
+{
+  "status": "verified",
+  "source": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\flat\\case0000_pl45.flyer",
+  "fields": {
+    "limit": "45",
+    "start_min_x": "12",
+    "end_min_x": "3345",
+    "distance": "3333",
+    "extensions": "20000",
+    "extension_failures": "0",
+    "end_blocks": "242",
+    "conservation_mismatch_ticks": "0",
+    "max_successful_action": "45",
+    "movement_failures": "0"
+  },
+  "cases": 80,
+  "passed": 80,
+  "full_passenger_state_recurrence": false,
+  "one_lower": {
+    "distance": "41",
+    "extension_failures": "9",
+    "movement_failures": "9"
+  },
+  "artifact": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\bank\\pl45\\mv4_symmetric_easy.flyer",
+  "sha256": "41f1e79b6018f51ae2e53f0e027020aab74fd834f61f1b2f08c99498930faf07"
+}

@@ -1,0 +1,201 @@
+{
+  "elapsed_seconds": 420.2,
+  "statistics": {
+    "attempts": 53,
+    "routed": 4,
+    "short80_pass": 4,
+    "joint_route": 49
+  },
+  "unique_placements": 57,
+  "best": {
+    "attempt": 1,
+    "score": [
+      0,
+      0,
+      36,
+      198
+    ],
+    "cap": 36,
+    "parent": {
+      "seed": 2642,
+      "family": "hexagon",
+      "placement": [
+        [
+          [
+            6,
+            0
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            -3,
+            3
+          ],
+          [
+            -6,
+            0
+          ],
+          [
+            -3,
+            -3
+          ],
+          [
+            3,
+            -3
+          ]
+        ],
+        [
+          3,
+          0,
+          0,
+          1,
+          2,
+          2
+        ],
+        [
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1
+        ]
+      ],
+      "rank": [
+        26,
+        78
+      ],
+      "own": [
+        [
+          1,
+          1
+        ],
+        [
+          -2,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "previous": [
+        [
+          2,
+          0
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "span_lower_bounds": [
+        21,
+        17,
+        20,
+        21,
+        17,
+        20
+      ],
+      "mst_rank": [
+        26,
+        26,
+        26
+      ],
+      "mandatory_counts": [
+        12,
+        12,
+        12,
+        12,
+        12,
+        12
+      ]
+    },
+    "report": {
+      "best": [
+        0,
+        0,
+        36,
+        198
+      ],
+      "iteration": 1,
+      "counts": [
+        36,
+        30,
+        33,
+        36,
+        30,
+        33
+      ]
+    }
+  },
+  "candidates": [
+    {
+      "attempt": 0,
+      "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_elegant_20261004\\ranked_a0_pl48.flyer",
+      "counts": [
+        36,
+        32,
+        34,
+        36,
+        32,
+        34
+      ],
+      "pass80": true
+    },
+    {
+      "attempt": 1,
+      "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_elegant_20261004\\ranked_a1_pl48.flyer",
+      "counts": [
+        36,
+        30,
+        33,
+        36,
+        30,
+        33
+      ],
+      "pass80": true
+    },
+    {
+      "attempt": 4,
+      "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_elegant_20261004\\ranked_a4_pl48.flyer",
+      "counts": [
+        35,
+        35,
+        36,
+        35,
+        35,
+        36
+      ],
+      "pass80": true
+    },
+    {
+      "attempt": 6,
+      "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_elegant_20261004\\ranked_a6_pl48.flyer",
+      "counts": [
+        36,
+        34,
+        34,
+        36,
+        34,
+        34
+      ],
+      "pass80": true
+    }
+  ],
+  "status": "completed"
+}

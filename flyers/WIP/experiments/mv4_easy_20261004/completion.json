@@ -1,0 +1,27 @@
+{
+  "status": "completed",
+  "routing_cases": 3258,
+  "interface_survey_cases": 3648,
+  "pruning_trials": 1328,
+  "fixed_pair_reroutes": 1620,
+  "face_extension_routes": 1312,
+  "workers_seconds": {
+    "main": 2562,
+    "tail": 690,
+    "cap32": 1035
+  },
+  "pl42_rejections": 45,
+  "best_artifact": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\bank\\pl43\\mv4_symmetric_easy_compact.flyer",
+  "sha256": "bbcdbe089b3f63630af21cb4bd04aa8fb80d6abe7870a5ce40c1bfb4bae41c47",
+  "peak_profile": {
+    "load": "43",
+    "glue": "33",
+    "pistons": "8",
+    "observers": "2",
+    "arms": "0",
+    "other": "0",
+    "actions": "84",
+    "first_tick": "122"
+  },
+  "full_passenger_recurrence": false
+}

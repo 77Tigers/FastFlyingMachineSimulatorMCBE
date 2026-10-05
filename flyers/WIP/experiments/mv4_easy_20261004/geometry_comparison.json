@@ -1,0 +1,104 @@
+{
+  "banked_pl49": {
+    "glue_total": 225,
+    "opposite_half_turn_differences": [
+      75,
+      75,
+      75
+    ],
+    "centered_opposite_differences": [
+      61,
+      61,
+      61
+    ],
+    "body_metrics": [
+      {
+        "glue": 38,
+        "branches": 5,
+        "elbows": 11,
+        "x_layers": 5
+      },
+      {
+        "glue": 36,
+        "branches": 3,
+        "elbows": 17,
+        "x_layers": 5
+      },
+      {
+        "glue": 39,
+        "branches": 4,
+        "elbows": 15,
+        "x_layers": 4
+      },
+      {
+        "glue": 37,
+        "branches": 4,
+        "elbows": 17,
+        "x_layers": 5
+      },
+      {
+        "glue": 39,
+        "branches": 4,
+        "elbows": 13,
+        "x_layers": 5
+      },
+      {
+        "glue": 36,
+        "branches": 4,
+        "elbows": 17,
+        "x_layers": 4
+      }
+    ]
+  },
+  "symmetric_pl43": {
+    "glue_total": 194,
+    "opposite_half_turn_differences": [
+      0,
+      0,
+      0
+    ],
+    "centered_opposite_differences": [
+      0,
+      0,
+      0
+    ],
+    "body_metrics": [
+      {
+        "glue": 33,
+        "branches": 5,
+        "elbows": 11,
+        "x_layers": 5
+      },
+      {
+        "glue": 31,
+        "branches": 5,
+        "elbows": 9,
+        "x_layers": 5
+      },
+      {
+        "glue": 33,
+        "branches": 6,
+        "elbows": 11,
+        "x_layers": 4
+      },
+      {
+        "glue": 33,
+        "branches": 5,
+        "elbows": 11,
+        "x_layers": 5
+      },
+      {
+        "glue": 31,
+        "branches": 5,
+        "elbows": 9,
+        "x_layers": 5
+      },
+      {
+        "glue": 33,
+        "branches": 6,
+        "elbows": 11,
+        "x_layers": 4
+      }
+    ]
+  }
+}

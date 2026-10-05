@@ -1,0 +1,141 @@
+{
+  "status": "time_limit_reached",
+  "elapsed_seconds": 1380.1,
+  "limit_seconds": 1380,
+  "statistics": {
+    "routing_attempts": 98,
+    "placements": 217,
+    "rectangle": 73,
+    "joint_route": 96,
+    "hexagon": 144,
+    "hardware": 71,
+    "body_contact": 48,
+    "routed": 2,
+    "screened": 2,
+    "short80_pass": 1
+  },
+  "best": {
+    "seed": 56,
+    "score": [
+      0,
+      0,
+      38,
+      226
+    ],
+    "placement": [
+      [
+        [
+          5,
+          0
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          -3,
+          3
+        ],
+        [
+          -5,
+          0
+        ],
+        [
+          -3,
+          -3
+        ],
+        [
+          3,
+          -3
+        ]
+      ],
+      [
+        0,
+        0,
+        0,
+        2,
+        2,
+        2
+      ],
+      [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ]
+    ],
+    "report": {
+      "best": [
+        0,
+        0,
+        38,
+        226
+      ],
+      "iteration": 2,
+      "counts": [
+        38,
+        38,
+        37,
+        38,
+        38,
+        37
+      ]
+    },
+    "rail": -2,
+    "cap": 39,
+    "own": [
+      [
+        1,
+        1
+      ],
+      [
+        -2,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "previous": [
+      [
+        2,
+        0
+      ],
+      [
+        -1,
+        1
+      ],
+      [
+        -1,
+        1
+      ],
+      [
+        2,
+        0
+      ]
+    ]
+  },
+  "winners": [
+    {
+      "seed": 67,
+      "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_elegant_20261004\\candidate_s67_pl49.flyer",
+      "counts": [
+        39,
+        39,
+        36,
+        39,
+        39,
+        36
+      ],
+      "family": "hexagon",
+      "rail": null
+    }
+  ]
+}

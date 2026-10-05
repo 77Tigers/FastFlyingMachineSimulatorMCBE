@@ -1,0 +1,37 @@
+Diagnostic RNG5/chunk phases0. Compact power/action trace; no claim of success.
+TICK 0 x=13 ext=4 fail=0 ret=4
+POWER soft Coord { x: 17, y: 4, z: 24 } Observer cell=327 dir=2 sticky=false state=0 moving=false -> Coord { x: 17, y: 5, z: 24 }
+POWER soft Coord { x: 17, y: 25, z: 19 } Observer cell=391 dir=4 sticky=false state=0 moving=false -> Coord { x: 17, y: 25, z: 20 }
+POWER soft Coord { x: 17, y: 9, z: 45 } Observer cell=423 dir=5 sticky=false state=0 moving=false -> Coord { x: 17, y: 9, z: 44 }
+POWER soft Coord { x: 17, y: 30, z: 40 } Observer cell=359 dir=3 sticky=false state=0 moving=false -> Coord { x: 17, y: 29, z: 40 }
+ACTION Tick 0 · retract @ (18, 26, 48) piston=Some(Coord { x: 18, y: 26, z: 48 }) sources=67 failure=None
+ACTION Tick 0 · extend @ (17, 29, 40) piston=Some(Coord { x: 17, y: 29, z: 40 }) sources=0 failure=None
+ACTION Tick 0 · retract @ (18, 1, 41) piston=Some(Coord { x: 18, y: 1, z: 41 }) sources=67 failure=None
+ACTION Tick 0 · extend @ (17, 9, 44) piston=Some(Coord { x: 17, y: 9, z: 44 }) sources=0 failure=None
+ACTION Tick 0 · extend @ (17, 25, 20) piston=Some(Coord { x: 17, y: 25, z: 20 }) sources=0 failure=None
+ACTION Tick 0 · retract @ (18, 33, 23) piston=Some(Coord { x: 18, y: 33, z: 23 }) sources=73 failure=None
+ACTION Tick 0 · extend @ (17, 5, 24) piston=Some(Coord { x: 17, y: 5, z: 24 }) sources=0 failure=None
+ACTION Tick 0 · retract @ (18, 8, 16) piston=Some(Coord { x: 18, y: 8, z: 16 }) sources=73 failure=None
+TICK 1 x=14 ext=2 fail=0 ret=4
+POWER soft Coord { x: 19, y: 5, z: 41 } Observer cell=423 dir=5 sticky=false state=0 moving=false -> Coord { x: 19, y: 5, z: 40 }
+POWER soft Coord { x: 19, y: 26, z: 44 } Observer cell=359 dir=3 sticky=false state=0 moving=false -> Coord { x: 19, y: 25, z: 44 }
+ACTION Tick 1 · retract @ (18, 21, 43) piston=Some(Coord { x: 18, y: 21, z: 43 }) sources=73 failure=None
+ACTION Tick 1 · retract @ (18, 6, 36) piston=Some(Coord { x: 18, y: 6, z: 36 }) sources=73 failure=None
+ACTION Tick 1 · extend @ (19, 25, 44) piston=Some(Coord { x: 19, y: 25, z: 44 }) sources=0 failure=None
+ACTION Tick 1 · extend @ (19, 5, 40) piston=Some(Coord { x: 19, y: 5, z: 40 }) sources=0 failure=None
+ACTION Tick 1 · retract @ (18, 28, 28) piston=Some(Coord { x: 18, y: 28, z: 28 }) sources=67 failure=None
+ACTION Tick 1 · retract @ (18, 13, 21) piston=Some(Coord { x: 18, y: 13, z: 21 }) sources=65 failure=None
+TICK 2 x=14 ext=3 fail=0 ret=4
+POWER soft Coord { x: 19, y: 17, z: 21 } Observer cell=423 dir=5 sticky=false state=0 moving=false -> Coord { x: 19, y: 17, z: 20 }
+POWER soft Coord { x: 19, y: 17, z: 43 } Observer cell=391 dir=4 sticky=false state=0 moving=false -> Coord { x: 19, y: 17, z: 44 }
+POWER soft Coord { x: 19, y: 28, z: 32 } Observer cell=327 dir=2 sticky=false state=0 moving=false -> Coord { x: 19, y: 29, z: 32 }
+ACTION Tick 2 · retract @ (17, 25, 20) piston=Some(Coord { x: 17, y: 25, z: 20 }) sources=80 failure=None
+ACTION Tick 2 · extend @ (19, 17, 20) piston=Some(Coord { x: 19, y: 17, z: 20 }) sources=0 failure=None
+ACTION Tick 2 · retract @ (17, 5, 24) piston=Some(Coord { x: 17, y: 5, z: 24 }) sources=76 failure=None
+ACTION Tick 2 · extend @ (19, 17, 44) piston=Some(Coord { x: 19, y: 17, z: 44 }) sources=0 failure=None
+ACTION Tick 2 · retract @ (17, 9, 44) piston=Some(Coord { x: 17, y: 9, z: 44 }) sources=72 failure=None
+ACTION Tick 2 · retract @ (17, 29, 40) piston=Some(Coord { x: 17, y: 29, z: 40 }) sources=78 failure=None
+ACTION Tick 2 · extend @ (19, 29, 32) piston=Some(Coord { x: 19, y: 29, z: 32 }) sources=0 failure=None
+TICK 3 x=14 ext=0 fail=0 ret=2
+ACTION Tick 3 · retract @ (19, 25, 44) piston=Some(Coord { x: 19, y: 25, z: 44 }) sources=61 failure=None
+ACTION Tick 3 · retract @ (19, 5, 40) piston=Some(Coord { x: 19, y: 5, z: 40 }) sources=73 failure=None

@@ -1,0 +1,882 @@
+[
+  {
+    "hash": "45ae50501551b52d06051dc0d9876ea4cffcf88c2317e1f2988ffb39e4197723",
+    "source": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\bend\\case0000_pl45.flyer",
+    "outcome": "portable_rejected",
+    "result": {
+      "file": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\limits42\\run000\\45ae50501551b52d.flyer",
+      "limit": "42",
+      "rng": "5",
+      "phase_x": "0",
+      "phase_z": "0",
+      "ticks": "10000",
+      "distance": "0",
+      "end_blocks": "238",
+      "extensions": "2",
+      "extension_failures": "5",
+      "movement_failures": "5",
+      "first_failure_tick": "0",
+      "first_failure_kind": "(Coord { x: 14, y: 3, z: 13 }, \"push limit exceeded\")",
+      "conservation_mismatch_ticks": "0",
+      "max_successful_action": "41",
+      "clean": "false"
+    }
+  },
+  {
+    "hash": "4885b256673cde3270d389b0896418ba838be82636c52299bdfdae072cffe76f",
+    "source": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\bend\\case0025_pl45.flyer",
+    "outcome": "portable_rejected",
+    "result": {
+      "file": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\limits42\\run000\\4885b256673cde32.flyer",
+      "limit": "42",
+      "rng": "5",
+      "phase_x": "0",
+      "phase_z": "0",
+      "ticks": "10000",
+      "distance": "0",
+      "end_blocks": "238",
+      "extensions": "2",
+      "extension_failures": "5",
+      "movement_failures": "5",
+      "first_failure_tick": "0",
+      "first_failure_kind": "(Coord { x: 14, y: 3, z: 13 }, \"push limit exceeded\")",
+      "conservation_mismatch_ticks": "0",
+      "max_successful_action": "41",
+      "clean": "false"
+    }
+  },
+  {
+    "hash": "02b9296c301b373865afd5c660528ac43c760ed014bc17263712eeb6daaa4ac9",
+    "source": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\bend\\case0030_pl44.flyer",
+    "outcome": "portable_rejected",
+    "result": {
+      "file": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\limits42\\run000\\02b9296c301b3738.flyer",
+      "limit": "42",
+      "rng": "5",
+      "phase_x": "0",
+      "phase_z": "0",
+      "ticks": "10000",
+      "distance": "0",
+      "end_blocks": "236",
+      "extensions": "1",
+      "extension_failures": "4",
+      "movement_failures": "4",
+      "first_failure_tick": "0",
+      "first_failure_kind": "(Coord { x: 14, y: 4, z: 13 }, \"push limit exceeded\")",
+      "conservation_mismatch_ticks": "0",
+      "max_successful_action": "40",
+      "clean": "false"
+    }
+  },
+  {
+    "hash": "2fec36e3dbb1312e0f21e6246494e9777ed5782a3bf953186723f32e5c3d02cd",
+    "source": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\flat\\case0000_pl45.flyer",
+    "outcome": "portable_rejected",
+    "result": {
+      "file": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\limits42\\run000\\2fec36e3dbb1312e.flyer",
+      "limit": "42",
+      "rng": "5",
+      "phase_x": "0",
+      "phase_z": "0",
+      "ticks": "10000",
+      "distance": "0",
+      "end_blocks": "238",
+      "extensions": "2",
+      "extension_failures": "5",
+      "movement_failures": "5",
+      "first_failure_tick": "0",
+      "first_failure_kind": "(Coord { x: 14, y: 3, z: 13 }, \"push limit exceeded\")",
+      "conservation_mismatch_ticks": "0",
+      "max_successful_action": "41",
+      "clean": "false"
+    }
+  },
+  {
+    "hash": "54680e465f36d934cde0ad45ce4271cd32faef6af29da328b7e3d4575c5a8dad",
+    "source": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\flat\\case0007_pl44.flyer",
+    "outcome": "portable_rejected",
+    "result": {
+      "file": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\limits42\\run000\\54680e465f36d934.flyer",
+      "limit": "42",
+      "rng": "5",
+      "phase_x": "0",
+      "phase_z": "0",
+      "ticks": "10000",
+      "distance": "0",
+      "end_blocks": "234",
+      "extensions": "2",
+      "extension_failures": "5",
+      "movement_failures": "5",
+      "first_failure_tick": "0",
+      "first_failure_kind": "(Coord { x: 14, y: 4, z: 13 }, \"push limit exceeded\")",
+      "conservation_mismatch_ticks": "0",
+      "max_successful_action": "40",
+      "clean": "false"
+    }
+  },
+  {
+    "hash": "432d756e8e9b2debe10b907b926d3a14f2912f66f6d111c4a5ec33c8142951d5",
+    "source": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\ports\\case0084_pl45.flyer",
+    "outcome": "portable_rejected",
+    "result": {
+      "file": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\limits42\\run000\\432d756e8e9b2deb.flyer",
+      "limit": "42",
+      "rng": "5",
+      "phase_x": "0",
+      "phase_z": "0",
+      "ticks": "10000",
+      "distance": "0",
+      "end_blocks": "242",
+      "extensions": "1",
+      "extension_failures": "4",
+      "movement_failures": "4",
+      "first_failure_tick": "0",
+      "first_failure_kind": "(Coord { x: 14, y: 4, z: 12 }, \"push limit exceeded\")",
+      "conservation_mismatch_ticks": "0",
+      "max_successful_action": "41",
+      "clean": "false"
+    }
+  },
+  {
+    "hash": "2ee19a8296614a35e24a8286df2ab651889f33dd760bd709ab976cb3c2fd28b1",
+    "source": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\ports\\case0090_pl44.flyer",
+    "outcome": "portable_rejected",
+    "result": {
+      "file": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\limits42\\run000\\2ee19a8296614a35.flyer",
+      "limit": "42",
+      "rng": "5",
+      "phase_x": "0",
+      "phase_z": "0",
+      "ticks": "10000",
+      "distance": "0",
+      "end_blocks": "234",
+      "extensions": "2",
+      "extension_failures": "5",
+      "movement_failures": "5",
+      "first_failure_tick": "0",
+      "first_failure_kind": "(Coord { x: 14, y: 4, z: 13 }, \"push limit exceeded\")",
+      "conservation_mismatch_ticks": "0",
+      "max_successful_action": "42",
+      "clean": "false"
+    }
+  },
+  {
+    "hash": "3fa8a536a8bc3aa4ef3436b15eff9aff58813fba3e959f9a8718d86fe20811c1",
+    "source": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\ports\\case0093_pl44.flyer",
+    "outcome": "portable_rejected",
+    "result": {
+      "file": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\limits42\\run000\\3fa8a536a8bc3aa4.flyer",
+      "limit": "42",
+      "rng": "5",
+      "phase_x": "0",
+      "phase_z": "0",
+      "ticks": "10000",
+      "distance": "0",
+      "end_blocks": "236",
+      "extensions": "1",
+      "extension_failures": "4",
+      "movement_failures": "4",
+      "first_failure_tick": "0",
+      "first_failure_kind": "(Coord { x: 14, y: 4, z: 13 }, \"push limit exceeded\")",
+      "conservation_mismatch_ticks": "0",
+      "max_successful_action": "40",
+      "clean": "false"
+    }
+  },
+  {
+    "hash": "14bd0fb19d38522c546e123ab0682f6dfe47cecbdb5f68a20409df569f34d86f",
+    "source": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\ports\\case0325_pl45.flyer",
+    "outcome": "portable_rejected",
+    "result": {
+      "file": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\limits42\\run000\\14bd0fb19d38522c.flyer",
+      "limit": "42",
+      "rng": "5",
+      "phase_x": "0",
+      "phase_z": "0",
+      "ticks": "10000",
+      "distance": "0",
+      "end_blocks": "242",
+      "extensions": "0",
+      "extension_failures": "4",
+      "movement_failures": "4",
+      "first_failure_tick": "0",
+      "first_failure_kind": "(Coord { x: 14, y: 4, z: 12 }, \"push limit exceeded\")",
+      "conservation_mismatch_ticks": "0",
+      "max_successful_action": "0",
+      "clean": "false"
+    }
+  },
+  {
+    "hash": "341b1b8807b3ac33b20b2aa06736aa38b2b646ebb21cafec957d6ba34b5c9e9a",
+    "source": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\rail\\case0031_pl45.flyer",
+    "outcome": "portable_rejected",
+    "result": {
+      "file": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\limits42\\run000\\341b1b8807b3ac33.flyer",
+      "limit": "42",
+      "rng": "5",
+      "phase_x": "0",
+      "phase_z": "0",
+      "ticks": "10000",
+      "distance": "0",
+      "end_blocks": "230",
+      "extensions": "2",
+      "extension_failures": "5",
+      "movement_failures": "5",
+      "first_failure_tick": "0",
+      "first_failure_kind": "(Coord { x: 14, y: 5, z: 12 }, \"push limit exceeded\")",
+      "conservation_mismatch_ticks": "0",
+      "max_successful_action": "41",
+      "clean": "false"
+    }
+  },
+  {
+    "hash": "0d7fd3825aacd8bc440bb86b734ec56f20f5822e08b2ff6a68fecd502a7efa3a",
+    "source": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\rail\\case0038_pl44.flyer",
+    "outcome": "portable_rejected",
+    "result": {
+      "file": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\limits42\\run000\\0d7fd3825aacd8bc.flyer",
+      "limit": "42",
+      "rng": "5",
+      "phase_x": "0",
+      "phase_z": "0",
+      "ticks": "10000",
+      "distance": "0",
+      "end_blocks": "232",
+      "extensions": "2",
+      "extension_failures": "5",
+      "movement_failures": "5",
+      "first_failure_tick": "0",
+      "first_failure_kind": "(Coord { x: 14, y: 4, z: 13 }, \"push limit exceeded\")",
+      "conservation_mismatch_ticks": "0",
+      "max_successful_action": "42",
+      "clean": "false"
+    }
+  },
+  {
+    "hash": "3b3e6892ef93a4ed7ea3d5370fa723c25c8dee103b38c7a2283e27e767ece5ef",
+    "source": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\rail\\case0039_pl44.flyer",
+    "outcome": "portable_rejected",
+    "result": {
+      "file": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\limits42\\run000\\3b3e6892ef93a4ed.flyer",
+      "limit": "42",
+      "rng": "5",
+      "phase_x": "0",
+      "phase_z": "0",
+      "ticks": "10000",
+      "distance": "0",
+      "end_blocks": "232",
+      "extensions": "2",
+      "extension_failures": "5",
+      "movement_failures": "5",
+      "first_failure_tick": "0",
+      "first_failure_kind": "(Coord { x: 14, y: 4, z: 13 }, \"push limit exceeded\")",
+      "conservation_mismatch_ticks": "0",
+      "max_successful_action": "42",
+      "clean": "false"
+    }
+  },
+  {
+    "hash": "575d60fb8d8eea519b10bda78d02bf31b18daa4c95c30e11674489aeb24dfba8",
+    "source": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\rail\\case0043_pl44.flyer",
+    "outcome": "portable_rejected",
+    "result": {
+      "file": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\limits42\\run000\\575d60fb8d8eea51.flyer",
+      "limit": "42",
+      "rng": "5",
+      "phase_x": "0",
+      "phase_z": "0",
+      "ticks": "10000",
+      "distance": "0",
+      "end_blocks": "230",
+      "extensions": "2",
+      "extension_failures": "5",
+      "movement_failures": "5",
+      "first_failure_tick": "0",
+      "first_failure_kind": "(Coord { x: 14, y: 4, z: 13 }, \"push limit exceeded\")",
+      "conservation_mismatch_ticks": "0",
+      "max_successful_action": "41",
+      "clean": "false"
+    }
+  },
+  {
+    "hash": "2a49566d781c9c9286fc550caaba1c6c99ad4e2d9236f3000f6003e1603bc496",
+    "source": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\compact43\\reroute_0001.flyer",
+    "outcome": "portable_rejected",
+    "result": {
+      "file": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\limits42\\run000\\2a49566d781c9c92.flyer",
+      "limit": "42",
+      "rng": "5",
+      "phase_x": "0",
+      "phase_z": "0",
+      "ticks": "10000",
+      "distance": "41",
+      "end_blocks": "230",
+      "extensions": "246",
+      "extension_failures": "9",
+      "movement_failures": "9",
+      "first_failure_tick": "122",
+      "first_failure_kind": "(Coord { x: 55, y: 2, z: 17 }, \"push limit exceeded\")",
+      "conservation_mismatch_ticks": "0",
+      "max_successful_action": "42",
+      "clean": "false"
+    }
+  },
+  {
+    "hash": "789a24246d1d08c21fab2783e0c3d2c324594c44796500f19d6016cae8d3fbef",
+    "source": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\bend\\case0038_pl44.flyer",
+    "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\limits42\\run002\\789a24246d1d08c2.flyer",
+    "outcome": "single_rejected",
+    "result": {
+      "rng": "5",
+      "phase_x": "0",
+      "phase_z": "0",
+      "limit": "42",
+      "ticks": "1",
+      "distance": "0",
+      "encoded_action_limit": "42",
+      "core_sizes": "[72, 72, 68]",
+      "pass": "false",
+      "first_failure": "tick 0 extension or conservation failure"
+    }
+  },
+  {
+    "hash": "bdd754c97e060880929be65bdbfb29891e1126ee6e7890124d8aad1ac989e49d",
+    "source": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\bend\\case0039_pl44.flyer",
+    "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\limits42\\run002\\bdd754c97e060880.flyer",
+    "outcome": "single_rejected",
+    "result": {
+      "rng": "5",
+      "phase_x": "0",
+      "phase_z": "0",
+      "limit": "42",
+      "ticks": "1",
+      "distance": "0",
+      "encoded_action_limit": "42",
+      "core_sizes": "[72, 72, 68]",
+      "pass": "false",
+      "first_failure": "tick 0 extension or conservation failure"
+    }
+  },
+  {
+    "hash": "fd12d3489231b22c99283e5c0eef683f48b557b333611b977b82f0ffff1fe989",
+    "source": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\bend\\case0044_pl43.flyer",
+    "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\limits42\\run002\\fd12d3489231b22c.flyer",
+    "outcome": "single_rejected",
+    "result": {
+      "rng": "5",
+      "phase_x": "0",
+      "phase_z": "0",
+      "limit": "42",
+      "ticks": "14",
+      "distance": "4",
+      "encoded_action_limit": "42",
+      "core_sizes": "[70, 70, 70]",
+      "pass": "false",
+      "first_failure": "tick 13 extension or conservation failure"
+    }
+  },
+  {
+    "hash": "9d27aa79a7d6ed5799c52cdbb5a09f8eed499b36ffe135dcd8452f753da49cc0",
+    "source": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\bend\\case0056_pl44.flyer",
+    "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\limits42\\run002\\9d27aa79a7d6ed57.flyer",
+    "outcome": "single_rejected",
+    "result": {
+      "rng": "5",
+      "phase_x": "0",
+      "phase_z": "0",
+      "limit": "42",
+      "ticks": "1",
+      "distance": "0",
+      "encoded_action_limit": "42",
+      "core_sizes": "[72, 68, 66]",
+      "pass": "false",
+      "first_failure": "tick 0 extension or conservation failure"
+    }
+  },
+  {
+    "hash": "588ebd68deeaa54a31d19084fdc838601556a26e06432c1895cc16eaccb6ed8f",
+    "source": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\flat\\case0006_pl43.flyer",
+    "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\limits42\\run002\\588ebd68deeaa54a.flyer",
+    "outcome": "single_rejected",
+    "result": {
+      "rng": "5",
+      "phase_x": "0",
+      "phase_z": "0",
+      "limit": "42",
+      "ticks": "123",
+      "distance": "41",
+      "encoded_action_limit": "42",
+      "core_sizes": "[70, 68, 70]",
+      "pass": "false",
+      "first_failure": "tick 122 extension or conservation failure"
+    }
+  },
+  {
+    "hash": "87f80559649784c934bc1878acd5b98679e76e5e689077743907a108b135ad37",
+    "source": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\flat\\case0037_pl45.flyer",
+    "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\limits42\\run002\\87f80559649784c9.flyer",
+    "outcome": "single_rejected",
+    "result": {
+      "rng": "5",
+      "phase_x": "0",
+      "phase_z": "0",
+      "limit": "42",
+      "ticks": "1",
+      "distance": "0",
+      "encoded_action_limit": "42",
+      "core_sizes": "[74, 72, 72]",
+      "pass": "false",
+      "first_failure": "tick 0 extension or conservation failure"
+    }
+  },
+  {
+    "hash": "a52b3752b95ee473eeef1c4f4c4d01136093896bb72e5bfd4c5ea82dd4bb831b",
+    "source": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\ports\\case0054_pl45.flyer",
+    "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\limits42\\run002\\a52b3752b95ee473.flyer",
+    "outcome": "single_rejected",
+    "result": {
+      "rng": "5",
+      "phase_x": "0",
+      "phase_z": "0",
+      "limit": "42",
+      "ticks": "1",
+      "distance": "0",
+      "encoded_action_limit": "42",
+      "core_sizes": "[74, 64, 68]",
+      "pass": "false",
+      "first_failure": "tick 0 extension or conservation failure"
+    }
+  },
+  {
+    "hash": "ba970b0d3f86c4c3f5b1a75fc860d43ee456f3a92e446b7a40453d3e4cb9ce02",
+    "source": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\ports\\case0055_pl45.flyer",
+    "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\limits42\\run002\\ba970b0d3f86c4c3.flyer",
+    "outcome": "single_rejected",
+    "result": {
+      "rng": "5",
+      "phase_x": "0",
+      "phase_z": "0",
+      "limit": "42",
+      "ticks": "1",
+      "distance": "0",
+      "encoded_action_limit": "42",
+      "core_sizes": "[74, 68, 68]",
+      "pass": "false",
+      "first_failure": "tick 0 extension or conservation failure"
+    }
+  },
+  {
+    "hash": "bc2e2f47e1d7da63781d37208e1e608ddfd59cdd8aa35291c0d64d6041ba7110",
+    "source": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\ports\\case0092_pl44.flyer",
+    "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\limits42\\run002\\bc2e2f47e1d7da63.flyer",
+    "outcome": "single_rejected",
+    "result": {
+      "rng": "5",
+      "phase_x": "0",
+      "phase_z": "0",
+      "limit": "42",
+      "ticks": "1",
+      "distance": "0",
+      "encoded_action_limit": "42",
+      "core_sizes": "[72, 66, 72]",
+      "pass": "false",
+      "first_failure": "tick 0 extension or conservation failure"
+    }
+  },
+  {
+    "hash": "dfa5ad5da39f2372faf5a5c483949477df27856a41985c6a1369c85a8d2e710a",
+    "source": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\ports\\case0095_pl43.flyer",
+    "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\limits42\\run002\\dfa5ad5da39f2372.flyer",
+    "outcome": "single_rejected",
+    "result": {
+      "rng": "5",
+      "phase_x": "0",
+      "phase_z": "0",
+      "limit": "42",
+      "ticks": "123",
+      "distance": "41",
+      "encoded_action_limit": "42",
+      "core_sizes": "[70, 66, 70]",
+      "pass": "false",
+      "first_failure": "tick 122 extension or conservation failure"
+    }
+  },
+  {
+    "hash": "b8e1581cb861e86a235aa8824d3af7e68ae3db53311b90bf34b2baf5d58030a9",
+    "source": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\rail\\case0030_pl44.flyer",
+    "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\limits42\\run002\\b8e1581cb861e86a.flyer",
+    "outcome": "single_rejected",
+    "result": {
+      "rng": "5",
+      "phase_x": "0",
+      "phase_z": "0",
+      "limit": "42",
+      "ticks": "1",
+      "distance": "0",
+      "encoded_action_limit": "42",
+      "core_sizes": "[72, 70, 72]",
+      "pass": "false",
+      "first_failure": "tick 0 extension or conservation failure"
+    }
+  },
+  {
+    "hash": "990e81b87525112e9a17c0c6f770debbfead195c43fa806d30c589aed38417e4",
+    "source": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\rail\\case0036_pl44.flyer",
+    "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\limits42\\run002\\990e81b87525112e.flyer",
+    "outcome": "single_rejected",
+    "result": {
+      "rng": "5",
+      "phase_x": "0",
+      "phase_z": "0",
+      "limit": "42",
+      "ticks": "1",
+      "distance": "0",
+      "encoded_action_limit": "42",
+      "core_sizes": "[72, 66, 68]",
+      "pass": "false",
+      "first_failure": "tick 0 extension or conservation failure"
+    }
+  },
+  {
+    "hash": "b06bd61216806dc4b0ee25a7bff81973d30524d75cad70c5765526dc25ac24c4",
+    "source": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\rail\\case0037_pl45.flyer",
+    "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\limits42\\run002\\b06bd61216806dc4.flyer",
+    "outcome": "single_rejected",
+    "result": {
+      "rng": "5",
+      "phase_x": "0",
+      "phase_z": "0",
+      "limit": "42",
+      "ticks": "1",
+      "distance": "0",
+      "encoded_action_limit": "42",
+      "core_sizes": "[74, 64, 70]",
+      "pass": "false",
+      "first_failure": "tick 0 extension or conservation failure"
+    }
+  },
+  {
+    "hash": "9aba755afb84ce9f4d20c081e36a3fb931563a6e52bc19eba4cd4f8b55c206db",
+    "source": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\rail\\case0042_pl44.flyer",
+    "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\limits42\\run002\\9aba755afb84ce9f.flyer",
+    "outcome": "single_rejected",
+    "result": {
+      "rng": "5",
+      "phase_x": "0",
+      "phase_z": "0",
+      "limit": "42",
+      "ticks": "1",
+      "distance": "0",
+      "encoded_action_limit": "42",
+      "core_sizes": "[72, 68, 66]",
+      "pass": "false",
+      "first_failure": "tick 0 extension or conservation failure"
+    }
+  },
+  {
+    "hash": "b1d5bfc42576bc399cbaf6d226f13a9ede455a7d62cc3414147ee7b54bcb5bda",
+    "source": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\rail\\case0044_pl44.flyer",
+    "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\limits42\\run002\\b1d5bfc42576bc39.flyer",
+    "outcome": "single_rejected",
+    "result": {
+      "rng": "5",
+      "phase_x": "0",
+      "phase_z": "0",
+      "limit": "42",
+      "ticks": "1",
+      "distance": "0",
+      "encoded_action_limit": "42",
+      "core_sizes": "[72, 66, 72]",
+      "pass": "false",
+      "first_failure": "tick 0 extension or conservation failure"
+    }
+  },
+  {
+    "hash": "ff0e03de2867c31182d6cf71921ace06546f733c0d1290422755284bf7925188",
+    "source": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\rail\\case0045_pl44.flyer",
+    "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\limits42\\run002\\ff0e03de2867c311.flyer",
+    "outcome": "single_rejected",
+    "result": {
+      "rng": "5",
+      "phase_x": "0",
+      "phase_z": "0",
+      "limit": "42",
+      "ticks": "1",
+      "distance": "0",
+      "encoded_action_limit": "42",
+      "core_sizes": "[72, 68, 66]",
+      "pass": "false",
+      "first_failure": "tick 0 extension or conservation failure"
+    }
+  },
+  {
+    "hash": "c0e7627de20bd46a83eae64208d2cdc8f6eef32235be9d841abb9a0853f34df2",
+    "source": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\rail\\case0186_pl45.flyer",
+    "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\limits42\\run002\\c0e7627de20bd46a.flyer",
+    "outcome": "single_rejected",
+    "result": {
+      "rng": "5",
+      "phase_x": "0",
+      "phase_z": "0",
+      "limit": "42",
+      "ticks": "1",
+      "distance": "0",
+      "encoded_action_limit": "42",
+      "core_sizes": "[74, 72, 72]",
+      "pass": "false",
+      "first_failure": "tick 0 extension or conservation failure"
+    }
+  },
+  {
+    "hash": "743df15fa85e37c7de45a997cb72ff2bab044e6e488de93a1b999bce42c1ab88",
+    "source": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\compact43\\reroute_0002.flyer",
+    "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\limits42\\run002\\743df15fa85e37c7.flyer",
+    "outcome": "single_rejected",
+    "result": {
+      "rng": "5",
+      "phase_x": "0",
+      "phase_z": "0",
+      "limit": "42",
+      "ticks": "123",
+      "distance": "41",
+      "encoded_action_limit": "42",
+      "core_sizes": "[70, 66, 70]",
+      "pass": "false",
+      "first_failure": "tick 122 extension or conservation failure"
+    }
+  },
+  {
+    "hash": "cea99b9238d5382d4fc8e062be007b477a1b39122dd0c36a8064d765f1d4e8fb",
+    "source": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\local43\\reroute_0001.flyer",
+    "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\limits42\\run002\\cea99b9238d5382d.flyer",
+    "outcome": "single_rejected",
+    "result": {
+      "rng": "5",
+      "phase_x": "0",
+      "phase_z": "0",
+      "limit": "42",
+      "ticks": "123",
+      "distance": "41",
+      "encoded_action_limit": "42",
+      "core_sizes": "[70, 68, 70]",
+      "pass": "false",
+      "first_failure": "tick 122 extension or conservation failure"
+    }
+  },
+  {
+    "hash": "e3793c63a4bdd9389ed8ab2057894196139e6e70ff102eb73d6982c1feee8202",
+    "source": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\local43\\reroute_0002.flyer",
+    "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\limits42\\run002\\e3793c63a4bdd938.flyer",
+    "outcome": "single_rejected",
+    "result": {
+      "rng": "5",
+      "phase_x": "0",
+      "phase_z": "0",
+      "limit": "42",
+      "ticks": "123",
+      "distance": "41",
+      "encoded_action_limit": "42",
+      "core_sizes": "[70, 68, 70]",
+      "pass": "false",
+      "first_failure": "tick 122 extension or conservation failure"
+    }
+  },
+  {
+    "hash": "9b27d6c266333849fcbb30ec69bc5e0e70d733895c8ffe4e9cb39901e8ca3a24",
+    "source": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\local43\\reroute_0003.flyer",
+    "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\limits42\\run002\\9b27d6c266333849.flyer",
+    "outcome": "single_rejected",
+    "result": {
+      "rng": "5",
+      "phase_x": "0",
+      "phase_z": "0",
+      "limit": "42",
+      "ticks": "123",
+      "distance": "41",
+      "encoded_action_limit": "42",
+      "core_sizes": "[70, 68, 70]",
+      "pass": "false",
+      "first_failure": "tick 122 extension or conservation failure"
+    }
+  },
+  {
+    "hash": "60e97edccfdd63f68cfdf56840c6c5d3af811cf73b96fc936b046a97d4c4ea0b",
+    "source": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\compact_faces\\case0000_pl45.flyer",
+    "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\limits42\\run004\\60e97edccfdd63f6.flyer",
+    "outcome": "single_rejected",
+    "result": {
+      "rng": "5",
+      "phase_x": "0",
+      "phase_z": "0",
+      "limit": "42",
+      "ticks": "1",
+      "distance": "0",
+      "encoded_action_limit": "42",
+      "core_sizes": "[72, 70, 74]",
+      "pass": "false",
+      "first_failure": "tick 0 extension or conservation failure"
+    }
+  },
+  {
+    "hash": "60c3af7f48e8c6ac73808ee96217750248685811b27d41cf66f0529cc2c825ad",
+    "source": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\compact_faces\\case0012_pl44.flyer",
+    "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\limits42\\run004\\60c3af7f48e8c6ac.flyer",
+    "outcome": "single_rejected",
+    "result": {
+      "rng": "5",
+      "phase_x": "0",
+      "phase_z": "0",
+      "limit": "42",
+      "ticks": "1",
+      "distance": "0",
+      "encoded_action_limit": "42",
+      "core_sizes": "[72, 66, 70]",
+      "pass": "false",
+      "first_failure": "tick 0 extension or conservation failure"
+    }
+  },
+  {
+    "hash": "12f31780ebb698fd56055d7f044e7da08af18fd5ed9d8d2037b6ecdbfaa6cc99",
+    "source": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\compact_faces\\case0013_pl45.flyer",
+    "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\limits42\\run004\\12f31780ebb698fd.flyer",
+    "outcome": "single_rejected",
+    "result": {
+      "rng": "5",
+      "phase_x": "0",
+      "phase_z": "0",
+      "limit": "42",
+      "ticks": "1",
+      "distance": "0",
+      "encoded_action_limit": "42",
+      "core_sizes": "[72, 74, 68]",
+      "pass": "false",
+      "first_failure": "tick 0 extension or conservation failure"
+    }
+  },
+  {
+    "hash": "835912063d9b861732715b59ae317eb36c55c92c18076d76afc822c90e36b115",
+    "source": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\compact_faces\\case0036_pl45.flyer",
+    "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\limits42\\run004\\835912063d9b8617.flyer",
+    "outcome": "single_rejected",
+    "result": {
+      "rng": "5",
+      "phase_x": "0",
+      "phase_z": "0",
+      "limit": "42",
+      "ticks": "4",
+      "distance": "1",
+      "encoded_action_limit": "42",
+      "core_sizes": "[72, 74, 66]",
+      "pass": "false",
+      "first_failure": "tick 3 extension or conservation failure"
+    }
+  },
+  {
+    "hash": "f794ac01b223df22ddeeb854a08a811b753802d3890f59fc55fe2e7378c8776b",
+    "source": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\compact_faces\\case0037_pl45.flyer",
+    "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\limits42\\run004\\f794ac01b223df22.flyer",
+    "outcome": "single_rejected",
+    "result": {
+      "rng": "5",
+      "phase_x": "0",
+      "phase_z": "0",
+      "limit": "42",
+      "ticks": "1",
+      "distance": "0",
+      "encoded_action_limit": "42",
+      "core_sizes": "[74, 72, 66]",
+      "pass": "false",
+      "first_failure": "tick 0 extension or conservation failure"
+    }
+  },
+  {
+    "hash": "0c36c6bfb7ffeb09ae06abfb7ce4dafa2493ade5e285acf6b5aaff394b36f2c2",
+    "source": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\compact_faces\\case0038_pl45.flyer",
+    "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\limits42\\run004\\0c36c6bfb7ffeb09.flyer",
+    "outcome": "single_rejected",
+    "result": {
+      "rng": "5",
+      "phase_x": "0",
+      "phase_z": "0",
+      "limit": "42",
+      "ticks": "1",
+      "distance": "0",
+      "encoded_action_limit": "42",
+      "core_sizes": "[74, 72, 66]",
+      "pass": "false",
+      "first_failure": "tick 0 extension or conservation failure"
+    }
+  },
+  {
+    "hash": "45ca73fd5965142a0571b87137e0754f24fa1418de76e82c40384a877cf32fda",
+    "source": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\faces_local\\reroute_0001.flyer",
+    "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\limits42\\run006\\45ca73fd5965142a.flyer",
+    "outcome": "single_rejected",
+    "result": {
+      "rng": "5",
+      "phase_x": "0",
+      "phase_z": "0",
+      "limit": "42",
+      "ticks": "1",
+      "distance": "0",
+      "encoded_action_limit": "42",
+      "core_sizes": "[72, 66, 70]",
+      "pass": "false",
+      "first_failure": "tick 0 extension or conservation failure"
+    }
+  },
+  {
+    "hash": "25931cc09d2b2a5f9ba72924365f5fff0af2871c2a39ea8f780e28fdbf73a669",
+    "source": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\pruned_best.flyer",
+    "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\limits42\\run007\\25931cc09d2b2a5f.flyer",
+    "outcome": "single_rejected",
+    "result": {
+      "rng": "5",
+      "phase_x": "0",
+      "phase_z": "0",
+      "limit": "42",
+      "ticks": "1",
+      "distance": "0",
+      "encoded_action_limit": "42",
+      "core_sizes": "[76, 64, 70]",
+      "pass": "false",
+      "first_failure": "tick 0 extension or conservation failure"
+    }
+  },
+  {
+    "hash": "140d207f44d417f447cd48c8e0892eb668b54d029a89a21468a2bd57b44080da",
+    "source": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\reroute_0001.flyer",
+    "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\limits42\\run007\\140d207f44d417f4.flyer",
+    "outcome": "single_rejected",
+    "result": {
+      "rng": "5",
+      "phase_x": "0",
+      "phase_z": "0",
+      "limit": "42",
+      "ticks": "1",
+      "distance": "0",
+      "encoded_action_limit": "42",
+      "core_sizes": "[76, 64, 70]",
+      "pass": "false",
+      "first_failure": "tick 0 extension or conservation failure"
+    }
+  },
+  {
+    "hash": "f421cd5f9a6136f57e34f33ba23d955b0c17b8fd2fa41e293daea713c3b01589",
+    "source": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\reroute_0002.flyer",
+    "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\limits42\\run007\\f421cd5f9a6136f5.flyer",
+    "outcome": "single_rejected",
+    "result": {
+      "rng": "5",
+      "phase_x": "0",
+      "phase_z": "0",
+      "limit": "42",
+      "ticks": "1",
+      "distance": "0",
+      "encoded_action_limit": "42",
+      "core_sizes": "[76, 64, 70]",
+      "pass": "false",
+      "first_failure": "tick 0 extension or conservation failure"
+    }
+  }
+]

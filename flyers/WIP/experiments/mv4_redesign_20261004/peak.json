@@ -1,0 +1,91 @@
+{
+  "tick": 122,
+  "active_piston_pid": 22,
+  "active_bank": 5,
+  "passenger_count": 8,
+  "roles": {
+    "following": 3,
+    "own": 3,
+    "previous": 2
+  },
+  "passengers": [
+    {
+      "pid": 17,
+      "bank": 4,
+      "role": "following",
+      "state": 0,
+      "x": 54,
+      "y": 4,
+      "z": 13
+    },
+    {
+      "pid": 23,
+      "bank": 5,
+      "role": "own",
+      "state": 0,
+      "x": 54,
+      "y": 13,
+      "z": 12
+    },
+    {
+      "pid": 15,
+      "bank": 3,
+      "role": "previous",
+      "state": 0,
+      "x": 55,
+      "y": 1,
+      "z": 14
+    },
+    {
+      "pid": 13,
+      "bank": 3,
+      "role": "previous",
+      "state": 0,
+      "x": 55,
+      "y": 2,
+      "z": 17
+    },
+    {
+      "pid": 18,
+      "bank": 4,
+      "role": "following",
+      "state": 0,
+      "x": 55,
+      "y": 5,
+      "z": 12
+    },
+    {
+      "pid": 19,
+      "bank": 4,
+      "role": "following",
+      "state": 0,
+      "x": 55,
+      "y": 7,
+      "z": 12
+    },
+    {
+      "pid": 21,
+      "bank": 5,
+      "role": "own",
+      "state": 0,
+      "x": 55,
+      "y": 10,
+      "z": 13
+    },
+    {
+      "pid": 20,
+      "bank": 5,
+      "role": "own",
+      "state": 0,
+      "x": 55,
+      "y": 12,
+      "z": 13
+    }
+  ],
+  "save_translation_yz": [
+    8,
+    16
+  ],
+  "identity_basis": "Unique piston YZ coordinates; all simulator movements in this bank are along X",
+  "source": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\bank\\pl43\\mv4_symmetric_easy_compact.flyer"
+}

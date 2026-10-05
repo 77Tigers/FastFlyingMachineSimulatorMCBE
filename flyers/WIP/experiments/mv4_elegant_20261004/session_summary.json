@@ -1,0 +1,10 @@
+{
+  "primary_search": "time_limit_reached",
+  "primary_partial_full_cases": 67,
+  "ranked_search": "completed",
+  "lower_cap_search": "completed",
+  "best_verified_pl": 46,
+  "full80_passed": true,
+  "active_processes": false,
+  "wall_session_approximately_minutes": 28
+}

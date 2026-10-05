@@ -1,0 +1,10 @@
+{
+  "status": "completed",
+  "done": 60,
+  "total": 60,
+  "elapsed": 186,
+  "outcomes": {
+    "joint_route": 60
+  },
+  "short_passes": []
+}

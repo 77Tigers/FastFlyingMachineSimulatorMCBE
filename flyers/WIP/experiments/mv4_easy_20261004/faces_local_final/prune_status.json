@@ -1,0 +1,16 @@
+{
+  "status": "completed",
+  "elapsed_seconds": 3.0,
+  "passes": 1,
+  "statistics": {
+    "patches": 193,
+    "overbudget_or_disconnected": 193
+  },
+  "final_score": [
+    34,
+    196,
+    34,
+    14
+  ],
+  "history": []
+}
