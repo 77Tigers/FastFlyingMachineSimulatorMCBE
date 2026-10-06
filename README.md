@@ -88,32 +88,12 @@ publishes the site to GitHub Pages; set **Settings → Pages → Source** to
 **GitHub Actions** in the repository. Browser uploads remain local to the
 browser and the bank is bundled into the published site.
 
-Open `http://127.0.0.1:8765/`. The six-block demo opens paused at tick 0.
-Use **Browse flyer bank** to open the large bank popup and filter across its push-limit
-range (computed from the bank's flyers, so it grows as new limits are added), or
-open a local `.flyer`. Playback computes new ticks on demand and retains the
-latest 200 preceding tick states for bounded rewind; already-computed future
-states are replayed exactly. Direction toggles between forward and backward;
-Step follows the chosen direction, and Reset does not alter Play/Pause.
-Detailed mode calculates one tick's power, chunk, and piston actions as needed
-and steps through them without retaining detailed traces. Speed 1× is 10 ticks
-per second, with a stepped 0.1–30× slider. Click the canvas before using
-WASD, Space/Shift (or Q/E); drag to turn and scroll to move forward or back.
-K toggles play/pause; J and L choose backward/forward and take one step.
-Edit mode returns to tick 0 and disables playback. Its nine-slot hotbar uses
-keys 1–9; right-click a block to place beside the clicked face, or right-drag
-to choose the new block's facing. Left-click deletes, and Z or middle-click
-picks a block type. Export downloads the time-zero design as a `.flyer` file.
-Whole-tick playback keeps the scene uncluttered. Detailed mode adds optional
-chunk and power overlays, movement discovery links, and moving-block owner
-arrows. Directional block textures are generated locally; piston textures show
-sticky, powered, angry, and extension state. Observer arrows point toward the
-redstone output and light up while powered. Moving blocks and piston heads
-can be shown in Real, Halfway, or Smooth visual modes; their white movement
-flash fades through the animation. Extended head plates touch the pushed block.
-Piston-arm facing is inferred from its piston for display only. The viewer does
-not write a trajectory or change the `.flyer` format. Simulation occurs locally
-in the browser; the optional server binds only to `127.0.0.1`.
+Open `http://127.0.0.1:8765/` to browse, simulate, edit, and export flyers.
+The viewer computes ticks on demand, keeps a bounded rewind history, and offers
+optional per-action inspection. See the in-app **Need help?** panel for controls.
+Simulation runs locally in the browser; the viewer does not write trajectory
+files or change the `.flyer` format. The optional server binds only to
+`127.0.0.1`.
 
 ## Bank speeds, filters, and updating the catalogue
 

@@ -21,6 +21,7 @@
       <div class="timeline">
         <div class="timeline-top">
           <div><span class="eyebrow">PLAYBACK</span><div id="step-counter">Initial state</div></div>
+          <label class="push-limit-control" for="push-limit"><span>Push limit</span><input id="push-limit" type="number" min="0" step="1" value="12" disabled aria-label="Push limit" aria-description="Enter Edit mode to change the push limit"></label>
           <div class="playback-actions">
             <div class="player"><button id="reset" aria-label="Reset to start" title="Reset to start">↺</button><button id="direction" aria-label="Direction: forward" title="Toggle playback direction">→</button><button id="step" aria-label="Step forward" title="Step once">›</button><button id="play" aria-label="Play" title="Play / pause">▶</button></div>
           </div>
@@ -31,21 +32,22 @@
         <div id="canvas"></div>
         <div id="edit-hotbar" class="edit-hotbar" role="group" aria-label="Block palette" hidden></div>
         <button id="fullscreen" class="fullscreen-btn" type="button" aria-label="Enter fullscreen" title="Enter fullscreen (Esc to exit)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/></svg></button>
-        <div id="capture-prompt" class="capture-prompt" hidden><strong>Capture mouse for unlimited turning</strong><p>Your browser needs one more click to lock the pointer.</p><button id="capture-mouse" type="button">Capture mouse</button><button id="leave-fullscreen" type="button">Exit fullscreen</button></div>
         <button id="open-help" class="help-btn" type="button" aria-label="Need help?" title="Need help?"><span class="help-mark" aria-hidden="true">?</span><span class="help-text">Need help?</span></button>
       </div>
     </section>
     <aside class="right-panel">
+      <div class="right-tabs" role="tablist" aria-label="Sidebar panels"><button id="tab-general" type="button" role="tab" aria-selected="true" aria-controls="panel-general" class="active">General</button><button id="tab-debug" type="button" role="tab" aria-selected="false" aria-controls="panel-debug">Debug</button></div>
+      <div id="panel-general" class="right-tab-content" role="tabpanel" aria-labelledby="tab-general">
       <div id="status" class="status panel-section" role="status" aria-live="polite">Loading…</div>
       <div class="panel-section navigation-panel">
         <div class="section-head"><span>CONTROLS</span></div>
         <label class="range-setting" for="speed"><span>Game speed</span><output id="speed-label" for="speed">1×</output><input id="speed" type="range" min="0" max="26" step="1" value="11" aria-valuetext="1×"></label>
-        <label class="range-setting" for="player-speed"><span>Player speed</span><output id="player-speed-label" for="player-speed">2×</output><input id="player-speed" type="range" min="0" max="9" step="1" value="5" aria-valuetext="2×"></label>
+        <label class="range-setting" for="player-speed"><span>Player speed</span><output id="player-speed-label" for="player-speed">1×</output><input id="player-speed" type="range" min="0" max="9" step="1" value="5" aria-valuetext="1×"></label>
         <label class="range-setting" for="sensitivity"><span>Mouse sensitivity</span><output id="sensitivity-label" for="sensitivity">1×</output><input id="sensitivity" type="range" min="0" max="13" step="1" value="3" aria-valuetext="1×"></label>
         <label class="range-setting" for="rotate-speed"><span>Camera rotate speed</span><output id="rotate-speed-label" for="rotate-speed">1×</output><input id="rotate-speed" type="range" min="0" max="9" step="1" value="3" aria-valuetext="1×"></label>
         <div class="moving-setting"><span>Motion display</span><div class="segmented moving-select" role="group" aria-label="Moving block and piston head display"><button id="moving-real" aria-pressed="false" title="Show moving blocks in their stored cells and piston heads as before">Real</button><button id="moving-halfway" aria-pressed="false" title="Show moving blocks halfway and piston heads at their midpoint">Halfway</button><button id="moving-smooth" class="active" aria-pressed="true" title="Animate moving blocks and piston heads">Smooth</button></div></div>
-        <label class="toggle follow-toggle"><input id="follow-flyer" type="checkbox">Follow flyer</label>
-        <div id="sprint-indicator" class="sprint-indicator" hidden>SPRINTING · 1.5×</div>
+        <label class="toggle follow-toggle"><input id="follow-flyer" type="checkbox" checked>Follow flyer</label>
+        <div id="sprint-indicator" class="sprint-indicator" hidden>SPRINTING · 2×</div>
       </div>
       <div id="diagnostics-panel" class="panel-section" hidden>
         <div class="section-head"><span>DISPLAY</span><span class="tiny">VISIBLE LAYERS</span></div>
@@ -55,11 +57,15 @@
         <label class="toggle"><input id="show-chunks" type="checkbox" checked><span class="swatch chunk"></span>Chunk boundaries</label>
       </div>
       <div class="panel-section floor-panel"><label class="toggle"><input id="show-floor" type="checkbox" checked>Show floor</label></div>
-      <div class="panel-section"><div class="section-head"><span>INSPECTOR</span></div><div id="inspector" class="empty-inspector">Select a block to see its state, owner, and coordinates.</div></div>
       <div id="details-panel" class="panel-section" hidden><div class="section-head"><span id="details-title">ACTION DETAILS</span></div><div id="details" class="details"></div></div>
       <div id="order-panel" class="panel-section" hidden><div class="section-head"><span>UPDATE ORDER</span></div><div id="update-order" class="update-order"></div></div>
-      <details class="panel-section slice-panel" hidden><summary>Slice filter <span>optional</span></summary><div class="slice-footer-controls"><div class="slice-row"><label><input id="slice-x-on" type="checkbox"> X</label><input id="slice-x" type="number" value="0"></div><div class="slice-row"><label><input id="slice-y-on" type="checkbox"> Y</label><input id="slice-y" type="number" value="1"></div><div class="slice-row"><label><input id="slice-z-on" type="checkbox"> Z</label><input id="slice-z" type="number" value="0"></div></div></details>
-      <div class="panel-section mode-panel"><div class="section-head"><span>EDIT / VIEW</span></div><div class="segmented mode-select" role="group" aria-label="Edit or view"><button id="mode-view" class="active" aria-pressed="true">View</button><button id="mode-edit" aria-pressed="false">Edit</button></div><div class="section-head playback-detail-head"><span>PLAYBACK DETAIL</span></div><div class="segmented mode-select" role="group" aria-label="Playback detail"><button id="mode-ticks" class="active" aria-pressed="true">Ticks</button><button id="mode-detailed" aria-pressed="false">Detailed</button></div></div>
+      <div class="panel-section mode-panel"><div class="section-head"><span>EDIT / VIEW</span></div><div class="segmented mode-select" role="group" aria-label="Edit or view"><button id="mode-view" class="active" aria-pressed="true">View</button><button id="mode-edit" aria-pressed="false">Edit</button></div></div>
+      </div>
+      <div id="panel-debug" class="right-tab-content" role="tabpanel" aria-labelledby="tab-debug" hidden>
+        <div id="inspector-section" class="panel-section"><div class="section-head"><span>INSPECTOR</span></div><div id="inspector" class="empty-inspector">Select a block to see its state, owner, and coordinates.</div></div>
+        <details class="panel-section slice-panel"><summary>Slice filter <span>optional</span></summary><div class="slice-footer-controls"><div class="slice-row"><label><input id="slice-x-on" type="checkbox"> X</label><input id="slice-x" type="number" value="0"></div><div class="slice-row"><label><input id="slice-y-on" type="checkbox"> Y</label><input id="slice-y" type="number" value="1"></div><div class="slice-row"><label><input id="slice-z-on" type="checkbox"> Z</label><input id="slice-z" type="number" value="0"></div></div></details>
+        <div class="panel-section playback-detail-panel"><div class="section-head"><span>PLAYBACK DETAIL</span></div><div class="segmented mode-select" role="group" aria-label="Playback detail"><button id="mode-ticks" class="active" aria-pressed="true">Ticks</button><button id="mode-detailed" aria-pressed="false">Detailed</button></div></div>
+      </div>
     </aside>
   </main>
   <dialog id="bank-dialog" aria-labelledby="bank-title">
@@ -83,12 +89,12 @@
         <section><h2>Moving the camera</h2>
           <dl>
             <dt>Drag</dt><dd>Look around. Click the scene first so it has focus.</dd>
-            <dt>Fullscreen</dt><dd>Use the top-right button for unlimited mouse-look without dragging. Press Esc to exit. Your pointer must be captured first.</dd>
+            <dt>Fullscreen</dt><dd>Use the top-right button or press Enter while the scene is focused. Press Enter again or Esc to exit. Click the scene to recapture the mouse if needed.</dd>
             <dt>Scroll wheel</dt><dd>Move forward or backward in the direction you are looking.</dd>
             <dt>W A S D</dt><dd>Walk forward, left, backward and right.</dd>
             <dt>Space / Shift</dt><dd>Fly up / down.</dd>
             <dt>Q / E</dt><dd>Hold to orbit left / right around the flyer’s middle while keeping your viewing direction relative to it.</dd>
-            <dt>Double-W / F</dt><dd>Start sprinting at 1.5× player speed. Sprint ends when you stop moving.</dd>
+            <dt>Double-W / F</dt><dd>Double your movement speed. Each additional F tap doubles it again, up to 16×. Sprint ends when you stop moving.</dd>
             <dt>Click a block</dt><dd>In View mode, inspect its state, owner and coordinates in the right panel.</dd>
           </dl>
           <p class="help-note">Movement keys only work while the scene is focused. Clicking anywhere else, or opening a popup, releases them.</p>
@@ -101,6 +107,7 @@
             <dt>↺</dt><dd>Reset to the starting state.</dd>
             <dt>J / L</dt><dd>Set playback backward / forward and take one step in that direction.</dd>
             <dt>K</dt><dd>Play or pause.</dd>
+            <dt>X</dt><dd>Switch Edit / View. Returning to View with X starts playback.</dd>
             <dt>Game speed</dt><dd>0.1× to 30×. At 1× the simulation runs 10 ticks per second.</dd>
           </dl>
         </section>
@@ -111,7 +118,7 @@
           <dl>
             <dt>Browse flyer bank</dt><dd>Search, filter and sort the collection, or click a bar in the chart to open a fastest flyer at that push limit. “At frontier” keeps new speed records (over 0.002 bps better than lower limits), one-limit-higher improvements, and flyers within 0.005 bps of each retained limit’s best. Flyers open paused.</dd>
             <dt>Open .flyer</dt><dd>Load a file from your computer. It stays in your browser and is never uploaded.</dd>
-            <dt>Edit / View</dt><dd>Edit resets to tick 0 and disables playback. Choose one of the nine bottom slots with 1–9, right-click a block to place next to its clicked face, or hold right-click and drag to set the new block’s facing. Left-click deletes; Z or middle-click picks a block type. State variants will come later.</dd>
+            <dt>Edit / View</dt><dd>Edit resets to tick 0 and disables playback. Choose one of the ten bottom slots with 1–9 or 0. Right-click a block within 10 blocks to place beside it; quick-clicked pistons face +X and stickies face −X. Holding right-click faces directional blocks along your look direction, or along your displacement if you move. In fullscreen, directional blocks show a ghost preview; moving with a non-directional block selected builds a ghost row along your first movement axis, stopping before an occupied cell. Left-click deletes; in fullscreen, hold it to break blocks within 10 blocks. Z or middle-click picks a block type. T cycles piston states or toggles observer power. Change push limit in the bar above the canvas.</dd>
             <dt>Export</dt><dd>Download the current time-zero design, including edits, as a .flyer file.</dd>
             <dt>Show floor</dt><dd>Toggle the fading ground grid in the right panel.</dd>
             <dt>Follow flyer</dt><dd>Smoothly move with the average position of its blocks; manual movement still works.</dd>

@@ -1,0 +1,12 @@
+0 swap (0, 0, 0) fd=1 SKEL_OVERLAP 0.0 build=0.0
+1 anti (0, 6, 6) fd=1 INFEASIBLE 0.7 build=3.8
+2 flipy (0, 6, 0) fd=1 INFEASIBLE 0.6 build=3.2
+3 flipz (0, 0, 6) fd=1 INFEASIBLE 0.5 build=3.8
+4 rot180 (0, 6, 6) fd=1 INFEASIBLE 1.0 build=3.4
+5 rot90 (0, 6, 0) fd=1 INFEASIBLE 0.4 build=3.9
+6 rot270 (0, 0, 6) fd=1 INFEASIBLE 0.3 build=3.6
+7 id (0, 0, 0) fd=1 SKEL_OVERLAP 0.0 build=0.0
+8 swap (0, -1, 0) fd=2 SKEL_OVERLAP 0.0 build=0.0
+9 swap (0, 0, -1) fd=2 SKEL_OVERLAP 0.0 build=0.0
+10 swap (0, 0, 1) fd=2 SKEL_OVERLAP 0.0 build=0.0
+11 swap (0, 1, 0) fd=2 SKEL_OVERLAP 0.0 build=0.0

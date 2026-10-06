@@ -130,6 +130,47 @@ other segment's glue in a slot where both move (otherwise a glue race = forbidde
    pushed twice by rigid pushers only if its moves are non-consecutive (mwmw / wmwm), which is why the shared end F
    works and why the last pistoned segment (K5) still needs a rider, a twin pull (closure stretch 4) or a merge for its
    second move. (A twin shifted by 1 slot instead of 2 hits the same law.)
+7d. **Mirrored front at load 7, general symmetries (2026-10-06): no load-7 design found; all bounds below.**
+   The banked PL8's loads of 8 are K4+V (slot 1) and K5+V (slot 2). Its F has 8 blocks, but glue (13,4,4) is useless
+   (user), so F fits in 7.
+   Rules learned (use them before searching):
+   - **Twin coincidence:** a chain segment and its image differ in x by dx+{0,1,2,1} (wwmm) or dx+{2,1,0,1} (mmww) at
+     slots 0..3. With dx = -1 (every run before 2026-10-06) all chain segments sit level with their images at slots
+     1 and 3. Under a mirror PLANE (flipz, flipy, and also swap/anti, which are diagonal planes) no glue path, rider or
+     power can then cross the plane at those slots, so the two halves cannot help each other there.
+   - **L1:** whatever pushes K5 at slot 3 co-moves with K5 at slot 2, so K5's slot-2 load includes it (V costs K5 +1
+     always). **L2:** the only possible slot-3 puller is the twin (a rider sticky Q is geometrically a twin pull).
+   - **Static sources cannot power V** (V must be powered at slot 3 only): use an observer on a body that moved at
+     slot 2 (K5, twin K4', F) or a rod-AND. A segment's own twin sits at a unique offset at that segment's fire slot,
+     so twins can power each other's pistons. But for a segment's own hub the twins must interlock like gears, and
+     the shifting offsets usually make them collide.
+   - **Twin pull (exact pairing):** needs dx = -1, A(d)+d = 0 and the twin sticky at (g.x+2, phi(g.yz)). Plane maps
+     are impossible and rot90/270 give 9 or more, so only rot180 remains. The cheapest K5 there is
+     {4 glue, twin sticky, S5, P5} = 7, with NO room for power. With K4's and K5's piston power given from outside,
+     load 7 IS feasible (rot180 d=(-1,5,7)). F cannot power K5's three slot-0 pistons within 9 blocks; best real
+     layout = 9 (`runs/subA/tight_c1_L9.pkl`, model only, not simulated).
+   Bounded negatives at load 7 (all 8 yz maps, dx -3..1, F contacts <= 4 apart = 936 offsets; driver `mirror_gen.py`):
+   - K4, K5 = full templates + any extra blocks, rider V: 717 INFEASIBLE, 219 skeleton overlaps (`runs/gen_V_L7_pinfull.*`).
+   - K3 must contain its template; K4 must contain only (8,2,2); K5 free; boxes = template cells + 1-step
+     neighbours (`twinpow_sweep.py`, finds the PL8 at 8 in 6 s). Rider V and no-rider (twin pull) both:
+     751 INFEASIBLE, 185 overlaps, 0 UNKNOWN (`runs/twinpow/V_r1.*`, `none_r1.*`).
+   - Same with 2-step neighbourhoods (radius 2, rider V, 240 s): stopped after 56 offsets: 25 INFEASIBLE,
+     20 overlaps, 11 UNKNOWN, all with dx = -1 (`runs/twinpow/V_r2.log`); the twin-pull radius-2 sweep was not run.
+   - Longer chains (`LOAD=7 python twinpow_long.py TAG LAST MODE TL m3 m4 m5 r ...`, radius 1, `runs/twinpow_long/`):
+     last = K7 with rider V: 655 of 936 offsets run (the largest F gaps, the end of `anti` and later maps are
+     missing): 518 INFEASIBLE, 137 overlaps, 0 UNKNOWN, 0 found. The K7 twin-pull sweep only reached 20 offsets
+     (14 INFEASIBLE, 6 overlaps), and last = K6 was not run.
+   - Subagent B (`subB_*.py`, `runs/subB/`): rider V with K4 containing its template and K5 containing its template
+     minus P is out at every offset (V gets no slot-3 power, has no slot-1 carrier, or the template middles collide).
+     Rider sticky, merged helper and asymmetric halves were each counted at 8 or more.
+   - Unpinned (K4, K5 in +-2 boxes, 120 s, 1 worker): 92 of 101 solved offsets UNKNOWN (`runs/gen_V_L7_free.log`);
+     these are open leads, not negatives.
+   Tools: `mirror_gen.py` (any map/offset/last, modes V/S/none, pins), `twinpow_sweep.py` + `subB_lib.build2`
+   (small boxes, pins as assumption literals, unsat cores), `subA_lib.py` (twin pull with external-power and no-F
+   options), `render.py` (slot-by-slot ASCII view of a pkl: `python render.py PKL --moves --names K4,K5,V,F`).
+   **Pitfall:** a pinned extra glue must touch the segment's glue; template K5's pistons are not glue (found with an
+   unsat core in seconds).
+
 8. **Shrinking the single-chain caps (all bounded, box -3..4 x, r=2 around template origins):**
    - front rider cap with K4+K5 free: 9 (FEASIBLE, not proven optimal; a 30-min warm start from it found nothing
      better). Hand analysis: F = 2 glue + R + observer (+1 glue) and M fit at 7, but V's power observer on K5 has no free

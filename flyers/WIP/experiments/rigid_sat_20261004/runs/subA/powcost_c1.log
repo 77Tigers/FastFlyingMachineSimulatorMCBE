@@ -1,0 +1,3 @@
+(-1, 5, 7) 11 (2, 3) (3, 3) L 9 maxsize {'K4': 7, 'K5': 7} powmiss ('K4',)  INFEASIBLE 24.9
+(-1, 5, 7) 11 (2, 3) (3, 3) L 9 maxsize {'K5': 7, 'F': 7} powmiss ('K5',)  UNKNOWN 90.2
+(-1, 5, 7) 11 (2, 3) (3, 3) L 9 maxsize {'K4': 7, 'F': 7} powmiss ()  INFEASIBLE 64.9
