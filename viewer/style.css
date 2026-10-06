@@ -109,6 +109,13 @@ html,body{height:100%;overflow:hidden}
 #viewport:fullscreen .help-btn{display:none}
 #viewport{background:#050c19}
 #viewport:fullscreen:not(.pointer-locked),#viewport:fullscreen:not(.pointer-locked) #canvas canvas{cursor:default}
+.edit-hotbar{position:absolute;z-index:4;left:50%;bottom:18px;transform:translateX(-50%);display:flex;gap:4px;padding:6px;border:1px solid #50716e;border-radius:9px;background:#101c22e8;box-shadow:0 8px 25px #0008;max-width:calc(100% - 16px);overflow-x:auto}
+.edit-hotbar[hidden]{display:none}
+.edit-slot{position:relative;flex:0 0 48px;height:48px;border:2px solid #486365;border-radius:5px;background:#203239;color:#dcebea;cursor:pointer}
+.edit-slot:hover{border-color:#8ae5d7}.edit-slot.active{border-color:#f5e6ad;background:#365452;box-shadow:0 0 0 2px #b8a97c66 inset}
+.edit-slot kbd{position:absolute;top:2px;left:4px;font:10px 'DM Mono',Consolas,monospace;color:#e9f3ec}
+.edit-slot .block-icon{display:block;width:32px;height:32px;margin:8px auto 0;border:1px solid #ffffff75;border-radius:2px;box-shadow:0 2px 4px #0006;image-rendering:pixelated}
+#viewport:fullscreen .edit-hotbar{bottom:24px}
 .navigation-panel{padding-top:15px;padding-bottom:14px}
 .navigation-panel .section-head{margin-bottom:12px}
 .range-setting{display:grid;grid-template-columns:minmax(0,1fr) 52px;align-items:center;gap:6px 8px;margin:10px 0;color:#bacacc;font-size:11px}
@@ -119,8 +126,6 @@ html,body{height:100%;overflow:hidden}
 .moving-select{width:100%;min-width:0}
 .moving-select button{min-width:0;padding:8px 2px}
 .follow-toggle{margin:16px 0 7px}
-.middle-readout{display:flex;justify-content:space-between;gap:10px;color:#81979d;font-size:10px}
-.middle-readout span{font:10px 'DM Mono',Consolas,monospace;color:#bdcfce;text-align:right;font-variant-numeric:tabular-nums}
 .sprint-indicator{margin-top:10px;color:#f0d685;font:10px 'DM Mono',Consolas,monospace;letter-spacing:.08em}
 .sprint-indicator[hidden]{display:none}
 .capture-prompt{position:absolute;z-index:5;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;flex-wrap:wrap;justify-content:center;gap:10px;width:min(370px,calc(100% - 32px));padding:22px;border:1px solid #4d7785;border-radius:12px;background:#10202df0;box-shadow:0 18px 50px #0009;text-align:center}

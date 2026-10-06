@@ -99,13 +99,18 @@ Detailed mode calculates one tick's power, chunk, and piston actions as needed
 and steps through them without retaining detailed traces. Speed 1× is 10 ticks
 per second, with a stepped 0.1–30× slider. Click the canvas before using
 WASD, Space/Shift (or Q/E); drag to turn and scroll to move forward or back.
+K toggles play/pause; J and L choose backward/forward and take one step.
+Edit mode returns to tick 0 and disables playback. Its nine-slot hotbar uses
+keys 1–9; right-click a block to place beside the clicked face, or right-drag
+to choose the new block's facing. Left-click deletes, and Z or middle-click
+picks a block type. Export downloads the time-zero design as a `.flyer` file.
 Whole-tick playback keeps the scene uncluttered. Detailed mode adds optional
 chunk and power overlays, movement discovery links, and moving-block owner
 arrows. Directional block textures are generated locally; piston textures show
 sticky, powered, angry, and extension state. Observer arrows point toward the
-redstone output and light up while powered. Moving blocks appear halfway
-between their usual colour and white, while extending or retracting piston
-heads are displayed halfway through their travel as thin plates with full 1×1 faces.
+redstone output and light up while powered. Moving blocks and piston heads
+can be shown in Real, Halfway, or Smooth visual modes; their white movement
+flash fades through the animation. Extended head plates touch the pushed block.
 Piston-arm facing is inferred from its piston for display only. The viewer does
 not write a trajectory or change the `.flyer` format. Simulation occurs locally
 in the browser; the optional server binds only to `127.0.0.1`.
@@ -117,6 +122,10 @@ previews, and a best-speed-per-push-limit chart. Click a bar to open a fastest
 flyer at that limit **among the current filter matches**; equal speeds are picked
 randomly without touching simulation RNG. Browsing temporarily holds playback;
 closing the popup resumes it, while opening a new flyer starts paused.
+The default **At frontier** filter is applied after search, category, and
+push-limit filters. It keeps limits beating the best lower-limit speed by more
+than 0.002 bps, plus faster flyers at exactly one higher limit; for each kept
+limit it shows every flyer within 0.005 bps of that limit's best speed.
 
 Category tags are recomputed from the actual `.flyer` blocks during each site
 build, not inferred from folder names. Selected tags must all match:

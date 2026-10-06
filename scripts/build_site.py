@@ -41,7 +41,7 @@ def main() -> None:
     if not wasm.is_file():
         raise SystemExit("Build Rust first: cargo build --release --target wasm32-unknown-unknown --lib")
     DIST.mkdir(exist_ok=True)
-    for filename in ("index.html", "style.css", "app.js"):
+    for filename in ("index.html", "style.css", "app.js", "flyer-io.js"):
         copy(VIEWER / filename, DIST / filename)
     copy(wasm, DIST / "fastflyer.wasm")
     digest = lambda path: sha256(path.read_bytes()).hexdigest()[:12]
@@ -89,7 +89,8 @@ def main() -> None:
     app = DIST / "app.js"
     app.write_text(app.read_text(encoding="utf-8")
         .replace("__WASM_HASH__", digest(wasm))
-        .replace("__BANK_HASH__", digest(DIST / "bank.json")), encoding="utf-8")
+        .replace("__BANK_HASH__", digest(DIST / "bank.json"))
+        .replace("__IO_HASH__", digest(DIST / "flyer-io.js")), encoding="utf-8")
     html = DIST / "index.html"
     html.write_text(html.read_text(encoding="utf-8")
         .replace("__STYLE_HASH__", digest(DIST / "style.css"))

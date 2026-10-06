@@ -13,7 +13,7 @@
     <div class="top-actions">
       <button id="open-bank" class="top-btn primary">Browse flyer bank</button>
       <label class="top-btn secondary">Open .flyer<input id="file" type="file" accept=".flyer,application/octet-stream"></label>
-      <button id="export" class="top-btn secondary" type="button" disabled title="Export is coming later">Export</button>
+      <button id="export" class="top-btn secondary" type="button" disabled title="Download the time-zero flyer">Export</button>
     </div>
   </header>
   <main class="layout">
@@ -29,6 +29,7 @@
       <div id="viewport">
         <div id="viewport-label" class="viewport-label" hidden><span id="step-badge">INITIAL</span><span id="step-title">Initial configuration</span></div>
         <div id="canvas"></div>
+        <div id="edit-hotbar" class="edit-hotbar" role="group" aria-label="Block palette" hidden></div>
         <button id="fullscreen" class="fullscreen-btn" type="button" aria-label="Enter fullscreen" title="Enter fullscreen (Esc to exit)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/></svg></button>
         <div id="capture-prompt" class="capture-prompt" hidden><strong>Capture mouse for unlimited turning</strong><p>Your browser needs one more click to lock the pointer.</p><button id="capture-mouse" type="button">Capture mouse</button><button id="leave-fullscreen" type="button">Exit fullscreen</button></div>
         <button id="open-help" class="help-btn" type="button" aria-label="Need help?" title="Need help?"><span class="help-mark" aria-hidden="true">?</span><span class="help-text">Need help?</span></button>
@@ -44,7 +45,6 @@
         <label class="range-setting" for="rotate-speed"><span>Camera rotate speed</span><output id="rotate-speed-label" for="rotate-speed">1×</output><input id="rotate-speed" type="range" min="0" max="9" step="1" value="3" aria-valuetext="1×"></label>
         <div class="moving-setting"><span>Motion display</span><div class="segmented moving-select" role="group" aria-label="Moving block and piston head display"><button id="moving-real" aria-pressed="false" title="Show moving blocks in their stored cells and piston heads as before">Real</button><button id="moving-halfway" aria-pressed="false" title="Show moving blocks halfway and piston heads at their midpoint">Halfway</button><button id="moving-smooth" class="active" aria-pressed="true" title="Animate moving blocks and piston heads">Smooth</button></div></div>
         <label class="toggle follow-toggle"><input id="follow-flyer" type="checkbox">Follow flyer</label>
-        <div class="middle-readout">Middle <span id="flyer-middle">—</span></div>
         <div id="sprint-indicator" class="sprint-indicator" hidden>SPRINTING · 1.5×</div>
       </div>
       <div id="diagnostics-panel" class="panel-section" hidden>
@@ -59,7 +59,7 @@
       <div id="details-panel" class="panel-section" hidden><div class="section-head"><span id="details-title">ACTION DETAILS</span></div><div id="details" class="details"></div></div>
       <div id="order-panel" class="panel-section" hidden><div class="section-head"><span>UPDATE ORDER</span></div><div id="update-order" class="update-order"></div></div>
       <details class="panel-section slice-panel" hidden><summary>Slice filter <span>optional</span></summary><div class="slice-footer-controls"><div class="slice-row"><label><input id="slice-x-on" type="checkbox"> X</label><input id="slice-x" type="number" value="0"></div><div class="slice-row"><label><input id="slice-y-on" type="checkbox"> Y</label><input id="slice-y" type="number" value="1"></div><div class="slice-row"><label><input id="slice-z-on" type="checkbox"> Z</label><input id="slice-z" type="number" value="0"></div></div></details>
-      <div class="panel-section mode-panel"><div class="section-head"><span>EDIT / VIEW</span></div><div class="segmented mode-select" role="group" aria-label="Edit or view"><button id="mode-view" class="active" aria-pressed="true">View</button><button id="mode-edit" aria-pressed="false" title="Editing tools are coming later">Edit</button></div><div class="section-head playback-detail-head"><span>PLAYBACK DETAIL</span></div><div class="segmented mode-select" role="group" aria-label="Playback detail"><button id="mode-ticks" class="active" aria-pressed="true">Ticks</button><button id="mode-detailed" aria-pressed="false">Detailed</button></div></div>
+      <div class="panel-section mode-panel"><div class="section-head"><span>EDIT / VIEW</span></div><div class="segmented mode-select" role="group" aria-label="Edit or view"><button id="mode-view" class="active" aria-pressed="true">View</button><button id="mode-edit" aria-pressed="false">Edit</button></div><div class="section-head playback-detail-head"><span>PLAYBACK DETAIL</span></div><div class="segmented mode-select" role="group" aria-label="Playback detail"><button id="mode-ticks" class="active" aria-pressed="true">Ticks</button><button id="mode-detailed" aria-pressed="false">Detailed</button></div></div>
     </aside>
   </main>
   <dialog id="bank-dialog" aria-labelledby="bank-title">
@@ -69,9 +69,9 @@
       <div class="bank-toolbar">
         <label class="bank-search-label">Search <input id="bank-search" type="search" placeholder="Find a flyer…"></label>
         <div class="bank-filters"><label>Push limit from <select id="bank-min"></select></label><label>to <select id="bank-max"></select></label></div>
-        <label>Sort <select id="bank-sort"><option value="speed">Fastest first</option><option value="blocks">Fewest blocks</option><option value="limit">Push limit</option><option value="name">Name</option></select></label>
+        <label>Sort <select id="bank-sort"><option value="speed">Fastest first</option><option value="blocks">Fewest blocks</option><option value="limit" selected>Push limit</option><option value="name">Name</option></select></label>
       </div>
-      <div class="bank-tag-filters" role="group" aria-label="Flyer categories"><span>Match all selected:</span><label><input type="checkbox" id="filter-pushing"> Pushing-only</label><label><input type="checkbox" id="filter-pulling"> Pulling-only</label><label><input type="checkbox" id="filter-observer"> Observer-only</label><label><input type="checkbox" id="filter-no-observer"> No observers</label><button id="bank-clear" class="subtle">Clear filters</button></div>
+      <div class="bank-tag-filters" role="group" aria-label="Flyer categories"><span>Match all selected:</span><label><input type="checkbox" id="filter-frontier" checked> At frontier</label><label><input type="checkbox" id="filter-pushing"> Pushing-only</label><label><input type="checkbox" id="filter-pulling"> Pulling-only</label><label><input type="checkbox" id="filter-observer"> Observer-only</label><label><input type="checkbox" id="filter-no-observer"> No observers</label><button id="bank-clear" class="subtle">Clear filters</button></div>
       <div class="bank-list-heading"><span id="bank-count"></span><span>Choose a flyer to open it paused</span></div>
       <div id="bank-list" class="bank-list"></div>
     </div>
@@ -89,7 +89,7 @@
             <dt>Space / Shift</dt><dd>Fly up / down.</dd>
             <dt>Q / E</dt><dd>Hold to orbit left / right around the flyer’s middle while keeping your viewing direction relative to it.</dd>
             <dt>Double-W / F</dt><dd>Start sprinting at 1.5× player speed. Sprint ends when you stop moving.</dd>
-            <dt>Click a block</dt><dd>Inspect it: its state, owner and coordinates appear in the right panel. Click empty space to deselect.</dd>
+            <dt>Click a block</dt><dd>In View mode, inspect its state, owner and coordinates in the right panel.</dd>
           </dl>
           <p class="help-note">Movement keys only work while the scene is focused. Clicking anywhere else, or opening a popup, releases them.</p>
         </section>
@@ -99,6 +99,8 @@
             <dt>›  ‹</dt><dd>Step once. The Left and Right arrow keys step backward and forward too.</dd>
             <dt>→ / ←</dt><dd>Switch between playing forward and backward.</dd>
             <dt>↺</dt><dd>Reset to the starting state.</dd>
+            <dt>J / L</dt><dd>Set playback backward / forward and take one step in that direction.</dd>
+            <dt>K</dt><dd>Play or pause.</dd>
             <dt>Game speed</dt><dd>0.1× to 30×. At 1× the simulation runs 10 ticks per second.</dd>
           </dl>
         </section>
@@ -107,8 +109,10 @@
         </section>
         <section><h2>Flyers and tools</h2>
           <dl>
-            <dt>Browse flyer bank</dt><dd>Search, filter and sort the collection, or click a bar in the chart to open a fastest flyer at that push limit. Flyers open paused.</dd>
+            <dt>Browse flyer bank</dt><dd>Search, filter and sort the collection, or click a bar in the chart to open a fastest flyer at that push limit. “At frontier” keeps new speed records (over 0.002 bps better than lower limits), one-limit-higher improvements, and flyers within 0.005 bps of each retained limit’s best. Flyers open paused.</dd>
             <dt>Open .flyer</dt><dd>Load a file from your computer. It stays in your browser and is never uploaded.</dd>
+            <dt>Edit / View</dt><dd>Edit resets to tick 0 and disables playback. Choose one of the nine bottom slots with 1–9, right-click a block to place next to its clicked face, or hold right-click and drag to set the new block’s facing. Left-click deletes; Z or middle-click picks a block type. State variants will come later.</dd>
+            <dt>Export</dt><dd>Download the current time-zero design, including edits, as a .flyer file.</dd>
             <dt>Show floor</dt><dd>Toggle the fading ground grid in the right panel.</dd>
             <dt>Follow flyer</dt><dd>Smoothly move with the average position of its blocks; manual movement still works.</dd>
             <dt>Motion display</dt><dd>Real shows moving blocks in their stored destination cells and keeps the familiar midpoint piston head. Halfway places moving blocks at their midpoint too. Smooth animates blocks and piston heads; manual steps settle halfway, while continuous playback completes the move. These choices are visual only.</dd>

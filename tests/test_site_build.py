@@ -48,7 +48,7 @@ class SiteBuildTests(unittest.TestCase):
             viewer, dist, bank = root / "viewer", root / "dist", root / "flyers/bank"
             viewer.mkdir()
             bank.mkdir(parents=True)
-            for name in ("app.js", "index.html", "style.css"):
+            for name in ("app.js", "index.html", "style.css", "flyer-io.js"):
                 shutil.copy2(build_site.VIEWER / name, viewer / name)
             three = viewer / "node_modules/three/build"
             three.mkdir(parents=True)
@@ -85,6 +85,7 @@ class SiteBuildTests(unittest.TestCase):
             self.assertEqual(entry["version"], sha256(path.read_bytes()).hexdigest()[:12])
             self.assertIn(f"bank.json?v={manifest_hash}", app)
             self.assertNotIn("__BANK_HASH__", app)
+            self.assertNotIn("__IO_HASH__", app)
             self.assertNotEqual(old_app, app)
             self.assertNotEqual(old_html, (dist / "index.html").read_text(encoding="utf-8"))
             self.assertEqual(path.read_bytes(), (dist / entry["path"]).read_bytes())
