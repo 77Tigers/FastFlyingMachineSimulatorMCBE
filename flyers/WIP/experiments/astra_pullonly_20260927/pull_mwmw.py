@@ -108,6 +108,6 @@ if __name__=='__main__':
   if n:print('offset',dx,dy,dz,'candidates',n,flush=True)
   if n>=500:break
  (out.parent/'mwmw_metadata.json').write_text(json.dumps(meta,indent=2))
- p=subprocess.run([str(ROOT/'flyers/WIP/experiments/bin/research_runner.exe'),'batch',str(out),'160'],capture_output=True,text=True)
+ p=subprocess.run([str(ROOT/'target/release/fastflyer-research.exe'),'batch',str(out),'160'],capture_output=True,text=True)
  (out.parent/'mwmw_screen.txt').write_text(p.stdout)
  print('TESTED',n,flush=True)

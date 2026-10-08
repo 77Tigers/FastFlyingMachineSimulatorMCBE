@@ -4,13 +4,18 @@ from pathlib import Path
 sys.path.insert(0,r"C:/Users/Ruben/OneDrive/Documents/FastFlyerPlayground/flyers/WIP/experiments/exclusive_roles_20261001")
 from graft import HERE,sx,nb,offset
 from fastflyer import Flyer,Block,Kind
+def _tb(n):
+    import sys, pathlib
+    sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[5]))
+    from fastflyer.research import binary
+    return binary(n)
 def main(base,L,outname):
  base=Path(base);out=HERE/outname;out.mkdir(exist_ok=True);f0=Flyer.load(base)
- raw=subprocess.check_output([str(HERE/'states.exe'),str(base),str(2*L)],text=True)
+ raw=subprocess.check_output([str(_tb('states')),str(base),str(2*L)],text=True)
  W=[{} for _ in range(L+1)]
  for line in raw.splitlines():
   t,x,y,z,v=map(int,line.split());W[t//2][x,y,z]=Block.decode(v)
- text=subprocess.check_output([str(HERE.parent/'bin/human_bodytrack.exe'),str(base),str(40*L),str(2*L),str(2*L)],text=True,env=dict(os.environ,BT_CELLS='1'))
+ text=subprocess.check_output([str(_tb('bodytrack')),str(base),str(40*L),str(2*L),str(2*L)],text=True,env=dict(os.environ,BT_CELLS='1'))
  (out/'bodies.txt').write_text(text);bs=[]
  for line in text.splitlines():
   m=re.match(r'  B(\d+): n=(\d+).*word=([mw]+)',line)

@@ -1,4 +1,0 @@
-verify pass=true file=flyers\WIP\experiments\overnight_20260930\mmmm_glazed_hex_six_s006_pl47.flyer ticks=10000 distance=3334 limit=47 max_successful_action=47 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=833 initial_matches=833 consecutive_matches=833 displacement_mismatches=0
-
-file=flyers\WIP\experiments\overnight_20260930\mmmm_glazed_hex_six_s006_pl47.flyer limit=47 rng_final=6269817706955863125 phase_x=0 phase_z=0 ticks=10000 start_min_x=11 end_min_x=3345 distance=3334 extensions=20000 extension_failures=0 end_blocks=269 initial_kinds=[0, 98, 107, 0, 0, 12, 6, 12, 6, 24, 0] final_kinds=[0, 98, 107, 0, 0, 12, 6, 12, 6, 24, 0] conservation_mismatch_ticks=0 period=12 translated_repeat_pairs=833 first_repeat=Some((0, 12, 4)) traced=true max_successful_action=47 movement_failures=0
-

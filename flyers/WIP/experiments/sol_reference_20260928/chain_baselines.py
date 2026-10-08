@@ -10,7 +10,7 @@ source=source.replace('spans=([3,3,4]*(k//3)) if n==4 and k%3==0 else [3]*(k-1)+
 source=source.replace('and -5<=q[1]<=10 and -5<=q[2]<=10','and min(c[0] for c in centers)-4<=q[1]<=max(c[0] for c in centers)+4 and min(c[1] for c in centers)-4<=q[2]<=max(c[1] for c in centers)+4')
 ns={};exec(compile(source,str(HERE/'derived_generator.py'),'exec'),ns)
 (HERE/'derived_generator.py').write_text(source)
-runner=HERE/'research_runner.exe'
+runner=HERE.parents[3]/'target/release/fastflyer-research.exe'
 rows=[];meta=[]
 for n in (3,4):
  for copies in (1,2,4):

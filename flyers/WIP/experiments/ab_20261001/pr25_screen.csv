@@ -1,7 +1,0 @@
-file,limit,rng,phase_x,phase_z,ticks,distance,end_blocks,extensions,extension_failures,movement_failures,first_failure_tick,first_failure_kind,conservation_mismatch_ticks,max_successful_action,clean
-"ab_20261001/pr25\s00000.flyer",250,5,0,0,400,100,38,200,0,0,,"",0,22,true
-"ab_20261001/pr25\s00001.flyer",250,5,0,0,400,2,36,4,0,0,,"",0,19,true
-"ab_20261001/pr25\s00002.flyer",250,5,0,0,400,0,39,0,0,0,,"",0,0,true
-"ab_20261001/pr25\s00003.flyer",250,5,0,0,400,100,36,200,0,0,,"",0,21,true
-"ab_20261001/pr25\s00004.flyer",250,5,0,0,400,100,35,200,0,0,,"",0,26,true
-"ab_20261001/pr25\s00005.flyer",250,5,0,0,400,100,34,200,0,0,,"",0,18,true

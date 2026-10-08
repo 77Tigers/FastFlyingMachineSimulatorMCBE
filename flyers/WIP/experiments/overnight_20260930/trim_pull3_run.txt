@@ -1,9 +1,0 @@
-pull3 trim 0 removed 6 sticky [58, 73, 87, 83, 72, 116, 59, 114, 77, 79]
-pull3 trim 1 removed 2 sticky [58, 73, 87, 82, 72, 116, 58, 114, 77, 79]
-pull3 trim 2 removed 0 sticky [58, 73, 87, 82, 72, 116, 58, 114, 77, 79]
-verify pass=true file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\pull3_trim_pl126.flyer ticks=10000 distance=3000 limit=126 max_successful_action=126 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=1000 initial_matches=1000 consecutive_matches=1000 displacement_mismatches=0
-
-file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\pull3_trim_pl126.flyer limit=126 rng_final=6269817706955863125 phase_x=0 phase_z=0 ticks=10000 start_min_x=11 end_min_x=3011 distance=3000 extensions=30000 extension_failures=0 end_blocks=882 initial_kinds=[0, 372, 444, 0, 0, 0, 17, 13, 0, 30, 0] final_kinds=[0, 372, 444, 0, 0, 0, 17, 13, 0, 30, 0] conservation_mismatch_ticks=0 period=10 translated_repeat_pairs=1000 first_repeat=Some((0, 10, 3)) traced=true max_successful_action=126 movement_failures=0
-
-samples passed=80/80 file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\pull3_trim_pl126.flyer ticks=10000 period=10 advance=3 first_failed=None out=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\pull3_trim_pl126.samples.csv
-

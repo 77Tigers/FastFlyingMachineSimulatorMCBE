@@ -1,2 +1,0 @@
-verify pass=false file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\n4_compact_d4.0_a0_s002_pl21.flyer ticks=10000 distance=3333 limit=21 max_successful_action=21 extension_failures=0 movement_failures=0 first_failure_tick=- first_failure_kind= conservation_mismatch_ticks=0 boundaries=833 initial_matches=0 consecutive_matches=0 displacement_mismatches=0
-Error: "verification failed; inspect the summary above"

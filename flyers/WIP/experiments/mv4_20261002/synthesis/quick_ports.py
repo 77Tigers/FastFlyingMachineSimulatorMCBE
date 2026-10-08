@@ -19,7 +19,7 @@ for ci,(six.OWN,six.PREVIOUS) in enumerate(cases):
    rec=dict(case=ci,placement=pi,route_seed=rs,failure=why,own=six.OWN,previous=six.PREVIOUS)
    if ans:
     f,m=ans;f.push_limit=49;p=out/f'c{ci}_p{pi}_r{rs}_pl49.flyer';f.save(p);rec['metadata']=m
-    run=subprocess.run([str(search.ROOT/'flyers/WIP/experiments/bin/research_runner.exe'),'audit',str(p),'120','12'],capture_output=True,text=True)
+    run=subprocess.run([str(search.ROOT/'target/release/fastflyer-research.exe'),'audit',str(p),'120','12'],capture_output=True,text=True)
     rec['audit']=run.stdout+run.stderr;print(rec['audit'],flush=True)
     log.append(rec);(out/'results.json').write_text(json.dumps(dict(stats=stats,records=log),indent=2))
     if 'distance=40 ' in rec['audit'] and 'movement_failures=0' in rec['audit'] and 'conservation_mismatch_ticks=0' in rec['audit']:

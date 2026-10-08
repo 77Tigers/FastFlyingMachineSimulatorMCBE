@@ -1,8 +1,0 @@
-{
-  "pistons": 30,
-  "all_sticky_minus_x": true,
-  "empty_extensions": 30,
-  "nonempty_retractions": 30,
-  "max_load": 125,
-  "failures": 0
-}

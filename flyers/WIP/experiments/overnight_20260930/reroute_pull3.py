@@ -3,7 +3,7 @@ from pathlib import Path
 import sys,json,random,heapq,subprocess,re,importlib.util
 ROOT=Path(__file__).resolve().parents[4];sys.path.insert(0,str(ROOT))
 from fastflyer import Flyer,Block
-HERE=Path(__file__).resolve().parent;RUNNER=ROOT/'flyers/WIP/experiments/bin/research_runner.exe'
+HERE=Path(__file__).resolve().parent;RUNNER=ROOT/'target/release/fastflyer-research.exe'
 def main():
     source_path=HERE/'derived_pull3_compact.py';source=source_path.read_text();spec=importlib.util.spec_from_file_location('pullmodel',source_path);model=importlib.util.module_from_spec(spec);spec.loader.exec_module(model)
     model.place=lambda i,j,spacing:((i%5)*2*spacing,(i//5)*4*spacing+j*spacing)

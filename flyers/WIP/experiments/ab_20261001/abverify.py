@@ -6,13 +6,18 @@ blocks must move honey only and the piston must touch slime (anchor B). Sticky e
 usage: abverify.py FLYER TICKS"""
 import subprocess, sys, re
 from pathlib import Path
+def _tb(n):
+    import sys, pathlib
+    sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[4]))
+    from fastflyer.research import binary
+    return binary(n)
 HERE = Path(__file__).resolve().parent
-RUN = HERE.parent / 'bin' / 'research_runner.exe'
+RUN = HERE.parents[3] / 'target' / 'release' / 'fastflyer-research.exe'
 DIRS = [(1,0,0),(-1,0,0),(0,1,0),(0,-1,0),(0,0,1),(0,0,-1)]
 
 
 def states(path, ticks):
-    r = subprocess.run([str(HERE / 'bin' / 'dumpstate.exe'), str(path), str(ticks)], capture_output=True, text=True, encoding='utf-8', errors='replace')
+    r = subprocess.run([str(_tb('ab-dumpstate')), str(path), str(ticks)], capture_output=True, text=True, encoding='utf-8', errors='replace')
     st = {}
     for line in r.stdout.split('\n'):
         if not line.strip(): continue

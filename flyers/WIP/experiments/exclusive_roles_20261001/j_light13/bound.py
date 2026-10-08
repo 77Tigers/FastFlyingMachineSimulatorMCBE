@@ -4,10 +4,15 @@ EXC=Path(r"C:/Users/Ruben/OneDrive/Documents/FastFlyerPlayground/flyers/WIP/expe
 sys.path.insert(0,str(EXC))
 from graft import HERE,sx,nb,offset
 from fastflyer import Flyer,Block,Kind
+def _tb(n):
+    import sys, pathlib
+    sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[5]))
+    from fastflyer.research import binary
+    return binary(n)
 L=5
 base=EXC/'human_base.flyer'
 f0=Flyer.load(base)
-raw=subprocess.check_output([str(EXC/'states.exe'),str(base),str(2*L)],text=True)
+raw=subprocess.check_output([str(_tb('states')),str(base),str(2*L)],text=True)
 W=[{} for _ in range(L+1)]
 for line in raw.splitlines():
   t,x,y,z,v=map(int,line.split());W[t//2][x,y,z]=Block.decode(v)

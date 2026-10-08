@@ -1,2 +1,0 @@
-name,distance,failures,conserved,max_load,n_at_limit,n_at_limit_m1,hist
-c0000,180,0,true,12,700,900,5:250 6:250 7:350 8:50 9:100 10:400 11:900 12:700

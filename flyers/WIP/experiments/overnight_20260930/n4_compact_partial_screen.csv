@@ -1,9 +1,0 @@
-file,limit,rng,phase_x,phase_z,ticks,distance,end_blocks,extensions,extension_failures,movement_failures,first_failure_tick,first_failure_kind,conservation_mismatch_ticks,max_successful_action,clean
-"flyers/WIP/experiments/overnight_20260930/n4_compact_candidates\d3.2_a0_s000.flyer",100,5,0,0,240,80,272,960,0,0,,"",0,23,true
-"flyers/WIP/experiments/overnight_20260930/n4_compact_candidates\d3.2_a0_s001.flyer",100,5,0,0,240,80,272,960,0,0,,"",0,23,true
-"flyers/WIP/experiments/overnight_20260930/n4_compact_candidates\d3.2_a0_s002.flyer",100,5,0,0,240,80,272,960,0,0,,"",0,23,true
-"flyers/WIP/experiments/overnight_20260930/n4_compact_candidates\d3.2_a0_s003.flyer",100,5,0,0,240,80,272,960,0,0,,"",0,23,true
-"flyers/WIP/experiments/overnight_20260930/n4_compact_candidates\d3.2_a0_s004.flyer",100,5,0,0,240,80,272,960,0,0,,"",0,23,true
-"flyers/WIP/experiments/overnight_20260930/n4_compact_candidates\d3.2_a0_s005.flyer",100,5,0,0,240,80,272,960,0,0,,"",0,23,true
-"flyers/WIP/experiments/overnight_20260930/n4_compact_candidates\d3.2_a0_s006.flyer",100,5,0,0,240,80,272,960,0,0,,"",0,23,true
-"flyers/WIP/experiments/overnight_20260930/n4_compact_candidates\d3.2_a0_s007.flyer",100,5,0,0,240,80,272,960,0,0,,"",0,23,true

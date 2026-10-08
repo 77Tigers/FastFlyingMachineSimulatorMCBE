@@ -16,15 +16,17 @@ mixed.py explores one all-pull body and all-push supports with unrestricted rest
 
 graft.py found only one no-new-glue rigid pull port, then21 ports with short supports sharing existing sources, but no complete rail. free_ports.py adds sources and short supports and produced the PL19 result. Critical correction: a pulled segment can carry a released sticky on a subsequent move, matching its scheduled transport; a piston does not transmit side adhesion to its former carrier. The earlier rail checker incorrectly prohibited these transfers.
 
-Candidate generation is conservative in some places and permissive in others: source interactions and ownership across multiple added modules can cause entrainment, unintended power, or overload. Simulation is mandatory; isolated legal ports do not prove a complete flyer. c0001 runs the base but abandons the added rail after3 pulls, so it is rejected. c0005/c0009/c0010 passed the initial240 screen, only c0005 received the full nominal role audit.
+Candidate generation is conservative in some places and permissive in others: source interactions and ownership across multiple added modules can cause entrainment, unintended power, or overload. Simulation is mandatory; isolated legal ports do not prove a complete flyer. c0001 (in FastFlyer_WIP_uncommitted_backup_20261008) runs the base but abandons the added rail after3 pulls, so it is rejected. c0005/c0009/c0010 passed the initial240 screen, only c0005 received the full nominal role audit.
 
 ## Resume
 
-1. Finish the full80 audit of exclusive_3_pl19.flyer using research_runner samples --period10 --advance3; read speed/conservation/load fields independently from exact pass. Preserve the partial CSV first. Audit exclusive roles across phase/RNG variants before banking.
-2. Screen remaining free_human candidates for potentially smaller load; all remain encoded24. Do not treat them as audited results.
-3. For3.333, the grafts overburden PL21 carriers. Reduce added carrier/source glue or choose a lighter base; do not increase PL above24. free_n4.screen.csv identifies first overloads. Cached ports and per-candidate metadata are preserved. Do not rerun unchanged failed candidates.
+1. Finish the full80 audit of exclusive_3_pl19.flyer using fastflyer-research samples --period10 --advance3; read speed/conservation/load fields independently from exact pass. Preserve the partial CSV first. Audit exclusive roles across phase/RNG variants before banking.
+2. Screen remaining free_human candidates for potentially smaller load; all remain encoded24. Do not treat them as audited results. (Superseded by the PL13-15 results below. 2026-10-08 cleanup: only free_human/c0005, c0009, c0010, c0017, c0021 kept here; the other candidates are in FastFlyer_WIP_uncommitted_backup_20261008, their .json in `git show 1222fbe:flyers/WIP/experiments/exclusive_roles_20261001/free_human/cNNNN.json`.)
+3. For3.333, the grafts overburden PL21 carriers. Reduce added carrier/source glue or choose a lighter base; do not increase PL above24. free_n4.screen.csv identifies first overloads. Cached ports and per-candidate metadata are preserved (2026-10-08 cleanup: free_n4/ports.json and bodies.txt kept; of the candidates only c0002/c0009 kept, others in FastFlyer_WIP_uncommitted_backup_20261008). Do not rerun unchanged failed candidates.
 
-Portable tools: states.rs/exe (absolute slot states), roles.rs/exe (adapted from human bodytrack; persistent identities, all-time push/pull classification), mixed.py, graft.py, free_ports.py. Python C:/Users/Ruben/anaconda3/python.exe. Role syntax: roles.exe FILE 10000 0 PERIOD. Trace and conservation are simulator evidence, not an in-game claim.
+Portable tools: `states` (tools/src/bin/states.rs) (absolute slot states), `roles` (tools/src/bin/roles.rs) (adapted from human bodytrack; persistent identities, all-time push/pull classification), mixed.py, graft.py, free_ports.py. Python C:/Users/Ruben/anaconda3/python.exe. Role syntax: roles FILE 10000 0 PERIOD. Trace and conservation are simulator evidence, not an in-game claim.
+(2026-10-08: `roles` and `states` are now cargo bins of the tools crate; build with `cargo build --release --manifest-path tools/Cargo.toml --target-dir target` and run `target/release/roles`/`states`.
+j_mmwmw2/j2_mmwmw3 generators call states from this directory.)
 
 ## Continuation (agent J, 2026-10-02)
 BANKED: bank/pl19/exclusive_roles_3bps.flyer (exclusive_3_pl19, 80/80 pl19.fast.csv), bank/pl26/exclusive_roles_3p333.flyer
@@ -38,4 +40,13 @@ BANKED 3 bps PL14 `bank/pl14/exclusive_roles_3bps.flyer` (j_light16/ver14/cand14
 simulator screening portscreen.py, exact Steiner rail + sticky-adjacency fix in jports_st.py; 80/80) and 3.333 PL22
 `bank/pl22/exclusive_roles_3p333.flyer` (j_333/exclusive_3p333_pl22: per-body budget on the n4 base, B0 16-glue
 pull-only; 80/80 at 3334). Bounds: 3 bps PL13 run13g 286 budget triples, 0 rails <=11; 3.333 PL21 0 light-carrier
-ports. PL13 BANKED `bank/pl13/exclusive_roles_3bps.flyer` (j_light13/ver13/cand13, base 3bps_original which has more slack; 8-slime pull-only B41; budget from roles.exe events, triples ordered by L1 Steiner proxy; 80/80). PL12 on that base: 4 budget combos, 0 candidates (bounded). See j_light13/NOTES.md.
+ports. PL13 BANKED `bank/pl13/exclusive_roles_3bps.flyer` (j_light13/ver13/cand13, base 3bps_original which has more slack; 8-slime pull-only B41; budget from roles events, triples ordered by L1 Steiner proxy; 80/80). PL12 on that base: 4 budget combos, 0 candidates (bounded). See j_light13/NOTES.md.
+
+## Cleanup 2026-10-08
+Kept: all notes, generators (graft/free_ports/front_ports/front_reuse/mixed, j_light16/jports*.py, j_light13/jports_st_o.py +
+jports_rb/bound/lb analysis, j_333/jports333.py, sol_n4/raise_limits.py, sol_trim/trim.py), tools/src/bin/roles.rs/states.rs, every banked/cited
+candidate (+ .json geometry), ver13/ver14, audits (.samples.csv/.roles.txt/.measure.txt), screen summaries, one copy of each distinct
+cached ports file. Removed: other run candidates (j_light16 run1/13/13g/14/14b-g/15, j_333 run23/24/cnt*/gen21, j_light13 o2_1..o2_11/
+o12/orig2/rb*, sol_n4/raised36, sol_trim drop variants, front16*/, mixed_n3/), duplicate ports.json copies, run/shard logs, *.err,
+*.pkl, portscreen temp flyers, compiled .exe/.pdb, byte-identical script copies in j_light13 (jports14/jports400/jports_st/screen.sh =
+j_light16 versions) and its dbg*/poolinfo scripts. Tracked files: `git show 1222fbe:<path>`; .flyer files: FastFlyer_WIP_uncommitted_backup_20261008.

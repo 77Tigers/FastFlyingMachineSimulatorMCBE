@@ -1,7 +1,7 @@
 # ring_hand (agent J-ring, 2026-10-01/02)
 
 Result: a working 3-body 3.333 bps ring at PL29. `ring_pl29.flyer`: 10,000 ticks -> distance 3334, 0 extension
-failures, conservation clean, period 12 (+4); samples.exe 80-case audit 80/80 (3334, 0 failures, conserved)
+failures, conservation clean, period 12 (+4); sol-samples 80-case audit 80/80 (3334, 0 failures, conserved)
 (`ring_pl29.samples.csv`). PL28 fails (`ring_pl28.flyer`). Also `ring_pl30.flyer` (80/80). NOT banked (still
 above PL26 3.333 record; 82-ish cells, ~25 glue per body).
 
@@ -16,3 +16,7 @@ Load structure: body (23-29 glue + RB) + 3 riding pistons; every push is 28-32. 
 shrink (compact layout, glue beside pistons); rigid: random glue mutation almost never keeps the ring valid.
 Next step: seed many more pools (cheap), trim, then constrained swap/shift search on the trimmed ring that keeps
 timing (only edit glue; fitness = max load); or hand-shorten the arms between face glue and carrier glue.
+
+## Cleanup 2026-10-08
+
+Pools (`pool*.pkl`), trim logs and all routed/trimmed candidates except `w_12_3.flyer`, `t_w_12_3.flyer` and `ring_pl28/29/30.flyer` were removed in the 2026-10-08 cleanup (`git show 1222fbe:<path>`; `.flyer` files in `FastFlyer_WIP_uncommitted_backup_20261008`). Rerun `seedpool.py` to regenerate pools.

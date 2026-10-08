@@ -1,0 +1,3 @@
+#!/bin/sh
+# Enable with: git config core.hooksPath .githooks
+exec python scripts/check_repo_hygiene.py --staged

@@ -48,8 +48,8 @@ Validation obligations:
 - Require full block/owner recurrence and80 full phase/RNG samples before
   banking. An externally moved fixture is only an interface check.
 
-Reference evidence: `astra_pull3/retrofit.py` has a sustained one-interface
-mixed proof at high load; `sol_extra_front_20260927/FINDINGS.md` diagnoses the
+Reference evidence: `astra_pull3/retrofit.py` (deleted; `git show 1222fbe:flyers/WIP/experiments/astra_pull3/retrofit.py`) has a sustained one-interface
+mixed proof at high load; `sol_extra_front_20260927/FINDINGS.md` (deleted; summarised in [ARCHIVE.md](../ARCHIVE.md), `git show 1222fbe:flyers/WIP/experiments/sol_extra_front_20260927/FINDINGS.md`) diagnoses the
 failed helper and corrected relay. Neither establishes a compact chainable
 3 bps module. This records the user's clarification and the next bounded
 question; it does not claim another new flyer.

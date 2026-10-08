@@ -35,3 +35,5 @@ User: don't bank PL14 until more back segments are at 11. Opus (j2_tmsmol_opus/)
 - `transplant24.py`: o0's B24-pull edit transplanted (alignment offset (-2,0,0), 136/145 cells match): m14t/o0_sh0_L14_c0
   runs 180/600 clean at PL14; that back segment 14 -> 13, mmwmw still pulled twice, flyer still PL14. 13 is the floor via
   pulls (both rider owners already use their one pull). Dropped per user.
+
+2026-10-08 cleanup: variant flyers in b0move/ (714), b15del/ (40), del_o0/, del_o1/, m14t/ (except o0_sh0_L14_c0) and b24pull/ (except o0_d1_L14, o1_d1_L14) removed; result CSVs, tr_base.txt/tr_d254.txt and bodytracks kept; update_bank*.log removed. `git show 1222fbe:<path>` for tracked csv/txt/json/log; .flyer in FastFlyer_WIP_uncommitted_backup_20261008.

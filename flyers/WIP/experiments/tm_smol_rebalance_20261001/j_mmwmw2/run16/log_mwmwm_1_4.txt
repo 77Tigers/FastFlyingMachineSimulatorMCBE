@@ -1,6 +1,0 @@
-ports totals {'pull0': 250, 'pull1': 202, 'pull2': 125, 'pull3': 97, 'pull4': 89, 'push0': 52, 'push1': 50, 'push2': 117, 'push3': 122, 'push4': 105}
-stage1 mwmwm 1 push@ 4 PL 215 Q [125, 107]
-pl 0 215 0 {}
-pl 1 215 1 {'PLtried': 1, 'PLwithQ': 1, 'budget': 300}
-pl 2 215 1 {'PLtried': 2, 'PLwithQ': 2, 'budget': 600}
-pl 3 215 1 {'PLtried': 3, 'PLwithQ': 3, 'budget': 900}

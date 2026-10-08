@@ -1,7 +1,0 @@
-screen candidates=53 clean=26 ticks=240 out=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0.screen.csv
-  distance=80 load=23 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0000.flyer
-  distance=80 load=22 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0001.flyer
-  distance=80 load=24 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0003.flyer
-  distance=80 load=23 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0006.flyer
-  distance=80 load=23 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0012.flyer
-  earliest_failure tick=0 kind=(Coord { x: 13, y: 12, z: 12 }, "push limit exceeded") file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\layout_n4_0\c0011.flyer

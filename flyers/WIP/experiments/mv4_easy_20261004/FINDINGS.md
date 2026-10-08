@@ -24,7 +24,7 @@ state recurrence remains unestablished**; these results do not certify all
 possible update orders. This is the same validation scope as the user-approved
 original PL49 mechanism.
 
-Direct per-action load accounting (`load_profile.rs/.csv/.txt`) shows that the
+Direct per-action load accounting (`tools/src/bin/mv4-load-profile.rs/.csv/.txt`) shows that the
 43-cell peak consists of33 glue, eight piston passengers and two observers,
 occurring84 times in10,000 ticks. There are no movement failures. With that
 overhead unchanged, that peak body would need25 glue to reach PL35. This is a
@@ -35,8 +35,9 @@ are excluded from load profiles.
 Evidence: `validation/compact43_reroute_best/summary.json`, `full80.csv`,
 `audit10000.txt`, `lower.audit10000.txt`. SHA256:
 `bbcdbe089b3f63630af21cb4bd04aa8fb80d6abe7870a5ce40c1bfb4bae41c47`.
-Geometry metadata: `compact43/reroute_best.json`. WIP copy:
-`../../mv4_symmetric_easy_compact_pl43.flyer`. Bank ledger: `../../../bank/results.csv`.
+Geometry metadata: `compact43/reroute_best.json`. WIP copy
+`../../mv4_symmetric_easy_compact_pl43.flyer` was byte-identical to the bank copy
+(removed in 2026-10-08 cleanup; in FastFlyer_WIP_uncommitted_backup_20261008). Bank ledger: `../../../bank/results.csv`.
 
 PL45 and the196-glue PL43 are also verified and retained. Compared with the
 previous symmetric PL46/198-glue flyer, this improves the maximum action by3
@@ -97,7 +98,7 @@ trials,360 fixed-pair reroutes, then193 more pruning trials: one bend removed,
 no glue or PL saving. `faces_local/`, `faces_local_final/`.
 
 Lower-limit checks use a deduplicated geometry manifest in `limits42/`.
-`audit_one.exe` checks RNG5/XZ0 and stops at first failure. A negative suffices
+`mv4-audit-one` (rebuild from `tools/src/bin/mv4-audit-one.rs`; see the cleanup note below) checks RNG5/XZ0 and stops at first failure. A negative suffices
 to reject that80-case claim; a positive would still need the full80 cases and
 traced audit. The original portable batch deliberately retains14 negative rows
 in an interrupted partial CSV; it is not a complete matrix. All45 distinct saved
@@ -150,3 +151,35 @@ tasks. Priority: explicit carrier-graph reassignment with unchanged timing,
 then shared-hub feasibility and balanced2+2 modules. The three-member capacity
 argument is conditional on four unavailable ticks per firing; test the reset/
 pickup loophole before treating it as a bound. No new search has been started.
+
+## 2026-10-08 cleanup
+
+Second cleanup (keeps every source file, ledger, plan, status, validation and
+bank-lineage candidate):
+
+- Removed rebuildable `mv4-audit-one` and `mv4-load-profile`. Rebuild with
+  `cargo build --release --manifest-path tools/Cargo.toml --target-dir target`.
+  `common.AUDIT` points to `target/release/mv4-audit-cores`, which must
+  likewise be rebuilt (command in that folder's FINDINGS) before `validate.py`,
+  `limit_scan.py` or the sweeps can simulate.
+- Removed non-lineage sweep candidates (`.flyer`, `.json`, `.screen300.csv/.txt`)
+  in `bend/`, `rail/`, `flat/`, `ports/` and `compact_faces/`. Their outcome,
+  limit, counts and score remain in each folder's `attempts.jsonl`, so sweeps still
+  resume without rerouting. Kept: `flat/case0006_pl43` (196-glue PL43 bank source),
+  `flat/case0000_pl45` (PL45 bank source), `ports/case0095_pl43` (194-glue start
+  of the compact lineage) and `compact_faces/case0012_pl44` (best new face route,
+  parent of `faces_local/`). Hence the historical `source` paths in
+  `limits42/manifest.json` mostly point to removed files.
+- Removed intermediate `reroute_0001/0002[/0003]` candidates at the root and in
+  `compact43/`, `local43/`, `faces_local/`; each folder keeps `pruned_best` and
+  `reroute_best` (`compact43/reroute_best` is the bank PL43 compact flyer).
+- Removed `limits42/run002`, `run004`, `run006`, `run007` single-case CSV/text
+  outputs: every one of the 45 PL42 results (outcome and first failure) is
+  recorded in `limits42/manifest.json`; the cited partial `run000.csv` is kept.
+- Removed `compact_faces/survey.jsonl` (1.1 MB, 3648-case mandatory-interface
+  survey: 82 valid, 2414 body contact, 1152 hardware keepout). Its ranked output is
+  kept in `compact_faces/plan.json`; re-running `compact_faces.py` would redo the
+  cheap static survey before reaching the (unchanged, complete) routing ledger.
+
+Tracked removals: `git show 1222fbe:flyers/WIP/experiments/mv4_easy_20261004/<path>`.
+Ignored `.flyer` removals: FastFlyer_WIP_uncommitted_backup_20261008.

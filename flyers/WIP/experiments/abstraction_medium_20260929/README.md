@@ -1,6 +1,6 @@
 # Piston-group abstraction trial — Sol Medium
 
-Current specification: [ABSTRACTION_PIPELINE.md](../../../ABSTRACTION_PIPELINE.md). Both delegated workers use GPT-6 Sol Medium with fresh contexts. This trial changes both the pipeline and reasoning effort, so it is not a controlled model comparison.
+Current specification: [ABSTRACTION_PIPELINE.md](../../../docs/ABSTRACTION_PIPELINE.md). Both delegated workers use GPT-6 Sol Medium with fresh contexts. This trial changes both the pipeline and reasoning effort, so it is not a controlled model comparison.
 
 `contracts/`: reference-assisted extraction/checking of stages 1–4, including sparse contact choreography. `forward/`: fresh construction/checking of stages 5–7 from that handoff and general mechanics/API docs only. Full reference geometry, old generators and traces are excluded from the forward worker. Reference-derived port coordinates are allowed and must be disclosed; this tests constrained realization, not independent mechanism discovery.
 

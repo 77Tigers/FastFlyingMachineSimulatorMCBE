@@ -137,7 +137,7 @@ def rail_ok_port(c,tw,kind,p):
      if q==r or (mv and sx(q,1)==r) or (kind==kd and r in nb(q)):return False
   return True
 def measure(path,ticks):
-  out=subprocess.run([str(BIN/'research_runner.exe'),'measure',str(path),str(ticks),'10'],capture_output=True,text=True).stdout
+  out=subprocess.run([str(BIN.parents[3]/'target/release/fastflyer-research.exe'),'measure',str(path),str(ticks),'10'],capture_output=True,text=True).stdout
   d={}
   for k in ('distance','extension_failures','movement_failures','conservation_mismatch_ticks'):
     m=re.search(k+r'=(-?\d+)',out);d[k]=int(m[1]) if m else None

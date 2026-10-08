@@ -21,12 +21,17 @@ import planner as P
 sys.argv = argv
 from fastflyer import Flyer, Block, Kind
 import subprocess
+def _tb(n):
+    import sys, pathlib
+    sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[4]))
+    from fastflyer.research import binary
+    return binary(n)
 DBG = collections.Counter()
 
 FACES = P.FACES; add = P.add; sx = P.sx
 BT = HERE / 'orig.bodytrack.txt'; SNAPS = HERE / 'snaps_orig'; BASE = HERE / 'orig.flyer'
 HELPERS = [int(x) for x in next((a.split('=')[1] for a in sys.argv if a.startswith('--helpers=')), '55,64,65,66,69').split(',')]
-LH = HERE / 'loadhist.exe'
+LH = _tb('loadhist')
 
 
 KMAP = {'sl': Kind.SLIME, 'ho': Kind.HONEY, 'RB': Kind.REDSTONE_BLOCK}

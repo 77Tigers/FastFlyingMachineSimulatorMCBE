@@ -1,6 +1,6 @@
 # Flyer research handoff — 2026-09-26, diagonal breakthrough
 
-Keep this active handoff below **5,500 words**. Prior evidence is preserved in [RESEARCH_LOG_PRE_DIAGONAL_2026-09-26.md](RESEARCH_LOG_PRE_DIAGONAL_2026-09-26.md), [RESEARCH_LOG_ARCHIVE_2026-09-26.md](RESEARCH_LOG_ARCHIVE_2026-09-26.md), and experiment findings. Read root `SIMULATION.md` before implementing mechanics. Do not change the simulator, editor library, format, viewer, or unrelated project files to obtain a score.
+Keep this active handoff below **5,500 words**. Prior evidence is preserved in [RESEARCH_LOG_PRE_DIAGONAL_2026-09-26.md](docs/archive/RESEARCH_LOG_PRE_DIAGONAL_2026-09-26.md), [RESEARCH_LOG_ARCHIVE_2026-09-26.md](docs/archive/RESEARCH_LOG_ARCHIVE_2026-09-26.md), and experiment findings. Read root `SIMULATION.md` before implementing mechanics. Do not change the simulator, editor library, format, viewer, or unrelated project files to obtain a score.
 
 **Research workflow and tooling:** Start with the short [active-experiment index](WIP/experiments/INDEX.md), then read only the linked files needed for the current question. [RESEARCH_RUNNER.md](WIP/experiments/RESEARCH_RUNNER.md) documents portable `screen`, `verify`, `samples`, and focused `trace` commands. Save full batch results and traces in the experiment directory; show compact summaries and the first relevant failure in chat. Search named directories with bounded output instead of listing all `.flyer` files. Reuse the runner before writing a one-off diagnostic. **Do not remove or shorten information about existing research tools unless a replacement tool and its usage are documented and available.** Preserve paths and evidence needed to reproduce prior claims.
 
@@ -96,31 +96,31 @@ Higher-speed route screens completed96 seeds each: five-body N3 best18, three-bo
 
 ## Prior directions — 2026-09-28
 
-The abstraction trial, three-segment mmwmmw proof, extension bounds and prior-objectives link are preserved in [the directions archive](RESEARCH_LOG_PRIOR_DIRECTIONS_20261003.md). Current tooling remains below and in the active experiment index.
+The abstraction trial, three-segment mmwmmw proof, extension bounds and prior-objectives link are preserved in [the directions archive](docs/archive/RESEARCH_LOG_PRIOR_DIRECTIONS_20261003.md). Current tooling remains below and in the active experiment index.
 
 ## PL11 diagonal alternating engine
 
-Generator: `WIP/experiments/astra_diagonal/search_mwmw.py`. Winning generated file: `astra_diagonal/mwmw/c58.flyer`. Metadata: second-interface offset `(-3,0,1)`, transverse transform `(swap=1,sy=-1,sz=-1)`, observer choices `oa=ob=1`, geometry seed 0. Simulation RNG 5, phase `(0,0)`.
+Generator: `WIP/experiments/astra_diagonal/search_mwmw.py` and winning generated file `astra_diagonal/mwmw/c58.flyer` (both deleted 2026-10-08; summary in [ARCHIVE.md](WIP/experiments/ARCHIVE.md); `git show 1222fbe:flyers/WIP/experiments/astra_diagonal/search_mwmw.py`; the c58 .flyer is in the uncommitted backup). Metadata: second-interface offset `(-3,0,1)`, transverse transform `(swap=1,sy=-1,sz=-1)`, observer choices `oa=ob=1`, geometry seed 0. Simulation RNG 5, phase `(0,0)`.
 
 It has **8 slime, 6 honey, 2 observers, 4 normal pistons**, plus one arm at the sampled boundary. Loads alternate **11/9/11/9**. The two carriers alternate actions (`mwmw`), each advancing two cells every eight ticks. One piston starts extended, a valid advanced-cycle initialization.
 
 The successful local module uses support honey H `(0,0,0)`, +X pistons P0 `(0,0,1)` and P1 `(-1,1,0)`, and target slime `{(-1,1,1),(0,1,1),(1,1,1),(1,0,1),(1,1,0)}`. An observer at `(0,-1,0)` outputs +Y into H, or use its rotated equivalent. **Diagonal piston sites let one rear corner slime pick either piston**, reducing the previous eight-slime sketch to five local rail cells. Two routed modules close the cycle.
 
-Evidence: `astra_diagonal/c58_pl11_audit.csv`, `c58_pl12_audit.csv`, and corresponding trace files. Rebuild `astra_diagonal/verify.rs` against the current release rlib. It checks all 80 cases, permanent-kind counts, encoded blocks and owner lists at all 1,250 translated cycles. Sol independently verified PL11 with `sol_diagonal/audit_cycle.rs`.
+Evidence: `astra_diagonal/c58_pl11_audit.csv`, `c58_pl12_audit.csv`, and corresponding trace files (deleted 2026-10-08; summary in [ARCHIVE.md](WIP/experiments/ARCHIVE.md); `git show 1222fbe:flyers/WIP/experiments/astra_diagonal/<file>`). The former `astra_diagonal/verify.rs` (likewise archived; use `fastflyer-research samples`/`verify` now) checked all 80 cases, permanent-kind counts, encoded blocks and owner lists at all 1,250 translated cycles. Sol independently verified PL11 with `sol_diagonal/audit_cycle.rs` (deleted; see ARCHIVE.md, `git show 1222fbe:flyers/WIP/experiments/sol_diagonal/audit_cycle.rs`).
 
-PL10 local screen: c58 cannot start its 11-cell move. All eight generated 7/7-sticky layouts stalled; every single slime deletion from c58 broke motion even at diagnostic PL20. c244's moved observer powers the wrong piston for an extra slot, causing a tick-4 immovable collision. Relocation repairs that action but changes observer ownership, loses the next pulse, and still exceeds ten. See `sol_diagonal/FINDINGS.md`; do not repeat those deletion screens or infer global impossibility.
+PL10 local screen: c58 cannot start its 11-cell move. All eight generated 7/7-sticky layouts stalled; every single slime deletion from c58 broke motion even at diagnostic PL20. c244's moved observer powers the wrong piston for an extra slot, causing a tick-4 immovable collision. Relocation repairs that action but changes observer ownership, loses the next pulse, and still exceeds ten. See `sol_diagonal/FINDINGS.md` (deleted; summarised in [ARCHIVE.md](WIP/experiments/ARCHIVE.md), `git show 1222fbe:flyers/WIP/experiments/sol_diagonal/FINDINGS.md`); do not repeat those deletion screens or infer global impossibility.
 
 ## Pulling-only exploration — 2026-09-27
 
-Moved to [the archive](RESEARCH_LOG_ARCHIVE_2026-09-26.md) (section "Pulling-only exploration — 2026-09-27", moved 2026-10-02): PL10 c448 details, local rail, 504-layout search, deletion/closure negatives, `three_pull_burst.flyer` lead.
+Moved to [the archive](docs/archive/RESEARCH_LOG_ARCHIVE_2026-09-26.md) (section "Pulling-only exploration — 2026-09-27", moved 2026-10-02): PL10 c448 details, local rail, 504-layout search, deletion/closure negatives, `three_pull_burst.flyer` lead.
 
 ## Historical friend-interface research
 
-The friend's back/middle/front3bps timing mechanism, all-hybrid ring and helper-ring bounded searches are preserved in [the archive](RESEARCH_LOG_ARCHIVE_2026-09-26.md#historical-friend-interface-and-hybrid-search-details). Reproducible generators and evidence paths are retained there.
+The friend's back/middle/front3bps timing mechanism, all-hybrid ring and helper-ring bounded searches are preserved in [the archive](docs/archive/RESEARCH_LOG_ARCHIVE_2026-09-26.md#historical-friend-interface-and-hybrid-search-details). Reproducible generators and evidence paths are retained there.
 
 ## Research helpers
 
-The portable runner (`WIP/experiments/research_runner.rs`, `RESEARCH_RUNNER.md`) supports screen, exact verify, 80-case samples, conservation and focused traces. Newer per-action tools: `human_bodytrack.exe` (bodies, words, actor/carrier/power), `human_ledger.exe`, `human_snapshot.exe`, `tm_smol_rebalance_20261001/loadhist.exe` (batch load histograms), `planner*.py` (role-level pull planners). Still wanted: persistent-identity movement ledgers and a temporal router that checks every slot (failed finite route searches are not lower bounds).
+The portable research tool (`fastflyer-research`, source `tools/src/bin/fastflyer-research.rs`, usage in `WIP/experiments/RESEARCH_RUNNER.md`; it replaces the former `research_runner.exe`, source in git history at commit 1222fbe) supports screen, exact verify, 80-case samples, conservation and focused traces. Newer per-action tools: `bodytrack` (bodies, words, actor/carrier/power), `ledger`, `human-snapshot`, `target/release/loadhist` (batch load histograms), `planner*.py` (role-level pull planners). Still wanted: persistent-identity movement ledgers and a temporal router that checks every slot (failed finite route searches are not lower bounds).
 
 ## Mechanics and proof contract
 
@@ -146,21 +146,21 @@ An agent (J2, 2026-10-02) suggested the following advice, distilled from failed 
 
 Work from repository root. `fastflyer/` edits files; Rust `src/` simulates. Static sticky counts are not action loads. Compile diagnostics against the current `target/release/deps/libfastflyer-*.rlib`, not a hardcoded hash.
 
-Preferred portable workflow: run `WIP/experiments/build_research_runner.ps1`, then `bin/research_runner.exe screen CANDIDATE_DIRECTORY 160 --out RESULTS.csv`, `verify CANDIDATE.flyer 10000 --period 12 --advance 4`, or `samples CANDIDATE.flyer --period 12 --advance 4 --out SAMPLES.csv`. Replace 12/+4 with the candidate's actual cycle contract. The runner prints short summaries and saves per-candidate/per-sample CSV; use `trace FILE START END` only around a relevant failure. Full syntax and interpretation are in [RESEARCH_RUNNER.md](WIP/experiments/RESEARCH_RUNNER.md).
+Preferred portable workflow: run `cargo build --release --manifest-path tools/Cargo.toml --target-dir target`, then `target/release/fastflyer-research screen CANDIDATE_DIRECTORY 160 --out RESULTS.csv`, `verify CANDIDATE.flyer 10000 --period 12 --advance 4`, or `samples CANDIDATE.flyer --period 12 --advance 4 --out SAMPLES.csv`. Replace 12/+4 with the candidate's actual cycle contract. The tool prints short summaries and saves per-candidate/per-sample CSV; use `trace FILE START END` only around a relevant failure. Full syntax and interpretation are in [RESEARCH_RUNNER.md](WIP/experiments/RESEARCH_RUNNER.md).
 
 ```powershell
-& "$env:TEMP/flyer_measure.exe" 10000 flyers/bank/pl11/diagonal_alternating.flyer
-& "$env:TEMP/flyer_batch.exe" 160 CANDIDATE_DIRECTORY
-& flyers/WIP/experiments/bin/archive/flyer_trace_window.exe CANDIDATE.flyer 0 24
+& target/release/fastflyer-research measure flyers/bank/pl11/diagonal_alternating.flyer 10000 0
+& target/release/fastflyer-research batch CANDIDATE_DIRECTORY 160
+& target/release/fastflyer-research trace CANDIDATE.flyer 0 24
 ```
 
-TEMP helpers are host-local. Keep scripts, representative candidates, compact results, and findings. Never bank a diagnostic copy or a short-lived lead.
+These replace the former `flyer_measure`, `flyer_batch` and `flyer_trace_window` executables (old exes remain in `flyers/WIP/experiments/bin/archive/`). Keep scripts, representative candidates, compact results, and findings. Never bank a diagnostic copy or a short-lived lead.
 
 Latest completed front-interface result: pull/push/push five-cell target uses glazed power separation, tagged loads6–8, and passes full exact10000 ticks plus80/80 cases at wholePL59. Hybrid separate-back/front closure did not route in16 bounded attempts. Native final results: `WIP/experiments/overnight_20260930/NATIVE_AUDIT_CHECKPOINT.md`.
 
 ## User direction — 2026-09-30, helper helpers
 
-Current goal: lower the minimum push limits for **3 bps and 3.333 bps**, improving the PL12–20 speed frontier. Do not pursue designs above **PL24** or try to shrink a PL30 architecture into PL18; stop unpromising bounded families. Shared coordination: `flyers/chat.txt`.
+Current goal: lower the minimum push limits for **3 bps and 3.333 bps**, improving the PL12–20 speed frontier. Do not pursue designs above **PL24** or try to shrink a PL30 architecture into PL18; stop unpromising bounded families. Shared coordination was `flyers/chat.txt` (removed 2026-10-08; `git show 1222fbe:flyers/chat.txt`).
 
 **New explicit suggestion:** put a **helper-helper segment directly in front of each helper**. It has two jobs: **provide the power source for the helper's sticky piston**, and **pull the helper forward one block**, so the main back chain does not have to supply that push. These are independent of compact side pickup and can be combined. A segment in front of a helper can supply its power; it need not be routed back from a distant circular placement. Keep the helper/pull target axially aligned. The user warns that slime/honey behind a piston being transported generally signals a poor pickup arrangement; prefer side contacts and short connections.
 
@@ -170,7 +170,7 @@ User clarification: begin with PL18 and one segment (possibly the segment after 
 
 2026-10-01/02 exclusive-roles task: see the 2026-10-02 (agent J) update above.
 
-2026-10-08 chunk-language follow-up: [CSL](CHUNK_LANGUAGE.md) now has five state categories and signed lag buckets retaining individual movement owners. [On-paper reasoning](CHUNK_LANGUAGE_REASONING.md) derives the two-block normal-pusher recovery cost, shows how a missed home stroke erases a pickup gain, and identifies owner concentration as an unresolved failure of a four-carrier redundancy graph. No simulations or new flyer; no guarantee claimed.
+2026-10-08 chunk-language follow-up: [CSL](docs/CHUNK_LANGUAGE.md) now has five state categories and signed lag buckets retaining individual movement owners. [On-paper reasoning](docs/CHUNK_LANGUAGE_REASONING.md) derives the two-block normal-pusher recovery cost, shows how a missed home stroke erases a pickup gain, and identifies owner concentration as an unresolved failure of a four-carrier redundancy graph. No simulations or new flyer; no guarantee claimed.
 
-2026-10-08 closed-design attempt: exclusive mirrored pickup lanes on the four carriers also fail. Fixed A-before-B produces a repeating lag-1/lag-2 trap for spent PX members and lag-2 home rides for PU members, draining any finite aligned inventory. Full contact graph and tagged countertrace are appended to [the reasoning note](CHUNK_LANGUAGE_REASONING.md). This is a failed specific architecture, not a general impossibility proof. No simulation run or working guaranteed flyer produced.
+2026-10-08 closed-design attempt: exclusive mirrored pickup lanes on the four carriers also fail. Fixed A-before-B produces a repeating lag-1/lag-2 trap for spent PX members and lag-2 home rides for PU members, draining any finite aligned inventory. Full contact graph and tagged countertrace are appended to [the reasoning note](docs/CHUNK_LANGUAGE_REASONING.md). This is a failed specific architecture, not a general impossibility proof. No simulation run or working guaranteed flyer produced.
 

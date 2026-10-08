@@ -1,8 +1,8 @@
-"""Batch helpers around bin/research_runner.exe (screen/verify/samples). Run from anywhere."""
+"""Batch helpers around target/release/fastflyer-research (screen/verify/samples). Run from anywhere."""
 import subprocess, pathlib, csv, shutil, sys, io, uuid
 HERE = pathlib.Path(__file__).resolve().parent
 ROOT = HERE.parents[3]
-RUNNER = ROOT / 'flyers/WIP/experiments/bin/research_runner.exe'
+RUNNER = ROOT / 'target/release/fastflyer-research.exe'
 
 def screen(flyers, ticks=400, workdir=None, keep=False):
     """flyers: {name: Flyer}. Saves each, runs `screen`, returns {name: row dict}."""

@@ -1,9 +1,0 @@
-file,limit,rng,phase_x,phase_z,ticks,distance,end_blocks,extensions,extension_failures,movement_failures,first_failure_tick,first_failure_kind,conservation_mismatch_ticks,max_successful_action,clean
-"mmwhelp/t3\s11.flyer",1000,5,0,0,240,80,109,240,0,0,,"",0,39,true
-"mmwhelp/t3\s2.flyer",1000,5,0,0,240,80,110,240,0,0,,"",0,43,true
-"mmwhelp/t3\s3.flyer",1000,5,0,0,240,80,115,240,0,0,,"",0,43,true
-"mmwhelp/t3\s4.flyer",1000,5,0,0,240,80,124,240,0,0,,"",0,51,true
-"mmwhelp/t3\s5.flyer",1000,5,0,0,240,80,115,240,0,0,,"",0,46,true
-"mmwhelp/t3\s7.flyer",1000,5,0,0,240,80,118,240,0,0,,"",0,53,true
-"mmwhelp/t3\s8.flyer",1000,5,0,0,240,80,108,240,0,0,,"",0,43,true
-"mmwhelp/t3\s9.flyer",1000,5,0,0,240,80,123,240,0,0,,"",0,48,true

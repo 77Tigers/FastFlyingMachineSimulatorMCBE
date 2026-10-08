@@ -94,3 +94,20 @@ without foreign-core adhesion or order dependence? Can moving one bank-4
 following passenger off bank 5's tick-2 peak reduce the actual maximum after the
 helper's four rides are counted? If not, the compact carrier graph's failure
 suggests changing the pickup/owner mechanism, not just rerouting glue.
+
+## 2026-10-08 cleanup
+
+Removed three bulk ledgers/traces (`git show 1222fbe:flyers/WIP/experiments/mv4_redesign_20261004/<name>`):
+
+- `graph_attempts.jsonl` (930 KB): per-attempt static checks for task 3; the
+  summary (3427 interfaces tried, 63 distinct graphs with an interface, ten
+  selected) is in `graph_results.json`/`graph_plan.json`/`graph_status.json`.
+  `graphs.py` resumes from this ledger, so a rerun now repeats the static survey.
+- `two_hubs_attempts.jsonl` (1.2 MB): task 6's 15,756 face/graph combinations
+  (one static survivor); summary in `two_hubs_results.json`/`two_hubs_status.json`.
+  `two_hubs.py` and `diagnose_two_hub.py` (which runs it) now recompute the screen.
+- `lifecycle_events.csv` (162 KB): raw 240-tick piston event trace that
+  `lifecycle.py` reads. Regenerate by compiling `tools/src/bin/mv4-lifecycle-trace.rs` like the other
+  diagnostics and running it on `control_pl43.flyer` (= `flyers/bank/pl43/mv4_symmetric_easy_compact.flyer`)
+  with 240 ticks, redirecting stdout to `lifecycle_events.csv`. Results remain
+  in `lifecycle_result.json`.

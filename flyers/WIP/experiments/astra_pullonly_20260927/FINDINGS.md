@@ -18,12 +18,12 @@ Winner: `mwmw/c448.flyer`, offset `(1,-1,2)`, transform `(0,1,-1)`, observer cho
 
 The search generated 504 layouts; 272 passed 40/160 distance and conservation at PL100. Twenty-eight deletion tests (each of 14 adhesive cells at PL9 and PL100) yielded no repeating survivor. `compact.py` tested 10,976 offset/transform/observer combinations with at most six adhesive blocks per carrier; no routes survived. These bounded failures do not establish a PL9 lower bound.
 
-Build the portable runner with `flyers/WIP/experiments/build_research_runner.ps1`. This directory's `build_verifier.ps1` compiles `verify.rs` against the exact current release rlib reported by Cargo. From repository root:
+Build the portable runner with `cargo build --release --manifest-path tools/Cargo.toml --target-dir target`. This directory's `build_verifier.ps1` compiles `tools/src/bin/pullonly-verify.rs` against the exact current release rlib reported by Cargo. From repository root:
 
 ```powershell
-& flyers/WIP/experiments/astra_pullonly_20260927/build_verifier.ps1
-& flyers/WIP/experiments/astra_pullonly_20260927/verify.exe flyers/bank/pl10/pulling_alternating.flyer 10000 8
-& flyers/WIP/experiments/bin/research_runner.exe audit flyers/bank/pl10/pulling_alternating.flyer 10000 8
+& cargo build --release --manifest-path tools/Cargo.toml --target-dir target
+& target/release/pullonly-verify flyers/bank/pl10/pulling_alternating.flyer 10000 8
+& target/release/fastflyer-research audit flyers/bank/pl10/pulling_alternating.flyer 10000 8
 ```
 
 ## Other mechanisms and the next speed question
@@ -35,3 +35,10 @@ Build the portable runner with `flyers/WIP/experiments/build_research_runner.ps1
 The burst uses an initially extended first piston, a one-shot initial observer for the second, and a carried observer which aligns with the third after the first pull and leaves alignment after the second. Earlier retracted pistons are carried by later pulls. It demonstrates the local three-pull sequence, but does not reset or transport every component for another cycle.
 
 A proposed five-slot extension has target moves 0/1/2 and support moves 0/3/4. Timing analysis exposes a problem: the first piston would ride the shared support in slot 3 and still adhere to it when that support moves in slot 4, its intended extension slot. Relying on the piston updating first would be order-sensitive. Additional helper carriers with different movement phases, or a different attachment transfer, are the next concrete question. This reasoning is a rejected sketch, not a tested impossibility result.
+
+## Cleanup 2026-10-08
+
+Kept: generators, `tools/src/bin/pullonly-verify.rs` (now a cargo bin of the tools crate; build with the command above), certificates/audits/metadata/rank JSON, burst evidence, and the flyers
+`baseline`, `mwmw_best`, `ring3_best`, `three_pull_burst`, `mwmw/c448` and `ring3/c306`. Removed: the
+other 502 `mwmw/` and 406 `ring3/` layouts, `deletions/`, `*_screen.txt`, `mwmw_trace.txt`,
+`ring3_trace.txt`. Tracked files: `git show 1222fbe:<path>`; removed `.flyer` files: `FastFlyer_WIP_uncommitted_backup_20261008`.

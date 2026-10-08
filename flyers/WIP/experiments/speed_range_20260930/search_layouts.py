@@ -7,7 +7,7 @@ from pathlib import Path
 import sys, random, math, json, subprocess, csv, argparse, time
 ROOT=Path(__file__).resolve().parents[4];sys.path.insert(0,str(ROOT))
 HERE=Path(__file__).resolve().parent
-RUNNER=ROOT/'flyers/WIP/experiments/bin/research_runner.exe'
+RUNNER=ROOT/'target/release/fastflyer-research.exe'
 
 def checkpoint(path, data):
     for attempt in range(30):

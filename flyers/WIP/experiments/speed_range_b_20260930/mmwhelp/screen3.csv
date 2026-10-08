@@ -1,5 +1,0 @@
-file,limit,rng,phase_x,phase_z,ticks,distance,end_blocks,extensions,extension_failures,movement_failures,first_failure_tick,first_failure_kind,conservation_mismatch_ticks,max_successful_action,clean
-"speed_range_b_20260930/mmwhelp/cand3\L6_4_3_s00015.flyer",200,5,0,0,240,80,99,240,0,0,,"",0,35,true
-"speed_range_b_20260930/mmwhelp/cand3\L6_4_3_s00055.flyer",200,5,0,0,240,80,101,240,0,0,,"",0,35,true
-"speed_range_b_20260930/mmwhelp/cand3\L6_4_3_s00061.flyer",200,5,0,0,240,80,101,240,0,0,,"",0,35,true
-"speed_range_b_20260930/mmwhelp/cand3\L6_4_3_s00085.flyer",200,5,0,0,240,80,95,240,0,0,,"",0,33,true

@@ -35,7 +35,7 @@ Source files: repository `mcstructures/` (`3bps_original`, `tm_smol_3bps`, `stuf
 | c2 | 43 blocks, three spaced bodies with stickies | load 21, jams at t~10 | 3.33 bps extension chain (user: push-push-push-pull) |
 | c6 | 22 blocks, normal pistons + 2 lightning rods | 10 extensions then idle | 3.33 bps extension (plain push) |
 
-Audit standard: `sol_reference_20260928/samples.exe FILE PERIOD` (speed/failures/conservation over the 80 RNG/phase
+Audit standard: `target/release/sol-samples FILE PERIOD` (speed/failures/conservation over the 80 RNG/phase
 cases), per the bank rule. Exact period recurrence does **not** hold for `tm_smol` (period 10) — irrelevant for banking.
 CSV evidence is in `converted/*.speed80.csv`.
 
@@ -56,14 +56,14 @@ CSV evidence is in `converted/*.speed80.csv`.
 ## Tools here
 
 - `convert.py` (conversion), `fview.py` (layer view), `bview.py` (adhesion-body labelled view), `bodies.py`.
-- `bodytrack.rs` -> `../bin/human_bodytrack.exe FILE TICKS W0 PERIOD [LIMIT]`: tracks block identities through
+- `tools/src/bin/bodytrack.rs` -> `target/release/bodytrack FILE TICKS W0 PERIOD [LIMIT]`: tracks block identities through
   moves, clusters blocks with identical move ticks into bodies, prints movement words and one period of
   actor/push-pull/target/load events. Best first look at any flyer's architecture.
-- `ledger.rs` -> `human_ledger.exe FILE START END [LIMIT]`: one line per action with load and materials.
-- `snapshot.rs` -> `human_snapshot.exe IN TICKS OUT LIMIT [1=keep RNG]`: save a mid-run state as a new start.
+- `tools/src/bin/ledger.rs` -> `ledger FILE START END [LIMIT]`: one line per action with load and materials.
+- `tools/src/bin/human-snapshot.rs` -> `human-snapshot IN TICKS OUT LIMIT [1=keep RNG]`: save a mid-run state as a new start.
 - `perturb.py` (single deletions / material swaps / start toggles / body shifts), `pairedit.py` (delete+add glue),
   `diffalign.py` (best-translation cell diff), `simtools.py` (batch `screen` wrapper). Build Rust tools with
-  `build_tools.ps1`. `bodytrack` also reports each action's carrier bodies and power-source bodies;
+  `cargo build --release --manifest-path tools/Cargo.toml --target-dir target`. `bodytrack` also reports each action's carrier bodies and power-source bodies;
   `BT_CELLS=1` lists each body's cells. c5 repair tools: `hybrid.py`, `hybrid_greedy.py`, `armsearch.py`,
   `reroute.py`. Ring generator: `ring3.py` (untested).
 
@@ -143,3 +143,13 @@ helpers into lockstep bodies needs short arms, i.e. a layout designed for it, no
 - c5: none of 235 single perturbations (deletions, swaps, piston start toggles, ±1/±2 body shifts) runs (best
   distance 6/300). Its fault is architectural (front-side bodies redesigned relative to `tm_smol`).
 - c1 at PL8: none of 32 single perturbations and 924 delete-one/add-one glue edits run.
+
+## Cleanup 2026-10-08
+
+Kept: all converters/tools/Rust sources, `converted/` (every conversion and speed80 audit),
+`work_tm_smol_bodies.txt`, `work/nearmiss_s1_251_SHS.flyer`, `work/ring3_probe.flyer`,
+`work/agentI_audits/` and `ring_hand/` scripts, notes, PL28/29/30 rings with samples and the PL29
+source pair `w_12_3`/`t_w_12_3`. Removed: `ring_hand` pools (`pool*.pkl`), trim logs and other
+`w_*`/`t_w_*`/`cand_*` flyers; `work/c1snap/` snapshots, `armsearch_last.json`, c5/c6 scratch flyers,
+other near-misses, `probe_view.txt`, and `work_c5_bview.txt`/`work_tm_smol_bview.txt` (regenerable with
+`bview.py`). Tracked files: `git show 1222fbe:<path>`; removed `.flyer` files: `FastFlyer_WIP_uncommitted_backup_20261008`.

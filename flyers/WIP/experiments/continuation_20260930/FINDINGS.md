@@ -47,7 +47,7 @@ displacement, conservation or movement failures. Evidence: matching
 80/80 full RNG/phase samples, with all1250 exact boundaries per case.
 Matching `.samples.csv` and `.samples.txt` retain the results.
 
-The full 8-tile action ledger (`tile_loads.rs`, `.loads.csv`, `.loads.txt`)
+The full 8-tile action ledger (`tools/src/bin/continuation-tile-loads.rs`, `.loads.csv`, `.loads.txt`)
 separates driver and extension loads: driver A/B **11/10**, every internal
 extension **8**, terminal **7**. Each body performs 2500 successful pulls;
 45000 extensions are empty. No movement failures or unmatched nonempty
@@ -94,7 +94,7 @@ versus the earlier91-block PL18 lead. Five selected encoded-PL18 candidates
 ran3000/10000 with zero failures/conservation errors, but do not have exact
 10-tick state/owner recurrence. N4 three-body:96/96 ran80/240 cleanly, best22;
 five selected encoded-PL22 candidates ran3333/10000 cleanly, also without
-exact12-tick recurrence. Full raw screens and verification summaries retained.
+exact12-tick recurrence. Full raw screens and verification summaries retained (screens and all but the seed39/s000 representatives removed in 2026-10-08 cleanup; `git show 1222fbe:flyers/WIP/experiments/continuation_20260930/ring_n3_copies1_screen.csv`).
 Six-body N4:96 routed;94/96 ran80/240 cleanly, best23. The earliest screen
 failure was seed52 at tick4, an immovable obstruction at serialized
 `(17,5,15)`. Five selected encodedPL23 candidates all sustained3333/10000
@@ -132,10 +132,10 @@ python flyers/WIP/experiments/continuation_20260930/ring_search.py
 python flyers/WIP/experiments/continuation_20260930/trim_n3.py
 ```
 
-`pull_chain.py` needs `driver_slots.csv`, produced by `dump_driver.rs` from
+`pull_chain.py` needs `driver_slots.csv`, produced by `tools/src/bin/continuation-dump-driver.rs` from
 the banked PL10 pulling flyer. Compile either helper with Rust2021 against
 the current Cargo-reported release rlib, `-L dependency=target/release/deps`.
-`tile_loads.rs` arguments are flyer path and matching `.bodies.csv`; stdout
+`tools/src/bin/continuation-tile-loads.rs` arguments are flyer path and matching `.bodies.csv`; stdout
 is the per-body CSV, stderr holds action totals and discrepancy counts.
 Both helpers use public simulator APIs. Standard verification/samples use
 the unchanged portable research runner.
@@ -149,3 +149,13 @@ claim. No further mixed performance result is implied by this contract.
 Next: formulate faster mixed interfaces with separate front-helper phases,
 using the two-push/one-pull trick and testing duplicated modules first.
 Do not call the PL11/2.5 bps tile proof a 3 or3.333 bps extension result.
+
+## Cleanup 2026-10-08
+
+Kept: all generators/helpers, `driver_slots.csv`, the banked PL9 loop and every evidence file, all
+four literal pull-chain assemblies with verify/geometry/bodies/samples/ledger, `tile_certificate.json`,
+`trim_n3/`, `pull_tiles/c0148.flyer`, `pull_loop6/c0000.flyer` (winner source) and one representative
+per ring family (`n3_copies1_s039_pl18`, `n4_copies1_s000_pl22`, `n4_copies2_s000_pl23`).
+Removed: `*_manifest.json`, `*_screen.*`, the `pull_tiles/ pull_loop6/ pull_port_tiles/ pull_single/
+ring_n*_copies*/` candidate flyers and the other selected PL18/22/23 copies. Tracked files: `git show 1222fbe:<path>`;
+removed `.flyer` files: `FastFlyer_WIP_uncommitted_backup_20261008`.

@@ -1,2 +1,0 @@
-screen candidates=1 clean=1 ticks=200 out=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\pull3_10body_screen.csv
-  distance=60 load=127 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\pull3_10body_candidates\g4_s003.flyer

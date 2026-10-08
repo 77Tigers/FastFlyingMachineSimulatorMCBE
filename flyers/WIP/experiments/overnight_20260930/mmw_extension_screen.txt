@@ -1,6 +1,0 @@
-screen candidates=24 clean=24 ticks=240 out=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmw_extension_screen.csv
-  distance=80 load=73 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmw_extension_candidates\dy0_dz15_s000.flyer
-  distance=80 load=73 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmw_extension_candidates\dy0_dz15_s001.flyer
-  distance=80 load=72 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmw_extension_candidates\dy0_dz15_s002.flyer
-  distance=80 load=73 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmw_extension_candidates\dy0_dz15_s003.flyer
-  distance=80 load=72 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmw_extension_candidates\dy0_dz15_s004.flyer

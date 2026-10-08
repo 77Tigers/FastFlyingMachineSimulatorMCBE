@@ -3,7 +3,7 @@ from pathlib import Path
 import sys,json,random,heapq,subprocess,re
 from mmw_planar import build,m,ns
 from fastflyer import Flyer,Block
-H=Path(__file__).resolve().parent;RUNNER=H.parents[3]/'flyers/WIP/experiments/bin/research_runner.exe'
+H=Path(__file__).resolve().parent;RUNNER=H.parents[3]/'target/release/fastflyer-research.exe'
 def main():
  g=json.loads((H/'trim_planar_mmw/geometry.json').read_text());ss=[set(map(tuple,s)) for s in g['segments']];ps=g['pistons'];sources=g['sources'];ports=[]
  line=next(i for i,x in enumerate((H/'mmw_planar.py').read_text().splitlines(),1) if 'for i in rng.sample(range(3),3)' in x)

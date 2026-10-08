@@ -13,7 +13,7 @@ from collections import Counter
 ROOT = pathlib.Path(__file__).resolve().parents[4]
 sys.path.insert(0, str(ROOT))
 from fastflyer import Flyer, Block, Kind
-EXE = ROOT / 'target' / 'release' / ('fastflyer-sim.exe' if sys.platform == 'win32' else 'fastflyer-sim')
+from fastflyer.research import simulate
 
 
 def rig(leaf, rng, pl):
@@ -35,7 +35,7 @@ if __name__ == '__main__':
             for i in range(60):
                 a, b = tmp / 'in.flyer', tmp / 'out.flyer'
                 rig(leaf, i * 7919 + 13, pl).save(a)
-                subprocess.run([str(EXE), str(a), str(b), '1'], check=True, capture_output=True)
+                simulate(a, b, 1)
                 g = Flyer.load(b); mn = min(p[0] for p, _ in g.blocks())
                 res[tuple(sorted((p[0], p[2], bl.kind.name) for p, bl in g.blocks() if bl.kind != Kind.PISTON_ARM))] += 1
             print(f'PL{pl} {leaf}: {len(res)} outcome(s) {sorted(res.values())}')

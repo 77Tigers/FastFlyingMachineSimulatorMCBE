@@ -10,7 +10,7 @@ import sys, csv, json, random, heapq, itertools, subprocess, importlib.util
 ROOT=Path(__file__).resolve().parents[4]; sys.path.insert(0,str(ROOT))
 from fastflyer import Flyer, Block, Kind
 HERE=Path(__file__).resolve().parent
-RUNNER=ROOT/'flyers/WIP/experiments/bin/research_runner.exe'
+RUNNER=ROOT/'target/release/fastflyer-research.exe'
 spec=importlib.util.spec_from_file_location('pull', HERE.parent/'astra_pullonly_20260927/pull_mwmw.py')
 pull=importlib.util.module_from_spec(spec);spec.loader.exec_module(pull)
 D=pull.D

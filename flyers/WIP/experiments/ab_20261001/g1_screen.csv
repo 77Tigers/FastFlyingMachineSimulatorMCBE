@@ -1,9 +1,0 @@
-file,limit,rng,phase_x,phase_z,ticks,distance,end_blocks,extensions,extension_failures,movement_failures,first_failure_tick,first_failure_kind,conservation_mismatch_ticks,max_successful_action,clean
-"ab_20261001/g1\c00000.flyer",40,5,0,0,400,100,22,200,0,0,,"",0,12,true
-"ab_20261001/g1\c00001.flyer",40,5,0,0,400,100,22,200,0,0,,"",0,12,true
-"ab_20261001/g1\c00002.flyer",40,5,0,0,400,100,22,200,0,0,,"",0,12,true
-"ab_20261001/g1\c00003.flyer",40,5,0,0,400,100,22,200,0,0,,"",0,12,true
-"ab_20261001/g1\c00004.flyer",40,5,0,0,400,100,22,200,0,0,,"",0,12,true
-"ab_20261001/g1\c00005.flyer",40,5,0,0,400,100,22,200,0,0,,"",0,12,true
-"ab_20261001/g1\c00006.flyer",40,5,0,0,400,100,22,200,0,0,,"",0,12,true
-"ab_20261001/g1\c00007.flyer",40,5,0,0,400,100,22,200,0,0,,"",0,12,true

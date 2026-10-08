@@ -1,4 +1,0 @@
-drop 3 0 fail [] {(4, 'extend'), (6, 'retract')} []
-drop 3 1 fail [] {(4, 'extend'), (6, 'retract')} []
-drop 3 2 fail [] {(4, 'extend'), (6, 'retract')} []
-slot 3 168 -> 11

@@ -1,7 +1,0 @@
-D_2_2_2_v2 dist600=3 fail=684 cons=True all12=0 rear12=0 max=0
-D_2_2_1_v2 dist600=3 fail=683 cons=True all12=0 rear12=0 max=0
-D_2_1_3_v2 dist600=3 fail=832 cons=True all12=0 rear12=0 max=0
-D_2_1_2_v1 dist600=3 fail=771 cons=True all12=0 rear12=0 max=0
-D_2_-1_-1_v2 dist600=3 fail=683 cons=True all12=0 rear12=0 max=0
-D_3_1_2_v2 dist600=2 fail=702 cons=True all12=0 rear12=0 max=0
-D_2_0_2_v2 dist600=2 fail=562 cons=True all12=0 rear12=0 max=0

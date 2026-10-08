@@ -1,4 +1,0 @@
-c0f0s5 [18, 17, 18, 18, 18] elapsed 0.5
-TESTED 1 ELAPSED 39.46900000004098 REJECT Counter({'mandatory_hardware': 672, 'route_unreachable': 419, 'mandatory_samekind_adhesion': 302, 'mandatory_overlap': 133})
-c0f0s5	21	116	109
-

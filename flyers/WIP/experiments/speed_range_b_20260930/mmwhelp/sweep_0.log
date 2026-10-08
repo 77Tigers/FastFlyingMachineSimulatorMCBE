@@ -1,5 +1,0 @@
-KEEP L6_5_3_s00064 [27, 28, 28]
-KEEP L7_5_3_s00064 [27, 29, 29]
-KEEP L6_5_2_s00010 [27, 26, 29]
-KEEP L6_5_2_s00086 [27, 29, 27]
-STATS 0 {"(6, 5, 3)": {"ok": 31, "route": 4, "pickup": 3}, "(5, 5, 3)": {"mandatory": 31, "ok": 3, "pickup": 2, "route": 1}, "(6, 6, 3)": {"ok": 27, "route": 8, "pickup": 3}, "(6, 4, 3)": {"ok": 21, "route": 9, "pickup": 7}, "(7, 5, 3)": {"ok": 30, "route": 6, "pickup": 2}, "(6, 5, 2)": {"ok": 25, "route": 9, "pickup": 3}, "(6, 6, 2)": {"ok": 29, "route": 7, "pickup": 2}, "(5, 4, 2)": {"mandatory": 31, "route": 2, "pickup": 2, "ok": 2}, "(7, 6, 3)": {"ok": 26, "route": 10, "pickup": 2}, "(6, 7, 3)": {"ok": 21, "route": 8, "pickup": 8}}

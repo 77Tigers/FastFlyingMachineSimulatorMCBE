@@ -135,3 +135,25 @@ robustness audit. Missing, stale, or endpoint-nonconserving measurements show as
 **Unmeasured** and are excluded from the chart. Hashes cover both flyer bytes and
 Rust source/build configuration. Diagnostic `--ticks` values are supported by
 the updater, but only standard 10,000-tick measurements appear in the chart.
+
+## Research tools
+
+Research diagnostics live in the separate cargo crate [`tools/`](tools/), outside the
+root package: `scripts/update_bank.py` fingerprints `src/**/*.rs` and the root
+`Cargo.toml` for `flyers/bank/catalogue.json`, so research tools must not be added
+to `src/`. Build from the repository root:
+
+```sh
+cargo build --release --manifest-path tools/Cargo.toml --target-dir target
+```
+
+This produces `target/release/fastflyer-research` (`.exe` on Windows) with the
+subcommands `measure`, `audit`, `trace`, `batch`, `screen`, `verify` and `samples`
+(the standard 80 RNG/phase cases; `screen` and `samples` run in parallel, `--jobs N`,
+default all cores). Syntax and interpretation are in
+[`flyers/WIP/experiments/RESEARCH_RUNNER.md`](flyers/WIP/experiments/RESEARCH_RUNNER.md).
+The Python wrappers in [`fastflyer/research.py`](fastflyer/research.py) call the same binary.
+
+The bank standard is speed: 80/80 RNG/phase cases clean and reaching the flyer's distance at 10,000 ticks
+(exact recurrence is optional extra evidence, `samples --distance D`). To bank a flyer:
+`python scripts/bank_add.py FLYER --name NAME [--samples CSV] [--dry-run]`.

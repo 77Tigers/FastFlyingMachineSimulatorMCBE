@@ -72,12 +72,12 @@ Rebuild the saved geometry without searching:
 python flyers/WIP/experiments/mv4_tiles_20261004/ring.py --rebuild
 ```
 
-Full core audit uses the existing `mv4_elegant_20261004/audit_cores.rs`, compiled
-against the current release library as ignored `bin/mv4_tiles_audit.exe`:
+Full core audit uses the existing `tools/src/bin/mv4-audit-cores.rs`, compiled
+against the current release library as ignored `target/release/mv4-audit-chain`:
 
 ```powershell
-flyers/WIP/experiments/bin/mv4_tiles_audit.exe flyers/WIP/experiments/mv4_tiles_20261004/ring_payload.flyer 10000 flyers/WIP/experiments/mv4_tiles_20261004/payload_full80.csv
-flyers/WIP/experiments/bin/research_runner.exe audit flyers/WIP/experiments/mv4_tiles_20261004/ring_payload.flyer 10000 12
+target/release/mv4-audit-chain flyers/WIP/experiments/mv4_tiles_20261004/ring_payload.flyer 10000 flyers/WIP/experiments/mv4_tiles_20261004/payload_full80.csv
+target/release/fastflyer-research audit flyers/WIP/experiments/mv4_tiles_20261004/ring_payload.flyer 10000 12
 ```
 
 Next: use the neighbouring-carrier graph as a driver/interface reference,

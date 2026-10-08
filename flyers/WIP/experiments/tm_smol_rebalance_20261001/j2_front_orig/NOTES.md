@@ -20,3 +20,5 @@ between carry faces (e.g. B15 (0,5,9) carries B5+B7; deleting it drops 2 riders 
 | replace a rear RB by an observer (+<=3 support) on a body that moved 2 ticks before each push, PL14 | rbobs.py | 80 | 2 |
 Results: del1_12.csv del1_13.csv s_del1.csv d2a1all.csv d1any.csv xfer14.csv (rbobs: 0/80 > 2 blocks).
 No candidate reached the 30-block near-miss threshold.
+
+2026-10-08 cleanup: del1_12/ variant flyers and traces tr_b15/tr_orig/tr_orig_full/tr_t100.txt removed (regenerate with fastflyer-research trace); result CSVs kept. `git show 1222fbe:<path>` for tracked csv/txt/json/log; .flyer in FastFlyer_WIP_uncommitted_backup_20261008.

@@ -4,7 +4,7 @@ import sys,json,random,heapq,subprocess,re
 ROOT=Path(__file__).resolve().parents[4];sys.path.insert(0,str(ROOT))
 from fastflyer import Flyer,Block
 import derived_mmw as model
-HERE=Path(__file__).resolve().parent;RUNNER=ROOT/'flyers/WIP/experiments/bin/research_runner.exe'
+HERE=Path(__file__).resolve().parent;RUNNER=ROOT/'target/release/fastflyer-research.exe'
 def main():
     g=json.loads((HERE/'trim_mmw/geometry.json').read_text());segments=[set(map(tuple,s)) for s in g['segments']];ps=g['pistons'];reds=g['sources']
     source=(HERE/'derived_mmw.py').read_text();snippet=source[source.index(' fixed=[]'):source.index(' if any(not legal')]

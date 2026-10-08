@@ -7,8 +7,13 @@ sys.path.insert(0,str(HERE.parent/'mv4_20261002/synthesis'))
 import six,final_router as base
 sys.path.insert(0,str(OLD))
 import paired_router
-AUDIT=OLD/'audit_cores.exe'
-RUNNER=six.ROOT/'flyers/WIP/experiments/bin/research_runner.exe'
+def _tb(n):
+    import sys, pathlib
+    sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[4]))
+    from fastflyer.research import binary
+    return binary(n)
+AUDIT=_tb('mv4-audit-cores')
+RUNNER=six.ROOT/'target/release/fastflyer-research.exe'
 
 def write_json(path,data):
     # OneDrive can transiently lock a live status file. Replace a closed temporary

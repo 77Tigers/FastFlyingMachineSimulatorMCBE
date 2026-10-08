@@ -1,3 +1,0 @@
-file,limit,rng,phase_x,phase_z,ticks,distance,end_blocks,extensions,extension_failures,movement_failures,first_failure_tick,first_failure_kind,conservation_mismatch_ticks,max_successful_action,clean
-"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\pull3_compact_candidates\paired_grid_s002.flyer",1000,5,0,0,240,72,852,720,0,0,,"",0,106,true
-"C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\pull3_compact_candidates\paired_grid_s003.flyer",1000,5,0,0,240,72,870,720,0,0,,"",0,109,true

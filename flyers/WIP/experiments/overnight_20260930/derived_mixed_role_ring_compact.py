@@ -16,7 +16,7 @@ from pathlib import Path
 import sys,json,math,random,heapq,collections,subprocess,importlib.util
 ROOT=Path(__file__).resolve().parents[4];sys.path.insert(0,str(ROOT))
 from fastflyer import Flyer,Block,Kind
-HERE=Path(__file__).resolve().parent;RUNNER=ROOT/'flyers/WIP/experiments/bin/research_runner.exe'
+HERE=Path(__file__).resolve().parent;RUNNER=ROOT/'target/release/fastflyer-research.exe'
 spec=importlib.util.spec_from_file_location('model',HERE/'derived_mixed3_compact_v3.py');model=importlib.util.module_from_spec(spec);spec.loader.exec_module(model)
 cover=json.loads((HERE/'compact_mixed_tile_contact_cover.json').read_text());lead=next(m for m in json.loads((HERE/'mixed_extension_compact_manifest.json').read_text())['candidates'] if m['file']=='dy12_dz0_s000.flyer');origin=cover['delta']
 def local(p):return tuple(p[a]-origin[a] for a in range(3))

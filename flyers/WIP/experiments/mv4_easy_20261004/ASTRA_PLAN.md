@@ -52,7 +52,7 @@ reproduce `compact43/reroute_best.json` geometry and the bank's short80 result.
 Use `common.py` for saving/owner lists and physical checks. Output: control JSON
 and a passing short CSV. Stop and repair any mismatch before further tasks.
 
-**2. Record one peak's passengers.** Extend `load_profile.rs` locally to output
+**2. Record one peak's passengers.** Extend `tools/src/bin/mv4-load-profile.rs` locally to output
 coordinates and piston states for the first43-load action (tick122 in the saved
 start). Track piston identity through successful source->destination moves from
 the metadata's initial `pistons` list; normalized X is not a persistent identity.
@@ -132,6 +132,7 @@ Ask the user to choose the duty if the peak table offers no clear candidate.
 Reuse `synthesis/competition_contract_snapshot.py` and
 `observer_contract_snapshot.py` for abstract screens; they assume a specific
 power/contact contract. Change and recheck that contract when interfaces change.
-For completed four-member/all-mv4 geometry, reuse `audit_cores.exe` and
+For completed four-member/all-mv4 geometry, reuse `mv4-audit-cores` (cargo bin,
+`tools/src/bin/mv4-audit-cores.rs`) and
 `validate.py`. Mixed helper words or changed persistent-body classification need
 a checker extension first; do not weaken the mv4 checks to accept a candidate.

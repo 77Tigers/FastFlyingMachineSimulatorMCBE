@@ -1,6 +1,6 @@
 # Three-segment mmwmmw result, 2026-09-28
 
-Deliverable: `../../three_segment_mmwmmw_pl65.flyer`.
+Deliverable: `three_segment_mmwmmw_pl65.flyer`.
 
 The three connected carriers follow `mmwmmw`, `wmmwmm`, and `mwmmwm`; each slot is two Rust ticks. Full geometry repeats translated +4 after twelve ticks. The saved state has 177 blocks: 151 sticky cells, 12 normal +X pistons, six observers, six redstone blocks, and two arms. It is a working timing proof, still with substantial routing overhead.
 
@@ -17,6 +17,13 @@ Search corrections:
 - Version1 checks only phase boundaries and merges carriers through intermediate collisions.
 - Version2 excludes intermediate sticky/source contacts. Seed0 repeats one full cycle but diverges at tick14: a recovering piston pushes a second carrier and steals its scheduled firing piston.
 - Version3 forbids that destination-mediated cross-carrier capture. Nine routed spacing5 candidates from15 seeds and four routed spacing4 candidates from25 seeds passed120 ticks at40 cells. Spacing3's20 seeds routed none; this bounded screen is not a lower bound.
-- `diagnose.py` and `annotate.py` were used on version2 seed0; their saved traces retain that evidence. They import the current generator, so do not regenerate that old failure unchanged.
+- `diagnose.py` and `annotate.py` were used on version2 seed0; their saved traces retain that evidence (`divergence_trace.txt`, `first_divergence.txt`; the 216 kB `s0_trace.txt` was removed in 2026-10-08 cleanup, `git show 1222fbe:flyers/WIP/experiments/astra_mmwm_20260928/s0_trace.txt`). They import the current generator, so do not regenerate that old failure unchanged.
 
 No simulator, editor library, or format changes. Further compaction and the separate low-load chainable extension problem remain unfinished; the user requested immediate wrap-up.
+
+## Cleanup 2026-10-08
+
+Kept: generator/diagnostics, `trim/` evidence and `best.flyer`, the seed19 spacing4 parent
+`candidates_v3_gap4/s19.flyer`, the diagnose traces and start/end flyers. Removed: `manifest*.json`
+(72-208 kB each), `screen_v*.txt`, other `candidates*/` flyers and `trim/probe.flyer`. Tracked files: `git show 1222fbe:<path>`;
+removed `.flyer` files: `FastFlyer_WIP_uncommitted_backup_20261008`.

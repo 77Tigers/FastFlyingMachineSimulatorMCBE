@@ -37,6 +37,6 @@ Status: **no verified 2 bps flyer.** Nothing at 2 bps has run in the real simula
 2. Solve chain-B caps with `satflyer5`, pinning two middles from result 1.
    - Front: L={a,a+1}, F={a+2,a+4}. F's sticky pulls L at a+1, L pushes F at a+2, and L's predecessor pushes F at a+4.
    - Rear: R={b+2,b+4} pushes K0 at b; K1 pulls R at b+2 and K0 pulls R at b+4.
-   - Then assemble, run `check_fixed`, export with `to_flyer(sol, PL, 5)`, run `research_runner verify FILE 10000 --period 10 --advance 2` and `samples` (80 cases), and check that a PL-1 copy fails.
+   - Then assemble, run `check_fixed`, export with `to_flyer(sol, PL, 5)`, run `fastflyer-research verify FILE 10000 --period 10 --advance 2` and `samples` (80 cases), and check that a PL-1 copy fails.
 3. Middles below 7: run the shift-2 chain (`NOSYM=1 python chainsym.py 01 2 L`); add a "copy every second segment" tie so the driver can re-find the 2.5 bps template; try riders, merges, and hold-2 timing once it is sim-tested; pin key contacts by hand.
 4. 2.14 bps: `satflyer5` supports NS=7 with 3-move words, untested.

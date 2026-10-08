@@ -42,9 +42,9 @@ First close a **complete small repeating timing/interface contract**: one intend
 From the workspace root, compile the experiment inspector against the current unchanged release library:
 
 ```powershell
-rustc --edition 2021 -O flyers/WIP/experiments/mv4_tiles_20261004/audit_chain.rs --extern fastflyer=target/release/libfastflyer.rlib -L dependency=target/release/deps -o flyers/WIP/experiments/bin/mv4_chain_audit.exe
+cargo build --release --manifest-path tools/Cargo.toml --target-dir target
 python flyers/WIP/experiments/mv4_tiles_20261004/check_backward.py sticky_clock --rebuild
 python flyers/WIP/experiments/mv4_tiles_20261004/check_backward.py sticky_clock --ticks 300
 ```
 
-Other case names are the table's JSON basenames. Explicit phase tags handle rear cores with no observers; the older inspector misclassified those tails. The inspector checks core motion every tick, conservation, extension failures and a broad passenger transport window. Use `research_runner.exe audit` to measure successful action loads and detect failed sticky pulls; it is stronger than ordinary `measure` on that point. Do not use full-state recurrence as a prerequisite.
+Other case names are the table's JSON basenames. Explicit phase tags handle rear cores with no observers; the older inspector misclassified those tails. The inspector checks core motion every tick, conservation, extension failures and a broad passenger transport window. Use `fastflyer-research audit` to measure successful action loads and detect failed sticky pulls; it is stronger than ordinary `measure` on that point. Do not use full-state recurrence as a prerequisite.

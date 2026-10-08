@@ -3,7 +3,7 @@ from search import *
 import re
 if __name__=='__main__':
  f,m=build(19,spacing=4)[0];out=OUT/'trim';out.mkdir(exist_ok=True)
- runner=ROOT/'flyers/WIP/experiments/bin/research_runner.exe'
+ runner=ROOT/'target/release/fastflyer-research.exe'
  segments=[set(map(tuple,s)) for s in m['segments']];log=[]
  for round in range(4):
   removed=0;sites=list(p for s in segments for p in s);random.Random(round+5).shuffle(sites)

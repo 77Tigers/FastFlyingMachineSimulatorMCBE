@@ -7,7 +7,7 @@ and routes all components, with candidate capacity capped at24 throughout.
 from pathlib import Path
 import sys,random,json,subprocess,csv,functools,argparse
 ROOT=Path(__file__).resolve().parents[4];sys.path.insert(0,str(ROOT))
-HERE=Path(__file__).resolve().parent;RUNNER=ROOT/'flyers/WIP/experiments/bin/research_runner.exe'
+HERE=Path(__file__).resolve().parent;RUNNER=ROOT/'target/release/fastflyer-research.exe'
 
 def generator(adjacent=False, rod=False):
     source=(ROOT/'flyers/WIP/astra_ringgen_hexsmart.py').read_text().split("if __name__=='__main__':")[0]

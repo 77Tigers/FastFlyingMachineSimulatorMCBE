@@ -1,6 +1,6 @@
 # Flyer abstraction pipeline — discussion prototype
 
-Historical v1 used for the Low-reasoning trial. Current guidance is [ABSTRACTION_PIPELINE.md](../../../ABSTRACTION_PIPELINE.md). Future agents should improve the current pipeline or record a concrete proposed improvement when using it; preserve this historical test specification and results.
+Historical v1 used for the Low-reasoning trial. Current guidance is [ABSTRACTION_PIPELINE.md](../../../docs/ABSTRACTION_PIPELINE.md). Future agents should improve the current pipeline or record a concrete proposed improvement when using it; preserve this historical test specification and results.
 
 Purpose: let a high-level designer choose mechanisms while GPT-6 Sol (Low) performs bounded refinements. This is a research proposal, not an established synthesis system.
 

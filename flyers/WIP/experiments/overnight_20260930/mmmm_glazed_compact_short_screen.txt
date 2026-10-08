@@ -1,6 +1,0 @@
-screen candidates=15 clean=15 ticks=240 out=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmmm_glazed_compact_short_screen.csv
-  distance=80 load=44 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmmm_glazed_compact_short_candidates\hex7_s000.flyer
-  distance=80 load=43 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmmm_glazed_compact_short_candidates\hex7_s001.flyer
-  distance=80 load=40 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmmm_glazed_compact_short_candidates\hex7_s002.flyer
-  distance=80 load=41 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmmm_glazed_compact_short_candidates\hex7_s004.flyer
-  distance=80 load=41 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mmmm_glazed_compact_short_candidates\hex7_s005.flyer

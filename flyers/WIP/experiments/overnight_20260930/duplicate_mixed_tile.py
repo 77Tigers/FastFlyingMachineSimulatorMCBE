@@ -3,7 +3,7 @@ from pathlib import Path
 import sys,json,subprocess,importlib.util
 ROOT=Path(__file__).resolve().parents[4];sys.path.insert(0,str(ROOT))
 from fastflyer import Flyer,Block,Kind
-HERE=Path(__file__).resolve().parent;RUNNER=ROOT/'flyers/WIP/experiments/bin/research_runner.exe'
+HERE=Path(__file__).resolve().parent;RUNNER=ROOT/'target/release/fastflyer-research.exe'
 spec=importlib.util.spec_from_file_location('model',HERE/'derived_mixed3_compact_v3.py');model=importlib.util.module_from_spec(spec);spec.loader.exec_module(model)
 def main():
     core=next(m for m in json.loads((HERE/'mixed3_compact_v3_manifest.json').read_text())['candidates'] if m['file']=='pentagon_wide_v1_s012.flyer')

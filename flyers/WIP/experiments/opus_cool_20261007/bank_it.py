@@ -1,3 +1,4 @@
+# Historical one-off; use scripts/bank_add.py for banking new flyers.
 """Bank opus_cool (gull-wing mirrored bird) only after the full 80-case samples pass.
 Copies runs/gull_last13_j7.flyer -> flyers/bank/pl8/opus_cool.flyer, appends the results.csv row (research_runner
 measure numbers) and adds the catalogue.json entry measured by the same tool scripts/update_bank.py uses

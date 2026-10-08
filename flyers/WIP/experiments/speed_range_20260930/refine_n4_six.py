@@ -35,6 +35,6 @@ def main():
     seen.add(f.content_hash());name=f'c{attempt:04}.flyer';f.push_limit=20;f.save(out/name);row.update(file=name,segments=[sorted(s) for s in ss],phases=ph)
   rows.append(row);checkpoint(HERE/'n4_six_refine.manifest.json',rows)
   if (attempt+1)%24==0:print('refine',attempt+1,'target20_candidates',len(seen),flush=True)
- runner=ROOT/'flyers/WIP/experiments/bin/research_runner.exe';p=subprocess.run([str(runner),'screen',str(out),'240','--out',str(HERE/'n4_six_refine.screen.csv')],capture_output=True,text=True);(HERE/'n4_six_refine.screen.txt').write_text(p.stdout+p.stderr);print(p.stdout,flush=True)
+ runner=ROOT/'target/release/fastflyer-research.exe';p=subprocess.run([str(runner),'screen',str(out),'240','--out',str(HERE/'n4_six_refine.screen.csv')],capture_output=True,text=True);(HERE/'n4_six_refine.screen.txt').write_text(p.stdout+p.stderr);print(p.stdout,flush=True)
 
 if __name__=='__main__':main()

@@ -1,7 +1,0 @@
-4 uniform 0 {'fixed_overlap': 1}
-4 uniform 1 {'fixed_overlap': 1, 'arm_overlap': 1}
-4 uniform 2 {'fixed_overlap': 2, 'arm_overlap': 1}
-4 uniform 3 {'fixed_overlap': 3, 'arm_overlap': 1}
-4 uniform 4 {'fixed_overlap': 4, 'arm_overlap': 1}
-4 uniform 5 {'fixed_overlap': 4, 'arm_overlap': 2}
-4 uniform 6 {'fixed_overlap': 4, 'arm_overlap': 3}

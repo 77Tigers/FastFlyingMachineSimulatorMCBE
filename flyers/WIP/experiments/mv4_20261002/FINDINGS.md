@@ -12,7 +12,7 @@
 
 **Follow-up best: [compact symmetric PL43](../../../bank/pl43/mv4_symmetric_easy_compact.flyer)**, with three repeated templates,194 glue and80/80 full10,000-tick core cases. The [easy findings](../mv4_easy_20261004/FINDINGS.md) record the completed original sweeps and approved compact-face extension; the [elegance findings](../mv4_elegant_20261004/FINDINGS.md) retain the checker correction and original research directions. The PL49 evidence below remains the original verified mechanism result.
 
-Banked artifact: [`../../../bank/pl49/mv4.flyer`](../../../bank/pl49/mv4.flyer), also retained at [`../../mv4_pl49.flyer`](../../mv4_pl49.flyer). This replaces PL101 as the usable mv4 result and satisfies the user's hard PL<50 cutoff. PL<36 remains an optimization target, not an achieved claim.
+Banked artifact: [`../../../bank/pl49/mv4.flyer`](../../../bank/pl49/mv4.flyer), also formerly retained at `../../mv4_pl49.flyer` (byte-identical to the bank copy; removed in 2026-10-08 cleanup, in FastFlyer_WIP_uncommitted_backup_20261008). This replaces PL101 as the usable mv4 result and satisfies the user's hard PL<50 cutoff. PL<36 remains an optimization target, not an achieved claim.
 
 - Six persistent mv4 cores, two in each 0/1/2rt phase. Every core moves one block across two ticks and waits one tick. All persistent segments use mv4; no other-timing engine pushes a passive rear attachment.
 - 225 glue cells (116 slime,109 honey),12 observers,24 normal +X pistons;261 permanent blocks plus sampled arms. Glue counts per core:38/36/39/37/39/36.
@@ -30,9 +30,12 @@ Banked artifact: [`../../../bank/pl49/mv4.flyer`](../../../bank/pl49/mv4.flyer),
 Reproduce the checks from the repository root:
 
 ```powershell
-& flyers/WIP/experiments/bin/research_runner.exe audit flyers/WIP/mv4_pl49.flyer 10000 12
-& flyers/WIP/experiments/mv4_20261002/audit_mv4_fast.exe flyers/WIP/mv4_pl49.flyer 10000 flyers/WIP/experiments/mv4_20261002/final_experiment_20261003/recheck.csv
+& target/release/fastflyer-research audit flyers/bank/pl49/mv4.flyer 10000 12
+cargo build --release --manifest-path tools/Cargo.toml --target-dir target
+& target/release/mv4-audit-fast flyers/bank/pl49/mv4.flyer 10000 flyers/WIP/experiments/mv4_20261002/final_experiment_20261003/recheck.csv
 ```
+
+(2026-10-08 cleanup: the WIP copy `flyers/WIP/mv4_pl49.flyer` was byte-identical to the bank copy and was removed, so the commands now use the bank path. Local `.exe`/`.pdb` builds were removed; the tools are now cargo bins (`cargo build --release --manifest-path tools/Cargo.toml --target-dir target`, binaries in `target/release/`).)
 
 The original slower identity-traced matrix was deliberately replaced with the fast core checker; its completed cases are preserved as `winner.partial_traced_cases.csv`, explicitly not an80-case result. The full fast matrix completed before the usage interruption. Final export and handoff cleanup were completed on resume; no search/audit process remains active.
 
@@ -60,12 +63,18 @@ The reference also passes **80/80 short 120-tick** seed/chunk-phase cases at PL1
 
 ## Local diagnostics
 
-- `bodytrack_ticks.rs` / `.exe`: derived from the existing human body tracker, but displays one movement-start bit per simulator tick. Syntax `bodytrack_ticks.exe FILE TICKS WINDOW_START PERIOD [LIMIT]`. A displayed mask is a union of launches at each residue; it alone does not certify every cycle.
-- `audit_mv4.rs` / `.exe`: exact per-tick, per-core launch and moving-duration checks for the all-mv4 **normal +X piston** architecture; rejects other actuator types. Syntax `audit_mv4.exe FILE TICKS OUTPUT.csv [LIMIT]`. Uses the established 80 RNG/chunk-phase combinations, infers core phases from the canonical initial moving/observer flags, checks permanent-kind conservation and every successful action load, and fails at the first discrepancy per case. It does **not** claim exact full passenger/owner-state recurrence. Compiled against the current Cargo-reported release library; no simulator changes.
-- `audit_mv4_fast.rs` / `.exe`: normal +X assemblies only; infers the same initial core phases, checks every core cell's expected coordinate, kind, observer direction and moving flag every tick, permanent-kind conservation and all extension failures, across80 cases. Syntax `audit_mv4_fast.exe FILE TICKS OUTPUT.csv [LIMIT]`. CSV `encoded_action_limit` is a bound, not a measured maximum; use the traced runner for actual loads. Core observer powered bits, piston passenger identity and full owner-state recurrence are not compared. This faster checker supplied the final full matrix.
+The compiled `.exe`/`.pdb` files below were removed in the 2026-10-08 cleanup (rebuildable). Rebuild any of them with `cargo build --release --manifest-path tools/Cargo.toml --target-dir target`.
+
+- `tools/src/bin/mv4-bodytrack-ticks.rs` / `.exe`: derived from the existing human body tracker, but displays one movement-start bit per simulator tick. Syntax `mv4-bodytrack-ticks FILE TICKS WINDOW_START PERIOD [LIMIT]`. A displayed mask is a union of launches at each residue; it alone does not certify every cycle.
+- `tools/src/bin/mv4-audit-mv4.rs` / `.exe`: exact per-tick, per-core launch and moving-duration checks for the all-mv4 **normal +X piston** architecture; rejects other actuator types. Syntax `mv4-audit-mv4 FILE TICKS OUTPUT.csv [LIMIT]`. Uses the established 80 RNG/chunk-phase combinations, infers core phases from the canonical initial moving/observer flags, checks permanent-kind conservation and every successful action load, and fails at the first discrepancy per case. It does **not** claim exact full passenger/owner-state recurrence. Compiled against the current Cargo-reported release library; no simulator changes.
+- `tools/src/bin/mv4-audit-fast.rs` / `.exe`: normal +X assemblies only; infers the same initial core phases, checks every core cell's expected coordinate, kind, observer direction and moving flag every tick, permanent-kind conservation and all extension failures, across80 cases. Syntax `mv4-audit-fast FILE TICKS OUTPUT.csv [LIMIT]`. CSV `encoded_action_limit` is a bound, not a measured maximum; use the traced runner for actual loads. Core observer powered bits, piston passenger identity and full owner-state recurrence are not compared. This faster checker supplied the final full matrix.
 
 No simulator, editor, viewer or format changes are authorized for obtaining a result.
 
 ## Abstraction feedback
 
 A fixed passenger itinerary is unnecessarily restrictive here: reset/settlement and carrier updates can produce different pickup times that converge at a later boundary. Contact contracts should represent the set of reachable passenger states and separately check power against every state. The local contact checker and the completed six-core PL49 assembly validate this approach for mv4. Greedily freezing each route can block the remaining bodies; negotiated removal/rerouting was tested and solved the final assembly.
+
+## 2026-10-08 cleanup record
+
+Removed: rebuildable `.exe`/`.pdb`; the empty `final_search_console.log`; `final_experiment_20261003/candidate_s3_pl49.flyer` (byte-identical to `mv4_pl49.flyer` and the bank copy); `synthesis/candidates/` flyers except the diagnosed `s2`/`s28` (the other 14 failed the 120-tick screen, see `screen.csv`); `synthesis/candidates_v2/` and `manifest_v2.json` (byte-identical to `candidates/` and `manifest.json`); the raw `synthesis/s2.trace.txt` and `s28.trace.txt` (inputs to `diagnose.py`, conclusions in `s2/s28.diagnosis.json`; regenerate with `research_runner.exe trace` on the kept candidate, or `git show 1222fbe:flyers/WIP/experiments/mv4_20261002/synthesis/s28.trace.txt`); the eight `synthesis/six_route_failure_s*.json` route-failure dumps (seeds 0,1,2,3,11,101,106,116; superseded by the final negotiated router); `compact_manifest_tight/_v2/_v3.json`; and four uncited progress logs. Their final tallies were: `compact_manifest` 17 route/1 body_overlap; `_tight` 4 route, 3 same-material contact, 3 unplanned pickup, 1 foreign-source contact, 1 body overlap; `_v2` 21 route, 3 same-material, 3 unplanned pickup, 2 body overlap, 1 foreign-source; `_v3` 20 route, 4 foreign-source, 3 same-material, 2 body overlap, 1 unplanned pickup (no compact layout routed). `quick_ports.log` 32 route + 112 hardware failures; `quick_ports_equivalent.log` 80 route + 64 body-contact (same as the kept interleaved log); `quick_six.log` and `quick_six_steiner.log` both 120 hardware, 17 body-contact, 4 route over 141 placements. All removed tracked files are in `git show 1222fbe:<path>`; ignored `.flyer` files are in FastFlyer_WIP_uncommitted_backup_20261008.

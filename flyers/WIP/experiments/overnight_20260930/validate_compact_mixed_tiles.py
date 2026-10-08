@@ -3,7 +3,12 @@ from pathlib import Path
 import sys,json,csv,re,subprocess
 ROOT=Path(__file__).resolve().parents[4];sys.path.insert(0,str(ROOT))
 from fastflyer import Flyer,Kind
-HERE=Path(__file__).resolve().parent;RUNNER=ROOT/'flyers/WIP/experiments/bin/research_runner.exe';LEDGER=ROOT/'flyers/WIP/experiments/bin/three_bps_loads.exe'
+def _tb(n):
+    import sys, pathlib
+    sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[4]))
+    from fastflyer.research import binary
+    return binary(n)
+HERE=Path(__file__).resolve().parent;RUNNER=ROOT/'target/release/fastflyer-research.exe';LEDGER=_tb('three-bps-loads')
 def main():
     manifest=json.loads((HERE/'compact_mixed_tile_bridged/manifest.json').read_text());certified=[]
     for m in manifest['assemblies']:

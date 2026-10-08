@@ -11,11 +11,11 @@ Hourly cron (session-only) re-prompts me to read this file.
 - Subagent F launched on mmwpull (speed_range_b_20260930/mmwpull/).
 - (04:20) BANKED bank/pl12/ab_push_pull_2body.flyer (2.5 A/B, PL12, 80/80). abverify.py checks A/B rules on a run.
 - KEY RULE found by validator: push of a B second consecutive move needs an A anchor resting at BOTH s-1 and s (else anchor+victim both carry the pusher -> obstruction merge). feas.py/feas2.py: 3bps min 6 bodies A{mmmww,mmwmw,mwmmw,wmmmw} B{mwmwm,wmwmm}; 3.333 min 9 bodies (5A with ww + 4B). mmwmmw-pair cross design (abgen333.py) is INVALID for this reason.
-- Tools: abcheck.py (discovery-rule validator per slot), abdiff.py + bin/dumpstate.exe (sim vs model per slot), abroute.py (World/routing).
+- Tools: abcheck.py (discovery-rule validator per slot), abdiff.py + target/release/ab-dumpstate (sim vs model per slot), abroute.py (World/routing).
 - Next: generic generator abgen_g.py for 3bps 6-body.
 - (05:00) 3bps A/B FIRST WORKING: ab3_first_working.flyer (6 bodies, 492 blocks, limit 250; 300/1000 exact). Generator: abinc.py (incremental hazard-checked module placement + abworld routing + abcheck). Next: compaction (cluster placement, spacing 2-3, trim).
 - (05:50) BANKED bank/pl24/pull_twice_mmwmmw.flyer (subagent F, mmwpull). Subagent F still running.
-- (06:15) abpr.py = place&route generator (+abrules.py carried-front rule, power check in abinc.Inc.power_ok, front-item rule). Runs: pr3/ (6-body 3bps), pr3b/ (7-body 3bps), pr333/ (9-body 3.333 exploratory). Screen with research_runner screen DIR 500 at limit 250. abre.py rebuild(Aw,Bw,seed) recreates World for abdiff/abcheck debugging.
+- (06:15) abpr.py = place&route generator (+abrules.py carried-front rule, power check in abinc.Inc.power_ok, front-item rule). Runs: pr3/ (6-body 3bps), pr3b/ (7-body 3bps), pr333/ (9-body 3.333 exploratory). Screen with fastflyer-research screen DIR 500 at limit 250. abre.py rebuild(Aw,Bw,seed) recreates World for abdiff/abcheck debugging.
 - (06:40) 3bps A/B 7-body works: ab3_7body_l53.flyer (load 53). Relaunched pr3/pr3b/pr333 with balanced objective + partial_ok validator.
 - (06:55) launched subagent G (frontier_pull_20261001/): pull-on-first-move-after-wait for 3bps mmmww (<=17) and 3.333 (<=20).
 - (08:00) stack=1 (modules share YZ lines at different x) -> 7-body maxglue 30, load 45 (pr3s/s00200). Riders now dominate; added est_load objective (glue+sources+carried pistons). Runs pr3s_300/320 logs. 80-case audit of ab3_7body_pl46 running (slow). anneal ann/a3 at 44.
@@ -24,3 +24,7 @@ Hourly cron (session-only) re-prompts me to read this file.
 - BANKED pl85 3.333 A/B. Continue: lower 3.333 A/B load; 3bps runs.
 - (08:00) 9-body set c (A wwmmmm,mwwmmm,mmwwmm,mmmwwm,mmmmww; B wmmwmm,mwmmmw,mmwmmw,mmmmww) better: pr333c/s00002 load 71, auditing ab333_pl71. Runs pr333c*.log, pr333e.log
 - (11:45) FINAL: banked pl12/pl34/pl71(+pl85) A/B, pl22(+pl24) mmwmmw. Generators stopped. Lead: pr333c/s00012 load 61 (audit at 61 not run). Subagents asked to write FINDINGS and stop.
+
+## Cleanup 2026-10-08
+
+Checkpoint log kept as written. Files it names that were removed in the 2026-10-08 cleanup (`gen25b.py`, `abroute.py`, `ann/`, `bin/dumpstate.exe`, `*.log`, uncited `pr3*/` seeds): see the cleanup note in [FINDINGS.md](FINDINGS.md).

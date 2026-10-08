@@ -1,6 +1,0 @@
-== p3b/s11_34_p0.pkl
-result infeasible:Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)
-== p3b/s13_12_p0.pkl
-result infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
-== p3b/s14_50_p1.pkl
-result infeasible:The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)

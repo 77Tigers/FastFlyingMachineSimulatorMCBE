@@ -99,5 +99,5 @@ def main():
     f,data=ans;file=f'{name}_s{seed:03}.flyer';f.save(out/file);data.update(file=file,seed=seed,centers=centers);manifest.append(data);stats['routed']+=1
    else:stats[reason]+=1
    (HERE/'mmmm_glazed_compact_short_manifest.json').write_text(json.dumps(dict(stats=stats,candidates=manifest),indent=2));print(name,seed,dict(stats),flush=True)
- runner=ROOT/'flyers/WIP/experiments/bin/research_runner.exe';r=subprocess.run([str(runner),'screen',str(out),'240','--out',str(HERE/'mmmm_glazed_compact_short_screen.csv')],capture_output=True,text=True);(HERE/'mmmm_glazed_compact_short_screen.txt').write_text(r.stdout+r.stderr);print(r.stdout,flush=True)
+ runner=ROOT/'target/release/fastflyer-research.exe';r=subprocess.run([str(runner),'screen',str(out),'240','--out',str(HERE/'mmmm_glazed_compact_short_screen.csv')],capture_output=True,text=True);(HERE/'mmmm_glazed_compact_short_screen.txt').write_text(r.stdout+r.stderr);print(r.stdout,flush=True)
 if __name__=='__main__':main()

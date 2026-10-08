@@ -1,4 +1,0 @@
-drop 1 0 fail [(0, 'extend')] {(0, 'extend'), (2, 'retract')} [(0, 'extend')]
-drop 1 1 fail [(0, 'extend')] {(0, 'extend'), (2, 'retract')} [(0, 'extend')]
-drop 1 2 fail [(0, 'extend')] {(0, 'extend'), (2, 'retract')} [(0, 'extend')]
-slot 1 289 -> 19

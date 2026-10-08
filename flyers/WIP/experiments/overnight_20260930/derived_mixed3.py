@@ -9,7 +9,7 @@ import sys,random,heapq,functools,collections,json,subprocess,csv
 ROOT=Path(__file__).resolve().parents[4];sys.path.insert(0,str(ROOT))
 from fastflyer import Flyer,Block,Kind
 HERE=Path(__file__).resolve().parent
-RUNNER=ROOT/'flyers/WIP/experiments/bin/research_runner.exe'
+RUNNER=ROOT/'target/release/fastflyer-research.exe'
 D=((1,0,0),(-1,0,0),(0,1,0),(0,-1,0),(0,0,1),(0,0,-1))
 S=[[(t+p)%5<3 for t in range(5)] for p in range(5)]
 DISP=[[sum(s[:t]) for t in range(6)] for s in S]

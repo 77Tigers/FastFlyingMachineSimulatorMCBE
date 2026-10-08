@@ -1,6 +1,7 @@
 import subprocess, glob, re, os, sys
 ROOT='C:/Users/Ruben/OneDrive/Documents/FastFlyerPlayground/flyers'
-EXE=ROOT+'/WIP/experiments/bin/human_bodytrack.exe'
+import os
+EXE=ROOT+'/../target/release/bodytrack'+('.exe' if os.name=='nt' else '')
 def rot(w): return {w[i:]+w[:i] for i in range(len(w))}
 MM=rot('mmwmw')
 for f in sorted(glob.glob(ROOT+'/bank/*/*.flyer')):

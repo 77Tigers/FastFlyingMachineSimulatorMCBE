@@ -243,5 +243,5 @@ if __name__=='__main__':
   print(seed,dict(stats),flush=True)
  (OUT/f'manifest_{revision}.json').write_text(json.dumps(dict(stats=stats,layouts=records),indent=2))
  if stats['routed']:
-  result=subprocess.run([str(ROOT/'flyers/WIP/experiments/bin/research_runner.exe'),'screen',str(out),'120','--out',str(OUT/f'screen_{revision}.csv')],capture_output=True,text=True)
+  result=subprocess.run([str(ROOT/'target/release/fastflyer-research.exe'),'screen',str(out),'120','--out',str(OUT/f'screen_{revision}.csv')],capture_output=True,text=True)
   (OUT/f'screen_{revision}.txt').write_text(result.stdout+result.stderr);print(result.stdout,result.stderr)

@@ -1,1 +1,0 @@
-r0_rbx_c2 {'file': 'relay45_a\\r0_rbx_c2.flyer', 'dist600': 3, 'failures': 752, 'conserved': True, 'all12': 0, 'rear12': 0, 'max': 0, 'dist400': 3}

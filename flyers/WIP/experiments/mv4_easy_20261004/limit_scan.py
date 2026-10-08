@@ -8,6 +8,11 @@ import sys,json,csv,subprocess,shutil
 from pathlib import Path
 import common as c
 from fastflyer import Flyer
+def _tb(n):
+    import sys, pathlib
+    sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[4]))
+    from fastflyer.research import binary
+    return binary(n)
 limit=int(sys.argv[1]) if len(sys.argv)>1 else 42
 OUT=c.HERE/f'limits{limit}';OUT.mkdir(exist_ok=True)
 manifest=OUT/'manifest.json';records=json.loads(manifest.read_text()) if manifest.exists() else []
@@ -43,7 +48,7 @@ for source in sources:
 if pending:
     for record in pending:
         path=Path(record['path']);csvpath=path.with_suffix('.one.csv')
-        trial=subprocess.run([str(c.HERE/'audit_one.exe'),str(path),'10000',str(csvpath)],
+        trial=subprocess.run([str(_tb('mv4-audit-one')),str(path),'10000',str(csvpath)],
                              capture_output=True,text=True,timeout=120)
         path.with_suffix('.one.txt').write_text(trial.stdout+trial.stderr)
         rows=list(csv.DictReader(csvpath.open()));r=rows[0] if rows else {}

@@ -1,8 +1,0 @@
-0 {'hardware': 1}
-20 {'hardware': 18, 'body_contact': 2, 'route': 1}
-40 {'hardware': 34, 'body_contact': 6, 'route': 1}
-60 {'hardware': 51, 'body_contact': 9, 'route': 1}
-80 {'hardware': 71, 'body_contact': 9, 'route': 1}
-100 {'hardware': 88, 'body_contact': 12, 'route': 1}
-120 {'hardware': 101, 'body_contact': 16, 'route': 4}
-140 {'hardware': 120, 'body_contact': 17, 'route': 4}

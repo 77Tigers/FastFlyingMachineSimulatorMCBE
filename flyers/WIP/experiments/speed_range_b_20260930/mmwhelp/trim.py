@@ -3,7 +3,7 @@ import sys,subprocess,random,json,re,os
 from pathlib import Path
 HERE=Path(__file__).resolve().parent; ROOT=HERE.parents[4]; sys.path.insert(0,str(ROOT))
 from fastflyer import Flyer,Kind
-RUNNER=ROOT/'flyers/WIP/experiments/bin/research_runner.exe'
+RUNNER=ROOT/'target/release/fastflyer-research.exe'
 D=((1,0,0),(-1,0,0),(0,1,0),(0,-1,0),(0,0,1),(0,0,-1))
 def glue(f): return {p:b.kind for p,b in f.blocks() if b.kind in (Kind.SLIME,Kind.HONEY)}
 def comps(g):

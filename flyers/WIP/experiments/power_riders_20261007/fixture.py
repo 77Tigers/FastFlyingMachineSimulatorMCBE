@@ -21,7 +21,7 @@ HERE = pathlib.Path(__file__).resolve().parent
 ROOT = HERE.parents[3]
 sys.path.insert(0, str(ROOT))
 from fastflyer import Flyer, Block, Kind
-EXE = ROOT / 'target' / 'release' / ('fastflyer-sim.exe' if sys.platform == 'win32' else 'fastflyer-sim')
+from fastflyer.research import simulate
 PHASES = (0, 7, 8, 15)
 
 
@@ -114,7 +114,7 @@ def run(builder, k, seed, px, pz):
     f.save(a)
     res = {}
     for T in range(1, spec['ticks'] + 1):
-        subprocess.run([str(EXE), str(a), str(b), '1'], check=True, capture_output=True)
+        simulate(a, b, 1)
         g = Flyer.load(b)
         res[T] = anchor(g)
         a, b = b, a

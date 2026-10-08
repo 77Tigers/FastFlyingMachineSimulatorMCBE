@@ -15,6 +15,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Reject binaries and oversized files
+        run: python scripts/check_repo_hygiene.py
       - uses: actions/setup-node@v4
         with:
           node-version: '22'

@@ -8,6 +8,11 @@ HERE=Path(__file__).resolve().parent
 ROOT=HERE.parents[3]
 sys.path.insert(0,str(ROOT))
 from fastflyer import Flyer,Block,Kind,DIRECTIONS
+def _tb(n):
+    import sys, pathlib
+    sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[4]))
+    from fastflyer.research import binary
+    return binary(n)
 def sx(p,x):return (p[0]+x,p[1],p[2])
 def nb(p):return [tuple(a+b for a,b in zip(p,d)) for d in DIRECTIONS]
 def offset(w,k):return sum(x=='m' for x in w[:k])
@@ -15,13 +20,13 @@ def offset(w,k):return sum(x=='m' for x in w[:k])
 def main(base,L,outname):
     base=Path(base);out=HERE/outname;out.mkdir(exist_ok=True)
     flyer=Flyer.load(base)
-    raw=subprocess.check_output([str(HERE/'states.exe'),str(base),str(2*L)],text=True)
+    raw=subprocess.check_output([str(_tb('states')),str(base),str(2*L)],text=True)
     W=[{} for k in range(L+1)]
     for line in raw.splitlines():
         t,x,y,z,cell=map(int,line.split());W[t//2][x,y,z]=Block.decode(cell)
     import os
     env=dict(os.environ,BT_CELLS='1')
-    txt=subprocess.check_output([str(HERE.parent/'bin/human_bodytrack.exe'),str(base),str(8*L),str(2*L),str(2*L)],text=True,env=env)
+    txt=subprocess.check_output([str(_tb('bodytrack')),str(base),str(8*L),str(2*L),str(2*L)],text=True,env=env)
     (out/'bodies.txt').write_text(txt)
     bodies=[]
     for line in txt.splitlines():

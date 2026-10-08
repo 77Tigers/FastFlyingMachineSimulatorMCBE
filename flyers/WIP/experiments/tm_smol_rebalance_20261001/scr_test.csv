@@ -1,4 +1,0 @@
-file,limit,rng,phase_x,phase_z,ticks,distance,end_blocks,extensions,extension_failures,movement_failures,first_failure_tick,first_failure_kind,conservation_mismatch_ticks,max_successful_action,clean
-".\base.flyer",12,0,0,0,600,180,148,2340,0,0,,"",0,12,true
-".\clone_test.flyer",12,0,0,0,600,180,148,2340,0,0,,"",0,12,true
-".\del_test.flyer",12,0,0,0,600,1,139,105,0,0,,"",0,12,true

@@ -17,8 +17,13 @@ HERE = pathlib.Path(__file__).resolve().parent
 ROOT = HERE.parents[3]
 sys.path.insert(0, str(ROOT))
 from fastflyer import Flyer, Block, Kind
+def _tb(n):
+    import sys, pathlib
+    sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[4]))
+    from fastflyer.research import binary
+    return binary(n)
 
-EXE = HERE / 'loadhist.exe'
+EXE = _tb('loadhist')
 WORKERS = 10
 GLUE = (Kind.SLIME, Kind.HONEY)
 EDITABLE = (Kind.SLIME, Kind.HONEY, Kind.REDSTONE_BLOCK)

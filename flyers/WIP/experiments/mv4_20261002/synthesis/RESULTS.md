@@ -24,11 +24,14 @@ at diagnostic PL512. Thirteen had no failed-discovery/conservation event,
 but all violated core timing and later stalled or changed schedule. Best
 distance was23 in120ticks. Successful action loads rose to278-326 after
 multiple cores were incorrectly recruited. Evidence: manifest.json,
-screen.csv, screen.txt, candidates/.
+screen.csv, screen.txt, candidates/ (2026-10-08 cleanup kept only the diagnosed
+s2/s28 candidates; the other 14 are in FastFlyer_WIP_uncommitted_backup_20261008).
 
 The second attempt reused these30 placements after a preliminary keepout
 change; mutable external owner-index semantics kept it ineffective. Its
-evidence remains in manifest_v2.json, screen_v2.csv, candidates_v2/.
+evidence remains in screen_v2.csv (manifest_v2.json and candidates_v2/ were
+byte-identical to manifest.json and candidates/; removed in 2026-10-08 cleanup;
+`git show 1222fbe:flyers/WIP/experiments/mv4_20261002/synthesis/manifest_v2.json`).
 The final causal correction was applied only to seed28; no wider search
 was launched.
 
@@ -56,7 +59,9 @@ exemptions by both body and member. Contact automaton snapshots preserve
 the imported interface during concurrent edits. These corrections remove
 the extra routing cell and physically resolve the witnessed failure.
 
-Evidence: s28.trace.txt, s28.bodytrack.txt, s28.diagnosis.json.
+Evidence: s28.trace.txt (raw trace, removed in 2026-10-08 cleanup;
+`git show 1222fbe:flyers/WIP/experiments/mv4_20261002/synthesis/s28.trace.txt`),
+s28.bodytrack.txt, s28.diagnosis.json.
 diagnose.py follows persistent identities through successful SOURCE lists.
 
 ## Initial states and recurrence limit
@@ -74,8 +79,9 @@ made. Low-PL compaction and broad phase/RNG validation remain separate work.
 Reproduce corrected fixture:
 
 ```
-flyers/WIP/experiments/bin/research_runner.exe audit flyers/WIP/experiments/mv4_20261002/synthesis/s28_v3_pl101.flyer 10000 12
-flyers/WIP/experiments/mv4_20261002/bodytrack_ticks.exe flyers/WIP/experiments/mv4_20261002/synthesis/s28_v3_pl101.flyer 10000 0 12
+target/release/fastflyer-research audit flyers/WIP/experiments/mv4_20261002/synthesis/s28_v3_pl101.flyer 10000 12
+cargo build --release --manifest-path tools/Cargo.toml --target-dir target
+target/release/mv4-bodytrack-ticks flyers/WIP/experiments/mv4_20261002/synthesis/s28_v3_pl101.flyer 10000 0 12
 ```
 
 Pipeline feedback: before routing, keepouts must cover every reachable

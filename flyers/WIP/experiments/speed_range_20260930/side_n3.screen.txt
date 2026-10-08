@@ -1,6 +1,0 @@
-screen candidates=10 clean=10 ticks=240 out=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\side_n3.screen.csv
-  distance=72 load=20 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\side_n3\c0000.flyer
-  distance=72 load=24 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\side_n3\c0001.flyer
-  distance=72 load=21 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\side_n3\c0005.flyer
-  distance=72 load=23 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\side_n3\c0008.flyer
-  distance=72 load=21 failures=0 first_tick=- file=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\speed_range_20260930\side_n3\c0027.flyer

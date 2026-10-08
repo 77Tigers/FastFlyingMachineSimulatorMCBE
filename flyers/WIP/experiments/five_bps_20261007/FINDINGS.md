@@ -52,8 +52,8 @@ From repository root:
 ```powershell
 python flyers/WIP/experiments/five_bps_20261007/generate.py 1536 9
 python flyers/WIP/experiments/five_bps_20261007/prove.py
-& flyers/WIP/experiments/build_research_runner.ps1
-& flyers/WIP/experiments/bin/research_runner.exe measure flyers/WIP/experiments/five_bps_20261007/bank_n1536_z9.flyer 1000 0
+cargo build --release --manifest-path tools/Cargo.toml --target-dir target
+& target/release/fastflyer-research measure flyers/WIP/experiments/five_bps_20261007/bank_n1536_z9.flyer 1000 0
 rustc --edition=2021 -O flyers/WIP/experiments/five_bps_20261007/check.rs --extern fastflyer=target/release/libfastflyer.rlib -o flyers/WIP/experiments/bin/five_bps_check.exe
 & flyers/WIP/experiments/bin/five_bps_check.exe flyers/WIP/experiments/five_bps_20261007/bank_n16_z9.flyer 10000 5 flyers/WIP/experiments/five_bps_20261007/n16.csv
 ```

@@ -22,7 +22,7 @@ combos), the moving RB emits no power during the push, and at f+1 the rail has m
 - pushports.py: first attempt, push ports with donor RB (found 0 eligible: donor words must be mmwmw-type).
 - selfpush2.py: final generator (derived from exclusive_roles_20261001/j_light16/jports.py): carrier-rigid P (+X, extras routed like the
   stickies' carriers), rail-borne RB, 2 sticky pull ports, BFS-routed rail. env ONLY=tw:kind:pushslot LIM RAILMAX NMAX COMBOS; --cached reuses run3/ports.json.
-- run3/ (generated candidates), best/ (verified), ev.sh (loadhist screen), runshard.sh/cfgs.txt (sharded lower-limit runs run16/run15).
+- run3/ (generated candidates; only run3/ports.json + bodies.txt kept, candidates removed in 2026-10-08 cleanup), best/ (verified), ev.sh (loadhist screen), runshard.sh/cfgs.txt (sharded lower-limit runs run16/run15; removed in 2026-10-08 cleanup, winners are in best/; `git show 1222fbe:flyers/WIP/experiments/tm_smol_rebalance_20261001/j_mmwmw2/run16/...`).
 
 ## Results by limit (all: 10000t distance 3000, 0 failures, conserved, 80/80 samples csv next to file)
 - PL18 best/c552_003.flyer (+000/002/005/006): rail 16 honey+RB.
@@ -30,5 +30,7 @@ combos), the moving RB emits no power during the push, and at f+1 the rail has m
 - PL14 best/pl14_c168_000.flyer (+_001, _002): rail B20 12 slime+RB (load 13), push @s0 by B19's carried normal piston (power: rail's own RB),
   pull @s1 by B37 sticky, pull @s3 by B30 sticky (best/pl14_c168_000.bt.txt). measure: best/pl14_c168_000.measure.txt.
 - PL13: generator budget model (base bodies already at 12, +1 per added cell) leaves no combos; extras-free pull ports are nearly
-  nonexistent (run13/, run13b/ logs). Not reached.
+  nonexistent (run13/, run13b/ logs: removed in 2026-10-08 cleanup; `git show 1222fbe:flyers/WIP/experiments/tm_smol_rebalance_20261001/j_mmwmw2/run13/log_mmwmw_1_0.txt` etc.). Not reached.
 Added to the tm_smol base: rail glue + RB, 1 normal +X piston (carried by a ww-window body), 2 sticky pullers (+ their carriers' extensions/RBs from the old jports scheme).
+
+2026-10-08 cleanup: run1/, run2/ (pushports.py attempts), run13*/run14/run15/run16/ and run3/ candidates removed (winners copied in best/; run3/ports.json kept); *.samples.err, dbg logs, run logs, work/, h.py and the debug/superseded copies pushports_dbg*.py, selfpush.py, selfpush_dbg.py, selfpush2_dbg.py removed. `git show 1222fbe:<path>` for tracked csv/txt/json/log; .flyer in FastFlyer_WIP_uncommitted_backup_20261008.

@@ -2,6 +2,11 @@ import sys,os,json,subprocess,re
 sys.path.insert(0,'C:/Users/Ruben/OneDrive/Documents/FastFlyerPlayground')
 from fastflyer import Flyer,Block,Kind
 from pathlib import Path
+def _tb(n):
+    import sys, pathlib
+    sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[5]))
+    from fastflyer.research import binary
+    return binary(n)
 HERE=Path(__file__).resolve().parent
 BIN=HERE.parent.parent/'bin'
 base=os.environ.get('BASE','../human_base.flyer')
@@ -31,7 +36,7 @@ for s,lst in ports.items():
     h=Flyer.load(tmp)
     mn=lambda cells:(min(c[1] for c in cells),min(c[2] for c in cells))
     m0=mn(g._cells);m1=mn(h._cells);dy,dz=m1[0]-m0[0],m1[1]-m0[1]
-    txt=subprocess.run([str(BIN/'human_ledger.exe'),str(tmp),'0','60',str(LIM)],capture_output=True,text=True).stdout
+    txt=subprocess.run([str(_tb('ledger')),str(tmp),'0','60',str(LIM)],capture_output=True,text=True).stdout
     ev=[];fail=False
     for l in txt.splitlines():
       if 'FAIL' in l:fail=True

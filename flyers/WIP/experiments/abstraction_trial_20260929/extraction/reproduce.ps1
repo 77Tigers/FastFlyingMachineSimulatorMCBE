@@ -4,7 +4,9 @@ $out = 'flyers/WIP/experiments/abstraction_trial_20260929/extraction'
 python -c "from pathlib import Path; from flyers.WIP.experiments.astra_pullonly_20260927.pull_mwmw import make; f,_=make((1,-1,2),(0,1,-1),0,0,0); f.push_limit=10; f.save(Path('$out')/'candidate.flyer')"
 if ($LASTEXITCODE -ne 0) { throw 'candidate generation failed' }
 
-$runner = 'flyers/WIP/experiments/bin/research_runner.exe'
+& cargo build --release --manifest-path tools/Cargo.toml --target-dir target
+if ($LASTEXITCODE -ne 0) { throw 'tools build failed' }
+$runner = 'target/release/fastflyer-research'
 & $runner audit "$out/candidate.flyer" 160 8 | Set-Content "$out/audit_160.txt"
 if ($LASTEXITCODE -ne 0) { throw '160-tick audit failed' }
 & $runner audit "$out/candidate.flyer" 10000 8 | Set-Content "$out/audit_10000.txt"

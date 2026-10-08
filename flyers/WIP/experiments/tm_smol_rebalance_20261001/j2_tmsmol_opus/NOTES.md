@@ -42,3 +42,5 @@ re-fire the sticky); B36 then needs +4-5 cells on top of B41's 3 riding pushers 
   the slot geometry).
 - PL13 fallback: c3_b19only_L13.flyer = c2 without the B24 pull (B22 restored): PL13, 3000/10000, 0 fail; back
   [11,12,12,12,12] front [13,12,13,12,11,11,9,9]; front pushes 21, front pulls 7. 80-case audit c3_b19only_L13.samples.csv.
+
+2026-10-08 cleanup: p29v19/ option flyers + per-option csvs removed (p29v19.csv summary and options.json kept; c1_* are the built results); tr_o007.txt and tr_p45.txt (3.3 MB traces of the B41->B36 / B45->B37 near misses), b24d2.csv (206 KB, the 1431-variant d2a1 screen) and *.samples.log removed. `git show 1222fbe:<path>` for tracked csv/txt/json/log; .flyer in FastFlyer_WIP_uncommitted_backup_20261008.

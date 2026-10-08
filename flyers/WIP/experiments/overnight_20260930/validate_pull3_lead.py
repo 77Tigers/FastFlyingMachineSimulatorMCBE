@@ -4,7 +4,7 @@ import sys, subprocess
 ROOT=Path(__file__).resolve().parents[4];sys.path.insert(0,str(ROOT))
 from fastflyer import Flyer,Kind
 HERE=Path(__file__).resolve().parent
-RUNNER=ROOT/'flyers/WIP/experiments/bin/research_runner.exe'
+RUNNER=ROOT/'target/release/fastflyer-research.exe'
 def main():
     f=Flyer.load(HERE/'pull3_10body_candidates/g4_s003.flyer')
     pistons=[b for b in f._cells.values() if b.kind==Kind.PISTON]

@@ -9,8 +9,8 @@ Directory owned by the second agent (other agent: `../speed_range_20260930/`). C
 
 ## Tools (all public-API, no simulator changes)
 - `dump.py` / `bodies.py`: layer dump, glue-body decomposition (glue count + attached pieces).
-- `actions_tag.rs`: per-action table (tick, slot, piston, load, victim body id, bodies touching the acting piston). Compile: `rustc --edition=2021 -O X.rs --extern fastflyer=target/release/deps/libfastflyer-*.rlib -L dependency=target/release/deps`.
-- `anneal.rs`: parallel local search over glue/source cells of a *working* flyer; score = (excess load over TARGET summed over actions, max load, glue count); accepts neutral/better moves; evaluates at a HIGH limit so loads are measured, not just pass/fail. Args: `BASE TARGET HIGH SECONDS THREADS PREFIX [PERIOD ADV GOAL]`.
+- `tools/src/bin/actions-tag.rs`: per-action table (tick, slot, piston, load, victim body id, bodies touching the acting piston). Build: `cargo build --release --manifest-path tools/Cargo.toml --target-dir target` (now a cargo bin).
+- `tools/src/bin/anneal.rs`: parallel local search over glue/source cells of a *working* flyer; score = (excess load over TARGET summed over actions, max load, glue count); accepts neutral/better moves; evaluates at a HIGH limit so loads are measured, not just pass/fail. Args: `BASE TARGET HIGH SECONDS THREADS PREFIX [PERIOD ADV GOAL]`.
 
 ## Structure of the N3 PL18 flyer (abstraction notes)
 - 5 bodies, phase p moves slots p,p+1,p+2 of 5 (slot=2 ticks); stationary slots p+3,p+4; every piston of body p fires at slot p+3 (a piston is immovable for 4 ticks after firing).
@@ -33,3 +33,15 @@ Unfinished: `mmwpull/` (user idea: each mmwmmw segment pulled twice per cycle, s
 - **mmwmmw pull-twice (user idea) works: PL29 -> PL22**, banked `bank/pl22/pull_twice_mmwmmw.flyer` (80/80 full cases; earlier steps were PL25 and PL24, and PL24 is also banked). Each segment is pulled twice per cycle by front stickies that extend in its wait slots, and pushed twice by back normals. 12 pistons, 3 redstone + 3 observers. Subagent F's ILP routing shows 22 is optimal for that placement. A shared single source per body is impossible in this lifecycle (cyclic x-offset sum is 10, not 0). Details: `mmwpull/` (FINDINGS.md by F).
 - Frontier pull idea for 3 bps mmmww (subagent G, `../frontier_pull_20261001/`): the push+pull lifecycle is verified in the simulator (3 bps, clean at 240 ticks), but loads are high. No new 3/3.333 record yet.
 - A/B category (new, user request): see `../ab_20261001/FINDINGS.md`. Banked PL12 (2.5 bps), PL34 (3 bps), and PL71 (3.333 bps; PL85 is also banked).
+
+## Cleanup 2026-10-08
+
+Kept: tools (`dump.py`, `bodies.py`, `bank_entry.py`, `setlimit.py`, `verify_speed.sh`,
+`tools/src/bin/actions-tag.rs`, `tools/src/bin/anneal.rs`), bank samples, every script and `.rs` in `mmwhelp/`, `mmwpull/`, `mmw6/`,
+`mmwhelp/best/`, `mmwpull/best/`, the seven L22 placements in `mmwpull/c6/` and `mmwpull/c11/`
+(inputs for "Next to try"), `mmwpull/lifecycle_table.txt`, `double_legal.json`, `trans2d.json`,
+`mmw6/layouts.json`, `layout_scan.txt` and the three `mmw6/runs/*_best.flyer`. Removed: `bin/` and
+`mmwhelp` executables (rebuild from `.rs`), logs, screens, `mmw6/pairscan*.json` (1.6 MB), `runs/`,
+all other candidate dirs (`mmwhelp/cand*, t3-t5, trimmed*`, `mmwpull/c1-c8`, non-L22 `c6/c11`,
+`mmw6/cands_*`) and the `mmwhelp/ref_*` refinement intermediates. Tracked files: `git show 1222fbe:<path>`; removed `.flyer`
+files: `FastFlyer_WIP_uncommitted_backup_20261008`.

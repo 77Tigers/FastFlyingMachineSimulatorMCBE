@@ -3,6 +3,11 @@ HERE = pathlib.Path(__file__).resolve().parent
 ROOT = HERE.parents[4]
 sys.path.insert(0, str(ROOT))
 from fastflyer import Flyer, Block, Kind
+def _tb(n):
+    import sys, pathlib
+    sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[5]))
+    from fastflyer.research import binary
+    return binary(n)
 BASE = HERE.parent / 'base.flyer'
 def load():
     f = Flyer.load(str(BASE)); return f
@@ -17,5 +22,5 @@ def build(sticky=(), glue=(), rb=(), remove=(), conn=()):
 def run(f, name, limit=12, ticks=600):
     p = HERE / 'cand' / f'{name}.flyer'; p.parent.mkdir(exist_ok=True)
     f.save(str(p))
-    out = subprocess.run([str(HERE.parent/'loadhist.exe'), str(ticks), '100', str(limit), str(p)], capture_output=True, text=True).stdout.splitlines()[1]
+    out = subprocess.run([str(_tb('loadhist')), str(ticks), '100', str(limit), str(p)], capture_output=True, text=True).stdout.splitlines()[1]
     return out

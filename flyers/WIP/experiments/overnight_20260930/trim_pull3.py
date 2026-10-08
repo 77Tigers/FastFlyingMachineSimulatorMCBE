@@ -4,7 +4,7 @@ import sys,subprocess,json,random,re
 ROOT=Path(__file__).resolve().parents[4];sys.path.insert(0,str(ROOT))
 from fastflyer import Flyer,Kind
 from pull3_synthesis import conn
-HERE=Path(__file__).resolve().parent;RUNNER=ROOT/'flyers/WIP/experiments/bin/research_runner.exe'
+HERE=Path(__file__).resolve().parent;RUNNER=ROOT/'target/release/fastflyer-research.exe'
 def main():
     m=next(m for m in json.loads((HERE/'pull3_10body_manifest.json').read_text())['candidates'] if m['spacing']==4 and m['seed']==3)
     f=Flyer.load(HERE/'pull3_10body_candidates/g4_s003.flyer');f.push_limit=1000

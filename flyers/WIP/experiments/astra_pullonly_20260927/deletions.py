@@ -7,5 +7,5 @@ for i,(p,b) in enumerate(f.blocks()):
  for limit in (9,100):
   g=Flyer.from_bytes(f.to_bytes());g.remove(p);g.push_limit=limit;name=f'd{i}_pl{limit}.flyer';g.save(dest/name);meta.append(dict(file=name,removed=p,limit=limit))
 (out/'deletions_metadata.json').write_text(json.dumps(meta,indent=2))
-r=subprocess.run(['flyers/WIP/experiments/bin/research_runner.exe','batch',str(dest),'160'],capture_output=True,text=True);(out/'deletions_screen.txt').write_text(r.stdout)
+r=subprocess.run(['target/release/fastflyer-research.exe','batch',str(dest),'160'],capture_output=True,text=True);(out/'deletions_screen.txt').write_text(r.stdout)
 print('tests',len(meta));print('\n'.join(s for s in r.stdout.splitlines() if 'distance=40 ' in s))

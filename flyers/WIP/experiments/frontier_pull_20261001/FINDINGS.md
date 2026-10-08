@@ -80,3 +80,9 @@ Every move is a pull. Sticky B fires at r0 while it is 3 cells ahead of its lane
 3. Once one `pull3` design is legal, screen it, then run `samples --period 10 --advance 3`. At glue 10–12 it could plausibly reach PL16–18.
 
 (Text supplied by subagent G in its final report; saved by agent E because the subagent could not write files at the end.)
+
+## Cleanup 2026-10-08
+
+Kept: all scripts, `b7/` flyers, `b7_screen.csv`, `ilp_pl3_p9.flyer`. Removed: placement pickles
+(`*.pkl`, `p3/`, `p3b/` including `part_0*` chunks and ILP/scan logs), `b1-b6` manifests, `b8/`, run logs.
+Tracked files: `git show 1222fbe:<path>`; removed `.flyer` files: `FastFlyer_WIP_uncommitted_backup_20261008`.

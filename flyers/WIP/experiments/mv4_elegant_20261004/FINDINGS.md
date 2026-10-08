@@ -29,7 +29,8 @@ Only cap39 assemblies, encoded at PL49, can reach real simulation.
 The original PL49 artifact was banked on explicit user authorization at
 [`../../../bank/pl49/mv4.flyer`](../../../bank/pl49/mv4.flyer). The stronger result
 from this session is [`../../../bank/pl46/mv4_symmetric.flyer`](../../../bank/pl46/mv4_symmetric.flyer),
-also exported to `../../mv4_symmetric_pl46.flyer`.
+also exported to `../../mv4_symmetric_pl46.flyer` (byte-identical to the bank copy;
+removed in 2026-10-08 cleanup; in FastFlyer_WIP_uncommitted_backup_20261008).
 
 - All six persistent bodies remain mv4, with two per phase; no other-timing helper
   pushes a passive mv4 attachment. Opposite templates have glue counts
@@ -109,15 +110,15 @@ impossibility proof.
 
 The old fast checker traversed adjacent observers as if they joined sticky bodies,
 which reported "Missing initial core phase" for seed56 before simulation. The
-local `audit_cores.rs` traverses same-kind glue and attaches adjacent observers as
+local `tools/src/bin/mv4-audit-cores.rs` traverses same-kind glue and attaches adjacent observers as
 leaves; it rejects an observer touching multiple cores. The moving-duration,
 geometry, conservation and extension tests are unchanged. The existing banked
 PL49 also passes80 short cases with this checker (`checker_bank120.csv`).
 
 ```powershell
-rustc --edition 2021 -O flyers/WIP/experiments/mv4_elegant_20261004/audit_cores.rs --extern fastflyer=target/release/libfastflyer.rlib -L dependency=target/release/deps -o flyers/WIP/experiments/mv4_elegant_20261004/audit_cores.exe
-& flyers/WIP/experiments/mv4_elegant_20261004/audit_cores.exe flyers/bank/pl46/mv4_symmetric.flyer 10000 flyers/WIP/experiments/mv4_elegant_20261004/recheck.csv
-& flyers/WIP/experiments/bin/research_runner.exe audit flyers/bank/pl46/mv4_symmetric.flyer 10000 12
+cargo build --release --manifest-path tools/Cargo.toml --target-dir target
+& target/release/mv4-audit-cores flyers/bank/pl46/mv4_symmetric.flyer 10000 flyers/WIP/experiments/mv4_elegant_20261004/recheck.csv
+& target/release/fastflyer-research audit flyers/bank/pl46/mv4_symmetric.flyer 10000 12
 ```
 
 Use the current release library when rebuilding; the compile command modifies
@@ -142,3 +143,18 @@ structure diagram. These do not claim full passenger recurrence.
    replacement fails, and simply deleting required rear pickups failed in earlier
    work. PL<36 remains open; do not mistake more routing time for proof that this
    interface family can reach it.
+
+## 2026-10-08 cleanup
+
+Removed the rebuildable `mv4-audit-cores`/`.pdb` (rebuild with the `rustc` line
+above; `mv4_easy_20261004/common.py` and `mv4_tiles_20261004/ring.py` call it, as
+do `ranked_search.py`/`lower_cap_search.py`). Removed the primary-search candidate
+flyers `candidate_s56_pl49.flyer`/`candidate_s67_pl49.flyer` and their short80
+screens (outcomes in `candidates.json`; geometry kept in `candidate_s56.json`,
+`candidate_s67.json`; s56 became the kept `mv4_symmetric_pl48.flyer`, s67's
+partial full matrix is `winner.full80.csv`). Removed the non-winning ranked
+attempts `ranked_a0/a4/a6` (json, flyer, short80 csv/txt; all four ranked routes
+passed short80 at PL48, recorded in `ranked_status.json`) and `ranked_a1_pl48.flyer`
+(the same geometry is `mv4_symmetric_pl46.flyer`; metadata `ranked_a1.json` kept).
+Tracked removals: `git show 1222fbe:flyers/WIP/experiments/mv4_elegant_20261004/<path>`;
+ignored `.flyer` removals are in FastFlyer_WIP_uncommitted_backup_20261008.

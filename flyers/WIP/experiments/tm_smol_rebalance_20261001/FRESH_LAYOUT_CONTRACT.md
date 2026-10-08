@@ -38,4 +38,4 @@ With rule 2 on the rear as well: rear 12s -> 0 if the 7-cell rear bodies can sti
 
 ## Build order suggestion
 Start from `3bps_original`'s rear+middle (keep them), and generate only the front layer (F bodies) from scratch with
-the free lane of rule 3 and no helpers; screen with `score.py`/`loadhist.exe`; then attack the rear cell count.
+the free lane of rule 3 and no helpers; screen with `score.py`/`loadhist`; then attack the rear cell count.

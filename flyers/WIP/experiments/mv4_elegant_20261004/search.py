@@ -11,10 +11,15 @@ sys.path.insert(0,str(SYNTH))
 import six, final_router
 sys.path.insert(0,str(HERE))
 import paired_router_initial as paired_router
+def _tb(n):
+    import sys, pathlib
+    sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[4]))
+    from fastflyer.research import binary
+    return binary(n)
 
 ROOT=six.ROOT
-RUNNER=ROOT/'flyers/WIP/experiments/bin/research_runner.exe'
-AUDIT=HERE.parent/'mv4_20261002/audit_mv4_fast.exe'
+RUNNER=ROOT/'target/release/fastflyer-research.exe'
+AUDIT=_tb('mv4-audit-fast')
 SECONDS=min(1800,int(sys.argv[1]) if len(sys.argv)>1 else 1380)
 START=time.monotonic(); DEADLINE=START+SECONDS; SEARCH_END=DEADLINE-210
 stats=collections.Counter(); best=None; winners=[]; records=[]; last=0

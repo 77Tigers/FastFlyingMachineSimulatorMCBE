@@ -1,2 +1,0 @@
-samples passed=0/80 file=c3_b19only_L13.flyer ticks=10000 period=10 advance=3 first_failed=Some((0, 0, 0)) out=c3_b19only_L13.samples.csv
-Error: "sample audit failed; inspect the CSV"

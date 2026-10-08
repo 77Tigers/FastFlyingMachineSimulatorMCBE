@@ -1,1 +1,0 @@
-screen candidates=0 clean=0 ticks=240 out=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\pull_first_extension_screen.csv

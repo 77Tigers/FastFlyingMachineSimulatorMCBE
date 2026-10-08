@@ -1,0 +1,13 @@
+# Research tools. Kept outside the root package so that adding or changing a
+# tool does not alter the engine fingerprint used by flyers/bank/catalogue.json.
+#
+# Build (from the repository root):
+#   cargo build --release --manifest-path tools/Cargo.toml --target-dir target
+[package]
+name = "fastflyer-tools"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+fastflyer = { path = ".." }

@@ -3,7 +3,7 @@ from pathlib import Path
 import sys,subprocess,re
 ROOT=Path(__file__).resolve().parents[4];sys.path.insert(0,str(ROOT))
 from fastflyer import Flyer
-HERE=Path(__file__).resolve().parent;RUNNER=ROOT/'flyers/WIP/experiments/bin/research_runner.exe'
+HERE=Path(__file__).resolve().parent;RUNNER=ROOT/'target/release/fastflyer-research.exe'
 def main():
     source=Path(sys.argv[1]);prefix=sys.argv[2];f=Flyer.load(source);f.push_limit=1000
     diagnostic=HERE/(prefix+'_diagnostic.flyer');f.save(diagnostic)

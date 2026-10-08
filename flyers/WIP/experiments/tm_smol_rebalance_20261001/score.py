@@ -12,8 +12,13 @@ import sys, pathlib, subprocess, os, re
 HERE = pathlib.Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 import planner
-BT = HERE.parent / 'bin' / 'human_bodytrack.exe'
-LH = HERE / 'loadhist.exe'
+def _tb(n):
+    import sys, pathlib
+    sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[4]))
+    from fastflyer.research import binary
+    return binary(n)
+BT = _tb('bodytrack')
+LH = _tb('loadhist')
 REAR_CELLS = None
 
 

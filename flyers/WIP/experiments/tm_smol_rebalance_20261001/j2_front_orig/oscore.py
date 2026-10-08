@@ -3,11 +3,16 @@ orig rear cell, ../orig_rear_cells.txt), per-rear-body move loads, max load.
 python oscore.py [--lim=N] FILE...   (lim = load threshold counted as '12'; default 12; flyer limit taken from --run=)
 """
 import sys, pathlib, subprocess, os, re
+def _tb(n):
+    import sys, pathlib
+    sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[5]))
+    from fastflyer.research import binary
+    return binary(n)
 HERE = pathlib.Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))
 argv = sys.argv; sys.argv = ['x']; import planner; sys.argv = argv
-BT = HERE.parents[1] / 'bin' / 'human_bodytrack.exe'
-LH = HERE.parent / 'loadhist.exe'
+BT = _tb('bodytrack')
+LH = _tb('loadhist')
 REAR = {tuple(int(v) for v in l.split(',')) for l in open(HERE.parent / 'orig_rear_cells.txt').read().split()}
 
 def score(path, run=12, thr=12, w0=100):

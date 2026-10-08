@@ -4,7 +4,7 @@ import sys,subprocess,json,random,re
 ROOT=Path(__file__).resolve().parents[4];sys.path.insert(0,str(ROOT))
 from fastflyer import Flyer
 from derived_mmw import build,conn
-HERE=Path(__file__).resolve().parent;RUNNER=ROOT/'flyers/WIP/experiments/bin/research_runner.exe'
+HERE=Path(__file__).resolve().parent;RUNNER=ROOT/'target/release/fastflyer-research.exe'
 def main():
  centers=[(0,0),(4,0),(6,3),(4,6),(0,6),(-2,3)]
  ans,reason=build(14,spacing=4,cap=65,centers=centers);assert ans is not None,reason

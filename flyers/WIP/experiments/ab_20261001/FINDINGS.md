@@ -44,4 +44,15 @@ Slot = 2 ticks. A piston fired at slot s is immovable in slots s and s+1. When L
 - Word set A {wmmmmw, mwwmmm, mmwwmm, mmmwwm, mmmmww}, B {wmmmwm, mwwmmm, mwmwmm, mwmmmw}, 36 pistons. abpr placement failed for all early seeds (crowding). Retrying with a wider window and more options (`pr333/`).
 
 ## Tools
-`abmodel.py` (relative-offset tables), `abcheck.py` (per-slot validator using the simulator's discovery rules), `abdiff.py` + `bin/dumpstate.exe` (simulator vs model, slot by slot), `abgen_g.py` (lifecycle, contact options, power options), `abinc.py`, `abpr.py` (best generator; `python abpr.py Awords Bwords OUTDIR seed0 seed1 [npos= win= keep= nopt=]`), `abworld.py`, `abre.py` (rebuild a seed), `board.sh DIRS` (leaderboard).
+`abmodel.py` (relative-offset tables), `abcheck.py` (per-slot validator using the simulator's discovery rules), `abdiff.py` + `target/release/ab-dumpstate` (simulator vs model, slot by slot; source `tools/src/bin/ab-dumpstate.rs`, built by `cargo build --release --manifest-path tools/Cargo.toml --target-dir target`), `abgen_g.py` (lifecycle, contact options, power options), `abinc.py`, `abpr.py` (best generator; `python abpr.py Awords Bwords OUTDIR seed0 seed1 [npos= win= keep= nopt=]`), `abworld.py`, `abre.py` (rebuild a seed), `board.sh DIRS` (leaderboard).
+
+## Cleanup 2026-10-08
+
+Closed experiment trimmed. Kept: findings, every generator/checker/model script, `tools/src/bin/ab-dumpstate.rs`,
+`board.sh`, all `*.samples.csv/.txt`, the named flyers above and the cited seeds with their `.audit` files
+(`g1/c00000`, `pr333/s00125`, `pr333c/s00002`, `pr333c/s00012` (unaudited PL61 lead), `pr3b/s00141`,
+`pr3s/s00379`, `pr3s/s00200`). Removed: run logs, `g1_manifest.json`, screens, `g2/` manifests, uncited
+seeds in `g1/ g2t/ gi25/ gi3/ pr25/ pr25b/ pr3/ pr333/ pr333c/ pr3b/ pr3s/ prx/`, `ann/` (anneal logs and the
+discarded load-42/44 outputs), `bin/` (rebuildable), and the superseded `gen25b.py` (redstone-on-B variant,
+worse than `gen25.py`) and `abroute.py` (early routing, superseded by `abworld.py`). Tracked files:
+`git show 1222fbe:<path>`; removed `.flyer` files: `FastFlyer_WIP_uncommitted_backup_20261008`.

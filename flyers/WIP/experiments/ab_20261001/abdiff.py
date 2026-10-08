@@ -2,6 +2,11 @@
 import subprocess, sys
 from collections import defaultdict
 from pathlib import Path
+def _tb(n):
+    import sys, pathlib
+    sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[4]))
+    from fastflyer.research import binary
+    return binary(n)
 HERE = Path(__file__).resolve().parent
 
 
@@ -25,7 +30,7 @@ def expected(wd, k, T=(30, 30, 30)):
 
 
 def actual(path, ticks):
-    r = subprocess.run([str(HERE / 'bin' / 'dumpstate.exe'), str(path), str(ticks)], capture_output=True, text=True)
+    r = subprocess.run([str(_tb('ab-dumpstate')), str(path), str(ticks)], capture_output=True, text=True)
     st = defaultdict(dict)
     for line in r.stdout.split('\n'):
         if not line.strip(): continue

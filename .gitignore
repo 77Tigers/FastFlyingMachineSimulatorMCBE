@@ -25,3 +25,14 @@ __pycache__/
 *.wasm
 /flyers/WIP/experiments/bin/
 *.pkl
+*.zip
+*.7z
+# Generated research output: keep summaries (CSV/JSON/FINDINGS) next to the
+# generator and send bulk runs, traces and logs to an ignored out/ directory.
+/flyers/WIP/**/out/
+*.out
+*.err
+/tools/target/
+*.egg-info/
+# Bulk enumeration output (summarised in REPORT.md)
+/flyers/WIP/experiments/topology_20261007/runs/enum_*.json

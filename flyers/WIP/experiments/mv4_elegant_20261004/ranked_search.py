@@ -11,6 +11,11 @@ sys.path.insert(0,str(HERE.parent/'mv4_20261002/synthesis'))
 import six
 sys.path.insert(0,str(HERE))
 import paired_router
+def _tb(n):
+    import sys, pathlib
+    sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[4]))
+    from fastflyer.research import binary
+    return binary(n)
 start=time.monotonic();deadline=start+min(600,int(sys.argv[1]) if len(sys.argv)>1 else 420)
 pool=json.loads((HERE/'survey.json').read_text())['ranked']; seen=set();unique=[]
 for p in pool:
@@ -34,7 +39,7 @@ for attempt in range(10000):
         f,m=ans;f.push_limit=48;path=HERE/f'ranked_a{attempt}_pl48.flyer';f.save(path)
         m.update(parent=parent,cap=cap)
         (HERE/f'ranked_a{attempt}.json').write_text(json.dumps(m,indent=2))
-        trial=subprocess.run([str(HERE/'audit_cores.exe'),str(path),'300',str(HERE/f'ranked_a{attempt}.short80.csv')],
+        trial=subprocess.run([str(_tb('mv4-audit-cores')),str(path),'300',str(HERE/f'ranked_a{attempt}.short80.csv')],
                              capture_output=True,text=True,timeout=max(1,deadline-time.monotonic()))
         (HERE/f'ranked_a{attempt}.short80.txt').write_text(trial.stdout+trial.stderr)
         stats['short80_pass' if trial.returncode==0 else 'short80_fail']+=1

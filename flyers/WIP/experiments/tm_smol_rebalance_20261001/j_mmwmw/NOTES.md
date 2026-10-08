@@ -3,7 +3,7 @@
 Answer: YES on paper (timing/roles), and the pattern is already proven in the simulator at 3.333 bps
 (bank/pl22 pull_twice_mmwmmw = same "wait, pull, push" lifecycle). Not yet built at 3 bps.
 
-## Evidence in existing flyers (human_bodytrack.exe FILE 400 100 10 400; outputs bt15.txt, bt34.txt here)
+## Evidence in existing flyers (bodytrack FILE 400 100 10 400; outputs bt15.txt, bt34.txt here)
 - bank/pl15/exclusive_roles_3bps.flyer: B18 (13 honey, word mmwmw = moves 0,1,3, waits 2,4) is PULLED THREE times:
   slot 0 by B10 (wmmmw, ww window 4,0; ext at 4), slot 1 by B37 (wwmmm, window 0,1; ext at 0),
   slot 3 by B30 (mmwwm, window 2,3; ext at 2). Each pull has load 13 = glue only (0 riders: the pullers' stickies

@@ -5,6 +5,11 @@ No candidates above encoded PL49, no simulator/editor changes, no subagents.
 import json,random,time,subprocess,collections,sys,math,traceback
 from pathlib import Path
 import six,search,final_router
+def _tb(n):
+    import sys, pathlib
+    sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[5]))
+    from fastflyer.research import binary
+    return binary(n)
 OUT=search.OUT.parent/'final_experiment_20261003';OUT.mkdir(exist_ok=True)
 LIMIT=min(2700,int(sys.argv[1]) if len(sys.argv)>1 else 2700)
 started=time.monotonic();deadline=started+LIMIT
@@ -13,8 +18,8 @@ prior=json.loads((search.OUT/'quick_six/results.json').read_text())['records']
 parents=[(baseline['centers'],[r for r,m in baseline['orientations']],[-1 if m else 1 for r,m in baseline['orientations']])]
 parents += [(r['centers'],parents[0][1],parents[0][2]) for r in prior if r['failure'][0]=='route']
 stats=collections.Counter();bestscore=None;bestmeta=None;winner=None;last_progress=0
-runner=search.ROOT/'flyers/WIP/experiments/bin/research_runner.exe'
-audit=search.OUT.parent/'audit_mv4_fast.exe'
+runner=search.ROOT/'target/release/fastflyer-research.exe'
+audit=_tb('mv4-audit-fast')
 def checkpoint(status,**extra):
  record=dict(status=status,search_limit_seconds=LIMIT,elapsed_seconds=round(time.monotonic()-started,1),statistics=stats,best=bestmeta,**extra)
  temp=OUT/'status.tmp';temp.write_text(json.dumps(record,indent=2));temp.replace(OUT/'status.json')

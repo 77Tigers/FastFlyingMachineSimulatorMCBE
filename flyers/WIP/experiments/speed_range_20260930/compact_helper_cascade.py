@@ -50,7 +50,7 @@ def main():
    base._cells.update(new);name=Path(file).stem+'.flyer';base.save(out/name);record['file']=name
   records.append(record)
  (HERE/'compact_helper_cascade.manifest.json').write_text(json.dumps(records,indent=2));print(json.dumps(records,indent=2))
- runner=HERE.parent/'bin/research_runner.exe'
+ runner=HERE.parents[3]/'target/release/fastflyer-research.exe'
  p=subprocess.run([str(runner),'screen',str(out),'240','--out',str(HERE/'compact_helper_cascade.screen.csv')],capture_output=True,text=True)
  (HERE/'compact_helper_cascade.screen.txt').write_text(p.stdout+p.stderr);print(p.stdout)
 if __name__=='__main__':main()

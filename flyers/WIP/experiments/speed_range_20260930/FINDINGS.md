@@ -91,10 +91,10 @@ bound.
 
 ## Reproduce
 
-Use the current portable runner built by `../build_research_runner.ps1`:
+Use the current portable runner (`fastflyer-research`, see [RESEARCH_RUNNER.md](../RESEARCH_RUNNER.md)):
 
 ```powershell
-& flyers/WIP/experiments/bin/research_runner.exe samples flyers/WIP/experiments/speed_range_20260930/joint_n4_six_pl21.flyer --period 12 --advance 4 --out flyers/WIP/experiments/speed_range_20260930/joint_n4_six_pl21.samples.csv
+& target/release/fastflyer-research samples flyers/WIP/experiments/speed_range_20260930/joint_n4_six_pl21.flyer --period 12 --advance 4 --out flyers/WIP/experiments/speed_range_20260930/joint_n4_six_pl21.samples.csv
 & C:/Users/Ruben/anaconda3/python.exe flyers/WIP/experiments/speed_range_20260930/retrofit_front_pull.py
 ```
 
@@ -110,8 +110,17 @@ Budget correction: user meant40% remaining, i.e.60% used. Earlier40%-used stop w
 
 User's final cutoff is 70% USED in the shared five-hour window, or 20% used (80% left) in a new window if it resets first. Last observed usage rose from 69% to 74%; stopped experiments immediately on that check. The outstanding local fixture job had completed. No research job from this task remains running. No new minimum-PL record was established.
 
-**Verified local progress:** `two_normal_fixture.py` adds exactly two normal pistons to existing side contacts on original body0, the segment after the heavy body3, without adding original-body glue. They share the new helper's redstone source. The helper has three glue blocks plus that source and receives two real pushes plus an externally supplied sticky pull. `two_normal_fixture.rs` supplies only the external pull fixture; permanent block movements are simulated normally. Candidate c004 passed all 80 RNG/phase samples for each of three pull contacts, 1,000 ticks per case (240 successful cases total). Maximum whole action load20, external helper pull4; checked scheduled positions and permanent-kind conservation at settled slots, with no action failures. Evidence: `two_normal_fixture.samples.csv`. This validates a local interface, NOT a self-propelled flyer or a PL20 speed record. Four placements c004-c007 also passed shorter tests.
+**Verified local progress:** `two_normal_fixture.py` adds exactly two normal pistons to existing side contacts on original body0, the segment after the heavy body3, without adding original-body glue. They share the new helper's redstone source. The helper has three glue blocks plus that source and receives two real pushes plus an externally supplied sticky pull. `tools/src/bin/two-normal-fixture.rs` supplies only the external pull fixture; permanent block movements are simulated normally. Candidate c004 passed all 80 RNG/phase samples for each of three pull contacts, 1,000 ticks per case (240 successful cases total). Maximum whole action load20, external helper pull4; checked scheduled positions and permanent-kind conservation at settled slots, with no action failures. Evidence: `two_normal_fixture.samples.csv`. This validates a local interface, NOT a self-propelled flyer or a PL20 speed record. Four placements c004-c007 also passed shorter tests.
 
 **Unfinished closure:** `compact_helper_cascade.py` proposes five original bodies plus helper H, helper-helper J, and front power extension F. H uses a five-glue U shape around its sticky piston; J temporarily uses the user-approved three-normal drive. The four assembled placements each have one initial overlap, so no full candidate was saved or simulated: J's connector occupies an F normal piston. For c004 the overlap is (23,-1,16), recorded in `compact_helper_cascade.manifest.json`. This is a specific construction defect, not evidence that helper timing is impossible.
 
 Next concrete work, if resumed: change that J-only connector around the F piston, then verify the entire power/movement timeline at <=PL24 before any pruning. One UNTESTED path replacing the overlapping connector is (22,-1,17), (22,0,17), (23,0,17), joining existing J cells (22,-1,16) and (23,0,16). Initial vacancy and every moving/extended-piston contact still need checking. Do not count static glue totals as action loads. Keep the two additions on the segment after the heaviest; only after the separate helper closure works, redistribute savings to the other segments. Do not repeat closed fixed-layout sweeps unchanged.
+
+## Cleanup 2026-10-08
+
+Kept: contracts, all scripts (including the derived routers), `tools/src/bin/two-normal-fixture.rs` and its
+inputs/screen/samples/candidates, `n3_driver_phases.csv`, every screen CSV and small manifest cited in
+the table, `joint_n3_pl18.*`, `joint_n4_six_pl21.*`, `layout_n4_0/c0036.flyer` and
+`retrofit_front_pull_flexible/c104.flyer`. Removed: manifests over ~90 kB (`layout_n3_0`, `layout_n4_0`,
+`n4_six_refine`, `retrofit_front_pull_flexible/transverse`, `side_n3*`), uncited screens/run logs and the
+remaining candidate flyers. Tracked files: `git show 1222fbe:<path>`; removed `.flyer` files: `FastFlyer_WIP_uncommitted_backup_20261008`.

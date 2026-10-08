@@ -7,6 +7,11 @@ are removed automatically. No full passenger identity recurrence requirement.
 import argparse,csv,importlib,json,subprocess,tempfile
 from pathlib import Path
 import backward as w
+def _tb(n):
+    import sys, pathlib
+    sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[4]))
+    from fastflyer.research import binary
+    return binary(n)
 HERE=w.r.HERE
 CASES={
  'backward_prototype':('backward',512),
@@ -41,7 +46,7 @@ def check(name,ticks=300,limit=None):
     with tempfile.TemporaryDirectory(prefix='mv4_check_') as tmp:
         tmp=Path(tmp);flyer=tmp/'candidate.flyer';f.save(flyer)
         tags=tmp/'phases.tsv';w.write_tags(f,m,tags,w.b.Flyer.load(flyer));out=tmp/'samples.csv'
-        proc=subprocess.run([str(w.r.EXPERIMENTS/'bin/mv4_chain_audit.exe'),str(flyer),str(ticks),str(out),str(f.push_limit),str(tags)],capture_output=True,text=True)
+        proc=subprocess.run([str(_tb('mv4-audit-chain')),str(flyer),str(ticks),str(out),str(f.push_limit),str(tags)],capture_output=True,text=True)
         rows=list(csv.DictReader(out.open()));passed=sum(row['pass']=='true' for row in rows)
     record=dict(case=name,ticks=ticks,encoded_limit=f.push_limit,hash=f.content_hash(),
         passed=passed,total=len(rows),exit_code=proc.returncode,samples=rows)

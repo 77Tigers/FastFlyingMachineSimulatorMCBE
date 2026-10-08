@@ -55,7 +55,7 @@ account usage reset. Automation id: `overnight-flyer-research`.
 `mmw_layout_search.py` retains the proven three-body/six-slot lifecycle and
 changes only six transverse module centres. Five layouts ×32 seeds =160
 attempts at adhesive cap65/body. Checkpointed source hash, parameters and
-rejections are in `mmw_layout_manifest.json`; derived source is retained.
+rejections are in `mmw_layout_manifest.json` (removed in 2026-10-08 cleanup; `git show 1222fbe:flyers/WIP/experiments/overnight_20260930/mmw_layout_manifest.json`); derived source is retained.
 Original fixed geometry/evidence is untouched. One OneDrive checkpoint write
 failed; atomic pending-file replacement was added and the search completed.
 
@@ -65,7 +65,7 @@ list `[(0,0),(4,0),(6,3),(4,6),(0,6),(-2,3)]`. Encoded
 `mmw_hex4_s014_pl62.flyer` passed10000 ticks:3333 displacement, zero failures
 and conservation errors, all833 exact +4/twelve-tick cell/owner boundaries.
 This supplied the untrimmed lead for the banked result below. Other
-selected full candidates passed at65 and67. Raw screen and verify files kept.
+selected full candidates passed at65 and67. Raw screen and verify files kept (screens and the PL65/PL67 copies removed in 2026-10-08 cleanup; `git show 1222fbe:flyers/WIP/experiments/overnight_20260930/mmw_layout_screen.csv`).
 
 `trim_mmw.py` finished: connected-cell deletions removed6 then2 then0 cells,
 leaving135 sticky cells and161 boundary blocks. **PL57 is fully banked** at
@@ -160,7 +160,7 @@ screen runs in96336; inspect `mixed3_v2_partial_screen.csv` for the best lead.
 
 Both sessions finished. Full64-attempt result:21 route failures,4 no-pickup,
 39 routed; all39 clean at200 ticks with60 displacement. Best load52 is
-spacing3 seed14; no3bps record change. Full screen and manifest retained.
+spacing3 seed14; no3bps record change. Full screen and manifest retained (removed in 2026-10-08 cleanup; `git show 1222fbe:flyers/WIP/experiments/overnight_20260930/mixed3_v2_screen.csv`).
 The intermediate-source-contact correction is now documented in stage4 of
 `flyers/ABSTRACTION_PIPELINE.md`, with the bounded tested result.
 
@@ -173,11 +173,11 @@ Do not bank based on speed alone. The full scope remains80 cases.
 
 `reroute_mmw.py` first preserved every cell adjacent to any hardware in any
 phase:16 seeds/body, no smaller rails, full run stays57. Evidence directory
-`reroute_mmw`. A refined terminal set captures the original selected contact
+`reroute_mmw` (removed in 2026-10-08 cleanup; `git show 1222fbe:flyers/WIP/experiments/overnight_20260930/reroute_mmw/results.json`). A refined terminal set captures the original selected contact
 cover before connection routing and intersects it with the trimmed winner.
 Two rounds ×16 seeds/body reduce honey41→38; both slime bodies remain47.
 Full10000 ticks still pass all833 exact boundaries at max57, so this reduces
-body size without improving the load record. Evidence `reroute_mmw_ports`,
+body size without improving the load record. Evidence `reroute_mmw_ports` (directory removed in 2026-10-08 cleanup; `git show 1222fbe:flyers/WIP/experiments/overnight_20260930/reroute_mmw_ports/results.json`),
 `mmw_reroute_ports_pl57.flyer`; session43037 finished. No new80-case bank.
 
 The compact pure-pull placement search is still running in36734. Paired-line
@@ -201,7 +201,7 @@ first failure tick80; seed10 stalls after23, first failure tick70 (immovable
 obstruction at serialized `(38,7,21)`). The partial240-tick screen is retained.
 Diagnose the first changed contact before expanding this family further.
 
-The original compact session19702 finished. `phase_snapshots.rs` exports even
+The original compact session19702 finished. `tools/src/bin/phase-snapshots.rs` exports even
 tick worlds using public Rust APIs; `compare_mixed_phases.py` compares them
 with declared body/member trajectories. For pentagon_v0 seed10 the first
 settled discrepancy is tick8 (pistons7/8 positions and states), well before
@@ -212,14 +212,14 @@ routing failure. Snapshot CSV, phase-diff JSON and first trace retained.
 Diagnostic comparison masks angry bits only to locate the first geometric
 discrepancy; bank verification still checks complete encoded cells/owners.
 
-Compact v1 source/wrapper are retained with `_v1` suffixes. V2 adds every-source
+Compact v1 source/wrapper were retained with `_v1` suffixes (removed in 2026-10-08 cleanup; `git show 1222fbe:flyers/WIP/experiments/overnight_20260930/mixed3_compact_v1.py`). V2 adds every-source
 direct power checks against every member, plus observer-to-solid mediated
 power keepouts during routing. Both original32-attempt layouts reject all64
-before routing with `cross_power`; v2 source/results retained. V3 doubles
+before routing with `cross_power`; v2 source/results retained (removed in 2026-10-08 cleanup; `git show 1222fbe:flyers/WIP/experiments/overnight_20260930/mixed3_compact_v2.py`). V3 doubles
 the three cardinal port offsets and tests wider pentagons (two layouts ×two
 orientations ×16 seeds=64). Session98439 is live. First partial screen25/25
 clean240 ticks with72 displacement; best maximum49, files
-`pentagon_wide_v1_s012.flyer` (215 blocks) and `pentagon7_v1_s000.flyer` (232).
+`pentagon_wide_v1_s012.flyer` (215 blocks) and `pentagon7_v1_s000.flyer` (232) (candidate dirs removed in 2026-10-08 cleanup; in `FastFlyer_WIP_uncommitted_backup_20261008`; the encoded s012 lead is kept as `mixed3_compact_v3_s012_pl49.flyer`).
 Still worse than the3bpsPL19 reference; no record/bank claim. All-source power
 checking and this tested witness are added to abstraction stage4.
 
@@ -310,7 +310,7 @@ Native16380 is live. At this checkpoint1/2/4 copies have passed full checks
 and10000-tick ledgers, each added body3000 actions and max11. Eight-copy full
 verification and both80-case audits remain pending; inspect
 `mixed_chain_validation.json`, `mixed_chain_*` and live session before claiming
-completion. Public-API `three_bps_loads.rs`/compiled runner maps every nonempty
+completion. Public-API `tools/src/bin/three-bps-loads.rs`/compiled runner maps every nonempty
 action to an exact tagged sticky set and rejects unmatched/mixed body actions.
 
 `extract_mixed_contact_cover.py` preserves the seed1 pre-routing cover:
@@ -373,7 +373,7 @@ impossibility. A different front-body actuation order may reduce that span.
 `mmw_extension.py` adapts the realized contact-cover/driver workflow to six
 slots, +4/twelve ticks, from the trimmedPL57 core. Startup adaptations fixed
 tuple concatenation and a textual modulo replacement that had retained5 in
-the generated checker; failed startup logs retained. The corrected run66310
+the generated checker; failed startup logs retained (removed in 2026-10-08 cleanup; `git show 1222fbe:flyers/WIP/experiments/overnight_20260930/mmw_extension_run_v1.txt`). The corrected run66310
 finished24/24 routed and short-clean240 ticks with80 travel. Added target
 counts23–27 in the dy12 layout, whole diagnostic loads typically72–77. No full
 or tagged-load claim yet. The six-slot generated source/geometry are retained.
@@ -551,3 +551,19 @@ pure placements.77512 full reroute and7473 hex synthesis completed.
 HexPL47 full result: encoded verify and audit both pass10000 ticks, distance3334 (partial final cycle),833 exact +4/12 cell/owner recurrences,269 boundary blocks, all permanent kinds conserved, zero extension/movement failures, max47. Complete power/terminal transport proof for this layout; no80-case sweep or bank record. Evidence: mmmm_glazed_hex_six_s006_pl47.verify.txt and .audit.txt.
 
 Final audit results inspected after native completion: pure102 banked; both mixed-chain endpoint sweeps pass80/80; pull-firstPL59 passes80/80. See `NATIVE_AUDIT_CHECKPOINT.md` and individual certificates. Hybrid closure, circular placement and gauged closure completed with no candidate. No simulator changes.
+
+## Cleanup 2026-10-08
+
+Closed experiment trimmed. Kept: all contracts/findings, every generator and
+`derived_*`/`*_legal` module still imported, the kept flyers named above with
+their verify/audit/samples/certificate/ledger files, witnesses, contact covers,
+`trim_mmw/` and `trim_planar_mmw/` geometry/results, and the pentagon/glazed-wide
+diagnosis traces. Removed: all `*_candidates/`, copy/bridge assembly dirs,
+`reroute_*`/`trim_pull3*` work dirs, bulk `*_manifest.json` (except the small
+linked ones), screens, run logs, diagnostic-limit flyers, superseded scripts
+(`checkpoint_*.py`, `finalize_native_audits.py`, `start_compact_tile_validation.py`,
+`mixed_role_ring_v1.py`, `mixed_role_ring_legal_v1.py`, `mixed3_compact_v1/v2.py`,
+`derived_mixed3_compact{,_v1,_v2}.py`) and the 725 kB
+`pull3_10body_first_cycle.trace.txt`. Tracked files: `git show 1222fbe:<path>`.
+Removed `.flyer` files are in `FastFlyer_WIP_uncommitted_backup_20261008`.
+

@@ -1,5 +1,0 @@
-file,limit,rng,phase_x,phase_z,ticks,distance,end_blocks,extensions,extension_failures,movement_failures,first_failure_tick,first_failure_kind,conservation_mismatch_ticks,max_successful_action,clean
-"flyers/WIP/experiments/overnight_20260930/mixed_role_ring_v2_candidates\r8_uniform_s000.flyer",1000,5,0,0,240,72,488,720,0,0,,"",0,54,true
-"flyers/WIP/experiments/overnight_20260930/mixed_role_ring_v2_candidates\r8_uniform_s001.flyer",1000,5,0,0,240,72,498,720,0,0,,"",0,56,true
-"flyers/WIP/experiments/overnight_20260930/mixed_role_ring_v2_candidates\r8_uniform_s002.flyer",1000,5,0,0,240,72,485,720,0,0,,"",0,55,true
-"flyers/WIP/experiments/overnight_20260930/mixed_role_ring_v2_candidates\r8_uniform_s004.flyer",1000,5,0,0,240,72,494,720,0,0,,"",0,56,true

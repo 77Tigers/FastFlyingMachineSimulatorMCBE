@@ -1,4 +1,0 @@
-  File "C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\mixed_role_hybrid.py", line 12
-    s=s.replace("ns=model.__dict__.copy();ns.update(S=S,DISP=DISP,K=K)","source=source.replace('  w={}','  w={shift(p,DISP[owner][t]):Block(Kind.GLAZED_TERRACOTTA) for p,owner in GLAZED}')\n    gate=''' for t in range(5):
-                                                                        ^
-SyntaxError: unterminated string literal (detected at line 12)

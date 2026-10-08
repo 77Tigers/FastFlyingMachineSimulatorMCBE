@@ -5,7 +5,7 @@ especially in the rear chain (B9/B10/B11/B15/B18). Moving a rear 12 to a front b
 Baseline: 12 actions per 10-tick period at load 12 (8 rear), 18 at 11.
 
 ## Tools (this directory)
-- `loadhist.rs/.exe` (`build.ps1`): batch per-file distance, failures, conservation, load histogram, count at limit;
+- `loadhist` (`tools/src/bin/loadhist.rs`, cargo bin; `cargo build --release --manifest-path tools/Cargo.toml --target-dir target`): batch per-file distance, failures, conservation, load histogram, count at limit;
   exits early on a stalled rear. `loadhist TICKS W0 LIMIT FILE...`
 - `score.py FILE...`: progress metric (all12, rear12, max, runs) using real simulated loads via bodytrack.
 - `role_ledger.txt`: every move = glue + riders, and which body each rider pushes. `base.bodytrack.txt` (BT_CELLS).
@@ -76,7 +76,7 @@ slot, and victims with contact protrusions, rather than a retrofit of this clust
 - Implication for PL11 / fewer rear 12s: load = glue + riders with a rider floor of ~3-4 per move, so a rear layer
   needs <=7-cell bodies AND pulled middles (original's chain structure with tm_smol-size bodies). That is a layout
   to design, not a retrofit.
-- **3bps_original with helpers replaced by victim observers** (`obspower.py`, `obs_*`): load model predicts all12
+- **3bps_original with helpers replaced by victim observers** (`obspower.py`, `obs_*` (output dirs removed in 2026-10-08 cleanup; `git show 1222fbe:flyers/WIP/experiments/tm_smol_rebalance_20261001/obs_a/results.csv` etc.)): load model predicts all12
   14 -> 11 (fewer than tm_smol's 12), max 12, ~40 fewer blocks (5 helpers + 15 helper pushers removed, +5 observers).
   Realization (bounded): with exact snapshot occupancy and up to 3 support cells, only 1 of the 5 front pulls
   (B43->B30, cost 4) has a legal observer; the others fail as "not free" (cell occupied, or dragged by the puller's
@@ -99,3 +99,6 @@ slot, and victims with contact protrusions, rather than a retrofit of this clust
 ## 2026-10-02 evening (agent J2): back segments to 11
 See RESEARCH_LOG top update. Banked pl14/human_tm_smol_back11x2 (back [11,12,12,12,11]). Role ILP: j2_front_smol/layered.py
 (+ ledger_ilp.py, segpl.py, score2.py). Details: j2_front_smol/NOTES.md, j2_tmsmol_opus/NOTES.md, j2_front_orig/NOTES.md, j2_mmwmw3/.
+
+## Cleanup 2026-10-08
+Kept: notes, all planners/scorers/builders (planner*.py, score.py, obspower/obsscan, rebalance/pairscreen, transplant/relay45, tools/src/bin/loadhist.rs), base/orig flyers + bodytracks + ledgers, snaps/ and snaps_orig/ (read by planner3/obspower), front_c2v/D_2_1_2_v1.flyer + results.txt, obs_victim_pl15 (+samples), every cited or best candidate in the subdirs. Removed: brute-force pair scans (pair1/ incl. 1.2 MB pairs.csv, pair_orig/, pair_orig2/, greedy1/), front_c2/, front_c2m/, front_c2w/, other front_c2v variants, obs_a..obs_d/obs_all/obs_b66*/scan_b66*/relay45_* outputs, test flyers (clone_test, del_test, noB4, noB23, noB4B23), logs, loadhist/.pdb. `git show 1222fbe:<path>` for tracked csv/txt/json/log; .flyer in FastFlyer_WIP_uncommitted_backup_20261008.

@@ -1,4 +1,4 @@
-"""Compile the local trace and attribute its piston passengers to bank roles."""
+"""Run the mv4-peak tool (tools/src/bin/mv4-peak.rs) and attribute its piston passengers to bank roles."""
 from pathlib import Path
 import sys, subprocess, json, collections
 HERE=Path(__file__).resolve().parent
@@ -6,12 +6,8 @@ ROOT=HERE.parents[3]
 sys.path.insert(0,str(ROOT))
 from fastflyer import Flyer,Kind
 source=ROOT/'flyers/bank/pl43/mv4_symmetric_easy_compact.flyer'
-exe=HERE/'peak.exe'
-build=subprocess.run(['rustc','--edition','2021','-O',str(HERE/'peak.rs'),
-                      '--extern','fastflyer=target/release/libfastflyer.rlib',
-                      '-L','dependency=target/release/deps','-o',str(exe)],
-                     cwd=ROOT,capture_output=True,text=True)
-if build.returncode:raise SystemExit(build.stderr)
+import os
+exe=ROOT/'target'/'release'/('mv4-peak'+('.exe' if os.name=='nt' else ''))  # cargo build --release --manifest-path tools/Cargo.toml --target-dir target
 trial=subprocess.run([str(exe),str(source)],capture_output=True,text=True)
 (HERE/'peak.csv').write_text(trial.stdout,encoding='utf-8')
 if trial.returncode:raise SystemExit(trial.stderr)

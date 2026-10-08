@@ -79,6 +79,6 @@ if __name__=='__main__':
   if f:f.save(dest/f'c{seed}.flyer');n+=1
   if seed%50==0:print(seed,n,flush=True)
  print('total',n,flush=True)
- p=subprocess.run([str(ROOT/'flyers/WIP/experiments/bin/research_runner.exe'),'batch',str(dest),'180'],capture_output=True,text=True)
+ p=subprocess.run([str(ROOT/'target/release/fastflyer-research.exe'),'batch',str(dest),'180'],capture_output=True,text=True)
  (OUT/'ring3_screen.txt').write_text(p.stdout);print(p.stdout[:2000])
 
