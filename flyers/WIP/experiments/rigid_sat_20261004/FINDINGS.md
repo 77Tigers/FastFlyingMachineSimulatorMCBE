@@ -170,6 +170,45 @@ other segment's glue in a slot where both move (otherwise a glue race = forbidde
    options), `render.py` (slot-by-slot ASCII view of a pkl: `python render.py PKL --moves --names K4,K5,V,F`).
    **Pitfall:** a pinned extra glue must touch the segment's glue; template K5's pistons are not glue (found with an
    unsat core in seconds).
+7e. **The rot180 twin pull cannot be powered at load 7 (2026-10-07).** K5 = 4 glue + twin sticky tS + S5 + P5 is
+   forced (the glue path from the pulled glue g to tS's attachment needs 4 cells, and K5 must not overlap its image
+   at slot 1), so every K5 piston and K4's two pistons take power from outside K5.
+   Why it fails (hand view, d = (-1,5,7)):
+   - F (just ahead) can power tS and P5 cheaply: a redstone on F right behind tS also touches P5 at slot 0, and its
+     rot180 partner covers K5' at slot 2. But S5 sits 2-3 layers further back, which costs F about 9.
+   - K4's sticky S4 must pull a K3 glue, so it sits on the far side of the axis from K4'. The only cheap source next
+     to S4 at slot 2 is K5's template redstone (K5 is full). K4' sources land 4+ cells from K4's body, and rod-AND tricks
+     cost K4 1-2 blocks on top of S4, P4, the pushed glue and K3's power.
+   Solver evidence, wide boxes (K3 = template + extras within L1 1, K4 x 6..12 over yz c+-3..4, K5 x 10..14 over
+   yz c+-2..3, F x 12..17 over yz c+-3..4), S5 enumerated over every legal cell (`twinpull_enum.py`, `--s5` then
+   enumerates P5); logs `runs/subA/enum_*.log`:
+   - d = (-1,5,7), g = (2,3), w = (3,3), **K4's power free** (lower bound): 13/14 S5 INFEASIBLE, and the 14th
+     (template S5 (11,2,2)) INFEASIBLE for all 12 P5 cells. K5's slot-0 power alone breaks load 7 there.
+   - d = (-1,5,5), g = (2,2): with all K4/K5 power free this core IS feasible at 7 (`runs/subA/screen_free_5_5_*`),
+     but with power required both bridges w = (2,3) and (3,2): 14/14 S5 INFEASIBLE each.
+   - Power-free screen (all K4/K5 power free, 150 s): FEASIBLE at d = (-1,5,5) g = (2,2) (both w); every d = (-1,5,7)
+     corner and the other (5,5) corners came back UNKNOWN in the wide box (subA's tight boxes had (5,7) g = (2,3)
+     w = (3,3) feasible power-free). Other offsets were not reached.
+   Rider V (hand count, why the 92 UNKNOWN rider offsets are unlikely to hide a 7): V must be powered exactly at
+   slot 3; a static source would need an mwwm/wmwm segment (offset vectors: only those differ from V's at slot 3 alone),
+   and none is near the front, so V needs an observer on a segment that moved at slot 2 (K5, K4', K3, F). An observer
+   on K5 must face V from layer 10 where K5 has no glue -> a 3rd K5 glue -> K5 = 7 -> K5 + V = 8 at slot 2 (L1). An
+   observer on K4' puts its image (observer + target glue) on K4 -> K4 >= 7 -> K4 + V = 8 at slot 1. Tricks that make
+   a K4 glue hot at slot 3 collide with K5's observer one slot earlier. `riderV_pinned.py` (pins V on K5 at slot 2,
+   K5 <= 6) still leaves flipz (-1,0,7) UNKNOWN after 300 s x 6 workers, so brute force is not the way to close them.
+   The best powered twin pull, `runs/subA/tight_c1_L9.pkl` (load 9, no riders), now flies in the real simulator:
+   `../opus_cool_20261007/runs/rot180tp_last5.flyer` (91 blocks) and `rot180tp_last13.flyer` pass verify (samples not run).
+   Verdict: at every offset known to move power-free at load 7, no power arrangement exists.
+7f. **Arms of any length for free (stretch law, opus_cool subagent 2026-10-07).** Template K+2 = template K shifted by
+   s = (4,1,1). Insert 2m template segments, move the chain-1 front (K_{last-1}, K_last, V) and F by m*s and set the
+   mirror offset to d + (0, s_yz - A(s_yz)) (flipz: (-1, 0, 8+2m)); the whole front moves rigidly, so loads are unchanged
+   for any map A. With a solved 6-block elbow joint between the two chain orientations this gave the banked showpiece
+   `bank/pl8/opus_cool.flyer` (gull wings, 14 segments per arm, 166 blocks, 80/80). Tools and longer variants:
+   `../opus_cool_20261007/` (`stretch.py`, `joint.py`, `gull.py`, README). Remaining unknown: the
+   other rot180 offsets/corners in wide boxes (worth running only with a new power idea; use twinpull_enum per corner).
+   - Unpinned wide-box models (`twinpull_big.py`, also with one side's power free) stay UNKNOWN after 10 min; the
+     all-offset power-free screen (`twinpull_screen.py`, `runs/subA/screen_free.log`) was stopped early (RAM: run at
+     most 3 wide-box processes on this 15 GB machine).
 
 8. **Shrinking the single-chain caps (all bounded, box -3..4 x, r=2 around template origins):**
    - front rider cap with K4+K5 free: 9 (FEASIBLE, not proven optimal; a 30-min warm start from it found nothing

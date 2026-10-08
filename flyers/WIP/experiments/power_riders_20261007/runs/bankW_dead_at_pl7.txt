@@ -1,0 +1,2 @@
+verify pass=false file=flyers/WIP/experiments/power_riders_20261007/runs/bankW_dead_at_pl7.flyer ticks=200 distance=3 limit=7 max_successful_action=7 extension_failures=1172 movement_failures=1173 first_failure_tick=0 first_failure_kind=(Coord { x: 10, y: 4, z: 22 }, "push limit exceeded") conservation_mismatch_ticks=0 boundaries=25 initial_matches=0 consecutive_matches=23 displacement_mismatches=24
+Error: "verification failed; inspect the summary above"

@@ -94,6 +94,8 @@ optional per-action inspection. See the in-app **Need help?** panel for controls
 Simulation runs locally in the browser; the viewer does not write trajectory
 files or change the `.flyer` format. The optional server binds only to
 `127.0.0.1`.
+The last opened flyer and its time-zero edits are autosaved in the browser's
+IndexedDB and restored on reload. Local preview and GitHub Pages have separate caches.
 
 ## Bank speeds, filters, and updating the catalogue
 

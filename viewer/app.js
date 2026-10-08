@@ -291,6 +291,49 @@ const pistonHeadVisuals=[];
 const movingFlashMaterials=new Set();
 let selected = null, playing = false, direction = 1, sourceBytes = null, sourceTitle = '';
 let sourceOrigin=[0,0,0],editorMode='view',editFlyer=null,selectedSlot=1;
+let recentDbPromise=null,recentWrite=Promise.resolve(),restoringRecent=false;
+function recentDb(){
+  if(!('indexedDB' in window))return Promise.reject(Error('IndexedDB is unavailable'));
+  if(!recentDbPromise)recentDbPromise=new Promise((resolve,reject)=>{
+    const request=indexedDB.open('fastflyer-workspace',1);
+    request.onupgradeneeded=()=>request.result.createObjectStore('recent');
+    request.onsuccess=()=>{
+      request.result.onversionchange=()=>{request.result.close();recentDbPromise=null;};
+      resolve(request.result);
+    };
+    request.onerror=()=>reject(request.error);
+    request.onblocked=()=>reject(Error('The local flyer cache is blocked by another tab'));
+  }).catch(error=>{recentDbPromise=null;throw error;});
+  return recentDbPromise;
+}
+async function readRecentFlyer(){
+  const db=await recentDb();
+  return new Promise((resolve,reject)=>{
+    const request=db.transaction('recent','readonly').objectStore('recent').get('last');
+    request.onsuccess=()=>resolve(request.result||null);
+    request.onerror=()=>reject(request.error);
+  });
+}
+async function writeRecentFlyer(snapshot){
+  const db=await recentDb();
+  return new Promise((resolve,reject)=>{
+    const transaction=db.transaction('recent','readwrite');
+    transaction.objectStore('recent').put(snapshot,'last');
+    transaction.oncomplete=resolve;
+    transaction.onerror=()=>reject(transaction.error);
+    transaction.onabort=()=>reject(transaction.error);
+  });
+}
+function rememberFlyer(){
+  if(restoringRecent||!sourceBytes)return;
+  const snapshot={bytes:sourceBytes.slice(),title:sourceTitle,origin:[...sourceOrigin],
+    mode:editorMode,slot:selectedSlot};
+  recentWrite=recentWrite.catch(()=>{}).then(()=>writeRecentFlyer(snapshot)).catch(error=>{
+    console.warn('Could not save the recent flyer locally',error);
+    $('status').textContent='Local autosave unavailable. Export your flyer to keep your edits.';
+    $('status').classList.add('error');
+  });
+}
 let history = [], frontier = 0, detailTrace = null, detailBase = 0, playbackAccumulator = 0;
 let allBounds = {min:[-2,-1,-2],max:[5,4,2]};
 let startBounds = allBounds;
@@ -298,8 +341,8 @@ const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x050c19);
 const camera = new THREE.PerspectiveCamera(47,1,.1,2000);
 camera.rotation.order='YXZ';
-let cameraMoveScale=1;
 const flyerMiddle=new THREE.Vector3(),followAnchor=new THREE.Vector3(),followVelocity=new THREE.Vector3();
+let travelOriginX=0;
 // A fixed night sky, translated with the camera so it feels infinitely distant.
 const sky=new THREE.Group();scene.add(sky);
 const starPositions=[],starColors=[],brightPositions=[],brightColors=[];
@@ -468,7 +511,6 @@ function frameCamera() {
   cameraVelocity.set(0,0,0);
   const center = startBounds.min.map((v,i)=>(v+startBounds.max[i])/2);
   const span = Math.max(...startBounds.max.map((v,i)=>v-startBounds.min[i]),4);
-  cameraMoveScale=Math.max(1,span*.45);
   const distance=Math.max(7,span*1.5);
   camera.position.set(center[0]+distance*.85,center[1]+distance*.65,center[2]+distance*.9);
   camera.lookAt(...center);
@@ -494,12 +536,15 @@ function stateAt(index) {
     arms=step.arms||[];
   }
   const middle=new THREE.Vector3();
+  let minimumX=Infinity;
   for(const id of cells.keys()){
     const [x,y,z]=id.split(',').map(Number);
     middle.x+=x;middle.y+=y;middle.z+=z;
+    minimumX=Math.min(minimumX,x);
   }
   if(cells.size)middle.divideScalar(cells.size);
-  return {cells,owners,arms,info:index?trace.steps[index-1]:null,middle};
+  return {cells,owners,arms,info:index?trace.steps[index-1]:null,middle,
+    minimumX:Number.isFinite(minimumX)?minimumX:travelOriginX};
 }
 function point(p) {return new THREE.Vector3(p[0],p[1],p[2]);}
 function boxOutline(pos,color,size=1.06,opacity=1) {
@@ -682,7 +727,7 @@ function updateMovingFlash(now){
 function render() {
   if(!trace)return;
   clearContent();
-  const {cells,owners,arms,info,middle}=stateAt(stepIndex);
+  const {cells,owners,arms,info,middle,minimumX}=stateAt(stepIndex);
   flyerMiddle.copy(middle);
   if(!detailTrace&&stepIndex===0){const item=entry(tickIndex);if(item)item.middle=middle.toArray();}
   const armDirections=new Map(arms.map(([pos,direction])=>[key(pos),direction]));
@@ -785,14 +830,17 @@ function render() {
   updateMovingVisuals(performance.now());
   updatePistonHeads(performance.now());
   updateMovingFlash(performance.now());
-  updatePanels(cells,owners,armDirections,info);
+  updatePanels(cells,owners,armDirections,info,minimumX);
 }
 function property(name,value) {return `<div class="property"><span>${name}</span><span>${value}</span></div>`;}
-function updatePanels(cells,owners,arms,info) {
+function updatePanels(cells,owners,arms,info,minimumX) {
   const step=info;
   $('step-badge').textContent=playbackMode==='ticks'?(tickIndex?'TICK':'INITIAL'):(step?step.stage.toUpperCase():'INITIAL');
   $('step-title').textContent=playbackMode==='ticks'?(tickIndex?`Tick ${tickIndex} complete`:'Initial configuration'):(step?step.title:'Initial configuration');
-  $('step-counter').textContent=playbackMode==='ticks'?(tickIndex?`Tick ${tickIndex}`:'Initial state'):(detailTrace?`Tick ${detailBase+1} · action ${stepIndex}/${trace.steps.length}`:'Initial state');
+  const progress=playbackMode==='ticks'?(tickIndex?`Tick ${tickIndex}`:'Initial state'):
+    (detailTrace?`Tick ${detailBase+1} · action ${stepIndex}/${trace.steps.length}`:'Initial state');
+  const travelled=Math.abs(minimumX-travelOriginX);
+  $('step-counter').textContent=`${progress} · ${travelled} ${travelled===1?'block':'blocks'} travelled`;
   const cell=selected&&cells.get(key(selected));
   if(selected===null||cell===undefined) $('inspector').innerHTML='<div class="empty-inspector">Select a block to see its state, owner, and coordinates.</div>';
   else {
@@ -913,13 +961,21 @@ function stopPlayback() {
   updateMovingVisuals(performance.now());updatePistonHeads(performance.now());updateMovingFlash(performance.now());
 }
 const speedStops=[.1,.15,.2,.25,.3,.4,.5,.6,.7,.8,.9,1,1.1,1.25,1.5,1.75,2,2.5,3,4,5,6,8,10,15,20,30];
-function playbackSpeed() {return speedStops[Number($('speed').value)];}
 const playerSpeedStops=[.25,.5,.75,1,1.25,1.5,1.75,2,2.5,3];
-const sensitivityStops=[.2,.3,.4,.5,.6,.7,.8,.9,1,1.1,1.25,1.5,1.75,2];
+// Preserve the old small-flyer 1× feel, independent of the flyer's dimensions.
+const BASE_PLAYER_BLOCKS_PER_SECOND=9.72;
+const sensitivityStops=[.1,.15,.2,.25,.3,.35,.4,.5,.6,.7,.8,.9,1,1.1,1.25,1.5,1.75,2];
 const rotateSpeedStops=[.25,.5,.75,1,1.25,1.5,2,2.5,3,4];
-function playerSpeed(){return playerSpeedStops[Number($('player-speed').value)];}
-function mouseSensitivity(){return .015*sensitivityStops[Number($('sensitivity').value)];}
-function rotateSpeed(){return rotateSpeedStops[Number($('rotate-speed').value)];}
+function sliderStop(id,stops,unityIndex){
+  const raw=Number($(id).value),position=Number.isFinite(raw)?Math.max(0,Math.min(100,raw))/100:.5;
+  const index=position<=.5?Math.round(position*2*unityIndex):
+    unityIndex+Math.round((position-.5)*2*(stops.length-1-unityIndex));
+  return stops[index];
+}
+function playbackSpeed(){return sliderStop('speed',speedStops,11);}
+function playerSpeed(){return sliderStop('player-speed',playerSpeedStops,5);}
+function mouseSensitivity(){return .015*sliderStop('sensitivity',sensitivityStops,6);}
+function rotateSpeed(){return sliderStop('rotate-speed',rotateSpeedStops,3);}
 function multiplier(value){return `${Number(value.toFixed(2))}×`;}
 function showError(error){$('status').textContent=error.message;$('status').classList.add('error');console.error(error);}
 function installFlyer(bytes,title,origin=[0,0,0],preserveCamera=false) {
@@ -928,6 +984,7 @@ function installFlyer(bytes,title,origin=[0,0,0],preserveCamera=false) {
   sourceBytes=result.bytes;sourceTitle=title;sourceOrigin=origin.map((value,i)=>value-result.shift[i]);
   history=[{tick:0,bytes:result.bytes,origin:sourceOrigin}];frontier=0;tickIndex=0;
   detailTrace=null;detailBase=0;stepIndex=0;trace=shiftTrace(result.trace,sourceOrigin);selected=null;
+  travelOriginX=trace.initial.length?trace.initial.reduce((min,row)=>Math.min(min,row[0]),Infinity):0;
   editFlyer=parseFlyer(sourceBytes);
   if(sourceOrigin.some(Boolean)){
     const world=id=>id.split(',').map((value,i)=>Number(value)+sourceOrigin[i]).join(',');
@@ -996,13 +1053,16 @@ function selectSlot(slot){
     const active=Number(button.dataset.slot)===slot;
     button.classList.toggle('active',active);button.setAttribute('aria-pressed',String(active));
   }
+  rememberFlyer();
 }
 selectSlot(1);
 function setEditorMode(mode){
   if(editorMode===mode||!sourceBytes)return;
   stopPlayback();
   if(mode==='edit'){
+    const previousX=flyerMiddle.x;
     installFlyer(sourceBytes,sourceTitle,sourceOrigin,true);
+    if($('follow-flyer').checked)camera.position.x+=flyerMiddle.x-previousX;
     if(playbackMode!=='ticks')setMode('ticks');
   }
   editorMode=mode;
@@ -1022,10 +1082,12 @@ function setEditorMode(mode){
   editGesture=null;clearPlacementPreview();
   if(mode==='view')hoverOutline.visible=false;
   render();
+  rememberFlyer();
 }
 function saveEditedFlyer(){
   const {bytes,shift}=serializeFlyer(editFlyer);
   installFlyer(bytes,sourceTitle,shift.map(value=>-value),true);
+  rememberFlyer();
 }
 function editCell(pos,cell){
   if(!editFlyer)return;
@@ -1147,6 +1209,7 @@ async function loadBank() {
   async function openFlyer(item){
     try{
       installFlyer(await fetchBankBytes(item.path),item.name);
+      rememberFlyer();
       $('bank-dialog').close();
     }catch(error){$('bank-summary').textContent=error.message;showError(error);}
   }
@@ -1253,12 +1316,12 @@ $('bank-dialog').addEventListener('click',event=>{
   const rect=$('bank-dialog').getBoundingClientRect();
   if(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom)$('bank-dialog').close();
 });
-$('file').onchange=async event=>{const file=event.target.files[0];if(!file)return;try{installFlyer(new Uint8Array(await file.arrayBuffer()),file.name);}catch(error){showError(error);}};
+$('file').onchange=async event=>{const file=event.target.files[0];if(!file)return;try{installFlyer(new Uint8Array(await file.arrayBuffer()),file.name);rememberFlyer();}catch(error){showError(error);}};
 $('reset').onclick=()=>{
   if(!sourceBytes||editorMode==='edit')return;
   const wasPlaying=playing,previousMiddle=flyerMiddle.clone();
   installFlyer(sourceBytes,sourceTitle,sourceOrigin,true);
-  if($('follow-flyer').checked)camera.position.add(flyerMiddle.clone().sub(previousMiddle));
+  if($('follow-flyer').checked)camera.position.x+=flyerMiddle.x-previousMiddle.x;
   if(wasPlaying){playing=true;$('play').textContent='Ⅱ';$('play').setAttribute('aria-label','Pause');}
 };
 function setPlaybackDirection(value){
@@ -1272,8 +1335,16 @@ $('direction').onclick=()=>{if(editorMode==='view')setPlaybackDirection(-directi
 $('step').onclick=()=>{if(editorMode==='view')advance(direction);};
 $('speed').oninput=()=>{const label=`${playbackSpeed()}×`;$('speed-label').textContent=label;$('speed').setAttribute('aria-valuetext',label);};
 $('player-speed').oninput=()=>{const label=multiplier(playerSpeed()/playerSpeedStops[5]);$('player-speed-label').textContent=label;$('player-speed').setAttribute('aria-valuetext',label);};
-$('sensitivity').oninput=()=>{const label=multiplier(sensitivityStops[Number($('sensitivity').value)]/.5);$('sensitivity-label').textContent=label;$('sensitivity').setAttribute('aria-valuetext',label);};
+$('sensitivity').oninput=()=>{const label=multiplier(mouseSensitivity()/(.015*sensitivityStops[6]));$('sensitivity-label').textContent=label;$('sensitivity').setAttribute('aria-valuetext',label);};
 $('rotate-speed').oninput=()=>{const label=multiplier(rotateSpeed());$('rotate-speed-label').textContent=label;$('rotate-speed').setAttribute('aria-valuetext',label);};
+function resetSpeedControls(){
+  for(const id of ['speed','player-speed','sensitivity','rotate-speed']){
+    $(id).value='50';
+    $(id).dispatchEvent(new Event('input'));
+  }
+}
+resetSpeedControls();
+window.addEventListener('pageshow',resetSpeedControls);
 for(const mode of ['real','halfway','smooth'])$('moving-'+mode).onclick=()=>{
   movingDisplayMode=mode;motionFrameKey='';
   for(const choice of ['real','halfway','smooth']){
@@ -1304,18 +1375,19 @@ const hoverOutline=new THREE.LineSegments(frontOutlineGeometry(1.045,7),
 hoverOutline.visible=false;hoverOutline.renderOrder=10;scene.add(hoverOutline);
 const placementPreview=new THREE.Group();placementPreview.renderOrder=12;scene.add(placementPreview);
 const previewMaterials=new Map();
+const EDIT_REACH=36;
 let previewSignature='';
 function previewMaterial(texture){
   if(!previewMaterials.has(texture.uuid))previewMaterials.set(texture.uuid,
-    new THREE.MeshBasicMaterial({map:texture,transparent:true,opacity:.48,depthWrite:false,side:THREE.DoubleSide}));
+    new THREE.MeshBasicMaterial({map:texture,transparent:true,opacity:.45,depthWrite:false,side:THREE.FrontSide}));
   return previewMaterials.get(texture.uuid);
 }
 function clearPlacementPreview(){
   placementPreview.traverse(object=>{if(object.isInstancedMesh)object.dispose();});
   placementPreview.clear();previewSignature='';
 }
-function showPlacementPreview(positions,cell){
-  const signature=`${cell}:${positions.map(key).join('|')}`;
+function showPlacementPreview(positions,cell,ghost=false){
+  const signature=`${cell}:${ghost}:${positions.map(key).join('|')}`;
   if(signature===previewSignature)return;
   clearPlacementPreview();previewSignature=signature;
   if(!positions.length)return;
@@ -1323,8 +1395,8 @@ function showPlacementPreview(positions,cell){
   if(block.kind===8){
     const pos=positions[0],rod=new THREE.Group();rod.position.copy(point(pos));
     rod.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),point(directions[block.direction]));
-    const shaft=previewMaterial(faceTexture('rod-shaft'));
-    const base=previewMaterial(faceTexture('rod-base'));
+    const shaft=standardMaterial(faceTexture('rod-shaft'),.76);
+    const base=standardMaterial(faceTexture('rod-base'),.7);
     for(const [size,y,material] of [[[.42,.18,.42],-.36,base],[[.22,.66,.22],.02,shaft],[[.3,.12,.3],.39,shaft]]){
       const mesh=new THREE.Mesh(box(...size),material);mesh.position.y=y;rod.add(mesh);
     }
@@ -1333,29 +1405,40 @@ function showPlacementPreview(positions,cell){
   if(block.kind===7||block.kind===9){
     const maps=Array.from({length:6},(_,index)=>block.kind===7?observerTexture(index,false):
       pistonTexture(index===4?'front':index===5?'back':index,block,false));
-    const mesh=new THREE.Mesh(box(),maps.map(previewMaterial));
+    const mesh=new THREE.Mesh(box(),maps.map(texture=>standardMaterial(texture,.84)));
     mesh.position.copy(point(positions[0]));orientBlock(mesh,block.direction);
     placementPreview.add(mesh);return;
   }
-  const material=previewMaterial(plainTexture(block.kind));
-  const mesh=new THREE.InstancedMesh(box(),material,positions.length),dummy=new THREE.Object3D();
-  positions.forEach((pos,index)=>{dummy.position.copy(point(pos));dummy.updateMatrix();mesh.setMatrixAt(index,dummy.matrix);});
-  mesh.instanceMatrix.needsUpdate=true;placementPreview.add(mesh);
+  const texture=plainTexture(block.kind);
+  const solidMaterial=standardMaterial(texture,.73,{metalness:.03,transparent:block.kind===4,
+    opacity:block.kind===4?.42:1,depthWrite:block.kind!==4});
+  const append=(cells,material,shape)=>{
+    if(!cells.length)return;
+    const mesh=new THREE.InstancedMesh(shape,material,cells.length),dummy=new THREE.Object3D();
+    cells.forEach((pos,index)=>{dummy.position.copy(point(pos));dummy.updateMatrix();mesh.setMatrixAt(index,dummy.matrix);});
+    mesh.instanceMatrix.needsUpdate=true;placementPreview.add(mesh);
+  };
+  append(ghost?positions.slice(0,1):positions,solidMaterial,box());
+  if(ghost)append(positions.slice(1),previewMaterial(texture),box(.96,.96,.96));
 }
-function hitAt(event){
+function aimRayAt(event){
   const rect=renderer.domElement.getBoundingClientRect();
   const locked=document.pointerLockElement===renderer.domElement;
   const x=locked?rect.left+rect.width/2:event.clientX,y=locked?rect.top+rect.height/2:event.clientY;
   pointer.x=((x-rect.left)/rect.width)*2-1;pointer.y=-((y-rect.top)/rect.height)*2+1;
   raycaster.setFromCamera(pointer,camera);
+  return raycaster.ray;
+}
+function hitAt(event,reach=Infinity){
+  aimRayAt(event);
   const hit=raycaster.intersectObjects(pickables)[0];
-  if(!hit)return null;
+  if(!hit||hit.distance>reach)return null;
   const pos=hit.object.userData.pos||hit.object.userData.positions?.[hit.instanceId];
   return pos?{hit,pos}:null;
 }
 function hoverAt(event){
   if(editorMode!=='edit')return;
-  const target=hitAt(event);hoverOutline.visible=!!target;
+  const target=hitAt(event,EDIT_REACH);hoverOutline.visible=!!target;
   if(target){
     hoverOutline.position.copy(point(target.pos));
     hoverOutline.geometry=frontOutlineGeometry(1.045,outlineOctant(target.pos));
@@ -1373,34 +1456,52 @@ function dominantDirection(vector){
   for(let i=1;i<3;i++)if(Math.abs(vector.getComponent(i))>Math.abs(vector.getComponent(axis)))axis=i;
   return axis*2+(vector.getComponent(axis)<0?1:0);
 }
+function movementKeyDirection(moveKey){
+  if(moveKey==='space')return 2;
+  if(moveKey==='shift')return 3;
+  const forward=new THREE.Vector3();camera.getWorldDirection(forward);forward.y=0;
+  if(forward.lengthSq()<.0001)forward.set(0,0,-1);
+  forward.normalize();
+  const right=new THREE.Vector3().crossVectors(forward,new THREE.Vector3(0,1,0)).normalize();
+  return dominantDirection(moveKey==='w'?forward:moveKey==='s'?forward.negate():moveKey==='d'?right:right.negate());
+}
 function placementCell(entry,facing){
   return entry.kind|(entry.sticky?256:0)|([7,8,9].includes(entry.kind)?facing<<5:0);
+}
+function emptyRowExtent(gesture,event){
+  if(!event)return 0;
+  const ray=aimRayAt(event),fromEye=gesture.start.map((value,i)=>value-ray.origin.getComponent(i));
+  const parallel=ray.direction.getComponent(gesture.axis)*gesture.axisSign;
+  const along=fromEye[gesture.axis]*gesture.axisSign;
+  const towardEye=fromEye.reduce((sum,value,i)=>sum+value*ray.direction.getComponent(i),0);
+  const eyeDistanceSq=fromEye.reduce((sum,value)=>sum+value*value,0);
+  const denominator=1-parallel*parallel;
+  const closest=denominator<.0001?EDIT_REACH:
+    (towardEye-parallel*along)/denominator;
+  if(closest<0)return 0;
+  const rayDistance=Math.min(EDIT_REACH,closest);
+  const aimedExtent=parallel*rayDistance-along;
+  // The player can walk during a hold. Cap the endpoint from their current
+  // position, rather than limiting the entire row to its original position.
+  const discriminant=along*along+EDIT_REACH*EDIT_REACH-eyeDistanceSq;
+  if(discriminant<0)return 0;
+  const reachableExtent=-along+Math.sqrt(discriminant);
+  return Math.max(0,Math.min(Math.round(aimedExtent),Math.floor(reachableExtent+1e-6)));
 }
 function placementPlan(gesture){
   const entry=gesture.entry,start=gesture.start;
   if(!entry||!start||!editFlyer)return {positions:[],cell:0};
-  const displacement=camera.position.clone().sub(gesture.cameraStart);
-  const moved=displacement.length()>=.18;
-  const held=performance.now()-gesture.startedAt>=180||Math.hypot(gesture.dx,gesture.dy)>=8;
-  let facing=gesture.face;
+  let facing=entry.kind===9?(entry.sticky?1:0):gesture.face^1;
   if([7,8,9].includes(entry.kind)){
-    if(moved)facing=dominantDirection(displacement);
-    else if(held){const look=new THREE.Vector3();camera.getWorldDirection(look);facing=dominantDirection(look);}
-    else if(entry.kind===9)facing=entry.sticky?1:0;
-    else if(entry.kind===7)facing=gesture.face^1;
+    if(gesture.lastMoveDirection!==null)
+      facing=entry.kind===8?gesture.lastMoveDirection^1:gesture.lastMoveDirection;
   }
   const cell=placementCell(entry,facing),positions=[];
   if(editFlyer.cells.has(key(start)))return {positions,cell};
   positions.push(start);
-  if([7,8,9].includes(entry.kind)||!gesture.fullscreenPlace)return {positions,cell};
-  if(gesture.axis===null&&moved){
-    gesture.axis=Math.floor(dominantDirection(displacement)/2);
-    gesture.axisSign=displacement.getComponent(gesture.axis)<0?-1:1;
-  }
+  if([7,8,9].includes(entry.kind)||!gesture.rowPlace)return {positions,cell};
   if(gesture.axis===null)return {positions,cell};
-  const aim=lastPointer&&hitAt(lastPointer);
-  if(!aim||aim.hit.distance>10)return {positions,cell};
-  const extent=(aim.pos[gesture.axis]-start[gesture.axis])*gesture.axisSign;
+  const extent=emptyRowExtent(gesture,lastPointer);
   for(let step=1;step<=extent;step++){
     const pos=[...start];pos[gesture.axis]+=step*gesture.axisSign;
     if(editFlyer.cells.has(key(pos)))break;
@@ -1409,10 +1510,9 @@ function placementPlan(gesture){
   return {positions,cell};
 }
 function updatePlacementPreview(){
-  if(!editGesture?.fullscreenPlace)return;
+  if(!editGesture?.previewPlace)return;
   const plan=placementPlan(editGesture);
-  editGesture.plan=plan;
-  showPlacementPreview(plan.positions,plan.cell);
+  showPlacementPreview(plan.positions,plan.cell,editGesture.rowPlace&&editGesture.axis!==null);
 }
 function placePlannedBlocks(plan){
   if(!editFlyer||!plan.positions.length)return;
@@ -1428,7 +1528,7 @@ function placePlannedBlocks(plan){
 }
 function pickBlockAtAim(event=lastPointer){
   if(!event||editorMode!=='edit')return;
-  const target=hitAt(event);if(!target)return;
+  const target=hitAt(event,EDIT_REACH);if(!target)return;
   const cell=editFlyer?.cells.get(key(target.pos));
   if(cell!==undefined){
     const slot=paletteSlots.find(entry=>entry.kind===(cell&15)&&(entry.kind!==9||entry.sticky===!!(cell&256)));
@@ -1437,7 +1537,7 @@ function pickBlockAtAim(event=lastPointer){
 }
 function cycleStateAtAim(event=lastPointer){
   if(!event||editorMode!=='edit'||!editFlyer)return;
-  const target=hitAt(event);if(!target)return;
+  const target=hitAt(event,EDIT_REACH);if(!target)return;
   const id=key(target.pos),cell=editFlyer.cells.get(id);
   if(cell===undefined)return;
   const block=decode(cell);
@@ -1482,8 +1582,7 @@ function breakAtAim(event){
   if(!editGesture?.fullscreenBreak)return;
   const now=performance.now();
   if(!editGesture.aimMoved&&now-editGesture.lastBreakAt<155)return;
-  const target=hitAt(event);if(!target)return;
-  if(target.hit.distance>10)return;
+  const target=hitAt(event,EDIT_REACH);if(!target)return;
   const id=key(target.pos);
   if(!editFlyer?.cells.has(id))return;
   editGesture.lastBreakAt=now;
@@ -1505,19 +1604,19 @@ renderer.domElement.addEventListener('pointerdown',event=>{
   }
   if(editorMode==='edit'){
     if(event.button===1){event.preventDefault();pickBlockAtAim(event);return;}
-    const aimed=hitAt(event),target=event.button===2&&aimed?.hit.distance>10?null:aimed;
-    if(aimed&&!target){$('status').textContent='Placement requires a block within 10 blocks of the player.';$('status').classList.remove('error');}
+    const aimed=hitAt(event),target=aimed?.hit.distance>EDIT_REACH?null:aimed;
+    if(aimed&&!target){$('status').textContent=`Placement requires a block within ${EDIT_REACH} blocks of the player.`;$('status').classList.remove('error');}
     const face=target?faceDirection(target.hit):0;
     editGesture={button:event.button,startX:event.clientX,startY:event.clientY,
       dx:0,dy:0,target,face,
       fullscreenBreak:event.button===0&&document.fullscreenElement===$('viewport'),
-      fullscreenPlace:event.button===2&&document.fullscreenElement===$('viewport'),
+      previewPlace:event.button===2,rowPlace:event.button===2,
       entry:paletteSlots.find(item=>item.slot===selectedSlot),
       start:target?target.pos.map((value,i)=>value+directions[face][i]):null,
-      cameraStart:camera.position.clone(),startedAt:performance.now(),axis:null,axisSign:0,
+      lastMoveDirection:null,axis:null,axisSign:0,
       lastBreakAt:-Infinity,aimMoved:true};
     if(editGesture.fullscreenBreak)breakAtAim(event);
-    if(editGesture.fullscreenPlace)updatePlacementPreview();
+    if(editGesture.previewPlace)updatePlacementPreview();
     if(document.fullscreenElement!==$('viewport'))
       drag={x:event.clientX,y:event.clientY,startX:event.clientX,startY:event.clientY};
     if(document.fullscreenElement!==$('viewport'))renderer.domElement.setPointerCapture(event.pointerId);
@@ -1621,7 +1720,9 @@ renderer.domElement.addEventListener('wheel',event=>{
   if(!displayFocused)return;
   event.preventDefault();
   const forward=new THREE.Vector3();camera.getWorldDirection(forward);
-  camera.position.addScaledVector(forward,-Math.sign(event.deltaY)*cameraMoveScale*.45);
+  const distance=camera.position.distanceTo(flyerMiddle);
+  const step=Math.max(.8,distance*.08);
+  camera.position.addScaledVector(forward,-Math.sign(event.deltaY)*step);
 },{passive:false});
 const playbackControls=new Set(['reset','direction','step','play','speed','player-speed','sensitivity','follow-flyer','mode-ticks','mode-detailed','mode-view','mode-edit']);
 document.addEventListener('pointerdown',event=>{
@@ -1661,6 +1762,14 @@ window.addEventListener('keydown',event=>{
       if(now-lastWPress<=300)setSprintMultiplier(Math.max(2,sprintMultiplier));
       lastWPress=now;
     }
+    if(editGesture?.button===2&&movementKeys.includes(moveKey)&&!event.repeat&&!heldKeys.has(moveKey)){
+      const latest=movementKeyDirection(moveKey);
+      editGesture.lastMoveDirection=latest;
+      if(editGesture.rowPlace&&editGesture.axis===null){
+        editGesture.axis=Math.floor(latest/2);
+        editGesture.axisSign=latest%2?-1:1;
+      }
+    }
     heldKeys.add(moveKey);
     event.preventDefault();
   }
@@ -1690,13 +1799,14 @@ function moveCamera(deltaSeconds) {
   if(heldKeys.has('a'))move.sub(right);
   if(heldKeys.has('space'))move.y+=1;
   if(heldKeys.has('shift'))move.y-=1;
-  if(move.lengthSq()>0)move.normalize().multiplyScalar(cameraMoveScale*3.6*playerSpeed()*sprintMultiplier);
+  if(move.lengthSq()>0)move.normalize().multiplyScalar(
+    BASE_PLAYER_BLOCKS_PER_SECOND*(playerSpeed()/playerSpeedStops[5])*sprintMultiplier);
   cameraVelocity.lerp(move,1-Math.exp(-dt/(move.lengthSq()>.0001?.12:.018)));
   if(cameraVelocity.lengthSq()<.00001)return;
   camera.position.addScaledVector(cameraVelocity,dt);
 }
 function followCamera(deltaSeconds){
-  if(!$('follow-flyer').checked)return;
+  if(editorMode==='edit'||!$('follow-flyer').checked)return;
   const previous=followAnchor.clone();
   const dt=Math.min(deltaSeconds,.1),timeConstant=Math.max(.18,.65/Math.sqrt(playbackSpeed()));
   const omega=2/timeConstant,displacement=followAnchor.clone().sub(flyerMiddle);
@@ -1704,7 +1814,7 @@ function followCamera(deltaSeconds){
   const decay=Math.exp(-omega*dt);
   followAnchor.copy(flyerMiddle).add(displacement.add(velocityTerm).multiplyScalar(decay));
   followVelocity.sub(velocityTerm.multiplyScalar(omega)).multiplyScalar(decay);
-  camera.position.add(followAnchor.clone().sub(previous));
+  camera.position.x+=followAnchor.x-previous.x;
 }
 const orbitAxis=new THREE.Vector3(0,1,0),orbitQuaternion=new THREE.Quaternion();
 function orbitCamera(deltaSeconds){
@@ -1764,7 +1874,30 @@ function animate(now){
 }
 requestAnimationFrame(animate);
 async function initialize(){
-  try{await loadWasm();await Promise.all([loadBank(),loadUrl('./demo.flyer','Six-block flyer')]);}
+  try{
+    await loadWasm();
+    const bank=loadBank().then(()=>null,error=>error);
+    let restored=false;
+    try{
+      const saved=await readRecentFlyer();
+      if(saved){
+        restoringRecent=true;
+        try{
+          if(!(saved.bytes instanceof Uint8Array)||typeof saved.title!=='string'||
+             !Array.isArray(saved.origin)||saved.origin.length!==3||
+             !saved.origin.every(Number.isSafeInteger))throw Error('Invalid cached flyer');
+          installFlyer(saved.bytes,saved.title,saved.origin);
+          if(saved.mode==='edit')setEditorMode('edit');
+          if(Number.isInteger(saved.slot)&&saved.slot>=0&&saved.slot<=9)selectSlot(saved.slot);
+          $('status').textContent='Restored your last flyer from this browser.';
+          restored=true;
+        }finally{restoringRecent=false;}
+      }
+    }catch(error){console.warn('Could not restore the recent flyer',error);}
+    if(!restored)await loadUrl('./demo.flyer','Six-block flyer');
+    const bankError=await bank;
+    if(bankError)throw bankError;
+  }
   catch(error){showError(error);}
 }
 initialize();

@@ -1,0 +1,1 @@
+samples passed=80/80 file=flyers/WIP/experiments/power_riders_20261007/runs/bankW_dead_L8.flyer ticks=10000 period=8 advance=2 first_failed=None out=flyers/WIP/experiments/power_riders_20261007/runs/bankW_dead_L8.samples.csv

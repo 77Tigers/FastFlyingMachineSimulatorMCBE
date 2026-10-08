@@ -41,10 +41,10 @@
       <div id="status" class="status panel-section" role="status" aria-live="polite">Loading…</div>
       <div class="panel-section navigation-panel">
         <div class="section-head"><span>CONTROLS</span></div>
-        <label class="range-setting" for="speed"><span>Game speed</span><output id="speed-label" for="speed">1×</output><input id="speed" type="range" min="0" max="26" step="1" value="11" aria-valuetext="1×"></label>
-        <label class="range-setting" for="player-speed"><span>Player speed</span><output id="player-speed-label" for="player-speed">1×</output><input id="player-speed" type="range" min="0" max="9" step="1" value="5" aria-valuetext="1×"></label>
-        <label class="range-setting" for="sensitivity"><span>Mouse sensitivity</span><output id="sensitivity-label" for="sensitivity">1×</output><input id="sensitivity" type="range" min="0" max="13" step="1" value="3" aria-valuetext="1×"></label>
-        <label class="range-setting" for="rotate-speed"><span>Camera rotate speed</span><output id="rotate-speed-label" for="rotate-speed">1×</output><input id="rotate-speed" type="range" min="0" max="9" step="1" value="3" aria-valuetext="1×"></label>
+        <label class="range-setting" for="speed"><span>Game speed</span><output id="speed-label" for="speed">1×</output><input id="speed" type="range" min="0" max="100" step="1" value="50" autocomplete="off" aria-valuetext="1×"></label>
+        <label class="range-setting" for="player-speed"><span>Player speed</span><output id="player-speed-label" for="player-speed">1×</output><input id="player-speed" type="range" min="0" max="100" step="1" value="50" autocomplete="off" aria-valuetext="1×"></label>
+        <label class="range-setting" for="sensitivity"><span>Mouse sensitivity</span><output id="sensitivity-label" for="sensitivity">1×</output><input id="sensitivity" type="range" min="0" max="100" step="1" value="50" autocomplete="off" aria-valuetext="1×"></label>
+        <label class="range-setting" for="rotate-speed"><span>Camera rotate speed</span><output id="rotate-speed-label" for="rotate-speed">1×</output><input id="rotate-speed" type="range" min="0" max="100" step="1" value="50" autocomplete="off" aria-valuetext="1×"></label>
         <div class="moving-setting"><span>Motion display</span><div class="segmented moving-select" role="group" aria-label="Moving block and piston head display"><button id="moving-real" aria-pressed="false" title="Show moving blocks in their stored cells and piston heads as before">Real</button><button id="moving-halfway" aria-pressed="false" title="Show moving blocks halfway and piston heads at their midpoint">Halfway</button><button id="moving-smooth" class="active" aria-pressed="true" title="Animate moving blocks and piston heads">Smooth</button></div></div>
         <label class="toggle follow-toggle"><input id="follow-flyer" type="checkbox" checked>Follow flyer</label>
         <div id="sprint-indicator" class="sprint-indicator" hidden>SPRINTING · 2×</div>
@@ -90,7 +90,7 @@
           <dl>
             <dt>Drag</dt><dd>Look around. Click the scene first so it has focus.</dd>
             <dt>Fullscreen</dt><dd>Use the top-right button or press Enter while the scene is focused. Press Enter again or Esc to exit. Click the scene to recapture the mouse if needed.</dd>
-            <dt>Scroll wheel</dt><dd>Move forward or backward in the direction you are looking.</dd>
+            <dt>Scroll wheel</dt><dd>Move forward or backward in the direction you are looking; movement scales with distance from the flyer.</dd>
             <dt>W A S D</dt><dd>Walk forward, left, backward and right.</dd>
             <dt>Space / Shift</dt><dd>Fly up / down.</dd>
             <dt>Q / E</dt><dd>Hold to orbit left / right around the flyer’s middle while keeping your viewing direction relative to it.</dd>
@@ -118,10 +118,11 @@
           <dl>
             <dt>Browse flyer bank</dt><dd>Search, filter and sort the collection, or click a bar in the chart to open a fastest flyer at that push limit. “At frontier” keeps new speed records (over 0.002 bps better than lower limits), one-limit-higher improvements, and flyers within 0.005 bps of each retained limit’s best. Flyers open paused.</dd>
             <dt>Open .flyer</dt><dd>Load a file from your computer. It stays in your browser and is never uploaded.</dd>
-            <dt>Edit / View</dt><dd>Edit resets to tick 0 and disables playback. Choose one of the ten bottom slots with 1–9 or 0. Right-click a block within 10 blocks to place beside it; quick-clicked pistons face +X and stickies face −X. Holding right-click faces directional blocks along your look direction, or along your displacement if you move. In fullscreen, directional blocks show a ghost preview; moving with a non-directional block selected builds a ghost row along your first movement axis, stopping before an occupied cell. Left-click deletes; in fullscreen, hold it to break blocks within 10 blocks. Z or middle-click picks a block type. T cycles piston states or toggles observer power. Change push limit in the bar above the canvas.</dd>
+            <dt>Edit / View</dt><dd>Edit resets to tick 0 and disables playback. Choose a hotbar slot with 1–9 or 0. Right-click a block within 36 blocks to place beside it; pistons default to +X and stickies to −X. While holding right-click, directional blocks use the last player-movement direction; mouse turning does not change facing. With a non-directional block, the first cell looks placed immediately. Your first movement chooses an axis, then aiming into empty space previews further ghost blocks along that axis, stopping before an occupied cell. Release to place. Left-click deletes; in fullscreen, hold it to break blocks within 36 blocks. Z or middle-click picks a block type. T cycles piston states or toggles observer power. Change push limit in the bar above the canvas.</dd>
             <dt>Export</dt><dd>Download the current time-zero design, including edits, as a .flyer file.</dd>
+            <dt>Local autosave</dt><dd>The last opened flyer and its time-zero edits are saved in this browser and restored on reload. Simulation history is not saved. Export a .flyer file for a portable backup.</dd>
             <dt>Show floor</dt><dd>Toggle the fading ground grid in the right panel.</dd>
-            <dt>Follow flyer</dt><dd>Smoothly move with the average position of its blocks; manual movement still works.</dd>
+            <dt>Follow flyer</dt><dd>Smoothly follow the flyer's X travel only; entering Edit or resetting shifts the camera back by that X displacement. Manual movement still works.</dd>
             <dt>Motion display</dt><dd>Real shows moving blocks in their stored destination cells and keeps the familiar midpoint piston head. Halfway places moving blocks at their midpoint too. Smooth animates blocks and piston heads; manual steps settle halfway, while continuous playback completes the move. These choices are visual only.</dd>
           </dl>
         </section>

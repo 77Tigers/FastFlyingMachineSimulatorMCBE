@@ -1,0 +1,42 @@
+rear: L=7 E=2 R=2: 1489 nodes, 1006 leaves, 936 with LB<=7, 16.5s
+53 kinematic signatures
+LB 5 EST 5 (20 power plans) K0:mmww[PK12,SB23] K1:wwmm[Po0,SK01] B2:wwmm[PK00] r0:mmww[PB22 on K00,K01]
+LB 5 EST 6 (19 power plans) K0:mmww[PB22,PK12] K1:wwmm[Po0,SK01] B2:wmmw[SK00] M:B2+K0@1
+LB 5 EST 6 (26 power plans) K0:mmww[PB22,PK12,SB23] K1:wwmm[Po0,SK01] B2:wwmm[PK00]
+LB 5 EST 6 (4 power plans) K0:mmww[PB22,PK12] K1:wwmm[Po0,SK01] B2:mwmw[] r0:wmmw[SK00 on K01,B22] M:B2+K0@0
+LB 5 EST 6 (4 power plans) K0:mmww[PB22,PK12] K1:wwmm[Po0,SK01] B2:wmmw[] r0:wmmw[SK00 on K01,B22] M:B2+K0@1
+LB 5 EST 6 (5 power plans) K0:mmww[PB22,PK12,SB23] K1:wwmm[Po0,SK01] B2:wwmm[] r0:wwmm[PK00 on B22,B23]
+LB 5 EST 6 (20 power plans) K0:mmww[PK12,SB23] K1:wwmm[Po0,SK01] B2:wwmm[PK00] r0:mwwm[SB22 on K00,B23]
+LB 5 EST 6 (35 power plans) K0:mmww[PK12,SB23] K1:wwmm[Po0,SK01] B2:wwmm[PK00] B3:mwwm[SB22] M:B3+K0@0,B2+B3@3
+LB 5 EST 6 (35 power plans) K0:mmww[PK12,SB23] K1:wwmm[Po0,SK01] B2:wwmm[PB30,PK00] B3:mwwm[SB22] M:B2+B3@3
+LB 5 EST 6 (36 power plans) K0:mmww[PK12,SB23] K1:wwmm[Po0,SK01] B2:wwmm[PK00] B3:mmww[PB22] M:B3+K0@0,B3+K0@1
+LB 5 EST 6 (36 power plans) K0:mmww[PK12,SB23] K1:wwmm[Po0,SK01] B2:wwmm[PB30,PK00,SB31] B3:mmww[PB22]
+LB 6 EST 6 (36 power plans) K0:mmww[PK12,SB23] K1:wwmm[Po0,SK01] B2:wwmm[PK00,SB31] B3:mmww[PB22] M:B3+K0@0
+LB 6 EST 6 (20 power plans) K0:mmww[PB22,PK12] K1:wwmm[Po0,SK01] B2:wwmm[PK00] r0:mmww[SB23 on K00,K01]
+LB 6 EST 6 (10 power plans) K0:mmww[PK12] K1:wwmm[Po0,SK01] r0:wmmw[SK00 on K01,K12]
+LB 6 EST 6 (12 power plans) K0:mmww[PK12] K1:wwmm[Po0,SK01] r0:wwmm[PK00 on K12,K13]
+LB 6 EST 6 (5 power plans) K0:mmww[PB22,PK12,SB23] K1:wwmm[Po0,SK01] B2:wwmm[] r0:wmmw[SK00 on K01,B22]
+LB 6 EST 6 (35 power plans) K0:mmww[PK12] K1:wwmm[Po0,SK01] B2:wmmw[PB33,SK00] B3:mwwm[SB22] M:B3+K0@0,B2+K0@1
+LB 6 EST 6 (5 power plans) K0:mmww[PB22,PK12,SB23] K1:wwmm[Po0,SK01] B2:wwmm[] r0:wwmm[PK00 on B22,K13]
+LB 6 EST 6 (5 power plans) K0:mmww[PK12,SB23] K1:wwmm[Po0,SK01] B2:wmwm[] r0:wwmm[PK00 on K12,B23] M:B2+K0@1
+LB 6 EST 6 (5 power plans) K0:mmww[PK12,SB23] K1:wwmm[Po0,SK01] B2:mwwm[] r0:wwmm[PK00 on K12,B23] M:B2+K0@0
+LB 6 EST 6 (5 power plans) K0:mmww[PB22,PK12,SB23] K1:wwmm[Po0,SK01] B2:wwmm[] r0:wwmm[PK00 on K12,B23]
+LB 6 EST 6 (36 power plans) K0:mmww[PK12] K1:wwmm[Po0,SK01] B2:wwmm[PK00] B3:mmww[PB22,SB23] M:B3+K0@0,B3+K0@1
+LB 6 EST 6 (36 power plans) K0:mmww[PK12] K1:wwmm[Po0,SK01] B2:wwmm[PB30,PK00,SB31] B3:mmww[PB22,SB23]
+LB 6 EST 6 (36 power plans) K0:mmww[PB22,PK12] K1:wwmm[Po0,SK01] B2:wwmm[PK00] B3:mmww[SB23] M:B3+K0@0,B3+K0@1
+LB 6 EST 6 (36 power plans) K0:mmww[PB22,PK12] K1:wwmm[Po0,SK01] B2:wwmm[PB30,PK00,SB31] B3:mmww[SB23]
+LB 5 EST 7 (20 power plans) K0:mmww[PK12] K1:wwmm[Po0,SK01] B2:wmmw[SK00] r0:mmww[PB22 on K00,B21] M:B2+K0@1
+LB 5 EST 7 (20 power plans) K0:mmww[PK12] K1:wwmm[Po0,SK01] B2:wmmw[SK00] r0:mmww[PB22 on K00,K01] M:B2+K0@1
+LB 6 EST 7 (29 power plans) K0:mmww[PK12] K1:wwmm[Po0,SK01] B2:wmmw[PB33,SB30,SK00] B3:mwwm[SB22] M:B2+K0@1
+LB 6 EST 7 (20 power plans) K0:mmww[PK12] K1:wwmm[Po0,SK01] B2:wmmw[SK00] B3:mmww[PB22] M:B3+K0@0,B2+B3+K0@1
+LB 6 EST 7 (4 power plans) K0:mmww[PB22,PK12] K1:wwmm[Po0,SK01] B2:mwmw[] r0:wwmm[PK00 on B22,K13] M:B2+K0@0
+LB 6 EST 7 (4 power plans) K0:mmww[PB22,PK12] K1:wwmm[Po0,SK01] B2:wmmw[] r0:wwmm[PK00 on B22,K13] M:B2+K0@1
+LB 6 EST 7 (36 power plans) K0:mmww[PK12] K1:wwmm[Po0,SK01] B2:wwmm[PK00,SB31] B3:mmww[PB22,SB23] M:B3+K0@0
+LB 6 EST 7 (36 power plans) K0:mmww[PK12] K1:wwmm[Po0,SK01] B2:wwmm[PB30,PK00] B3:mmww[PB22,SB23] M:B3+K0@1
+LB 6 EST 7 (36 power plans) K0:mmww[PK12,SB23] K1:wwmm[Po0,SK01] B2:wwmm[PB30,PK00] B3:mmww[PB22] M:B3+K0@1
+LB 6 EST 7 (36 power plans) K0:mmww[PB22,PK12] K1:wwmm[Po0,SK01] B2:wwmm[PB30,PK00] B3:mmww[SB23] M:B3+K0@1
+LB 6 EST 7 (25 power plans) K0:mmww[PB22,PK12] K1:wwmm[Po0,SK01] B2:wwmm[PK00] r0:wmmw[PB23 on K01,B22]
+LB 6 EST 7 (36 power plans) K0:mmww[PB22,PK12] K1:wwmm[Po0,SK01] B2:wwmm[PK00,SB31] B3:wmmw[PB23] M:B2+B3@2
+LB 7 EST 7 (11 power plans) K0:mmww[PK12] K1:wwmm[Po0,SK01] B2:wmmw[SK00] r0:mwwm[SB22 on K00,K13] M:B2+K0@1
+LB 7 EST 7 (7 power plans) K0:mmww[PK12] K1:wwmm[Po0,SK01] B2:wmmw[SK00] M:B2+K0@1,B2+K1@2
+LB 7 EST 7 (11 power plans) K0:mmww[PK12,SB23] K1:wwmm[Po0,SK01] B2:wwmm[PK00] M:B2+K1@2

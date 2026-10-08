@@ -579,6 +579,15 @@
       "extension_failures": 0,
       "endpoint_conserved": true
     },
+    "flyers/bank/pl8/opus_cool.flyer": {
+      "sha256": "5d7cefb1ba9b2121d88dfa4d55825a7e3b66e50962e4aa6b389c9f5b4d2d7dd4",
+      "ticks": 10000,
+      "distance": 2500,
+      "speed_bps": 2.5,
+      "extensions": 75000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
     "flyers/bank/pl85/ab_push_pull_9body.flyer": {
       "sha256": "7bb3c7209edd3de66e8173de782012c5982d596122878b887963320f06d0cdbe",
       "ticks": 10000,

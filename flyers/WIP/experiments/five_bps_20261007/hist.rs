@@ -1,0 +1,2 @@
+use fastflyer::{Flyer,Kind};use std::collections::BTreeMap;
+fn main(){let a:Vec<_>=std::env::args().collect();let mut f=Flyer::load(&a[1]).unwrap();for t in 1..=a[2].parse::<usize>().unwrap(){let r=f.tick().unwrap();let bs=f.blocks();let front=bs.iter().filter(|(_,b)|b.kind()==Kind::Slime).map(|(p,_)|p.x).max().unwrap();let mut hist=BTreeMap::new();for(p,b)in bs{if b.kind()==Kind::Piston{*hist.entry((p.z,front-1-p.x,b.state(),b.moving())).or_insert(0)+=1;}}println!("t={t} powered={} starts={} {hist:?}",r.powered_pistons,r.extensions_started);}}

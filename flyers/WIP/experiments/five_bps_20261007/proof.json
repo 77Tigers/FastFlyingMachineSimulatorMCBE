@@ -1,0 +1,19 @@
+{
+  "assumption": "Independent uniform chunk permutations each tick, unbounded mathematical coordinates. NOT a theorem about the 64-bit deterministic simulator RNG or i64 coordinate range.",
+  "n": 1536,
+  "pistons_per_bank": 3072,
+  "tagged_states": 27,
+  "observed_unique_transitions_checked": 39,
+  "reset": "4 favourable ticks, starting with the other bank, reset every initially idle piston that does not fire during the block.",
+  "ready_after_reset_lower": 3068,
+  "safe_window_ticks": 6128,
+  "complete_32_tick_epochs": 190,
+  "q_numerator": 2432187,
+  "q_denominator": 4194304,
+  "q": 0.579878568649292,
+  "per_tick_failure_bound_log2": -148.37368229733335,
+  "survival_horizon_ticks_log2": 140,
+  "survival_lower": 0.9969851170596199,
+  "expected_distance_lower_log2": 138.99564387342264,
+  "deterministic_guarantee": false
+}

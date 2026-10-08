@@ -1,0 +1,42 @@
+front: L=7 E=2 R=2: 7178 nodes, 4616 leaves, 3637 with LB<=7, 91.9s
+54 kinematic signatures
+LB 6 EST 6 (63 power plans) K4:mmww[PK52,So3] K5:wwmm[SK41] r0:mmww[SK53 on K40,K41]
+LB 6 EST 6 (209 power plans) K4:mmww[PK52,So3] K5:wwmm[PB20,SB21,SK41] B2:mmww[SK53]
+LB 6 EST 6 (62 power plans) K4:mmww[PK52,So3] K5:wwmm[SK41] r0:wmmw[PK53 on K41,K52]
+LB 5 EST 7 (80 power plans) K4:mmww[PK52,So3] K5:wwmm[PB20,SK41] B2:mmww[SK53] r0:wwmm[SB21 on K52,K53]
+LB 5 EST 7 (216 power plans) K4:mmww[PK52,So3] K5:wwmm[PB20,SK41] B2:mmww[PB32,SB33,SK53] B3:wwmm[SB21]
+LB 5 EST 7 (205 power plans) K4:mmww[PK52,So3] K5:wwmm[PB20,SK41] B2:mmww[SB33,SK53] B3:mwwm[PB21] M:B2+B3@0
+LB 5 EST 7 (20 power plans) K4:mmww[PK52,So3] K5:wwmm[SB21,SK41] B2:wmwm[] r0:wmmw[PK53 on B21,K52] M:B2+K5@3
+LB 6 EST 7 (100 power plans) K4:mmww[PK52,So3] K5:wwmm[PB20,SK41] B2:mmww[SK53] r0:mwwm[PB21 on B20,K53]
+LB 6 EST 7 (114 power plans) K4:mmww[PK52,So3] K5:wwmm[SB21,SK41] B2:wmmw[PK53] M:B2+K5@2
+LB 6 EST 7 (20 power plans) K4:mmww[PK52,So3] K5:wwmm[PB20,SB21,SK41] B2:mmww[] r0:mmww[SK53 on B20,B21]
+LB 6 EST 7 (20 power plans) K4:mmww[PK52,So3] K5:wwmm[PB20,SB21,SK41] B2:mmww[] r0:mmww[SK53 on B20,K41]
+LB 6 EST 7 (20 power plans) K4:mmww[PK52,So3] K5:wwmm[PB20,SB21,SK41] B2:mmww[] r0:mmww[SK53 on K40,B21]
+LB 6 EST 7 (216 power plans) K4:mmww[PK52,So3] K5:wwmm[SK41] B2:mmww[PB32,SB33,SK53] B3:wwmm[PB20,SB21]
+LB 6 EST 7 (214 power plans) K4:mmww[PK52,So3] K5:wwmm[SB21,SK41] B2:mmww[PB32,SB33,SK53] B3:wwmm[PB20]
+LB 6 EST 7 (13 power plans) K4:mmww[PK52,So3] K5:wwmm[SB21,SK41] B2:wmmw[] r0:wmmw[PK53 on B21,B22] M:B2+K5@2
+LB 6 EST 7 (13 power plans) K4:mmww[PK52,So3] K5:wwmm[SB21,SK41] B2:wmmw[] r0:wmmw[PK53 on B21,K52] M:B2+K5@2
+LB 7 EST 7 (16 power plans) K4:mmww[PK52,So3] K5:wwmm[PB20,SK41] B2:mwmw[] r0:mmww[SK53 on B20,K41] M:B2+K5@2
+LB 7 EST 7 (20 power plans) K4:mmww[PK52,So3] K5:wwmm[PB20,SK41] B2:mwwm[] r0:mmww[SK53 on B20,K41] M:B2+K5@3
+LB 7 EST 7 (16 power plans) K4:mmww[PK52,So3] K5:wwmm[PB20,SB21,SK41] B2:mmww[] r0:wmmw[PK53 on B21,K52]
+LB 7 EST 7 (42 power plans) K4:mmww[PK52,So3] K5:wwmm[PB20,SK41] B2:mmww[SK53] M:B2+K4@1
+LB 7 EST 7 (59 power plans) K4:mmww[PK52,So3] K5:wwmm[SK41] B2:wmmw[PK53] M:B2+K4@1,B2+K5@2
+LB 6 EST 8 (78 power plans) K4:mmww[PK52,So3] K5:wwmm[SB21,SK41] B2:mmww[SK53] r0:wmmw[SB20 on B21,K52]
+LB 6 EST 8 (80 power plans) K4:mmww[PK52,So3] K5:wwmm[SB21,SK41] B2:mmww[SK53] r0:wwmm[PB20 on K52,K53]
+LB 6 EST 8 (160 power plans) K4:mmww[PK52,So3] K5:wwmm[SK41] B2:mmww[SK53] B3:wwmm[PB20,SB21] M:B3+K5@2,B3+K5@3
+LB 6 EST 8 (160 power plans) K4:mmww[PK52,So3] K5:wwmm[SB21,SK41] B2:mmww[SK53] B3:wwmm[PB20] M:B3+K5@2,B3+K5@3
+LB 6 EST 8 (166 power plans) K4:mmww[PK52,So3] K5:wwmm[PB20,SK41] B2:mmww[SK53] B3:wwmm[SB21] M:B3+K5@2,B3+K5@3
+LB 6 EST 8 (166 power plans) K4:mmww[PK52,So3] K5:wwmm[PB20,SK41] B2:mmww[PB32,SK53] B3:wwmm[SB21] M:B3+K5@3
+LB 6 EST 8 (190 power plans) K4:mmww[PK52,So3] K5:wwmm[PB20,SK41] B2:mmww[SK53] B3:mwwm[PB21] M:B2+B3@0,B3+K5@3
+LB 6 EST 8 (41 power plans) K4:mmww[PK52,So3] K5:wwmm[SK41] B2:wmmw[PK53] r0:wwmm[SB21 on B22,K53] M:B2+K5@2
+LB 6 EST 8 (41 power plans) K4:mmww[PK52,So3] K5:wwmm[SK41] B2:wmmw[PK53] r0:wwmm[SB21 on K52,K53] M:B2+K5@2
+LB 7 EST 8 (6 power plans) K4:mmww[PK52,So3] K5:wwmm[PB20,SK41] B2:mmww[] r0:mmww[SK53 on B20,B21] M:B2+K4@1
+LB 7 EST 8 (6 power plans) K4:mmww[PK52,So3] K5:wwmm[PB20,SK41] B2:mmww[] r0:mmww[SK53 on B20,K41] M:B2+K4@1
+LB 7 EST 8 (6 power plans) K4:mmww[PK52,So3] K5:wwmm[SK41] B2:wmwm[] r0:mmww[SK53 on K40,B21] M:B2+K4@1,B2+K5@3
+LB 7 EST 8 (6 power plans) K4:mmww[PK52,So3] K5:wwmm[SB21,SK41] B2:wmwm[] r0:mmww[SK53 on K40,B21] M:B2+K5@3
+LB 7 EST 8 (6 power plans) K4:mmww[PK52,So3] K5:wwmm[SK41] B2:wmmw[] r0:mmww[SK53 on K40,B21] M:B2+K4@1,B2+K5@2
+LB 7 EST 8 (6 power plans) K4:mmww[PK52,So3] K5:wwmm[SB21,SK41] B2:wmmw[] r0:mmww[SK53 on K40,B21] M:B2+K5@2
+LB 7 EST 8 (6 power plans) K4:mmww[PK52,So3] K5:wwmm[PB20,SK41] B2:mmww[] r0:mmww[SK53 on K40,B21] M:B2+K4@1
+LB 7 EST 8 (12 power plans) K4:mmww[PK52,So3] K5:wwmm[SB21,SK41] B2:mmww[SK53] B3:wmmw[SB20] M:B2+B3@1,B3+K5@2
+LB 7 EST 8 (79 power plans) K4:mmww[PK52,So3] K5:wwmm[SB21,SK41] B2:mmww[PB32,SK53] B3:wmmw[SB20] M:B2+B3@1
+LB 7 EST 8 (94 power plans) K4:mmww[PK52,So3] K5:wwmm[SK41] B2:mmww[SB33,SK53] B3:wwmm[PB20,SB21] M:B3+K5@2
