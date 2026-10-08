@@ -1,5 +1,11 @@
 # 5 bps two-body handoff flyer: findings and limits
 
+## Verified counterexample to an order-independent guarantee
+
+The user explicitly required guaranteed 5bps and instructed stopping after a failed attempt. A single adverse-order verification of the delivered n16 flyer FAILED: 64 successful extension ticks, no powered pistons or new extensions at tick65, all remaining retractions complete by tick67, and the machine remains at rest through tick70. Evidence: `adverse_order_counterexample.txt`.
+
+The diagnostic rebuilds a TEMP copy of the current simulator and changes only chunk scheduling: on odd ticks, all Z0 chunks precede all Z1 chunks; on even ticks the reverse; X chunks within each group are sorted. Each is a legal whole-chunk permutation. Piston updates and movement mechanics remain unchanged. This supplies a counterexample under independently chosen/legal chunk orders, not a claimed RNG seed that realizes the entire sequence in the deterministic stock RNG. The single test disproves the all-order 5bps guarantee. Stop further construction/search as requested; no guaranteed flyer was delivered.
+
 ## Status
 
 A chunk-separated version flies at exactly 5 bps in the tested runs. A large-reserve candidate is saved. There is a **conditional reliability argument**, with an executable finite tagged-piston abstraction and exact rational probability calculation, giving an expected-distance lower bound about 2^138.996 under independent fair chunk orders and unbounded coordinates. This is **not yet an independently audited proof of the full simulator**, nor a proof for its deterministic 64-bit RNG. No deterministic forever guarantee has been found. Do not mark the original task fully solved without resolving those qualifications.

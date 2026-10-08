@@ -170,3 +170,5 @@ User clarification: begin with PL18 and one segment (possibly the segment after 
 
 2026-10-01/02 exclusive-roles task: see the 2026-10-02 (agent J) update above.
 
+2026-10-08 chunk-language follow-up: [CSL](CHUNK_LANGUAGE.md) now has five state categories and signed lag buckets retaining individual movement owners. [On-paper reasoning](CHUNK_LANGUAGE_REASONING.md) derives the two-block normal-pusher recovery cost, shows how a missed home stroke erases a pickup gain, and identifies owner concentration as an unresolved failure of a four-carrier redundancy graph. No simulations or new flyer; no guarantee claimed.
+

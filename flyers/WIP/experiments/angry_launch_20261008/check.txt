@@ -1,0 +1,28 @@
+tick 1: TickReport { powered_pistons: 3, chunks_ticked: 2, extension_attempts: 1, extensions_started: 0, extension_failures: 1, extensions_finished: 0, retractions_started: 0, retractions_finished: 1, blocks_moved: 0 }
+PASS: P became angry by failing against the extended sticky piston.
+tick 2: TickReport { powered_pistons: 3, chunks_ticked: 2, extension_attempts: 2, extensions_started: 1, extension_failures: 1, extensions_finished: 0, retractions_started: 0, retractions_finished: 0, blocks_moved: 3 }
+PASS: carrier moved angry P across Z chunk boundary.
+tick 3: TickReport { powered_pistons: 2, chunks_ticked: 2, extension_attempts: 1, extensions_started: 1, extension_failures: 0, extensions_finished: 1, retractions_started: 0, retractions_finished: 0, blocks_moved: 1 }
+PASS: released P launched the target in the same tick, without adjacent power.
+tick 4: TickReport { powered_pistons: 2, chunks_ticked: 2, extension_attempts: 0, extensions_started: 0, extension_failures: 0, extensions_finished: 1, retractions_started: 0, retractions_finished: 0, blocks_moved: 0 }
+tick 5: TickReport { powered_pistons: 2, chunks_ticked: 2, extension_attempts: 0, extensions_started: 0, extension_failures: 0, extensions_finished: 0, retractions_started: 1, retractions_finished: 0, blocks_moved: 0 }
+tick 6: TickReport { powered_pistons: 2, chunks_ticked: 2, extension_attempts: 0, extensions_started: 0, extension_failures: 0, extensions_finished: 0, retractions_started: 0, retractions_finished: 1, blocks_moved: 0 }
+Tick 1 · extend failed @ (0, 1, 0)
+Tick 1 · finish retraction @ (0, 2, 0)
+Tick 1 · idle @ (1, 1, 0)
+Tick 2 · extend failed @ (0, 1, 0)
+Tick 2 · extend @ (0, 2, 0)
+Tick 2 · idle @ (1, 1, 0)
+Tick 3 · finish extension @ (0, 2, 0)
+Tick 3 · idle @ (1, 1, 0)
+Tick 3 · extend @ (0, 1, 1)
+Tick 4 · idle @ (0, 2, 0)
+Tick 4 · idle @ (1, 1, 0)
+Tick 4 · finish extension @ (0, 1, 1)
+Tick 5 · idle @ (0, 2, 0)
+Tick 5 · idle @ (1, 1, 0)
+Tick 5 · retract @ (0, 1, 1)
+Tick 6 · idle @ (0, 2, 0)
+Tick 6 · idle @ (1, 1, 0)
+Tick 6 · finish retraction @ (0, 1, 1)
+PASS: one-shot mechanism. Not a self-propelled or sustained 5bps flyer.

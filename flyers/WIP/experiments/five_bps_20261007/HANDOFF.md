@@ -1,3 +1,5 @@
+LATEST: n16 fails the all-order guarantee. See the counterexample section in FINDINGS.md and adverse_order_counterexample.txt: first missing extension tick65, settled halt tick67. User requested stop after failure; no further search authorized in this attempt.
+
 Continue the 5 bps piston-handoff flyer task in C:/Users/Ruben/OneDrive/Documents/FastFlyerPlayground. Read flyers/WIP/experiments/five_bps_20261007/FINDINGS.md first, then proof_model.py, prove.py, proof.json, and generate.py. Skim SIMULATION.md and the central RESEARCH_LOG.md only as needed. Preserve other chats' uncommitted work. Do not modify the simulator to achieve a score.
 
 User target: a flyer based on their alternating slime/honey piston-bank concept that is mathematically guaranteed never to drop below 5 bps or halt; failing that, expected travel >2^128 blocks before first slowdown. Size/push limit unconstrained. Their original C:/Users/Ruben/Downloads/5bps_bug.flyer must not be saved/copied/banked; the new independent generator needs no input file.

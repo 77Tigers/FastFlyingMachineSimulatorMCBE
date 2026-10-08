@@ -1,0 +1,70 @@
+t=1 powered=64 starts=1 {(6, 0, 0, true): 31, (6, 1, 1, false): 1, (10, 1, 0, false): 32}
+t=2 powered=32 starts=1 {(6, 0, 0, false): 31, (6, 1, 2, false): 1, (10, 0, 0, true): 31, (10, 1, 1, false): 1}
+t=3 powered=31 starts=1 {(6, 0, 0, true): 30, (6, 1, 1, false): 1, (6, 2, 3, false): 1, (10, 1, 0, false): 31, (10, 2, 2, false): 1}
+t=4 powered=31 starts=1 {(6, 0, 0, false): 30, (6, 1, 2, false): 1, (6, 2, 0, false): 1, (10, 0, 0, true): 30, (10, 1, 1, false): 1, (10, 2, 3, false): 1}
+t=5 powered=30 starts=1 {(6, 0, 0, true): 29, (6, 1, 1, false): 1, (6, 2, 0, true): 1, (6, 2, 3, false): 1, (10, 1, 0, false): 30, (10, 2, 2, false): 1, (10, 3, 0, false): 1}
+t=6 powered=30 starts=1 {(6, 0, 0, false): 29, (6, 1, 2, false): 1, (6, 2, 0, false): 2, (10, 0, 0, true): 29, (10, 1, 1, false): 1, (10, 2, 0, true): 1, (10, 2, 3, false): 1}
+t=7 powered=29 starts=1 {(6, 0, 0, true): 28, (6, 1, 1, false): 1, (6, 2, 0, true): 2, (6, 2, 3, false): 1, (10, 1, 0, false): 29, (10, 2, 2, false): 1, (10, 3, 0, false): 2}
+t=8 powered=29 starts=1 {(6, 0, 0, false): 28, (6, 1, 2, false): 1, (6, 2, 0, false): 3, (10, 0, 0, true): 28, (10, 1, 1, false): 1, (10, 2, 0, true): 2, (10, 2, 3, false): 1}
+t=9 powered=28 starts=1 {(6, 0, 0, true): 27, (6, 1, 1, false): 1, (6, 2, 0, true): 3, (6, 2, 3, false): 1, (10, 1, 0, false): 28, (10, 2, 2, false): 1, (10, 3, 0, false): 3}
+t=10 powered=28 starts=1 {(6, 0, 0, false): 27, (6, 1, 2, false): 1, (6, 2, 0, false): 4, (10, 0, 0, true): 27, (10, 1, 1, false): 1, (10, 2, 0, true): 3, (10, 2, 3, false): 1}
+t=11 powered=27 starts=1 {(6, 0, 0, true): 26, (6, 1, 1, false): 1, (6, 2, 0, true): 4, (6, 2, 3, false): 1, (10, 1, 0, false): 27, (10, 2, 2, false): 1, (10, 3, 0, false): 4}
+t=12 powered=27 starts=1 {(6, 0, 0, false): 26, (6, 1, 2, false): 1, (6, 2, 0, false): 5, (10, 0, 0, true): 26, (10, 1, 1, false): 1, (10, 2, 0, true): 4, (10, 2, 3, false): 1}
+t=13 powered=26 starts=1 {(6, 0, 0, true): 25, (6, 1, 1, false): 1, (6, 2, 0, true): 5, (6, 2, 3, false): 1, (10, 1, 0, false): 26, (10, 2, 2, false): 1, (10, 3, 0, false): 5}
+t=14 powered=26 starts=1 {(6, 0, 0, false): 25, (6, 1, 2, false): 1, (6, 2, 0, false): 6, (10, 0, 0, true): 25, (10, 1, 1, false): 1, (10, 2, 0, true): 5, (10, 2, 3, false): 1}
+t=15 powered=25 starts=1 {(6, 0, 0, true): 24, (6, 1, 1, false): 1, (6, 2, 0, true): 6, (6, 2, 3, false): 1, (10, 1, 0, false): 25, (10, 2, 2, false): 1, (10, 3, 0, false): 6}
+t=16 powered=25 starts=1 {(6, 0, 0, false): 24, (6, 1, 2, false): 1, (6, 2, 0, false): 7, (10, 0, 0, true): 24, (10, 1, 1, false): 1, (10, 2, 0, true): 6, (10, 2, 3, false): 1}
+t=17 powered=24 starts=1 {(6, 0, 0, true): 23, (6, 1, 1, false): 1, (6, 2, 0, true): 7, (6, 2, 3, false): 1, (10, 1, 0, false): 24, (10, 2, 2, false): 1, (10, 3, 0, false): 7}
+t=18 powered=24 starts=1 {(6, 0, 0, false): 23, (6, 1, 2, false): 1, (6, 2, 0, false): 8, (10, 0, 0, true): 23, (10, 1, 1, false): 1, (10, 2, 0, true): 7, (10, 2, 3, false): 1}
+t=19 powered=23 starts=1 {(6, 0, 0, true): 22, (6, 1, 1, false): 1, (6, 2, 0, true): 8, (6, 2, 3, false): 1, (10, 1, 0, false): 23, (10, 2, 2, false): 1, (10, 3, 0, false): 8}
+t=20 powered=23 starts=1 {(6, 0, 0, false): 22, (6, 1, 2, false): 1, (6, 2, 0, false): 9, (10, 0, 0, true): 22, (10, 1, 1, false): 1, (10, 2, 0, true): 8, (10, 2, 3, false): 1}
+t=21 powered=22 starts=1 {(6, 0, 0, true): 21, (6, 1, 1, false): 1, (6, 2, 0, true): 9, (6, 2, 3, false): 1, (10, 1, 0, false): 22, (10, 2, 2, false): 1, (10, 3, 0, false): 9}
+t=22 powered=22 starts=1 {(6, 0, 0, false): 21, (6, 1, 2, false): 1, (6, 2, 0, false): 10, (10, 0, 0, true): 21, (10, 1, 1, false): 1, (10, 2, 0, true): 9, (10, 2, 3, false): 1}
+t=23 powered=21 starts=1 {(6, 0, 0, true): 20, (6, 1, 1, false): 1, (6, 2, 0, true): 10, (6, 2, 3, false): 1, (10, 1, 0, false): 21, (10, 2, 2, false): 1, (10, 3, 0, false): 10}
+t=24 powered=21 starts=1 {(6, 0, 0, false): 20, (6, 1, 2, false): 1, (6, 2, 0, false): 11, (10, 0, 0, true): 20, (10, 1, 1, false): 1, (10, 2, 0, true): 10, (10, 2, 3, false): 1}
+t=25 powered=20 starts=1 {(6, 0, 0, true): 19, (6, 1, 1, false): 1, (6, 2, 0, true): 11, (6, 2, 3, false): 1, (10, 1, 0, false): 20, (10, 2, 2, false): 1, (10, 3, 0, false): 11}
+t=26 powered=20 starts=1 {(6, 0, 0, false): 19, (6, 1, 2, false): 1, (6, 2, 0, false): 12, (10, 0, 0, true): 19, (10, 1, 1, false): 1, (10, 2, 0, true): 11, (10, 2, 3, false): 1}
+t=27 powered=19 starts=1 {(6, 0, 0, true): 18, (6, 1, 1, false): 1, (6, 2, 0, true): 12, (6, 2, 3, false): 1, (10, 1, 0, false): 19, (10, 2, 2, false): 1, (10, 3, 0, false): 12}
+t=28 powered=19 starts=1 {(6, 0, 0, false): 18, (6, 1, 2, false): 1, (6, 2, 0, false): 13, (10, 0, 0, true): 18, (10, 1, 1, false): 1, (10, 2, 0, true): 12, (10, 2, 3, false): 1}
+t=29 powered=18 starts=1 {(6, 0, 0, true): 17, (6, 1, 1, false): 1, (6, 2, 0, true): 13, (6, 2, 3, false): 1, (10, 1, 0, false): 18, (10, 2, 2, false): 1, (10, 3, 0, false): 13}
+t=30 powered=18 starts=1 {(6, 0, 0, false): 17, (6, 1, 2, false): 1, (6, 2, 0, false): 14, (10, 0, 0, true): 17, (10, 1, 1, false): 1, (10, 2, 0, true): 13, (10, 2, 3, false): 1}
+t=31 powered=17 starts=1 {(6, 0, 0, true): 16, (6, 1, 1, false): 1, (6, 2, 0, true): 14, (6, 2, 3, false): 1, (10, 1, 0, false): 17, (10, 2, 2, false): 1, (10, 3, 0, false): 14}
+t=32 powered=17 starts=1 {(6, 0, 0, false): 16, (6, 1, 2, false): 1, (6, 2, 0, false): 15, (10, 0, 0, true): 16, (10, 1, 1, false): 1, (10, 2, 0, true): 14, (10, 2, 3, false): 1}
+t=33 powered=16 starts=1 {(6, 0, 0, true): 15, (6, 1, 1, false): 1, (6, 2, 0, true): 15, (6, 2, 3, false): 1, (10, 1, 0, false): 16, (10, 2, 2, false): 1, (10, 3, 0, false): 15}
+t=34 powered=16 starts=1 {(6, 0, 0, false): 15, (6, 1, 2, false): 1, (6, 2, 0, false): 16, (10, 0, 0, true): 15, (10, 1, 1, false): 1, (10, 2, 0, true): 15, (10, 2, 3, false): 1}
+t=35 powered=15 starts=1 {(6, 0, 0, true): 14, (6, 1, 1, false): 1, (6, 2, 0, true): 16, (6, 2, 3, false): 1, (10, 1, 0, false): 15, (10, 2, 2, false): 1, (10, 3, 0, false): 16}
+t=36 powered=15 starts=1 {(6, 0, 0, false): 14, (6, 1, 2, false): 1, (6, 2, 0, false): 17, (10, 0, 0, true): 14, (10, 1, 1, false): 1, (10, 2, 0, true): 16, (10, 2, 3, false): 1}
+t=37 powered=14 starts=1 {(6, 0, 0, true): 13, (6, 1, 1, false): 1, (6, 2, 0, true): 17, (6, 2, 3, false): 1, (10, 1, 0, false): 14, (10, 2, 2, false): 1, (10, 3, 0, false): 17}
+t=38 powered=14 starts=1 {(6, 0, 0, false): 13, (6, 1, 2, false): 1, (6, 2, 0, false): 18, (10, 0, 0, true): 13, (10, 1, 1, false): 1, (10, 2, 0, true): 17, (10, 2, 3, false): 1}
+t=39 powered=13 starts=1 {(6, 0, 0, true): 12, (6, 1, 1, false): 1, (6, 2, 0, true): 18, (6, 2, 3, false): 1, (10, 1, 0, false): 13, (10, 2, 2, false): 1, (10, 3, 0, false): 18}
+t=40 powered=13 starts=1 {(6, 0, 0, false): 12, (6, 1, 2, false): 1, (6, 2, 0, false): 19, (10, 0, 0, true): 12, (10, 1, 1, false): 1, (10, 2, 0, true): 18, (10, 2, 3, false): 1}
+t=41 powered=12 starts=1 {(6, 0, 0, true): 11, (6, 1, 1, false): 1, (6, 2, 0, true): 19, (6, 2, 3, false): 1, (10, 1, 0, false): 12, (10, 2, 2, false): 1, (10, 3, 0, false): 19}
+t=42 powered=12 starts=1 {(6, 0, 0, false): 11, (6, 1, 2, false): 1, (6, 2, 0, false): 20, (10, 0, 0, true): 11, (10, 1, 1, false): 1, (10, 2, 0, true): 19, (10, 2, 3, false): 1}
+t=43 powered=11 starts=1 {(6, 0, 0, true): 10, (6, 1, 1, false): 1, (6, 2, 0, true): 20, (6, 2, 3, false): 1, (10, 1, 0, false): 11, (10, 2, 2, false): 1, (10, 3, 0, false): 20}
+t=44 powered=11 starts=1 {(6, 0, 0, false): 10, (6, 1, 2, false): 1, (6, 2, 0, false): 21, (10, 0, 0, true): 10, (10, 1, 1, false): 1, (10, 2, 0, true): 20, (10, 2, 3, false): 1}
+t=45 powered=10 starts=1 {(6, 0, 0, true): 9, (6, 1, 1, false): 1, (6, 2, 0, true): 21, (6, 2, 3, false): 1, (10, 1, 0, false): 10, (10, 2, 2, false): 1, (10, 3, 0, false): 21}
+t=46 powered=10 starts=1 {(6, 0, 0, false): 9, (6, 1, 2, false): 1, (6, 2, 0, false): 22, (10, 0, 0, true): 9, (10, 1, 1, false): 1, (10, 2, 0, true): 21, (10, 2, 3, false): 1}
+t=47 powered=9 starts=1 {(6, 0, 0, true): 8, (6, 1, 1, false): 1, (6, 2, 0, true): 22, (6, 2, 3, false): 1, (10, 1, 0, false): 9, (10, 2, 2, false): 1, (10, 3, 0, false): 22}
+t=48 powered=9 starts=1 {(6, 0, 0, false): 8, (6, 1, 2, false): 1, (6, 2, 0, false): 23, (10, 0, 0, true): 8, (10, 1, 1, false): 1, (10, 2, 0, true): 22, (10, 2, 3, false): 1}
+t=49 powered=8 starts=1 {(6, 0, 0, true): 7, (6, 1, 1, false): 1, (6, 2, 0, true): 23, (6, 2, 3, false): 1, (10, 1, 0, false): 8, (10, 2, 2, false): 1, (10, 3, 0, false): 23}
+t=50 powered=8 starts=1 {(6, 0, 0, false): 7, (6, 1, 2, false): 1, (6, 2, 0, false): 24, (10, 0, 0, true): 7, (10, 1, 1, false): 1, (10, 2, 0, true): 23, (10, 2, 3, false): 1}
+t=51 powered=7 starts=1 {(6, 0, 0, true): 6, (6, 1, 1, false): 1, (6, 2, 0, true): 24, (6, 2, 3, false): 1, (10, 1, 0, false): 7, (10, 2, 2, false): 1, (10, 3, 0, false): 24}
+t=52 powered=7 starts=1 {(6, 0, 0, false): 6, (6, 1, 2, false): 1, (6, 2, 0, false): 25, (10, 0, 0, true): 6, (10, 1, 1, false): 1, (10, 2, 0, true): 24, (10, 2, 3, false): 1}
+t=53 powered=6 starts=1 {(6, 0, 0, true): 5, (6, 1, 1, false): 1, (6, 2, 0, true): 25, (6, 2, 3, false): 1, (10, 1, 0, false): 6, (10, 2, 2, false): 1, (10, 3, 0, false): 25}
+t=54 powered=6 starts=1 {(6, 0, 0, false): 5, (6, 1, 2, false): 1, (6, 2, 0, false): 26, (10, 0, 0, true): 5, (10, 1, 1, false): 1, (10, 2, 0, true): 25, (10, 2, 3, false): 1}
+t=55 powered=5 starts=1 {(6, 0, 0, true): 4, (6, 1, 1, false): 1, (6, 2, 0, true): 26, (6, 2, 3, false): 1, (10, 1, 0, false): 5, (10, 2, 2, false): 1, (10, 3, 0, false): 26}
+t=56 powered=5 starts=1 {(6, 0, 0, false): 4, (6, 1, 2, false): 1, (6, 2, 0, false): 27, (10, 0, 0, true): 4, (10, 1, 1, false): 1, (10, 2, 0, true): 26, (10, 2, 3, false): 1}
+t=57 powered=4 starts=1 {(6, 0, 0, true): 3, (6, 1, 1, false): 1, (6, 2, 0, true): 27, (6, 2, 3, false): 1, (10, 1, 0, false): 4, (10, 2, 2, false): 1, (10, 3, 0, false): 27}
+t=58 powered=4 starts=1 {(6, 0, 0, false): 3, (6, 1, 2, false): 1, (6, 2, 0, false): 28, (10, 0, 0, true): 3, (10, 1, 1, false): 1, (10, 2, 0, true): 27, (10, 2, 3, false): 1}
+t=59 powered=3 starts=1 {(6, 0, 0, true): 2, (6, 1, 1, false): 1, (6, 2, 0, true): 28, (6, 2, 3, false): 1, (10, 1, 0, false): 3, (10, 2, 2, false): 1, (10, 3, 0, false): 28}
+t=60 powered=3 starts=1 {(6, 0, 0, false): 2, (6, 1, 2, false): 1, (6, 2, 0, false): 29, (10, 0, 0, true): 2, (10, 1, 1, false): 1, (10, 2, 0, true): 28, (10, 2, 3, false): 1}
+t=61 powered=2 starts=1 {(6, 0, 0, true): 1, (6, 1, 1, false): 1, (6, 2, 0, true): 29, (6, 2, 3, false): 1, (10, 1, 0, false): 2, (10, 2, 2, false): 1, (10, 3, 0, false): 29}
+t=62 powered=2 starts=1 {(6, 0, 0, false): 1, (6, 1, 2, false): 1, (6, 2, 0, false): 30, (10, 0, 0, true): 1, (10, 1, 1, false): 1, (10, 2, 0, true): 29, (10, 2, 3, false): 1}
+t=63 powered=1 starts=1 {(6, 1, 1, false): 1, (6, 2, 0, true): 30, (6, 2, 3, false): 1, (10, 1, 0, false): 1, (10, 2, 2, false): 1, (10, 3, 0, false): 30}
+t=64 powered=1 starts=1 {(6, 1, 2, false): 1, (6, 2, 0, false): 31, (10, 1, 1, false): 1, (10, 2, 0, true): 30, (10, 2, 3, false): 1}
+t=65 powered=0 starts=0 {(6, 1, 3, false): 1, (6, 2, 0, false): 31, (10, 1, 2, false): 1, (10, 2, 0, false): 31}
+t=66 powered=0 starts=0 {(6, 1, 0, false): 1, (6, 2, 0, false): 31, (10, 1, 3, false): 1, (10, 2, 0, false): 31}
+t=67 powered=0 starts=0 {(6, 1, 0, false): 1, (6, 2, 0, false): 31, (10, 1, 0, false): 1, (10, 2, 0, false): 31}
+t=68 powered=0 starts=0 {(6, 1, 0, false): 1, (6, 2, 0, false): 31, (10, 1, 0, false): 1, (10, 2, 0, false): 31}
+t=69 powered=0 starts=0 {(6, 1, 0, false): 1, (6, 2, 0, false): 31, (10, 1, 0, false): 1, (10, 2, 0, false): 31}
+t=70 powered=0 starts=0 {(6, 1, 0, false): 1, (6, 2, 0, false): 31, (10, 1, 0, false): 1, (10, 2, 0, false): 31}
