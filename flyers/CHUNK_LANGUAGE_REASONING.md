@@ -62,3 +62,32 @@ If lagged members of a particular group are split between X and U movement owner
 The missing invariant is owner diversity. With all-to-all contacts, one legal ordering lets the early odd starter run before the early finisher, then the late finisher run before the late odd starter. The late starter can collect both released cohorts, concentrating them under one owner. Counts at the same lag hide this failure; owner-tagged buckets expose it. Nor does a pickup alone guarantee a retained lag gain next tick.
 
 The next design question is therefore concrete: can asymmetric contacts or dedicated cohorts guarantee both retained catch-up and restoration of early/late movement owners, while replenishing each of the four groups' R0 inventory? Merely adding the second pair of segments is insufficient. Sticky pullers offer a separate lead because a prepared state-2 driver cannot be stolen as a side passenger, but their extension, power and position cycles still require closure.
+
+## Attempt: exclusive mirrored recovery lanes
+
+Concrete four-segment attempt, still granting the abstract contact and activation interfaces:
+
+```text
+chunk A: PX normal[n] push X; PY normal[n] push Y
+chunk B: PU normal[n] push U; PV normal[n] push V
+desired even starts: X, U
+desired odd starts:  Y, V
+
+X sticks PX[0..2], PV[1..2]
+U sticks PU[0..2], PY[1..2]
+Y sticks PY[0..2], PU[1..2]
+V sticks PV[0..2], PX[1..2]
+```
+
+The exclusive lanes prevent a common first collector from grabbing every group. However, they fail even under fixed A-before-B. Choose movement starters before finishers within a chunk when needed. Tag p from PX and q from PU that fire at tick 0. At tick 3 they finish their own retractions. A releases p before B's V stroke, which picks it up; B releases q after A's Y stroke, which misses it. Their repeating buckets are:
+
+| After tick | p (target X) | q (target U) |
+| --- | --- | --- |
+| 3 | M(V-driver), lag 1 | R, lag 2 |
+| 4 | R, lag 2 | M(U-driver), lag 2 |
+| 5 | M(V-driver), lag 1 | R, lag 2 |
+| 6 | R, lag 2 | M(U-driver), lag 2 |
+
+Here M names an actual driver of the indicated segment, not permanent ownership by a segment. X starts in A before the B-owned V passenger is released, erasing p's gain. U recaptures q on each even tick, preserving q's lag 2; the A-owned odd Y stroke never catches it. Both tagged pistons keep riding B-owned movements, on opposite phases. Neither returns to R0. Fresh spent members enter the same trap every two ticks, so any finite aligned inventory eventually drains. This remains a counterexample even if the Y/V strokes are granted indefinitely; closing their drivers cannot repair it.
+
+Result: this concrete mirrored design fails the abstract all-orders requirement. No working guaranteed design resulted from this attempt. The required repair is a recovery route that breaks the lag-1/lag-2 trap, including its phase and movement owner, rather than more copies of these lanes.

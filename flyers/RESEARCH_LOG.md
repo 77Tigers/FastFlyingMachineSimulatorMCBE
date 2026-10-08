@@ -172,3 +172,5 @@ User clarification: begin with PL18 and one segment (possibly the segment after 
 
 2026-10-08 chunk-language follow-up: [CSL](CHUNK_LANGUAGE.md) now has five state categories and signed lag buckets retaining individual movement owners. [On-paper reasoning](CHUNK_LANGUAGE_REASONING.md) derives the two-block normal-pusher recovery cost, shows how a missed home stroke erases a pickup gain, and identifies owner concentration as an unresolved failure of a four-carrier redundancy graph. No simulations or new flyer; no guarantee claimed.
 
+2026-10-08 closed-design attempt: exclusive mirrored pickup lanes on the four carriers also fail. Fixed A-before-B produces a repeating lag-1/lag-2 trap for spent PX members and lag-2 home rides for PU members, draining any finite aligned inventory. Full contact graph and tagged countertrace are appended to [the reasoning note](CHUNK_LANGUAGE_REASONING.md). This is a failed specific architecture, not a general impossibility proof. No simulation run or working guaranteed flyer produced.
+
