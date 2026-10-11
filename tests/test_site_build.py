@@ -50,10 +50,12 @@ class SiteBuildTests(unittest.TestCase):
             bank.mkdir(parents=True)
             for name in ("app.js", "index.html", "style.css", "flyer-io.js"):
                 shutil.copy2(build_site.VIEWER / name, viewer / name)
-            three = viewer / "node_modules/three/build"
-            three.mkdir(parents=True)
-            for name in ("three.module.js", "three.core.js"):
-                (three / name).write_text("// test dependency", encoding="utf-8")
+            shutil.copytree(build_site.VIEWER / build_site.MULTIPLAYER, viewer / build_site.MULTIPLAYER)
+            modules = viewer / "node_modules"
+            for source in build_site.VENDOR:
+                dependency = modules / source.replace("*", "index")
+                dependency.parent.mkdir(parents=True, exist_ok=True)
+                dependency.write_text('import "./utils.mjs";\n//# sourceMappingURL=index.mjs.map\n', encoding="utf-8")
             wasm = root / "target/wasm32-unknown-unknown/release/fastflyer.wasm"
             wasm.parent.mkdir(parents=True)
             wasm.write_bytes(b"test wasm")
@@ -86,6 +88,14 @@ class SiteBuildTests(unittest.TestCase):
             self.assertIn(f"bank.json?v={manifest_hash}", app)
             self.assertNotIn("__BANK_HASH__", app)
             self.assertNotIn("__IO_HASH__", app)
+            self.assertNotIn("__MP_HASH__", app)
+            for module in (dist / build_site.MULTIPLAYER).glob("*.js"):
+                self.assertNotIn("__MP_HASH__", module.read_text(encoding="utf-8"))
+            self.assertFalse(list((dist / build_site.MULTIPLAYER).glob("*.test.js")))
+            # Vendored .mjs modules are served as .js with matching relative imports.
+            core = (dist / "vendor/trystero-core/index.js").read_text(encoding="utf-8")
+            self.assertIn('import "./utils.js";', core)
+            self.assertNotIn("sourceMappingURL", core)
             self.assertNotEqual(old_app, app)
             self.assertNotEqual(old_html, (dist / "index.html").read_text(encoding="utf-8"))
             self.assertEqual(path.read_bytes(), (dist / entry["path"]).read_bytes())

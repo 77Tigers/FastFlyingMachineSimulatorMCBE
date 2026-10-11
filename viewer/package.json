@@ -3,7 +3,11 @@
   "name": "fastflyer-viewer",
   "version": "0.1.0",
   "type": "module",
+  "scripts": {
+    "test": "node --test \"multiplayer/*.test.js\""
+  },
   "dependencies": {
+    "@trystero-p2p/nostr": "0.25.4",
     "three": "0.180.0"
   }
 }

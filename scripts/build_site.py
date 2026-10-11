@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 from hashlib import sha256
 from pathlib import Path
 import shutil
@@ -14,6 +15,15 @@ from fastflyer import Block, Flyer, Kind
 from scripts.update_bank import engine_fingerprint
 
 VIEWER = ROOT / "viewer"
+MULTIPLAYER = "multiplayer"
+# Browser copies of npm packages, as {node_modules source: dist/vendor destination}.
+VENDOR = {
+    "three/build/three.module.js": "three.module.js",
+    "three/build/three.core.js": "three.core.js",
+    "@trystero-p2p/nostr/dist/index.mjs": "trystero-nostr/index.js",
+    "@trystero-p2p/core/dist/*.mjs": "trystero-core/",
+    "@noble/secp256k1/index.js": "noble-secp256k1/index.js",
+}
 DIST = ROOT / "dist"
 BANK = ROOT / "flyers" / "bank"
 
@@ -36,6 +46,19 @@ def copy(source: Path, destination: Path) -> None:
     shutil.copy2(source, destination)
 
 
+def copy_module(source: Path, destination: Path) -> None:
+    """Vendor an ES module as .js: some static servers send .mjs as text/plain,
+    which browsers refuse to run. Relative .mjs imports are renamed to match."""
+    if source.suffix != ".mjs":
+        copy(source, destination)
+        return
+    text = source.read_text(encoding="utf-8")
+    text = re.sub(r"""(["'])(\.{1,2}/[^"']+)\.mjs\1""", r"\1\2.js\1", text)
+    text = re.sub(r"^//# sourceMappingURL=.*$", "", text, flags=re.M)
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    destination.with_suffix(".js").write_text(text, encoding="utf-8")
+
+
 def main() -> None:
     wasm = ROOT / "target" / "wasm32-unknown-unknown" / "release" / "fastflyer.wasm"
     if not wasm.is_file():
@@ -45,9 +68,26 @@ def main() -> None:
         copy(VIEWER / filename, DIST / filename)
     copy(wasm, DIST / "fastflyer.wasm")
     digest = lambda path: sha256(path.read_bytes()).hexdigest()[:12]
-    three = VIEWER / "node_modules" / "three"
-    copy(three / "build" / "three.module.js", DIST / "vendor" / "three.module.js")
-    copy(three / "build" / "three.core.js", DIST / "vendor" / "three.core.js")
+    modules = VIEWER / "node_modules"
+    for source, destination in VENDOR.items():
+        if destination.endswith("/"):
+            matches = sorted(modules.glob(source))
+            if not matches:
+                raise SystemExit(f"Missing browser dependency {source}: run npm ci --prefix viewer")
+            for match in matches:
+                copy_module(match, DIST / "vendor" / destination / match.name)
+        else:
+            copy_module(modules / source, DIST / "vendor" / destination)
+    # Multiplayer modules import each other with ?v=__MP_HASH__, so one hash of
+    # the whole folder busts every cached module together.
+    multiplayer_sources = sorted(path for path in (VIEWER / MULTIPLAYER).glob("*.js")
+                                 if not path.name.endswith(".test.js"))
+    multiplayer_hash = sha256(b"".join(path.read_bytes() for path in multiplayer_sources)).hexdigest()[:12]
+    shutil.rmtree(DIST / MULTIPLAYER, ignore_errors=True)
+    for path in multiplayer_sources:
+        target = DIST / MULTIPLAYER / path.name
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_text(path.read_text(encoding="utf-8").replace("__MP_HASH__", multiplayer_hash), encoding="utf-8")
 
     demo = Flyer(rng_state=2)
     demo.set((0, 0, 0), Block.piston(0))
@@ -92,7 +132,8 @@ def main() -> None:
     app.write_text(app.read_text(encoding="utf-8")
         .replace("__WASM_HASH__", digest(wasm))
         .replace("__BANK_HASH__", digest(DIST / "bank.json"))
-        .replace("__IO_HASH__", digest(DIST / "flyer-io.js")), encoding="utf-8")
+        .replace("__IO_HASH__", digest(DIST / "flyer-io.js"))
+        .replace("__MP_HASH__", multiplayer_hash), encoding="utf-8")
     html = DIST / "index.html"
     html.write_text(html.read_text(encoding="utf-8")
         .replace("__STYLE_HASH__", digest(DIST / "style.css"))

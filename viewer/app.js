@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 
 import {parseFlyer,serializeFlyer} from './flyer-io.js?v=__IO_HASH__';
+import {setupMultiplayer} from './multiplayer/ui.js?v=__MP_HASH__';
 
 let wasm;
 const utf8 = new TextDecoder();
@@ -292,6 +293,14 @@ let selected = null, playing = false, playingBeforeEdit = false, direction = 1, 
 let loadedBaseline=null;
 let sourceOrigin=[0,0,0],editorMode='view',editFlyer=null,selectedSlot=1;
 let recentDbPromise=null,recentWrite=Promise.resolve(),restoringRecent=false;
+// Multiplayer: 'solo', 'host' or 'guest'. Joining as a guest turns autosave off
+// for the rest of the page's life so it never overwrites the guest's own flyer.
+let multiplayerRole='solo',autosaveEnabled=true;
+const isGuest=()=>multiplayerRole==='guest';
+const appEvents=new EventTarget();
+const emitApp=name=>appEvents.dispatchEvent(new Event(name));
+const frameHooks=new Set();
+let openChat=null;
 function recentDb(){
   if(!('indexedDB' in window))return Promise.reject(Error('IndexedDB is unavailable'));
   if(!recentDbPromise)recentDbPromise=new Promise((resolve,reject)=>{
@@ -325,7 +334,7 @@ async function writeRecentFlyer(snapshot){
   });
 }
 function rememberFlyer(){
-  if(restoringRecent||!sourceBytes)return;
+  if(!autosaveEnabled||restoringRecent||!sourceBytes)return;
   const snapshot={bytes:sourceBytes.slice(),title:sourceTitle,origin:[...sourceOrigin],
     baseline:loadedBaseline?{bytes:loadedBaseline.bytes.slice(),origin:[...loadedBaseline.origin]}:null,
     mode:editorMode,slot:selectedSlot};
@@ -1167,6 +1176,44 @@ function setMode(mode) {
   $('viewport-label').hidden=mode!=='detailed';
   if(trace)showBoundary(tickIndex);
 }
+// Following a multiplayer host: jump to its tick. Short jumps happen at once;
+// long ones simulate a slice per frame (see processSeek) to stay responsive.
+let seekTarget=null;
+function seekTo(target){
+  if(!trace||editorMode==='edit')return;
+  if(entry(target)){seekTarget=null;showBoundary(target);return;}
+  if(target<history[0].tick){
+    const wasPlaying=playing;restartFromSource();
+    if(wasPlaying)startPlayback();
+  }
+  seekTarget=target;
+}
+function processSeek(){
+  if(seekTarget===null)return false;
+  const deadline=performance.now()+12;
+  try{while(tickIndex<seekTarget&&performance.now()<deadline)advanceTick(1,false);}
+  catch(error){seekTarget=null;showError(error);stopPlayback();return false;}
+  if(tickIndex>=seekTarget){const target=seekTarget;seekTarget=null;playbackAccumulator=0;showBoundary(target);}
+  else $('step-counter').textContent=`Syncing with host… tick ${tickIndex} of ${seekTarget}`;
+  return true;
+}
+function followPlayback(state){
+  if(!trace||editorMode==='edit')return;
+  if(state.direction!==direction)setPlaybackDirection(state.direction);
+  if(Number($('speed').value)!==state.speed){$('speed').value=String(state.speed);updateSpeedLabel();}
+  if(!state.playing&&playing)stopPlayback();
+  // While both play, small drift is expected from latency; only correct real gaps.
+  const slack=state.playing?Math.max(3,Math.ceil(4*playbackSpeed())):0;
+  const partial=detailTrace&&stepIndex>0&&stepIndex<detailTrace.steps.length;
+  if(Math.abs((seekTarget??tickIndex)-state.tick)>slack||(!state.playing&&partial))seekTo(state.tick);
+  if(state.playing&&!playing)startPlayback();
+}
+// Manual playback input. Cancels any sync in progress; a guest stops following.
+function userPlayback(){seekTarget=null;emitApp('user-playback');}
+function startPlayback(){
+  playing=true;playbackAccumulator=0;
+  $('play').textContent='Ⅱ';$('play').setAttribute('aria-label','Pause');
+}
 function stopPlayback() {
   playing=false;playbackAccumulator=0;$('play').textContent='▶';$('play').setAttribute('aria-label','Play');
   // A paused in-flight state is displayed at its midpoint, not at its destination.
@@ -1214,6 +1261,13 @@ function installFlyer(bytes,title,origin=[0,0,0],preserveCamera=false) {
   $('status').textContent='';$('status').classList.remove('error');
   $('export').disabled=false;
   stopPlayback();if(!preserveCamera)frameCamera();render();followAnchor.copy(flyerMiddle);followVelocity.set(0,0,0);
+  emitApp('flyer');
+}
+// Back to tick 0 of the same design, keeping a following camera in place.
+function restartFromSource(){
+  const previousMiddle=flyerMiddle.clone();
+  installFlyer(sourceBytes,sourceTitle,sourceOrigin,true);
+  if($('follow-flyer').checked)camera.position.x+=flyerMiddle.x-previousMiddle.x;
 }
 const paletteSlots=[
   {slot:1,kind:9,sticky:false,label:'Piston'},
@@ -1273,14 +1327,13 @@ function selectSlot(slot){
   rememberFlyer();
 }
 selectSlot(1);
-function setEditorMode(mode){
-  if(editorMode===mode||!sourceBytes)return;
+// Guests follow the host's mode; only `remote` calls may change theirs.
+function setEditorMode(mode,{remote=false}={}){
+  if(editorMode===mode||!sourceBytes||(isGuest()&&!remote))return;
   if(mode==='edit')playingBeforeEdit=playing;
-  stopPlayback();
+  stopPlayback();seekTarget=null;
   if(mode==='edit'){
-    const previousX=flyerMiddle.x;
-    installFlyer(sourceBytes,sourceTitle,sourceOrigin,true);
-    if($('follow-flyer').checked)camera.position.x+=flyerMiddle.x-previousX;
+    restartFromSource();
     if(playbackMode!=='ticks')setMode('ticks');
   }
   editorMode=mode;
@@ -1291,7 +1344,7 @@ function setEditorMode(mode){
     $('mode-'+choice).setAttribute('aria-pressed',String(active));
   }
   $('edit-hotbar').hidden=mode!=='edit';
-  $('push-limit').disabled=mode!=='edit';
+  $('push-limit').disabled=mode!=='edit'||isGuest();
   if(mode==='edit')$('push-limit').removeAttribute('aria-description');
   else $('push-limit').setAttribute('aria-description','Enter Edit mode to change the push limit');
   $('inspector-section').hidden=mode==='edit';
@@ -1301,6 +1354,7 @@ function setEditorMode(mode){
   if(mode==='view')hoverOutline.visible=false;
   render();
   rememberFlyer();
+  emitApp('mode');
 }
 function saveEditedFlyer(){
   const {bytes,shift}=serializeFlyer(editFlyer);
@@ -1308,25 +1362,18 @@ function saveEditedFlyer(){
   setFlyerLink(null);
   rememberFlyer();
 }
-function editCell(pos,cell){
+function removeCell(pos){
   if(!editFlyer)return;
   const id=key(pos),previous=new Map(editFlyer.cells),previousLists=new Map(editFlyer.pistonLists);
+  if(!editFlyer.cells.has(id))return;
   try{
-    if(cell===null){
-      const owned=editFlyer.pistonLists.get(id)||[];
-      for(const member of owned)if(editFlyer.cells.has(member))
-        editFlyer.cells.set(member,editFlyer.cells.get(member)&~16);
-      editFlyer.cells.delete(id);editFlyer.pistonLists.delete(id);
-      for(const [owner,members] of editFlyer.pistonLists){
-        const remaining=members.filter(member=>member!==id);
-        if(remaining.length)editFlyer.pistonLists.set(owner,remaining);else editFlyer.pistonLists.delete(owner);
-      }
-    }else{
-      if(editFlyer.cells.has(id)){
-        $('status').textContent='That cell is occupied; left-click to remove its block first.';
-        $('status').classList.remove('error');return;
-      }
-      editFlyer.cells.set(id,cell);
+    const owned=editFlyer.pistonLists.get(id)||[];
+    for(const member of owned)if(editFlyer.cells.has(member))
+      editFlyer.cells.set(member,editFlyer.cells.get(member)&~16);
+    editFlyer.cells.delete(id);editFlyer.pistonLists.delete(id);
+    for(const [owner,members] of editFlyer.pistonLists){
+      const remaining=members.filter(member=>member!==id);
+      if(remaining.length)editFlyer.pistonLists.set(owner,remaining);else editFlyer.pistonLists.delete(owner);
     }
     saveEditedFlyer();
   }catch(error){editFlyer.cells=previous;editFlyer.pistonLists=previousLists;showError(error);}
@@ -1368,12 +1415,12 @@ function finishRename(save){
       input.setCustomValidity('Use a name of up to 80 characters without file-path punctuation.');
       input.reportValidity();return;
     }
-    sourceTitle=candidate;$('run-title').textContent=candidate;rememberFlyer();
+    sourceTitle=candidate;$('run-title').textContent=candidate;rememberFlyer();emitApp('flyer');
   }
   input.hidden=true;$('run-title').hidden=false;
 }
 $('run-title').onclick=()=>{
-  if(!sourceBytes)return;
+  if(!sourceBytes||isGuest())return;
   $('rename-input').value=sourceTitle;$('rename-input').setCustomValidity('');
   $('run-title').hidden=true;$('rename-input').hidden=false;
   $('rename-input').focus();$('rename-input').select();
@@ -1551,7 +1598,7 @@ async function loadBank() {
   for(const id of ['bank-min','bank-max','bank-sort','filter-frontier',...filterTags.map(([id])=>id)])$(id).onchange=update;
   $('bank-search').oninput=update;
   $('bank-clear').onclick=()=>{resetRange();$('bank-search').value='';$('filter-frontier').checked=false;for(const [id] of filterTags)$(id).checked=false;update();};
-  update();$('open-bank').disabled=false;
+  update();$('open-bank').disabled=isGuest();
   return items;
 }
 $('open-bank').disabled=true;
@@ -1603,10 +1650,10 @@ $('cancel-new').onclick=()=>$('new-confirm').close();
 $('confirm-new').onclick=()=>{$('new-confirm').close();createNewFlyer();};
 $('reset').onclick=()=>{
   if(!sourceBytes||editorMode==='edit')return;
-  const wasPlaying=playing,previousMiddle=flyerMiddle.clone();
-  installFlyer(sourceBytes,sourceTitle,sourceOrigin,true);
-  if($('follow-flyer').checked)camera.position.x+=flyerMiddle.x-previousMiddle.x;
-  if(wasPlaying){playing=true;$('play').textContent='Ⅱ';$('play').setAttribute('aria-label','Pause');}
+  userPlayback();
+  const wasPlaying=playing;
+  restartFromSource();
+  if(wasPlaying)startPlayback();
 };
 function setPlaybackDirection(value){
   direction=value;
@@ -1615,9 +1662,10 @@ function setPlaybackDirection(value){
   $('step').textContent=direction>0?'›':'‹';
   $('step').setAttribute('aria-label',`Step ${direction>0?'forward':'backward'}`);
 }
-$('direction').onclick=()=>{if(editorMode==='view')setPlaybackDirection(-direction);};
-$('step').onclick=()=>{if(editorMode==='view')advance(direction);};
-$('speed').oninput=()=>{const label=`${playbackSpeed()}×`;$('speed-label').textContent=label;$('speed').setAttribute('aria-valuetext',label);};
+$('direction').onclick=()=>{if(editorMode==='view'){userPlayback();setPlaybackDirection(-direction);}};
+$('step').onclick=()=>{if(editorMode==='view'){userPlayback();advance(direction);}};
+function updateSpeedLabel(){const label=`${playbackSpeed()}×`;$('speed-label').textContent=label;$('speed').setAttribute('aria-valuetext',label);}
+$('speed').oninput=event=>{updateSpeedLabel();if(event.isTrusted)userPlayback();};
 $('player-speed').oninput=()=>{const label=multiplier(playerSpeed()/playerSpeedStops[5]);$('player-speed-label').textContent=label;$('player-speed').setAttribute('aria-valuetext',label);};
 $('sensitivity').oninput=()=>{const label=multiplier(mouseSensitivity()/(.015*sensitivityStops[6]));$('sensitivity-label').textContent=label;$('sensitivity').setAttribute('aria-valuetext',label);};
 $('rotate-speed').oninput=()=>{const label=multiplier(rotateSpeed());$('rotate-speed-label').textContent=label;$('rotate-speed').setAttribute('aria-valuetext',label);};
@@ -1646,10 +1694,9 @@ for(const choice of ['view','edit'])$('mode-'+choice).onclick=()=>setEditorMode(
 function togglePlayback(){
   if(!trace||editorMode==='edit')return;
   if(playing){stopPlayback();return;}
-  playing=true;playbackAccumulator=0;
-  $('play').textContent='Ⅱ';$('play').setAttribute('aria-label','Pause');
+  startPlayback();
 }
-$('play').onclick=togglePlayback;
+$('play').onclick=()=>{userPlayback();togglePlayback();};
 for(const id of ['slice-x-on','slice-y-on','slice-z-on','slice-x','slice-y','slice-z'])$(id).addEventListener('input',render);
 $('show-floor').addEventListener('change',()=>{if(ground)ground.visible=$('show-floor').checked;});
 let drag=null;
@@ -1799,14 +1846,14 @@ function updatePlacementPreview(){
   const plan=placementPlan(editGesture);
   showPlacementPreview(plan.positions,plan.cell,editGesture.rowPlace&&editGesture.axis!==null);
 }
-function placePlannedBlocks(plan){
-  if(!editFlyer||!plan.positions.length)return;
+function placeCells(positions,cell){
+  if(!editFlyer||!positions.length)return;
   const before=new Map(editFlyer.cells);
   try{
     let placed=0;
-    for(const pos of plan.positions){
+    for(const pos of positions){
       const id=key(pos);if(editFlyer.cells.has(id))break;
-      editFlyer.cells.set(id,plan.cell);placed++;
+      editFlyer.cells.set(id,cell);placed++;
     }
     if(placed)saveEditedFlyer();
   }catch(error){editFlyer.cells=before;showError(error);}
@@ -1823,7 +1870,11 @@ function pickBlockAtAim(event=lastPointer){
 function cycleStateAtAim(event=lastPointer){
   if(!event||editorMode!=='edit'||!editFlyer)return;
   const target=hitAt(event,EDIT_REACH);if(!target)return;
-  const id=key(target.pos),cell=editFlyer.cells.get(id);
+  if(editFlyer.cells.has(key(target.pos)))edits.cycle(target.pos);
+}
+// Returns a notice for the player when the change is not possible.
+function cycleState(pos){
+  const id=key(pos),cell=editFlyer?.cells.get(id);
   if(cell===undefined)return;
   const block=decode(cell);
   if(block.kind===7){
@@ -1833,15 +1884,12 @@ function cycleStateAtAim(event=lastPointer){
   }
   if(block.kind!==9)return;
   const nextState=(block.state+1)%4;
-  const front=target.pos.map((value,i)=>value+directions[block.direction][i]);
+  const front=pos.map((value,i)=>value+directions[block.direction][i]);
   const frontId=key(front),frontCell=editFlyer.cells.get(frontId);
-  if(block.state===0&&frontCell!==undefined){
-    $('status').textContent='Cannot extend: the cell in front is occupied.';
-    $('status').classList.remove('error');return;
-  }
+  if(block.state===0&&frontCell!==undefined)return 'Cannot extend: the cell in front is occupied.';
   editFlyer.cells.set(id,(cell&~(3<<10))|(nextState<<10));
   if(block.state===0)editFlyer.cells.set(frontId,10);
-  const ownArm=(trace.initial_arms||[]).some(([pos,facing])=>key(pos)===frontId&&facing===block.direction);
+  const ownArm=(trace.initial_arms||[]).some(([armPos,facing])=>key(armPos)===frontId&&facing===block.direction);
   if(block.state===2&&frontCell!==undefined&&(frontCell&15)===10&&ownArm)editFlyer.cells.delete(frontId);
   try{saveEditedFlyer();}
   catch(error){
@@ -1849,6 +1897,31 @@ function cycleStateAtAim(event=lastPointer){
     if(frontCell===undefined)editFlyer.cells.delete(frontId);else editFlyer.cells.set(frontId,frontCell);
     showError(error);
   }
+}
+// Every player edit goes through `edits`. Solo and host apply locally; a
+// multiplayer guest swaps in a relay that asks the host instead.
+const localEdits={
+  place:placeCells,
+  remove:removeCell,
+  cycle(pos){
+    const notice=cycleState(pos);
+    if(notice){$('status').textContent=notice;$('status').classList.remove('error');}
+  },
+};
+let edits=localEdits;
+// Only what the hotbar can produce: kinds 1–9, a facing for directional blocks,
+// and stickiness for pistons.
+function validPlacementCell(cell){
+  const kind=cell&15,facing=(cell>>5)&7,sticky=!!(cell&256);
+  if(kind<1||kind>9||(cell&~(15|256|(7<<5))))return false;
+  if(sticky&&kind!==9)return false;
+  return [7,8,9].includes(kind)?facing<=5:facing===0;
+}
+function applyRemoteEdit(op){
+  if(editorMode!=='edit'||!editFlyer)return;
+  if(op.op==='place'&&validPlacementCell(op.cell))placeCells(op.positions,op.cell);
+  else if(op.op==='remove')removeCell(op.pos);
+  else if(op.op==='cycle')cycleState(op.pos);
 }
 let displayFocused=false;
 const heldKeys=new Set();
@@ -1872,7 +1945,7 @@ function breakAtAim(event){
   if(!editFlyer?.cells.has(id))return;
   editGesture.lastBreakAt=now;
   editGesture.aimMoved=false;
-  editCell(target.pos,null);
+  edits.remove(target.pos);
 }
 renderer.domElement.addEventListener('pointerdown',event=>{
   if(![0,1,2].includes(event.button))return;
@@ -1948,9 +2021,9 @@ renderer.domElement.addEventListener('pointerup',event=>{
     const {button,target,dx,dy,fullscreenBreak}=editGesture;
     const plan=button===2?placementPlan(editGesture):null;
     editGesture=null;drag=null;clearPlacementPreview();
-    if(button===2){placePlannedBlocks(plan);return;}
+    if(button===2){if(plan.positions.length)edits.place(plan.positions,plan.cell);return;}
     if(!target)return;
-    if(button===0){if(!fullscreenBreak&&Math.hypot(dx,dy)<=5)editCell(target.pos,null);return;}
+    if(button===0){if(!fullscreenBreak&&Math.hypot(dx,dy)<=5)edits.remove(target.pos);return;}
     return;
   }
   if(document.fullscreenElement===$('viewport'))return;
@@ -1973,6 +2046,9 @@ async function toggleFullscreen(){
   if(document.fullscreenElement===$('viewport')){await document.exitFullscreen();return;}
   try{
     await $('viewport').requestFullscreen();
+    // Where supported (Chromium), Esc reaches the page, so the first press can
+    // close chat; a second press (handled in keydown) leaves fullscreen.
+    navigator.keyboard?.lock?.(['Escape']).catch(()=>{});
     try{await capturePointer();}catch{/* A later canvas click can retry pointer lock. */}
   }catch(error){
     showError(Error(`Could not enter fullscreen: ${error.message}`));
@@ -1986,6 +2062,7 @@ document.addEventListener('fullscreenchange',()=>{
     setDisplayFocused(true);renderer.domElement.focus({preventScroll:true});
   }
   else{
+    navigator.keyboard?.unlock?.();
     recaptureButton=null;
     editGesture=null;clearPlacementPreview();
     if(document.pointerLockElement===renderer.domElement)document.exitPointerLock();
@@ -2008,7 +2085,7 @@ renderer.domElement.addEventListener('wheel',event=>{
   const step=Math.max(.8,distance*.08);
   camera.position.addScaledVector(forward,-Math.sign(event.deltaY)*step);
 },{passive:false});
-const playbackControls=new Set(['reset','direction','step','play','speed','player-speed','sensitivity','follow-flyer','mode-ticks','mode-detailed','mode-view','mode-edit']);
+const playbackControls=new Set(['reset','direction','step','play','speed','player-speed','sensitivity','follow-flyer','follow-host','mode-ticks','mode-detailed','mode-view','mode-edit']);
 document.addEventListener('pointerdown',event=>{
   if(event.target===renderer.domElement||playbackControls.has(event.target.id)||event.target.closest('.navigation-panel, .edit-hotbar'))return;
   setDisplayFocused(false);renderer.domElement.blur();
@@ -2019,7 +2096,7 @@ window.addEventListener('keydown',event=>{
   }
   if($('bank-dialog').open||$('help-dialog').open)return;
   if(event.target instanceof HTMLElement&&(event.target.matches('input, textarea, select')||event.target.isContentEditable))return;
-  if(event.key==='Enter'&&displayFocused){event.preventDefault();if(!event.repeat)toggleFullscreen();return;}
+  if(event.key==='Enter'){if(!event.repeat&&openChat?.())event.preventDefault();return;}
   if(event.key.toLowerCase()==='x'){event.preventDefault();if(!event.repeat){
     if(editorMode==='edit'){
       setEditorMode('view');
@@ -2029,12 +2106,15 @@ window.addEventListener('keydown',event=>{
   if(editorMode==='edit'&&/^[0-9]$/.test(event.key)){event.preventDefault();selectSlot(Number(event.key));return;}
   if(editorMode==='edit'&&event.key.toLowerCase()==='z'){event.preventDefault();pickBlockAtAim();return;}
   if(editorMode==='edit'&&event.key.toLowerCase()==='t'){event.preventDefault();if(!event.repeat)cycleStateAtAim();return;}
-  if(event.key==='ArrowRight'){event.preventDefault();advance(1);return;}
-  if(event.key==='ArrowLeft'){event.preventDefault();advance(-1);return;}
+  if(event.key==='ArrowRight'||event.key==='ArrowLeft'){
+    event.preventDefault();if(editorMode==='edit')return;
+    userPlayback();advance(event.key==='ArrowRight'?1:-1);return;
+  }
   const keyName=event.key.toLowerCase();
-  if(keyName==='k'){event.preventDefault();if(!event.repeat)togglePlayback();return;}
+  if(keyName==='k'){event.preventDefault();if(!event.repeat&&editorMode==='view'){userPlayback();togglePlayback();}return;}
   if(keyName==='j'||keyName==='l'){
     event.preventDefault();if(editorMode==='edit')return;
+    userPlayback();
     const stepDirection=keyName==='j'?-1:1;
     setPlaybackDirection(stepDirection);advance(stepDirection);return;
   }
@@ -2130,7 +2210,8 @@ function updateFrontOutlines(){
 function animate(now){
   requestAnimationFrame(animate);
   const dt=Math.min((now-lastFrame)/1000,.1);lastFrame=now;
-  if(playing&&trace&&!$('bank-dialog').open&&!$('help-dialog').open){
+  if(processSeek()){/* Catching up to the host replaces normal playback this frame. */}
+  else if(playing&&trace&&!$('bank-dialog').open&&!$('help-dialog').open){
     playbackAccumulator+=dt*10*playbackSpeed();
     let count=Math.min(Math.floor(playbackAccumulator),100);
     if(count){
@@ -2156,54 +2237,112 @@ function animate(now){
   if(editGesture?.fullscreenBreak)breakAtAim(lastPointer);
   updateFrontOutlines();
   placePistonLabels();
+  // Add-ons (multiplayer) must never stop the scene from rendering.
+  for(const hook of frameHooks){try{hook(now);}catch(error){console.error('Frame hook failed',error);}}
   sky.position.copy(camera.position);
   if(ground){ground.position.x=camera.position.x;ground.position.z=camera.position.z;}
   renderer.render(scene,camera);
 }
 requestAnimationFrame(animate);
+// Guests may not load, rename or re-limit flyers, nor switch modes themselves.
+const hostOnlyControls=['new-flyer','open-bank','file','mode-view','mode-edit'];
+function setMultiplayerRole(role){
+  multiplayerRole=role;
+  if(role==='guest')autosaveEnabled=false;
+  for(const id of hostOnlyControls)$(id).disabled=role==='guest'||(id==='open-bank'&&!bankLoaded);
+  $('file').closest('label').classList.toggle('disabled',role==='guest');
+  $('push-limit').disabled=editorMode!=='edit'||role==='guest';
+  $('run-title').title=role==='guest'?'Only the host can rename the flyer':'Click to rename flyer';
+  if(role==='guest'&&$('rename-input').hidden===false)finishRename(false);
+}
+function projectToScreen(position){
+  const rect=renderer.domElement.getBoundingClientRect(),center=new THREE.Vector3(...position);
+  const distance=camera.position.distanceTo(center),projected=center.clone().project(camera);
+  const visible=projected.z>=-1&&projected.z<=1&&Math.abs(projected.x)<=1.1&&Math.abs(projected.y)<=1.1;
+  return {visible,distance,x:(projected.x+1)*rect.width/2,y:(1-projected.y)*rect.height/2};
+}
+// Everything the multiplayer module may touch. See multiplayer/session.js for
+// which parts a host or a guest uses.
+const multiplayerPort={
+  events:appEvents,
+  hasFlyer:()=>!!sourceBytes,
+  getFlyer:()=>({bytes:sourceBytes,title:sourceTitle,origin:[...sourceOrigin]}),
+  getMode:()=>editorMode,
+  getPlayback:()=>({tick:tickIndex,playing,direction,speed:Number($('speed').value)}),
+  applyEdit:applyRemoteEdit,
+  loadFlyer({bytes,title,origin},{first}){
+    try{seekTarget=null;installFlyer(bytes,title,origin,!first);captureBaseline();}
+    catch(error){showError(error);}
+  },
+  setMode:mode=>setEditorMode(mode,{remote:true}),
+  followPlayback,
+  setRole:setMultiplayerRole,
+  setEditRelay:relay=>{edits=relay||localEdits;},
+  setChatOpener:opener=>{openChat=opener;},
+  onFrame:hook=>{frameHooks.add(hook);return ()=>frameHooks.delete(hook);},
+  cameraPosition:()=>camera.position.toArray(),
+  projectToScreen,
+  sceneFocused:()=>displayFocused,
+  releaseMovementKeys:()=>{heldKeys.clear();cameraVelocity.set(0,0,0);setSprintMultiplier(1);},
+  focusScene:()=>{setDisplayFocused(true);renderer.domElement.focus({preventScroll:true});},
+  setStatus:(text,error=false)=>{$('status').textContent=text;$('status').classList.toggle('error',error);},
+  loadInitialFlyer:()=>loadInitialFlyer().catch(showError),
+};
+let bankLoaded=false,bankRequest=null;
+const multiplayer=setupMultiplayer(multiplayerPort);
 async function initialize(){
   try{
     await loadWasm();
-    const bank=loadBank().then(items=>({items}),error=>({error}));
-    const requested=new URLSearchParams(window.location.search).get('flyer');
-    if(requested!==null){
-      const result=await bank;
-      if(result.error)throw result.error;
-      const item=result.items.find(candidate=>bankLinkValue(candidate)===requested||candidate.path===requested);
-      if(!item){
-        await loadUrl('./demo.flyer','Six-block flyer');
-        throw Error(`That shared flyer is not in this bank: ${requested}`);
-      }
-      try{
-        installFlyer(await fetchBankBytes(item.path),item.name);
-        captureBaseline();rememberFlyer();
-      }catch(error){await loadUrl('./demo.flyer','Six-block flyer');throw error;}
+    bankRequest=loadBank().then(items=>{bankLoaded=true;return {items};},error=>({error}));
+    if(multiplayer.invite){
+      // A guest's flyer comes from the host; nothing local is loaded or saved.
+      bankRequest.then(result=>{if(result.error)console.warn('Flyer bank unavailable',result.error);});
+      await multiplayer.joinFromInvite();
       return;
     }
-    let restored=false;
-    try{
-      const saved=await readRecentFlyer();
-      if(saved){
-        restoringRecent=true;
-        try{
-          if(!(saved.bytes instanceof Uint8Array)||typeof saved.title!=='string'||
-             !Array.isArray(saved.origin)||saved.origin.length!==3||
-             !saved.origin.every(Number.isSafeInteger))throw Error('Invalid cached flyer');
-          installFlyer(saved.bytes,saved.title,saved.origin);
-          loadedBaseline=saved.baseline?.bytes instanceof Uint8Array&&Array.isArray(saved.baseline.origin)
-            ?{bytes:saved.baseline.bytes,origin:saved.baseline.origin}:null;
-          if(!loadedBaseline)captureBaseline();
-          if(saved.mode==='edit')setEditorMode('edit');
-          if(Number.isInteger(saved.slot)&&saved.slot>=0&&saved.slot<=9)selectSlot(saved.slot);
-          $('status').textContent='Restored your last flyer from this browser.';
-          restored=true;
-        }finally{restoringRecent=false;}
-      }
-    }catch(error){console.warn('Could not restore the recent flyer',error);}
-    if(!restored)await loadUrl('./demo.flyer','Six-block flyer');
-    const bankResult=await bank;
-    if(bankResult.error)throw bankResult.error;
+    await loadInitialFlyer();
   }
   catch(error){showError(error);}
+}
+async function loadInitialFlyer(){
+  const bank=bankRequest;
+  const requested=new URLSearchParams(window.location.search).get('flyer');
+  if(requested!==null){
+    const result=await bank;
+    if(result.error)throw result.error;
+    const item=result.items.find(candidate=>bankLinkValue(candidate)===requested||candidate.path===requested);
+    if(!item){
+      await loadUrl('./demo.flyer','Six-block flyer');
+      throw Error(`That shared flyer is not in this bank: ${requested}`);
+    }
+    try{
+      installFlyer(await fetchBankBytes(item.path),item.name);
+      captureBaseline();rememberFlyer();
+    }catch(error){await loadUrl('./demo.flyer','Six-block flyer');throw error;}
+    return;
+  }
+  let restored=false;
+  try{
+    const saved=await readRecentFlyer();
+    if(saved){
+      restoringRecent=true;
+      try{
+        if(!(saved.bytes instanceof Uint8Array)||typeof saved.title!=='string'||
+           !Array.isArray(saved.origin)||saved.origin.length!==3||
+           !saved.origin.every(Number.isSafeInteger))throw Error('Invalid cached flyer');
+        installFlyer(saved.bytes,saved.title,saved.origin);
+        loadedBaseline=saved.baseline?.bytes instanceof Uint8Array&&Array.isArray(saved.baseline.origin)
+          ?{bytes:saved.baseline.bytes,origin:saved.baseline.origin}:null;
+        if(!loadedBaseline)captureBaseline();
+        if(saved.mode==='edit')setEditorMode('edit');
+        if(Number.isInteger(saved.slot)&&saved.slot>=0&&saved.slot<=9)selectSlot(saved.slot);
+        $('status').textContent='Restored your last flyer from this browser.';
+        restored=true;
+      }finally{restoringRecent=false;}
+    }
+  }catch(error){console.warn('Could not restore the recent flyer',error);}
+  if(!restored)await loadUrl('./demo.flyer','Six-block flyer');
+  const bankResult=await bank;
+  if(bankResult.error)throw bankResult.error;
 }
 initialize();

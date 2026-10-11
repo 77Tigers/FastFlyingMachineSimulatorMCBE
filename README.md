@@ -97,6 +97,15 @@ files or change the `.flyer` format. The optional server binds only to
 The last opened flyer and its time-zero edits are autosaved in the browser's
 IndexedDB and restored on reload. Local preview and GitHub Pages have separate caches.
 
+**Multiplayer.** *Host session* creates an invite link; guests connect
+browser-to-browser over WebRTC (signalled through public Nostr relays via
+Trystero, so no server is needed). The host owns the flyer: guests explore and
+simulate on their own, follow the host's Edit/View mode, and may edit only while
+the host is in Edit mode. The code lives in `viewer/multiplayer/`; the
+networking backend is chosen in `config.js`. Add `?transport=local` to the URL
+to play between two tabs of one browser without any network, and run the
+session tests with `npm test --prefix viewer`.
+
 ## Bank speeds, filters, and updating the catalogue
 
 The bank popup includes search, speed/block-count sorting, browser-generated

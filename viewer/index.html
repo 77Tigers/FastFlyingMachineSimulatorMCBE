@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>FastFlyer · Inspector</title>
   <link rel="stylesheet" href="./style.css?v=__STYLE_HASH__">
-  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js","@trystero-p2p/nostr":"./vendor/trystero-nostr/index.js","@trystero-p2p/core":"./vendor/trystero-core/index.js","@noble/secp256k1":"./vendor/noble-secp256k1/index.js"}}</script>
 </head>
 <body>
   <header class="topbar">
@@ -15,6 +15,7 @@
       <button id="open-bank" class="top-btn primary">Browse flyer bank</button>
       <label class="top-btn secondary">Open .flyer<input id="file" type="file" accept=".flyer,application/octet-stream"></label>
       <button id="export" class="top-btn secondary" type="button" disabled title="Download the time-zero flyer">Export</button>
+      <button id="host-session" class="top-btn secondary" type="button" title="Play together: invite others to explore and edit this flyer">Host session</button>
     </div>
   </header>
   <main class="layout">
@@ -32,6 +33,8 @@
         <div id="viewport-label" class="viewport-label" hidden><span id="step-badge">INITIAL</span><span id="step-title">Initial configuration</span></div>
         <div id="canvas"></div>
         <div id="piston-label-layer" aria-hidden="true"></div>
+        <div id="nametag-layer" aria-hidden="true"></div>
+        <div id="chat" class="chat" hidden><div id="chat-log" class="chat-log" role="log" aria-live="polite" aria-label="Chat"></div><input id="chat-input" class="chat-input" type="text" maxlength="300" autocomplete="off" placeholder="Message · Enter to send · Esc to close" aria-label="Chat message" hidden></div>
         <div id="edit-hotbar" class="edit-hotbar" role="group" aria-label="Block palette" hidden></div>
         <button id="fullscreen" class="fullscreen-btn" type="button" aria-label="Enter fullscreen" title="Enter fullscreen (Esc to exit)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/></svg></button>
         <button id="open-help" class="help-btn" type="button" aria-label="Need help?" title="Need help?"><span class="help-mark" aria-hidden="true">?</span><span class="help-text">Need help?</span></button>
@@ -49,8 +52,10 @@
         <label class="range-setting" for="rotate-speed"><span>Camera rotate speed</span><output id="rotate-speed-label" for="rotate-speed">1×</output><input id="rotate-speed" type="range" min="0" max="100" step="1" value="50" autocomplete="off" aria-valuetext="1×"></label>
         <div class="moving-setting"><span>Motion display</span><div class="segmented moving-select" role="group" aria-label="Moving block and piston head display"><button id="moving-real" aria-pressed="false" title="Show moving blocks in their stored cells and piston heads as before">Real</button><button id="moving-halfway" aria-pressed="false" title="Show moving blocks halfway and piston heads at their midpoint">Halfway</button><button id="moving-smooth" class="active" aria-pressed="true" title="Animate moving blocks and piston heads">Smooth</button></div></div>
         <label class="toggle follow-toggle"><input id="follow-flyer" type="checkbox" checked>Follow flyer</label>
+        <label class="toggle follow-host-toggle" title="Match the host's tick, direction and game speed" hidden><input id="follow-host" type="checkbox" checked>Follow host</label>
         <div id="sprint-indicator" class="sprint-indicator" hidden>SPRINTING · 2×</div>
       </div>
+      <div id="multiplayer-panel" class="panel-section multiplayer-panel" hidden><div class="section-head"><span>MULTIPLAYER</span><span id="mp-count" class="tiny"></span></div><p id="mp-status" class="mp-status"></p><div id="mp-invite-row" class="mp-invite-row"><input id="mp-invite" type="text" readonly aria-label="Invite link"><button id="mp-copy" type="button" class="subtle">Copy</button></div><ul id="mp-players" class="mp-players" aria-label="Players"></ul></div>
       <div class="panel-section floor-panel"><label class="toggle"><input id="show-floor" type="checkbox" checked>Show floor</label></div>
       <div class="panel-section mode-panel"><div class="section-head"><span>EDIT / VIEW</span></div><div class="segmented mode-select" role="group" aria-label="Edit or view"><button id="mode-view" class="active" aria-pressed="true">View</button><button id="mode-edit" aria-pressed="false">Edit</button></div></div>
       </div>
@@ -76,6 +81,7 @@
       <div id="bank-list" class="bank-list"></div>
     </div>
   </dialog>
+  <dialog id="join-dialog" aria-labelledby="join-title"><form id="join-form" class="confirm-modal" novalidate><h2 id="join-title">Join session</h2><p>You have been invited to explore a flyer together. You can move around and watch, and edit while the host is in Edit mode. Your own saved flyer is left untouched.</p><label class="join-name-label" for="join-name">Your name</label><input id="join-name" type="text" maxlength="24" autocomplete="nickname" required><div id="join-error" class="join-error" role="alert"></div><div class="confirm-actions"><button id="join-cancel" type="button" class="top-btn secondary">Not now</button><button type="submit" class="top-btn primary">Join</button></div></form></dialog>
   <dialog id="new-confirm" aria-labelledby="new-confirm-title"><div class="confirm-modal"><h2 id="new-confirm-title">Start a new flyer?</h2><p>This will replace your current edits. Export your flyer first if you want to keep them.</p><div class="confirm-actions"><button id="cancel-new" type="button" class="top-btn secondary">Keep working</button><button id="confirm-new" type="button" class="top-btn primary">Start new flyer</button></div></div></dialog>
   <dialog id="help-dialog" aria-labelledby="help-title">
     <div class="help-modal">
@@ -84,7 +90,7 @@
         <section><h2>Moving the camera</h2>
           <dl>
             <dt>Drag</dt><dd>Look around. Click the scene first so it has focus.</dd>
-            <dt>Fullscreen</dt><dd>Use the top-right button or press Enter while the scene is focused. Press Enter again or Esc to exit. Click the scene to recapture the mouse if needed.</dd>
+            <dt>Fullscreen</dt><dd>Use the top-right button. Press Esc to exit (in Chrome and Edge, Esc first closes chat if it is open). Click the scene to recapture the mouse if needed.</dd>
             <dt>Scroll wheel</dt><dd>Move forward or backward in the direction you are looking; movement scales with distance from the flyer.</dd>
             <dt>W A S D</dt><dd>Walk forward, left, backward and right.</dd>
             <dt>Space / Shift</dt><dd>Fly up / down.</dd>
@@ -105,6 +111,16 @@
             <dt>X</dt><dd>Switch Edit / View. Returning to View with X starts playback.</dd>
             <dt>Game speed</dt><dd>0.1× to 30×. At 1× the simulation runs 10 ticks per second.</dd>
           </dl>
+        </section>
+        <section><h2>Multiplayer</h2>
+          <dl>
+            <dt>Host session</dt><dd>Creates an invite link (copied for you, and shown in the right panel). Anyone who opens it joins your session after choosing a name. Click Stop hosting to end it for everyone.</dd>
+            <dt>Guests</dt><dd>Move around freely, inspect blocks and play the simulation on their own. They follow the host's Edit / View mode and can place, break and change blocks only while the host is in Edit mode. Loading flyers, renaming and the push limit stay with the host. Guests can still Export a copy.</dd>
+            <dt>Follow host</dt><dd>For guests: match the host's tick, playback direction and game speed. Using any playback control yourself turns it off.</dd>
+            <dt>Enter</dt><dd>Open chat. Enter sends a message; Enter on an empty message or Esc closes chat.</dd>
+            <dt>Nametags</dt><dd>Show where other players are, even through blocks.</dd>
+          </dl>
+          <p class="help-note">Players connect directly to each other. A few strict networks (some mobile and workplace connections) cannot connect this way. When a guest joins, their local autosave is paused so their own saved flyer is never replaced.</p>
         </section>
         <section><h2>Ticks or Detailed</h2>
           <p><strong>Ticks</strong> advances one whole game tick at a time. <strong>Detailed</strong> steps through each chunk and each piston that actually acts. Idle piston checks are skipped. The next acting piston and any blocks it is about to move are outlined. In Debug, Max load appears on every piston, while Update order numbers appear only on pistons that will actually be processed.</p>

@@ -22,8 +22,10 @@ jobs:
           node-version: '22'
           cache: npm
           cache-dependency-path: viewer/package-lock.json
-      - name: Install browser dependency
+      - name: Install browser dependencies
         run: npm ci --prefix viewer
+      - name: Test multiplayer sessions
+        run: npm test --prefix viewer
       - name: Add WebAssembly target
         run: rustup target add wasm32-unknown-unknown
       - name: Build browser simulator
