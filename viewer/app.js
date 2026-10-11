@@ -1305,6 +1305,7 @@ function setEditorMode(mode){
 function saveEditedFlyer(){
   const {bytes,shift}=serializeFlyer(editFlyer);
   installFlyer(bytes,sourceTitle,shift.map(value=>-value),true);
+  setFlyerLink(null);
   rememberFlyer();
 }
 function editCell(pos,cell){
@@ -1388,6 +1389,14 @@ async function loadUrl(url,title) {
   try{const response=await fetch(url);if(!response.ok)throw Error(`Could not load flyer (${response.status})`);installFlyer(new Uint8Array(await response.arrayBuffer()),title);captureBaseline();}
   catch(error){showError(error);}
 }
+const bankPrefix='flyers/bank/';
+const bankLinkValue=item=>item.path.startsWith(bankPrefix)?item.path.slice(bankPrefix.length):item.path;
+function setFlyerLink(value){
+  const url=new URL(window.location.href);
+  if(value===null)url.searchParams.delete('flyer');
+  else url.searchParams.set('flyer',value);
+  window.history.replaceState(null,'',url);
+}
 const bankBytes=new Map();
 const bankVersions=new Map();
 function fetchBankBytes(path){
@@ -1453,6 +1462,7 @@ async function loadBank() {
       installFlyer(await fetchBankBytes(item.path),item.name);
       captureBaseline();
       rememberFlyer();
+      setFlyerLink(bankLinkValue(item));
       $('bank-dialog').close();
     }catch(error){$('bank-summary').textContent=error.message;showError(error);}
   }
@@ -1542,6 +1552,7 @@ async function loadBank() {
   $('bank-search').oninput=update;
   $('bank-clear').onclick=()=>{resetRange();$('bank-search').value='';$('filter-frontier').checked=false;for(const [id] of filterTags)$(id).checked=false;update();};
   update();$('open-bank').disabled=false;
+  return items;
 }
 $('open-bank').disabled=true;
 $('open-bank').onclick=()=>{setDisplayFocused(false);$('bank-dialog').showModal();};
@@ -1559,7 +1570,7 @@ $('bank-dialog').addEventListener('click',event=>{
   const rect=$('bank-dialog').getBoundingClientRect();
   if(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom)$('bank-dialog').close();
 });
-$('file').onchange=async event=>{const file=event.target.files[0];if(!file)return;try{installFlyer(new Uint8Array(await file.arrayBuffer()),file.name);captureBaseline();rememberFlyer();}catch(error){showError(error);}event.target.value='';};
+$('file').onchange=async event=>{const file=event.target.files[0];if(!file)return;try{installFlyer(new Uint8Array(await file.arrayBuffer()),file.name);captureBaseline();rememberFlyer();setFlyerLink(null);}catch(error){showError(error);}event.target.value='';};
 function baselineCells(){
   if(!loadedBaseline)return new Map();
   const parsed=parseFlyer(loadedBaseline.bytes),origin=loadedBaseline.origin;
@@ -1579,6 +1590,7 @@ async function createNewFlyer(){
     flyer.pushLimit=12;
     const {bytes}=serializeFlyer(flyer);
     installFlyer(bytes,'Untitled');captureBaseline();
+    setFlyerLink(null);
     if(editorMode!=='edit')setEditorMode('edit');
     rememberFlyer();
   }catch(error){showError(error);}
@@ -2152,7 +2164,22 @@ requestAnimationFrame(animate);
 async function initialize(){
   try{
     await loadWasm();
-    const bank=loadBank().then(()=>null,error=>error);
+    const bank=loadBank().then(items=>({items}),error=>({error}));
+    const requested=new URLSearchParams(window.location.search).get('flyer');
+    if(requested!==null){
+      const result=await bank;
+      if(result.error)throw result.error;
+      const item=result.items.find(candidate=>bankLinkValue(candidate)===requested||candidate.path===requested);
+      if(!item){
+        await loadUrl('./demo.flyer','Six-block flyer');
+        throw Error(`That shared flyer is not in this bank: ${requested}`);
+      }
+      try{
+        installFlyer(await fetchBankBytes(item.path),item.name);
+        captureBaseline();rememberFlyer();
+      }catch(error){await loadUrl('./demo.flyer','Six-block flyer');throw error;}
+      return;
+    }
     let restored=false;
     try{
       const saved=await readRecentFlyer();
@@ -2174,8 +2201,8 @@ async function initialize(){
       }
     }catch(error){console.warn('Could not restore the recent flyer',error);}
     if(!restored)await loadUrl('./demo.flyer','Six-block flyer');
-    const bankError=await bank;
-    if(bankError)throw bankError;
+    const bankResult=await bank;
+    if(bankResult.error)throw bankResult.error;
   }
   catch(error){showError(error);}
 }
