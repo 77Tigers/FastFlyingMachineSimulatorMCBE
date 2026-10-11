@@ -1,0 +1,5 @@
+('mmww', 'mwwm', 'wmmw') INFEASIBLE 1368.6s
+('mmww', 'wwmm', 'mwwm') INFEASIBLE 793.1s
+('mmww', 'wwmm', 'mmww') UNKNOWN 1800.9s
+('wmmw', 'mwwm', 'mwmw') INFEASIBLE 249.4s
+('mmww', 'wmmw', 'mwwm') INFEASIBLE 998.7s

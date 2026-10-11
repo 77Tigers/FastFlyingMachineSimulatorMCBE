@@ -1,0 +1,12 @@
+('mmww', 'wmmw', 'mmww:P') UNKNOWN 600.3s
+('mmww', 'wmmw', 'mmww:S') INFEASIBLE 3.3s
+('mmww', 'wmmw', 'wwmm:P') INFEASIBLE 570.7s
+('mmww', 'wmmw', 'wwmm:S') INFEASIBLE 466.1s
+('mmww', 'wmmw', 'wmmw:P') INFEASIBLE 3.9s
+('mmww', 'wmmw', 'wmmw:S') INFEASIBLE 148.0s
+('mmww', 'wmmw', 'mwwm:P') INFEASIBLE 85.3s
+('mmww', 'wmmw', 'mwwm:S') INFEASIBLE 2.9s
+('mmww', 'wmmw', 'mwmw:P') INFEASIBLE 2.7s
+('mmww', 'wmmw', 'mwmw:S') INFEASIBLE 2.6s
+('mmww', 'wmmw', 'wmwm:P') INFEASIBLE 44.1s
+('mmww', 'wmmw', 'wmwm:S') INFEASIBLE 34.0s
