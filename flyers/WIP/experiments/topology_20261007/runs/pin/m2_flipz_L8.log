@@ -1,0 +1,3 @@
+m2 L=8 flipz d=(-1, 0, 8) obj=None -> INFEASIBLE 8.9s (build 7.3s)
+m2 L=8 flipz d=(-1, 0, 7) obj=None -> INFEASIBLE 88.3s (build 7.4s)
+m2 L=8 flipz d=(0, 0, 8) obj=None -> INFEASIBLE 2.3s (build 6.0s)

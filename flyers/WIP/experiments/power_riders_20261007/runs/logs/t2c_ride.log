@@ -1,0 +1,43 @@
+## 7 --w mwwm --k4 nb1 --k5 nb1 --ride 1:V:K2 --tl 120 --tag t2c_ride_K2_mwwm
+built 4.0 vars 7168
+{'L': 7, 'w': 'mwwm', 'k4': 'nb1', 'k5': 'nb1', 'v': 'fix', 'f': 'fix', 'nw': 1, 'm4': None, 'm5': None, 'tl': 120.0, 'wk': 4, 'obj': None, 'wbox': 2, 'tag': 't2c_ride_K2_mwwm', 'map': 'flipz', 'd': 'm1,0,8', 'ride': '1:V:K2', 'nopow5': False, 'wself': 0, 'wsword': 'wmwm'} INFEASIBLE 0.2
+## 7 --w wmwm --k4 nb1 --k5 nb1 --ride 1:V:K2 --tl 120 --tag t2c_ride_K2_wmwm
+built 6.4 vars 7168
+{'L': 7, 'w': 'wmwm', 'k4': 'nb1', 'k5': 'nb1', 'v': 'fix', 'f': 'fix', 'nw': 1, 'm4': None, 'm5': None, 'tl': 120.0, 'wk': 4, 'obj': None, 'wbox': 2, 'tag': 't2c_ride_K2_wmwm', 'map': 'flipz', 'd': 'm1,0,8', 'ride': '1:V:K2', 'nopow5': False, 'wself': 0, 'wsword': 'wmwm'} INFEASIBLE 0.6
+## 7 --w mwmw --k4 nb1 --k5 nb1 --ride 1:V:K2 --tl 120 --tag t2c_ride_K2_mwmw
+built 6.3 vars 7168
+{'L': 7, 'w': 'mwmw', 'k4': 'nb1', 'k5': 'nb1', 'v': 'fix', 'f': 'fix', 'nw': 1, 'm4': None, 'm5': None, 'tl': 120.0, 'wk': 4, 'obj': None, 'wbox': 2, 'tag': 't2c_ride_K2_mwmw', 'map': 'flipz', 'd': 'm1,0,8', 'ride': '1:V:K2', 'nopow5': False, 'wself': 0, 'wsword': 'wmwm'} INFEASIBLE 0.6
+## 7 --w mmww --k4 nb1 --k5 nb1 --ride 1:V:K2 --tl 120 --tag t2c_ride_K2_mmww
+built 2.9 vars 7168
+{'L': 7, 'w': 'mmww', 'k4': 'nb1', 'k5': 'nb1', 'v': 'fix', 'f': 'fix', 'nw': 1, 'm4': None, 'm5': None, 'tl': 120.0, 'wk': 4, 'obj': None, 'wbox': 2, 'tag': 't2c_ride_K2_mmww', 'map': 'flipz', 'd': 'm1,0,8', 'ride': '1:V:K2', 'nopow5': False, 'wself': 0, 'wsword': 'wmwm'} INFEASIBLE 0.4
+## 7 --w wwmm --k4 nb1 --k5 nb1 --ride 1:V:K2 --tl 120 --tag t2c_ride_K2_wwmm
+built 3.0 vars 7168
+{'L': 7, 'w': 'wwmm', 'k4': 'nb1', 'k5': 'nb1', 'v': 'fix', 'f': 'fix', 'nw': 1, 'm4': None, 'm5': None, 'tl': 120.0, 'wk': 4, 'obj': None, 'wbox': 2, 'tag': 't2c_ride_K2_wwmm', 'map': 'flipz', 'd': 'm1,0,8', 'ride': '1:V:K2', 'nopow5': False, 'wself': 0, 'wsword': 'wmwm'} INFEASIBLE 0.4
+## 7 --w wmmw --k4 nb1 --k5 nb1 --ride 1:V:K2 --tl 120 --tag t2c_ride_K2_wmmw
+built 3.1 vars 7168
+{'L': 7, 'w': 'wmmw', 'k4': 'nb1', 'k5': 'nb1', 'v': 'fix', 'f': 'fix', 'nw': 1, 'm4': None, 'm5': None, 'tl': 120.0, 'wk': 4, 'obj': None, 'wbox': 2, 'tag': 't2c_ride_K2_wmmw', 'map': 'flipz', 'd': 'm1,0,8', 'ride': '1:V:K2', 'nopow5': False, 'wself': 0, 'wsword': 'wmwm'} INFEASIBLE 0.4
+## 7 --w mwwm --k4 nb1 --k5 nb1 --ride 1:V:K3p --tl 120 --tag t2c_ride_K3p_mwwm
+built 3.4 vars 7168
+{'L': 7, 'w': 'mwwm', 'k4': 'nb1', 'k5': 'nb1', 'v': 'fix', 'f': 'fix', 'nw': 1, 'm4': None, 'm5': None, 'tl': 120.0, 'wk': 4, 'obj': None, 'wbox': 2, 'tag': 't2c_ride_K3p_mwwm', 'map': 'flipz', 'd': 'm1,0,8', 'ride': '1:V:K3p', 'nopow5': False, 'wself': 0, 'wsword': 'wmwm'} INFEASIBLE 0.4
+## 7 --w wmwm --k4 nb1 --k5 nb1 --ride 1:V:K3p --tl 120 --tag t2c_ride_K3p_wmwm
+built 4.9 vars 7168
+{'L': 7, 'w': 'wmwm', 'k4': 'nb1', 'k5': 'nb1', 'v': 'fix', 'f': 'fix', 'nw': 1, 'm4': None, 'm5': None, 'tl': 120.0, 'wk': 4, 'obj': None, 'wbox': 2, 'tag': 't2c_ride_K3p_wmwm', 'map': 'flipz', 'd': 'm1,0,8', 'ride': '1:V:K3p', 'nopow5': False, 'wself': 0, 'wsword': 'wmwm'} INFEASIBLE 0.5
+## 7 --w mwmw --k4 nb1 --k5 nb1 --ride 1:V:K3p --tl 120 --tag t2c_ride_K3p_mwmw
+built 5.5 vars 7168
+{'L': 7, 'w': 'mwmw', 'k4': 'nb1', 'k5': 'nb1', 'v': 'fix', 'f': 'fix', 'nw': 1, 'm4': None, 'm5': None, 'tl': 120.0, 'wk': 4, 'obj': None, 'wbox': 2, 'tag': 't2c_ride_K3p_mwmw', 'map': 'flipz', 'd': 'm1,0,8', 'ride': '1:V:K3p', 'nopow5': False, 'wself': 0, 'wsword': 'wmwm'} INFEASIBLE 0.6
+## 7 --w mmww --k4 nb1 --k5 nb1 --ride 1:V:K3p --tl 120 --tag t2c_ride_K3p_mmww
+built 3.2 vars 7168
+{'L': 7, 'w': 'mmww', 'k4': 'nb1', 'k5': 'nb1', 'v': 'fix', 'f': 'fix', 'nw': 1, 'm4': None, 'm5': None, 'tl': 120.0, 'wk': 4, 'obj': None, 'wbox': 2, 'tag': 't2c_ride_K3p_mmww', 'map': 'flipz', 'd': 'm1,0,8', 'ride': '1:V:K3p', 'nopow5': False, 'wself': 0, 'wsword': 'wmwm'} INFEASIBLE 0.4
+## 7 --w wwmm --k4 nb1 --k5 nb1 --ride 1:V:K3p --tl 120 --tag t2c_ride_K3p_wwmm
+built 3.2 vars 7168
+{'L': 7, 'w': 'wwmm', 'k4': 'nb1', 'k5': 'nb1', 'v': 'fix', 'f': 'fix', 'nw': 1, 'm4': None, 'm5': None, 'tl': 120.0, 'wk': 4, 'obj': None, 'wbox': 2, 'tag': 't2c_ride_K3p_wwmm', 'map': 'flipz', 'd': 'm1,0,8', 'ride': '1:V:K3p', 'nopow5': False, 'wself': 0, 'wsword': 'wmwm'} INFEASIBLE 0.4
+## 7 --w wmmw --k4 nb1 --k5 nb1 --ride 1:V:K3p --tl 120 --tag t2c_ride_K3p_wmmw
+built 3.8 vars 7168
+{'L': 7, 'w': 'wmmw', 'k4': 'nb1', 'k5': 'nb1', 'v': 'fix', 'f': 'fix', 'nw': 1, 'm4': None, 'm5': None, 'tl': 120.0, 'wk': 4, 'obj': None, 'wbox': 2, 'tag': 't2c_ride_K3p_wmmw', 'map': 'flipz', 'd': 'm1,0,8', 'ride': '1:V:K3p', 'nopow5': False, 'wself': 0, 'wsword': 'wmwm'} INFEASIBLE 0.5
+## 7 --w mwwm --k4 nb1 --k5 nb1 --ride 1:V:K4 --tl 120 --tag t2c_ride_K4_mwwm
+built 3.4 vars 7168
+{'L': 7, 'w': 'mwwm', 'k4': 'nb1', 'k5': 'nb1', 'v': 'fix', 'f': 'fix', 'nw': 1, 'm4': None, 'm5': None, 'tl': 120.0, 'wk': 4, 'obj': None, 'wbox': 2, 'tag': 't2c_ride_K4_mwwm', 'map': 'flipz', 'd': 'm1,0,8', 'ride': '1:V:K4', 'nopow5': False, 'wself': 0, 'wsword': 'wmwm'} INFEASIBLE 2.4
+## 7 --w wmwm --k4 nb1 --k5 nb1 --ride 1:V:K4 --tl 120 --tag t2c_ride_K4_wmwm
+built 6.5 vars 7168
+{'L': 7, 'w': 'wmwm', 'k4': 'nb1', 'k5': 'nb1', 'v': 'fix', 'f': 'fix', 'nw': 1, 'm4': None, 'm5': None, 'tl': 120.0, 'wk': 4, 'obj': None, 'wbox': 2, 'tag': 't2c_ride_K4_wmwm', 'map': 'flipz', 'd': 'm1,0,8', 'ride': '1:V:K4', 'nopow5': False, 'wself': 0, 'wsword': 'wmwm'} INFEASIBLE 8.8
+## 7 --w mwmw --k4 nb1 --k5 nb1 --ride 1:V:K4 --tl 120 --tag t2c_ride_K4_mwmw

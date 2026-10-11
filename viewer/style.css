@@ -35,7 +35,11 @@ html,body{height:100%;overflow:hidden}
 .workspace{min-width:0;min-height:0}
 .right-panel{display:block;min-width:0;overflow-y:auto;overflow-x:hidden}
 .topbar .brand{min-width:0}.topbar .brand>div{min-width:0}
-#run-title{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:min(48vw,650px)}
+#run-title{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:min(48vw,650px);border:0;background:transparent;padding:0;text-align:left;letter-spacing:.13em;font-size:14px;font-weight:700;cursor:text}
+#run-title:focus-visible{outline:1px solid #79bcb4;outline-offset:3px;border-radius:2px}
+.title-row{display:flex;align-items:center;gap:6px;min-width:0}
+.title-row #rename-input{min-width:100px;width:min(42vw,390px);background:transparent;border:0;border-bottom:1px solid #79bcb4;border-radius:0;color:#e5ebed;padding:0 0 2px;font-size:14px;font-weight:700;letter-spacing:.13em;outline:none}
+.title-row [hidden]{display:none!important}
 .timeline{min-height:0;padding:13px 18px 11px}
 .timeline-top{align-items:flex-start}.timeline-bottom{margin-top:10px}
 .bank-filters{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:10px}
@@ -135,6 +139,14 @@ html,body{height:100%;overflow:hidden}
 .right-tab-content[hidden]{display:none}
 .right-tab-content .mode-panel{margin-top:auto}
 .playback-detail-panel{margin-top:auto}
+.piston-info-control{display:grid;gap:8px;color:#d5e0e1;font:500 10px 'DM Mono',monospace;letter-spacing:.1em}
+.piston-info-control select{width:100%;padding:8px;background:#10191d;border:1px solid #41545a;border-radius:5px;color:#e5f0ee;font:12px Inter,system-ui,sans-serif;letter-spacing:0}
+#piston-label-layer{position:absolute;inset:0;z-index:5;pointer-events:none;overflow:hidden}
+.piston-number{position:absolute;display:grid;place-items:center;min-width:1.5em;height:1.5em;padding:0 .23em;transform:translate(-50%,-50%);border:2px solid #d6fff1;border-radius:8px;background:#0a2427e8;color:#f1fffa;font:700 32px 'DM Mono',Consolas,monospace;line-height:1;text-shadow:0 2px 5px #000;box-shadow:0 3px 12px #0009;white-space:nowrap;will-change:transform}
+.piston-number[hidden]{display:none}
+#new-confirm{width:min(390px,calc(100vw - 28px));padding:0;border:1px solid #4b7775;border-radius:11px;background:#17262a;color:#e8f4f2;box-shadow:0 20px 80px #000b}
+#new-confirm::backdrop{background:#041014bb}
+.confirm-modal{padding:22px}.confirm-modal h2{margin:0 0 10px;font-size:18px}.confirm-modal p{margin:0;color:#adc4c4;line-height:1.5}.confirm-actions{display:flex;justify-content:flex-end;gap:9px;margin-top:22px}
 @media(max-width:680px){.timeline-top{grid-template-columns:1fr auto;gap:6px}.push-limit-control{grid-column:1/-1;grid-row:2;justify-self:center}.timeline{padding-bottom:8px}}
 .navigation-panel{padding-top:15px;padding-bottom:14px}
 .navigation-panel .section-head{margin-bottom:12px}

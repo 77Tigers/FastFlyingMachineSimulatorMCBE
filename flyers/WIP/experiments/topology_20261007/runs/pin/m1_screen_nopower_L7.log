@@ -1,0 +1,120 @@
+m1 flipz (-1, 0, 5) SKEL_OVERLAP
+m1 flipz (-1, 0, 6) SKEL_OVERLAP
+m1 L=7 flipz d=(-1, 0, 7) -> UNKNOWN 60.4s (build 15.6s)
+m1 L=7 flipz d=(-1, 0, 8) -> UNKNOWN 60.4s (build 11.6s)
+m1 L=7 flipz d=(-1, 0, 9) -> UNKNOWN 60.2s (build 9.8s)
+m1 flipz (0, 0, 5) SKEL_OVERLAP
+m1 flipz (0, 0, 6) SKEL_OVERLAP
+m1 L=7 flipz d=(0, 0, 7) -> UNKNOWN 60.3s (build 10.4s)
+m1 L=7 flipz d=(0, 0, 8) -> UNKNOWN 60.2s (build 10.5s)
+m1 L=7 flipz d=(0, 0, 9) -> UNKNOWN 60.2s (build 10.9s)
+m1 flipz (1, 0, 5) SKEL_OVERLAP
+m1 L=7 flipz d=(1, 0, 6) -> INFEASIBLE 3.6s (build 13.4s)
+m1 L=7 flipz d=(1, 0, 7) -> UNKNOWN 60.2s (build 13.5s)
+m1 L=7 flipz d=(1, 0, 8) -> UNKNOWN 60.5s (build 10.7s)
+m1 L=7 flipz d=(1, 0, 9) -> UNKNOWN 60.2s (build 10.0s)
+m1 flipy (-1, 3, 0) SKEL_OVERLAP
+m1 flipy (-1, 4, 0) SKEL_OVERLAP
+m1 L=7 flipy d=(-1, 5, 0) -> INFEASIBLE 1.0s (build 17.6s)
+m1 L=7 flipy d=(-1, 6, 0) -> UNKNOWN 60.3s (build 16.4s)
+m1 L=7 flipy d=(-1, 7, 0) -> UNKNOWN 60.4s (build 13.2s)
+m1 flipy (0, 3, 0) SKEL_OVERLAP
+m1 flipy (0, 4, 0) SKEL_OVERLAP
+m1 L=7 flipy d=(0, 5, 0) -> INFEASIBLE 0.9s (build 15.5s)
+m1 L=7 flipy d=(0, 6, 0) -> UNKNOWN 60.4s (build 15.2s)
+m1 L=7 flipy d=(0, 7, 0) -> UNKNOWN 60.3s (build 13.0s)
+m1 flipy (1, 3, 0) SKEL_OVERLAP
+m1 flipy (1, 4, 0) SKEL_OVERLAP
+m1 L=7 flipy d=(1, 5, 0) -> UNKNOWN 60.4s (build 13.0s)
+m1 L=7 flipy d=(1, 6, 0) -> UNKNOWN 60.2s (build 14.1s)
+m1 L=7 flipy d=(1, 7, 0) -> UNKNOWN 60.2s (build 9.1s)
+m1 rot180 (-1, 4, 5) SKEL_OVERLAP
+m1 L=7 rot180 d=(-1, 5, 5) -> UNKNOWN 60.3s (build 13.8s)
+m1 L=7 rot180 d=(-1, 5, 6) -> UNKNOWN 60.3s (build 9.4s)
+m1 rot180 (-1, 4, 6) SKEL_OVERLAP
+m1 L=7 rot180 d=(-1, 5, 7) -> UNKNOWN 60.7s (build 8.1s)
+m1 rot180 (0, 4, 5) SKEL_OVERLAP
+m1 L=7 rot180 d=(0, 5, 5) -> INFEASIBLE 0.4s (build 9.2s)
+m1 L=7 rot180 d=(0, 5, 6) -> UNKNOWN 60.3s (build 9.1s)
+m1 rot180 (0, 4, 6) SKEL_OVERLAP
+m1 L=7 rot180 d=(0, 5, 7) -> UNKNOWN 60.3s (build 14.3s)
+m1 rot180 (1, 4, 5) SKEL_OVERLAP
+m1 L=7 rot180 d=(1, 5, 5) -> UNKNOWN 60.2s (build 10.3s)
+m1 L=7 rot180 d=(1, 5, 6) -> UNKNOWN 60.2s (build 10.0s)
+m1 L=7 rot180 d=(1, 4, 6) -> INFEASIBLE 1.8s (build 8.9s)
+m1 L=7 rot180 d=(1, 5, 7) -> UNKNOWN 60.2s (build 7.7s)
+m1 anti (-1, 4, 5) SKEL_OVERLAP
+m1 anti (-1, 5, 5) SKEL_OVERLAP
+m1 L=7 anti d=(-1, 5, 6) -> UNKNOWN 60.3s (build 12.4s)
+m1 L=7 anti d=(-1, 6, 6) -> UNKNOWN 60.9s (build 12.4s)
+m1 anti (-1, 4, 4) SKEL_OVERLAP
+m1 anti (0, 4, 5) SKEL_OVERLAP
+m1 anti (0, 5, 5) SKEL_OVERLAP
+m1 L=7 anti d=(0, 5, 6) -> UNKNOWN 60.6s (build 11.3s)
+m1 L=7 anti d=(0, 6, 6) -> UNKNOWN 60.6s (build 11.9s)
+m1 anti (0, 4, 4) SKEL_OVERLAP
+m1 anti (1, 4, 5) SKEL_OVERLAP
+m1 L=7 anti d=(1, 5, 5) -> INFEASIBLE 2.0s (build 8.4s)
+m1 L=7 anti d=(1, 5, 6) -> UNKNOWN 60.3s (build 9.0s)
+m1 L=7 anti d=(1, 6, 6) -> UNKNOWN 60.3s (build 9.1s)
+m1 anti (1, 4, 4) SKEL_OVERLAP
+m1 rot90 (-1, 5, 1) SKEL_OVERLAP
+m1 rot90 (-1, 4, 0) SKEL_OVERLAP
+m1 rot90 (-1, 5, -1) SKEL_OVERLAP
+m1 L=7 rot90 d=(-1, 6, 0) -> UNKNOWN 60.6s (build 12.3s)
+m1 rot90 (-1, 4, 2) SKEL_OVERLAP
+m1 rot90 (0, 5, 1) SKEL_OVERLAP
+m1 rot90 (0, 4, 0) SKEL_OVERLAP
+m1 rot90 (0, 5, -1) SKEL_OVERLAP
+m1 L=7 rot90 d=(0, 6, 0) -> UNKNOWN 60.2s (build 12.0s)
+m1 rot90 (0, 4, 2) SKEL_OVERLAP
+m1 L=7 rot90 d=(1, 5, 1) -> INFEASIBLE 1.7s (build 8.1s)
+m1 rot90 (1, 4, 0) SKEL_OVERLAP
+m1 L=7 rot90 d=(1, 5, -1) -> UNKNOWN 60.1s (build 6.9s)
+m1 L=7 rot90 d=(1, 6, 0) -> UNKNOWN 60.2s (build 9.8s)
+m1 rot90 (1, 4, 2) SKEL_OVERLAP
+m1 rot270 (-1, -1, 5) SKEL_OVERLAP
+m1 rot270 (-1, 0, 4) SKEL_OVERLAP
+m1 rot270 (-1, 1, 5) SKEL_OVERLAP
+m1 L=7 rot270 d=(-1, 0, 6) -> UNKNOWN 60.5s (build 12.9s)
+m1 rot270 (-1, -2, 4) SKEL_OVERLAP
+m1 rot270 (0, -1, 5) SKEL_OVERLAP
+m1 rot270 (0, 0, 4) SKEL_OVERLAP
+m1 rot270 (0, 1, 5) SKEL_OVERLAP
+m1 L=7 rot270 d=(0, 0, 6) -> INFEASIBLE 0.6s (build 12.9s)
+m1 rot270 (0, -2, 4) SKEL_OVERLAP
+m1 L=7 rot270 d=(1, -1, 5) -> INFEASIBLE 2.3s (build 11.0s)
+m1 rot270 (1, 0, 4) SKEL_OVERLAP
+m1 rot270 (1, 1, 5) SKEL_OVERLAP
+m1 L=7 rot270 d=(1, 0, 6) -> UNKNOWN 60.6s (build 10.5s)
+m1 L=7 rot270 d=(1, -2, 4) -> UNKNOWN 60.2s (build 7.0s)
+m1 L=7 id d=(-1, 0, 3) -> INFEASIBLE 0.4s (build 7.4s)
+m1 L=7 id d=(-1, 0, -3) -> INFEASIBLE 0.4s (build 7.0s)
+m1 L=7 id d=(-1, 3, 0) -> UNKNOWN 60.2s (build 5.0s)
+m1 L=7 id d=(-1, -3, 0) -> UNKNOWN 60.4s (build 7.7s)
+m1 id (-1, 2, 2) SKEL_OVERLAP
+m1 L=7 id d=(0, 0, 3) -> INFEASIBLE 0.2s (build 4.9s)
+m1 L=7 id d=(0, 0, -3) -> UNKNOWN 60.3s (build 4.6s)
+m1 L=7 id d=(0, 3, 0) -> INFEASIBLE 0.3s (build 8.2s)
+m1 L=7 id d=(0, -3, 0) -> UNKNOWN 60.2s (build 7.8s)
+m1 id (0, 2, 2) SKEL_OVERLAP
+m1 L=7 id d=(1, 0, 3) -> UNKNOWN 60.2s (build 5.8s)
+m1 L=7 id d=(1, 0, -3) -> UNKNOWN 60.2s (build 5.4s)
+m1 L=7 id d=(1, 3, 0) -> UNKNOWN 60.2s (build 7.3s)
+m1 L=7 id d=(1, -3, 0) -> UNKNOWN 60.1s (build 5.5s)
+m1 id (1, 2, 2) SKEL_OVERLAP
+m1 swap (-1, -1, 1) SKEL_OVERLAP
+m1 swap (-1, 0, 0) SKEL_OVERLAP
+m1 swap (-1, 1, -1) SKEL_OVERLAP
+m1 swap (-1, 1, 1) SKEL_OVERLAP
+m1 swap (-1, -1, -1) SKEL_OVERLAP
+m1 swap (0, -1, 1) SKEL_OVERLAP
+m1 swap (0, 0, 0) SKEL_OVERLAP
+m1 swap (0, 1, -1) SKEL_OVERLAP
+m1 swap (0, 1, 1) SKEL_OVERLAP
+m1 swap (0, -1, -1) SKEL_OVERLAP
+m1 swap (1, -1, 1) SKEL_OVERLAP
+m1 swap (1, 0, 0) SKEL_OVERLAP
+m1 swap (1, 1, -1) SKEL_OVERLAP
+m1 swap (1, 1, 1) SKEL_OVERLAP
+m1 swap (1, -1, -1) SKEL_OVERLAP

@@ -1,0 +1,26 @@
+1178 skeletons
+progress 0 {'INFEASIBLE': 1}
+progress 50 {'INFEASIBLE': 51}
+progress 100 {'INFEASIBLE': 101}
+progress 150 {'INFEASIBLE': 151}
+progress 200 {'INFEASIBLE': 201}
+progress 250 {'INFEASIBLE': 251}
+progress 300 {'INFEASIBLE': 301}
+progress 350 {'INFEASIBLE': 351}
+progress 400 {'INFEASIBLE': 401}
+progress 450 {'INFEASIBLE': 451}
+progress 500 {'INFEASIBLE': 501}
+progress 550 {'INFEASIBLE': 551}
+progress 600 {'INFEASIBLE': 601}
+progress 650 {'INFEASIBLE': 651}
+progress 700 {'INFEASIBLE': 701}
+progress 750 {'INFEASIBLE': 751}
+progress 800 {'INFEASIBLE': 801}
+progress 850 {'INFEASIBLE': 851}
+progress 900 {'INFEASIBLE': 901}
+progress 950 {'INFEASIBLE': 951}
+progress 1000 {'INFEASIBLE': 1001}
+progress 1050 {'INFEASIBLE': 1051}
+progress 1100 {'INFEASIBLE': 1101}
+progress 1150 {'INFEASIBLE': 1151}
+done {'INFEASIBLE': 1178}

@@ -3,7 +3,7 @@
 
 use std::collections::{BTreeMap, BTreeSet, HashSet, VecDeque};
 
-use crate::debug::{Link, MoveOverlay, PowerOverlay, StepInfo, TickTrace};
+use crate::debug::{Link, MoveOverlay, StepInfo, TickTrace};
 use crate::{Block, Coord, Error, Flyer, Kind};
 
 type Chunk = (i64, i64);
@@ -138,21 +138,7 @@ impl Flyer {
         mut trace: Option<&mut TickTrace>,
         tick: usize,
     ) -> Result<TickReport, Error> {
-        let power_sources = trace.as_ref().map(|_| self.blocks());
         let powered = self.power_stage();
-        let power_overlay = power_sources.map(|snapshot| self.describe_power(&snapshot, &powered));
-        if let Some(view) = trace.as_deref_mut() {
-            view.capture(
-                self,
-                StepInfo {
-                    title: format!("Tick {tick} · power stage"),
-                    stage: "power",
-                    tick,
-                    power: power_overlay.clone(),
-                    ..StepInfo::default()
-                },
-            );
-        }
         let mut report = TickReport {
             powered_pistons: powered.len(),
             ..TickReport::default()
@@ -191,19 +177,6 @@ impl Flyer {
         let minimum_chunk_x = chunks.iter().map(|chunk| chunk.0).min().unwrap_or(0);
         let minimum_chunk_z = chunks.iter().map(|chunk| chunk.1).min().unwrap_or(0);
         shuffle(&mut chunks, tick_seed);
-        if let Some(view) = trace.as_deref_mut() {
-            view.capture(
-                self,
-                StepInfo {
-                    title: format!("Tick {tick} · chunk schedule"),
-                    stage: "schedule",
-                    tick,
-                    chunk_order: chunks.clone(),
-                    power: power_overlay.clone(),
-                    ..StepInfo::default()
-                },
-            );
-        }
         report.chunks_ticked = chunks.len();
         for &chunk in &chunks {
             let mut pistons: Vec<Coord> = context
@@ -230,8 +203,6 @@ impl Flyer {
                         tick,
                         chunk_order: chunks.clone(),
                         active_chunk: Some(chunk),
-                        piston_order: pistons.clone(),
-                        power: power_overlay.clone(),
                         ..StepInfo::default()
                     },
                 );
@@ -282,111 +253,30 @@ impl Flyer {
                     }
                     _ => {}
                 }
-                if let Some(view) = trace.as_deref_mut() {
-                    view.capture(
-                        self,
-                        StepInfo {
-                            title: format!(
-                                "Tick {tick} · {action} @ ({}, {}, {})",
-                                pos.x, pos.y, pos.z
-                            ),
-                            stage: "piston",
-                            tick,
-                            chunk_order: chunks.clone(),
-                            active_chunk: Some(chunk),
-                            piston_order: pistons.clone(),
-                            active_piston: Some(pos),
-                            power: power_overlay.clone(),
-                            movement,
-                            ..StepInfo::default()
-                        },
-                    );
+                if action != "idle" {
+                    if let Some(view) = trace.as_deref_mut() {
+                        view.capture(
+                            self,
+                            StepInfo {
+                                title: format!(
+                                    "Tick {tick} · {action} @ ({}, {}, {})",
+                                    pos.x, pos.y, pos.z
+                                ),
+                                stage: "piston",
+                                action: Some(action),
+                                tick,
+                                chunk_order: chunks.clone(),
+                                active_chunk: Some(chunk),
+                                active_piston: Some(pos),
+                                movement,
+                                ..StepInfo::default()
+                            },
+                        );
+                    }
                 }
             }
-        }
-        if let Some(view) = trace.as_deref_mut() {
-            view.capture(
-                self,
-                StepInfo {
-                    title: format!("Tick {tick} · complete"),
-                    stage: "tick",
-                    tick,
-                    chunk_order: chunks,
-                    power: power_overlay,
-                    ..StepInfo::default()
-                },
-            );
         }
         Ok(report)
-    }
-
-    fn describe_power(
-        &self,
-        snapshot: &[(Coord, Block)],
-        powered: &HashSet<Coord>,
-    ) -> PowerOverlay {
-        let mut result = PowerOverlay::default();
-        result.powered = powered.iter().copied().collect();
-        result.powered.sort();
-        for &(pos, block) in snapshot {
-            if block.moving() {
-                continue;
-            }
-            if block.kind() == Kind::Rod || (block.kind() == Kind::Observer && block.powered()) {
-                if let Some(target) = offset(pos, DIRECTIONS[block.direction() as usize]) {
-                    if self.get(target).is_some_and(is_solid) {
-                        result.hard.push(target);
-                        result.links.push(Link {
-                            from: pos,
-                            to: target,
-                            kind: "hard",
-                        });
-                    } else if powered.contains(&target) && self.power_allowed_from(target, pos) {
-                        result.links.push(Link {
-                            from: pos,
-                            to: target,
-                            kind: "soft",
-                        });
-                    }
-                }
-            }
-            if matches!(block.kind(), Kind::Rod | Kind::RedstoneBlock) {
-                for &direction in &DIRECTIONS {
-                    if let Some(target) = offset(pos, direction) {
-                        if powered.contains(&target) && self.power_allowed_from(target, pos) {
-                            result.links.push(Link {
-                                from: pos,
-                                to: target,
-                                kind: "soft",
-                            });
-                        }
-                    }
-                }
-            }
-        }
-        result.hard.sort();
-        result.hard.dedup();
-        for &solid in &result.hard {
-            for &direction in &DIRECTIONS {
-                if let Some(target) = offset(solid, direction) {
-                    if powered.contains(&target) && self.power_allowed_from(target, solid) {
-                        result.links.push(Link {
-                            from: solid,
-                            to: target,
-                            kind: "hard→piston",
-                        });
-                    }
-                }
-            }
-        }
-        result
-    }
-
-    fn power_allowed_from(&self, piston_pos: Coord, source: Coord) -> bool {
-        self.get(piston_pos).is_some_and(|block| {
-            block.kind() == Kind::Piston
-                && offset(piston_pos, DIRECTIONS[block.direction() as usize]) != Some(source)
-        })
     }
 
     fn describe_extension(&self, pos: Coord, piston: Block) -> MoveOverlay {
@@ -1005,11 +895,25 @@ mod tests {
         flyer.set(owner, piston(0, false, false, 1, false));
         flyer.set(angry, piston(0, false, true, 0, true));
         flyer.set_piston_blocks(owner, vec![angry]).unwrap();
-        let report = flyer.tick().unwrap();
+        let mut trace = TickTrace::new(&flyer);
+        let report = flyer.tick_traced(&mut trace, 1).unwrap();
         assert_eq!(report.extensions_finished, 1);
         assert_eq!(report.extensions_started, 1);
         assert_eq!(flyer.get(angry).unwrap().state(), 1);
         assert!(!flyer.get(angry).unwrap().moving());
+        let actions: Vec<_> = trace
+            .steps
+            .iter()
+            .filter(|step| step.info.stage == "piston")
+            .map(|step| (step.info.active_piston, step.info.action))
+            .collect();
+        assert_eq!(
+            actions,
+            vec![
+                (Some(owner), Some("finish extension")),
+                (Some(angry), Some("extend"))
+            ]
+        );
     }
 
     #[test]
@@ -1053,6 +957,28 @@ mod tests {
             assert_eq!(normal.to_bytes().unwrap(), traced.to_bytes().unwrap());
         }
         assert!(trace.steps.len() >= 5);
+        assert!(trace.steps.iter().all(|step| {
+            step.info.stage == "chunk"
+                || (step.info.stage == "piston"
+                    && step.info.action.is_some_and(|action| action != "idle"))
+        }));
+    }
+
+    #[test]
+    fn detailed_trace_skips_idle_pistons() {
+        let mut flyer = Flyer::with_defaults();
+        flyer.set(Coord::new(0, 0, 0), piston(0, false, false, 0, false));
+        flyer.set(Coord::new(1, 0, 3), piston(0, false, true, 0, false));
+        flyer.set(Coord::new(3, 0, 0), piston(0, false, false, 2, false));
+        flyer.set(Coord::new(3, -1, 0), Block::rod(0, false).unwrap());
+        let mut trace = TickTrace::new(&flyer);
+        flyer.tick_traced(&mut trace, 1).unwrap();
+        assert!(trace.steps.iter().any(|step| step.info.stage == "chunk"));
+        assert!(trace.steps.iter().all(|step| step.info.stage == "chunk"));
+        assert!(!flyer.get(Coord::new(1, 0, 3)).unwrap().angry());
+        let json = trace.to_json();
+        assert!(!json.contains("piston_order"));
+        assert!(!json.contains("\"stage\":\"piston\""));
     }
 
     #[test]

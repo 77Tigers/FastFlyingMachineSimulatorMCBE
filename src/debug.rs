@@ -16,13 +16,6 @@ pub struct Link {
 }
 
 #[derive(Clone, Debug, Default)]
-pub struct PowerOverlay {
-    pub powered: Vec<Coord>,
-    pub hard: Vec<Coord>,
-    pub links: Vec<Link>,
-}
-
-#[derive(Clone, Debug, Default)]
 pub struct MoveOverlay {
     pub sources: Vec<Coord>,
     pub destinations: Vec<Coord>,
@@ -35,12 +28,11 @@ pub struct MoveOverlay {
 pub struct StepInfo {
     pub title: String,
     pub stage: &'static str,
+    pub action: Option<&'static str>,
     pub tick: usize,
     pub chunk_order: Vec<Chunk>,
     pub active_chunk: Option<Chunk>,
-    pub piston_order: Vec<Coord>,
     pub active_piston: Option<Coord>,
-    pub power: Option<PowerOverlay>,
     pub movement: Option<MoveOverlay>,
 }
 
@@ -148,9 +140,13 @@ impl TickTrace {
             out.push('{');
             write!(
                 out,
-                "\"title\":{},\"stage\":{},\"tick\":{},",
+                "\"title\":{},\"stage\":{},\"action\":{},\"tick\":{},",
                 json_string(&step.info.title),
                 json_string(step.info.stage),
+                step.info
+                    .action
+                    .map(json_string)
+                    .unwrap_or_else(|| "null".to_string()),
                 step.info.tick
             )
             .unwrap();
@@ -178,28 +174,9 @@ impl TickTrace {
             } else {
                 out.push_str("null");
             }
-            out.push_str(",\"piston_order\":[");
-            for (i, &pos) in step.info.piston_order.iter().enumerate() {
-                if i > 0 {
-                    out.push(',');
-                }
-                write_coord(&mut out, pos);
-            }
-            out.push_str("],\"active_piston\":");
+            out.push_str(",\"active_piston\":");
             if let Some(pos) = step.info.active_piston {
                 write_coord(&mut out, pos);
-            } else {
-                out.push_str("null");
-            }
-            out.push_str(",\"power\":");
-            if let Some(power) = &step.info.power {
-                out.push_str("{\"powered\":[");
-                write_coords(&mut out, &power.powered);
-                out.push_str("],\"hard\":[");
-                write_coords(&mut out, &power.hard);
-                out.push_str("],\"links\":[");
-                write_links(&mut out, &power.links);
-                out.push_str("]}");
             } else {
                 out.push_str("null");
             }

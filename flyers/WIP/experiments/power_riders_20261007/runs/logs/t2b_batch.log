@@ -1,0 +1,49 @@
+## 7 --w mwwm --k4 nb1 --k5 nb1 --v box --f free --tl 180 --tag t2b_vbox_ffree_mwwm
+built 13.4 vars 9228
+{'L': 7, 'w': 'mwwm', 'k4': 'nb1', 'k5': 'nb1', 'v': 'box', 'f': 'free', 'nw': 1, 'm4': None, 'm5': None, 'tl': 180.0, 'wk': 4, 'obj': None, 'wbox': 2, 'tag': 't2b_vbox_ffree_mwwm', 'map': 'flipz', 'd': 'm1,0,8', 'ride': None, 'nopow5': False, 'wself': 0, 'wsword': 'wmwm'} INFEASIBLE 11.8
+## 7 --w wmwm --k4 nb1 --k5 nb1 --v box --f free --tl 180 --tag t2b_vbox_ffree_wmwm
+built 12.9 vars 9228
+{'L': 7, 'w': 'wmwm', 'k4': 'nb1', 'k5': 'nb1', 'v': 'box', 'f': 'free', 'nw': 1, 'm4': None, 'm5': None, 'tl': 180.0, 'wk': 4, 'obj': None, 'wbox': 2, 'tag': 't2b_vbox_ffree_wmwm', 'map': 'flipz', 'd': 'm1,0,8', 'ride': None, 'nopow5': False, 'wself': 0, 'wsword': 'wmwm'} INFEASIBLE 22.9
+## 7 --w mwmw --k4 nb1 --k5 nb1 --v box --f free --tl 180 --tag t2b_vbox_ffree_mwmw
+built 17.1 vars 9228
+{'L': 7, 'w': 'mwmw', 'k4': 'nb1', 'k5': 'nb1', 'v': 'box', 'f': 'free', 'nw': 1, 'm4': None, 'm5': None, 'tl': 180.0, 'wk': 4, 'obj': None, 'wbox': 2, 'tag': 't2b_vbox_ffree_mwmw', 'map': 'flipz', 'd': 'm1,0,8', 'ride': None, 'nopow5': False, 'wself': 0, 'wsword': 'wmwm'} INFEASIBLE 39.4
+## 7 --w mmww --k4 nb1 --k5 nb1 --v box --f free --tl 180 --tag t2b_vbox_ffree_mmww
+built 13.2 vars 9228
+{'L': 7, 'w': 'mmww', 'k4': 'nb1', 'k5': 'nb1', 'v': 'box', 'f': 'free', 'nw': 1, 'm4': None, 'm5': None, 'tl': 180.0, 'wk': 4, 'obj': None, 'wbox': 2, 'tag': 't2b_vbox_ffree_mmww', 'map': 'flipz', 'd': 'm1,0,8', 'ride': None, 'nopow5': False, 'wself': 0, 'wsword': 'wmwm'} INFEASIBLE 42.6
+## 7 --w wwmm --k4 nb1 --k5 nb1 --v box --f free --tl 180 --tag t2b_vbox_ffree_wwmm
+built 7.7 vars 9228
+{'L': 7, 'w': 'wwmm', 'k4': 'nb1', 'k5': 'nb1', 'v': 'box', 'f': 'free', 'nw': 1, 'm4': None, 'm5': None, 'tl': 180.0, 'wk': 4, 'obj': None, 'wbox': 2, 'tag': 't2b_vbox_ffree_wwmm', 'map': 'flipz', 'd': 'm1,0,8', 'ride': None, 'nopow5': False, 'wself': 0, 'wsword': 'wmwm'} INFEASIBLE 26.3
+## 7 --w wmmw --k4 nb1 --k5 nb1 --v box --f free --tl 180 --tag t2b_vbox_ffree_wmmw
+built 8.6 vars 9228
+{'L': 7, 'w': 'wmmw', 'k4': 'nb1', 'k5': 'nb1', 'v': 'box', 'f': 'free', 'nw': 1, 'm4': None, 'm5': None, 'tl': 180.0, 'wk': 4, 'obj': None, 'wbox': 2, 'tag': 't2b_vbox_ffree_wmmw', 'map': 'flipz', 'd': 'm1,0,8', 'ride': None, 'nopow5': False, 'wself': 0, 'wsword': 'wmwm'} INFEASIBLE 7.2
+## 7 --w mmww,wwmm --k4 nb1 --k5 nb1 --nw 2 --tl 180 --tag t2b_nw2_mmww,wwmm
+built 7.8 vars 11068
+{'L': 7, 'w': 'mmww,wwmm', 'k4': 'nb1', 'k5': 'nb1', 'v': 'fix', 'f': 'fix', 'nw': 2, 'm4': None, 'm5': None, 'tl': 180.0, 'wk': 4, 'obj': None, 'wbox': 2, 'tag': 't2b_nw2_mmww,wwmm', 'map': 'flipz', 'd': 'm1,0,8', 'ride': None, 'nopow5': False, 'wself': 0, 'wsword': 'wmwm'} INFEASIBLE 11.6
+## 7 --w mwwm,wmwm --k4 nb1 --k5 nb1 --nw 2 --tl 180 --tag t2b_nw2_mwwm,wmwm
+built 9.4 vars 11068
+{'L': 7, 'w': 'mwwm,wmwm', 'k4': 'nb1', 'k5': 'nb1', 'v': 'fix', 'f': 'fix', 'nw': 2, 'm4': None, 'm5': None, 'tl': 180.0, 'wk': 4, 'obj': None, 'wbox': 2, 'tag': 't2b_nw2_mwwm,wmwm', 'map': 'flipz', 'd': 'm1,0,8', 'ride': None, 'nopow5': False, 'wself': 0, 'wsword': 'wmwm'} INFEASIBLE 4.2
+## 7 --w mwmw,wmwm --k4 nb1 --k5 nb1 --nw 2 --tl 180 --tag t2b_nw2_mwmw,wmwm
+built 7.6 vars 11068
+{'L': 7, 'w': 'mwmw,wmwm', 'k4': 'nb1', 'k5': 'nb1', 'v': 'fix', 'f': 'fix', 'nw': 2, 'm4': None, 'm5': None, 'tl': 180.0, 'wk': 4, 'obj': None, 'wbox': 2, 'tag': 't2b_nw2_mwmw,wmwm', 'map': 'flipz', 'd': 'm1,0,8', 'ride': None, 'nopow5': False, 'wself': 0, 'wsword': 'wmwm'} INFEASIBLE 3.2
+## 7 --w mwwm,mwmw --k4 nb1 --k5 nb1 --nw 2 --tl 180 --tag t2b_nw2_mwwm,mwmw
+built 9.9 vars 11068
+{'L': 7, 'w': 'mwwm,mwmw', 'k4': 'nb1', 'k5': 'nb1', 'v': 'fix', 'f': 'fix', 'nw': 2, 'm4': None, 'm5': None, 'tl': 180.0, 'wk': 4, 'obj': None, 'wbox': 2, 'tag': 't2b_nw2_mwwm,mwmw', 'map': 'flipz', 'd': 'm1,0,8', 'ride': None, 'nopow5': False, 'wself': 0, 'wsword': 'wmwm'} INFEASIBLE 4.0
+## 7 --w mmww,wmmw --k4 nb1 --k5 nb1 --nw 2 --tl 180 --tag t2b_nw2_mmww,wmmw
+built 8.9 vars 11068
+{'L': 7, 'w': 'mmww,wmmw', 'k4': 'nb1', 'k5': 'nb1', 'v': 'fix', 'f': 'fix', 'nw': 2, 'm4': None, 'm5': None, 'tl': 180.0, 'wk': 4, 'obj': None, 'wbox': 2, 'tag': 't2b_nw2_mmww,wmmw', 'map': 'flipz', 'd': 'm1,0,8', 'ride': None, 'nopow5': False, 'wself': 0, 'wsword': 'wmwm'} INFEASIBLE 3.8
+## 7 --w wwmm,wmmw --k4 nb1 --k5 nb1 --nw 2 --tl 180 --tag t2b_nw2_wwmm,wmmw
+built 10.2 vars 11068
+{'L': 7, 'w': 'wwmm,wmmw', 'k4': 'nb1', 'k5': 'nb1', 'v': 'fix', 'f': 'fix', 'nw': 2, 'm4': None, 'm5': None, 'tl': 180.0, 'wk': 4, 'obj': None, 'wbox': 2, 'tag': 't2b_nw2_wwmm,wmmw', 'map': 'flipz', 'd': 'm1,0,8', 'ride': None, 'nopow5': False, 'wself': 0, 'wsword': 'wmwm'} INFEASIBLE 4.9
+## 7 --w mwwm,mmww --k4 nb1 --k5 nb1 --nw 2 --tl 180 --tag t2b_nw2_mwwm,mmww
+built 15.0 vars 11068
+{'L': 7, 'w': 'mwwm,mmww', 'k4': 'nb1', 'k5': 'nb1', 'v': 'fix', 'f': 'fix', 'nw': 2, 'm4': None, 'm5': None, 'tl': 180.0, 'wk': 4, 'obj': None, 'wbox': 2, 'tag': 't2b_nw2_mwwm,mmww', 'map': 'flipz', 'd': 'm1,0,8', 'ride': None, 'nopow5': False, 'wself': 0, 'wsword': 'wmwm'} INFEASIBLE 6.0
+## 7 --w mwwm,wwmm --k4 nb1 --k5 nb1 --nw 2 --tl 180 --tag t2b_nw2_mwwm,wwmm
+built 12.7 vars 11068
+{'L': 7, 'w': 'mwwm,wwmm', 'k4': 'nb1', 'k5': 'nb1', 'v': 'fix', 'f': 'fix', 'nw': 2, 'm4': None, 'm5': None, 'tl': 180.0, 'wk': 4, 'obj': None, 'wbox': 2, 'tag': 't2b_nw2_mwwm,wwmm', 'map': 'flipz', 'd': 'm1,0,8', 'ride': None, 'nopow5': False, 'wself': 0, 'wsword': 'wmwm'} INFEASIBLE 5.9
+## 7 --w wmwm,mmww --k4 nb1 --k5 nb1 --nw 2 --tl 180 --tag t2b_nw2_wmwm,mmww
+built 16.1 vars 11068
+{'L': 7, 'w': 'wmwm,mmww', 'k4': 'nb1', 'k5': 'nb1', 'v': 'fix', 'f': 'fix', 'nw': 2, 'm4': None, 'm5': None, 'tl': 180.0, 'wk': 4, 'obj': None, 'wbox': 2, 'tag': 't2b_nw2_wmwm,mmww', 'map': 'flipz', 'd': 'm1,0,8', 'ride': None, 'nopow5': False, 'wself': 0, 'wsword': 'wmwm'} INFEASIBLE 19.2
+## 7 --w wmwm,wwmm --k4 nb1 --k5 nb1 --nw 2 --tl 180 --tag t2b_nw2_wmwm,wwmm
+built 13.0 vars 11068
+{'L': 7, 'w': 'wmwm,wwmm', 'k4': 'nb1', 'k5': 'nb1', 'v': 'fix', 'f': 'fix', 'nw': 2, 'm4': None, 'm5': None, 'tl': 180.0, 'wk': 4, 'obj': None, 'wbox': 2, 'tag': 't2b_nw2_wmwm,wwmm', 'map': 'flipz', 'd': 'm1,0,8', 'ride': None, 'nopow5': False, 'wself': 0, 'wsword': 'wmwm'} INFEASIBLE 17.7
+BATCH DONE

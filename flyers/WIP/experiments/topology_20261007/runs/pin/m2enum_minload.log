@@ -1,0 +1,32 @@
+skeleton 0 (4.3s) Q rides [(0, "K5'"), (1, "K5'")]: K4: (8, 0, 2)S (8, 1, 2)g (8, 1, 3)P (8, 2, 1)g (8, 2, 2)g (9, 2, 2)g | K5: (10, 2, 3)g (10, 2, 4)g (11, 1, 2)S (11, 1, 3)g (11, 2, 3)g (12, 2, 3)g | Q: (11, 2, 4)S
+   powered L=9: INFEASIBLE 1.0s
+   powered L=10: INFEASIBLE 1.0s
+   powered L=11: INFEASIBLE 1.0s
+   powered L=12: INFEASIBLE 1.1s
+skeleton 1 (4.5s) Q rides [(0, "K5'"), (1, "K5'")]: K4: (8, 0, 2)S (8, 1, 2)g (8, 1, 3)P (8, 2, 2)g (9, 2, 1)g (9, 2, 2)g | K5: (9, 2, 3)g (9, 2, 4)g (10, 2, 3)g (11, 1, 2)S (11, 1, 3)g (11, 2, 3)g | Q: (10, 2, 4)S
+   powered L=9: INFEASIBLE 2.1s
+   powered L=10: OPTIMAL 2.4s
+K4 word=(0, 1) slime n=10: (7, 2, 1)('D', 5) (8, 0, 2)S (8, 1, 2)g (8, 1, 3)P (8, 2, 1)g (8, 2, 2)g (9, 2, 1)g (9, 2, 2)g (10, 2, 2)g (11, 2, 2)('D', 4)
+K5 word=(2, 3) honey n=9: (8, 2, 4)g (9, 2, 3)g (9, 2, 4)g (10, 0, 3)R (10, 2, 3)g (11, 0, 3)g (11, 1, 2)S (11, 1, 3)g (11, 2, 3)g
+Q word=(0, 1) honey n=1: (10, 2, 4)S
+K4' word=(2, 3) honey n=10: (8, 3, 6)('D', 4) (9, 3, 5)g (9, 3, 6)g (9, 4, 4)P (9, 4, 5)g (9, 5, 5)S (10, 3, 5)g (10, 3, 6)g (11, 3, 5)g (12, 3, 5)('D', 5)
+K5' word=(0, 1) slime n=9: (7, 3, 3)g (8, 3, 3)g (8, 3, 4)g (9, 3, 4)g (9, 5, 4)R (10, 3, 4)g (10, 4, 4)g (10, 4, 5)S (10, 5, 4)g
+Q' word=(2, 3) honey n=1: (11, 3, 3)S
+loads K0+N@1=7 K0'+N'@3=7 K0@0=5 N@2=3 K1'@0=6 K1'@1=6 K2'@2=5 K2'@3=5 K3'@0=5 K3'@1=5 K4'@2=10 K4'@3=10 K5'@0=10 K5'@1=10 K1@2=6 K1@3=6 K2@0=5 K2@1=5 K3@2=5 K3@3=5 K4@0=10 K4@1=10 K5@2=10 K5@3=10 K0'@2=5 N'@0=3
+riders [(0, 'Q', "K5'"), (1, 'Q', "K5'"), (2, "Q'", 'K5'), (3, "Q'", 'K5')]
+skeleton 2 (12.5s) Q rides [(0, "K5'"), (1, "K5'")]: K4: (8, 0, 2)S (8, 1, 2)g (8, 1, 3)P (8, 2, 1)g (8, 2, 2)g (8, 3, 2)g (9, 2, 2)g | K5: (10, 2, 3)g (10, 3, 3)g (11, 1, 3)g (11, 2, 3)g (12, 2, 2)S (12, 2, 3)g | Q: (11, 3, 3)S
+   powered L=9: INFEASIBLE 1.1s
+   powered L=10: INFEASIBLE 1.1s
+   powered L=11: INFEASIBLE 1.1s
+   powered L=12: INFEASIBLE 1.0s
+skeleton 3 (5.1s) Q rides [(0, "K5'"), (1, "K5'")]: K4: (8, 0, 2)S (8, 1, 2)g (8, 1, 3)P (8, 2, 2)g | K5: (9, 2, 3)g (9, 2, 4)g (10, 2, 3)g (11, 1, 3)g (11, 2, 2)S (11, 2, 3)g | Q: (10, 2, 4)S
+   powered L=9: INFEASIBLE 0.8s
+   powered L=10: INFEASIBLE 0.7s
+   powered L=11: INFEASIBLE 0.9s
+   powered L=12: INFEASIBLE 0.8s
+skeleton 4 (10.4s) Q rides [(0, "K5'"), (1, "K5'")]: K4: (8, 0, 2)S (8, 1, 2)g (8, 2, 0)g (8, 2, 1)g (8, 2, 2)g (9, 1, 2)g (9, 2, 2)P | K5: (10, 2, 3)g (10, 3, 3)g (11, 2, 3)g (12, 1, 2)S (12, 2, 2)g (12, 2, 3)g | Q: (11, 3, 3)S
+   powered L=9: INFEASIBLE 0.8s
+   powered L=10: INFEASIBLE 0.7s
+   powered L=11: INFEASIBLE 0.8s
+   powered L=12: INFEASIBLE 0.8s
+skeletons 5

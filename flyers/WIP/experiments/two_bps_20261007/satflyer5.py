@@ -400,7 +400,7 @@ class FlyerSAT:
                             for l2 in blk: self.clause([neg(self.OCC[j, u]), neg(xo), neg(l2), e])
                             self.leafvars.setdefault((j, t, o, lo), []).append((self.OCC[j, u], xo, e))
             # ---- adhesion of moving glue
-            for j in (mov if 'adh' not in self.skip else []):
+            for j in (mov if ('adh' not in self.skip and f'adh{t}' not in self.skip) else []):
                 if j in R: continue
                 for u in B[j]:
                     gj = self.x(j, u, 'g')

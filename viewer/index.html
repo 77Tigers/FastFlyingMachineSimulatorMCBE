@@ -9,8 +9,9 @@
 </head>
 <body>
   <header class="topbar">
-    <div class="brand"><div><strong id="run-title">FastFlyer</strong><small id="flyer-meta">Push limit —</small></div></div>
+    <div class="brand"><div class="title-row"><button id="run-title" type="button" title="Click to rename flyer">FastFlyer</button><input id="rename-input" type="text" maxlength="80" aria-label="Flyer name" hidden></div><small id="flyer-meta">Push limit —</small></div>
     <div class="top-actions">
+      <button id="new-flyer" class="top-btn secondary" type="button">New flyer</button>
       <button id="open-bank" class="top-btn primary">Browse flyer bank</button>
       <label class="top-btn secondary">Open .flyer<input id="file" type="file" accept=".flyer,application/octet-stream"></label>
       <button id="export" class="top-btn secondary" type="button" disabled title="Download the time-zero flyer">Export</button>
@@ -30,6 +31,7 @@
       <div id="viewport">
         <div id="viewport-label" class="viewport-label" hidden><span id="step-badge">INITIAL</span><span id="step-title">Initial configuration</span></div>
         <div id="canvas"></div>
+        <div id="piston-label-layer" aria-hidden="true"></div>
         <div id="edit-hotbar" class="edit-hotbar" role="group" aria-label="Block palette" hidden></div>
         <button id="fullscreen" class="fullscreen-btn" type="button" aria-label="Enter fullscreen" title="Enter fullscreen (Esc to exit)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/></svg></button>
         <button id="open-help" class="help-btn" type="button" aria-label="Need help?" title="Need help?"><span class="help-mark" aria-hidden="true">?</span><span class="help-text">Need help?</span></button>
@@ -49,20 +51,12 @@
         <label class="toggle follow-toggle"><input id="follow-flyer" type="checkbox" checked>Follow flyer</label>
         <div id="sprint-indicator" class="sprint-indicator" hidden>SPRINTING · 2×</div>
       </div>
-      <div id="diagnostics-panel" class="panel-section" hidden>
-        <div class="section-head"><span>DISPLAY</span><span class="tiny">VISIBLE LAYERS</span></div>
-        <label class="toggle"><input id="show-power" type="checkbox" checked><span class="swatch power"></span>Power paths</label>
-        <label class="toggle"><input id="show-move" type="checkbox" checked><span class="swatch move"></span>Move discovery</label>
-        <label class="toggle"><input id="show-owners" type="checkbox" checked><span class="swatch owner"></span>Moving owners / ghosts</label>
-        <label class="toggle"><input id="show-chunks" type="checkbox" checked><span class="swatch chunk"></span>Chunk boundaries</label>
-      </div>
       <div class="panel-section floor-panel"><label class="toggle"><input id="show-floor" type="checkbox" checked>Show floor</label></div>
-      <div id="details-panel" class="panel-section" hidden><div class="section-head"><span id="details-title">ACTION DETAILS</span></div><div id="details" class="details"></div></div>
-      <div id="order-panel" class="panel-section" hidden><div class="section-head"><span>UPDATE ORDER</span></div><div id="update-order" class="update-order"></div></div>
       <div class="panel-section mode-panel"><div class="section-head"><span>EDIT / VIEW</span></div><div class="segmented mode-select" role="group" aria-label="Edit or view"><button id="mode-view" class="active" aria-pressed="true">View</button><button id="mode-edit" aria-pressed="false">Edit</button></div></div>
       </div>
       <div id="panel-debug" class="right-tab-content" role="tabpanel" aria-labelledby="tab-debug" hidden>
         <div id="inspector-section" class="panel-section"><div class="section-head"><span>INSPECTOR</span></div><div id="inspector" class="empty-inspector">Select a block to see its state, owner, and coordinates.</div></div>
+        <div class="panel-section"><label class="piston-info-control" for="piston-info"><span>PISTON INFO</span><select id="piston-info"><option value="none">None</option><option value="max-load">Max load</option><option value="update-order">Update order</option></select></label></div>
         <details class="panel-section slice-panel"><summary>Slice filter <span>optional</span></summary><div class="slice-footer-controls"><div class="slice-row"><label><input id="slice-x-on" type="checkbox"> X</label><input id="slice-x" type="number" value="0"></div><div class="slice-row"><label><input id="slice-y-on" type="checkbox"> Y</label><input id="slice-y" type="number" value="1"></div><div class="slice-row"><label><input id="slice-z-on" type="checkbox"> Z</label><input id="slice-z" type="number" value="0"></div></div></details>
         <div class="panel-section playback-detail-panel"><div class="section-head"><span>PLAYBACK DETAIL</span></div><div class="segmented mode-select" role="group" aria-label="Playback detail"><button id="mode-ticks" class="active" aria-pressed="true">Ticks</button><button id="mode-detailed" aria-pressed="false">Detailed</button></div></div>
       </div>
@@ -82,6 +76,7 @@
       <div id="bank-list" class="bank-list"></div>
     </div>
   </dialog>
+  <dialog id="new-confirm" aria-labelledby="new-confirm-title"><div class="confirm-modal"><h2 id="new-confirm-title">Start a new flyer?</h2><p>This will replace your current edits. Export your flyer first if you want to keep them.</p><div class="confirm-actions"><button id="cancel-new" type="button" class="top-btn secondary">Keep working</button><button id="confirm-new" type="button" class="top-btn primary">Start new flyer</button></div></div></dialog>
   <dialog id="help-dialog" aria-labelledby="help-title">
     <div class="help-modal">
       <header class="help-header"><div><span class="eyebrow">QUICK GUIDE</span><h1 id="help-title">Getting around</h1></div><button id="close-help" class="subtle" aria-label="Close help">✕</button></header>
@@ -112,12 +107,14 @@
           </dl>
         </section>
         <section><h2>Ticks or Detailed</h2>
-          <p>The switch at the bottom of the right panel picks how finely you step. <strong>Ticks</strong> advances a whole game tick at a time. <strong>Detailed</strong> breaks one tick into its individual power and piston actions, adds a label with the current action to the scene, and lets you show or hide power paths, move discovery, moving owners and chunk boundaries.</p>
+          <p><strong>Ticks</strong> advances one whole game tick at a time. <strong>Detailed</strong> steps through each chunk and each piston that actually acts. Idle piston checks are skipped. The next acting piston and any blocks it is about to move are outlined. In Debug, Max load appears on every piston, while Update order numbers appear only on pistons that will actually be processed.</p>
         </section>
         <section><h2>Flyers and tools</h2>
           <dl>
             <dt>Browse flyer bank</dt><dd>Search, filter and sort the collection, or click a bar in the chart to open a fastest flyer at that push limit. “At frontier” keeps new speed records (over 0.002 bps better than lower limits), one-limit-higher improvements, and flyers within 0.005 bps of each retained limit’s best. Flyers open paused.</dd>
-            <dt>Open .flyer</dt><dd>Load a file from your computer. It stays in your browser and is never uploaded.</dd>
+            <dt>Open .flyer</dt><dd>Load a file from your computer. It stays in your browser and is never uploaded. Click its title to rename it.</dd>
+            <dt>Slime and honey</dt><dd>In View mode, click a slime or honey block to color its segment purple. Other slime and honey blocks with the same tick-by-tick movement over the cached history are colored too.</dd>
+            <dt>New flyer</dt><dd>Start an Untitled six-block engine at push limit 12. You will be warned before replacing substantial edits.</dd>
             <dt>Edit / View</dt><dd>Edit resets to tick 0 and disables playback. Choose a hotbar slot with 1–9 or 0. Right-click a block within 36 blocks to place beside it; pistons default to +X and stickies to −X. While holding right-click, directional blocks use the last player-movement direction; mouse turning does not change facing. With a non-directional block, the first cell looks placed immediately. Your first movement chooses an axis, then aiming into empty space previews further ghost blocks along that axis, stopping before an occupied cell. Release to place. Left-click deletes; in fullscreen, hold it to break blocks within 36 blocks. Z or middle-click picks a block type. T cycles piston states or toggles observer power. Change push limit in the bar above the canvas.</dd>
             <dt>Export</dt><dd>Download the current time-zero design, including edits, as a .flyer file.</dd>
             <dt>Local autosave</dt><dd>The last opened flyer and its time-zero edits are saved in this browser and restored on reload. Simulation history is not saved. Export a .flyer file for a portable backup.</dd>

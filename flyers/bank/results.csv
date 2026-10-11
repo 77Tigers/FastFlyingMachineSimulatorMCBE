@@ -65,3 +65,4 @@ push_limit,name,start_min_x,end_min_x,distance,end_blocks,extensions
 43,mv4_symmetric_easy,12,3345,3333,236,20000
 43,mv4_symmetric_easy_compact,12,3345,3333,234,20000
 8,opus_cool,0,2500,2500,168,75000
+10,two_body_5slot_2bps,14,2014,2000,20,4000

@@ -60,6 +60,8 @@ def main() -> None:
 
     catalogue_path = BANK / "catalogue.json"
     catalogue = json.loads(catalogue_path.read_text(encoding="utf-8")) if catalogue_path.exists() else {}
+    if catalogue.get("entries") and catalogue.get("engine_sha256") != engine_fingerprint(ROOT):
+        raise SystemExit("Bank measurements are stale for this simulator. Run python scripts/update_bank.py, then rebuild the site.")
     measurements = catalogue.get("entries", {}) if (catalogue.get("format_version") == 1
         and catalogue.get("engine_sha256") == engine_fingerprint(ROOT)) else {}
     manifest = []

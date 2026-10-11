@@ -1,6 +1,6 @@
 {
   "format_version": 1,
-  "engine_sha256": "0f8b3e7d7ab8e0b922c881e80be969b93b19a4d9b13c36eef1efb9ec28bfc4c2",
+  "engine_sha256": "563b8b315fb7dafe69b0d6325431a8251af1f59167bcdf986f33e20103273071",
   "ticks_per_second": 10,
   "entries": {
     "flyers/bank/pl10/human_observer_hop.flyer": {
@@ -18,6 +18,15 @@
       "distance": 2500,
       "speed_bps": 2.5,
       "extensions": 5000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl10/two_body_5slot_2bps.flyer": {
+      "sha256": "c97afaa4845be2fc211692a5a4965b9220777d11d4da47300b289bc34e950b31",
+      "ticks": 10000,
+      "distance": 2000,
+      "speed_bps": 2.0,
+      "extensions": 4000,
       "extension_failures": 0,
       "endpoint_conserved": true
     },
@@ -549,6 +558,15 @@
       "distance": 3333,
       "speed_bps": 3.333,
       "extensions": 10000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl7/tm_7pl_2.5bps.flyer": {
+      "sha256": "1db45c6a6174f626be4ffc04ede8fb8752260ed056f845696bcc6e90515b8963",
+      "ticks": 10000,
+      "distance": 2500,
+      "speed_bps": 2.5,
+      "extensions": 13750,
       "extension_failures": 0,
       "endpoint_conserved": true
     },
