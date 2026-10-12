@@ -3,6 +3,10 @@
 
 pub mod debug;
 pub mod sim;
+pub use sim::{
+    PrescribedActionResult, PrescribedFailure, PrescribedMove, PrescribedOrder, PrescribedOutcome,
+    PrescribedSession, PrescribedTickReport, TickReport,
+};
 #[cfg(target_arch = "wasm32")]
 mod wasm;
 

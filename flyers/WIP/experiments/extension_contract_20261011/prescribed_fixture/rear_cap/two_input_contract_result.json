@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "name": "pl7-rear-prescribed-redstone-and-k1-phase-shift-n-output",
+  "period_ticks": 8,
+  "advance": 2,
+  "cycles": 3,
+  "recurrence": "bounded",
+  "drive_script": null,
+  "prescribed_script": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\extension_contract_20261011\\prescribed_fixture\\rear_cap\\two_input_drive.txt",
+  "prescribed_order": "before_natural",
+  "boundary_envelope": {
+    "min": [
+      0,
+      0,
+      15
+    ],
+    "max": [
+      9,
+      3,
+      18
+    ]
+  },
+  "passed": false,
+  "cases": [
+    {
+      "rng": null,
+      "phase_x": null,
+      "phase_z": null,
+      "passed": false,
+      "ticks": 9,
+      "elapsed_seconds": 0.033592,
+      "diagnostic": "tick 8: port k1_input expected wait, actual moved; action=extend,prescribed move,retract moved_ids=[0, 1, 2, 3, 6, 8, 9, 10, 11, 12, 13]",
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          6,
+          null,
+          7,
+          7
+        ]
+      },
+      "whole_assembly_max_action": 7
+    }
+  ],
+  "claim": "prescribed input injection (before_natural); validated start/settlement ledger + sampled ports + candidate-state recurrence; does not establish natural driver realization"
+}

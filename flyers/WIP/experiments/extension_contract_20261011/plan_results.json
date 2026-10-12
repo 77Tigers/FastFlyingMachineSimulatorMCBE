@@ -1,0 +1,24 @@
+{
+  "iterations_per_plan": 1000,
+  "timing_excludes_process_start_and_file_io": true,
+  "results": [
+    {
+      "file": "plans\\burst_relay.json",
+      "verdict": "consistent",
+      "mean_check_ms": 0.028921,
+      "message": "CONSISTENT: sparse contact obligations only; power, states, connectivity, intermediate-order safety and routing unresolved"
+    },
+    {
+      "file": "plans\\split_relay.json",
+      "verdict": "consistent",
+      "mean_check_ms": 0.026478,
+      "message": "CONSISTENT: sparse contact obligations only; power, states, connectivity, intermediate-order safety and routing unresolved"
+    },
+    {
+      "file": "plans\\split_relay_wrong_window.json",
+      "verdict": "contradicted",
+      "mean_check_ms": 0.025406,
+      "message": "CONTRADICTED: contact unwanted-second-contact at slot 3 (tick 6); source at (2, 0, 0), receiver at (2, 1, 0); actual b-a vector (0, 1, 0); source must not be adjacent receiver"
+    }
+  ]
+}

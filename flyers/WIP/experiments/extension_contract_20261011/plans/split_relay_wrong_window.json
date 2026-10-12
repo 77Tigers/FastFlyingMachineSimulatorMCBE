@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "name": "rejected: mmwmmw relay cannot have only the first contact window",
+  "slot_ticks": 2,
+  "period_slots": 6,
+  "advance": 4,
+  "objects": [
+    {"name": "source", "at": [0, 0, 0], "word": "mmwmmw"},
+    {"name": "receiver", "at": [0, 1, 0], "word": "wmmwmm"}
+  ],
+  "contacts": [
+    {"name": "aligned", "a": "source", "b": "receiver", "slots": [0], "relation": "adjacent"},
+    {"name": "unwanted-second-contact", "a": "source", "b": "receiver", "slots": [3], "relation": "adjacent", "required": false}
+  ]
+}

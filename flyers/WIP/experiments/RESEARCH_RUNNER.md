@@ -38,7 +38,58 @@ For current research, prefer these compact commands (run from the repository roo
 
 `audit` additionally traces every tick, reporting the largest **single successful movement set**, and all discovery failures, including failed sticky pulls. This differs from `TickReport.blocks_moved`, which sums multiple actions within a tick. Failed partial discoveries are excluded from the maximum successful load.
 
-`trace` prints initial cells, power links once per tick, source kinds/states, and adhesion/obstruction links. Coordinates identify blocks at that moment; persistent block identities are not implemented.
+`trace` prints initial cells, power links once per tick, source kinds/states, and adhesion/obstruction links. In this `fastflyer-research` trace, coordinates identify blocks at that moment; persistent block identities are not implemented.
+
+The separate [extension contract checker](../../../tools/extension_contract.py)
+assigns temporary identity numbers to the initial permanent cells in a saved
+fixture, then follows those identities through each successful action using the
+trace's paired `movement.sources` and `movement.destinations`. This witness is
+local to one contract run; it does not add IDs to the simulator, `.flyer` format,
+or the `fastflyer-research trace` output. See the calibrated
+[extension-contract findings](extension_contract_20261011/FINDINGS.md)
+for its sampled limits and the difference between self-running and scripted
+fixture checks.
+
+For a first contract miss, [`extension_explain.py`](../../../tools/extension_explain.py)
+replays `extension-trace` through a zero-based tick and prints the tagged port's
+current position, actual nearby piston actions, approximate extension pushers,
+and transported power-source origins. Use `--contract CONTRACT.json` (and
+optionally `--port-name`) or tag a saved coordinate with `--port X Y Z`; see the
+[extension experiment README](extension_contract_20261011/README.md) for exact
+commands. Its pusher list is a geometric extension screen, not proof of legal
+movement or a complete actuator inventory, and it does not enumerate sticky
+pull reach. The helper separates adjacent source candidates from pre-power
+eligibility and does not modify the flyer.
+
+The same checker accepts a `drive_script` field for an explicitly commanded
+primitive. The `extension-drive` backend adds and removes temporary piston and
+redstone fixtures around each named input action, while the simulator still
+discovers adhesion and movement. It does not drive output ports or assert a
+listed passenger set. The three-glue calibration and its limits are recorded
+in [the external-drive results](extension_contract_20261011/external_drive/RESULTS.json).
+Build only the relevant binary and reproduce one sampled contract with:
+
+```powershell
+cargo build --release --manifest-path tools/Cargo.toml --target-dir target --bin extension-drive
+python flyers/WIP/experiments/extension_contract_20261011/external_drive/build.py
+python tools/extension_contract.py flyers/WIP/experiments/extension_contract_20261011/external_drive/contracts/mmmww.json --samples --out flyers/WIP/experiments/extension_contract_20261011/external_drive/out/mmmww_samples.json
+python flyers/WIP/experiments/extension_contract_20261011/external_drive/summarize.py
+```
+
+For a prescribed-input calibration, `prescribed_script` plus
+`prescribed_order` selects the separate `extension-prescribe` backend. It
+injects a named input's +X movement but leaves other piston updates to the
+simulator. The checker validates actual movement sources/destinations, source
+caps, IDs, settlement on the following tick, port words, and candidate-state
+recurrence. It does not prove that a natural actuator could realize an injected
+move. Settlement overlays are lifecycle evidence, not a second translation.
+The focused three-glue smoke contract passes one 30-tick case; it is not a
+separate-body mechanism or autonomy result. Run it with:
+
+```powershell
+cargo build --release --manifest-path tools/Cargo.toml --target-dir target --bin extension-prescribe
+python tools/extension_contract.py flyers/WIP/experiments/extension_contract_20261011/prescribed_primitive/contracts/mmmww_before.json
+```
 
 For an exact-state high-limit diagnostic:
 
@@ -50,7 +101,7 @@ This simulates the first six ticks at the **original encoded limit**, changes th
 
 Validated on the banked PL11 machine: 10,000 ticks, distance 2,500, 5,000 extensions, zero conservation mismatches, 1,250 +2/eight-tick repeats, maximum successful action 11, zero movement failures. Evidence: `astra_diagonal/portable_runner_audit.txt` (deleted 2026-10-08; see [ARCHIVE.md](ARCHIVE.md), `git show 1222fbe:flyers/WIP/experiments/astra_diagonal/portable_runner_audit.txt`).
 
-Still useful to add: persistent block identities, automated first-divergence comparison, and checkpoint metadata beyond the per-case flushed CSV. The former `astra_diagonal/verify.rs` (complete PL11/PL12 80-case audit) is archived; see [ARCHIVE.md](ARCHIVE.md), `git show 1222fbe:flyers/WIP/experiments/astra_diagonal/verify.rs`; `samples` now covers it.
+Still useful to add: engine-level persistent block identities (the contract checker assigns only run-local temporary IDs), automated first-divergence comparison, and checkpoint metadata beyond the per-case flushed CSV. The former `astra_diagonal/verify.rs` (complete PL11/PL12 80-case audit) is archived; see [ARCHIVE.md](ARCHIVE.md), `git show 1222fbe:flyers/WIP/experiments/astra_diagonal/verify.rs`; `samples` now covers it.
 
 For the all-mv4 normal +X architecture, [the local core checker](../../../tools/src/bin/mv4-audit-cores.rs) checks every core cell's geometry, two-tick moving duration, permanent-kind conservation and extension failures across the same80 cases:
 
@@ -93,3 +144,20 @@ spending a long traced batch on obviously stalled candidates. The partial
 `mv4_easy_20261004/limits42/run000.csv` deliberately retains only14 negatives;
 its interrupted batch is not a completed matrix. `limit_scan.py` deduplicates
 geometries and retains both this partial evidence and subsequent focused checks.
+
+### Mixed-input rear-cap contract
+
+`prescribed_script` rows may share a tick and execute in file order. Their
+pending movements settle separately next tick; vacated source cells may be
+reused, but moving destinations remain unavailable. Scripts specify supplied
+actions, not every `m` in an input word. The rear cap deliberately retains its
+internal tick-4 push and prescribes only K1's tick-6 move.
+
+```powershell
+python -B flyers/WIP/experiments/extension_contract_20261011/prescribed_fixture/rear_cap/build_mixed_case.py
+python tools/extension_contract.py flyers/WIP/experiments/extension_contract_20261011/prescribed_fixture/rear_cap/mixed_before_natural_contract.json --samples
+python tools/extension_contract.py flyers/WIP/experiments/extension_contract_20261011/prescribed_fixture/rear_cap/mixed_after_natural_contract.json --samples
+```
+
+Both orders pass 80/80 with exact translated cell/owner recurrence. This is a
+mixed-input subassembly at PL7, not an autonomous driver or lower-PL record.

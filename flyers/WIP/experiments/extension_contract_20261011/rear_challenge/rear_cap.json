@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "name": "pl7-rear-double-pull-baseline",
+  "flyer": "../../../../bank/pl7/tm_7pl_2.5bps.flyer",
+  "period_ticks": 8,
+  "advance": 2,
+  "cycles": 3,
+  "recurrence": "bounded",
+  "boundary_envelope": {
+    "min": [0, 0, 15],
+    "max": [9, 3, 18]
+  },
+  "ports": [
+    {
+      "name": "rear_k0_input",
+      "role": "input",
+      "at": [0, 1, 15],
+      "word": "mmww",
+      "baseline_load": [5, 7, null, null],
+      "spare_load": [0, 0, null, null]
+    },
+    {
+      "name": "relay_n_output",
+      "role": "output",
+      "at": [2, 0, 15],
+      "word": "wmmw"
+    }
+  ]
+}

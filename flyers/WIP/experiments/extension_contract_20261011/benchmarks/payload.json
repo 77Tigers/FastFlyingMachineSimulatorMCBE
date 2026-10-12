@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "name": "payload",
+  "flyer": "../out/payload.flyer",
+  "period_ticks": 10,
+  "advance": 3,
+  "cycles": 3,
+  "ports": [
+    {
+      "name": "driver_input",
+      "role": "input",
+      "at": [
+        13,
+        4,
+        7
+      ],
+      "word": "mmmww",
+      "baseline_load": [
+        9,
+        8,
+        7,
+        null,
+        null
+      ],
+      "spare_load": [
+        1,
+        1,
+        1,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "downstream_output",
+      "role": "output",
+      "at": [
+        7,
+        1,
+        4
+      ],
+      "word": "wwmmm"
+    },
+    {
+      "name": "side_payload",
+      "role": "output",
+      "at": [
+        13,
+        3,
+        7
+      ],
+      "word": "mmmww"
+    }
+  ],
+  "recurrence": "bounded",
+  "boundary_envelope": {
+    "min": [
+      0,
+      0,
+      1
+    ],
+    "max": [
+      17,
+      7,
+      9
+    ]
+  }
+}

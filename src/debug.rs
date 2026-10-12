@@ -33,6 +33,9 @@ pub struct StepInfo {
     pub chunk_order: Vec<Chunk>,
     pub active_chunk: Option<Chunk>,
     pub active_piston: Option<Coord>,
+    pub active_input: Option<Coord>,
+    pub prescribed_move_id: Option<u64>,
+    pub prescribed_order: Option<&'static str>,
     pub movement: Option<MoveOverlay>,
 }
 
@@ -177,6 +180,24 @@ impl TickTrace {
             out.push_str(",\"active_piston\":");
             if let Some(pos) = step.info.active_piston {
                 write_coord(&mut out, pos);
+            } else {
+                out.push_str("null");
+            }
+            out.push_str(",\"active_input\":");
+            if let Some(pos) = step.info.active_input {
+                write_coord(&mut out, pos);
+            } else {
+                out.push_str("null");
+            }
+            out.push_str(",\"prescribed_move_id\":");
+            if let Some(id) = step.info.prescribed_move_id {
+                write!(out, "{id}").unwrap();
+            } else {
+                out.push_str("null");
+            }
+            out.push_str(",\"prescribed_order\":");
+            if let Some(order) = step.info.prescribed_order {
+                out.push_str(&json_string(order));
             } else {
                 out.push_str("null");
             }

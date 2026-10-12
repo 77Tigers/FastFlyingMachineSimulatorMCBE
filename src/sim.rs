@@ -30,6 +30,164 @@ pub struct TickReport {
     pub blocks_moved: usize,
 }
 
+/// One idealized +X input stroke. `input` is the occupied first block, not an
+/// actuator coordinate; the simulator discovers the complete moved set.
+#[derive(Clone, Copy, Debug, Eq, PartialEq)]
+pub struct PrescribedMove {
+    pub input: Coord,
+    pub max_load: u64,
+}
+
+#[derive(Clone, Copy, Debug, Eq, PartialEq)]
+pub enum PrescribedOrder {
+    BeforeNatural,
+    AfterNatural,
+}
+
+#[derive(Clone, Debug, Eq, PartialEq)]
+pub enum PrescribedFailure {
+    MissingInput,
+    MovingInput,
+    Blocked,
+    LoadExceeded { discovered: usize, limit: u64 },
+    OverlapsActiveOwner,
+}
+
+#[derive(Clone, Debug, Eq, PartialEq)]
+pub enum PrescribedOutcome {
+    Moved { blocks: usize },
+    Failed(PrescribedFailure),
+}
+
+#[derive(Clone, Debug, Eq, PartialEq)]
+pub struct PrescribedActionResult {
+    pub id: u64,
+    pub input: Coord,
+    pub outcome: PrescribedOutcome,
+}
+
+#[derive(Clone, Debug, Eq, PartialEq)]
+pub struct PrescribedTickReport {
+    pub natural: TickReport,
+    pub order: PrescribedOrder,
+    pub settled: Vec<u64>,
+    pub actions: Vec<PrescribedActionResult>,
+}
+
+#[derive(Clone, Debug)]
+struct PendingPrescribedMove {
+    id: u64,
+    input: Coord,
+    destinations: Vec<Coord>,
+}
+
+/// Opt-in wrapper for prescribed input motion. Pending ownership is transient
+/// and never added to the ordinary Flyer or its disk representation.
+pub struct PrescribedSession {
+    flyer: Flyer,
+    pending: Vec<PendingPrescribedMove>,
+    next_id: u64,
+}
+
+impl PrescribedSession {
+    pub fn new(flyer: Flyer) -> Self {
+        Self {
+            flyer,
+            pending: Vec::new(),
+            next_id: 0,
+        }
+    }
+
+    /// Expose the underlying flyer only when no external settlement is pending.
+    pub fn settled_flyer(&self) -> Option<&Flyer> {
+        self.pending.is_empty().then_some(&self.flyer)
+    }
+
+    /// Create a trace snapshot without exposing the underlying flyer.
+    pub fn new_trace(&self) -> TickTrace {
+        TickTrace::new(&self.flyer)
+    }
+
+    pub fn has_pending_moves(&self) -> bool {
+        !self.pending.is_empty()
+    }
+
+    pub fn pending_moves(&self) -> Vec<(u64, Coord, Vec<Coord>)> {
+        self.pending
+            .iter()
+            .map(|move_| (move_.id, move_.input, move_.destinations.clone()))
+            .collect()
+    }
+
+    pub fn into_flyer(self) -> Result<Flyer, Self> {
+        if self.pending.is_empty() {
+            Ok(self.flyer)
+        } else {
+            Err(self)
+        }
+    }
+
+    pub fn tick(
+        &mut self,
+        moves: &[PrescribedMove],
+        order: PrescribedOrder,
+    ) -> Result<PrescribedTickReport, Error> {
+        self.tick_inner(moves, order, None, 0)
+    }
+
+    pub fn tick_traced(
+        &mut self,
+        moves: &[PrescribedMove],
+        order: PrescribedOrder,
+        trace: &mut TickTrace,
+        tick: usize,
+    ) -> Result<PrescribedTickReport, Error> {
+        self.tick_inner(moves, order, Some(trace), tick)
+    }
+
+    fn tick_inner(
+        &mut self,
+        moves: &[PrescribedMove],
+        order: PrescribedOrder,
+        trace: Option<&mut TickTrace>,
+        tick: usize,
+    ) -> Result<PrescribedTickReport, Error> {
+        let mut actions = Vec::new();
+        let mut settled = Vec::new();
+        let mut prescribed = PrescribedTick {
+            moves,
+            order,
+            pending: &mut self.pending,
+            next_id: &mut self.next_id,
+            actions: &mut actions,
+            settled: &mut settled,
+        };
+        let natural = self.flyer.tick_inner(trace, tick, Some(&mut prescribed))?;
+        Ok(PrescribedTickReport {
+            natural,
+            order,
+            settled,
+            actions,
+        })
+    }
+}
+
+struct PrescribedTick<'a> {
+    moves: &'a [PrescribedMove],
+    order: PrescribedOrder,
+    pending: &'a mut Vec<PendingPrescribedMove>,
+    next_id: &'a mut u64,
+    actions: &'a mut Vec<PrescribedActionResult>,
+    settled: &'a mut Vec<u64>,
+}
+
+fn order_name(order: PrescribedOrder) -> &'static str {
+    match order {
+        PrescribedOrder::BeforeNatural => "before_natural",
+        PrescribedOrder::AfterNatural => "after_natural",
+    }
+}
+
 struct TickContext {
     powered: HashSet<Coord>,
     pistons_by_chunk: BTreeMap<Chunk, BTreeSet<Coord>>,
@@ -97,8 +255,8 @@ fn is_solid(block: Block) -> bool {
         )
 }
 
-fn immovable(pos: Coord, block: Block, owner: Coord) -> bool {
-    pos == owner
+fn immovable(pos: Coord, block: Block, owner: Option<Coord>) -> bool {
+    owner == Some(pos)
         || block.moving()
         || block.kind() == Kind::PistonArm
         || (block.kind() == Kind::Piston && block.state() != 0)
@@ -125,18 +283,19 @@ impl Flyer {
 
     /// Execute one power stage followed by one shuffled piston stage.
     pub fn tick(&mut self) -> Result<TickReport, Error> {
-        self.tick_inner(None, 0)
+        self.tick_inner(None, 0, None)
     }
 
     /// Execute one tick while recording inspectable, in-memory viewer steps.
     pub fn tick_traced(&mut self, trace: &mut TickTrace, tick: usize) -> Result<TickReport, Error> {
-        self.tick_inner(Some(trace), tick)
+        self.tick_inner(Some(trace), tick, None)
     }
 
     fn tick_inner(
         &mut self,
         mut trace: Option<&mut TickTrace>,
         tick: usize,
+        mut prescribed: Option<&mut PrescribedTick<'_>>,
     ) -> Result<TickReport, Error> {
         let powered = self.power_stage();
         let mut report = TickReport {
@@ -160,6 +319,47 @@ impl Flyer {
             }
         }
 
+        // External moves complete after this snapshot, so observer pulses are
+        // available to the next tick's power stage.
+        if let Some(state) = prescribed.as_deref_mut() {
+            for movement in state.pending.iter() {
+                for &destination in &movement.destinations {
+                    if !self.get(destination).is_some_and(|block| block.moving()) {
+                        return Err(Error::Format(format!(
+                            "prescribed move {} lost moving destination at ({}, {}, {})",
+                            movement.id, destination.x, destination.y, destination.z
+                        )));
+                    }
+                }
+            }
+            let due = std::mem::take(state.pending);
+            for movement in due {
+                for &destination in &movement.destinations {
+                    self.finish_moved_block(destination);
+                }
+                state.settled.push(movement.id);
+                if let Some(view) = trace.as_deref_mut() {
+                    view.capture(
+                        self,
+                        StepInfo {
+                            title: format!("Tick {tick} | settle prescribed move {}", movement.id),
+                            stage: "prescribed",
+                            action: Some("settle prescribed move"),
+                            tick,
+                            active_input: Some(movement.input),
+                            prescribed_move_id: Some(movement.id),
+                            prescribed_order: Some(order_name(state.order)),
+                            movement: Some(MoveOverlay {
+                                sources: movement.destinations,
+                                ..MoveOverlay::default()
+                            }),
+                            ..StepInfo::default()
+                        },
+                    );
+                }
+            }
+        }
+
         let mut occupied_chunks = BTreeSet::new();
         let mut context = TickContext {
             powered,
@@ -178,6 +378,13 @@ impl Flyer {
         let minimum_chunk_z = chunks.iter().map(|chunk| chunk.1).min().unwrap_or(0);
         shuffle(&mut chunks, tick_seed);
         report.chunks_ticked = chunks.len();
+        if prescribed
+            .as_deref()
+            .is_some_and(|state| state.order == PrescribedOrder::BeforeNatural)
+        {
+            let state = prescribed.as_deref_mut().unwrap();
+            self.run_prescribed_moves(&mut context, state, trace.as_deref_mut(), tick)?;
+        }
         for &chunk in &chunks {
             let mut pistons: Vec<Coord> = context
                 .pistons_by_chunk
@@ -276,7 +483,134 @@ impl Flyer {
                 }
             }
         }
+        if prescribed
+            .as_deref()
+            .is_some_and(|state| state.order == PrescribedOrder::AfterNatural)
+        {
+            let state = prescribed.as_deref_mut().unwrap();
+            self.run_prescribed_moves(&mut context, state, trace.as_deref_mut(), tick)?;
+        }
         Ok(report)
+    }
+
+    fn run_prescribed_moves(
+        &mut self,
+        context: &mut TickContext,
+        state: &mut PrescribedTick<'_>,
+        mut trace: Option<&mut TickTrace>,
+        tick: usize,
+    ) -> Result<(), Error> {
+        const EAST: (i64, i64, i64) = (1, 0, 0);
+        for &intent in state.moves {
+            let id = *state.next_id;
+            *state.next_id = state.next_id.wrapping_add(1);
+            let mut overlay = MoveOverlay::default();
+            let outcome = match self.get(intent.input) {
+                None => {
+                    overlay.failure = Some((intent.input, "missing prescribed input"));
+                    PrescribedOutcome::Failed(PrescribedFailure::MissingInput)
+                }
+                Some(block) if block.moving() => {
+                    overlay.failure = Some((intent.input, "input is already moving"));
+                    PrescribedOutcome::Failed(PrescribedFailure::MovingInput)
+                }
+                Some(_) => match self.discover_move(intent.input, EAST, None, false) {
+                    None => {
+                        overlay.failure =
+                            Some((intent.input, "blocked or simulator push limit exceeded"));
+                        PrescribedOutcome::Failed(PrescribedFailure::Blocked)
+                    }
+                    Some(sources) => {
+                        overlay.sources = sources.clone();
+                        overlay.destinations = sources
+                            .iter()
+                            .filter_map(|&pos| offset(pos, EAST))
+                            .collect();
+                        if sources
+                            .iter()
+                            .any(|&source| self.has_active_owner_outside(source, &sources))
+                        {
+                            overlay.failure = sources
+                                .iter()
+                                .find(|&&source| self.has_active_owner_outside(source, &sources))
+                                .copied()
+                                .map(|pos| (pos, "source has an active piston owner"));
+                            PrescribedOutcome::Failed(PrescribedFailure::OverlapsActiveOwner)
+                        } else {
+                            let limit = intent.max_load.min(self.push_limit);
+                            if sources.len() as u64 > limit {
+                                let failing =
+                                    sources.get(limit as usize).copied().unwrap_or(intent.input);
+                                overlay.failure = Some((failing, "prescribed load limit exceeded"));
+                                PrescribedOutcome::Failed(PrescribedFailure::LoadExceeded {
+                                    discovered: sources.len(),
+                                    limit,
+                                })
+                            } else {
+                                let destinations = self.move_blocks(&sources, EAST, context)?;
+                                state.pending.push(PendingPrescribedMove {
+                                    id,
+                                    input: intent.input,
+                                    destinations,
+                                });
+                                PrescribedOutcome::Moved {
+                                    blocks: sources.len(),
+                                }
+                            }
+                        }
+                    }
+                },
+            };
+            state.actions.push(PrescribedActionResult {
+                id,
+                input: intent.input,
+                outcome: outcome.clone(),
+            });
+            if let Some(view) = trace.as_deref_mut() {
+                let success = matches!(outcome, PrescribedOutcome::Moved { .. });
+                view.capture(
+                    self,
+                    StepInfo {
+                        title: format!(
+                            "Tick {tick} | prescribed move {} @ ({}, {}, {})",
+                            id, intent.input.x, intent.input.y, intent.input.z
+                        ),
+                        stage: "prescribed",
+                        action: Some(if success {
+                            "prescribed move"
+                        } else {
+                            "prescribed move failed"
+                        }),
+                        tick,
+                        active_input: Some(intent.input),
+                        prescribed_move_id: Some(id),
+                        prescribed_order: Some(order_name(state.order)),
+                        movement: Some(overlay),
+                        ..StepInfo::default()
+                    },
+                );
+            }
+        }
+        Ok(())
+    }
+
+    fn has_active_owner_outside(&self, member: Coord, selected: &[Coord]) -> bool {
+        self.blocks().into_iter().any(|(owner, block)| {
+            block.kind() == Kind::Piston
+                && !selected.contains(&owner)
+                && self.piston_blocks(owner).contains(&member)
+        })
+    }
+
+    fn finish_moved_block(&mut self, pos: Coord) {
+        if let Some(block) = self.get(pos) {
+            let finished = if block.kind() == Kind::Observer {
+                Block::observer(block.direction(), true, false).unwrap()
+            } else {
+                block.with_moving(false)
+            };
+            self.set(pos, finished);
+        }
     }
 
     fn describe_extension(&self, pos: Coord, piston: Block) -> MoveOverlay {
@@ -287,7 +621,7 @@ impl Flyer {
                 ..MoveOverlay::default()
             };
         };
-        self.describe_discovery(first, direction, pos, false)
+        self.describe_discovery(first, direction, Some(pos), false)
     }
 
     fn describe_retraction(&self, pos: Coord, piston: Block) -> MoveOverlay {
@@ -300,7 +634,7 @@ impl Flyer {
             return result;
         };
         // The arm disappears before pull discovery; it is not an obstruction.
-        result = self.describe_discovery(first, opposite(direction), pos, true);
+        result = self.describe_discovery(first, opposite(direction), Some(pos), true);
         result
     }
 
@@ -308,7 +642,7 @@ impl Flyer {
         &self,
         first: Coord,
         direction: (i64, i64, i64),
-        owner: Coord,
+        owner: Option<Coord>,
         pulling: bool,
     ) -> MoveOverlay {
         let mut result = MoveOverlay::default();
@@ -376,7 +710,10 @@ impl Flyer {
             };
             if self.get(destination).is_some() && !selected.contains(&destination) {
                 // The retracting arm is removed before discovery.
-                if !(pulling && destination == offset(owner, opposite(direction)).unwrap_or(owner))
+                if !(pulling
+                    && owner.is_some_and(|owner| {
+                        destination == offset(owner, opposite(direction)).unwrap_or(owner)
+                    }))
                 {
                     result.links.push(Link {
                         from: pos,
@@ -467,7 +804,7 @@ impl Flyer {
         &self,
         first: Coord,
         direction: (i64, i64, i64),
-        owner: Coord,
+        owner: Option<Coord>,
         pulling: bool,
     ) -> Option<Vec<Coord>> {
         let first_block = match self.get(first) {
@@ -592,7 +929,7 @@ impl Flyer {
         let Some(front) = offset(pos, direction) else {
             return Ok(false);
         };
-        let Some(sources) = self.discover_move(front, direction, pos, false) else {
+        let Some(sources) = self.discover_move(front, direction, Some(pos), false) else {
             return Ok(false);
         };
         let destinations = self.move_blocks(&sources, direction, context)?;
@@ -620,7 +957,9 @@ impl Flyer {
         let mut destinations = Vec::new();
         if piston.sticky() {
             if let Some(first) = offset(pos, direction).and_then(|p| offset(p, direction)) {
-                if let Some(sources) = self.discover_move(first, opposite(direction), pos, true) {
+                if let Some(sources) =
+                    self.discover_move(first, opposite(direction), Some(pos), true)
+                {
                     destinations = self.move_blocks(&sources, opposite(direction), context)?;
                     report.blocks_moved += destinations.len();
                 }
@@ -643,14 +982,7 @@ impl Flyer {
     fn finish_movement(&mut self, pos: Coord, piston: Block, next_state: u8) -> Result<(), Error> {
         let destinations = self.piston_blocks(pos).to_vec();
         for destination in destinations {
-            if let Some(block) = self.get(destination) {
-                let finished = if block.kind() == Kind::Observer {
-                    Block::observer(block.direction(), true, false)?
-                } else {
-                    block.with_moving(false)
-                };
-                self.set(destination, finished);
-            }
+            self.finish_moved_block(destination);
         }
         self.set_piston_blocks(pos, Vec::new())?;
         self.set(
@@ -995,6 +1327,292 @@ mod tests {
             editor.tick().unwrap();
             loaded.tick().unwrap();
             assert_eq!(editor.to_bytes().unwrap(), loaded.to_bytes().unwrap());
+        }
+    }
+
+    #[test]
+    fn prescribed_empty_session_matches_default_tick_and_trace() {
+        let mut original = powered_piston(true);
+        original.set(Coord::new(1, 0, 0), plain(Kind::Slime));
+        let initial = original.to_bytes().unwrap();
+        let mut regular = Flyer::from_bytes(&initial).unwrap();
+        let mut session = PrescribedSession::new(Flyer::from_bytes(&initial).unwrap());
+        let mut regular_trace = TickTrace::new(&regular);
+        let mut session_trace = session.new_trace();
+        for tick in 1..=5 {
+            let expected = regular.tick_traced(&mut regular_trace, tick).unwrap();
+            let actual = session
+                .tick_traced(
+                    &[],
+                    PrescribedOrder::BeforeNatural,
+                    &mut session_trace,
+                    tick,
+                )
+                .unwrap();
+            assert_eq!(actual.natural, expected);
+            assert!(actual.actions.is_empty());
+            assert_eq!(
+                regular.to_bytes().unwrap(),
+                session.flyer.to_bytes().unwrap()
+            );
+        }
+        assert_eq!(regular_trace.to_json(), session_trace.to_json());
+    }
+
+    #[test]
+    fn prescribed_move_uses_closure_and_load_failure_is_atomic() {
+        let input = Coord::new(0, 0, 0);
+        let mut flyer = Flyer::with_defaults();
+        flyer.set(input, plain(Kind::Slime));
+        flyer.set(Coord::new(0, 1, 0), plain(Kind::SmoothStone));
+        flyer.set(Coord::new(1, 0, 0), plain(Kind::Glass));
+        let before = flyer
+            .blocks()
+            .into_iter()
+            .map(|(p, b)| (p, b.cell()))
+            .collect::<Vec<_>>();
+        let mut session = PrescribedSession::new(flyer);
+        let failed = session
+            .tick(
+                &[PrescribedMove { input, max_load: 2 }],
+                PrescribedOrder::BeforeNatural,
+            )
+            .unwrap();
+        assert_eq!(
+            failed.actions[0].outcome,
+            PrescribedOutcome::Failed(PrescribedFailure::LoadExceeded {
+                discovered: 3,
+                limit: 2
+            })
+        );
+        assert!(!session.has_pending_moves());
+        assert_eq!(
+            session
+                .flyer
+                .blocks()
+                .into_iter()
+                .map(|(p, b)| (p, b.cell()))
+                .collect::<Vec<_>>(),
+            before
+        );
+
+        let moved = session
+            .tick(
+                &[PrescribedMove { input, max_load: 3 }],
+                PrescribedOrder::BeforeNatural,
+            )
+            .unwrap();
+        assert_eq!(
+            moved.actions[0].outcome,
+            PrescribedOutcome::Moved { blocks: 3 }
+        );
+        assert!(session.flyer.get(Coord::new(1, 0, 0)).unwrap().moving());
+        assert_eq!(
+            session.flyer.get(Coord::new(2, 0, 0)).unwrap().kind(),
+            Kind::Glass
+        );
+        assert_eq!(
+            session.flyer.get(Coord::new(1, 1, 0)).unwrap().kind(),
+            Kind::SmoothStone
+        );
+    }
+
+    #[test]
+    fn prescribed_observer_settlement_pulses_after_power_snapshot() {
+        let observer = Coord::new(0, 0, 0);
+        let mut flyer = Flyer::with_defaults();
+        flyer.set(observer, Block::observer(0, false, false).unwrap());
+        flyer.set(Coord::new(2, 0, 0), plain(Kind::SmoothStone));
+        flyer.set(Coord::new(3, 0, 0), piston(2, false, false, 0, false));
+        let mut session = PrescribedSession::new(flyer);
+        let start = session
+            .tick(
+                &[PrescribedMove {
+                    input: observer,
+                    max_load: 1,
+                }],
+                PrescribedOrder::BeforeNatural,
+            )
+            .unwrap();
+        assert!(matches!(
+            start.actions[0].outcome,
+            PrescribedOutcome::Moved { blocks: 1 }
+        ));
+        assert_eq!(
+            session.flyer.get(Coord::new(1, 0, 0)).unwrap().kind(),
+            Kind::Observer
+        );
+        assert!(session.flyer.get(Coord::new(1, 0, 0)).unwrap().moving());
+
+        let settled = session.tick(&[], PrescribedOrder::BeforeNatural).unwrap();
+        assert_eq!(settled.natural.powered_pistons, 0);
+        assert_eq!(settled.settled, vec![0]);
+        let observer = session.flyer.get(Coord::new(1, 0, 0)).unwrap();
+        assert!(observer.powered());
+        assert!(!observer.moving());
+
+        let pulsed = session.tick(&[], PrescribedOrder::BeforeNatural).unwrap();
+        assert_eq!(pulsed.natural.powered_pistons, 1);
+        assert_eq!(pulsed.natural.extensions_started, 1);
+    }
+
+    #[test]
+    fn prescribed_settle_preserves_angry_piston_through_clear_pass() {
+        let input = Coord::new(0, 0, 0);
+        let mut flyer = Flyer::with_defaults();
+        flyer.set(input, piston(0, false, true, 0, false));
+        flyer.set(Coord::new(0, -1, 0), Block::rod(0, false).unwrap());
+        let mut session = PrescribedSession::new(flyer);
+        let started = session
+            .tick(
+                &[PrescribedMove { input, max_load: 1 }],
+                PrescribedOrder::BeforeNatural,
+            )
+            .unwrap();
+        assert_eq!(
+            started.actions[0].outcome,
+            PrescribedOutcome::Moved { blocks: 1 }
+        );
+        assert!(session.flyer.get(Coord::new(1, 0, 0)).unwrap().moving());
+
+        let settled = session.tick(&[], PrescribedOrder::BeforeNatural).unwrap();
+        assert_eq!(settled.settled, vec![0]);
+        assert_eq!(settled.natural.extensions_started, 1);
+        assert_eq!(session.flyer.get(Coord::new(1, 0, 0)).unwrap().state(), 1);
+    }
+
+    #[test]
+    fn prescribed_move_translates_moved_piston_ownership() {
+        let owner = Coord::new(0, 0, 0);
+        let member = Coord::new(1, 0, 0);
+        let mut flyer = Flyer::with_defaults();
+        flyer.set(owner, piston(0, false, false, 0, false));
+        flyer.set(member, plain(Kind::SmoothStone));
+        flyer.set_piston_blocks(owner, vec![member]).unwrap();
+        let mut session = PrescribedSession::new(flyer);
+        let report = session
+            .tick(
+                &[PrescribedMove {
+                    input: owner,
+                    max_load: 2,
+                }],
+                PrescribedOrder::BeforeNatural,
+            )
+            .unwrap();
+        assert_eq!(
+            report.actions[0].outcome,
+            PrescribedOutcome::Moved { blocks: 2 }
+        );
+        assert_eq!(
+            session.flyer.piston_blocks(Coord::new(1, 0, 0)),
+            &[Coord::new(2, 0, 0)]
+        );
+    }
+
+    #[test]
+    fn prescribed_moves_reject_active_or_moving_inputs_and_guard_extraction() {
+        let input = Coord::new(1, 0, 0);
+        let owner = Coord::new(0, 0, 0);
+        let mut flyer = Flyer::with_defaults();
+        flyer.set(owner, piston(0, false, false, 1, false));
+        flyer.set(input, plain(Kind::SmoothStone));
+        flyer.set_piston_blocks(owner, vec![input]).unwrap();
+        let mut session = PrescribedSession::new(flyer);
+        let active = session
+            .tick(
+                &[PrescribedMove { input, max_load: 1 }],
+                PrescribedOrder::BeforeNatural,
+            )
+            .unwrap();
+        assert_eq!(
+            active.actions[0].outcome,
+            PrescribedOutcome::Failed(PrescribedFailure::OverlapsActiveOwner)
+        );
+
+        let mut flyer = Flyer::with_defaults();
+        flyer.set(Coord::new(0, 0, 0), plain(Kind::Glass));
+        let mut session = PrescribedSession::new(flyer);
+        let moving = session
+            .tick(
+                &[
+                    PrescribedMove {
+                        input: Coord::new(0, 0, 0),
+                        max_load: 1,
+                    },
+                    PrescribedMove {
+                        input: Coord::new(1, 0, 0),
+                        max_load: 1,
+                    },
+                ],
+                PrescribedOrder::BeforeNatural,
+            )
+            .unwrap();
+        assert_eq!(
+            moving.actions[0].outcome,
+            PrescribedOutcome::Moved { blocks: 1 }
+        );
+        assert_eq!(
+            moving.actions[1].outcome,
+            PrescribedOutcome::Failed(PrescribedFailure::MovingInput)
+        );
+        assert!(session.has_pending_moves());
+        assert!(session.settled_flyer().is_none());
+        session = match session.into_flyer() {
+            Ok(_) => panic!("pending extraction unexpectedly succeeded"),
+            Err(session) => session,
+        };
+        let settled = session.tick(&[], PrescribedOrder::BeforeNatural).unwrap();
+        assert_eq!(settled.settled, vec![0]);
+        assert!(session.into_flyer().is_ok());
+    }
+
+    #[test]
+    fn prescribed_trace_records_order_and_action_identity() {
+        for order in [
+            PrescribedOrder::BeforeNatural,
+            PrescribedOrder::AfterNatural,
+        ] {
+            let mut flyer = powered_piston(false);
+            flyer.set(Coord::new(10, 0, 0), plain(Kind::Glass));
+            let mut session = PrescribedSession::new(flyer);
+            let mut trace = session.new_trace();
+            session
+                .tick_traced(
+                    &[PrescribedMove {
+                        input: Coord::new(10, 0, 0),
+                        max_load: 1,
+                    }],
+                    order,
+                    &mut trace,
+                    1,
+                )
+                .unwrap();
+            let prescribed = trace
+                .steps
+                .iter()
+                .position(|step| {
+                    step.info.stage == "prescribed" && step.info.action == Some("prescribed move")
+                })
+                .unwrap();
+            let natural = trace
+                .steps
+                .iter()
+                .position(|step| step.info.stage == "piston" && step.info.action == Some("extend"))
+                .unwrap();
+            match order {
+                PrescribedOrder::BeforeNatural => assert!(prescribed < natural),
+                PrescribedOrder::AfterNatural => assert!(natural < prescribed),
+            }
+            let step = &trace.steps[prescribed].info;
+            assert_eq!(step.active_input, Some(Coord::new(10, 0, 0)));
+            assert_eq!(step.prescribed_move_id, Some(0));
+            assert_eq!(
+                step.prescribed_order,
+                Some(match order {
+                    PrescribedOrder::BeforeNatural => "before_natural",
+                    PrescribedOrder::AfterNatural => "after_natural",
+                })
+            );
         }
     }
 

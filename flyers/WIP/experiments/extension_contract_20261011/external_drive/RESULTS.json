@@ -1,0 +1,121 @@
+{
+  "fixture": "three-glue column with scripted temporary piston/redstone drive",
+  "scope": "externally driven primitive calibration; not an autonomous extension mechanism",
+  "positive_batches": [
+    {
+      "word": "mmmww",
+      "period_ticks": 10,
+      "advance": 3,
+      "cycles": 3,
+      "ticks_per_case": 30,
+      "passed_cases": 80,
+      "total_cases": 80,
+      "sampled_ticks": 2400,
+      "elapsed_seconds": 2.231,
+      "input_max_action_loads": {
+        "driver_low": [
+          3,
+          3,
+          3,
+          null,
+          null
+        ],
+        "driver_high": [
+          3,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 3,
+      "recurrence": "exact",
+      "claim": "externally driven fixture; sampled ports + exact translated candidate-state recurrence",
+      "raw_result": "out/mmmww_samples.json"
+    },
+    {
+      "word": "mmmmww",
+      "period_ticks": 12,
+      "advance": 4,
+      "cycles": 3,
+      "ticks_per_case": 36,
+      "passed_cases": 80,
+      "total_cases": 80,
+      "sampled_ticks": 2880,
+      "elapsed_seconds": 2.972,
+      "input_max_action_loads": {
+        "driver_low": [
+          3,
+          3,
+          3,
+          3,
+          null,
+          null
+        ],
+        "driver_high": [
+          3,
+          3,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 3,
+      "recurrence": "exact",
+      "claim": "externally driven fixture; sampled ports + exact translated candidate-state recurrence",
+      "raw_result": "out/mmmmww_samples.json"
+    },
+    {
+      "word": "mmwmmw",
+      "period_ticks": 12,
+      "advance": 4,
+      "cycles": 3,
+      "ticks_per_case": 36,
+      "passed_cases": 80,
+      "total_cases": 80,
+      "sampled_ticks": 2880,
+      "elapsed_seconds": 2.196,
+      "input_max_action_loads": {
+        "driver_low": [
+          3,
+          3,
+          null,
+          3,
+          3,
+          null
+        ],
+        "driver_high": [
+          3,
+          3,
+          null,
+          3,
+          3,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 3,
+      "recurrence": "exact",
+      "claim": "externally driven fixture; sampled ports + exact translated candidate-state recurrence",
+      "raw_result": "out/mmwmmw_samples.json"
+    }
+  ],
+  "negative_controls": [
+    {
+      "case": "budget",
+      "rejected_as_expected": true,
+      "diagnostic": "tick 0: external drive at [-1, 0, 0] moved 3 sources, cap 2",
+      "raw_result": "out/budget_result.json"
+    },
+    {
+      "case": "collision",
+      "rejected_as_expected": true,
+      "diagnostic": "driver exited with status 1: tick 0: cannot inject fixture for target [2,0,0]; piston or redstone site is occupied",
+      "raw_result": "out/collision_result.json"
+    }
+  ],
+  "total_positive_cases": 240,
+  "total_positive_passes": 240,
+  "total_positive_sampled_ticks": 8160,
+  "total_positive_elapsed_seconds": 7.399
+}

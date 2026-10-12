@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "name": "mmwmmw relay has two contact windows (kinematics only)",
+  "slot_ticks": 2,
+  "period_slots": 6,
+  "advance": 4,
+  "objects": [
+    {"name": "source", "at": [0, 0, 0], "word": "mmwmmw"},
+    {"name": "receiver", "at": [0, 1, 0], "word": "wmmwmm"}
+  ],
+  "contacts": [
+    {"name": "aligned", "a": "source", "b": "receiver", "slots": [0, 3], "relation": "adjacent"},
+    {"name": "separated", "a": "source", "b": "receiver", "slots": [1, 2, 4, 5], "relation": "adjacent", "required": false}
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "version": 1,
+  "name": "external_drive_mmmww",
+  "flyer": "../driver.flyer",
+  "drive_script": "../drives/mmmww.txt",
+  "period_ticks": 10,
+  "advance": 3,
+  "cycles": 3,
+  "ports": [
+    {
+      "name": "driver_low",
+      "role": "input",
+      "at": [
+        0,
+        0,
+        0
+      ],
+      "word": "mmmww",
+      "baseline_load": [
+        3,
+        3,
+        3,
+        null,
+        null
+      ],
+      "spare_load": [
+        0,
+        0,
+        0,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "passenger",
+      "role": "output",
+      "at": [
+        0,
+        1,
+        0
+      ],
+      "word": "mmmww"
+    },
+    {
+      "name": "driver_high",
+      "role": "input",
+      "at": [
+        0,
+        2,
+        0
+      ],
+      "word": "mmmww",
+      "baseline_load": [
+        3,
+        3,
+        3,
+        null,
+        null
+      ],
+      "spare_load": [
+        0,
+        0,
+        0,
+        null,
+        null
+      ]
+    }
+  ],
+  "recurrence": "exact"
+}

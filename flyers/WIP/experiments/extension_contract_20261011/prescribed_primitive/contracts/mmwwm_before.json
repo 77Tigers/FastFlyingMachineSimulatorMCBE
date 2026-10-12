@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "name": "prescribed_primitive_mmwwm_before_natural",
+  "flyer": "../driver.flyer",
+  "prescribed_script": "../scripts/mmwwm.txt",
+  "prescribed_order": "before_natural",
+  "period_ticks": 10,
+  "advance": 3,
+  "cycles": 3,
+  "ports": [
+    {
+      "name": "driver",
+      "role": "input",
+      "at": [
+        0,
+        0,
+        0
+      ],
+      "word": "mmwwm",
+      "baseline_load": [
+        3,
+        3,
+        null,
+        null,
+        3
+      ],
+      "spare_load": [
+        0,
+        0,
+        null,
+        null,
+        0
+      ]
+    },
+    {
+      "name": "passenger",
+      "role": "output",
+      "at": [
+        0,
+        1,
+        0
+      ],
+      "word": "mmwwm"
+    }
+  ],
+  "recurrence": "exact"
+}

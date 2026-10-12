@@ -1,0 +1,1547 @@
+{
+  "version": 1,
+  "name": "missing_source",
+  "period_ticks": 10,
+  "advance": 3,
+  "cycles": 3,
+  "recurrence": "bounded",
+  "drive_script": null,
+  "prescribed_script": null,
+  "prescribed_order": null,
+  "boundary_envelope": {
+    "min": [
+      0,
+      0,
+      1
+    ],
+    "max": [
+      17,
+      7,
+      9
+    ]
+  },
+  "passed": true,
+  "cases": [
+    {
+      "rng": 0,
+      "phase_x": 0,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.124849,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 0,
+      "phase_x": 0,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.12683,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 0,
+      "phase_x": 0,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.119935,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 0,
+      "phase_x": 0,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.114571,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 0,
+      "phase_x": 7,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.113364,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 0,
+      "phase_x": 7,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.115166,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 0,
+      "phase_x": 7,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.124905,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 0,
+      "phase_x": 7,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.120806,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 0,
+      "phase_x": 8,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.115423,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 0,
+      "phase_x": 8,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.121465,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 0,
+      "phase_x": 8,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.127552,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 0,
+      "phase_x": 8,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.223906,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 0,
+      "phase_x": 15,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.138311,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 0,
+      "phase_x": 15,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.145258,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 0,
+      "phase_x": 15,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.164106,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 0,
+      "phase_x": 15,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.163879,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 1,
+      "phase_x": 0,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.377704,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 1,
+      "phase_x": 0,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 2.646514,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 1,
+      "phase_x": 0,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.329507,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 1,
+      "phase_x": 0,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.274231,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 1,
+      "phase_x": 7,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.310839,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 1,
+      "phase_x": 7,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.300168,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 1,
+      "phase_x": 7,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.295324,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 1,
+      "phase_x": 7,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.245798,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 1,
+      "phase_x": 8,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.254123,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 1,
+      "phase_x": 8,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.284927,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 1,
+      "phase_x": 8,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.273688,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 1,
+      "phase_x": 8,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.277201,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 1,
+      "phase_x": 15,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.293832,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 1,
+      "phase_x": 15,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.302484,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 1,
+      "phase_x": 15,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.296186,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 1,
+      "phase_x": 15,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.271207,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 2,
+      "phase_x": 0,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.238123,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 2,
+      "phase_x": 0,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.201691,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 2,
+      "phase_x": 0,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.217794,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 2,
+      "phase_x": 0,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.200301,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 2,
+      "phase_x": 7,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.210748,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 2,
+      "phase_x": 7,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.191053,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 2,
+      "phase_x": 7,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.206564,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 2,
+      "phase_x": 7,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.209184,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 2,
+      "phase_x": 8,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.191565,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 2,
+      "phase_x": 8,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.263789,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 2,
+      "phase_x": 8,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.205289,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 2,
+      "phase_x": 8,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.176116,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 2,
+      "phase_x": 15,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.176764,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 2,
+      "phase_x": 15,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.189098,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 2,
+      "phase_x": 15,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.201255,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 2,
+      "phase_x": 15,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.183026,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 5,
+      "phase_x": 0,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.175038,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 5,
+      "phase_x": 0,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.246287,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 5,
+      "phase_x": 0,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.313095,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 5,
+      "phase_x": 0,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.268102,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 5,
+      "phase_x": 7,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.274742,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 5,
+      "phase_x": 7,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.303521,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 5,
+      "phase_x": 7,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.304054,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 5,
+      "phase_x": 7,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.284931,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 5,
+      "phase_x": 8,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.238535,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 5,
+      "phase_x": 8,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.220469,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 5,
+      "phase_x": 8,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.245939,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 5,
+      "phase_x": 8,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.252022,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 5,
+      "phase_x": 15,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.250976,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 5,
+      "phase_x": 15,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.255905,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 5,
+      "phase_x": 15,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.278882,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 5,
+      "phase_x": 15,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.301518,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 42,
+      "phase_x": 0,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.256187,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 42,
+      "phase_x": 0,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.29096,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 42,
+      "phase_x": 0,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.298288,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 42,
+      "phase_x": 0,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.287626,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 42,
+      "phase_x": 7,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.274668,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 42,
+      "phase_x": 7,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.29187,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 42,
+      "phase_x": 7,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.285996,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 42,
+      "phase_x": 7,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.278475,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 42,
+      "phase_x": 8,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.278236,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 42,
+      "phase_x": 8,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.277416,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 42,
+      "phase_x": 8,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.310175,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 42,
+      "phase_x": 8,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.257933,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 42,
+      "phase_x": 15,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.29913,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 42,
+      "phase_x": 15,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.291383,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 42,
+      "phase_x": 15,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.284367,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 42,
+      "phase_x": 15,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.241681,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "driver_input": [
+          9,
+          8,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    }
+  ],
+  "claim": "sampled ports + bounded hardware; no exact-state recurrence claim"
+}

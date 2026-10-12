@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "name": "pl7-rear-k1-prescribed-phase-shift-n-output",
+  "flyer": "candidate.flyer",
+  "prescribed_script": "k1_drive.txt",
+  "prescribed_order": "before_natural",
+  "period_ticks": 8,
+  "advance": 2,
+  "cycles": 3,
+  "recurrence": "bounded",
+  "boundary_envelope": {
+    "min": [
+      0,
+      0,
+      15
+    ],
+    "max": [
+      9,
+      3,
+      18
+    ]
+  },
+  "ports": [
+    {
+      "name": "k1_input",
+      "role": "input",
+      "at": [
+        3,
+        1,
+        17
+      ],
+      "word": "wwmm",
+      "baseline_load": [
+        null,
+        null,
+        7,
+        7
+      ],
+      "spare_load": [
+        null,
+        null,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "k0_output",
+      "role": "output",
+      "at": [
+        0,
+        1,
+        15
+      ],
+      "word": "mmww"
+    },
+    {
+      "name": "n_output",
+      "role": "output",
+      "at": [
+        2,
+        0,
+        15
+      ],
+      "word": "wmmw"
+    }
+  ]
+}

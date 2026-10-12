@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "name": "missing_source",
+  "flyer": "../out/missing_source.flyer",
+  "period_ticks": 10,
+  "advance": 3,
+  "cycles": 3,
+  "ports": [
+    {
+      "name": "driver_input",
+      "role": "input",
+      "at": [
+        13,
+        4,
+        7
+      ],
+      "word": "mmmww",
+      "baseline_load": [
+        9,
+        8,
+        7,
+        null,
+        null
+      ],
+      "spare_load": [
+        0,
+        0,
+        0,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "downstream_output",
+      "role": "output",
+      "at": [
+        7,
+        1,
+        4
+      ],
+      "word": "wwmmm"
+    }
+  ],
+  "recurrence": "bounded",
+  "boundary_envelope": {
+    "min": [
+      0,
+      0,
+      1
+    ],
+    "max": [
+      17,
+      7,
+      9
+    ]
+  }
+}

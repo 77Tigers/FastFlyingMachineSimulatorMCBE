@@ -1,0 +1,229 @@
+{
+  "source": "flyers/bank/pl12/human_tm_smol_3bps.flyer",
+  "driver": {
+    "rng_state": 5,
+    "phase_x": 0,
+    "phase_z": 0,
+    "period_ticks": 10,
+    "advance": 3,
+    "cycles": 3
+  },
+  "input": {
+    "at": [
+      13,
+      4,
+      7
+    ],
+    "kind": "slime",
+    "word": "mmmww",
+    "baseline_load": [
+      9,
+      8,
+      7,
+      null,
+      null
+    ]
+  },
+  "output": {
+    "at": [
+      7,
+      1,
+      4
+    ],
+    "word": "wwmmm",
+    "baseline_load": [
+      null,
+      null,
+      10,
+      11,
+      12
+    ]
+  },
+  "payload": {
+    "at": [
+      13,
+      3,
+      7
+    ],
+    "kind": "glass",
+    "push_limit": 12,
+    "candidate_scan_attempts": 1,
+    "scan": [
+      {
+        "at": [
+          13,
+          3,
+          7
+        ],
+        "result": "accepted",
+        "failures": 0,
+        "input_load": [
+          10,
+          9,
+          8,
+          null,
+          null
+        ],
+        "payload_word": "mmmww"
+      }
+    ],
+    "input_load": [
+      10,
+      9,
+      8,
+      null,
+      null
+    ],
+    "output_load": [
+      null,
+      null,
+      10,
+      11,
+      12
+    ]
+  },
+  "reference_failures": 0,
+  "payload_failures": 0,
+  "reference_boundaries": [
+    {
+      "tick": 10,
+      "cells": 148,
+      "owners": 0,
+      "translated_envelope": {
+        "min": [
+          3,
+          0,
+          1
+        ],
+        "max": [
+          20,
+          7,
+          9
+        ]
+      }
+    },
+    {
+      "tick": 20,
+      "cells": 148,
+      "owners": 0,
+      "translated_envelope": {
+        "min": [
+          6,
+          0,
+          1
+        ],
+        "max": [
+          23,
+          7,
+          9
+        ]
+      }
+    },
+    {
+      "tick": 30,
+      "cells": 148,
+      "owners": 0,
+      "translated_envelope": {
+        "min": [
+          9,
+          0,
+          1
+        ],
+        "max": [
+          26,
+          7,
+          9
+        ]
+      }
+    }
+  ],
+  "payload_boundaries": [
+    {
+      "tick": 10,
+      "cells": 149,
+      "owners": 0,
+      "translated_envelope": {
+        "min": [
+          3,
+          0,
+          1
+        ],
+        "max": [
+          20,
+          7,
+          9
+        ]
+      }
+    },
+    {
+      "tick": 20,
+      "cells": 149,
+      "owners": 0,
+      "translated_envelope": {
+        "min": [
+          6,
+          0,
+          1
+        ],
+        "max": [
+          23,
+          7,
+          9
+        ]
+      }
+    },
+    {
+      "tick": 30,
+      "cells": 149,
+      "owners": 0,
+      "translated_envelope": {
+        "min": [
+          9,
+          0,
+          1
+        ],
+        "max": [
+          26,
+          7,
+          9
+        ]
+      }
+    }
+  ],
+  "missing_source": {
+    "removed_redstone_block": [
+      12,
+      5,
+      8
+    ],
+    "active_tick_zero_piston": [
+      12,
+      5,
+      9
+    ],
+    "first_trace_failure": {
+      "tick": 6,
+      "action": "extend failed",
+      "piston": [
+        9,
+        6,
+        6
+      ],
+      "failure": {
+        "pos": [
+          9,
+          5,
+          9
+        ],
+        "reason": "push limit exceeded"
+      }
+    }
+  },
+  "trace_executable": "target\\release\\extension-trace.exe",
+  "elapsed_seconds": 0.293,
+  "sha256": {
+    "source": "a870e1f32cc23aee9d52773aa178e04b4527ae916fbebafebe3a3a12add04659",
+    "reference": "865944c1195baf061858ef4be6100517f3b119f25058c08001623838ea834e40",
+    "payload": "6534d324b061afa489576715108388bd0964aaabee54916cdf81ba0ba1077593"
+  }
+}

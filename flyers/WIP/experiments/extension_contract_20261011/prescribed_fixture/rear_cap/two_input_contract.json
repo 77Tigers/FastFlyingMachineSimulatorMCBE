@@ -1,0 +1,89 @@
+{
+  "version": 1,
+  "name": "pl7-rear-prescribed-redstone-and-k1-phase-shift-n-output",
+  "flyer": "candidate.flyer",
+  "prescribed_script": "two_input_drive.txt",
+  "prescribed_order": "before_natural",
+  "period_ticks": 8,
+  "advance": 2,
+  "cycles": 3,
+  "recurrence": "bounded",
+  "boundary_envelope": {
+    "min": [
+      0,
+      0,
+      15
+    ],
+    "max": [
+      9,
+      3,
+      18
+    ]
+  },
+  "ports": [
+    {
+      "name": "redstone_input",
+      "role": "input",
+      "at": [
+        3,
+        2,
+        16
+      ],
+      "word": "mmww",
+      "baseline_load": [
+        1,
+        1,
+        null,
+        null
+      ],
+      "spare_load": [
+        0,
+        0,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "k1_input",
+      "role": "input",
+      "at": [
+        3,
+        1,
+        17
+      ],
+      "word": "wwmm",
+      "baseline_load": [
+        null,
+        null,
+        7,
+        7
+      ],
+      "spare_load": [
+        null,
+        null,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "k0_output",
+      "role": "output",
+      "at": [
+        0,
+        1,
+        15
+      ],
+      "word": "mmww"
+    },
+    {
+      "name": "n_output",
+      "role": "output",
+      "at": [
+        2,
+        0,
+        15
+      ],
+      "word": "wmmw"
+    }
+  ]
+}

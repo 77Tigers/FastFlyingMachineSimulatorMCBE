@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "name": "pl7-rear-double-pull-baseline",
+  "period_ticks": 8,
+  "advance": 2,
+  "cycles": 3,
+  "recurrence": "bounded",
+  "drive_script": null,
+  "boundary_envelope": {
+    "min": [
+      0,
+      0,
+      15
+    ],
+    "max": [
+      9,
+      3,
+      18
+    ]
+  },
+  "passed": true,
+  "cases": [
+    {
+      "rng": null,
+      "phase_x": null,
+      "phase_z": null,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.047863,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "rear_k0_input": [
+          5,
+          7,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 7
+    }
+  ],
+  "claim": "sampled ports + bounded hardware; no exact-state recurrence claim"
+}

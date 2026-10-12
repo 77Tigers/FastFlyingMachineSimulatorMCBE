@@ -1,6 +1,59 @@
 # Flyer abstraction pipeline v2
 
-Purpose: keep architectural reasoning compact and delegate bounded refinement and checking to Sol. The current experiment uses **GPT-6 Sol, Medium reasoning**. This is an evolving research method, not a proven synthesis system. Prior trial: [results](../WIP/experiments/abstraction_trial_20260929/RESULTS.md).
+Purpose: keep architectural reasoning compact and make bounded construction and repair easier for weaker agents. Develop the pipeline **on real problems**, and measure successful construction, feedback latency and stronger-agent intervention. This is an evolving research method, not a proven synthesis system. Historical Low trial: [results](../WIP/experiments/abstraction_trial_20260929/RESULTS.md); successful Medium handoff: [results](../WIP/experiments/abstraction_medium_20260929/RESULTS.md).
+
+## Current direction: executable extension contracts
+
+User direction (2026-10-11): prioritize the reusable bridge across stages 4–6
+and fast feedback before expensive routing. Long-term target **3.333 bps at
+PL12**; useful intermediate work includes **3 bps at PL10–11**, compacting
+existing mechanisms and a PL6 rear. Favor short side pickups over costly axial
+piston-transport connections; explain unavoidable exceptions with actual loads.
+
+The first [executable extension benchmark](../WIP/experiments/extension_contract_20261011/README.md)
+adds a sparse contact preflight (`tools/extension_plan.py`) and a streamed
+physical contract checker (`tools/extension_contract.py`). A challenge declares
+input blocks and schedules, spare capacity **per input movement**, and target
+blocks with prescribed positions and schedules. Baseline load includes the
+input itself and its existing driver passengers. Never add together capacities
+of different pistons or silently raise a challenge's budget to fit a candidate.
+
+Contracts can check a **concrete self-running driver** or use an explicit
+external-drive script. The external adapter injects temporary piston/power
+fixtures, checks their actual movement loads, and requires their cleanup; it
+does not teleport the input blocks. Both modes track original permanent
+identities through ordinary simulator actions. A cheap plan verdict is
+`consistent`, not `feasible`: physical power, connectivity, material behavior
+and intermediate update-order contacts still need checking. A scripted
+extension is not an autonomous flyer, and no general router is claimed.
+
+Prescribed-input mode now supplies explicit +X strokes through the existing
+movement discovery and settlement rules, without a physical actuator. Its
+before/after-natural orders are labelled screens, not a universal-order proof
+or driver realization. Ordered multiple-intent checking is implemented. A
+reference-derived rear cap passes both orders with exact translated cell/owner
+recurrence and distinct output phases.
+Use `extension_route.py` for a necessary two-contact glue bound and
+`extension_explain.py` for failed-move pusher/power facts. A geometric candidate
+is not a legal-action proof, and a previous actor resetting is not itself a
+cause of a later missed movement. Record which strokes are supplied and which
+must remain endogenous: replacing a candidate-owned push can change actor
+exclusion and recruit the piston itself as a passenger. The rear-cap boundary
+diff is a tested example. See the experiment checkpoint for evidence and limits.
+
+Real human 3 bps fixtures have variable interchangeable hardware states. Keep
+exact recurrence as an explicit check, but also allow a labelled bounded-hardware
+screen: exact named-port motion, conserved permanent identities and all hardware
+inside a declared translating boundary envelope. That finite-run result is not
+exact hardware recurrence or a universal-order proof. A checker must not reject
+valid research solely because it only understands the stronger property.
+
+Use a first contradiction with named objects, phase, actual positions or action
+load as feedback. Preserve the distinction between an impossible stated contact,
+a failed routed candidate, a search timeout and unresolved physical obligations.
+Future tool improvements should be tested with broken witnesses as well as a
+working reference. Fresh-agent trials must disclose reference-derived inputs
+and distinguish passive-payload calibration from new mechanism synthesis.
 
 ## Improve this pipeline as you use it
 
@@ -15,6 +68,13 @@ A segment is a persistent body whose components always move together, usually a 
 A movement word is parameterized by slot duration, action start, movement duration and displacement. For the current examples a slot is two simulator ticks, `m` starts one +X move and settles in that slot, and `w` means the body does not move in that slot. Waiting does not imply its pistons are idle. Do not hardcode alternating slots: `mwmw` has four slots, eight ticks and +2; `mmwmmw` has six slots, twelve ticks and +4. Adjacent `m` slots require an actuation design that can deliver consecutive moves; the notation alone proves nothing about feasibility. Phase shifts can describe the other bodies. A motion word's shortest period need not be the hardware cycle; retain the longer period needed for hardware recovery, identity/permutation and power state.
 
 All coordinates and states must identify **body-local or world frame**, cycle phase, and **before power / before action / after action / after settling**. Initial conditions always mean the explicitly chosen boundary before tick 0. Derive initial hardware positions from transport history, never copy coordinates from a later action. Normalize only by a declared common translation.
+
+Choose a convenient cycle boundary before adding harness machinery. If all
+externally supplied inputs share a wait slot, rotate that slot to the end of
+the period so their drivers can reset. For example, rotating `mmwwm` and
+`mmmww` together gives `mmmww` and `wmmmw`. Rotate output words, positions
+and internal piston/observer states as well; a schedule rotation alone does
+not establish a valid initial state.
 
 Groups express roles, not carriers. A group may contain members carried by different bodies. Leave eligible member order open where physically supported: one acts while others may be dragged along and act later. Track member readiness, recovery and transport; arbitrary eligible order does not license an unavailable member. A single observed identity order is not proof of interchangeable winners. Exact block/owner recurrence, recurrence up to a declared interchangeable-member permutation, and group-level recurrence are different claims.
 
@@ -110,7 +170,7 @@ Use the existing [research runner](../WIP/experiments/RESEARCH_RUNNER.md), first
 
 Report pass / partial / contradicted / unattempted separately for each stage and each claimed property. A reference regenerated with its old generator is reference validation, not forward synthesis. Do not call a missing pulse an unexplained physics failure. Return one compact causal discrepancy, implicated stage, witness and proposed correction to the architectural parent. Automate routine checks when practical using existing APIs; do not make the parent parse large traces.
 
-## Current bounded trial
+## Historical Medium bounded trial
 
 Test the known two-body `mwmw` pulling mechanism, not a new speed/PL record. First Sol Medium worker extracts and checks stages 1–4 from the reference, supplying group choreography but no complete block geometry. A fresh Sol Medium worker implements stages 5–7 using only that handoff and general mechanics/API docs. Every stage is attempted even if an earlier one is partial; any fallback is labelled. No broad brute-force search, no simulator/editor changes, no bank changes.
 

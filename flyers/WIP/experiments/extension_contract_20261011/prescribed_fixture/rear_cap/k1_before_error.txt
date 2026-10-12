@@ -1,0 +1,1 @@
+tick 6: prescribed move at [4,1,17] failed: Blocked

@@ -1,0 +1,209 @@
+{
+  "source": "bank/pl7/tm_7pl_2.5bps.flyer",
+  "rng": 5,
+  "phase_x": 0,
+  "phase_z": 0,
+  "port": {
+    "name": "rear_k0_input",
+    "identity_at_load": [
+      0,
+      1,
+      15
+    ],
+    "word": "mmww"
+  },
+  "strokes": [
+    {
+      "tick": 0,
+      "slot": 0,
+      "actor": [
+        2,
+        1,
+        15
+      ],
+      "action": "retract",
+      "port_identity_origin": [
+        0,
+        1,
+        15
+      ],
+      "sources": [
+        {
+          "identity_origin": [
+            0,
+            0,
+            15
+          ],
+          "at": [
+            0,
+            0,
+            15
+          ],
+          "kind": "piston"
+        },
+        {
+          "identity_origin": [
+            0,
+            1,
+            15
+          ],
+          "at": [
+            0,
+            1,
+            15
+          ],
+          "kind": "slime"
+        },
+        {
+          "identity_origin": [
+            0,
+            0,
+            16
+          ],
+          "at": [
+            0,
+            0,
+            16
+          ],
+          "kind": "smooth_stone"
+        },
+        {
+          "identity_origin": [
+            0,
+            1,
+            16
+          ],
+          "at": [
+            0,
+            1,
+            16
+          ],
+          "kind": "slime"
+        },
+        {
+          "identity_origin": [
+            0,
+            1,
+            17
+          ],
+          "at": [
+            0,
+            1,
+            17
+          ],
+          "kind": "piston"
+        }
+      ],
+      "source_count": 5
+    },
+    {
+      "tick": 2,
+      "slot": 1,
+      "actor": [
+        3,
+        1,
+        16
+      ],
+      "action": "retract",
+      "port_identity_origin": [
+        0,
+        1,
+        15
+      ],
+      "sources": [
+        {
+          "identity_origin": [
+            0,
+            0,
+            15
+          ],
+          "at": [
+            1,
+            0,
+            15
+          ],
+          "kind": "piston"
+        },
+        {
+          "identity_origin": [
+            2,
+            0,
+            15
+          ],
+          "at": [
+            2,
+            0,
+            15
+          ],
+          "kind": "slime"
+        },
+        {
+          "identity_origin": [
+            0,
+            1,
+            15
+          ],
+          "at": [
+            1,
+            1,
+            15
+          ],
+          "kind": "slime"
+        },
+        {
+          "identity_origin": [
+            2,
+            1,
+            15
+          ],
+          "at": [
+            2,
+            1,
+            15
+          ],
+          "kind": "piston"
+        },
+        {
+          "identity_origin": [
+            0,
+            0,
+            16
+          ],
+          "at": [
+            1,
+            0,
+            16
+          ],
+          "kind": "smooth_stone"
+        },
+        {
+          "identity_origin": [
+            0,
+            1,
+            16
+          ],
+          "at": [
+            1,
+            1,
+            16
+          ],
+          "kind": "slime"
+        },
+        {
+          "identity_origin": [
+            0,
+            1,
+            17
+          ],
+          "at": [
+            1,
+            1,
+            17
+          ],
+          "kind": "piston"
+        }
+      ],
+      "source_count": 7
+    }
+  ]
+}

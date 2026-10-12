@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "name": "diagonal-mmmww-to-wwmmm-route-bound",
+  "target_word": "wwmmm",
+  "contacts": [[3, 0, 0], [-1, 1, 1]],
+  "blockers": [
+    {
+      "word": "mmmww",
+      "cells": [[0, 0, 0], [0, 1, 1], [0, 1, 0]]
+    }
+  ],
+  "reserved": [[2, 0, 1]],
+  "glue_budget": 8
+}

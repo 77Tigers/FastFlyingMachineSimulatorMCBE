@@ -1,0 +1,139 @@
+{
+  "period_ticks": 8,
+  "advance": 2,
+  "initial_cell_count": 15,
+  "final_cell_count": 15,
+  "shifted_final_cell_count": 15,
+  "cell_differences": [
+    {
+      "normalized_at": [
+        0,
+        1,
+        17
+      ],
+      "initial_encoded": 9,
+      "final_shifted_encoded": null
+    },
+    {
+      "normalized_at": [
+        2,
+        1,
+        17
+      ],
+      "initial_encoded": null,
+      "final_shifted_encoded": 9
+    }
+  ],
+  "initial_owners": [],
+  "final_owners": [],
+  "owner_difference": [],
+  "original_identity_chain": [
+    {
+      "tick": 0,
+      "actor": [
+        2,
+        1,
+        15
+      ],
+      "cause": "N sticky pulls K0",
+      "source": [
+        0,
+        1,
+        17
+      ],
+      "destination": [
+        1,
+        1,
+        17
+      ]
+    },
+    {
+      "tick": 2,
+      "actor": [
+        3,
+        1,
+        16
+      ],
+      "cause": "K1 sticky pulls K0+N",
+      "source": [
+        1,
+        1,
+        17
+      ],
+      "destination": [
+        2,
+        1,
+        17
+      ]
+    },
+    {
+      "tick": 4,
+      "actor": "prescribed K1 input",
+      "cause": "K1 +X input",
+      "source": [
+        2,
+        1,
+        17
+      ],
+      "destination": [
+        3,
+        1,
+        17
+      ]
+    },
+    {
+      "tick": 6,
+      "actor": "prescribed K1 input",
+      "cause": "K1 +X input",
+      "source": [
+        3,
+        1,
+        17
+      ],
+      "destination": [
+        4,
+        1,
+        17
+      ]
+    }
+  ],
+  "tick8_actor": {
+    "identity_origin": [
+      0,
+      1,
+      17
+    ],
+    "actual_at": [
+      4,
+      1,
+      17
+    ],
+    "action_sources": [
+      [
+        4,
+        0,
+        17
+      ],
+      [
+        5,
+        0,
+        16
+      ],
+      [
+        5,
+        0,
+        17
+      ],
+      [
+        5,
+        1,
+        16
+      ],
+      [
+        5,
+        1,
+        17
+      ]
+    ]
+  }
+}

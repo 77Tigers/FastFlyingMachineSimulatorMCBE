@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "name": "pl7-rear-mixed-k1-natural-slot2-prescribed-slot3",
+  "reference": "flyers/bank/pl7/tm_7pl_2.5bps.flyer",
+  "candidate": "candidate.flyer",
+  "period_ticks": 8,
+  "advance": 2,
+  "cycles": 3,
+  "recurrence": "bounded",
+  "boundary_envelope": {"min": [0, 0, 15], "max": [9, 3, 18]},
+  "inputs": [
+    {"name": "redstone_input", "identity_at": [3, 2, 16], "word": "mmww", "prescribed_ticks": [0, 2], "max_load": 1},
+    {"name": "k1_input", "identity_at": [3, 1, 17], "word": "wwmm", "natural_ticks": [4], "prescribed_ticks": [6], "observed_loads": [null, null, 6, 6]}
+  ],
+  "outputs": [
+    {"name": "k0_output", "identity_at": [0, 1, 15], "word": "mmww"},
+    {"name": "n_output", "identity_at": [2, 0, 15], "word": "wmmw"}
+  ],
+  "initial_cell_count": 15,
+  "push_limit": 7,
+  "sample_results": {"before_natural": "80/80", "after_natural": "80/80"},
+  "claim_scope": "reference-derived mixed natural/prescribed subassembly; not autonomous or a new flyer record"
+}

@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "name": "pl7-rear-k1-prescribed-phase-shift-n-output",
+  "period_ticks": 8,
+  "advance": 2,
+  "cycles": 3,
+  "recurrence": "bounded",
+  "drive_script": null,
+  "prescribed_script": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\extension_contract_20261011\\prescribed_fixture\\rear_cap\\k1_drive.txt",
+  "prescribed_order": "before_natural",
+  "boundary_envelope": {
+    "min": [
+      0,
+      0,
+      15
+    ],
+    "max": [
+      9,
+      3,
+      18
+    ]
+  },
+  "passed": false,
+  "cases": [
+    {
+      "rng": null,
+      "phase_x": null,
+      "phase_z": null,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.032084,
+      "diagnostic": "tick 6: prescribed start failed or has unexpected action prescribed move failed",
+      "input_max_action_loads": {
+        "k1_input": [
+          null,
+          null,
+          7,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 7
+    }
+  ],
+  "claim": "prescribed input injection (before_natural); validated start/settlement ledger + sampled ports + candidate-state recurrence; does not establish natural driver realization"
+}

@@ -1,0 +1,142 @@
+{
+  "version": 1,
+  "scope": "reference-derived prescribed primitive calibration; not separate-body or autonomous-driver evidence",
+  "matrix": {
+    "words": [
+      "mmmww",
+      "mmmmww",
+      "mmwmmw",
+      "mmwwm"
+    ],
+    "orders": [
+      "before_natural",
+      "after_natural"
+    ],
+    "cycles": 3,
+    "sample_combinations_per_contract": 80,
+    "contracts": 8,
+    "positive_cases": 640,
+    "positive_ticks": 21120
+  },
+  "elapsed_seconds": 58.543,
+  "preflight": {
+    "passed": true,
+    "contract": "contracts/mmmww_before.json",
+    "ticks": 30
+  },
+  "positive_batches": [
+    {
+      "contract": "flyers/WIP/experiments/extension_contract_20261011/prescribed_primitive/contracts/mmmww_before.json",
+      "returncode": 0,
+      "passed": true,
+      "case_count": 80,
+      "ticks_per_case": 30,
+      "total_ticks": 2400,
+      "elapsed_seconds": 4.94,
+      "max_whole_action": 3,
+      "first_failure": null,
+      "diagnostic": null
+    },
+    {
+      "contract": "flyers/WIP/experiments/extension_contract_20261011/prescribed_primitive/contracts/mmmww_after.json",
+      "returncode": 0,
+      "passed": true,
+      "case_count": 80,
+      "ticks_per_case": 30,
+      "total_ticks": 2400,
+      "elapsed_seconds": 6.529,
+      "max_whole_action": 3,
+      "first_failure": null,
+      "diagnostic": null
+    },
+    {
+      "contract": "flyers/WIP/experiments/extension_contract_20261011/prescribed_primitive/contracts/mmmmww_before.json",
+      "returncode": 0,
+      "passed": true,
+      "case_count": 80,
+      "ticks_per_case": 36,
+      "total_ticks": 2880,
+      "elapsed_seconds": 6.163,
+      "max_whole_action": 3,
+      "first_failure": null,
+      "diagnostic": null
+    },
+    {
+      "contract": "flyers/WIP/experiments/extension_contract_20261011/prescribed_primitive/contracts/mmmmww_after.json",
+      "returncode": 0,
+      "passed": true,
+      "case_count": 80,
+      "ticks_per_case": 36,
+      "total_ticks": 2880,
+      "elapsed_seconds": 8.757,
+      "max_whole_action": 3,
+      "first_failure": null,
+      "diagnostic": null
+    },
+    {
+      "contract": "flyers/WIP/experiments/extension_contract_20261011/prescribed_primitive/contracts/mmwmmw_before.json",
+      "returncode": 0,
+      "passed": true,
+      "case_count": 80,
+      "ticks_per_case": 36,
+      "total_ticks": 2880,
+      "elapsed_seconds": 5.299,
+      "max_whole_action": 3,
+      "first_failure": null,
+      "diagnostic": null
+    },
+    {
+      "contract": "flyers/WIP/experiments/extension_contract_20261011/prescribed_primitive/contracts/mmwmmw_after.json",
+      "returncode": 0,
+      "passed": true,
+      "case_count": 80,
+      "ticks_per_case": 36,
+      "total_ticks": 2880,
+      "elapsed_seconds": 6.568,
+      "max_whole_action": 3,
+      "first_failure": null,
+      "diagnostic": null
+    },
+    {
+      "contract": "flyers/WIP/experiments/extension_contract_20261011/prescribed_primitive/contracts/mmwwm_before.json",
+      "returncode": 0,
+      "passed": true,
+      "case_count": 80,
+      "ticks_per_case": 30,
+      "total_ticks": 2400,
+      "elapsed_seconds": 4.958,
+      "max_whole_action": 3,
+      "first_failure": null,
+      "diagnostic": null
+    },
+    {
+      "contract": "flyers/WIP/experiments/extension_contract_20261011/prescribed_primitive/contracts/mmwwm_after.json",
+      "returncode": 0,
+      "passed": true,
+      "case_count": 80,
+      "ticks_per_case": 30,
+      "total_ticks": 2400,
+      "elapsed_seconds": 6.834,
+      "max_whole_action": 3,
+      "first_failure": null,
+      "diagnostic": null
+    }
+  ],
+  "negative_controls": [
+    {
+      "name": "overbudget",
+      "expected": "nonzero prescribed action failure",
+      "returncode": 1,
+      "passed": true,
+      "diagnostic": "tick 0: prescribed move at [0,0,0] failed: LoadExceeded { discovered: 3, limit: 2 }"
+    },
+    {
+      "name": "duplicate_moving_input",
+      "expected": "nonzero prescribed action failure",
+      "returncode": 1,
+      "passed": true,
+      "diagnostic": "tick 0: prescribed move at [0,0,0] failed: MissingInput"
+    }
+  ],
+  "passed": true
+}

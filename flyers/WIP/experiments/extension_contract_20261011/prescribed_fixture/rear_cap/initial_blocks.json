@@ -1,0 +1,212 @@
+[
+  {
+    "at": [
+      0,
+      0,
+      15
+    ],
+    "encoded": 9,
+    "kind": "piston",
+    "direction": 0,
+    "state": 0,
+    "sticky": false,
+    "powered": false,
+    "moving": false
+  },
+  {
+    "at": [
+      0,
+      0,
+      16
+    ],
+    "encoded": 3,
+    "kind": "smooth_stone",
+    "direction": 0,
+    "state": 0,
+    "sticky": false,
+    "powered": false,
+    "moving": false
+  },
+  {
+    "at": [
+      0,
+      1,
+      15
+    ],
+    "encoded": 1,
+    "kind": "slime",
+    "direction": 0,
+    "state": 0,
+    "sticky": false,
+    "powered": false,
+    "moving": false
+  },
+  {
+    "at": [
+      0,
+      1,
+      16
+    ],
+    "encoded": 1,
+    "kind": "slime",
+    "direction": 0,
+    "state": 0,
+    "sticky": false,
+    "powered": false,
+    "moving": false
+  },
+  {
+    "at": [
+      0,
+      1,
+      17
+    ],
+    "encoded": 9,
+    "kind": "piston",
+    "direction": 0,
+    "state": 0,
+    "sticky": false,
+    "powered": false,
+    "moving": false
+  },
+  {
+    "at": [
+      1,
+      1,
+      15
+    ],
+    "encoded": 10,
+    "kind": "piston_arm",
+    "direction": 0,
+    "state": 0,
+    "sticky": false,
+    "powered": false,
+    "moving": false
+  },
+  {
+    "at": [
+      2,
+      0,
+      15
+    ],
+    "encoded": 1,
+    "kind": "slime",
+    "direction": 0,
+    "state": 0,
+    "sticky": false,
+    "powered": false,
+    "moving": false
+  },
+  {
+    "at": [
+      2,
+      0,
+      17
+    ],
+    "encoded": 168,
+    "kind": "rod",
+    "direction": 5,
+    "state": 0,
+    "sticky": false,
+    "powered": false,
+    "moving": false
+  },
+  {
+    "at": [
+      2,
+      1,
+      15
+    ],
+    "encoded": 2345,
+    "kind": "piston",
+    "direction": 1,
+    "state": 2,
+    "sticky": true,
+    "powered": false,
+    "moving": false
+  },
+  {
+    "at": [
+      3,
+      0,
+      16
+    ],
+    "encoded": 423,
+    "kind": "observer",
+    "direction": 5,
+    "state": 0,
+    "sticky": false,
+    "powered": true,
+    "moving": false
+  },
+  {
+    "at": [
+      3,
+      0,
+      17
+    ],
+    "encoded": 1,
+    "kind": "slime",
+    "direction": 0,
+    "state": 0,
+    "sticky": false,
+    "powered": false,
+    "moving": false
+  },
+  {
+    "at": [
+      3,
+      1,
+      16
+    ],
+    "encoded": 297,
+    "kind": "piston",
+    "direction": 1,
+    "state": 0,
+    "sticky": true,
+    "powered": false,
+    "moving": false
+  },
+  {
+    "at": [
+      3,
+      1,
+      17
+    ],
+    "encoded": 1,
+    "kind": "slime",
+    "direction": 0,
+    "state": 0,
+    "sticky": false,
+    "powered": false,
+    "moving": false
+  },
+  {
+    "at": [
+      3,
+      2,
+      16
+    ],
+    "encoded": 6,
+    "kind": "redstone_block",
+    "direction": 0,
+    "state": 0,
+    "sticky": false,
+    "powered": false,
+    "moving": false
+  },
+  {
+    "at": [
+      3,
+      2,
+      17
+    ],
+    "encoded": 9,
+    "kind": "piston",
+    "direction": 0,
+    "state": 0,
+    "sticky": false,
+    "powered": false,
+    "moving": false
+  }
+]
