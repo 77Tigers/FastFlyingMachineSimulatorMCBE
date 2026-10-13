@@ -1,0 +1,63 @@
+{
+  "mode": "before_natural",
+  "python": {
+    "rng": 0,
+    "phase_x": 0,
+    "phase_z": 0,
+    "passed": true,
+    "ticks": 36,
+    "elapsed_seconds": 2.355798,
+    "diagnostic": null,
+    "first_failure": null,
+    "input_max_action_loads": {
+      "src60_in": [
+        1,
+        null,
+        null,
+        1,
+        1,
+        1
+      ],
+      "carrier_in": [
+        18,
+        18,
+        18,
+        null,
+        null,
+        18
+      ],
+      "target_in": [
+        16,
+        16,
+        null,
+        null,
+        16,
+        16
+      ]
+    },
+    "whole_assembly_max_action": 18
+  },
+  "rust_command": [
+    "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\target\\release\\contract-search.exe",
+    "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\shared_design_20261013\\scheduling\\witness_trial\\n4_14_validation\\before_natural\\contract.json",
+    "0",
+    "1",
+    "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\shared_design_20261013\\scheduling\\witness_trial\\n4_14_validation\\before_natural\\eval",
+    "--eval-only",
+    "--order",
+    "before",
+    "--recurrence",
+    "exact",
+    "--high",
+    "0",
+    "--rng",
+    "0",
+    "--phase-x",
+    "0",
+    "--phase-z",
+    "0"
+  ],
+  "rust_returncode": 0,
+  "rust_stdout": "{\"name\":\"n4_14-witness-before_natural\",\"pass\":true,\"recurrence\":\"exact\",\"orders\":[\"before_natural\"],\"rank\":\"endogenous\",\"excess\":0,\"max_load\":16,\"all_max_load\":18,\"count_at_max\":3,\"max_prescribed_input_load\":18,\"blocks\":35,\"sum_load\":48,\"input_loads\":{\"src60_in\":[1,null,null,1,1,1],\"carrier_in\":[18,18,18,null,null,18],\"target_in\":[16,16,null,null,16,16]}}\n",
+  "rust_stderr": ""
+}

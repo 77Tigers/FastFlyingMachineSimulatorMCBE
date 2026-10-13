@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "name": "n3_07-scheduling-witness-interleaved",
+  "flyer": "..\\..\\..\\..\\..\\..\\..\\extension_bank\\n3\\n3_07\\candidate.flyer",
+  "prescribed_script": "..\\..\\..\\..\\..\\..\\..\\extension_bank\\n3\\n3_07\\drive.txt",
+  "prescribed_order": "interleaved",
+  "period_ticks": 10,
+  "advance": 3,
+  "cycles": 3,
+  "recurrence": "exact",
+  "ports": [
+    {
+      "name": "b40_carrier_in",
+      "role": "input",
+      "at": [
+        5,
+        0,
+        14
+      ],
+      "word": "wwmmm",
+      "baseline_load": [
+        null,
+        null,
+        12,
+        12,
+        12
+      ],
+      "spare_load": [
+        null,
+        null,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "b54_out",
+      "role": "output",
+      "at": [
+        7,
+        1,
+        13
+      ],
+      "word": "mmmww"
+    }
+  ]
+}

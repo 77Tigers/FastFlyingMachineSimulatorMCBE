@@ -255,8 +255,8 @@ def load_contract(path: Path) -> Contract:
     if "prescribed_script" in raw or "prescribed_order" in raw:
         if not isinstance(raw.get("prescribed_script"), str) or not raw["prescribed_script"]:
             raise ContractError("contract.prescribed_script: expected a relative path")
-        if raw.get("prescribed_order") not in ("before_natural", "after_natural"):
-            raise ContractError("contract.prescribed_order: expected 'before_natural' or 'after_natural'")
+        if raw.get("prescribed_order") not in ("before_natural", "after_natural", "interleaved"):
+            raise ContractError("contract.prescribed_order: expected 'before_natural', 'after_natural', or 'interleaved'")
         prescribed_relative = Path(raw["prescribed_script"])
         if prescribed_relative.is_absolute():
             raise ContractError("contract.prescribed_script: path must be relative to the contract")
@@ -536,8 +536,15 @@ class CaseChecker:
         """Validate injected moves and their session ledger without inferring a natural actuator."""
         if self.contract.prescribed_script is None:
             return "prescribed wrapper received without a declared prescribed_script"
-        if set(wrapper) != {"tick", "prescribed_order", "pending_before", "pending_after", "trace"}:
+        expected_fields = {"tick", "prescribed_order", "pending_before", "pending_after", "trace"}
+        if self.contract.prescribed_order == "interleaved":
+            expected_fields.add("schedule_seed")
+        if set(wrapper) != expected_fields:
             return f"tick {tick}: malformed prescribed wrapper fields {sorted(wrapper)}"
+        if self.contract.prescribed_order == "interleaved" and (
+                type(wrapper.get("schedule_seed")) is not int or
+                not 0 <= wrapper["schedule_seed"] <= (1 << 64) - 1):
+            return f"tick {tick}: interleaved prescribed wrapper has no valid u64 schedule_seed"
         if wrapper.get("tick") != tick:
             return f"tick {tick}: prescribed wrapper tick mismatch: {wrapper.get('tick')}"
         if wrapper.get("prescribed_order") != self.contract.prescribed_order:
@@ -573,16 +580,39 @@ class CaseChecker:
         next_ids_seen = set(self.prescribed_ids_seen)
         next_id = self.next_prescribed_id
         if starts:
-            for event, step in zip(starts, prescribed_steps):
+            if self.contract.prescribed_order == "interleaved":
+                events_by_input = {event.input: event for event in starts}
+                observed_inputs = [tuple(step.get("active_input", ())) for step in prescribed_steps
+                                   if str(step.get("action", "")).startswith("prescribed move")]
+                if len(events_by_input) != len(starts):
+                    return f"tick {tick}: interleaved prescribed inputs are ambiguous at this tick"
+                if len(observed_inputs) != len(starts) or set(observed_inputs) != set(events_by_input):
+                    return f"tick {tick}: interleaved prescribed actions do not match each scripted input exactly once"
+                ordered_starts = [(events_by_input[tuple(step["active_input"])], step)
+                                  for step in prescribed_steps]
+            else:
+                ordered_starts = list(zip(starts, prescribed_steps))
+            for event, step in ordered_starts:
                 step_index = trace["steps"].index(step)
                 if self.contract.prescribed_order == "before_natural" and step_index >= min(natural_indices):
                     return f"tick {tick}: prescribed start did not occur before natural processing"
                 if self.contract.prescribed_order == "after_natural" and step_index <= max(natural_indices):
                     return f"tick {tick}: prescribed start did not occur after natural processing"
-                if step.get("action") != "prescribed move":
-                    return f"tick {tick}: prescribed start failed or has unexpected action {step.get('action')}"
                 if step.get("active_input") != list(event.input) or step.get("prescribed_order") != self.contract.prescribed_order:
                     return f"tick {tick}: prescribed start input/order does not match script"
+                if step.get("action") != "prescribed move":
+                    movement = step.get("movement")
+                    movement = movement if isinstance(movement, dict) else {}
+                    failure_detail = movement.get("failure")
+                    actual = {"action": step.get("action"), "failure": failure_detail,
+                              "sources": movement.get("sources"),
+                              "prescribed_move_id": step.get("prescribed_move_id")}
+                    message = (f"tick {tick}: prescribed input {event.input} failed under max_load {event.limit}; "
+                               f"action={step.get('action')}, overlay failure={failure_detail}, "
+                               f"sources={movement.get('sources')}")
+                    return self.report_failure("prescribed", "prescribed_move_failed", tick,
+                                               expected={"input": list(event.input), "max_load": event.limit},
+                                               actual=actual, message=message)
                 move_id = step.get("prescribed_move_id")
                 if type(move_id) is not int or move_id != next_id or move_id in next_ids_seen:
                     return f"tick {tick}: prescribed move id is missing, duplicate, or out of sequence"
@@ -616,7 +646,21 @@ class CaseChecker:
                 next_ids_seen.add(move_id)
                 next_id += 1
         elif settles:
-            for pending, event, step in zip(expected_before, settles, prescribed_steps):
+            if self.contract.prescribed_order == "interleaved":
+                pending_by_input = {move["input"]: move for move in expected_before}
+                settles_by_input = {event.input: event for event in settles}
+                steps_by_input = {tuple(step.get("active_input", ())): step for step in prescribed_steps}
+                if (len(pending_by_input) != len(expected_before) or
+                        len(settles_by_input) != len(settles) or
+                        len(steps_by_input) != len(prescribed_steps) or
+                        set(pending_by_input) != set(settles_by_input) or
+                        set(pending_by_input) != set(steps_by_input)):
+                    return f"tick {tick}: interleaved settlements do not match pending prescribed moves exactly once"
+                settlement_triples = [(pending_by_input[event.input], event, steps_by_input[event.input])
+                                      for event in settles]
+            else:
+                settlement_triples = list(zip(expected_before, settles, prescribed_steps))
+            for pending, event, step in settlement_triples:
                 step_index = trace["steps"].index(step)
                 if step_index >= min(natural_indices):
                     return f"tick {tick}: prescribed settlement did not occur before natural processing"
@@ -1084,7 +1128,8 @@ def run_case(contract: Contract, driver: Path, sample: tuple[int, int, int] | No
         args.append(str(contract.drive_script))
     if contract.prescribed_script is not None:
         args.extend((str(contract.prescribed_script),
-                     "before" if contract.prescribed_order == "before_natural" else "after"))
+                     {"before_natural": "before", "after_natural": "after",
+                      "interleaved": "interleaved"}[contract.prescribed_order]))
     if sample is not None:
         args.extend(map(str, sample))
     process = subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True,
@@ -1093,6 +1138,8 @@ def run_case(contract: Contract, driver: Path, sample: tuple[int, int, int] | No
     failure: str | None = None
     initialization_failure = None
     tick_count = 0
+    schedule_seeds: list[dict[str, int]] = []
+    realized_action_order: list[dict[str, Any]] = []
     try:
         try:
             checker = checker_factory(contract, _flyer_initial_trace(contract.flyer))
@@ -1114,6 +1161,22 @@ def run_case(contract: Contract, driver: Path, sample: tuple[int, int, int] | No
                     if not isinstance(output, dict):
                         failure = f"tick {tick_count}: prescribed wrapper is not an object"
                     else:
+                        if contract.prescribed_order == "interleaved":
+                            candidate_seed = output.get("schedule_seed")
+                            if type(candidate_seed) is int:
+                                schedule_seeds.append({"tick": tick_count, "seed": candidate_seed})
+                        trace_for_order = output.get("trace")
+                        if (contract.prescribed_order == "interleaved" and
+                                isinstance(trace_for_order, dict) and isinstance(trace_for_order.get("steps"), list)):
+                            for step_index, step in enumerate(trace_for_order["steps"]):
+                                if isinstance(step, dict):
+                                    realized_action_order.append({
+                                        "tick": tick_count, "step": step_index,
+                                        "stage": step.get("stage"), "action": step.get("action"),
+                                        "active_input": step.get("active_input"),
+                                        "active_piston": step.get("active_piston"),
+                                        "active_chunk": step.get("active_chunk"),
+                                    })
                         failure = checker.validate_prescribed_wrapper(output, tick_count)
                         if failure is None:
                             failure = checker.consume(output.get("trace"), tick_count,
@@ -1163,12 +1226,26 @@ def run_case(contract: Contract, driver: Path, sample: tuple[int, int, int] | No
                 process.communicate()
     input_loads = checker.input_max_action_loads if checker is not None else {}
     whole_max = checker.whole_assembly_max_action if checker is not None else 0
-    return {"rng": rng, "phase_x": px, "phase_z": pz, "passed": failure is None,
+    first_failure = (getattr(checker, "first_failure", None) or initialization_failure) if failure else None
+    schedule_seed = (schedule_seeds[-1]["seed"] if schedule_seeds else None)
+    replay = {"rng": rng, "phase_x": px, "phase_z": pz,
+              "schedule_seed": schedule_seed, "schedule_seeds": schedule_seeds,
+              "realized_action_order": realized_action_order}
+    if failure and first_failure is None and contract.prescribed_order == "interleaved":
+        first_failure = {"stage": "trace", "code": "contract_failure", "tick": max(0, tick_count - 1),
+                         "port": None, "expected": None, "actual": None, "message": failure}
+    if first_failure is not None and contract.prescribed_order == "interleaved":
+        first_failure = {**first_failure, "replay": replay}
+    result = {"rng": rng, "phase_x": px, "phase_z": pz, "passed": failure is None,
             "ticks": tick_count, "elapsed_seconds": round(time.perf_counter() - started, 6),
             "diagnostic": failure,
-            "first_failure": (getattr(checker, "first_failure", None) or initialization_failure) if failure else None,
+            "first_failure": first_failure,
             "input_max_action_loads": input_loads,
             "whole_assembly_max_action": whole_max}
+    if contract.prescribed_order == "interleaved":
+        result.update({"schedule_seed": schedule_seed, "schedule_seeds": schedule_seeds,
+                       "realized_action_order": realized_action_order})
+    return result
 
 
 def main(argv: Iterable[str] | None = None) -> int:

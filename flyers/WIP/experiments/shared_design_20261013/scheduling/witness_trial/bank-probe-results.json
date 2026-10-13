@@ -1,0 +1,191 @@
+[
+  {
+    "fixture": "n2_01",
+    "command": [
+      "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\target\\release\\contract-search.exe",
+      "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\shared_design_20261013\\scheduling\\witness_trial\\bank_probe\\n2_01\\contract.json",
+      "0",
+      "1",
+      "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\shared_design_20261013\\scheduling\\witness_trial\\bank_probe\\n2_01\\eval",
+      "--eval-only",
+      "--samples",
+      "--order",
+      "interleaved",
+      "--recurrence",
+      "exact",
+      "--high",
+      "0"
+    ],
+    "returncode": 0,
+    "stdout": "{\"name\":\"n2_01-scheduling-witness-interleaved\",\"pass\":true,\"samples_passed\":80,\"samples_total\":80,\"max_load\":6,\"first_failure\":null}\n",
+    "stderr": ""
+  },
+  {
+    "fixture": "n2_02",
+    "command": [
+      "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\target\\release\\contract-search.exe",
+      "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\shared_design_20261013\\scheduling\\witness_trial\\bank_probe\\n2_02\\contract.json",
+      "0",
+      "1",
+      "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\shared_design_20261013\\scheduling\\witness_trial\\bank_probe\\n2_02\\eval",
+      "--eval-only",
+      "--samples",
+      "--order",
+      "interleaved",
+      "--recurrence",
+      "exact",
+      "--high",
+      "0"
+    ],
+    "returncode": 0,
+    "stdout": "{\"name\":\"n2_02-scheduling-witness-interleaved\",\"pass\":true,\"samples_passed\":80,\"samples_total\":80,\"max_load\":5,\"first_failure\":null}\n",
+    "stderr": ""
+  },
+  {
+    "fixture": "n2_03",
+    "command": [
+      "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\target\\release\\contract-search.exe",
+      "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\shared_design_20261013\\scheduling\\witness_trial\\bank_probe\\n2_03\\contract.json",
+      "0",
+      "1",
+      "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\shared_design_20261013\\scheduling\\witness_trial\\bank_probe\\n2_03\\eval",
+      "--eval-only",
+      "--samples",
+      "--order",
+      "interleaved",
+      "--recurrence",
+      "exact",
+      "--high",
+      "0"
+    ],
+    "returncode": 0,
+    "stdout": "{\"name\":\"n2_03-scheduling-witness-interleaved\",\"pass\":true,\"samples_passed\":80,\"samples_total\":80,\"max_load\":5,\"first_failure\":null}\n",
+    "stderr": ""
+  },
+  {
+    "fixture": "n2_06",
+    "command": [
+      "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\target\\release\\contract-search.exe",
+      "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\shared_design_20261013\\scheduling\\witness_trial\\bank_probe\\n2_06\\contract.json",
+      "0",
+      "1",
+      "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\shared_design_20261013\\scheduling\\witness_trial\\bank_probe\\n2_06\\eval",
+      "--eval-only",
+      "--samples",
+      "--order",
+      "interleaved",
+      "--recurrence",
+      "exact",
+      "--high",
+      "0"
+    ],
+    "returncode": 0,
+    "stdout": "{\"name\":\"n2_06-scheduling-witness-interleaved\",\"pass\":true,\"samples_passed\":80,\"samples_total\":80,\"max_load\":8,\"first_failure\":null}\n",
+    "stderr": ""
+  },
+  {
+    "fixture": "n3_07",
+    "command": [
+      "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\target\\release\\contract-search.exe",
+      "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\shared_design_20261013\\scheduling\\witness_trial\\bank_probe\\n3_07\\contract.json",
+      "0",
+      "1",
+      "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\shared_design_20261013\\scheduling\\witness_trial\\bank_probe\\n3_07\\eval",
+      "--eval-only",
+      "--samples",
+      "--order",
+      "interleaved",
+      "--recurrence",
+      "exact",
+      "--high",
+      "0"
+    ],
+    "returncode": 0,
+    "stdout": "{\"name\":\"n3_07-scheduling-witness-interleaved\",\"pass\":true,\"samples_passed\":80,\"samples_total\":80,\"max_load\":7,\"first_failure\":null}\n",
+    "stderr": ""
+  },
+  {
+    "fixture": "n3_10",
+    "command": [
+      "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\target\\release\\contract-search.exe",
+      "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\shared_design_20261013\\scheduling\\witness_trial\\bank_probe\\n3_10\\contract.json",
+      "0",
+      "1",
+      "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\shared_design_20261013\\scheduling\\witness_trial\\bank_probe\\n3_10\\eval",
+      "--eval-only",
+      "--samples",
+      "--order",
+      "interleaved",
+      "--recurrence",
+      "bounded",
+      "--high",
+      "0"
+    ],
+    "returncode": 0,
+    "stdout": "{\"name\":\"n3_10-scheduling-witness-interleaved\",\"pass\":true,\"samples_passed\":80,\"samples_total\":80,\"max_load\":12,\"first_failure\":null}\n",
+    "stderr": ""
+  },
+  {
+    "fixture": "n3_11",
+    "command": [
+      "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\target\\release\\contract-search.exe",
+      "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\shared_design_20261013\\scheduling\\witness_trial\\bank_probe\\n3_11\\contract.json",
+      "0",
+      "1",
+      "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\shared_design_20261013\\scheduling\\witness_trial\\bank_probe\\n3_11\\eval",
+      "--eval-only",
+      "--samples",
+      "--order",
+      "interleaved",
+      "--recurrence",
+      "bounded",
+      "--high",
+      "0"
+    ],
+    "returncode": 0,
+    "stdout": "{\"name\":\"n3_11-scheduling-witness-interleaved\",\"pass\":true,\"samples_passed\":80,\"samples_total\":80,\"max_load\":14,\"first_failure\":null}\n",
+    "stderr": ""
+  },
+  {
+    "fixture": "n4_12",
+    "command": [
+      "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\target\\release\\contract-search.exe",
+      "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\shared_design_20261013\\scheduling\\witness_trial\\bank_probe\\n4_12\\contract.json",
+      "0",
+      "1",
+      "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\shared_design_20261013\\scheduling\\witness_trial\\bank_probe\\n4_12\\eval",
+      "--eval-only",
+      "--samples",
+      "--order",
+      "interleaved",
+      "--recurrence",
+      "exact",
+      "--high",
+      "0"
+    ],
+    "returncode": 0,
+    "stdout": "{\"name\":\"n4_12-scheduling-witness-interleaved\",\"pass\":true,\"samples_passed\":80,\"samples_total\":80,\"max_load\":21,\"first_failure\":null}\n",
+    "stderr": ""
+  },
+  {
+    "fixture": "n4_14",
+    "command": [
+      "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\target\\release\\contract-search.exe",
+      "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\shared_design_20261013\\scheduling\\witness_trial\\bank_probe\\n4_14\\contract.json",
+      "0",
+      "1",
+      "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\shared_design_20261013\\scheduling\\witness_trial\\bank_probe\\n4_14\\eval",
+      "--eval-only",
+      "--samples",
+      "--order",
+      "interleaved",
+      "--recurrence",
+      "exact",
+      "--high",
+      "0"
+    ],
+    "returncode": 0,
+    "stdout": "{\"name\":\"n4_14-scheduling-witness-interleaved\",\"pass\":false,\"samples_passed\":0,\"samples_total\":80,\"max_load\":0,\"first_failure\":\"rng=0 phases=(0,0): [interleaved] tick 14: prescribed move at (15,0,3) failed: LoadExceeded { discovered: 17, limit: 16 }\"}\n",
+    "stderr": ""
+  }
+]

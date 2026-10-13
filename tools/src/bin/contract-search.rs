@@ -1,6 +1,6 @@
 // Local search that minimises load for an extension contract in prescribed mode.
 // usage: contract-search CONTRACT.json SECONDS THREADS OUT_DIR
-//          [--seed N] [--margin M] [--order before|after|both] [--recurrence exact|bounded]
+//          [--seed N] [--margin M] [--order before|after|both|interleaved] [--recurrence exact|bounded]
 //          [--move-pistons] [--dump-fails] [--neighborhood] [--eval-only] [--samples] [--rng N --phase-x N --phase-z N]
 //
 // In-process evaluator that mirrors tools/extension_contract.py (prescribed mode): it drives a
@@ -291,6 +291,7 @@ fn order_name(o: PrescribedOrder) -> &'static str {
     match o {
         PrescribedOrder::BeforeNatural => "before_natural",
         PrescribedOrder::AfterNatural => "after_natural",
+        PrescribedOrder::Interleaved => "interleaved",
     }
 }
 fn coord_arr(j: &J, what: &str) -> Result<Coord, String> {
@@ -493,6 +494,7 @@ fn load_ctx(path: &Path, recurrence_override: Option<&str>) -> Result<Ctx, Strin
     let script = fs::read_to_string(&script_path).map_err(|e| format!("cannot read script {}: {e}", script_path.display()))?;
     let mut schedule: BTreeMap<usize, Vec<PrescribedMove>> = BTreeMap::new();
     let mut events = vec![];
+    let mut event_keys = BTreeSet::new();
     for (ln, line) in script.lines().enumerate() {
         let line = line.split('#').next().unwrap_or("").trim();
         if line.is_empty() {
@@ -508,6 +510,9 @@ fn load_ctx(path: &Path, recurrence_override: Option<&str>) -> Result<Ctx, Strin
         let limit = n(4)? as u64;
         if tick % 2 != 0 || tick + 1 >= period * cycles || tick % period + 2 > period {
             return Err(format!("script line {}: bad tick {tick}", ln + 1));
+        }
+        if !event_keys.insert((tick, c.x, c.y, c.z)) {
+            return Err(format!("script line {}: duplicate prescribed input {:?} at tick {tick}", ln + 1, c));
         }
         schedule.entry(tick).or_default().push(PrescribedMove { input: c, max_load: limit });
         events.push((tick, c, limit));
@@ -600,10 +605,11 @@ struct RunStats {
     end_hot: Vec<Coord>,
 }
 
-#[derive(Default, Clone, Copy)]
+#[derive(Default, Clone)]
 struct Progress {
     ticks_ok: usize,
     checks_ok: usize,
+    last_replay: Option<String>,
 }
 
 fn shift(c: Coord, dx: i64) -> Coord {
@@ -675,6 +681,15 @@ fn run_order(ctx: &Ctx, cells: &Cells, order: PrescribedOrder, sample: Sample, w
         let moves: &[PrescribedMove] = ctx.schedule.get(&tick).map(|v| v.as_slice()).unwrap_or(&[]);
         let mut trace: TickTrace = session.new_trace();
         let report = session.tick_traced(moves, order, &mut trace, tick).map_err(|e| format!("tick {tick}: simulation error: {e}"))?;
+        if order == PrescribedOrder::Interleaved {
+            let realized_order = trace.steps.iter().map(|step| {
+                format!("{}:{}:chunk={:?}:piston={:?}:input={:?}", step.info.stage,
+                    step.info.action.unwrap_or(""), step.info.active_chunk,
+                    step.info.active_piston, step.info.active_input)
+            }).collect::<Vec<_>>().join(",");
+            prog.last_replay = Some(format!("tick={tick}, schedule_seed={:?}, action_order=[{}]",
+                report.schedule_seed, realized_order));
+        }
         for a in &report.actions {
             if let PrescribedOutcome::Failed(r) = &a.outcome {
                 return Err(format!("tick {tick}: prescribed move at ({},{},{}) failed: {:?}", a.input.x, a.input.y, a.input.z, r));
@@ -951,7 +966,12 @@ fn evaluate(ctx: &Ctx, cells: &Cells, sample: Sample, want_hot: bool) -> Result<
                 runs.push(r);
             }
             Err(e) => {
-                return Err(EvalFail { msg: format!("[{}] {e}", order_name(o)), ticks: ticks + prog.ticks_ok, checks: checks + prog.checks_ok });
+                let replay = if o == PrescribedOrder::Interleaved {
+                    prog.last_replay.as_ref().map(|value| format!(" replay({value})")).unwrap_or_default()
+                } else { String::new() };
+                return Err(EvalFail { msg: format!("sample(rng={}, phase_x={}, phase_z={}) [{}] {e}{replay}",
+                    sample.rng, sample.px, sample.pz, order_name(o)),
+                    ticks: ticks + prog.ticks_ok, checks: checks + prog.checks_ok });
             }
         }
     }
@@ -1477,7 +1497,7 @@ fn main() {
 
 fn run() -> Result<(), String> {
     let a: Vec<String> = env::args().skip(1).collect();
-    let usage = "usage: contract-search CONTRACT.json SECONDS THREADS OUT_DIR [--seed N] [--margin M] [--order before|after|both] [--recurrence exact|bounded|advance] [--target T] [--rank endogenous|all] [--freeze-bodies] [--high H] [--cycles N] [--strict] [--no-pistons] [--temp X] [--fail-pen X] [--restart N] [--eval-only] [--samples] [--rng N --phase-x N --phase-z N] [--dump-fails] [--neighborhood]";
+    let usage = "usage: contract-search CONTRACT.json SECONDS THREADS OUT_DIR [--seed N] [--margin M] [--order before|after|both|interleaved] [--recurrence exact|bounded|advance] [--target T] [--rank endogenous|all] [--freeze-bodies] [--high H] [--cycles N] [--strict] [--no-pistons] [--temp X] [--fail-pen X] [--restart N] [--eval-only] [--samples] [--rng N --phase-x N --phase-z N] [--dump-fails] [--neighborhood]";
     if a.len() < 1 {
         return Err(usage.into());
     }
@@ -1548,7 +1568,8 @@ fn run() -> Result<(), String> {
         "before" => vec![PrescribedOrder::BeforeNatural],
         "after" => vec![PrescribedOrder::AfterNatural],
         "both" => vec![PrescribedOrder::BeforeNatural, PrescribedOrder::AfterNatural],
-        _ => return Err("--order must be before, after or both".into()),
+        "interleaved" => vec![PrescribedOrder::Interleaved],
+        _ => return Err("--order must be before, after, both or interleaved".into()),
     };
     if ctx.bounded && ctx.envelope.is_none() {
         // initial bbox of all cells expanded by margin

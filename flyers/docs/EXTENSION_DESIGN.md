@@ -13,8 +13,9 @@ cargo build --release --manifest-path tools/Cargo.toml --target-dir target --bin
 python tools/extension_design.py flyers/WIP/experiments/extension_contract_20261011/prescribed_fixture/rear_cap/rear_cap_design.json --out-dir target/rear-design --check
 ```
 
-Use `--order before_natural` or `--order after_natural` explicitly when comparing
-orders. A passing result applies only to the selected order and tested cases.
+Use `--order before_natural`, `--order after_natural`, or `--order interleaved`
+explicitly when comparing orders. A passing result applies only to the selected
+order and tested cases.
 Generated outputs are `plan.json`, `contract.json`, `prescribed.txt`,
 `runtime.json` and, when checking, `result.json`. Output directories should be
 separate from source files. The compiler rebases the relative flyer path.
@@ -33,9 +34,10 @@ Each port has `name`, `role`, `at`, `word` and a per-slot `provenance` array:
 
 An input's optional `prescribed_max_load` array identifies explicitly injected
 strokes. Non-null entries must have `supplied` provenance and a positive cap.
-`supplied_order` is an array per slot listing these explicit inputs in execution
-order. A supplied passenger has no explicit injection of its own. Same-tick
-order is significant. Optional `baseline_load` and `spare_load` arrays retain
+`supplied_order` is an array per slot listing these explicit inputs. It fixes
+execution order in the before/after modes; `interleaved` shuffles the listed
+events. A supplied passenger has no explicit injection of its own. Optional
+`baseline_load` and `spare_load` arrays retain
 the existing per-input bounds, including bounds on internally generated strokes.
 
 Contacts use the existing plan fields: `name`, `a`, `b`, `slots`, `relation`
@@ -64,6 +66,45 @@ declare rigid bodies or require each member to share a trajectory during a cycle
 Only `bounded` accepts an envelope. Named port trajectories and identity
 conservation are checked in every mode. None of these finite sample results
 proves safety under all update interleavings.
+
+## Prescribed scheduling
+
+`prescribed_order` defaults to `before_natural`. The two legacy modes execute
+all supplied moves, in script order, either before or after the shuffled natural
+piston stage. Varying RNG and chunk phase in those modes does not interleave
+supplied moves with natural piston visits.
+
+`interleaved` is an explicit synthetic stress mode. It retains shuffled natural
+chunk order and piston order, assigns supplied events to random chunk buckets
+or a tail bucket, and inserts them at random gaps between that chunk's piston
+visits. Multiple supplied events can change relative order. This distribution
+is not uniform over all possible interleavings. It follows the normal movement
+discovery, load caps, passenger movement and pending-movement checks.
+
+All modes compute power first and settle last tick's prescribed moves after
+that snapshot, before natural updates. Observer pulses caused by prescribed
+settlement therefore reach the following tick's power stage. Interleaved mode
+does not shuffle settlement events into the piston stage.
+
+This deliberately tests more action orders without claiming to model a concrete
+driver. A real actuator has a location and visits its own chunk/piston schedule;
+its moving block ownership and settlement can also differ. Supplied events have
+no such actuator. Concrete-driver validation is still required to establish that
+the promised input motion and capacities can actually be provided.
+
+The existing sample RNG and X/Z phases reproduce an interleaved run. Its wrapper
+also reports a derived `schedule_seed`; this is diagnostic metadata, not the RNG
+value to pass on the command line. Failure replay details include the realized
+action order. Before/after trace wrappers retain their original fields.
+
+```powershell
+cargo build --release --manifest-path tools/Cargo.toml --target-dir target --bin extension-prescribe --bin contract-search
+python tools/extension_design.py flyers/WIP/experiments/shared_design_20261013/bank_migration/n2_05/before_natural.design.json --out-dir target/rear-interleaved --order interleaved --samples
+```
+
+The raw driver accepts `interleaved` where it previously accepted `before` or
+`after`. The Rust evaluator uses `--order interleaved`. Its `--order both`
+continues to mean the two legacy batch positions only.
 
 ## Failure reports and compatibility
 

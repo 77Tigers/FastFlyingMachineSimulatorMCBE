@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "name": "n4_14-witness-interleaved",
+  "flyer": "..\\..\\..\\..\\..\\..\\..\\extension_bank\\n4\\n4_14\\candidate.flyer",
+  "prescribed_script": "..\\..\\..\\..\\..\\..\\..\\extension_bank\\n4\\n4_14\\drive.txt",
+  "prescribed_order": "interleaved",
+  "period_ticks": 12,
+  "advance": 4,
+  "cycles": 3,
+  "recurrence": "exact",
+  "ports": [
+    {
+      "name": "src60_in",
+      "role": "input",
+      "at": [
+        17,
+        5,
+        2
+      ],
+      "word": "mwwmmm",
+      "baseline_load": [
+        1,
+        null,
+        null,
+        1,
+        1,
+        1
+      ],
+      "spare_load": [
+        0,
+        null,
+        null,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "carrier_in",
+      "role": "input",
+      "at": [
+        13,
+        5,
+        1
+      ],
+      "word": "mmmwwm",
+      "baseline_load": [
+        18,
+        18,
+        18,
+        null,
+        null,
+        18
+      ],
+      "spare_load": [
+        0,
+        0,
+        0,
+        null,
+        null,
+        0
+      ]
+    },
+    {
+      "name": "target_out",
+      "role": "output",
+      "at": [
+        10,
+        0,
+        3
+      ],
+      "word": "mmwwmm"
+    },
+    {
+      "name": "target_in",
+      "role": "input",
+      "at": [
+        10,
+        0,
+        3
+      ],
+      "word": "mmwwmm",
+      "baseline_load": [
+        16,
+        16,
+        null,
+        null,
+        16,
+        16
+      ],
+      "spare_load": [
+        0,
+        0,
+        null,
+        null,
+        0,
+        0
+      ]
+    }
+  ]
+}

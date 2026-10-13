@@ -20,7 +20,8 @@ def evaluate(path: Path, rust: Path, out: Path) -> dict:
         py = run_case(load_contract(path), _prescribed_driver_path(), None)
     except ContractError as exc:
         py = {"passed": False, "diagnostic": str(exc), "first_failure": exc.first_failure}
-    order = "before" if raw.get("prescribed_order") == "before_natural" else "after"
+    order = {"before_natural": "before", "after_natural": "after",
+             "interleaved": "interleaved"}[raw["prescribed_order"]]
     proc = subprocess.run([str(rust), str(path), "0", "1", str(out),
                            "--eval-only", "--order", order,
                            "--recurrence", raw.get("recurrence", "exact"), "--high", "0"],

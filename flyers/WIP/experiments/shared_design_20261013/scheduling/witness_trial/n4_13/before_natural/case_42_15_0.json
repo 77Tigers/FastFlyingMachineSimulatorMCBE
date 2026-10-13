@@ -1,0 +1,45 @@
+{
+  "rng": 42,
+  "phase_x": 15,
+  "phase_z": 0,
+  "passed": true,
+  "ticks": 36,
+  "elapsed_seconds": 0.061366,
+  "diagnostic": null,
+  "first_failure": null,
+  "input_max_action_loads": {
+    "target_in": [
+      20,
+      19,
+      null,
+      19,
+      18,
+      null
+    ],
+    "piston4_in": [
+      20,
+      19,
+      1,
+      19,
+      null,
+      null
+    ],
+    "piston6_in": [
+      20,
+      null,
+      null,
+      19,
+      18,
+      1
+    ],
+    "piston11_in": [
+      20,
+      19,
+      1,
+      null,
+      null,
+      1
+    ]
+  },
+  "whole_assembly_max_action": 20
+}

@@ -10,7 +10,7 @@ use std::{
 };
 
 const MAX_TICKS: usize = 1_000_000;
-const USAGE: &str = "usage: extension-prescribe FILE TICKS SCRIPT before|after [RNG PHASE_X PHASE_Z]";
+const USAGE: &str = "usage: extension-prescribe FILE TICKS SCRIPT before|after|interleaved [RNG PHASE_X PHASE_Z]";
 
 type Schedule = BTreeMap<usize, Vec<PrescribedMove>>;
 
@@ -66,6 +66,7 @@ fn order_name(order: PrescribedOrder) -> &'static str {
     match order {
         PrescribedOrder::BeforeNatural => "before_natural",
         PrescribedOrder::AfterNatural => "after_natural",
+        PrescribedOrder::Interleaved => "interleaved",
     }
 }
 
@@ -97,7 +98,8 @@ fn parse_order(value: &str) -> Result<PrescribedOrder, String> {
     match value {
         "before" => Ok(PrescribedOrder::BeforeNatural),
         "after" => Ok(PrescribedOrder::AfterNatural),
-        _ => Err("ORDER must be before or after".to_owned()),
+        "interleaved" => Ok(PrescribedOrder::Interleaved),
+        _ => Err("ORDER must be before, after, or interleaved".to_owned()),
     }
 }
 
@@ -152,12 +154,19 @@ fn run() -> Result<(), String> {
         let report = session
             .tick_traced(&moves, order, &mut trace, tick)
             .map_err(|error| format!("simulation failed at tick {tick}: {error}"))?;
-        let line = format!(
-            "{{\"tick\":{tick},\"prescribed_order\":{},\"pending_before\":{pending_before},\"pending_after\":{},\"trace\":{}}}",
-            serde_order(order),
-            pending_json(&session.pending_moves()),
-            trace.to_json()
-        );
+        let pending_after = pending_json(&session.pending_moves());
+        let trace_json = trace.to_json();
+        let line = if let Some(seed) = report.schedule_seed {
+            format!(
+                "{{\"tick\":{tick},\"prescribed_order\":{},\"schedule_seed\":{seed},\"pending_before\":{pending_before},\"pending_after\":{pending_after},\"trace\":{trace_json}}}",
+                serde_order(order),
+            )
+        } else {
+            format!(
+                "{{\"tick\":{tick},\"prescribed_order\":{},\"pending_before\":{pending_before},\"pending_after\":{pending_after},\"trace\":{trace_json}}}",
+                serde_order(order),
+            )
+        };
         writeln!(output, "{line}").map_err(|error| format!("failed to write trace: {error}"))?;
         output
             .flush()

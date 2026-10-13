@@ -158,8 +158,8 @@ def compile_design(raw: Any, *, flyer: str | None = None) -> dict[str, Any]:
     plan = {"version": 1, "name": raw["name"], "slot_ticks": 2, "period_slots": slots,
             "advance": advance, "objects": objects, "contacts": plan_contacts}
     prescribed_order = raw.get("prescribed_order", "before_natural")
-    if prescribed_order not in ("before_natural", "after_natural"):
-        raise DesignError("prescribed_order must be before_natural or after_natural")
+    if prescribed_order not in ("before_natural", "after_natural", "interleaved"):
+        raise DesignError("prescribed_order must be before_natural, after_natural, or interleaved")
     recurrence = raw.get("recurrence", "exact")
     if recurrence not in ("exact", "bounded", "advance"):
         raise DesignError("recurrence must be exact, bounded, or advance")
@@ -304,7 +304,7 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("design", type=Path)
     parser.add_argument("--out-dir", type=Path, required=True)
-    parser.add_argument("--order", choices=("before_natural", "after_natural"))
+    parser.add_argument("--order", choices=("before_natural", "after_natural", "interleaved"))
     parser.add_argument("--check", action="store_true", help="run plan preflight and one contract case")
     parser.add_argument("--samples", action="store_true", help="run all contract samples; implies --check")
     args = parser.parse_args(argv)

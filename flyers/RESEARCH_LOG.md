@@ -10,7 +10,7 @@ Keep this active handoff below **5,500 words**. Prior evidence is preserved in [
 
 ## Current priority: abstraction pipeline on real problems (2026-10-11)
 
-Shared designs compile provenance, contacts and required cells into contracts enforced by Python and Rust search. Three bank migrations pass 400 samples per evaluator; 81 Python tests pass. [Interface](docs/EXTENSION_DESIGN.md), [evidence](WIP/experiments/shared_design_20261013/README.md).
+Shared contracts enforce provenance, contacts and required cells in Python/Rust; three migrations pass 400 samples per evaluator. Interleaved scheduling shuffles supplied events among natural piston visits; n4_14 exposes load 17/cap 16 despite passing both batch modes. [Interface](docs/EXTENSION_DESIGN.md), [evidence](WIP/experiments/shared_design_20261013/README.md).
 
 User goal: make weaker agents effective through reusable stage4–6 interfaces and fast, causal feedback before routing. Long-term **3.333 bps at PL12**; intermediate **3 bps at PL10–11**, compacting and PL6 rear mechanisms. User authorizes weaker subagents for implementation; coordinator owns reasoning/review. Prefer short side pickups; flag costly pistons in front of rear glue and count transport connectors before routing.
 

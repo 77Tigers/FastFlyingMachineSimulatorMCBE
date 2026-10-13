@@ -1,5 +1,18 @@
 # Shared design validation, 2026-10-13
 
+## Prescribed scheduling update
+
+`prescribed_order: "interleaved"` now shuffles supplied events into gaps between
+natural piston visits, including different orders of multiple supplied inputs.
+Legacy batch modes retain their semantics. Seeds and realized action coordinates
+are recorded for replay. Power/settlement timing is unchanged; this is synthetic
+stress scheduling, not concrete-driver validation.
+
+See [scheduling evidence and commands](scheduling/README.md). The unchanged n4_14
+bank mechanism exposes a load-17/cap-16 failure in the new mode despite passing
+both legacy batch modes. Rigid bodies and mandatory actuator identities remain
+deferred; the next useful milestone is a bounded fresh-agent construction trial.
+
 ## Completed search integration
 
 Compiled contracts now carry provenance and contacts directly; ordinary Python
@@ -29,9 +42,10 @@ the differential checks then passed. Rust eval-only reports failure through JSON
 positive/negative differential screens. `bank_migration/generator.py` regenerates
 the three design sources and compiled artifacts without editing the bank.
 
-Remaining work includes actuator-specific obligations and explicit body
-membership during the cycle, plus fresh-agent construction trials. No new
-flyer mechanism, push-limit record, or general agent-capability claim is made.
+Next work is a feasible separate-output extension challenge and a fresh-agent
+construction trial. Add abstraction features only for obstacles demonstrated by
+that trial. No new flyer mechanism, push-limit record, or general agent-capability
+claim is made.
 
 ## Initial shared-design validation
 

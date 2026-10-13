@@ -1,0 +1,25 @@
+{
+  "rng": 0,
+  "phase_x": 0,
+  "phase_z": 7,
+  "passed": true,
+  "ticks": 24,
+  "elapsed_seconds": 0.054637,
+  "diagnostic": null,
+  "first_failure": null,
+  "input_max_action_loads": {
+    "redstone_input": [
+      1,
+      1,
+      null,
+      null
+    ],
+    "k1_input": [
+      null,
+      null,
+      5,
+      6
+    ]
+  },
+  "whole_assembly_max_action": 7
+}

@@ -22,8 +22,12 @@ excluded from ranking). Details: `SEARCH_ENGINE.md`. Batch driver: `run_batch.py
   (14 -> 13 blocks, K1 stroke 6 -> 5). The load-7 K0/N pull is not reducible by local edits.
 - First batch (all 14): no N2 improvement. N4 "improvements" (n4_13 19 -> 15, n4_14 16 -> 10)
   came from deleting/reshaping glue of the bodies themselves: an interface change.
-- A **frozen-body** re-search was still running at handoff; results in
-  `contracts/<id>/search_frozen/` and `run_batch_frozen.log`. Not reviewed or published.
+- Batch with `--rank endogenous` (`SEARCH_RESULTS.md`, `contracts/<id>/search/`): gains on
+  n2_01/02/03/04, n3_08/09, n4_12/13/14. They come from removing or reshaping port bodies, not
+  from better extensions. Port bodies are not protected by the contract.
+- Control with `--freeze-bodies` (`contracts/<id>/search_frozen/`, `run_batch_frozen.log`): no
+  improvement on any of the 14. So treat the batch gains as an upper bound, not a result.
+- Not published: none of the batch gains are in the bank. Bank entries remain the reference fixtures.
 
 ## Contract-format gaps found (for the contract tool's owner)
 

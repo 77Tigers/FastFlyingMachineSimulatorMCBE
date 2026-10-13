@@ -3,7 +3,65 @@
 This task-specific work record is separate from the task-neutral AGENT_HANDOFF.
 The scheduled resumption is authorized and its one-time automation is paused.
 
-## Priority and completion boundary
+## Prescribed-event scheduling coverage
+
+- [x] Address scheduling coverage before claiming that an extension is reusable
+  under arbitrary update order. Previously natural chunks and pistons were shuffled,
+  but prescribed moves ran as one batch before or after all natural piston updates;
+  same-tick prescribed moves retain script order. Previous prescribed moves settle
+  after the power snapshot and before natural updates. Seeds do not vary these
+  choices, and passing both batch positions does not cover intermediate interleavings.
+- [x] Characterize the limit: external inputs have no actuator coordinate or
+  driver ownership; a concrete actuator visits its chunk/piston schedule and
+  settles through its owner. The new mode is synthetic stress, not uniform
+  sampling or a physically validated driver model.
+- [x] Add explicit reproducible `interleaved` mode. Preserve legacy before/after
+  modes and their script order; only the opt-in mode shuffles supplied events.
+- [x] Cover natural A -> supplied input -> natural B and relevant permutations of
+  multiple same-tick supplied inputs. Record the realized order and seed in failure
+  output. Check movement/settlement timing, observer pulses, load limits, and
+  passenger provenance; preserve normal simulation behavior without supplied events.
+- [x] Add a real-bank regression demonstrating that passing both batch positions need not
+  imply passing an intermediate interleaving. Check Python/Rust evaluator agreement
+  on the new mode and rerun affected real extension fixtures. Report exactly which
+  schedules were tested, without upgrading finite samples to a universal guarantee.
+
+This is a prerequisite to a robustness claim in the planned weaker-agent extension
+challenge, not a reason to add rigid-body or mandatory actuator-identity features.
+
+Evidence and reproduction: scheduling/README.md and scheduling/evidence/report.json.
+Four unchanged fixtures, three modes, 80 samples: 960 individual Python/Rust
+comparisons agree. n4_14 passes both batch modes but fails 0/80 interleaved checks
+due to supplied-input ordering (load 17/cap 16); do not mislabel it as a strict
+natural-A/input/natural-B witness. n2_05 and n4_13 pass 80/80 interleaved samples.
+A separate core regression now witnesses that strict intermediate gap: A settles
+a moving stone, the supplied slime input temporarily recruits it (load 2/cap 1),
+then B moves it away. The same seed passes both endpoint modes. Current suites:
+87 Python tests, 31 core Rust tests and 2 Rust evaluator tests pass.
+
+## Next implementation increment: construction usefulness
+
+1. Choose a known feasible separate-output, phase-shifted extension challenge.
+   Freeze its supplied motion, caps, protected cells, output identities/motion,
+   recurrence and editing region using the existing schema.
+2. Keep the complete mechanism as a hidden witness; remove a functional part for
+   the starting candidate. Verify pass/fail and exclude a mere passenger solution.
+3. Package task files, one evaluation command, acceptance checks and an attempt
+   budget separately from the task-neutral AGENT_HANDOFF. Keep revealing reference
+   history out of the agent's supplied context.
+4. Run a fresh weaker-agent attempt. Record candidates, latency, feedback,
+   interventions and outcome. Identify the largest demonstrated obstacle.
+5. Implement one targeted feedback/usability improvement, add relevant regression
+   coverage and cross-check both evaluators if semantics change.
+6. Test transfer on a second challenge; then tighten one load or size requirement
+   while keeping the rest of the interface fixed. Save evidence and a checkpoint.
+7. Before claiming a reusable physical extension, validate its inputs with a
+   concrete driver, including physically possible action and settlement orders.
+
+Rigid-body requirements and mandatory actuator identity remain deferred until a
+real trial demonstrates their necessity. No broad search campaign is scheduled.
+
+## Completed integration: priority and completion boundary
 
 Python priorities 1 and Rust priority 2 have been implemented during this
 resumption. Full Python suite: 81 passing tests. Rust assertion tests: 2 passing
@@ -35,7 +93,8 @@ files are byte-identical to the original bank fixtures. See README.md for eviden
 - Existing required_cells stays `{at:[x,y,z],cell:encoded_integer}` and constrains
   exact initial cells. It does not imply rigid bodies or intermediate trajectories.
 - Old contracts without new fields retain old behavior. Same-identity aliases
-  are allowed. Explicit prescribed action order remains the script row order.
+  are allowed. Legacy prescribed action order remains the script row order;
+  explicit interleaved mode shuffles supplied events.
 - Preserve exact/advance/bounded distinctions, input budgets for natural strokes,
   and explicit action order. Do not silently turn a one-order contract into both.
 - Internal means a natural piston movement; binding actuator identity/action/power
@@ -45,11 +104,11 @@ files are byte-identical to the original bank fixtures. See README.md for eviden
 
 ## Known code and evidence
 
-`tools/extension_design.py` compiles the current design. Its runtime mixin checks
-provenance and contacts, which standalone contracts currently omit.
-`tools/extension_contract.py` already supports required_cells, advance recurrence,
-structured first_failure and run_case(checker_factory=...). Baseline: 75 tests,
-160 shared rear-cap samples; 25 old bank contracts replayed successfully.
+`tools/extension_design.py` compiles the current design. Standalone Python and
+Rust contracts enforce compiled provenance and contacts. Python also supports
+required_cells, advance recurrence, structured first_failure and the compatibility
+run_case(checker_factory=...) hook. The prior 75-test/160-sample baseline is
+historical; current scheduling evidence is linked above.
 
 `tools/src/bin/contract-search.rs` uses a small custom JSON parser. Relevant hooks:
 Port/Ctx, load_ctx, run_order (identity map before each tick and action labels),

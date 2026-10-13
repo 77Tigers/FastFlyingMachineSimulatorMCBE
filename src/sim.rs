@@ -42,6 +42,9 @@ pub struct PrescribedMove {
 pub enum PrescribedOrder {
     BeforeNatural,
     AfterNatural,
+    /// Synthetic stress schedule that inserts prescribed inputs into shuffled
+    /// natural piston visits. This does not model a physical driver cadence.
+    Interleaved,
 }
 
 #[derive(Clone, Debug, Eq, PartialEq)]
@@ -70,6 +73,9 @@ pub struct PrescribedActionResult {
 pub struct PrescribedTickReport {
     pub natural: TickReport,
     pub order: PrescribedOrder,
+    /// Derived local scheduling seed for replaying interleaved event placement.
+    /// Legacy before/after schedules leave this absent.
+    pub schedule_seed: Option<u64>,
     pub settled: Vec<u64>,
     pub actions: Vec<PrescribedActionResult>,
 }
@@ -161,11 +167,13 @@ impl PrescribedSession {
             next_id: &mut self.next_id,
             actions: &mut actions,
             settled: &mut settled,
+            schedule_seed: None,
         };
         let natural = self.flyer.tick_inner(trace, tick, Some(&mut prescribed))?;
         Ok(PrescribedTickReport {
             natural,
             order,
+            schedule_seed: prescribed.schedule_seed,
             settled,
             actions,
         })
@@ -179,12 +187,14 @@ struct PrescribedTick<'a> {
     next_id: &'a mut u64,
     actions: &'a mut Vec<PrescribedActionResult>,
     settled: &'a mut Vec<u64>,
+    schedule_seed: Option<u64>,
 }
 
 fn order_name(order: PrescribedOrder) -> &'static str {
     match order {
         PrescribedOrder::BeforeNatural => "before_natural",
         PrescribedOrder::AfterNatural => "after_natural",
+        PrescribedOrder::Interleaved => "interleaved",
     }
 }
 
@@ -229,6 +239,10 @@ impl ShuffleRng {
 
 fn shuffle<T>(items: &mut [T], seed: u64) {
     let mut rng = ShuffleRng(seed);
+    shuffle_with_rng(items, &mut rng);
+}
+
+fn shuffle_with_rng<T>(items: &mut [T], rng: &mut ShuffleRng) {
     for end in (1..items.len()).rev() {
         let index = (rng.next() % (end as u64 + 1)) as usize;
         items.swap(end, index);
@@ -377,15 +391,36 @@ impl Flyer {
         let minimum_chunk_x = chunks.iter().map(|chunk| chunk.0).min().unwrap_or(0);
         let minimum_chunk_z = chunks.iter().map(|chunk| chunk.1).min().unwrap_or(0);
         shuffle(&mut chunks, tick_seed);
+        let schedule_seed = tick_seed ^ 0xa0761d6478bd642f;
+        let mut event_buckets = if prescribed
+            .as_deref()
+            .is_some_and(|state| state.order == PrescribedOrder::Interleaved)
+        {
+            let mut buckets = vec![Vec::new(); chunks.len() + 1];
+            let mut rng = ShuffleRng(schedule_seed);
+            if let Some(state) = prescribed.as_deref() {
+                for &intent in state.moves {
+                    let bucket = (rng.next() % buckets.len() as u64) as usize;
+                    buckets[bucket].push(intent);
+                }
+            }
+            for events in &mut buckets {
+                shuffle_with_rng(events, &mut rng);
+            }
+            Some((buckets, rng))
+        } else {
+            None
+        };
         report.chunks_ticked = chunks.len();
         if prescribed
             .as_deref()
             .is_some_and(|state| state.order == PrescribedOrder::BeforeNatural)
         {
             let state = prescribed.as_deref_mut().unwrap();
-            self.run_prescribed_moves(&mut context, state, trace.as_deref_mut(), tick)?;
+            let moves = state.moves.to_vec();
+            self.run_prescribed_moves(&moves, &mut context, state, trace.as_deref_mut(), tick)?;
         }
-        for &chunk in &chunks {
+        for (chunk_index, &chunk) in chunks.iter().enumerate() {
             let mut pistons: Vec<Coord> = context
                 .pistons_by_chunk
                 .get(&chunk)
@@ -414,7 +449,29 @@ impl Flyer {
                     },
                 );
             }
-            for &pos in &pistons {
+            let mut events_by_gap = event_buckets.as_mut().map(|(buckets, rng)| {
+                let events = std::mem::take(&mut buckets[chunk_index]);
+                let mut gaps = vec![Vec::new(); pistons.len() + 1];
+                for event in events {
+                    let gap = (rng.next() % gaps.len() as u64) as usize;
+                    gaps[gap].push(event);
+                }
+                gaps
+            });
+            for piston_index in 0..pistons.len() {
+                if let Some(gaps) = events_by_gap.as_mut() {
+                    if !gaps[piston_index].is_empty() {
+                        let state = prescribed.as_deref_mut().unwrap();
+                        self.run_prescribed_moves(
+                            &gaps[piston_index],
+                            &mut context,
+                            state,
+                            trace.as_deref_mut(),
+                            tick,
+                        )?;
+                    }
+                }
+                let pos = pistons[piston_index];
                 // An earlier piston in this chunk may have moved this one.
                 let Some(block) = self.get(pos) else { continue };
                 if block.kind() != Kind::Piston || block.moving() {
@@ -482,26 +539,58 @@ impl Flyer {
                     }
                 }
             }
+            if let Some(gaps) = events_by_gap.as_mut() {
+                if !gaps[pistons.len()].is_empty() {
+                    let state = prescribed.as_deref_mut().unwrap();
+                    self.run_prescribed_moves(
+                        &gaps[pistons.len()],
+                        &mut context,
+                        state,
+                        trace.as_deref_mut(),
+                        tick,
+                    )?;
+                }
+            }
         }
         if prescribed
             .as_deref()
             .is_some_and(|state| state.order == PrescribedOrder::AfterNatural)
         {
             let state = prescribed.as_deref_mut().unwrap();
-            self.run_prescribed_moves(&mut context, state, trace.as_deref_mut(), tick)?;
+            let moves = state.moves.to_vec();
+            self.run_prescribed_moves(&moves, &mut context, state, trace.as_deref_mut(), tick)?;
+        }
+        if let Some((buckets, _)) = event_buckets.as_mut() {
+            let tail = buckets.last_mut().expect("tail event bucket exists");
+            if !tail.is_empty() {
+                let state = prescribed.as_deref_mut().unwrap();
+                self.run_prescribed_moves(
+                    tail,
+                    &mut context,
+                    state,
+                    trace.as_deref_mut(),
+                    tick,
+                )?;
+            }
+        }
+        if let Some(state) = prescribed.as_deref_mut() {
+            if state.order == PrescribedOrder::Interleaved {
+                state.schedule_seed = Some(schedule_seed);
+            }
         }
         Ok(report)
     }
 
     fn run_prescribed_moves(
         &mut self,
+        moves: &[PrescribedMove],
         context: &mut TickContext,
         state: &mut PrescribedTick<'_>,
         mut trace: Option<&mut TickTrace>,
         tick: usize,
     ) -> Result<(), Error> {
         const EAST: (i64, i64, i64) = (1, 0, 0);
-        for &intent in state.moves {
+        for &intent in moves {
             let id = *state.next_id;
             *state.next_id = state.next_id.wrapping_add(1);
             let mut overlay = MoveOverlay::default();
@@ -1337,8 +1426,10 @@ mod tests {
         let initial = original.to_bytes().unwrap();
         let mut regular = Flyer::from_bytes(&initial).unwrap();
         let mut session = PrescribedSession::new(Flyer::from_bytes(&initial).unwrap());
+        let mut interleaved = PrescribedSession::new(Flyer::from_bytes(&initial).unwrap());
         let mut regular_trace = TickTrace::new(&regular);
         let mut session_trace = session.new_trace();
+        let mut interleaved_trace = interleaved.new_trace();
         for tick in 1..=5 {
             let expected = regular.tick_traced(&mut regular_trace, tick).unwrap();
             let actual = session
@@ -1355,8 +1446,21 @@ mod tests {
                 regular.to_bytes().unwrap(),
                 session.flyer.to_bytes().unwrap()
             );
+            let stress = interleaved
+                .tick_traced(
+                    &[],
+                    PrescribedOrder::Interleaved,
+                    &mut interleaved_trace,
+                    tick,
+                )
+                .unwrap();
+            assert_eq!(stress.natural, expected);
+            assert!(stress.schedule_seed.is_some());
+            assert!(stress.actions.is_empty());
+            assert_eq!(regular.to_bytes().unwrap(), interleaved.flyer.to_bytes().unwrap());
         }
         assert_eq!(regular_trace.to_json(), session_trace.to_json());
+        assert_eq!(regular_trace.to_json(), interleaved_trace.to_json());
     }
 
     #[test]
@@ -1375,7 +1479,7 @@ mod tests {
         let failed = session
             .tick(
                 &[PrescribedMove { input, max_load: 2 }],
-                PrescribedOrder::BeforeNatural,
+                PrescribedOrder::Interleaved,
             )
             .unwrap();
         assert_eq!(
@@ -1431,7 +1535,7 @@ mod tests {
                     input: observer,
                     max_load: 1,
                 }],
-                PrescribedOrder::BeforeNatural,
+                PrescribedOrder::Interleaved,
             )
             .unwrap();
         assert!(matches!(
@@ -1602,6 +1706,7 @@ mod tests {
             match order {
                 PrescribedOrder::BeforeNatural => assert!(prescribed < natural),
                 PrescribedOrder::AfterNatural => assert!(natural < prescribed),
+                PrescribedOrder::Interleaved => unreachable!(),
             }
             let step = &trace.steps[prescribed].info;
             assert_eq!(step.active_input, Some(Coord::new(10, 0, 0)));
@@ -1611,9 +1716,167 @@ mod tests {
                 Some(match order {
                     PrescribedOrder::BeforeNatural => "before_natural",
                     PrescribedOrder::AfterNatural => "after_natural",
+                    PrescribedOrder::Interleaved => unreachable!(),
                 })
             );
         }
+    }
+
+    #[test]
+    fn interleaved_can_place_an_input_between_natural_visits() {
+        let input = Coord::new(10, 0, 0);
+        let mut found = false;
+        for seed in 0..128 {
+            let mut flyer = powered_piston(false);
+            flyer.rng_state = seed;
+            flyer.set(Coord::new(4, 0, 0), piston(0, false, false, 0, false));
+            flyer.set(Coord::new(4, -1, 0), Block::rod(0, false).unwrap());
+            flyer.set(input, plain(Kind::Glass));
+            let mut session = PrescribedSession::new(flyer);
+            let mut trace = session.new_trace();
+            let report = session
+                .tick_traced(
+                    &[PrescribedMove { input, max_load: 1 }],
+                    PrescribedOrder::Interleaved,
+                    &mut trace,
+                    0,
+                )
+                .unwrap();
+            let order = trace
+                .steps
+                .iter()
+                .filter_map(|step| match (step.info.stage, step.info.action) {
+                    ("piston", Some(action)) if action == "extend" => Some("natural"),
+                    ("prescribed", Some("prescribed move")) => Some("input"),
+                    _ => None,
+                })
+                .collect::<Vec<_>>();
+            if order == ["natural", "input", "natural"] {
+                assert!(report.schedule_seed.is_some());
+                assert_eq!(report.actions.len(), 1);
+                assert_eq!(report.actions[0].id, 0);
+                found = true;
+                break;
+            }
+        }
+        assert!(found, "expected a deterministic intermediate event placement");
+    }
+
+    #[test]
+    fn interleaved_multi_input_permutations_are_deterministic_and_attempt_once() {
+        let inputs = [Coord::new(10, 0, 0), Coord::new(20, 0, 0)];
+        let mut observed = BTreeSet::new();
+        for seed in 0..128 {
+            let mut flyer = Flyer::with_defaults();
+            flyer.rng_state = seed;
+            for input in inputs {
+                flyer.set(input, plain(Kind::Glass));
+            }
+            let moves = inputs.map(|input| PrescribedMove { input, max_load: 1 });
+            let mut first = PrescribedSession::new(Flyer::from_bytes(&flyer.to_bytes().unwrap()).unwrap());
+            let mut second = PrescribedSession::new(flyer);
+            let mut first_trace = first.new_trace();
+            let mut second_trace = second.new_trace();
+            let first_report = first
+                .tick_traced(&moves, PrescribedOrder::Interleaved, &mut first_trace, 0)
+                .unwrap();
+            let second_report = second
+                .tick_traced(&moves, PrescribedOrder::Interleaved, &mut second_trace, 0)
+                .unwrap();
+            assert_eq!(first_report, second_report);
+            assert_eq!(first_trace.to_json(), second_trace.to_json());
+            assert_eq!(first_report.actions.len(), 2);
+            assert_eq!(first_report.actions[0].id, 0);
+            assert_eq!(first_report.actions[1].id, 1);
+            observed.insert(first_report.actions.iter().map(|action| action.input).collect::<Vec<_>>());
+            if observed.len() == 2 {
+                break;
+            }
+        }
+        assert_eq!(observed.len(), 2, "both execution permutations should be reachable");
+    }
+
+    #[test]
+    fn interleaved_natural_intermediate_load_failure_is_between_successful_endpoints() {
+        fn run(seed: u64, order: PrescribedOrder) -> (PrescribedTickReport, TickTrace) {
+            let owner = Coord::new(0, 0, 0);
+            let moved = Coord::new(2, 0, 0);
+            let second_piston = Coord::new(2, -1, 0);
+            let input = Coord::new(3, 0, 0);
+            let mut flyer = Flyer::with_defaults();
+            flyer.rng_state = seed;
+            flyer.set(owner, piston(0, false, false, 1, false));
+            flyer.set(Coord::new(1, 0, 0), plain(Kind::PistonArm));
+            flyer.set(moved, Block::plain(Kind::SmoothStone, true).unwrap());
+            flyer.set(second_piston, piston(2, false, false, 0, false));
+            flyer.set(Coord::new(2, -2, 0), Block::rod(0, false).unwrap());
+            flyer.set(input, plain(Kind::Slime));
+            flyer.set_piston_blocks(owner, vec![moved]).unwrap();
+            let mut session = PrescribedSession::new(flyer);
+            let mut trace = session.new_trace();
+            let report = session
+                .tick_traced(
+                    &[PrescribedMove { input, max_load: 1 }],
+                    order,
+                    &mut trace,
+                    0,
+                )
+                .unwrap();
+            (report, trace)
+        }
+
+        let owner = Coord::new(0, 0, 0);
+        let second_piston = Coord::new(2, -1, 0);
+        let input = Coord::new(3, 0, 0);
+        let mut found = false;
+        for seed in 0..128 {
+            let (interleaved, trace) = run(seed, PrescribedOrder::Interleaved);
+            let order = trace
+                .steps
+                .iter()
+                .filter_map(|step| match (step.info.active_piston, step.info.action) {
+                    (Some(pos), Some("finish extension")) if pos == owner => Some("finish-a"),
+                    (Some(pos), Some("extend")) if pos == second_piston => Some("extend-b"),
+                    (_, Some("prescribed move failed"))
+                        if step.info.active_input == Some(input) =>
+                    {
+                        Some("input-failed")
+                    }
+                    _ => None,
+                })
+                .collect::<Vec<_>>();
+            if order != ["finish-a", "input-failed", "extend-b"] {
+                continue;
+            }
+
+            let (before, _) = run(seed, PrescribedOrder::BeforeNatural);
+            let (after, _) = run(seed, PrescribedOrder::AfterNatural);
+            for endpoint in [&before, &after] {
+                assert_eq!(endpoint.natural.extension_failures, 0);
+                assert_eq!(endpoint.natural.extensions_finished, 1);
+                assert_eq!(endpoint.natural.extensions_started, 1);
+                assert_eq!(
+                    endpoint.actions[0].outcome,
+                    PrescribedOutcome::Moved { blocks: 1 }
+                );
+            }
+            assert_eq!(interleaved.natural.extension_failures, 0);
+            assert_eq!(interleaved.natural.extensions_finished, 1);
+            assert_eq!(interleaved.natural.extensions_started, 1);
+            assert_eq!(
+                interleaved.actions[0].outcome,
+                PrescribedOutcome::Failed(PrescribedFailure::LoadExceeded {
+                    discovered: 2,
+                    limit: 1,
+                })
+            );
+            found = true;
+            break;
+        }
+        assert!(
+            found,
+            "expected a schedule where only the intermediate input exceeds its load cap"
+        );
     }
 
     #[test]

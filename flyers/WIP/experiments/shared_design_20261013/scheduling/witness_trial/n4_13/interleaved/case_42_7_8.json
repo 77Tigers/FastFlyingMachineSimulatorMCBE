@@ -1,0 +1,1886 @@
+{
+  "rng": 42,
+  "phase_x": 7,
+  "phase_z": 8,
+  "passed": true,
+  "ticks": 36,
+  "elapsed_seconds": 0.078354,
+  "diagnostic": null,
+  "first_failure": null,
+  "input_max_action_loads": {
+    "target_in": [
+      20,
+      19,
+      null,
+      19,
+      18,
+      null
+    ],
+    "piston4_in": [
+      20,
+      19,
+      1,
+      19,
+      null,
+      null
+    ],
+    "piston6_in": [
+      20,
+      null,
+      null,
+      19,
+      18,
+      1
+    ],
+    "piston11_in": [
+      20,
+      19,
+      1,
+      null,
+      null,
+      1
+    ]
+  },
+  "whole_assembly_max_action": 20,
+  "schedule_seed": 13924902054629542508,
+  "schedule_seeds": [
+    {
+      "tick": 0,
+      "seed": 2135039660329929402
+    },
+    {
+      "tick": 1,
+      "seed": 9843178113613927724
+    },
+    {
+      "tick": 2,
+      "seed": 16655571683191749501
+    },
+    {
+      "tick": 3,
+      "seed": 17900397413583521723
+    },
+    {
+      "tick": 4,
+      "seed": 12234667471855241181
+    },
+    {
+      "tick": 5,
+      "seed": 9093379655875804969
+    },
+    {
+      "tick": 6,
+      "seed": 10925585877871233394
+    },
+    {
+      "tick": 7,
+      "seed": 7818293530146851723
+    },
+    {
+      "tick": 8,
+      "seed": 17830776852650662394
+    },
+    {
+      "tick": 9,
+      "seed": 4477363477417169793
+    },
+    {
+      "tick": 10,
+      "seed": 10665209111192698256
+    },
+    {
+      "tick": 11,
+      "seed": 16015529707439862929
+    },
+    {
+      "tick": 12,
+      "seed": 2529880516522615497
+    },
+    {
+      "tick": 13,
+      "seed": 2695837684409043352
+    },
+    {
+      "tick": 14,
+      "seed": 734648007640410867
+    },
+    {
+      "tick": 15,
+      "seed": 10692196019141171165
+    },
+    {
+      "tick": 16,
+      "seed": 13471896195972718170
+    },
+    {
+      "tick": 17,
+      "seed": 16046076327958346290
+    },
+    {
+      "tick": 18,
+      "seed": 13230663729845440040
+    },
+    {
+      "tick": 19,
+      "seed": 1164417441213701199
+    },
+    {
+      "tick": 20,
+      "seed": 6153422524755003335
+    },
+    {
+      "tick": 21,
+      "seed": 12881908713994193590
+    },
+    {
+      "tick": 22,
+      "seed": 4178094524863050234
+    },
+    {
+      "tick": 23,
+      "seed": 4529047481149402302
+    },
+    {
+      "tick": 24,
+      "seed": 12865146508676881791
+    },
+    {
+      "tick": 25,
+      "seed": 16679286308969742654
+    },
+    {
+      "tick": 26,
+      "seed": 2126902377295236122
+    },
+    {
+      "tick": 27,
+      "seed": 7593178364413017392
+    },
+    {
+      "tick": 28,
+      "seed": 5860374254418463016
+    },
+    {
+      "tick": 29,
+      "seed": 1280010201812253292
+    },
+    {
+      "tick": 30,
+      "seed": 7656524833901952346
+    },
+    {
+      "tick": 31,
+      "seed": 8600199590280448113
+    },
+    {
+      "tick": 32,
+      "seed": 419366010304958642
+    },
+    {
+      "tick": 33,
+      "seed": 7515795733765037041
+    },
+    {
+      "tick": 34,
+      "seed": 235032824000390778
+    },
+    {
+      "tick": 35,
+      "seed": 13924902054629542508
+    }
+  ],
+  "realized_action_order": [
+    {
+      "tick": 0,
+      "step": 0,
+      "stage": "chunk",
+      "action": null,
+      "active_input": null,
+      "active_piston": null,
+      "active_chunk": [
+        0,
+        0
+      ]
+    },
+    {
+      "tick": 0,
+      "step": 1,
+      "stage": "prescribed",
+      "action": "prescribed move",
+      "active_input": [
+        0,
+        3,
+        4
+      ],
+      "active_piston": null,
+      "active_chunk": null
+    },
+    {
+      "tick": 1,
+      "step": 0,
+      "stage": "prescribed",
+      "action": "settle prescribed move",
+      "active_input": [
+        0,
+        3,
+        4
+      ],
+      "active_piston": null,
+      "active_chunk": null
+    },
+    {
+      "tick": 1,
+      "step": 1,
+      "stage": "chunk",
+      "action": null,
+      "active_input": null,
+      "active_piston": null,
+      "active_chunk": [
+        0,
+        0
+      ]
+    },
+    {
+      "tick": 2,
+      "step": 0,
+      "stage": "chunk",
+      "action": null,
+      "active_input": null,
+      "active_piston": null,
+      "active_chunk": [
+        0,
+        0
+      ]
+    },
+    {
+      "tick": 2,
+      "step": 1,
+      "stage": "piston",
+      "action": "extend",
+      "active_input": null,
+      "active_piston": [
+        4,
+        4,
+        5
+      ],
+      "active_chunk": [
+        0,
+        0
+      ]
+    },
+    {
+      "tick": 3,
+      "step": 0,
+      "stage": "chunk",
+      "action": null,
+      "active_input": null,
+      "active_piston": null,
+      "active_chunk": [
+        0,
+        0
+      ]
+    },
+    {
+      "tick": 3,
+      "step": 1,
+      "stage": "piston",
+      "action": "finish extension",
+      "active_input": null,
+      "active_piston": [
+        4,
+        4,
+        5
+      ],
+      "active_chunk": [
+        0,
+        0
+      ]
+    },
+    {
+      "tick": 4,
+      "step": 0,
+      "stage": "chunk",
+      "action": null,
+      "active_input": null,
+      "active_piston": null,
+      "active_chunk": [
+        0,
+        0
+      ]
+    },
+    {
+      "tick": 4,
+      "step": 1,
+      "stage": "prescribed",
+      "action": "prescribed move",
+      "active_input": [
+        4,
+        3,
+        4
+      ],
+      "active_piston": null,
+      "active_chunk": null
+    },
+    {
+      "tick": 4,
+      "step": 2,
+      "stage": "piston",
+      "action": "retract",
+      "active_input": null,
+      "active_piston": [
+        4,
+        4,
+        5
+      ],
+      "active_chunk": [
+        0,
+        0
+      ]
+    },
+    {
+      "tick": 4,
+      "step": 3,
+      "stage": "prescribed",
+      "action": "prescribed move",
+      "active_input": [
+        7,
+        0,
+        4
+      ],
+      "active_piston": null,
+      "active_chunk": null
+    },
+    {
+      "tick": 5,
+      "step": 0,
+      "stage": "prescribed",
+      "action": "settle prescribed move",
+      "active_input": [
+        4,
+        3,
+        4
+      ],
+      "active_piston": null,
+      "active_chunk": null
+    },
+    {
+      "tick": 5,
+      "step": 1,
+      "stage": "prescribed",
+      "action": "settle prescribed move",
+      "active_input": [
+        7,
+        0,
+        4
+      ],
+      "active_piston": null,
+      "active_chunk": null
+    },
+    {
+      "tick": 5,
+      "step": 2,
+      "stage": "chunk",
+      "action": null,
+      "active_input": null,
+      "active_piston": null,
+      "active_chunk": [
+        0,
+        0
+      ]
+    },
+    {
+      "tick": 5,
+      "step": 3,
+      "stage": "piston",
+      "action": "finish retraction",
+      "active_input": null,
+      "active_piston": [
+        4,
+        4,
+        5
+      ],
+      "active_chunk": [
+        0,
+        0
+      ]
+    },
+    {
+      "tick": 6,
+      "step": 0,
+      "stage": "chunk",
+      "action": null,
+      "active_input": null,
+      "active_piston": null,
+      "active_chunk": [
+        0,
+        0
+      ]
+    },
+    {
+      "tick": 6,
+      "step": 1,
+      "stage": "piston",
+      "action": "extend",
+      "active_input": null,
+      "active_piston": [
+        8,
+        0,
+        4
+      ],
+      "active_chunk": [
+        0,
+        0
+      ]
+    },
+    {
+      "tick": 6,
+      "step": 2,
+      "stage": "prescribed",
+      "action": "prescribed move",
+      "active_input": [
+        2,
+        3,
+        4
+      ],
+      "active_piston": null,
+      "active_chunk": null
+    },
+    {
+      "tick": 7,
+      "step": 0,
+      "stage": "prescribed",
+      "action": "settle prescribed move",
+      "active_input": [
+        2,
+        3,
+        4
+      ],
+      "active_piston": null,
+      "active_chunk": null
+    },
+    {
+      "tick": 7,
+      "step": 1,
+      "stage": "chunk",
+      "action": null,
+      "active_input": null,
+      "active_piston": null,
+      "active_chunk": [
+        1,
+        0
+      ]
+    },
+    {
+      "tick": 7,
+      "step": 2,
+      "stage": "chunk",
+      "action": null,
+      "active_input": null,
+      "active_piston": null,
+      "active_chunk": [
+        0,
+        0
+      ]
+    },
+    {
+      "tick": 7,
+      "step": 3,
+      "stage": "piston",
+      "action": "finish extension",
+      "active_input": null,
+      "active_piston": [
+        8,
+        0,
+        4
+      ],
+      "active_chunk": [
+        0,
+        0
+      ]
+    },
+    {
+      "tick": 8,
+      "step": 0,
+      "stage": "chunk",
+      "action": null,
+      "active_input": null,
+      "active_piston": null,
+      "active_chunk": [
+        1,
+        0
+      ]
+    },
+    {
+      "tick": 8,
+      "step": 1,
+      "stage": "chunk",
+      "action": null,
+      "active_input": null,
+      "active_piston": null,
+      "active_chunk": [
+        0,
+        0
+      ]
+    },
+    {
+      "tick": 8,
+      "step": 2,
+      "stage": "piston",
+      "action": "retract",
+      "active_input": null,
+      "active_piston": [
+        8,
+        0,
+        4
+      ],
+      "active_chunk": [
+        0,
+        0
+      ]
+    },
+    {
+      "tick": 8,
+      "step": 3,
+      "stage": "piston",
+      "action": "extend",
+      "active_input": null,
+      "active_piston": [
+        6,
+        3,
+        4
+      ],
+      "active_chunk": [
+        0,
+        0
+      ]
+    },
+    {
+      "tick": 9,
+      "step": 0,
+      "stage": "chunk",
+      "action": null,
+      "active_input": null,
+      "active_piston": null,
+      "active_chunk": [
+        1,
+        0
+      ]
+    },
+    {
+      "tick": 9,
+      "step": 1,
+      "stage": "chunk",
+      "action": null,
+      "active_input": null,
+      "active_piston": null,
+      "active_chunk": [
+        0,
+        0
+      ]
+    },
+    {
+      "tick": 9,
+      "step": 2,
+      "stage": "piston",
+      "action": "finish retraction",
+      "active_input": null,
+      "active_piston": [
+        8,
+        0,
+        4
+      ],
+      "active_chunk": [
+        0,
+        0
+      ]
+    },
+    {
+      "tick": 9,
+      "step": 3,
+      "stage": "piston",
+      "action": "finish extension",
+      "active_input": null,
+      "active_piston": [
+        6,
+        3,
+        4
+      ],
+      "active_chunk": [
+        0,
+        0
+      ]
+    },
+    {
+      "tick": 10,
+      "step": 0,
+      "stage": "chunk",
+      "action": null,
+      "active_input": null,
+      "active_piston": null,
+      "active_chunk": [
+        0,
+        0
+      ]
+    },
+    {
+      "tick": 10,
+      "step": 1,
+      "stage": "piston",
+      "action": "retract",
+      "active_input": null,
+      "active_piston": [
+        6,
+        3,
+        4
+      ],
+      "active_chunk": [
+        0,
+        0
+      ]
+    },
+    {
+      "tick": 10,
+      "step": 2,
+      "stage": "prescribed",
+      "action": "prescribed move",
+      "active_input": [
+        8,
+        0,
+        4
+      ],
+      "active_piston": null,
+      "active_chunk": null
+    },
+    {
+      "tick": 10,
+      "step": 3,
+      "stage": "chunk",
+      "action": null,
+      "active_input": null,
+      "active_piston": null,
+      "active_chunk": [
+        1,
+        0
+      ]
+    },
+    {
+      "tick": 10,
+      "step": 4,
+      "stage": "prescribed",
+      "action": "prescribed move",
+      "active_input": [
+        6,
+        4,
+        5
+      ],
+      "active_piston": null,
+      "active_chunk": null
+    },
+    {
+      "tick": 11,
+      "step": 0,
+      "stage": "prescribed",
+      "action": "settle prescribed move",
+      "active_input": [
+        8,
+        0,
+        4
+      ],
+      "active_piston": null,
+      "active_chunk": null
+    },
+    {
+      "tick": 11,
+      "step": 1,
+      "stage": "prescribed",
+      "action": "settle prescribed move",
+      "active_input": [
+        6,
+        4,
+        5
+      ],
+      "active_piston": null,
+      "active_chunk": null
+    },
+    {
+      "tick": 11,
+      "step": 2,
+      "stage": "chunk",
+      "action": null,
+      "active_input": null,
+      "active_piston": null,
+      "active_chunk": [
+        1,
+        0
+      ]
+    },
+    {
+      "tick": 11,
+      "step": 3,
+      "stage": "chunk",
+      "action": null,
+      "active_input": null,
+      "active_piston": null,
+      "active_chunk": [
+        0,
+        0
+      ]
+    },
+    {
+      "tick": 11,
+      "step": 4,
+      "stage": "piston",
+      "action": "finish retraction",
+      "active_input": null,
+      "active_piston": [
+        6,
+        3,
+        4
+      ],
+      "active_chunk": [
+        0,
+        0
+      ]
+    },
+    {
+      "tick": 12,
+      "step": 0,
+      "stage": "chunk",
+      "action": null,
+      "active_input": null,
+      "active_piston": null,
+      "active_chunk": [
+        1,
+        0
+      ]
+    },
+    {
+      "tick": 12,
+      "step": 1,
+      "stage": "chunk",
+      "action": null,
+      "active_input": null,
+      "active_piston": null,
+      "active_chunk": [
+        0,
+        0
+      ]
+    },
+    {
+      "tick": 12,
+      "step": 2,
+      "stage": "prescribed",
+      "action": "prescribed move",
+      "active_input": [
+        4,
+        3,
+        4
+      ],
+      "active_piston": null,
+      "active_chunk": null
+    },
+    {
+      "tick": 13,
+      "step": 0,
+      "stage": "prescribed",
+      "action": "settle prescribed move",
+      "active_input": [
+        4,
+        3,
+        4
+      ],
+      "active_piston": null,
+      "active_chunk": null
+    },
+    {
+      "tick": 13,
+      "step": 1,
+      "stage": "chunk",
+      "action": null,
+      "active_input": null,
+      "active_piston": null,
+      "active_chunk": [
+        0,
+        0
+      ]
+    },
+    {
+      "tick": 13,
+      "step": 2,
+      "stage": "chunk",
+      "action": null,
+      "active_input": null,
+      "active_piston": null,
+      "active_chunk": [
+        1,
+        0
+      ]
+    },
+    {
+      "tick": 14,
+      "step": 0,
+      "stage": "chunk",
+      "action": null,
+      "active_input": null,
+      "active_piston": null,
+      "active_chunk": [
+        0,
+        0
+      ]
+    },
+    {
+      "tick": 14,
+      "step": 1,
+      "stage": "piston",
+      "action": "extend",
+      "active_input": null,
+      "active_piston": [
+        8,
+        4,
+        5
+      ],
+      "active_chunk": [
+        0,
+        0
+      ]
+    },
+    {
+      "tick": 14,
+      "step": 2,
+      "stage": "chunk",
+      "action": null,
+      "active_input": null,
+      "active_piston": null,
+      "active_chunk": [
+        1,
+        0
+      ]
+    },
+    {
+      "tick": 15,
+      "step": 0,
+      "stage": "chunk",
+      "action": null,
+      "active_input": null,
+      "active_piston": null,
+      "active_chunk": [
+        0,
+        0
+      ]
+    },
+    {
+      "tick": 15,
+      "step": 1,
+      "stage": "piston",
+      "action": "finish extension",
+      "active_input": null,
+      "active_piston": [
+        8,
+        4,
+        5
+      ],
+      "active_chunk": [
+        0,
+        0
+      ]
+    },
+    {
+      "tick": 15,
+      "step": 2,
+      "stage": "chunk",
+      "action": null,
+      "active_input": null,
+      "active_piston": null,
+      "active_chunk": [
+        1,
+        0
+      ]
+    },
+    {
+      "tick": 16,
+      "step": 0,
+      "stage": "chunk",
+      "action": null,
+      "active_input": null,
+      "active_piston": null,
+      "active_chunk": [
+        1,
+        0
+      ]
+    },
+    {
+      "tick": 16,
+      "step": 1,
+      "stage": "chunk",
+      "action": null,
+      "active_input": null,
+      "active_piston": null,
+      "active_chunk": [
+        0,
+        0
+      ]
+    },
+    {
+      "tick": 16,
+      "step": 2,
+      "stage": "piston",
+      "action": "retract",
+      "active_input": null,
+      "active_piston": [
+        8,
+        4,
+        5
+      ],
+      "active_chunk": [
+        0,
+        0
+      ]
+    },
+    {
+      "tick": 16,
+      "step": 3,
+      "stage": "prescribed",
+      "action": "prescribed move",
+      "active_input": [
+        11,
+        0,
+        4
+      ],
+      "active_piston": null,
+      "active_chunk": null
+    },
+    {
+      "tick": 16,
+      "step": 4,
+      "stage": "prescribed",
+      "action": "prescribed move",
+      "active_input": [
+        8,
+        3,
+        4
+      ],
+      "active_piston": null,
+      "active_chunk": null
+    },
+    {
+      "tick": 17,
+      "step": 0,
+      "stage": "prescribed",
+      "action": "settle prescribed move",
+      "active_input": [
+        11,
+        0,
+        4
+      ],
+      "active_piston": null,
+      "active_chunk": null
+    },
+    {
+      "tick": 17,
+      "step": 1,
+      "stage": "prescribed",
+      "action": "settle prescribed move",
+      "active_input": [
+        8,
+        3,
+        4
+      ],
+      "active_piston": null,
+      "active_chunk": null
+    },
+    {
+      "tick": 17,
+      "step": 2,
+      "stage": "chunk",
+      "action": null,
+      "active_input": null,
+      "active_piston": null,
+      "active_chunk": [
+        0,
+        0
+      ]
+    },
+    {
+      "tick": 17,
+      "step": 3,
+      "stage": "piston",
+      "action": "finish retraction",
+      "active_input": null,
+      "active_piston": [
+        8,
+        4,
+        5
+      ],
+      "active_chunk": [
+        0,
+        0
+      ]
+    },
+    {
+      "tick": 17,
+      "step": 4,
+      "stage": "chunk",
+      "action": null,
+      "active_input": null,
+      "active_piston": null,
+      "active_chunk": [
+        1,
+        0
+      ]
+    },
+    {
+      "tick": 18,
+      "step": 0,
+      "stage": "chunk",
+      "action": null,
+      "active_input": null,
+      "active_piston": null,
+      "active_chunk": [
+        1,
+        0
+      ]
+    },
+    {
+      "tick": 18,
+      "step": 1,
+      "stage": "piston",
+      "action": "extend",
+      "active_input": null,
+      "active_piston": [
+        12,
+        0,
+        4
+      ],
+      "active_chunk": [
+        1,
+        0
+      ]
+    },
+    {
+      "tick": 18,
+      "step": 2,
+      "stage": "chunk",
+      "action": null,
+      "active_input": null,
+      "active_piston": null,
+      "active_chunk": [
+        0,
+        0
+      ]
+    },
+    {
+      "tick": 18,
+      "step": 3,
+      "stage": "prescribed",
+      "action": "prescribed move",
+      "active_input": [
+        6,
+        3,
+        4
+      ],
+      "active_piston": null,
+      "active_chunk": null
+    },
+    {
+      "tick": 19,
+      "step": 0,
+      "stage": "prescribed",
+      "action": "settle prescribed move",
+      "active_input": [
+        6,
+        3,
+        4
+      ],
+      "active_piston": null,
+      "active_chunk": null
+    },
+    {
+      "tick": 19,
+      "step": 1,
+      "stage": "chunk",
+      "action": null,
+      "active_input": null,
+      "active_piston": null,
+      "active_chunk": [
+        1,
+        0
+      ]
+    },
+    {
+      "tick": 19,
+      "step": 2,
+      "stage": "piston",
+      "action": "finish extension",
+      "active_input": null,
+      "active_piston": [
+        12,
+        0,
+        4
+      ],
+      "active_chunk": [
+        1,
+        0
+      ]
+    },
+    {
+      "tick": 19,
+      "step": 3,
+      "stage": "chunk",
+      "action": null,
+      "active_input": null,
+      "active_piston": null,
+      "active_chunk": [
+        0,
+        0
+      ]
+    },
+    {
+      "tick": 20,
+      "step": 0,
+      "stage": "chunk",
+      "action": null,
+      "active_input": null,
+      "active_piston": null,
+      "active_chunk": [
+        0,
+        0
+      ]
+    },
+    {
+      "tick": 20,
+      "step": 1,
+      "stage": "chunk",
+      "action": null,
+      "active_input": null,
+      "active_piston": null,
+      "active_chunk": [
+        1,
+        0
+      ]
+    },
+    {
+      "tick": 20,
+      "step": 2,
+      "stage": "piston",
+      "action": "retract",
+      "active_input": null,
+      "active_piston": [
+        12,
+        0,
+        4
+      ],
+      "active_chunk": [
+        1,
+        0
+      ]
+    },
+    {
+      "tick": 20,
+      "step": 3,
+      "stage": "piston",
+      "action": "extend",
+      "active_input": null,
+      "active_piston": [
+        10,
+        3,
+        4
+      ],
+      "active_chunk": [
+        1,
+        0
+      ]
+    },
+    {
+      "tick": 21,
+      "step": 0,
+      "stage": "chunk",
+      "action": null,
+      "active_input": null,
+      "active_piston": null,
+      "active_chunk": [
+        1,
+        0
+      ]
+    },
+    {
+      "tick": 21,
+      "step": 1,
+      "stage": "piston",
+      "action": "finish retraction",
+      "active_input": null,
+      "active_piston": [
+        12,
+        0,
+        4
+      ],
+      "active_chunk": [
+        1,
+        0
+      ]
+    },
+    {
+      "tick": 21,
+      "step": 2,
+      "stage": "piston",
+      "action": "finish extension",
+      "active_input": null,
+      "active_piston": [
+        10,
+        3,
+        4
+      ],
+      "active_chunk": [
+        1,
+        0
+      ]
+    },
+    {
+      "tick": 21,
+      "step": 3,
+      "stage": "chunk",
+      "action": null,
+      "active_input": null,
+      "active_piston": null,
+      "active_chunk": [
+        0,
+        0
+      ]
+    },
+    {
+      "tick": 22,
+      "step": 0,
+      "stage": "chunk",
+      "action": null,
+      "active_input": null,
+      "active_piston": null,
+      "active_chunk": [
+        1,
+        0
+      ]
+    },
+    {
+      "tick": 22,
+      "step": 1,
+      "stage": "piston",
+      "action": "retract",
+      "active_input": null,
+      "active_piston": [
+        10,
+        3,
+        4
+      ],
+      "active_chunk": [
+        1,
+        0
+      ]
+    },
+    {
+      "tick": 22,
+      "step": 2,
+      "stage": "chunk",
+      "action": null,
+      "active_input": null,
+      "active_piston": null,
+      "active_chunk": [
+        0,
+        0
+      ]
+    },
+    {
+      "tick": 22,
+      "step": 3,
+      "stage": "prescribed",
+      "action": "prescribed move",
+      "active_input": [
+        10,
+        4,
+        5
+      ],
+      "active_piston": null,
+      "active_chunk": null
+    },
+    {
+      "tick": 22,
+      "step": 4,
+      "stage": "prescribed",
+      "action": "prescribed move",
+      "active_input": [
+        12,
+        0,
+        4
+      ],
+      "active_piston": null,
+      "active_chunk": null
+    },
+    {
+      "tick": 23,
+      "step": 0,
+      "stage": "prescribed",
+      "action": "settle prescribed move",
+      "active_input": [
+        10,
+        4,
+        5
+      ],
+      "active_piston": null,
+      "active_chunk": null
+    },
+    {
+      "tick": 23,
+      "step": 1,
+      "stage": "prescribed",
+      "action": "settle prescribed move",
+      "active_input": [
+        12,
+        0,
+        4
+      ],
+      "active_piston": null,
+      "active_chunk": null
+    },
+    {
+      "tick": 23,
+      "step": 2,
+      "stage": "chunk",
+      "action": null,
+      "active_input": null,
+      "active_piston": null,
+      "active_chunk": [
+        1,
+        0
+      ]
+    },
+    {
+      "tick": 23,
+      "step": 3,
+      "stage": "piston",
+      "action": "finish retraction",
+      "active_input": null,
+      "active_piston": [
+        10,
+        3,
+        4
+      ],
+      "active_chunk": [
+        1,
+        0
+      ]
+    },
+    {
+      "tick": 23,
+      "step": 4,
+      "stage": "chunk",
+      "action": null,
+      "active_input": null,
+      "active_piston": null,
+      "active_chunk": [
+        0,
+        0
+      ]
+    },
+    {
+      "tick": 24,
+      "step": 0,
+      "stage": "chunk",
+      "action": null,
+      "active_input": null,
+      "active_piston": null,
+      "active_chunk": [
+        0,
+        0
+      ]
+    },
+    {
+      "tick": 24,
+      "step": 1,
+      "stage": "chunk",
+      "action": null,
+      "active_input": null,
+      "active_piston": null,
+      "active_chunk": [
+        1,
+        0
+      ]
+    },
+    {
+      "tick": 24,
+      "step": 2,
+      "stage": "prescribed",
+      "action": "prescribed move",
+      "active_input": [
+        8,
+        3,
+        4
+      ],
+      "active_piston": null,
+      "active_chunk": null
+    },
+    {
+      "tick": 25,
+      "step": 0,
+      "stage": "prescribed",
+      "action": "settle prescribed move",
+      "active_input": [
+        8,
+        3,
+        4
+      ],
+      "active_piston": null,
+      "active_chunk": null
+    },
+    {
+      "tick": 25,
+      "step": 1,
+      "stage": "chunk",
+      "action": null,
+      "active_input": null,
+      "active_piston": null,
+      "active_chunk": [
+        1,
+        0
+      ]
+    },
+    {
+      "tick": 26,
+      "step": 0,
+      "stage": "chunk",
+      "action": null,
+      "active_input": null,
+      "active_piston": null,
+      "active_chunk": [
+        1,
+        0
+      ]
+    },
+    {
+      "tick": 26,
+      "step": 1,
+      "stage": "piston",
+      "action": "extend",
+      "active_input": null,
+      "active_piston": [
+        12,
+        4,
+        5
+      ],
+      "active_chunk": [
+        1,
+        0
+      ]
+    },
+    {
+      "tick": 27,
+      "step": 0,
+      "stage": "chunk",
+      "action": null,
+      "active_input": null,
+      "active_piston": null,
+      "active_chunk": [
+        1,
+        0
+      ]
+    },
+    {
+      "tick": 27,
+      "step": 1,
+      "stage": "piston",
+      "action": "finish extension",
+      "active_input": null,
+      "active_piston": [
+        12,
+        4,
+        5
+      ],
+      "active_chunk": [
+        1,
+        0
+      ]
+    },
+    {
+      "tick": 28,
+      "step": 0,
+      "stage": "chunk",
+      "action": null,
+      "active_input": null,
+      "active_piston": null,
+      "active_chunk": [
+        1,
+        0
+      ]
+    },
+    {
+      "tick": 28,
+      "step": 1,
+      "stage": "piston",
+      "action": "retract",
+      "active_input": null,
+      "active_piston": [
+        12,
+        4,
+        5
+      ],
+      "active_chunk": [
+        1,
+        0
+      ]
+    },
+    {
+      "tick": 28,
+      "step": 2,
+      "stage": "prescribed",
+      "action": "prescribed move",
+      "active_input": [
+        12,
+        3,
+        4
+      ],
+      "active_piston": null,
+      "active_chunk": null
+    },
+    {
+      "tick": 28,
+      "step": 3,
+      "stage": "prescribed",
+      "action": "prescribed move",
+      "active_input": [
+        15,
+        0,
+        4
+      ],
+      "active_piston": null,
+      "active_chunk": null
+    },
+    {
+      "tick": 29,
+      "step": 0,
+      "stage": "prescribed",
+      "action": "settle prescribed move",
+      "active_input": [
+        12,
+        3,
+        4
+      ],
+      "active_piston": null,
+      "active_chunk": null
+    },
+    {
+      "tick": 29,
+      "step": 1,
+      "stage": "prescribed",
+      "action": "settle prescribed move",
+      "active_input": [
+        15,
+        0,
+        4
+      ],
+      "active_piston": null,
+      "active_chunk": null
+    },
+    {
+      "tick": 29,
+      "step": 2,
+      "stage": "chunk",
+      "action": null,
+      "active_input": null,
+      "active_piston": null,
+      "active_chunk": [
+        1,
+        0
+      ]
+    },
+    {
+      "tick": 29,
+      "step": 3,
+      "stage": "piston",
+      "action": "finish retraction",
+      "active_input": null,
+      "active_piston": [
+        12,
+        4,
+        5
+      ],
+      "active_chunk": [
+        1,
+        0
+      ]
+    },
+    {
+      "tick": 30,
+      "step": 0,
+      "stage": "chunk",
+      "action": null,
+      "active_input": null,
+      "active_piston": null,
+      "active_chunk": [
+        1,
+        0
+      ]
+    },
+    {
+      "tick": 30,
+      "step": 1,
+      "stage": "prescribed",
+      "action": "prescribed move",
+      "active_input": [
+        10,
+        3,
+        4
+      ],
+      "active_piston": null,
+      "active_chunk": null
+    },
+    {
+      "tick": 30,
+      "step": 2,
+      "stage": "piston",
+      "action": "extend",
+      "active_input": null,
+      "active_piston": [
+        16,
+        0,
+        4
+      ],
+      "active_chunk": [
+        1,
+        0
+      ]
+    },
+    {
+      "tick": 31,
+      "step": 0,
+      "stage": "prescribed",
+      "action": "settle prescribed move",
+      "active_input": [
+        10,
+        3,
+        4
+      ],
+      "active_piston": null,
+      "active_chunk": null
+    },
+    {
+      "tick": 31,
+      "step": 1,
+      "stage": "chunk",
+      "action": null,
+      "active_input": null,
+      "active_piston": null,
+      "active_chunk": [
+        1,
+        0
+      ]
+    },
+    {
+      "tick": 31,
+      "step": 2,
+      "stage": "piston",
+      "action": "finish extension",
+      "active_input": null,
+      "active_piston": [
+        16,
+        0,
+        4
+      ],
+      "active_chunk": [
+        1,
+        0
+      ]
+    },
+    {
+      "tick": 32,
+      "step": 0,
+      "stage": "chunk",
+      "action": null,
+      "active_input": null,
+      "active_piston": null,
+      "active_chunk": [
+        1,
+        0
+      ]
+    },
+    {
+      "tick": 32,
+      "step": 1,
+      "stage": "piston",
+      "action": "extend",
+      "active_input": null,
+      "active_piston": [
+        14,
+        3,
+        4
+      ],
+      "active_chunk": [
+        1,
+        0
+      ]
+    },
+    {
+      "tick": 32,
+      "step": 2,
+      "stage": "piston",
+      "action": "retract",
+      "active_input": null,
+      "active_piston": [
+        16,
+        0,
+        4
+      ],
+      "active_chunk": [
+        1,
+        0
+      ]
+    },
+    {
+      "tick": 33,
+      "step": 0,
+      "stage": "chunk",
+      "action": null,
+      "active_input": null,
+      "active_piston": null,
+      "active_chunk": [
+        1,
+        0
+      ]
+    },
+    {
+      "tick": 33,
+      "step": 1,
+      "stage": "piston",
+      "action": "finish retraction",
+      "active_input": null,
+      "active_piston": [
+        16,
+        0,
+        4
+      ],
+      "active_chunk": [
+        1,
+        0
+      ]
+    },
+    {
+      "tick": 33,
+      "step": 2,
+      "stage": "piston",
+      "action": "finish extension",
+      "active_input": null,
+      "active_piston": [
+        14,
+        3,
+        4
+      ],
+      "active_chunk": [
+        1,
+        0
+      ]
+    },
+    {
+      "tick": 34,
+      "step": 0,
+      "stage": "chunk",
+      "action": null,
+      "active_input": null,
+      "active_piston": null,
+      "active_chunk": [
+        1,
+        0
+      ]
+    },
+    {
+      "tick": 34,
+      "step": 1,
+      "stage": "prescribed",
+      "action": "prescribed move",
+      "active_input": [
+        16,
+        0,
+        4
+      ],
+      "active_piston": null,
+      "active_chunk": null
+    },
+    {
+      "tick": 34,
+      "step": 2,
+      "stage": "piston",
+      "action": "retract",
+      "active_input": null,
+      "active_piston": [
+        14,
+        3,
+        4
+      ],
+      "active_chunk": [
+        1,
+        0
+      ]
+    },
+    {
+      "tick": 34,
+      "step": 3,
+      "stage": "prescribed",
+      "action": "prescribed move",
+      "active_input": [
+        14,
+        4,
+        5
+      ],
+      "active_piston": null,
+      "active_chunk": null
+    },
+    {
+      "tick": 35,
+      "step": 0,
+      "stage": "prescribed",
+      "action": "settle prescribed move",
+      "active_input": [
+        16,
+        0,
+        4
+      ],
+      "active_piston": null,
+      "active_chunk": null
+    },
+    {
+      "tick": 35,
+      "step": 1,
+      "stage": "prescribed",
+      "action": "settle prescribed move",
+      "active_input": [
+        14,
+        4,
+        5
+      ],
+      "active_piston": null,
+      "active_chunk": null
+    },
+    {
+      "tick": 35,
+      "step": 2,
+      "stage": "chunk",
+      "action": null,
+      "active_input": null,
+      "active_piston": null,
+      "active_chunk": [
+        1,
+        0
+      ]
+    },
+    {
+      "tick": 35,
+      "step": 3,
+      "stage": "piston",
+      "action": "finish retraction",
+      "active_input": null,
+      "active_piston": [
+        14,
+        3,
+        4
+      ],
+      "active_chunk": [
+        1,
+        0
+      ]
+    }
+  ]
+}
