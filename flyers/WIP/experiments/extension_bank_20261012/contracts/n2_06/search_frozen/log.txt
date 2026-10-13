@@ -1,0 +1,15 @@
+seed (target 7, limit 24, recurrence advance) score (6, 8, 6, 15, 132) presc_max 8 input_loads {"b2_mwmw":[8,null,7,null]}
+  fail   221186  [before_natural] tick : prescribed move at  failed: Blocked
+  fail    53134  [before_natural] tick : prescribed move at  failed: LoadExce
+  fail    23189  [before_natural] tick : permanent identity  at  is not its o
+  fail      978  [after_natural] tick : port b_mwmw expected move +X actual d
+  fail      678  [before_natural] tick : port b_wmwm expected move +X actual 
+  fail      674  [before_natural] tick : movement failed immovable obstructio
+  fail      259  [before_natural] tick : extension failure
+  fail      198  [before_natural] tick : port b_wmwm expected wait actual mov
+  fail       26  [before_natural] tick : port b_mwmw expected move +X actual 
+  fail        8  [before_natural] tick : input b_mwmw load budget exceeded; m
+  fail        4  [after_natural] tick : port b_wmwm expected wait actual move
+done: 330327 evals (29993 passing) in 180.0s = 1835.1 evals/s; pareto size 1
+  pareto excess=6 max_load=8 count=6 presc_max=8 blocks=15 sum=132 samples80=80/80
+best score (6, 8, 6, 15, 132) (excess 6, max 8, count 6, blocks 15) samples80=80/80

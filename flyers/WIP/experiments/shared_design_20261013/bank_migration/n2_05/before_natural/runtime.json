@@ -1,0 +1,179 @@
+{
+  "provenance": {
+    "redstone_input": [
+      "supplied",
+      "supplied",
+      null,
+      null
+    ],
+    "k1_input": [
+      null,
+      null,
+      "internal",
+      "supplied"
+    ],
+    "k0_output": [
+      "internal",
+      "internal",
+      null,
+      null
+    ],
+    "n_output": [
+      null,
+      "internal",
+      "internal",
+      null
+    ]
+  },
+  "contacts": [
+    {
+      "name": "redstone_to_carrier_offset",
+      "a": "redstone_input",
+      "b": "k1_input",
+      "slots": [
+        0
+      ],
+      "relation": "offset",
+      "offset": [
+        0,
+        -1,
+        1
+      ],
+      "required": true
+    }
+  ],
+  "supplied_order": [
+    [
+      "redstone_input"
+    ],
+    [
+      "redstone_input"
+    ],
+    [],
+    [
+      "k1_input"
+    ]
+  ],
+  "required_cells": [
+    {
+      "at": [
+        0,
+        0,
+        15
+      ],
+      "cell": 9
+    },
+    {
+      "at": [
+        0,
+        0,
+        16
+      ],
+      "cell": 3
+    },
+    {
+      "at": [
+        0,
+        1,
+        15
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        0,
+        1,
+        16
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        0,
+        1,
+        17
+      ],
+      "cell": 9
+    },
+    {
+      "at": [
+        1,
+        1,
+        15
+      ],
+      "cell": 10
+    },
+    {
+      "at": [
+        2,
+        0,
+        15
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        2,
+        0,
+        17
+      ],
+      "cell": 168
+    },
+    {
+      "at": [
+        2,
+        1,
+        15
+      ],
+      "cell": 2345
+    },
+    {
+      "at": [
+        3,
+        0,
+        16
+      ],
+      "cell": 423
+    },
+    {
+      "at": [
+        3,
+        0,
+        17
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        3,
+        1,
+        16
+      ],
+      "cell": 297
+    },
+    {
+      "at": [
+        3,
+        1,
+        17
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        3,
+        2,
+        16
+      ],
+      "cell": 6
+    },
+    {
+      "at": [
+        3,
+        2,
+        17
+      ],
+      "cell": 9
+    }
+  ]
+}

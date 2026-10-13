@@ -1,0 +1,73 @@
+{
+  "source_flyer": "flyers/bank/pl22/pull_twice_mmwmmw.flyer",
+  "source_extension_bank_contract": "flyers/extension_bank/n4/n4_13/before_natural.json",
+  "source_mask_cells": 20,
+  "frozen_required_cells": 17,
+  "frozen_subset": "body_seed",
+  "supported_orders": [
+    "before_natural",
+    "after_natural"
+  ],
+  "contacts_are": "observed named-port relative offsets at pre-even boundaries; they assert geometry, not power causation",
+  "notes": "Only B7's 17 seed body cells are frozen. B4/B6/B11 are three moving piston input ports and remain outside the required-cell subset.",
+  "measured_provenance": {
+    "target_in": [
+      "supplied",
+      "internal",
+      null,
+      "supplied",
+      "internal",
+      null
+    ],
+    "target_out": [
+      "supplied",
+      "internal",
+      null,
+      "supplied",
+      "internal",
+      null
+    ],
+    "piston4_in": [
+      "supplied",
+      "internal",
+      "supplied",
+      "supplied",
+      null,
+      null
+    ],
+    "piston6_in": [
+      "supplied",
+      null,
+      null,
+      "supplied",
+      "internal",
+      "supplied"
+    ],
+    "piston11_in": [
+      "supplied",
+      "internal",
+      "supplied",
+      null,
+      null,
+      "supplied"
+    ]
+  },
+  "script_first_period_order": [
+    [
+      "target_in"
+    ],
+    [],
+    [
+      "piston4_in",
+      "piston11_in"
+    ],
+    [
+      "target_in"
+    ],
+    [],
+    [
+      "piston6_in",
+      "piston11_in"
+    ]
+  ]
+}

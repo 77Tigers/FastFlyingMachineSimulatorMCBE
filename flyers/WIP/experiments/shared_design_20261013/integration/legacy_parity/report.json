@@ -1,0 +1,1653 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "contract": "flyers\\extension_bank\\n2\\n2_01\\after_natural.json",
+      "python": {
+        "rng": null,
+        "phase_x": null,
+        "phase_z": null,
+        "passed": true,
+        "ticks": 24,
+        "elapsed_seconds": 0.051409,
+        "diagnostic": null,
+        "first_failure": null,
+        "input_max_action_loads": {
+          "carrier_wwmm": [
+            null,
+            null,
+            6,
+            6
+          ],
+          "target_mmww": [
+            5,
+            5,
+            null,
+            null
+          ],
+          "next_rb": [
+            null,
+            null,
+            1,
+            1
+          ]
+        },
+        "whole_assembly_max_action": 6
+      },
+      "rust": {
+        "name": "n2_01-pl8mirrored-after_natural",
+        "pass": true,
+        "recurrence": "exact",
+        "orders": [
+          "after_natural"
+        ],
+        "rank": "endogenous",
+        "excess": 0,
+        "max_load": 6,
+        "all_max_load": 6,
+        "count_at_max": 3,
+        "max_prescribed_input_load": 6,
+        "blocks": 12,
+        "sum_load": 33,
+        "input_loads": {
+          "carrier_wwmm": [
+            null,
+            null,
+            6,
+            6
+          ],
+          "target_mmww": [
+            5,
+            5,
+            null,
+            null
+          ],
+          "next_rb": [
+            null,
+            null,
+            1,
+            1
+          ]
+        }
+      },
+      "agree": true,
+      "expected_pass": true
+    },
+    {
+      "contract": "flyers\\extension_bank\\n2\\n2_01\\before_natural.json",
+      "python": {
+        "rng": null,
+        "phase_x": null,
+        "phase_z": null,
+        "passed": true,
+        "ticks": 24,
+        "elapsed_seconds": 0.073316,
+        "diagnostic": null,
+        "first_failure": null,
+        "input_max_action_loads": {
+          "carrier_wwmm": [
+            null,
+            null,
+            6,
+            6
+          ],
+          "target_mmww": [
+            5,
+            5,
+            null,
+            null
+          ],
+          "next_rb": [
+            null,
+            null,
+            1,
+            1
+          ]
+        },
+        "whole_assembly_max_action": 6
+      },
+      "rust": {
+        "name": "n2_01-pl8mirrored-before_natural",
+        "pass": true,
+        "recurrence": "exact",
+        "orders": [
+          "before_natural"
+        ],
+        "rank": "endogenous",
+        "excess": 0,
+        "max_load": 6,
+        "all_max_load": 6,
+        "count_at_max": 3,
+        "max_prescribed_input_load": 6,
+        "blocks": 12,
+        "sum_load": 33,
+        "input_loads": {
+          "carrier_wwmm": [
+            null,
+            null,
+            6,
+            6
+          ],
+          "target_mmww": [
+            5,
+            5,
+            null,
+            null
+          ],
+          "next_rb": [
+            null,
+            null,
+            1,
+            1
+          ]
+        }
+      },
+      "agree": true,
+      "expected_pass": true
+    },
+    {
+      "contract": "flyers\\extension_bank\\n2\\n2_02\\after_natural.json",
+      "python": {
+        "rng": null,
+        "phase_x": null,
+        "phase_z": null,
+        "passed": true,
+        "ticks": 24,
+        "elapsed_seconds": 0.07615,
+        "diagnostic": null,
+        "first_failure": null,
+        "input_max_action_loads": {
+          "carrier_wwmm": [
+            null,
+            null,
+            5,
+            5
+          ],
+          "target_mmww": [
+            5,
+            5,
+            null,
+            null
+          ],
+          "rod_a": [
+            1,
+            1,
+            null,
+            null
+          ]
+        },
+        "whole_assembly_max_action": 5
+      },
+      "rust": {
+        "name": "n2_02-pl8mirrored-after_natural",
+        "pass": true,
+        "recurrence": "exact",
+        "orders": [
+          "after_natural"
+        ],
+        "rank": "endogenous",
+        "excess": 0,
+        "max_load": 5,
+        "all_max_load": 5,
+        "count_at_max": 6,
+        "max_prescribed_input_load": 5,
+        "blocks": 11,
+        "sum_load": 30,
+        "input_loads": {
+          "carrier_wwmm": [
+            null,
+            null,
+            5,
+            5
+          ],
+          "target_mmww": [
+            5,
+            5,
+            null,
+            null
+          ],
+          "rod_a": [
+            1,
+            1,
+            null,
+            null
+          ]
+        }
+      },
+      "agree": true,
+      "expected_pass": true
+    },
+    {
+      "contract": "flyers\\extension_bank\\n2\\n2_02\\before_natural.json",
+      "python": {
+        "rng": null,
+        "phase_x": null,
+        "phase_z": null,
+        "passed": true,
+        "ticks": 24,
+        "elapsed_seconds": 0.564425,
+        "diagnostic": null,
+        "first_failure": null,
+        "input_max_action_loads": {
+          "carrier_wwmm": [
+            null,
+            null,
+            5,
+            5
+          ],
+          "target_mmww": [
+            5,
+            5,
+            null,
+            null
+          ],
+          "rod_a": [
+            1,
+            1,
+            null,
+            null
+          ]
+        },
+        "whole_assembly_max_action": 5
+      },
+      "rust": {
+        "name": "n2_02-pl8mirrored-before_natural",
+        "pass": true,
+        "recurrence": "exact",
+        "orders": [
+          "before_natural"
+        ],
+        "rank": "endogenous",
+        "excess": 0,
+        "max_load": 5,
+        "all_max_load": 5,
+        "count_at_max": 6,
+        "max_prescribed_input_load": 5,
+        "blocks": 11,
+        "sum_load": 30,
+        "input_loads": {
+          "carrier_wwmm": [
+            null,
+            null,
+            5,
+            5
+          ],
+          "target_mmww": [
+            5,
+            5,
+            null,
+            null
+          ],
+          "rod_a": [
+            1,
+            1,
+            null,
+            null
+          ]
+        }
+      },
+      "agree": true,
+      "expected_pass": true
+    },
+    {
+      "contract": "flyers\\extension_bank\\n2\\n2_03\\after_natural.json",
+      "python": {
+        "rng": null,
+        "phase_x": null,
+        "phase_z": null,
+        "passed": true,
+        "ticks": 24,
+        "elapsed_seconds": 0.07322,
+        "diagnostic": null,
+        "first_failure": null,
+        "input_max_action_loads": {
+          "target_wwmm": [
+            null,
+            null,
+            5,
+            6
+          ],
+          "carrier_mwwm": [
+            1,
+            null,
+            null,
+            6
+          ],
+          "ob1": [
+            1,
+            1,
+            null,
+            null
+          ]
+        },
+        "whole_assembly_max_action": 6
+      },
+      "rust": {
+        "name": "n2_03-pl9rigid-after_natural",
+        "pass": true,
+        "recurrence": "exact",
+        "orders": [
+          "after_natural"
+        ],
+        "rank": "endogenous",
+        "excess": 0,
+        "max_load": 5,
+        "all_max_load": 6,
+        "count_at_max": 3,
+        "max_prescribed_input_load": 6,
+        "blocks": 7,
+        "sum_load": 15,
+        "input_loads": {
+          "target_wwmm": [
+            null,
+            null,
+            5,
+            6
+          ],
+          "carrier_mwwm": [
+            1,
+            null,
+            null,
+            6
+          ],
+          "ob1": [
+            1,
+            1,
+            null,
+            null
+          ]
+        }
+      },
+      "agree": true,
+      "expected_pass": true
+    },
+    {
+      "contract": "flyers\\extension_bank\\n2\\n2_03\\before_natural.json",
+      "python": {
+        "rng": null,
+        "phase_x": null,
+        "phase_z": null,
+        "passed": true,
+        "ticks": 24,
+        "elapsed_seconds": 0.066656,
+        "diagnostic": null,
+        "first_failure": null,
+        "input_max_action_loads": {
+          "target_wwmm": [
+            null,
+            null,
+            5,
+            6
+          ],
+          "carrier_mwwm": [
+            1,
+            null,
+            null,
+            6
+          ],
+          "ob1": [
+            1,
+            1,
+            null,
+            null
+          ]
+        },
+        "whole_assembly_max_action": 6
+      },
+      "rust": {
+        "name": "n2_03-pl9rigid-before_natural",
+        "pass": true,
+        "recurrence": "exact",
+        "orders": [
+          "before_natural"
+        ],
+        "rank": "endogenous",
+        "excess": 0,
+        "max_load": 5,
+        "all_max_load": 6,
+        "count_at_max": 3,
+        "max_prescribed_input_load": 6,
+        "blocks": 7,
+        "sum_load": 15,
+        "input_loads": {
+          "target_wwmm": [
+            null,
+            null,
+            5,
+            6
+          ],
+          "carrier_mwwm": [
+            1,
+            null,
+            null,
+            6
+          ],
+          "ob1": [
+            1,
+            1,
+            null,
+            null
+          ]
+        }
+      },
+      "agree": true,
+      "expected_pass": true
+    },
+    {
+      "contract": "flyers\\extension_bank\\n2\\n2_04\\before_natural.json",
+      "python": {
+        "rng": null,
+        "phase_x": null,
+        "phase_z": null,
+        "passed": true,
+        "ticks": 24,
+        "elapsed_seconds": 0.0642,
+        "diagnostic": null,
+        "first_failure": null,
+        "input_max_action_loads": {
+          "k0_mmww": [
+            5,
+            7,
+            null,
+            null
+          ],
+          "rod": [
+            null,
+            null,
+            1,
+            1
+          ],
+          "obs": [
+            null,
+            null,
+            1,
+            1
+          ]
+        },
+        "whole_assembly_max_action": 7
+      },
+      "rust": {
+        "name": "n2_04-pl8mirrored-before_natural",
+        "pass": true,
+        "recurrence": "exact",
+        "orders": [
+          "before_natural"
+        ],
+        "rank": "endogenous",
+        "excess": 0,
+        "max_load": 5,
+        "all_max_load": 7,
+        "count_at_max": 3,
+        "max_prescribed_input_load": 7,
+        "blocks": 9,
+        "sum_load": 21,
+        "input_loads": {
+          "k0_mmww": [
+            5,
+            7,
+            null,
+            null
+          ],
+          "rod": [
+            null,
+            null,
+            1,
+            1
+          ],
+          "obs": [
+            null,
+            null,
+            1,
+            1
+          ]
+        }
+      },
+      "agree": true,
+      "expected_pass": true
+    },
+    {
+      "contract": "flyers\\extension_bank\\n2\\n2_05\\after_natural.json",
+      "python": {
+        "rng": null,
+        "phase_x": null,
+        "phase_z": null,
+        "passed": true,
+        "ticks": 24,
+        "elapsed_seconds": 0.069424,
+        "diagnostic": null,
+        "first_failure": null,
+        "input_max_action_loads": {
+          "redstone_input": [
+            1,
+            1,
+            null,
+            null
+          ],
+          "k1_input": [
+            null,
+            null,
+            6,
+            6
+          ]
+        },
+        "whole_assembly_max_action": 7
+      },
+      "rust": {
+        "name": "n2_05-pl7-rearcap-after_natural",
+        "pass": true,
+        "recurrence": "exact",
+        "orders": [
+          "after_natural"
+        ],
+        "rank": "endogenous",
+        "excess": 0,
+        "max_load": 7,
+        "all_max_load": 7,
+        "count_at_max": 3,
+        "max_prescribed_input_load": 6,
+        "blocks": 14,
+        "sum_load": 60,
+        "input_loads": {
+          "redstone_input": [
+            1,
+            1,
+            null,
+            null
+          ],
+          "k1_input": [
+            null,
+            null,
+            6,
+            6
+          ]
+        }
+      },
+      "agree": true,
+      "expected_pass": true
+    },
+    {
+      "contract": "flyers\\extension_bank\\n2\\n2_05\\before_natural.json",
+      "python": {
+        "rng": null,
+        "phase_x": null,
+        "phase_z": null,
+        "passed": true,
+        "ticks": 24,
+        "elapsed_seconds": 0.069615,
+        "diagnostic": null,
+        "first_failure": null,
+        "input_max_action_loads": {
+          "redstone_input": [
+            1,
+            1,
+            null,
+            null
+          ],
+          "k1_input": [
+            null,
+            null,
+            6,
+            6
+          ]
+        },
+        "whole_assembly_max_action": 7
+      },
+      "rust": {
+        "name": "n2_05-pl7-rearcap-before_natural",
+        "pass": true,
+        "recurrence": "exact",
+        "orders": [
+          "before_natural"
+        ],
+        "rank": "endogenous",
+        "excess": 0,
+        "max_load": 7,
+        "all_max_load": 7,
+        "count_at_max": 3,
+        "max_prescribed_input_load": 6,
+        "blocks": 14,
+        "sum_load": 60,
+        "input_loads": {
+          "redstone_input": [
+            1,
+            1,
+            null,
+            null
+          ],
+          "k1_input": [
+            null,
+            null,
+            6,
+            6
+          ]
+        }
+      },
+      "agree": true,
+      "expected_pass": true
+    },
+    {
+      "contract": "flyers\\extension_bank\\n2\\n2_06\\after_natural.json",
+      "python": {
+        "rng": null,
+        "phase_x": null,
+        "phase_z": null,
+        "passed": true,
+        "ticks": 24,
+        "elapsed_seconds": 0.048135,
+        "diagnostic": null,
+        "first_failure": null,
+        "input_max_action_loads": {
+          "b2_mwmw": [
+            8,
+            null,
+            7,
+            null
+          ]
+        },
+        "whole_assembly_max_action": 8
+      },
+      "rust": {
+        "name": "n2_06-pl8hoppair-after_natural",
+        "pass": true,
+        "recurrence": "exact",
+        "orders": [
+          "after_natural"
+        ],
+        "rank": "endogenous",
+        "excess": 0,
+        "max_load": 8,
+        "all_max_load": 8,
+        "count_at_max": 3,
+        "max_prescribed_input_load": 8,
+        "blocks": 15,
+        "sum_load": 66,
+        "input_loads": {
+          "b2_mwmw": [
+            8,
+            null,
+            7,
+            null
+          ]
+        }
+      },
+      "agree": true,
+      "expected_pass": true
+    },
+    {
+      "contract": "flyers\\extension_bank\\n2\\n2_06\\before_natural.json",
+      "python": {
+        "rng": null,
+        "phase_x": null,
+        "phase_z": null,
+        "passed": true,
+        "ticks": 24,
+        "elapsed_seconds": 0.090778,
+        "diagnostic": null,
+        "first_failure": null,
+        "input_max_action_loads": {
+          "b2_mwmw": [
+            8,
+            null,
+            7,
+            null
+          ]
+        },
+        "whole_assembly_max_action": 8
+      },
+      "rust": {
+        "name": "n2_06-pl8hoppair-before_natural",
+        "pass": true,
+        "recurrence": "exact",
+        "orders": [
+          "before_natural"
+        ],
+        "rank": "endogenous",
+        "excess": 0,
+        "max_load": 8,
+        "all_max_load": 8,
+        "count_at_max": 3,
+        "max_prescribed_input_load": 8,
+        "blocks": 15,
+        "sum_load": 66,
+        "input_loads": {
+          "b2_mwmw": [
+            8,
+            null,
+            7,
+            null
+          ]
+        }
+      },
+      "agree": true,
+      "expected_pass": true
+    },
+    {
+      "contract": "flyers\\extension_bank\\n3\\n3_07\\after_natural.json",
+      "python": {
+        "rng": null,
+        "phase_x": null,
+        "phase_z": null,
+        "passed": true,
+        "ticks": 30,
+        "elapsed_seconds": 0.076665,
+        "diagnostic": null,
+        "first_failure": null,
+        "input_max_action_loads": {
+          "b40_carrier_in": [
+            null,
+            null,
+            10,
+            11,
+            12
+          ]
+        },
+        "whole_assembly_max_action": 12
+      },
+      "rust": {
+        "name": "n3_07-after_natural",
+        "pass": true,
+        "recurrence": "exact",
+        "orders": [
+          "after_natural"
+        ],
+        "rank": "endogenous",
+        "excess": 0,
+        "max_load": 7,
+        "all_max_load": 12,
+        "count_at_max": 3,
+        "max_prescribed_input_load": 12,
+        "blocks": 17,
+        "sum_load": 54,
+        "input_loads": {
+          "b40_carrier_in": [
+            null,
+            null,
+            10,
+            11,
+            12
+          ]
+        }
+      },
+      "agree": true,
+      "expected_pass": true
+    },
+    {
+      "contract": "flyers\\extension_bank\\n3\\n3_07\\before_natural.json",
+      "python": {
+        "rng": null,
+        "phase_x": null,
+        "phase_z": null,
+        "passed": true,
+        "ticks": 30,
+        "elapsed_seconds": 0.586496,
+        "diagnostic": null,
+        "first_failure": null,
+        "input_max_action_loads": {
+          "b40_carrier_in": [
+            null,
+            null,
+            10,
+            11,
+            12
+          ]
+        },
+        "whole_assembly_max_action": 12
+      },
+      "rust": {
+        "name": "n3_07-before_natural",
+        "pass": true,
+        "recurrence": "exact",
+        "orders": [
+          "before_natural"
+        ],
+        "rank": "endogenous",
+        "excess": 0,
+        "max_load": 7,
+        "all_max_load": 12,
+        "count_at_max": 3,
+        "max_prescribed_input_load": 12,
+        "blocks": 17,
+        "sum_load": 54,
+        "input_loads": {
+          "b40_carrier_in": [
+            null,
+            null,
+            10,
+            11,
+            12
+          ]
+        }
+      },
+      "agree": true,
+      "expected_pass": true
+    },
+    {
+      "contract": "flyers\\extension_bank\\n3\\n3_08\\before_natural.json",
+      "python": {
+        "rng": null,
+        "phase_x": null,
+        "phase_z": null,
+        "passed": true,
+        "ticks": 30,
+        "elapsed_seconds": 0.093445,
+        "diagnostic": null,
+        "first_failure": null,
+        "input_max_action_loads": {
+          "b40_carrier_in": [
+            null,
+            null,
+            9,
+            10,
+            11
+          ],
+          "b54_in": [
+            7,
+            6,
+            5,
+            null,
+            null
+          ]
+        },
+        "whole_assembly_max_action": 11
+      },
+      "rust": {
+        "name": "n3_08-before_natural",
+        "pass": true,
+        "recurrence": "exact",
+        "orders": [
+          "before_natural"
+        ],
+        "rank": "endogenous",
+        "excess": 0,
+        "max_load": 6,
+        "all_max_load": 11,
+        "count_at_max": 3,
+        "max_prescribed_input_load": 11,
+        "blocks": 16,
+        "sum_load": 33,
+        "input_loads": {
+          "b40_carrier_in": [
+            null,
+            null,
+            9,
+            10,
+            11
+          ],
+          "b54_in": [
+            7,
+            6,
+            5,
+            null,
+            null
+          ]
+        }
+      },
+      "agree": true,
+      "expected_pass": true
+    },
+    {
+      "contract": "flyers\\extension_bank\\n3\\n3_09\\before_natural.json",
+      "python": {
+        "rng": null,
+        "phase_x": null,
+        "phase_z": null,
+        "passed": true,
+        "ticks": 30,
+        "elapsed_seconds": 0.083272,
+        "diagnostic": null,
+        "first_failure": null,
+        "input_max_action_loads": {
+          "b40_carrier_in": [
+            null,
+            null,
+            9,
+            9,
+            10
+          ],
+          "b54_in": [
+            6,
+            6,
+            5,
+            null,
+            null
+          ]
+        },
+        "whole_assembly_max_action": 10
+      },
+      "rust": {
+        "name": "n3_09-before_natural",
+        "pass": true,
+        "recurrence": "exact",
+        "orders": [
+          "before_natural"
+        ],
+        "rank": "endogenous",
+        "excess": 0,
+        "max_load": 5,
+        "all_max_load": 10,
+        "count_at_max": 3,
+        "max_prescribed_input_load": 10,
+        "blocks": 15,
+        "sum_load": 15,
+        "input_loads": {
+          "b40_carrier_in": [
+            null,
+            null,
+            9,
+            9,
+            10
+          ],
+          "b54_in": [
+            6,
+            6,
+            5,
+            null,
+            null
+          ]
+        }
+      },
+      "agree": true,
+      "expected_pass": true
+    },
+    {
+      "contract": "flyers\\extension_bank\\n3\\n3_10\\after_natural.json",
+      "python": {
+        "rng": null,
+        "phase_x": null,
+        "phase_z": null,
+        "passed": true,
+        "ticks": 30,
+        "elapsed_seconds": 0.064293,
+        "diagnostic": null,
+        "first_failure": null,
+        "input_max_action_loads": {
+          "b23_in": [
+            7,
+            8,
+            null,
+            null,
+            6
+          ]
+        },
+        "whole_assembly_max_action": 12
+      },
+      "rust": {
+        "name": "n3_10-after_natural",
+        "pass": true,
+        "recurrence": "bounded",
+        "orders": [
+          "after_natural"
+        ],
+        "rank": "endogenous",
+        "excess": 0,
+        "max_load": 12,
+        "all_max_load": 12,
+        "count_at_max": 9,
+        "max_prescribed_input_load": 7,
+        "blocks": 25,
+        "sum_load": 186,
+        "input_loads": {
+          "b23_in": [
+            7,
+            8,
+            null,
+            null,
+            6
+          ]
+        }
+      },
+      "agree": true,
+      "expected_pass": true
+    },
+    {
+      "contract": "flyers\\extension_bank\\n3\\n3_10\\before_natural.json",
+      "python": {
+        "rng": null,
+        "phase_x": null,
+        "phase_z": null,
+        "passed": true,
+        "ticks": 30,
+        "elapsed_seconds": 0.049267,
+        "diagnostic": null,
+        "first_failure": null,
+        "input_max_action_loads": {
+          "b23_in": [
+            7,
+            8,
+            null,
+            null,
+            6
+          ]
+        },
+        "whole_assembly_max_action": 12
+      },
+      "rust": {
+        "name": "n3_10-before_natural",
+        "pass": true,
+        "recurrence": "bounded",
+        "orders": [
+          "before_natural"
+        ],
+        "rank": "endogenous",
+        "excess": 0,
+        "max_load": 12,
+        "all_max_load": 12,
+        "count_at_max": 9,
+        "max_prescribed_input_load": 7,
+        "blocks": 25,
+        "sum_load": 186,
+        "input_loads": {
+          "b23_in": [
+            7,
+            8,
+            null,
+            null,
+            6
+          ]
+        }
+      },
+      "agree": true,
+      "expected_pass": true
+    },
+    {
+      "contract": "flyers\\extension_bank\\n3\\n3_11\\after_natural.json",
+      "python": {
+        "rng": null,
+        "phase_x": null,
+        "phase_z": null,
+        "passed": true,
+        "ticks": 30,
+        "elapsed_seconds": 0.561134,
+        "diagnostic": null,
+        "first_failure": null,
+        "input_max_action_loads": {
+          "b20_in": [
+            13,
+            13,
+            null,
+            13,
+            null
+          ],
+          "b30_in": [
+            13,
+            14,
+            null,
+            null,
+            12
+          ]
+        },
+        "whole_assembly_max_action": 14
+      },
+      "rust": {
+        "name": "n3_11-after_natural",
+        "pass": true,
+        "recurrence": "bounded",
+        "orders": [
+          "after_natural"
+        ],
+        "rank": "endogenous",
+        "excess": 0,
+        "max_load": 14,
+        "all_max_load": 14,
+        "count_at_max": 15,
+        "max_prescribed_input_load": 13,
+        "blocks": 53,
+        "sum_load": 363,
+        "input_loads": {
+          "b20_in": [
+            13,
+            13,
+            null,
+            13,
+            null
+          ],
+          "b30_in": [
+            13,
+            14,
+            null,
+            null,
+            12
+          ]
+        }
+      },
+      "agree": true,
+      "expected_pass": true
+    },
+    {
+      "contract": "flyers\\extension_bank\\n3\\n3_11\\before_natural.json",
+      "python": {
+        "rng": null,
+        "phase_x": null,
+        "phase_z": null,
+        "passed": true,
+        "ticks": 30,
+        "elapsed_seconds": 0.074548,
+        "diagnostic": null,
+        "first_failure": null,
+        "input_max_action_loads": {
+          "b20_in": [
+            13,
+            13,
+            null,
+            13,
+            null
+          ],
+          "b30_in": [
+            13,
+            14,
+            null,
+            null,
+            12
+          ]
+        },
+        "whole_assembly_max_action": 14
+      },
+      "rust": {
+        "name": "n3_11-before_natural",
+        "pass": true,
+        "recurrence": "bounded",
+        "orders": [
+          "before_natural"
+        ],
+        "rank": "endogenous",
+        "excess": 0,
+        "max_load": 14,
+        "all_max_load": 14,
+        "count_at_max": 15,
+        "max_prescribed_input_load": 13,
+        "blocks": 53,
+        "sum_load": 363,
+        "input_loads": {
+          "b20_in": [
+            13,
+            13,
+            null,
+            13,
+            null
+          ],
+          "b30_in": [
+            13,
+            14,
+            null,
+            null,
+            12
+          ]
+        }
+      },
+      "agree": true,
+      "expected_pass": true
+    },
+    {
+      "contract": "flyers\\extension_bank\\n4\\n4_12\\after_natural.json",
+      "python": {
+        "rng": null,
+        "phase_x": null,
+        "phase_z": null,
+        "passed": true,
+        "ticks": 36,
+        "elapsed_seconds": 0.604626,
+        "diagnostic": null,
+        "first_failure": null,
+        "input_max_action_loads": {
+          "carrier_in": [
+            null,
+            null,
+            19,
+            20,
+            21,
+            22
+          ]
+        },
+        "whole_assembly_max_action": 22
+      },
+      "rust": {
+        "name": "n4_12-after_natural",
+        "pass": true,
+        "recurrence": "exact",
+        "orders": [
+          "after_natural"
+        ],
+        "rank": "endogenous",
+        "excess": 0,
+        "max_load": 21,
+        "all_max_load": 22,
+        "count_at_max": 3,
+        "max_prescribed_input_load": 22,
+        "blocks": 40,
+        "sum_load": 234,
+        "input_loads": {
+          "carrier_in": [
+            null,
+            null,
+            19,
+            20,
+            21,
+            22
+          ]
+        }
+      },
+      "agree": true,
+      "expected_pass": true
+    },
+    {
+      "contract": "flyers\\extension_bank\\n4\\n4_12\\before_natural.json",
+      "python": {
+        "rng": null,
+        "phase_x": null,
+        "phase_z": null,
+        "passed": true,
+        "ticks": 36,
+        "elapsed_seconds": 0.57907,
+        "diagnostic": null,
+        "first_failure": null,
+        "input_max_action_loads": {
+          "carrier_in": [
+            null,
+            null,
+            19,
+            20,
+            21,
+            22
+          ]
+        },
+        "whole_assembly_max_action": 22
+      },
+      "rust": {
+        "name": "n4_12-before_natural",
+        "pass": true,
+        "recurrence": "exact",
+        "orders": [
+          "before_natural"
+        ],
+        "rank": "endogenous",
+        "excess": 0,
+        "max_load": 21,
+        "all_max_load": 22,
+        "count_at_max": 3,
+        "max_prescribed_input_load": 22,
+        "blocks": 40,
+        "sum_load": 234,
+        "input_loads": {
+          "carrier_in": [
+            null,
+            null,
+            19,
+            20,
+            21,
+            22
+          ]
+        }
+      },
+      "agree": true,
+      "expected_pass": true
+    },
+    {
+      "contract": "flyers\\extension_bank\\n4\\n4_13\\after_natural.json",
+      "python": {
+        "rng": null,
+        "phase_x": null,
+        "phase_z": null,
+        "passed": true,
+        "ticks": 36,
+        "elapsed_seconds": 0.052657,
+        "diagnostic": null,
+        "first_failure": null,
+        "input_max_action_loads": {
+          "target_in": [
+            20,
+            19,
+            null,
+            19,
+            18,
+            null
+          ],
+          "piston4_in": [
+            20,
+            19,
+            1,
+            19,
+            null,
+            null
+          ],
+          "piston6_in": [
+            20,
+            null,
+            null,
+            19,
+            18,
+            1
+          ],
+          "piston11_in": [
+            20,
+            19,
+            1,
+            null,
+            null,
+            1
+          ]
+        },
+        "whole_assembly_max_action": 20
+      },
+      "rust": {
+        "name": "n4_13-after_natural",
+        "pass": true,
+        "recurrence": "exact",
+        "orders": [
+          "after_natural"
+        ],
+        "rank": "endogenous",
+        "excess": 0,
+        "max_load": 19,
+        "all_max_load": 20,
+        "count_at_max": 3,
+        "max_prescribed_input_load": 20,
+        "blocks": 20,
+        "sum_load": 111,
+        "input_loads": {
+          "target_in": [
+            20,
+            19,
+            null,
+            19,
+            18,
+            null
+          ],
+          "piston4_in": [
+            20,
+            19,
+            1,
+            19,
+            null,
+            null
+          ],
+          "piston6_in": [
+            20,
+            null,
+            null,
+            19,
+            18,
+            1
+          ],
+          "piston11_in": [
+            20,
+            19,
+            1,
+            null,
+            null,
+            1
+          ]
+        }
+      },
+      "agree": true,
+      "expected_pass": true
+    },
+    {
+      "contract": "flyers\\extension_bank\\n4\\n4_13\\before_natural.json",
+      "python": {
+        "rng": null,
+        "phase_x": null,
+        "phase_z": null,
+        "passed": true,
+        "ticks": 36,
+        "elapsed_seconds": 0.561504,
+        "diagnostic": null,
+        "first_failure": null,
+        "input_max_action_loads": {
+          "target_in": [
+            20,
+            19,
+            null,
+            19,
+            18,
+            null
+          ],
+          "piston4_in": [
+            20,
+            19,
+            1,
+            19,
+            null,
+            null
+          ],
+          "piston6_in": [
+            20,
+            null,
+            null,
+            19,
+            18,
+            1
+          ],
+          "piston11_in": [
+            20,
+            19,
+            1,
+            null,
+            null,
+            1
+          ]
+        },
+        "whole_assembly_max_action": 20
+      },
+      "rust": {
+        "name": "n4_13-before_natural",
+        "pass": true,
+        "recurrence": "exact",
+        "orders": [
+          "before_natural"
+        ],
+        "rank": "endogenous",
+        "excess": 0,
+        "max_load": 19,
+        "all_max_load": 20,
+        "count_at_max": 3,
+        "max_prescribed_input_load": 20,
+        "blocks": 20,
+        "sum_load": 111,
+        "input_loads": {
+          "target_in": [
+            20,
+            19,
+            null,
+            19,
+            18,
+            null
+          ],
+          "piston4_in": [
+            20,
+            19,
+            1,
+            19,
+            null,
+            null
+          ],
+          "piston6_in": [
+            20,
+            null,
+            null,
+            19,
+            18,
+            1
+          ],
+          "piston11_in": [
+            20,
+            19,
+            1,
+            null,
+            null,
+            1
+          ]
+        }
+      },
+      "agree": true,
+      "expected_pass": true
+    },
+    {
+      "contract": "flyers\\extension_bank\\n4\\n4_14\\after_natural.json",
+      "python": {
+        "rng": null,
+        "phase_x": null,
+        "phase_z": null,
+        "passed": true,
+        "ticks": 36,
+        "elapsed_seconds": 0.052812,
+        "diagnostic": null,
+        "first_failure": null,
+        "input_max_action_loads": {
+          "src60_in": [
+            1,
+            null,
+            null,
+            1,
+            1,
+            1
+          ],
+          "carrier_in": [
+            18,
+            18,
+            18,
+            null,
+            null,
+            18
+          ],
+          "target_in": [
+            16,
+            16,
+            null,
+            null,
+            16,
+            16
+          ]
+        },
+        "whole_assembly_max_action": 18
+      },
+      "rust": {
+        "name": "n4_14-after_natural",
+        "pass": true,
+        "recurrence": "exact",
+        "orders": [
+          "after_natural"
+        ],
+        "rank": "endogenous",
+        "excess": 0,
+        "max_load": 16,
+        "all_max_load": 18,
+        "count_at_max": 3,
+        "max_prescribed_input_load": 18,
+        "blocks": 35,
+        "sum_load": 48,
+        "input_loads": {
+          "src60_in": [
+            1,
+            null,
+            null,
+            1,
+            1,
+            1
+          ],
+          "carrier_in": [
+            18,
+            18,
+            18,
+            null,
+            null,
+            18
+          ],
+          "target_in": [
+            16,
+            16,
+            null,
+            null,
+            16,
+            16
+          ]
+        }
+      },
+      "agree": true,
+      "expected_pass": true
+    },
+    {
+      "contract": "flyers\\extension_bank\\n4\\n4_14\\before_natural.json",
+      "python": {
+        "rng": null,
+        "phase_x": null,
+        "phase_z": null,
+        "passed": true,
+        "ticks": 36,
+        "elapsed_seconds": 0.568092,
+        "diagnostic": null,
+        "first_failure": null,
+        "input_max_action_loads": {
+          "src60_in": [
+            1,
+            null,
+            null,
+            1,
+            1,
+            1
+          ],
+          "carrier_in": [
+            18,
+            18,
+            18,
+            null,
+            null,
+            18
+          ],
+          "target_in": [
+            16,
+            16,
+            null,
+            null,
+            16,
+            16
+          ]
+        },
+        "whole_assembly_max_action": 18
+      },
+      "rust": {
+        "name": "n4_14-before_natural",
+        "pass": true,
+        "recurrence": "exact",
+        "orders": [
+          "before_natural"
+        ],
+        "rank": "endogenous",
+        "excess": 0,
+        "max_load": 16,
+        "all_max_load": 18,
+        "count_at_max": 3,
+        "max_prescribed_input_load": 18,
+        "blocks": 35,
+        "sum_load": 48,
+        "input_loads": {
+          "src60_in": [
+            1,
+            null,
+            null,
+            1,
+            1,
+            1
+          ],
+          "carrier_in": [
+            18,
+            18,
+            18,
+            null,
+            null,
+            18
+          ],
+          "target_in": [
+            16,
+            16,
+            null,
+            null,
+            16,
+            16
+          ]
+        }
+      },
+      "agree": true,
+      "expected_pass": true
+    }
+  ]
+}

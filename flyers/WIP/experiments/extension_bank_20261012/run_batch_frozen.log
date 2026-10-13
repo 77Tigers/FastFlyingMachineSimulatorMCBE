@@ -1,0 +1,42 @@
+== n2_01: ref endogenous 6 (all 6) own=exact advance_pass=True -> search advance
+   search done in 180s
+   best: excess 6 end_max 6 all_max 6 count 6 blocks 12 diff []
+== n2_02: ref endogenous 5 (all 5) own=exact advance_pass=True -> search advance
+   search done in 181s
+   best: excess 12 end_max 5 all_max 5 count 12 blocks 11 diff []
+== n2_03: ref endogenous 5 (all 6) own=exact advance_pass=True -> search advance
+   search done in 181s
+   best: excess 6 end_max 5 all_max 6 count 6 blocks 7 diff []
+== n2_04: ref endogenous 5 (all 7) own=exact advance_pass=True -> search advance
+   search done in 181s
+   best: excess 3 end_max 5 all_max 7 count 3 blocks 9 diff []
+== n2_05: ref endogenous 7 (all 7) own=exact advance_pass=True -> search advance
+   search done in 181s
+   best: excess 6 end_max 7 all_max 7 count 6 blocks 14 diff []
+== n2_06: ref endogenous 8 (all 8) own=exact advance_pass=True -> search advance
+   search done in 181s
+   best: excess 6 end_max 8 all_max 8 count 6 blocks 15 diff []
+== n3_07: ref endogenous 7 (all 12) own=exact advance_pass=True -> search advance
+   search done in 180s
+   best: excess 6 end_max 7 all_max 12 count 6 blocks 17 diff []
+== n3_08: ref endogenous 6 (all 11) own=exact advance_pass=True -> search advance
+   search done in 180s
+   best: excess 3 end_max 6 all_max 11 count 3 blocks 16 diff []
+== n3_09: ref endogenous 5 (all 10) own=exact advance_pass=True -> search advance
+   search done in 180s
+   best: excess 3 end_max 5 all_max 10 count 3 blocks 15 diff []
+== n3_10: ref endogenous 12 (all 12) own=bounded advance_pass=False -> search bounded
+   search done in 181s
+   best: excess 18 end_max 12 all_max 12 count 18 blocks 25 diff []
+== n3_11: ref endogenous 14 (all 14) own=bounded advance_pass=False -> search bounded
+   search done in 183s
+   best: excess 30 end_max 14 all_max 14 count 30 blocks 53 diff []
+== n4_12: ref endogenous 21 (all 22) own=exact advance_pass=True -> search advance
+   search done in 183s
+   best: excess 6 end_max 21 all_max 22 count 6 blocks 40 diff []
+== n4_13: ref endogenous 19 (all 20) own=exact advance_pass=True -> search advance
+   search done in 181s
+   best: excess 6 end_max 19 all_max 20 count 6 blocks 20 diff []
+== n4_14: ref endogenous 16 (all 18) own=exact advance_pass=True -> search advance
+   search done in 182s
+   best: excess 6 end_max 16 all_max 18 count 6 blocks 35 diff []

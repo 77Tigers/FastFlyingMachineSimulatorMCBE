@@ -1,0 +1,218 @@
+{
+ "id": "n3_09",
+ "orders": "before",
+ "own_recurrence": "exact",
+ "search_recurrence": "advance",
+ "seed_own": {
+  "name": "n3_09-before_natural",
+  "pass": true,
+  "recurrence": "exact",
+  "orders": [
+   "before_natural"
+  ],
+  "rank": "endogenous",
+  "excess": 0,
+  "max_load": 5,
+  "all_max_load": 10,
+  "count_at_max": 3,
+  "max_prescribed_input_load": 10,
+  "blocks": 15,
+  "sum_load": 15,
+  "input_loads": {
+   "b40_carrier_in": [
+    null,
+    null,
+    9,
+    9,
+    10
+   ],
+   "b54_in": [
+    6,
+    6,
+    5,
+    null,
+    null
+   ]
+  }
+ },
+ "seed_advance": {
+  "name": "n3_09-before_natural",
+  "pass": true,
+  "recurrence": "advance",
+  "orders": [
+   "before_natural"
+  ],
+  "rank": "endogenous",
+  "excess": 0,
+  "max_load": 5,
+  "all_max_load": 10,
+  "count_at_max": 3,
+  "max_prescribed_input_load": 10,
+  "blocks": 15,
+  "sum_load": 15,
+  "input_loads": {
+   "b40_carrier_in": [
+    null,
+    null,
+    9,
+    9,
+    10
+   ],
+   "b54_in": [
+    6,
+    6,
+    5,
+    null,
+    null
+   ]
+  }
+ },
+ "ref_endogenous_max": 5,
+ "search_cmd": "contract-search flyers/WIP/experiments/extension_bank_20261012/contracts/n3_09/before_natural.json 180 6 flyers/WIP/experiments/extension_bank_20261012/contracts/n3_09/search_frozen --target 4 --order before --recurrence advance --seed 1 --freeze-bodies",
+ "summary": {
+  "contract": "n3_09-before_natural",
+  "seconds": 180.0,
+  "threads": 6,
+  "seed": 1,
+  "orders": [
+   "before_natural"
+  ],
+  "recurrence": "advance",
+  "target": 4,
+  "search_limit": 24,
+  "file_limit": 12,
+  "margin": 2,
+  "evaluations": 1002770,
+  "passing_evaluations": 11595,
+  "evals_per_sec": 5570.9,
+  "seed_score": {
+   "excess": 3,
+   "max_load": 5,
+   "count_at_max": 3,
+   "blocks": 15,
+   "sum_load": 15,
+   "max_prescribed_input_load": 10
+  },
+  "inprocess_80_sample_pass": [
+   80
+  ],
+  "best_inprocess_80_sample_pass": 80,
+  "failure_histogram": [
+   [
+    "[before_natural] tick : prescribed move at  failed: Blocked",
+    699071
+   ],
+   [
+    "[before_natural] tick : prescribed move at  failed: LoadExce",
+    256077
+   ],
+   [
+    "[before_natural] tick : permanent identity  at  is not its o",
+    34890
+   ],
+   [
+    "[before_natural] tick : port b_carrier_in expected wait actu",
+    726
+   ],
+   [
+    "[before_natural] tick : extension failure",
+    367
+   ],
+   [
+    "[before_natural] tick : input b_in load budget exceeded; mov",
+    32
+   ],
+   [
+    "[before_natural] tick : movement failed immovable obstructio",
+    12
+   ]
+  ],
+  "best": {
+   "file": "best.flyer",
+   "score": [
+    3,
+    5,
+    3,
+    15,
+    15
+   ],
+   "excess": 3,
+   "max_load": 5,
+   "all_max_load": 10,
+   "count_at_max": 3,
+   "max_prescribed_input_load": 10,
+   "blocks": 15,
+   "input_loads": {
+    "b40_carrier_in": [
+     null,
+     null,
+     9,
+     9,
+     10
+    ],
+    "b54_in": [
+     6,
+     6,
+     5,
+     null,
+     null
+    ]
+   },
+   "diff_vs_seed": []
+  },
+  "pareto": [
+   {
+    "file": "pareto_5_10_15.flyer",
+    "max_load": 5,
+    "all_max_load": 10,
+    "count_at_max": 3,
+    "max_prescribed_input_load": 10,
+    "blocks": 15,
+    "sum_load": 15,
+    "input_loads": {
+     "b40_carrier_in": [
+      null,
+      null,
+      9,
+      9,
+      10
+     ],
+     "b54_in": [
+      6,
+      6,
+      5,
+      null,
+      null
+     ]
+    }
+   }
+  ]
+ },
+ "confirm": [
+  {
+   "file": "pareto_5_10_15.flyer",
+   "limit": 12,
+   "blocks": 15,
+   "rust": {
+    "before_advance_single": {
+     "pass": true,
+     "max_load": 5,
+     "all_max_load": 10,
+     "count_at_max": 3,
+     "max_prescribed_input_load": 10,
+     "first_failure": null
+    },
+    "before_advance_samples": "80/80",
+    "before_exact_samples": "80/80",
+    "before_advance_8cycles": true
+   },
+   "python": {
+    "before_own": {
+     "single": "PASS",
+     "samples": "80/80 samples"
+    }
+   },
+   "is_seed": true
+  }
+ ]
+}

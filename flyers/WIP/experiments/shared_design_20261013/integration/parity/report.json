@@ -1,0 +1,216 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "contract": "flyers\\WIP\\experiments\\shared_design_20261013\\integration\\rear_before\\contract.json",
+      "python": {
+        "rng": null,
+        "phase_x": null,
+        "phase_z": null,
+        "passed": true,
+        "ticks": 24,
+        "elapsed_seconds": 0.051223,
+        "diagnostic": null,
+        "first_failure": null,
+        "input_max_action_loads": {
+          "redstone_input": [
+            1,
+            1,
+            null,
+            null
+          ],
+          "k1_input": [
+            null,
+            null,
+            6,
+            6
+          ]
+        },
+        "whole_assembly_max_action": 7
+      },
+      "rust": {
+        "name": "pl7-rear-cap-mixed-natural-supplied",
+        "pass": true,
+        "recurrence": "exact",
+        "orders": [
+          "before_natural"
+        ],
+        "rank": "endogenous",
+        "excess": 0,
+        "max_load": 7,
+        "all_max_load": 7,
+        "count_at_max": 3,
+        "max_prescribed_input_load": 6,
+        "blocks": 14,
+        "sum_load": 60,
+        "input_loads": {
+          "redstone_input": [
+            1,
+            1,
+            null,
+            null
+          ],
+          "k1_input": [
+            null,
+            null,
+            6,
+            6
+          ]
+        }
+      },
+      "agree": true,
+      "expected_pass": true
+    },
+    {
+      "contract": "flyers\\WIP\\experiments\\shared_design_20261013\\integration\\parity\\negative_contracts\\0\\required_cell\\contract.json",
+      "python": {
+        "rng": null,
+        "phase_x": null,
+        "phase_z": null,
+        "passed": false,
+        "ticks": 0,
+        "elapsed_seconds": 0.063374,
+        "diagnostic": "tick 0: cannot initialize contract checker from Flyer.load: required cell at (0, 0, 15): expected encoded 8, actual 9",
+        "first_failure": {
+          "stage": "initial",
+          "code": "required_cell_mismatch",
+          "tick": 0,
+          "port": null,
+          "expected": {
+            "at": [
+              0,
+              0,
+              15
+            ],
+            "cell": 8
+          },
+          "actual": {
+            "at": [
+              0,
+              0,
+              15
+            ],
+            "cell": 9
+          },
+          "message": "required cell at (0, 0, 15): expected encoded 8, actual 9"
+        },
+        "input_max_action_loads": {},
+        "whole_assembly_max_action": 0
+      },
+      "rust": {
+        "name": "pl7-rear-cap-mixed-natural-supplied",
+        "pass": false,
+        "first_failure": "[before_natural] required cell at (0,0,15) expected encoded 8, actual Some(9)"
+      },
+      "agree": true,
+      "expected_pass": false
+    },
+    {
+      "contract": "flyers\\WIP\\experiments\\shared_design_20261013\\integration\\parity\\negative_contracts\\0\\contact\\contract.json",
+      "python": {
+        "rng": null,
+        "phase_x": null,
+        "phase_z": null,
+        "passed": false,
+        "ticks": 1,
+        "elapsed_seconds": 0.042763,
+        "diagnostic": "tick 0: contact redstone-follows-k0 expected offset=False, actual vector (3, 1, 1)",
+        "first_failure": {
+          "stage": "contact",
+          "code": "contact_mismatch",
+          "tick": 0,
+          "port": null,
+          "expected": {
+            "relation": "offset",
+            "required": false
+          },
+          "actual": [
+            3,
+            1,
+            1
+          ],
+          "message": "tick 0: contact redstone-follows-k0 expected offset=False, actual vector (3, 1, 1)"
+        },
+        "input_max_action_loads": {
+          "redstone_input": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "k1_input": [
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        "whole_assembly_max_action": 0
+      },
+      "rust": {
+        "name": "pl7-rear-cap-mixed-natural-supplied",
+        "pass": false,
+        "first_failure": "[before_natural] tick 0: contact redstone-follows-k0 expected forbidden relation, actual offset (3,1,1)"
+      },
+      "agree": true,
+      "expected_pass": false
+    },
+    {
+      "contract": "flyers\\WIP\\experiments\\shared_design_20261013\\integration\\parity\\negative_contracts\\0\\provenance\\contract.json",
+      "python": {
+        "rng": null,
+        "phase_x": null,
+        "phase_z": null,
+        "passed": false,
+        "ticks": 1,
+        "elapsed_seconds": 0.054096,
+        "diagnostic": "tick 0: redstone_input expected provenance internal, observed supplied",
+        "first_failure": {
+          "stage": "provenance",
+          "code": "movement_source_mismatch",
+          "tick": 0,
+          "port": "redstone_input",
+          "expected": "internal",
+          "actual": "supplied",
+          "message": "tick 0: redstone_input expected provenance internal, observed supplied"
+        },
+        "input_max_action_loads": {
+          "redstone_input": [
+            1,
+            null,
+            null,
+            null
+          ],
+          "k1_input": [
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        "whole_assembly_max_action": 5
+      },
+      "rust": {
+        "name": "pl7-rear-cap-mixed-natural-supplied",
+        "pass": false,
+        "first_failure": "[before_natural] tick 0: port redstone_input expected provenance internal, observed supplied"
+      },
+      "agree": true,
+      "expected_pass": false
+    },
+    {
+      "contract": "flyers\\WIP\\experiments\\shared_design_20261013\\integration\\parity\\negative_contracts\\0\\malformed_provenance\\contract.json",
+      "python": {
+        "passed": false,
+        "diagnostic": "contract.ports[0].provenance: expected an array of 4 movement sources",
+        "first_failure": null
+      },
+      "rust": {
+        "pass": false,
+        "error": "error: ports[0].provenance: expected 4 entries"
+      },
+      "agree": true,
+      "expected_pass": false
+    }
+  ]
+}

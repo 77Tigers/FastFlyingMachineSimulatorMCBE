@@ -1,0 +1,23 @@
+seed (target 4, limit 24, recurrence advance) score (3, 5, 3, 9, 21) presc_max 7 input_loads {"k0_mmww":[5,7,null,null],"rod":[null,null,1,1],"obs":[null,null,1,1]}
+thread 1 new best score (0, 4, 3, 8, 18) presc_max 6 after 229 evals
+thread 0 new best score (0, 4, 3, 8, 18) presc_max 6 after 331 evals
+thread 5 new best score (0, 4, 3, 8, 18) presc_max 6 after 22969 evals
+thread 2 new best score (0, 4, 3, 8, 18) presc_max 6 after 44796 evals
+thread 3 new best score (0, 4, 3, 8, 18) presc_max 6 after 64600 evals
+thread 4 new best score (0, 4, 3, 8, 18) presc_max 6 after 124728 evals
+  fail  1039511  [before_natural] tick : extension failure
+  fail   115631  [before_natural] tick : port n_wmmw expected move +X actual 
+  fail    75275  [before_natural] tick : port k_mmww expected move +X actual 
+  fail    71460  [before_natural] tick : input k_mmww load budget exceeded; m
+  fail    40730  [before_natural] tick : prescribed move at  failed: LoadExce
+  fail    21342  [before_natural] tick : movement failed immovable obstructio
+  fail    14983  [before_natural] tick : permanent identity  at  is not its o
+  fail    10423  [before_natural] tick : prescribed move at  failed: Blocked
+  fail    10351  [before_natural] tick : port n_wmmw expected wait actual mov
+  fail     5384  [before_natural] tick : port k_mmww expected position  actua
+  fail     4238  [before_natural] tick : port obs expected wait actual moved
+  fail     4190  [before_natural] tick : movement failed push limit exceeded 
+done: 1430154 evals (10738 passing) in 240.0s = 5958.9 evals/s; pareto size 1
+  pareto excess=0 max_load=4 count=3 presc_max=6 blocks=8 sum=18 samples80=80/80
+best score (0, 4, 3, 8, 18) (excess 0, max 4, count 3, blocks 8) samples80=80/80
+    - (0,1,17) Piston(dir0 state0)

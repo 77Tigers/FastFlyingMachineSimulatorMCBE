@@ -1,0 +1,220 @@
+{
+ "id": "n2_06",
+ "orders": "both",
+ "own_recurrence": "exact",
+ "search_recurrence": "advance",
+ "seed_own": {
+  "name": "n2_06-pl8hoppair-before_natural",
+  "pass": true,
+  "recurrence": "exact",
+  "orders": [
+   "before_natural",
+   "after_natural"
+  ],
+  "rank": "endogenous",
+  "excess": 0,
+  "max_load": 8,
+  "all_max_load": 8,
+  "count_at_max": 6,
+  "max_prescribed_input_load": 8,
+  "blocks": 15,
+  "sum_load": 132,
+  "input_loads": {
+   "b2_mwmw": [
+    8,
+    null,
+    7,
+    null
+   ]
+  }
+ },
+ "seed_advance": {
+  "name": "n2_06-pl8hoppair-before_natural",
+  "pass": true,
+  "recurrence": "advance",
+  "orders": [
+   "before_natural",
+   "after_natural"
+  ],
+  "rank": "endogenous",
+  "excess": 0,
+  "max_load": 8,
+  "all_max_load": 8,
+  "count_at_max": 6,
+  "max_prescribed_input_load": 8,
+  "blocks": 15,
+  "sum_load": 132,
+  "input_loads": {
+   "b2_mwmw": [
+    8,
+    null,
+    7,
+    null
+   ]
+  }
+ },
+ "ref_endogenous_max": 8,
+ "search_cmd": "contract-search flyers/WIP/experiments/extension_bank_20261012/contracts/n2_06/before_natural.json 180 6 flyers/WIP/experiments/extension_bank_20261012/contracts/n2_06/search_frozen --target 7 --order both --recurrence advance --seed 1 --freeze-bodies",
+ "summary": {
+  "contract": "n2_06-pl8hoppair-before_natural",
+  "seconds": 180.0,
+  "threads": 6,
+  "seed": 1,
+  "orders": [
+   "before_natural",
+   "after_natural"
+  ],
+  "recurrence": "advance",
+  "target": 7,
+  "search_limit": 24,
+  "file_limit": 8,
+  "margin": 2,
+  "evaluations": 330327,
+  "passing_evaluations": 29993,
+  "evals_per_sec": 1835.1,
+  "seed_score": {
+   "excess": 6,
+   "max_load": 8,
+   "count_at_max": 6,
+   "blocks": 15,
+   "sum_load": 132,
+   "max_prescribed_input_load": 8
+  },
+  "inprocess_80_sample_pass": [
+   80
+  ],
+  "best_inprocess_80_sample_pass": 80,
+  "failure_histogram": [
+   [
+    "[before_natural] tick : prescribed move at  failed: Blocked",
+    221186
+   ],
+   [
+    "[before_natural] tick : prescribed move at  failed: LoadExce",
+    53134
+   ],
+   [
+    "[before_natural] tick : permanent identity  at  is not its o",
+    23189
+   ],
+   [
+    "[after_natural] tick : port b_mwmw expected move +X actual d",
+    978
+   ],
+   [
+    "[before_natural] tick : port b_wmwm expected move +X actual ",
+    678
+   ],
+   [
+    "[before_natural] tick : movement failed immovable obstructio",
+    674
+   ],
+   [
+    "[before_natural] tick : extension failure",
+    259
+   ],
+   [
+    "[before_natural] tick : port b_wmwm expected wait actual mov",
+    198
+   ],
+   [
+    "[before_natural] tick : port b_mwmw expected move +X actual ",
+    26
+   ],
+   [
+    "[before_natural] tick : input b_mwmw load budget exceeded; m",
+    8
+   ],
+   [
+    "[after_natural] tick : port b_wmwm expected wait actual move",
+    4
+   ]
+  ],
+  "best": {
+   "file": "best.flyer",
+   "score": [
+    6,
+    8,
+    6,
+    15,
+    132
+   ],
+   "excess": 6,
+   "max_load": 8,
+   "all_max_load": 8,
+   "count_at_max": 6,
+   "max_prescribed_input_load": 8,
+   "blocks": 15,
+   "input_loads": {
+    "b2_mwmw": [
+     8,
+     null,
+     7,
+     null
+    ]
+   },
+   "diff_vs_seed": []
+  },
+  "pareto": [
+   {
+    "file": "pareto_8_8_15.flyer",
+    "max_load": 8,
+    "all_max_load": 8,
+    "count_at_max": 6,
+    "max_prescribed_input_load": 8,
+    "blocks": 15,
+    "sum_load": 132,
+    "input_loads": {
+     "b2_mwmw": [
+      8,
+      null,
+      7,
+      null
+     ]
+    }
+   }
+  ]
+ },
+ "confirm": [
+  {
+   "file": "pareto_8_8_15.flyer",
+   "limit": 8,
+   "blocks": 15,
+   "rust": {
+    "before_advance_single": {
+     "pass": true,
+     "max_load": 8,
+     "all_max_load": 8,
+     "count_at_max": 3,
+     "max_prescribed_input_load": 8,
+     "first_failure": null
+    },
+    "before_advance_samples": "80/80",
+    "before_exact_samples": "80/80",
+    "before_advance_8cycles": true,
+    "after_advance_single": {
+     "pass": true,
+     "max_load": 8,
+     "all_max_load": 8,
+     "count_at_max": 3,
+     "max_prescribed_input_load": 8,
+     "first_failure": null
+    },
+    "after_advance_samples": "80/80",
+    "after_exact_samples": "80/80",
+    "after_advance_8cycles": true
+   },
+   "python": {
+    "before_own": {
+     "single": "PASS",
+     "samples": "80/80 samples"
+    },
+    "after_own": {
+     "single": "PASS",
+     "samples": "80/80 samples"
+    }
+   },
+   "is_seed": true
+  }
+ ]
+}

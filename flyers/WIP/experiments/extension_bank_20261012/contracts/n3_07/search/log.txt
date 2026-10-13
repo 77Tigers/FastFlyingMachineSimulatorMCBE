@@ -1,0 +1,35 @@
+seed (target 6, limit 24, recurrence advance) score (6, 7, 6, 17, 108) presc_max 12 input_loads {"b40_carrier_in":[null,null,10,11,12]}
+thread 2 new best score (6, 7, 6, 16, 108) presc_max 11 after 2817 evals
+thread 0 new best score (6, 7, 6, 16, 108) presc_max 11 after 5083 evals
+thread 0 new best score (6, 7, 6, 15, 108) presc_max 10 after 7952 evals
+thread 4 new best score (6, 7, 6, 16, 108) presc_max 11 after 17037 evals
+thread 1 new best score (6, 7, 6, 16, 108) presc_max 11 after 19958 evals
+thread 1 new best score (6, 7, 6, 15, 108) presc_max 10 after 31476 evals
+thread 5 new best score (6, 7, 6, 16, 108) presc_max 11 after 48516 evals
+thread 2 new best score (6, 7, 6, 15, 108) presc_max 10 after 68000 evals
+thread 3 new best score (6, 7, 6, 16, 108) presc_max 11 after 69989 evals
+thread 4 new best score (6, 7, 6, 15, 108) presc_max 10 after 88717 evals
+thread 0 new best score (6, 7, 6, 14, 108) presc_max 9 after 98510 evals
+thread 4 new best score (6, 7, 6, 14, 108) presc_max 9 after 109947 evals
+thread 1 new best score (6, 7, 6, 14, 108) presc_max 9 after 184836 evals
+thread 5 new best score (6, 7, 6, 15, 108) presc_max 10 after 448766 evals
+thread 3 new best score (6, 7, 6, 15, 108) presc_max 10 after 481073 evals
+thread 3 new best score (6, 7, 6, 14, 108) presc_max 9 after 602230 evals
+  fail   500973  [before_natural] tick : extension failure
+  fail   267808  [before_natural] tick : port b_out expected move +X actual d
+  fail    50961  [before_natural] tick : permanent identity  at  is not its o
+  fail    24574  [before_natural] tick : prescribed move at  failed: LoadExce
+  fail    17347  [before_natural] tick : port b_out expected position  actual
+  fail    12255  [before_natural] tick : port b_carrier_in expected wait actu
+  fail     8231  [before_natural] tick : port b_out expected wait actual move
+  fail     4462  [before_natural] tick : prescribed move at  failed: Blocked
+  fail      346  [after_natural] tick : port b_out expected position  actual 
+  fail      330  [before_natural] tick : movement failed immovable obstructio
+  fail       32  [after_natural] tick : prescribed move at  failed: Blocked
+  fail        2  [before_natural] tick : movement failed push limit exceeded 
+done: 945590 evals (58269 passing) in 240.0s = 3939.9 evals/s; pareto size 1
+  pareto excess=6 max_load=7 count=6 presc_max=9 blocks=14 sum=108 samples80=80/80
+best score (6, 7, 6, 14, 108) (excess 6, max 7, count 6, blocks 14) samples80=80/80
+    - (4,0,14) RedstoneBlock
+    - (4,3,14) RedstoneBlock
+    - (5,2,13) Piston(dir1 sticky state0)

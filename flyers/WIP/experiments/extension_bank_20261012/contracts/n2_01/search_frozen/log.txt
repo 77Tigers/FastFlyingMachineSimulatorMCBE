@@ -1,0 +1,16 @@
+seed (target 5, limit 24, recurrence advance) score (6, 6, 6, 12, 66) presc_max 6 input_loads {"carrier_wwmm":[null,null,6,6],"target_mmww":[5,5,null,null],"next_rb":[null,null,1,1]}
+  fail   422739  [before_natural] tick : extension failure
+  fail   227438  [before_natural] tick : permanent identity  at  is not its o
+  fail   151791  [before_natural] tick : prescribed move at  failed: LoadExce
+  fail    72520  [before_natural] tick : input target_mmww load budget exceed
+  fail    11112  [before_natural] tick : port carrier_wwmm expected wait actu
+  fail     5942  [before_natural] tick : input carrier_wwmm load budget excee
+  fail     2943  [before_natural] tick : prescribed move at  failed: Blocked
+  fail      558  [before_natural] tick : port target_mmww expected move +X ac
+  fail      187  [before_natural] tick : port next_rb expected wait actual mo
+  fail      155  [before_natural] tick : movement failed immovable obstructio
+  fail       25  [before_natural] tick : port target_mmww expected position  
+  fail        2  [before_natural] tick : port carrier_wwmm expected move +X a
+done: 895416 evals (4 passing) in 180.0s = 4974.5 evals/s; pareto size 1
+  pareto excess=6 max_load=6 count=6 presc_max=6 blocks=12 sum=66 samples80=80/80
+best score (6, 6, 6, 12, 66) (excess 6, max 6, count 6, blocks 12) samples80=80/80

@@ -1,0 +1,18 @@
+== best  limit=7 blocks=13
+  rust advance cycles=3 order=before: samples 80/80 max_load=7
+  rust advance cycles=3 order=after: samples 80/80 max_load=7
+  rust advance cycles=8 order=before: samples 80/80 max_load=7
+  rust advance cycles=8 order=after: samples 80/80 max_load=7
+  python bounded env+0 before_natural: PASS max_action=7; input max loads={'redstone_input': [1, 1, None, None], 'k1_input':  | samples: 80/80 samples
+  python bounded env+0 after_natural: PASS max_action=7; input max loads={'redstone_input': [1, 1, None, None], 'k1_input':  | samples: 80/80 samples
+  python bounded env+1 before_natural: PASS max_action=7; input max loads={'redstone_input': [1, 1, None, None], 'k1_input':  | samples: 80/80 samples
+  python bounded env+1 after_natural: PASS max_action=7; input max loads={'redstone_input': [1, 1, None, None], 'k1_input':  | samples: 80/80 samples
+== pareto_7_5_13  limit=7 blocks=13
+  rust advance cycles=3 order=before: samples 80/80 max_load=7
+  rust advance cycles=3 order=after: samples 80/80 max_load=7
+  rust advance cycles=8 order=before: samples 80/80 max_load=7
+  rust advance cycles=8 order=after: samples 80/80 max_load=7
+  python bounded env+0 before_natural: PASS max_action=7; input max loads={'redstone_input': [1, 1, None, None], 'k1_input':  | samples: 80/80 samples
+  python bounded env+0 after_natural: PASS max_action=7; input max loads={'redstone_input': [1, 1, None, None], 'k1_input':  | samples: 80/80 samples
+  python bounded env+1 before_natural: PASS max_action=7; input max loads={'redstone_input': [1, 1, None, None], 'k1_input':  | samples: 80/80 samples
+  python bounded env+1 after_natural: PASS max_action=7; input max loads={'redstone_input': [1, 1, None, None], 'k1_input':  | samples: 80/80 samples

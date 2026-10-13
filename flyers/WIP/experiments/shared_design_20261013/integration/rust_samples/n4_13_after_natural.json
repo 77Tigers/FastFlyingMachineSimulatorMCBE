@@ -1,0 +1,8 @@
+{
+  "name": "n4_13-bank-migration-after_natural",
+  "pass": true,
+  "samples_passed": 80,
+  "samples_total": 80,
+  "max_load": 19,
+  "first_failure": null
+}

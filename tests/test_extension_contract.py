@@ -296,6 +296,31 @@ class ExtensionContractTests(unittest.TestCase):
         self.assertEqual(result["ticks"], 2)
         self.assertEqual(result["input_max_action_loads"], {"left": [1], "right": [1]})
 
+    def test_real_same_tick_inputs_have_independent_caps(self):
+        from fastflyer import Block, Flyer, Kind
+        from extension_contract import _prescribed_driver_path
+        try:
+            driver = _prescribed_driver_path()
+        except ContractError:
+            self.skipTest("build extension-prescribe for integration tests")
+        with tempfile.TemporaryDirectory(dir=ROOT / "target") as temp:
+            base = Path(temp)
+            fixture, script = base / "different_caps.flyer", base / "drive.txt"
+            flyer = Flyer()
+            for x in (0, 10, 11):
+                flyer.set((x, 0, 0), Block(Kind.SMOOTH_STONE))
+            flyer.save(fixture)
+            script.write_text("0 0 0 0 1\n0 10 0 0 2\n", encoding="utf-8")
+            spec = Contract("independent-caps", fixture, 2, 1, 1,
+                            (Port("single", "input", (0, 0, 0), "m", (1,), (0,)),
+                             Port("pair", "input", (10, 0, 0), "m", (2,), (0,))),
+                            prescribed_script=script, prescribed_order="before_natural",
+                            prescribed=(PrescribedEvent(0, (0, 0, 0), 1),
+                                        PrescribedEvent(0, (10, 0, 0), 2)))
+            result = run_case(spec, driver, None)
+        self.assertTrue(result["passed"], result["diagnostic"])
+        self.assertEqual(result["input_max_action_loads"], {"single": [1], "pair": [2]})
+
     def test_real_ordered_prescribed_inputs_can_reuse_vacated_cell(self):
         from fastflyer import Block, Flyer, Kind
         from extension_contract import _prescribed_driver_path
@@ -486,6 +511,10 @@ class ExtensionContractTests(unittest.TestCase):
         self.assertIn("actor=[0, 0, -1]", failure)
         self.assertEqual(checker.input_max_action_loads["feed"], [2])
         self.assertEqual(checker.whole_assembly_max_action, 2)
+        self.assertEqual(checker.first_failure["code"], "input_budget_exceeded")
+        self.assertEqual(checker.first_failure["expected"], 1)
+        self.assertEqual(checker.first_failure["actual"]["load"], 2)
+        self.assertEqual(checker.first_failure["actual"]["sources"], [[0, 0, 0], [1, 0, 0]])
 
     def test_input_budget_is_checked_only_for_the_containing_action(self):
         initial = {"initial": [[0, 0, 0, 1], [10, 0, 0, 1], [11, 0, 0, 1]],
@@ -530,6 +559,8 @@ class ExtensionContractTests(unittest.TestCase):
         checker = CaseChecker(contract(
             Port("out", "output", (0, 0, 0), "w", None, None)), trace0())
         self.assertIn("port out expected wait", checker.consume(moving_tick(), 0))
+        self.assertEqual(checker.first_failure["code"], "port_motion_mismatch")
+        self.assertEqual(checker.first_failure["port"], "out")
 
     def test_permanent_deletion_is_rejected(self):
         checker = CaseChecker(contract(

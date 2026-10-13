@@ -1,0 +1,52 @@
+{
+  "source_flyer": "flyers/bank/pl8/mirrored_chains_shared_mwmw.flyer",
+  "source_extension_bank_contract": "flyers/extension_bank/n2/n2_04/before_natural.json",
+  "source_mask_cells": 10,
+  "frozen_required_cells": 10,
+  "frozen_subset": "all",
+  "supported_orders": [
+    "before_natural"
+  ],
+  "contacts_are": "observed named-port relative offsets at pre-even boundaries; they assert geometry, not power causation",
+  "notes": "Rotated PL8 occurrence; after_natural is a known negative: at tick 4 the natural target push drags the observer before its prescribed stroke.",
+  "measured_provenance": {
+    "k0_mmww": [
+      "internal",
+      "supplied",
+      null,
+      null
+    ],
+    "rod": [
+      null,
+      null,
+      "supplied",
+      "supplied"
+    ],
+    "obs": [
+      null,
+      null,
+      "supplied",
+      "supplied"
+    ],
+    "n_wmmw": [
+      null,
+      "supplied",
+      "internal",
+      null
+    ]
+  },
+  "script_first_period_order": [
+    [],
+    [
+      "k0_mmww"
+    ],
+    [
+      "rod",
+      "obs"
+    ],
+    [
+      "rod",
+      "obs"
+    ]
+  ]
+}

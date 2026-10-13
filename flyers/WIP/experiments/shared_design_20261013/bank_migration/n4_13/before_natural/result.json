@@ -1,0 +1,3612 @@
+{
+  "name": "n4_13-bank-migration-before_natural",
+  "passed": true,
+  "first_failure": null,
+  "plan": {
+    "verdict": "consistent",
+    "name": "n4_13-bank-migration-before_natural",
+    "message": "CONSISTENT: sparse contact obligations only; power, states, connectivity, intermediate-order safety and routing unresolved"
+  },
+  "case": [
+    {
+      "rng": 0,
+      "phase_x": 0,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.054352,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 0,
+      "phase_x": 0,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.046762,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 0,
+      "phase_x": 0,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.075088,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 0,
+      "phase_x": 0,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.04794,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 0,
+      "phase_x": 7,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.067181,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 0,
+      "phase_x": 7,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.071652,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 0,
+      "phase_x": 7,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.073083,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 0,
+      "phase_x": 7,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.08582,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 0,
+      "phase_x": 8,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.093877,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 0,
+      "phase_x": 8,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.04709,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 0,
+      "phase_x": 8,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.063871,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 0,
+      "phase_x": 8,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.558188,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 0,
+      "phase_x": 15,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.065837,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 0,
+      "phase_x": 15,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.090242,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 0,
+      "phase_x": 15,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.537271,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 0,
+      "phase_x": 15,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.091164,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 1,
+      "phase_x": 0,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.064854,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 1,
+      "phase_x": 0,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.077767,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 1,
+      "phase_x": 0,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.092942,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 1,
+      "phase_x": 0,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.591997,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 1,
+      "phase_x": 7,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.07998,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 1,
+      "phase_x": 7,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.071573,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 1,
+      "phase_x": 7,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.05553,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 1,
+      "phase_x": 7,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.079711,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 1,
+      "phase_x": 8,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.052907,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 1,
+      "phase_x": 8,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.069355,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 1,
+      "phase_x": 8,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.053622,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 1,
+      "phase_x": 8,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.05258,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 1,
+      "phase_x": 15,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.063533,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 1,
+      "phase_x": 15,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.093485,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 1,
+      "phase_x": 15,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.099701,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 1,
+      "phase_x": 15,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.05453,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 2,
+      "phase_x": 0,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.053648,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 2,
+      "phase_x": 0,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.070361,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 2,
+      "phase_x": 0,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.074793,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 2,
+      "phase_x": 0,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.052863,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 2,
+      "phase_x": 7,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.079892,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 2,
+      "phase_x": 7,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.052258,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 2,
+      "phase_x": 7,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.074601,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 2,
+      "phase_x": 7,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.525463,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 2,
+      "phase_x": 8,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.094939,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 2,
+      "phase_x": 8,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.097034,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 2,
+      "phase_x": 8,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.092905,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 2,
+      "phase_x": 8,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.099072,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 2,
+      "phase_x": 15,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.092539,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 2,
+      "phase_x": 15,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.053047,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 2,
+      "phase_x": 15,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.07852,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 2,
+      "phase_x": 15,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.048693,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 5,
+      "phase_x": 0,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.074633,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 5,
+      "phase_x": 0,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.087723,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 5,
+      "phase_x": 0,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.05607,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 5,
+      "phase_x": 0,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.071203,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 5,
+      "phase_x": 7,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.059559,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 5,
+      "phase_x": 7,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.052876,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 5,
+      "phase_x": 7,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.065504,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 5,
+      "phase_x": 7,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.04715,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 5,
+      "phase_x": 8,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.069274,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 5,
+      "phase_x": 8,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.055483,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 5,
+      "phase_x": 8,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.054952,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 5,
+      "phase_x": 8,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.053752,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 5,
+      "phase_x": 15,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.054003,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 5,
+      "phase_x": 15,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.051606,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 5,
+      "phase_x": 15,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.051791,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 5,
+      "phase_x": 15,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.078186,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 42,
+      "phase_x": 0,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.052089,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 42,
+      "phase_x": 0,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.073969,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 42,
+      "phase_x": 0,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.054551,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 42,
+      "phase_x": 0,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.063078,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 42,
+      "phase_x": 7,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.063132,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 42,
+      "phase_x": 7,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.072101,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 42,
+      "phase_x": 7,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.557838,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 42,
+      "phase_x": 7,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.078126,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 42,
+      "phase_x": 8,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.086563,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 42,
+      "phase_x": 8,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.054746,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 42,
+      "phase_x": 8,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.062709,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 42,
+      "phase_x": 8,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.085072,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 42,
+      "phase_x": 15,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.55414,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 42,
+      "phase_x": 15,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.081738,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 42,
+      "phase_x": 15,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.05111,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    },
+    {
+      "rng": 42,
+      "phase_x": 15,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 36,
+      "elapsed_seconds": 0.051006,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "target_in": [
+          20,
+          19,
+          null,
+          19,
+          18,
+          null
+        ],
+        "piston4_in": [
+          20,
+          19,
+          1,
+          19,
+          null,
+          null
+        ],
+        "piston6_in": [
+          20,
+          null,
+          null,
+          19,
+          18,
+          1
+        ],
+        "piston11_in": [
+          20,
+          19,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "whole_assembly_max_action": 20
+    }
+  ]
+}

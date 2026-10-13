@@ -1,0 +1,16 @@
+seed (target 11, limit 24, recurrence bounded) score (18, 12, 18, 25, 372) presc_max 7 input_loads {"b23_in":[7,8,null,null,6]}
+  fail  3258523  [before_natural] initial permanent identity outside boundary
+  fail   121500  [before_natural] tick : permanent identity  at  outside tran
+  fail   119885  [before_natural] tick : prescribed move at  failed: LoadExce
+  fail    63316  [before_natural] tick : movement failed immovable obstructio
+  fail    42976  [before_natural] tick : extension failure
+  fail    39455  [before_natural] tick : prescribed move at  failed: Blocked
+  fail    34625  [before_natural] tick : port b_out expected move +X actual d
+  fail    20734  [before_natural] tick : input b_in load budget exceeded; mov
+  fail    17435  [before_natural] tick : port b_out expected wait actual move
+  fail     2206  [before_natural] tick : port b_in expected move +X actual di
+  fail      219  [before_natural] tick : port b_out expected position  actual
+  fail      153  [after_natural] tick : extension failure
+done: 3865490 evals (144295 passing) in 180.0s = 21474.6 evals/s; pareto size 1
+  pareto excess=18 max_load=12 count=18 presc_max=7 blocks=25 sum=372 samples80=80/80
+best score (18, 12, 18, 25, 372) (excess 18, max 12, count 18, blocks 25) samples80=80/80

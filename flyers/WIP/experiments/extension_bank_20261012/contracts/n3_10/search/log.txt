@@ -1,0 +1,39 @@
+seed (target 11, limit 24, recurrence bounded) score (18, 12, 18, 25, 372) presc_max 7 input_loads {"b23_in":[7,8,null,null,6]}
+thread 0 new best score (18, 12, 18, 24, 366) presc_max 6 after 10231 evals
+thread 4 new best score (18, 12, 18, 24, 366) presc_max 6 after 24050 evals
+thread 3 new best score (18, 12, 18, 24, 366) presc_max 6 after 40494 evals
+thread 4 new best score (18, 12, 18, 23, 360) presc_max 5 after 43733 evals
+thread 1 new best score (18, 12, 18, 25, 370) presc_max 7 after 43845 evals
+thread 1 new best score (18, 12, 18, 24, 378) presc_max 5 after 52890 evals
+thread 3 new best score (18, 12, 18, 24, 364) presc_max 6 after 95707 evals
+thread 5 new best score (18, 12, 18, 24, 366) presc_max 6 after 133004 evals
+thread 1 new best score (18, 12, 18, 24, 366) presc_max 6 after 147587 evals
+thread 2 new best score (18, 12, 18, 24, 366) presc_max 6 after 197212 evals
+thread 5 new best score (18, 12, 18, 24, 364) presc_max 6 after 468512 evals
+thread 3 new best score (18, 12, 18, 23, 360) presc_max 5 after 533281 evals
+thread 1 new best score (18, 12, 18, 24, 364) presc_max 6 after 549890 evals
+thread 5 new best score (18, 12, 18, 23, 360) presc_max 5 after 568619 evals
+thread 2 new best score (18, 12, 18, 24, 364) presc_max 6 after 611962 evals
+thread 2 new best score (18, 12, 18, 23, 360) presc_max 5 after 1046300 evals
+thread 0 new best score (18, 12, 18, 24, 364) presc_max 6 after 1411638 evals
+thread 0 new best score (18, 12, 18, 23, 360) presc_max 5 after 1771950 evals
+thread 1 new best score (18, 12, 18, 23, 360) presc_max 5 after 3471099 evals
+  fail  4241238  [before_natural] initial permanent identity outside boundary
+  fail   316738  [before_natural] tick : port b_out expected move +X actual d
+  fail    61440  [before_natural] tick : movement failed immovable obstructio
+  fail    49231  [before_natural] tick : extension failure
+  fail    45589  [before_natural] tick : permanent identity  at  outside tran
+  fail    39158  [before_natural] tick : port b_in expected move +X actual di
+  fail    30758  [before_natural] tick : port b_out expected wait actual move
+  fail    26009  [before_natural] tick : port b_out expected position  actual
+  fail    21865  [before_natural] tick : prescribed move at  failed: LoadExce
+  fail    21487  [before_natural] tick : input b_in load budget exceeded; mov
+  fail    20037  [before_natural] tick : prescribed move at  failed: Blocked
+  fail     3127  [before_natural] tick : port b_in expected wait actual moved
+done: 4957410 evals (77502 passing) in 240.0s = 20655.3 evals/s; pareto size 1
+  pareto excess=18 max_load=12 count=18 presc_max=5 blocks=23 sum=360 samples80=80/80
+best score (18, 12, 18, 23, 360) (excess 18, max 12, count 18, blocks 23) samples80=80/80
+    - (1,2,13) RedstoneBlock
+    - (2,0,13) Piston(dir1 sticky state0)
+    - (2,3,13) Piston(dir0 state0)
+    + (3,3,13) Piston(dir0 state0)

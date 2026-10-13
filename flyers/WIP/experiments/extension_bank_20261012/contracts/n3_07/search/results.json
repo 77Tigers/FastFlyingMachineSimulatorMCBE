@@ -1,0 +1,232 @@
+{
+ "id": "n3_07",
+ "orders": "both",
+ "own_recurrence": "exact",
+ "search_recurrence": "advance",
+ "seed_own": {
+  "name": "n3_07-before_natural",
+  "pass": true,
+  "recurrence": "exact",
+  "orders": [
+   "before_natural",
+   "after_natural"
+  ],
+  "rank": "endogenous",
+  "excess": 0,
+  "max_load": 7,
+  "all_max_load": 12,
+  "count_at_max": 6,
+  "max_prescribed_input_load": 12,
+  "blocks": 17,
+  "sum_load": 108,
+  "input_loads": {
+   "b40_carrier_in": [
+    null,
+    null,
+    10,
+    11,
+    12
+   ]
+  }
+ },
+ "seed_advance": {
+  "name": "n3_07-before_natural",
+  "pass": true,
+  "recurrence": "advance",
+  "orders": [
+   "before_natural",
+   "after_natural"
+  ],
+  "rank": "endogenous",
+  "excess": 0,
+  "max_load": 7,
+  "all_max_load": 12,
+  "count_at_max": 6,
+  "max_prescribed_input_load": 12,
+  "blocks": 17,
+  "sum_load": 108,
+  "input_loads": {
+   "b40_carrier_in": [
+    null,
+    null,
+    10,
+    11,
+    12
+   ]
+  }
+ },
+ "ref_endogenous_max": 7,
+ "search_cmd": "contract-search flyers/WIP/experiments/extension_bank_20261012/contracts/n3_07/before_natural.json 240 6 flyers/WIP/experiments/extension_bank_20261012/contracts/n3_07/search --target 6 --order both --recurrence advance --seed 1",
+ "summary": {
+  "contract": "n3_07-before_natural",
+  "seconds": 240.0,
+  "threads": 6,
+  "seed": 1,
+  "orders": [
+   "before_natural",
+   "after_natural"
+  ],
+  "recurrence": "advance",
+  "target": 6,
+  "search_limit": 24,
+  "file_limit": 12,
+  "margin": 2,
+  "evaluations": 945590,
+  "passing_evaluations": 58269,
+  "evals_per_sec": 3939.9,
+  "seed_score": {
+   "excess": 6,
+   "max_load": 7,
+   "count_at_max": 6,
+   "blocks": 17,
+   "sum_load": 108,
+   "max_prescribed_input_load": 12
+  },
+  "inprocess_80_sample_pass": [
+   80
+  ],
+  "best_inprocess_80_sample_pass": 80,
+  "failure_histogram": [
+   [
+    "[before_natural] tick : extension failure",
+    500973
+   ],
+   [
+    "[before_natural] tick : port b_out expected move +X actual d",
+    267808
+   ],
+   [
+    "[before_natural] tick : permanent identity  at  is not its o",
+    50961
+   ],
+   [
+    "[before_natural] tick : prescribed move at  failed: LoadExce",
+    24574
+   ],
+   [
+    "[before_natural] tick : port b_out expected position  actual",
+    17347
+   ],
+   [
+    "[before_natural] tick : port b_carrier_in expected wait actu",
+    12255
+   ],
+   [
+    "[before_natural] tick : port b_out expected wait actual move",
+    8231
+   ],
+   [
+    "[before_natural] tick : prescribed move at  failed: Blocked",
+    4462
+   ],
+   [
+    "[after_natural] tick : port b_out expected position  actual ",
+    346
+   ],
+   [
+    "[before_natural] tick : movement failed immovable obstructio",
+    330
+   ],
+   [
+    "[after_natural] tick : prescribed move at  failed: Blocked",
+    32
+   ],
+   [
+    "[before_natural] tick : movement failed push limit exceeded ",
+    2
+   ]
+  ],
+  "best": {
+   "file": "best.flyer",
+   "score": [
+    6,
+    7,
+    6,
+    14,
+    108
+   ],
+   "excess": 6,
+   "max_load": 7,
+   "all_max_load": 9,
+   "count_at_max": 6,
+   "max_prescribed_input_load": 9,
+   "blocks": 14,
+   "input_loads": {
+    "b40_carrier_in": [
+     null,
+     null,
+     7,
+     8,
+     9
+    ]
+   },
+   "diff_vs_seed": [
+    "- (4,0,14) RedstoneBlock",
+    "- (4,3,14) RedstoneBlock",
+    "- (5,2,13) Piston(dir1 sticky state0)"
+   ]
+  },
+  "pareto": [
+   {
+    "file": "pareto_7_9_14.flyer",
+    "max_load": 7,
+    "all_max_load": 9,
+    "count_at_max": 6,
+    "max_prescribed_input_load": 9,
+    "blocks": 14,
+    "sum_load": 108,
+    "input_loads": {
+     "b40_carrier_in": [
+      null,
+      null,
+      7,
+      8,
+      9
+     ]
+    }
+   }
+  ]
+ },
+ "confirm": [
+  {
+   "file": "pareto_7_9_14.flyer",
+   "limit": 12,
+   "blocks": 14,
+   "rust": {
+    "before_advance_single": {
+     "pass": true,
+     "max_load": 7,
+     "all_max_load": 9,
+     "count_at_max": 3,
+     "max_prescribed_input_load": 9,
+     "first_failure": null
+    },
+    "before_advance_samples": "80/80",
+    "before_exact_samples": "80/80",
+    "before_advance_8cycles": true,
+    "after_advance_single": {
+     "pass": true,
+     "max_load": 7,
+     "all_max_load": 9,
+     "count_at_max": 3,
+     "max_prescribed_input_load": 9,
+     "first_failure": null
+    },
+    "after_advance_samples": "80/80",
+    "after_exact_samples": "80/80",
+    "after_advance_8cycles": true
+   },
+   "python": {
+    "before_own": {
+     "single": "PASS",
+     "samples": "80/80 samples"
+    },
+    "after_own": {
+     "single": "PASS",
+     "samples": "80/80 samples"
+    }
+   },
+   "is_seed": false
+  }
+ ]
+}

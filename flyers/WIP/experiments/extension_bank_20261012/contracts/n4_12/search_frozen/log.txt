@@ -1,0 +1,10 @@
+seed (target 20, limit 24, recurrence advance) score (6, 21, 6, 40, 468) presc_max 22 input_loads {"carrier_in":[null,null,19,20,21,22]}
+  fail    59157  [before_natural] tick : extension failure
+  fail    11855  [before_natural] tick : prescribed move at  failed: LoadExce
+  fail     2601  [before_natural] tick : permanent identity  at  is not its o
+  fail     1757  [before_natural] tick : prescribed move at  failed: Blocked
+  fail        5  [before_natural] tick : input carrier_in load budget exceede
+  fail        4  [before_natural] tick : movement failed immovable obstructio
+done: 103339 evals (27960 passing) in 180.0s = 574.0 evals/s; pareto size 1
+  pareto excess=6 max_load=21 count=6 presc_max=22 blocks=40 sum=468 samples80=80/80
+best score (6, 21, 6, 40, 468) (excess 6, max 21, count 6, blocks 40) samples80=80/80

@@ -1,0 +1,1 @@
+{"neighbourhood_tried":407,"neighbourhood_passed":98,"pareto":[{"file":"pareto_7_6_14.flyer","max_load":7,"count_at_max":6,"max_prescribed_input_load":6,"blocks":14,"sum_load":168,"input_loads":{"redstone_input":[1,1,null,null],"k1_input":[null,null,6,6]}}]}

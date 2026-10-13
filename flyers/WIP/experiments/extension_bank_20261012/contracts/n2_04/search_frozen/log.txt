@@ -1,0 +1,16 @@
+seed (target 4, limit 24, recurrence advance) score (3, 5, 3, 9, 21) presc_max 7 input_loads {"k0_mmww":[5,7,null,null],"rod":[null,null,1,1],"obs":[null,null,1,1]}
+  fail   685473  [before_natural] tick : extension failure
+  fail   142553  [before_natural] tick : input k_mmww load budget exceeded; m
+  fail    37075  [before_natural] tick : permanent identity  at  is not its o
+  fail    20074  [before_natural] tick : prescribed move at  failed: LoadExce
+  fail    18662  [before_natural] tick : port k_mmww expected move +X actual 
+  fail    11632  [before_natural] tick : movement failed push limit exceeded 
+  fail     6427  [before_natural] tick : movement failed immovable obstructio
+  fail     1853  [before_natural] tick : prescribed move at  failed: Blocked
+  fail     1461  [before_natural] tick : port n_wmmw expected move +X actual 
+  fail      354  [before_natural] tick : port obs expected wait actual moved
+  fail      246  [before_natural] tick : port k_mmww expected wait actual mov
+  fail      231  [before_natural] tick : port n_wmmw expected wait actual mov
+done: 926141 evals (13 passing) in 180.0s = 5145.2 evals/s; pareto size 1
+  pareto excess=3 max_load=5 count=3 presc_max=7 blocks=9 sum=21 samples80=80/80
+best score (3, 5, 3, 9, 21) (excess 3, max 5, count 3, blocks 9) samples80=80/80

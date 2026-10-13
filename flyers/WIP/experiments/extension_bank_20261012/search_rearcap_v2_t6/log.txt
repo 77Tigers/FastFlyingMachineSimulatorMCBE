@@ -1,0 +1,23 @@
+seed (target 6, limit 24, recurrence advance) score (6, 7, 6, 14, 168) presc_max 6 input_loads {"redstone_input":[1,1,null,null],"k1_input":[null,null,6,6]}
+thread 0 new best score (6, 7, 6, 13, 156) presc_max 5 after 1689 evals
+thread 1 new best score (6, 7, 6, 13, 156) presc_max 5 after 2209 evals
+thread 2 new best score (6, 7, 6, 13, 156) presc_max 5 after 17607 evals
+thread 3 new best score (6, 7, 6, 13, 156) presc_max 5 after 23636 evals
+thread 4 new best score (6, 7, 6, 13, 156) presc_max 5 after 82640 evals
+thread 5 new best score (6, 7, 6, 13, 156) presc_max 5 after 133339 evals
+  fail   400965  [before_natural] tick : prescribed move at  failed: LoadExce
+  fail   281643  [before_natural] tick : extension failure
+  fail   177372  [before_natural] tick : port k_output expected move +X actua
+  fail    79312  [before_natural] tick : permanent identity  at  is not its o
+  fail    37337  [before_natural] tick : port k_input expected move +X actual
+  fail    33351  [before_natural] tick : port k_input expected wait actual mo
+  fail    29250  [before_natural] tick : port n_output expected wait actual m
+  fail    22105  [before_natural] tick : port n_output expected move +X actua
+  fail    11374  [before_natural] tick : port k_output expected position  act
+  fail    11303  [before_natural] tick : input k_input load budget exceeded; 
+  fail     7680  [after_natural] tick : prescribed move at  failed: MissingIn
+  fail     4912  [before_natural] tick : movement failed immovable obstructio
+done: 1142216 evals (40554 passing) in 300.0s = 3807.2 evals/s; pareto size 1
+  pareto excess=6 max_load=7 count=6 presc_max=5 blocks=13 sum=156 samples80=80/80
+best score (6, 7, 6, 13, 156) (excess 6, max 7, count 6, blocks 13) samples80=80/80
+    - (3,2,17) Piston(dir0 state0)

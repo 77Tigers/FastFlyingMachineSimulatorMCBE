@@ -1,0 +1,141 @@
+{
+  "provenance": {
+    "k0_mmww": [
+      "internal",
+      "supplied",
+      null,
+      null
+    ],
+    "rod": [
+      null,
+      null,
+      "supplied",
+      "supplied"
+    ],
+    "obs": [
+      null,
+      null,
+      "supplied",
+      "supplied"
+    ],
+    "n_wmmw": [
+      null,
+      "supplied",
+      "internal",
+      null
+    ]
+  },
+  "contacts": [
+    {
+      "name": "carrier_target_offset_at_push",
+      "a": "k0_mmww",
+      "b": "n_wmmw",
+      "slots": [
+        2
+      ],
+      "relation": "offset",
+      "offset": [
+        1,
+        -1,
+        0
+      ],
+      "required": true
+    }
+  ],
+  "supplied_order": [
+    [],
+    [
+      "k0_mmww"
+    ],
+    [
+      "rod",
+      "obs"
+    ],
+    [
+      "rod",
+      "obs"
+    ]
+  ],
+  "required_cells": [
+    {
+      "at": [
+        0,
+        0,
+        15
+      ],
+      "cell": 9
+    },
+    {
+      "at": [
+        0,
+        0,
+        16
+      ],
+      "cell": 2
+    },
+    {
+      "at": [
+        0,
+        1,
+        15
+      ],
+      "cell": 2
+    },
+    {
+      "at": [
+        0,
+        1,
+        16
+      ],
+      "cell": 2
+    },
+    {
+      "at": [
+        0,
+        1,
+        17
+      ],
+      "cell": 9
+    },
+    {
+      "at": [
+        1,
+        1,
+        15
+      ],
+      "cell": 10
+    },
+    {
+      "at": [
+        2,
+        0,
+        15
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        2,
+        0,
+        17
+      ],
+      "cell": 168
+    },
+    {
+      "at": [
+        2,
+        1,
+        15
+      ],
+      "cell": 2345
+    },
+    {
+      "at": [
+        3,
+        0,
+        16
+      ],
+      "cell": 423
+    }
+  ]
+}

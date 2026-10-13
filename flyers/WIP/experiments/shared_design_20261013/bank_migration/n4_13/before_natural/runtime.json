@@ -1,0 +1,217 @@
+{
+  "provenance": {
+    "target_in": [
+      "supplied",
+      "internal",
+      null,
+      "supplied",
+      "internal",
+      null
+    ],
+    "target_out": [
+      "supplied",
+      "internal",
+      null,
+      "supplied",
+      "internal",
+      null
+    ],
+    "piston4_in": [
+      "supplied",
+      "internal",
+      "supplied",
+      "supplied",
+      null,
+      null
+    ],
+    "piston6_in": [
+      "supplied",
+      null,
+      null,
+      "supplied",
+      "internal",
+      "supplied"
+    ],
+    "piston11_in": [
+      "supplied",
+      "internal",
+      "supplied",
+      null,
+      null,
+      "supplied"
+    ]
+  },
+  "contacts": [
+    {
+      "name": "target_input_output_alias",
+      "a": "target_in",
+      "b": "target_out",
+      "slots": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "relation": "same",
+      "required": true
+    }
+  ],
+  "supplied_order": [
+    [
+      "target_in"
+    ],
+    [],
+    [
+      "piston4_in",
+      "piston11_in"
+    ],
+    [
+      "target_in"
+    ],
+    [],
+    [
+      "piston6_in",
+      "piston11_in"
+    ]
+  ],
+  "required_cells": [
+    {
+      "at": [
+        0,
+        3,
+        4
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        0,
+        3,
+        5
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        0,
+        3,
+        6
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        1,
+        3,
+        4
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        1,
+        4,
+        4
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        2,
+        4,
+        4
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        3,
+        4,
+        4
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        3,
+        5,
+        4
+      ],
+      "cell": 103
+    },
+    {
+      "at": [
+        4,
+        1,
+        4
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        4,
+        2,
+        4
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        4,
+        3,
+        4
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        4,
+        4,
+        4
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        4,
+        4,
+        5
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        5,
+        1,
+        4
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        5,
+        4,
+        4
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        6,
+        1,
+        4
+      ],
+      "cell": 6
+    },
+    {
+      "at": [
+        6,
+        4,
+        4
+      ],
+      "cell": 1
+    }
+  ]
+}

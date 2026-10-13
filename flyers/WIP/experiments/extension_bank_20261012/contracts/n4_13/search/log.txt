@@ -1,0 +1,50 @@
+seed (target 18, limit 24, recurrence advance) score (6, 19, 6, 20, 222) presc_max 20 input_loads {"target_in":[20,19,null,19,18,null],"piston4_in":[20,19,1,19,null,null],"piston6_in":[20,null,null,19,18,1],"piston11_in":[20,19,1,null,null,1]}
+thread 4 new best score (0, 18, 6, 19, 210) presc_max 19 after 77 evals
+thread 2 new best score (0, 18, 6, 19, 210) presc_max 19 after 141 evals
+thread 1 new best score (0, 18, 6, 19, 210) presc_max 19 after 143 evals
+thread 0 new best score (0, 18, 6, 19, 210) presc_max 19 after 164 evals
+thread 3 new best score (0, 18, 6, 19, 210) presc_max 19 after 229 evals
+thread 1 new best score (0, 17, 6, 18, 198) presc_max 18 after 271 evals
+thread 2 new best score (0, 17, 6, 18, 198) presc_max 18 after 303 evals
+thread 4 new best score (0, 17, 6, 18, 198) presc_max 18 after 325 evals
+thread 3 new best score (0, 17, 6, 18, 198) presc_max 18 after 506 evals
+thread 4 new best score (0, 16, 6, 17, 186) presc_max 17 after 752 evals
+thread 1 new best score (0, 16, 6, 17, 186) presc_max 17 after 766 evals
+thread 3 new best score (0, 16, 6, 17, 186) presc_max 17 after 794 evals
+thread 2 new best score (0, 16, 6, 17, 186) presc_max 17 after 945 evals
+thread 0 new best score (0, 17, 6, 18, 198) presc_max 18 after 1556 evals
+thread 0 new best score (0, 16, 6, 17, 186) presc_max 17 after 4281 evals
+thread 2 new best score (0, 15, 6, 16, 174) presc_max 16 after 12060 evals
+thread 1 new best score (0, 15, 6, 16, 174) presc_max 16 after 22232 evals
+thread 5 new best score (0, 18, 6, 19, 210) presc_max 19 after 28323 evals
+thread 5 new best score (0, 17, 6, 18, 198) presc_max 18 after 28430 evals
+thread 0 new best score (0, 15, 6, 16, 174) presc_max 16 after 45012 evals
+thread 3 new best score (0, 15, 6, 16, 174) presc_max 16 after 68035 evals
+thread 5 new best score (0, 16, 6, 17, 186) presc_max 17 after 77132 evals
+thread 4 new best score (0, 15, 6, 16, 174) presc_max 16 after 110770 evals
+thread 5 new best score (0, 15, 6, 16, 174) presc_max 16 after 607173 evals
+  fail   423794  [before_natural] tick : port piston_in expected move +X actu
+  fail   373625  [before_natural] tick : prescribed move at  failed: Blocked
+  fail   110325  [before_natural] tick : permanent identity  at  is not its o
+  fail    91632  [before_natural] tick : port target_in expected move +X actu
+  fail    74098  [before_natural] tick : extension failure
+  fail    60234  [before_natural] tick : prescribed move at  failed: LoadExce
+  fail     6240  [before_natural] tick : port piston_in expected wait actual 
+  fail     2335  [before_natural] tick : port piston_in expected position  ac
+  fail     2046  [before_natural] tick : input target_in load budget exceeded
+  fail      615  [before_natural] tick : port target_in expected position  ac
+  fail      576  [after_natural] tick : prescribed move at  failed: MissingIn
+  fail      529  [after_natural] tick : prescribed move at  failed: Blocked
+done: 1317255 evals (171016 passing) in 240.0s = 5488.5 evals/s; pareto size 1
+  pareto excess=0 max_load=15 count=6 presc_max=16 blocks=16 sum=174 samples80=80/80
+best score (0, 15, 6, 16, 174) (excess 0, max 15, count 6, blocks 16) samples80=80/80
+    - (0,3,5) Slime
+    - (0,3,6) Slime
+    + (0,4,4) Slime
+    - (1,3,4) Slime
+    - (4,1,4) Slime
+    - (4,2,4) Slime
+    + (5,2,4) Slime
+    + (5,3,4) Slime
+    - (5,4,4) Slime
+    - (6,4,4) Slime

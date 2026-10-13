@@ -1,0 +1,13 @@
+seed (target 6, limit 24, recurrence advance) score (6, 7, 6, 17, 108) presc_max 12 input_loads {"b40_carrier_in":[null,null,10,11,12]}
+  fail   318112  [before_natural] tick : extension failure
+  fail    59867  [before_natural] tick : prescribed move at  failed: LoadExce
+  fail    29400  [before_natural] tick : permanent identity  at  is not its o
+  fail     8247  [before_natural] tick : prescribed move at  failed: Blocked
+  fail     1636  [before_natural] tick : port b_carrier_in expected wait actu
+  fail      566  [before_natural] tick : port b_out expected position  actual
+  fail      306  [before_natural] tick : movement failed immovable obstructio
+  fail      187  [before_natural] tick : port b_out expected move +X actual d
+  fail        1  [before_natural] tick : port b_out expected wait actual move
+done: 495264 evals (76942 passing) in 180.0s = 2751.4 evals/s; pareto size 1
+  pareto excess=6 max_load=7 count=6 presc_max=12 blocks=17 sum=108 samples80=80/80
+best score (6, 7, 6, 17, 108) (excess 6, max 7, count 6, blocks 17) samples80=80/80

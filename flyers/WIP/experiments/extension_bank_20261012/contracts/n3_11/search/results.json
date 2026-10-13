@@ -1,0 +1,258 @@
+{
+ "id": "n3_11",
+ "orders": "both",
+ "own_recurrence": "bounded",
+ "search_recurrence": "bounded",
+ "seed_own": {
+  "name": "n3_11-before_natural",
+  "pass": true,
+  "recurrence": "bounded",
+  "orders": [
+   "before_natural",
+   "after_natural"
+  ],
+  "rank": "endogenous",
+  "excess": 0,
+  "max_load": 14,
+  "all_max_load": 14,
+  "count_at_max": 30,
+  "max_prescribed_input_load": 13,
+  "blocks": 53,
+  "sum_load": 726,
+  "input_loads": {
+   "b20_in": [
+    13,
+    13,
+    null,
+    13,
+    null
+   ],
+   "b30_in": [
+    13,
+    14,
+    null,
+    null,
+    12
+   ]
+  }
+ },
+ "seed_advance": {
+  "name": "n3_11-before_natural",
+  "pass": false,
+  "first_failure": "[before_natural] tick 9: permanent identity 13 at (8,3,7) is not its origin advanced by 3 at cycle 1 boundary"
+ },
+ "ref_endogenous_max": 14,
+ "search_cmd": "contract-search flyers/WIP/experiments/extension_bank_20261012/contracts/n3_11/before_natural.json 240 6 flyers/WIP/experiments/extension_bank_20261012/contracts/n3_11/search --target 13 --order both --recurrence bounded --seed 1",
+ "summary": {
+  "contract": "n3_11-before_natural",
+  "seconds": 240.01,
+  "threads": 6,
+  "seed": 1,
+  "orders": [
+   "before_natural",
+   "after_natural"
+  ],
+  "recurrence": "bounded",
+  "target": 13,
+  "search_limit": 24,
+  "file_limit": 14,
+  "margin": 2,
+  "evaluations": 1795696,
+  "passing_evaluations": 65343,
+  "evals_per_sec": 7481.7,
+  "seed_score": {
+   "excess": 30,
+   "max_load": 14,
+   "count_at_max": 30,
+   "blocks": 53,
+   "sum_load": 726,
+   "max_prescribed_input_load": 13
+  },
+  "inprocess_80_sample_pass": [
+   80
+  ],
+  "best_inprocess_80_sample_pass": 80,
+  "failure_histogram": [
+   [
+    "[before_natural] initial permanent identity outside boundary",
+    1343539
+   ],
+   [
+    "[before_natural] tick : port b_out expected move +X actual d",
+    183045
+   ],
+   [
+    "[before_natural] tick : port b_in expected move +X actual di",
+    81198
+   ],
+   [
+    "[before_natural] tick : extension failure",
+    31069
+   ],
+   [
+    "[before_natural] tick : movement failed immovable obstructio",
+    23751
+   ],
+   [
+    "[before_natural] tick : input b_in load budget exceeded; mov",
+    19182
+   ],
+   [
+    "[before_natural] tick : permanent identity  at  outside tran",
+    16263
+   ],
+   [
+    "[before_natural] tick : port b_out expected wait actual move",
+    9148
+   ],
+   [
+    "[before_natural] tick : prescribed move at  failed: LoadExce",
+    7610
+   ],
+   [
+    "[before_natural] tick : prescribed move at  failed: Blocked",
+    5523
+   ],
+   [
+    "[before_natural] tick : port b_out expected position  actual",
+    4399
+   ],
+   [
+    "[before_natural] tick : port b_in expected wait actual moved",
+    3395
+   ]
+  ],
+  "best": {
+   "file": "best.flyer",
+   "score": [
+    24,
+    14,
+    24,
+    46,
+    664
+   ],
+   "excess": 24,
+   "max_load": 14,
+   "all_max_load": 14,
+   "count_at_max": 24,
+   "max_prescribed_input_load": 10,
+   "blocks": 46,
+   "input_loads": {
+    "b20_in": [
+     10,
+     10,
+     null,
+     10,
+     null
+    ],
+    "b30_in": [
+     9,
+     10,
+     null,
+     null,
+     8
+    ]
+   },
+   "diff_vs_seed": [
+    "- (2,6,9) Slime",
+    "- (3,1,7) RedstoneBlock",
+    "- (3,6,9) Slime",
+    "- (4,0,7) Slime",
+    "- (4,1,7) Slime",
+    "- (4,3,7) Piston(dir0 state0)",
+    "- (4,3,8) Piston(dir0 state0)",
+    "- (4,4,6) Piston(dir1 sticky state0)",
+    "- (4,5,7) RedstoneBlock",
+    "+ (4,5,8) Honey",
+    "+ (4,5,9) Slime",
+    "+ (4,6,9) Slime",
+    "+ (5,3,7) Piston(dir0 state0)",
+    "+ (5,3,8) Piston(dir0 state0)",
+    "- (5,4,7) Honey",
+    "- (5,5,5) RedstoneBlock",
+    "- (5,5,6) Honey",
+    "- (5,5,7) Honey",
+    "+ (5,5,8) Honey",
+    "- (5,6,7) Honey",
+    "+ (8,5,7) RedstoneBlock"
+   ]
+  },
+  "pareto": [
+   {
+    "file": "pareto_14_10_46.flyer",
+    "max_load": 14,
+    "all_max_load": 14,
+    "count_at_max": 24,
+    "max_prescribed_input_load": 10,
+    "blocks": 46,
+    "sum_load": 664,
+    "input_loads": {
+     "b20_in": [
+      10,
+      10,
+      null,
+      10,
+      null
+     ],
+     "b30_in": [
+      9,
+      10,
+      null,
+      null,
+      8
+     ]
+    }
+   }
+  ]
+ },
+ "confirm": [
+  {
+   "file": "pareto_14_10_46.flyer",
+   "limit": 14,
+   "blocks": 46,
+   "rust": {
+    "before_advance_single": {
+     "pass": false,
+     "max_load": null,
+     "all_max_load": null,
+     "count_at_max": null,
+     "max_prescribed_input_load": null,
+     "first_failure": "[before_natural] tick 9: permanent identity 11 at (6,5,9) is not its origin advanced by 3 at cycle 1 boundary"
+    },
+    "before_advance_samples": "0/80 FIRST FAIL rng=0 phases=(0,0): [before_natural] tick 9: permanent identity 11 at (6,5,9) is not its origin adva",
+    "before_bounded_samples": "80/80",
+    "before_advance_8cycles": false,
+    "after_advance_single": {
+     "pass": false,
+     "max_load": null,
+     "all_max_load": null,
+     "count_at_max": null,
+     "max_prescribed_input_load": null,
+     "first_failure": "[after_natural] tick 9: permanent identity 11 at (6,5,9) is not its origin advanced by 3 at cycle 1 boundary"
+    },
+    "after_advance_samples": "0/80 FIRST FAIL rng=0 phases=(0,0): [after_natural] tick 9: permanent identity 11 at (6,5,9) is not its origin advan",
+    "after_bounded_samples": "80/80",
+    "after_advance_8cycles": false
+   },
+   "python": {
+    "before_own": {
+     "single": "PASS",
+     "samples": "80/80 samples"
+    },
+    "before_tight0": {
+     "single": "PASS",
+     "samples": "80/80 samples"
+    },
+    "after_own": {
+     "single": "PASS",
+     "samples": "80/80 samples"
+    },
+    "after_tight0": {
+     "single": "PASS",
+     "samples": "80/80 samples"
+    }
+   },
+   "is_seed": false
+  }
+ ]
+}

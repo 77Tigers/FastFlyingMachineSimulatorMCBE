@@ -1,0 +1,9 @@
+seed (target 18, limit 24, recurrence advance) score (6, 19, 6, 20, 222) presc_max 20 input_loads {"target_in":[20,19,null,19,18,null],"piston4_in":[20,19,1,19,null,null],"piston6_in":[20,null,null,19,18,1],"piston11_in":[20,19,1,null,null,1]}
+  fail  1576297  [before_natural] tick : prescribed move at  failed: LoadExce
+  fail   176686  [before_natural] tick : permanent identity  at  is not its o
+  fail   134956  [before_natural] tick : prescribed move at  failed: Blocked
+  fail   107468  [before_natural] tick : input target_in load budget exceeded
+  fail     5075  [before_natural] tick : extension failure
+done: 2000484 evals (2 passing) in 180.0s = 11113.7 evals/s; pareto size 1
+  pareto excess=6 max_load=19 count=6 presc_max=20 blocks=20 sum=222 samples80=80/80
+best score (6, 19, 6, 20, 222) (excess 6, max 19, count 6, blocks 20) samples80=80/80

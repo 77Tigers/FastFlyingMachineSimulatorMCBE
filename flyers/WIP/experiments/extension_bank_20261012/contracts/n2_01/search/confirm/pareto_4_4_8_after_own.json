@@ -1,0 +1,79 @@
+{
+ "version": 1,
+ "name": "n2_01-pareto_4_4_8-after-own",
+ "flyer": "../pareto_4_4_8.flyer",
+ "prescribed_script": "../../drive.txt",
+ "prescribed_order": "after_natural",
+ "period_ticks": 8,
+ "advance": 2,
+ "cycles": 3,
+ "recurrence": "exact",
+ "ports": [
+  {
+   "name": "carrier_wwmm",
+   "role": "input",
+   "at": [
+    3,
+    1,
+    1
+   ],
+   "word": "wwmm",
+   "baseline_load": [
+    null,
+    null,
+    6,
+    6
+   ],
+   "spare_load": [
+    null,
+    null,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "target_mmww",
+   "role": "input",
+   "at": [
+    4,
+    2,
+    1
+   ],
+   "word": "mmww",
+   "baseline_load": [
+    5,
+    5,
+    null,
+    null
+   ],
+   "spare_load": [
+    0,
+    0,
+    null,
+    null
+   ]
+  },
+  {
+   "name": "next_rb",
+   "role": "input",
+   "at": [
+    6,
+    1,
+    2
+   ],
+   "word": "wwmm",
+   "baseline_load": [
+    null,
+    null,
+    1,
+    1
+   ],
+   "spare_load": [
+    null,
+    null,
+    0,
+    0
+   ]
+  }
+ ]
+}

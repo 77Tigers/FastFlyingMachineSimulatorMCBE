@@ -1,0 +1,209 @@
+{
+  "version": 1,
+  "name": "n2_04-bank-migration-before_natural",
+  "flyer": "..\\..\\..\\..\\..\\bank_migration\\n2_04\\candidate.flyer",
+  "period_ticks": 8,
+  "advance": 2,
+  "cycles": 3,
+  "ports": [
+    {
+      "name": "k0_mmww",
+      "role": "input",
+      "at": [
+        0,
+        1,
+        15
+      ],
+      "word": "mmww",
+      "provenance": [
+        "unsupported"
+      ],
+      "baseline_load": [
+        5,
+        7,
+        null,
+        null
+      ],
+      "spare_load": [
+        0,
+        0,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "rod",
+      "role": "input",
+      "at": [
+        2,
+        0,
+        17
+      ],
+      "word": "wwmm",
+      "provenance": [
+        null,
+        null,
+        "supplied",
+        "supplied"
+      ],
+      "baseline_load": [
+        null,
+        null,
+        1,
+        1
+      ],
+      "spare_load": [
+        null,
+        null,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "obs",
+      "role": "input",
+      "at": [
+        3,
+        0,
+        16
+      ],
+      "word": "wwmm",
+      "provenance": [
+        null,
+        null,
+        "supplied",
+        "supplied"
+      ],
+      "baseline_load": [
+        null,
+        null,
+        1,
+        1
+      ],
+      "spare_load": [
+        null,
+        null,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "n_wmmw",
+      "role": "output",
+      "at": [
+        2,
+        0,
+        15
+      ],
+      "word": "wmmw",
+      "provenance": [
+        null,
+        "supplied",
+        "internal",
+        null
+      ]
+    }
+  ],
+  "prescribed_script": "..\\..\\..\\..\\..\\bank_migration\\n2_04\\before_natural\\prescribed.txt",
+  "prescribed_order": "before_natural",
+  "recurrence": "exact",
+  "required_cells": [
+    {
+      "at": [
+        0,
+        0,
+        15
+      ],
+      "cell": 9
+    },
+    {
+      "at": [
+        0,
+        0,
+        16
+      ],
+      "cell": 2
+    },
+    {
+      "at": [
+        0,
+        1,
+        15
+      ],
+      "cell": 2
+    },
+    {
+      "at": [
+        0,
+        1,
+        16
+      ],
+      "cell": 2
+    },
+    {
+      "at": [
+        0,
+        1,
+        17
+      ],
+      "cell": 9
+    },
+    {
+      "at": [
+        1,
+        1,
+        15
+      ],
+      "cell": 10
+    },
+    {
+      "at": [
+        2,
+        0,
+        15
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        2,
+        0,
+        17
+      ],
+      "cell": 168
+    },
+    {
+      "at": [
+        2,
+        1,
+        15
+      ],
+      "cell": 2345
+    },
+    {
+      "at": [
+        3,
+        0,
+        16
+      ],
+      "cell": 423
+    }
+  ],
+  "contacts": [
+    {
+      "name": "carrier_target_offset_at_push",
+      "a": "k0_mmww",
+      "b": "n_wmmw",
+      "slots": [
+        2
+      ],
+      "relation": "offset",
+      "offset": [
+        1,
+        -1,
+        0
+      ],
+      "required": true
+    }
+  ]
+}

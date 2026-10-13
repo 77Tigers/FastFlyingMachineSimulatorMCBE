@@ -161,3 +161,23 @@ python tools/extension_contract.py flyers/WIP/experiments/extension_contract_202
 
 Both orders pass 80/80 with exact translated cell/owner recurrence. This is a
 mixed-input subassembly at PL7, not an autonomous driver or lower-PL record.
+
+### Shared designs and search validation
+
+See `flyers/docs/EXTENSION_DESIGN.md` for the authoritative source format.
+Compiled contracts carry provenance, contacts and required cells, enforced by
+both the Python checker and the current Rust search evaluator.
+
+```powershell
+cargo build --release --manifest-path tools/Cargo.toml --target-dir target --bin contract-search
+python tools/extension_design.py flyers/WIP/experiments/shared_design_20261013/bank_migration/n2_04/before_natural.design.json --out-dir target/shared-n2-04 --samples
+python tools/extension_contract.py target/shared-n2-04/contract.json --samples
+target/release/contract-search.exe target/shared-n2-04/contract.json 0 1 target/shared-search --eval-only --samples --order before --recurrence exact --high 0
+```
+
+Match order and recurrence explicitly; one-order fixtures are not both-order
+claims. Rust eval-only failure uses JSON `pass:false` and may still exit zero.
+For finite differential checks use
+`flyers/WIP/experiments/shared_design_20261013/verify_parity.py CONTRACTS... --out DIR`;
+`--negative-contract FILE` labels an intentionally failing scenario. Reports
+include both verdicts and diagnostics; assertion-negative copies are saved.

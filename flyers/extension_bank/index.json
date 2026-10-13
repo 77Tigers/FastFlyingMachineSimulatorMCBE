@@ -1,0 +1,1085 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "id": "n2_01",
+      "family": "N2",
+      "period_ticks": 8,
+      "advance": 2,
+      "bps": 2.5,
+      "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+      "source_flyer": "flyers/bank/pl8/mirrored_chains_shared_mwmw.flyer",
+      "cells": 12,
+      "recurrence": "exact",
+      "boundary_envelope": null,
+      "ports": [
+        {
+          "name": "carrier_wwmm",
+          "role": "input",
+          "word": "wwmm",
+          "at": [
+            3,
+            1,
+            1
+          ],
+          "caps": [
+            null,
+            null,
+            6,
+            6
+          ]
+        },
+        {
+          "name": "target_mmww",
+          "role": "input",
+          "word": "mmww",
+          "at": [
+            4,
+            2,
+            1
+          ],
+          "caps": [
+            5,
+            5,
+            null,
+            null
+          ]
+        },
+        {
+          "name": "next_rb",
+          "role": "input",
+          "word": "wwmm",
+          "at": [
+            6,
+            1,
+            2
+          ],
+          "caps": [
+            null,
+            null,
+            1,
+            1
+          ]
+        }
+      ],
+      "prescribed_strokes_per_period": 4,
+      "reference": {
+        "endogenous_max_load": 6,
+        "orders_80_samples": {
+          "before_natural": true,
+          "after_natural": true
+        }
+      },
+      "best": {
+        "status": "reference only; frozen-body search pending",
+        "search_dir": "flyers/WIP/experiments/extension_bank_20261012/contracts/n2_01/search_frozen"
+      },
+      "path": "flyers/extension_bank/n2/n2_01",
+      "note": ""
+    },
+    {
+      "id": "n2_02",
+      "family": "N2",
+      "period_ticks": 8,
+      "advance": 2,
+      "bps": 2.5,
+      "key": "N2|C:wwmm|S:-|pull@1|T:mmww",
+      "source_flyer": "flyers/bank/pl8/mirrored_chains_shared_mwmw.flyer",
+      "cells": 11,
+      "recurrence": "exact",
+      "boundary_envelope": null,
+      "ports": [
+        {
+          "name": "carrier_wwmm",
+          "role": "input",
+          "word": "wwmm",
+          "at": [
+            7,
+            1,
+            2
+          ],
+          "caps": [
+            null,
+            null,
+            5,
+            5
+          ]
+        },
+        {
+          "name": "target_mmww",
+          "role": "input",
+          "word": "mmww",
+          "at": [
+            4,
+            1,
+            1
+          ],
+          "caps": [
+            5,
+            5,
+            null,
+            null
+          ]
+        },
+        {
+          "name": "rod_a",
+          "role": "input",
+          "word": "mmww",
+          "at": [
+            8,
+            1,
+            1
+          ],
+          "caps": [
+            1,
+            1,
+            null,
+            null
+          ]
+        }
+      ],
+      "prescribed_strokes_per_period": 4,
+      "reference": {
+        "endogenous_max_load": 5,
+        "orders_80_samples": {
+          "before_natural": true,
+          "after_natural": true
+        }
+      },
+      "best": {
+        "status": "reference only; frozen-body search pending",
+        "search_dir": "flyers/WIP/experiments/extension_bank_20261012/contracts/n2_02/search_frozen"
+      },
+      "path": "flyers/extension_bank/n2/n2_02",
+      "note": ""
+    },
+    {
+      "id": "n2_03",
+      "family": "N2",
+      "period_ticks": 8,
+      "advance": 2,
+      "bps": 2.5,
+      "key": "N2|C:wmmw|S:-|pull@0|T:mmww",
+      "source_flyer": "flyers/bank/pl9/rigid_chain_capped.flyer",
+      "cells": 7,
+      "recurrence": "exact",
+      "boundary_envelope": null,
+      "ports": [
+        {
+          "name": "target_wwmm",
+          "role": "input",
+          "word": "wwmm",
+          "at": [
+            15,
+            0,
+            15
+          ],
+          "caps": [
+            null,
+            null,
+            5,
+            6
+          ]
+        },
+        {
+          "name": "carrier_mwwm",
+          "role": "input",
+          "word": "mwwm",
+          "at": [
+            16,
+            0,
+            15
+          ],
+          "caps": [
+            1,
+            null,
+            null,
+            6
+          ]
+        },
+        {
+          "name": "ob1",
+          "role": "input",
+          "word": "mmww",
+          "at": [
+            16,
+            1,
+            15
+          ],
+          "caps": [
+            1,
+            1,
+            null,
+            null
+          ]
+        }
+      ],
+      "prescribed_strokes_per_period": 4,
+      "reference": {
+        "endogenous_max_load": 5,
+        "orders_80_samples": {
+          "before_natural": true,
+          "after_natural": true
+        }
+      },
+      "best": {
+        "status": "reference only; frozen-body search pending",
+        "search_dir": "flyers/WIP/experiments/extension_bank_20261012/contracts/n2_03/search_frozen"
+      },
+      "path": "flyers/extension_bank/n2/n2_03",
+      "note": "rotated occurrence (pull@2, carrier mwwm, target wwmm)"
+    },
+    {
+      "id": "n2_04",
+      "family": "N2",
+      "period_ticks": 8,
+      "advance": 2,
+      "bps": 2.5,
+      "key": "N2|C:mwwm|S:mwwm/wmmw|push@1|T:mmww+wmmw",
+      "source_flyer": "flyers/bank/pl8/mirrored_chains_shared_mwmw.flyer",
+      "cells": 10,
+      "recurrence": "exact",
+      "boundary_envelope": null,
+      "ports": [
+        {
+          "name": "k0_mmww",
+          "role": "input",
+          "word": "mmww",
+          "at": [
+            0,
+            1,
+            15
+          ],
+          "caps": [
+            5,
+            7,
+            null,
+            null
+          ]
+        },
+        {
+          "name": "rod",
+          "role": "input",
+          "word": "wwmm",
+          "at": [
+            2,
+            0,
+            17
+          ],
+          "caps": [
+            null,
+            null,
+            1,
+            1
+          ]
+        },
+        {
+          "name": "obs",
+          "role": "input",
+          "word": "wwmm",
+          "at": [
+            3,
+            0,
+            16
+          ],
+          "caps": [
+            null,
+            null,
+            1,
+            1
+          ]
+        },
+        {
+          "name": "n_wmmw",
+          "role": "output",
+          "word": "wmmw",
+          "at": [
+            2,
+            0,
+            15
+          ]
+        }
+      ],
+      "prescribed_strokes_per_period": 5,
+      "reference": {
+        "endogenous_max_load": 5,
+        "orders_80_samples": {
+          "before_natural": true,
+          "after_natural": false
+        }
+      },
+      "best": {
+        "status": "reference only; frozen-body search pending",
+        "search_dir": "flyers/WIP/experiments/extension_bank_20261012/contracts/n2_04/search_frozen"
+      },
+      "path": "flyers/extension_bank/n2/n2_04",
+      "note": "rotated occurrence (push@2); after_natural impossible without raising a cap"
+    },
+    {
+      "id": "n2_05",
+      "family": "N2",
+      "period_ticks": 8,
+      "advance": 2,
+      "bps": 2.5,
+      "key": "N2|C:wwmm|S:-|pull@1|T:mmww+wmmw",
+      "source_flyer": "flyers/bank/pl7/tm_7pl_2.5bps.flyer",
+      "cells": 15,
+      "recurrence": "exact",
+      "boundary_envelope": null,
+      "ports": [
+        {
+          "name": "redstone_input",
+          "role": "input",
+          "word": "mmww",
+          "at": [
+            3,
+            2,
+            16
+          ],
+          "caps": [
+            1,
+            1,
+            null,
+            null
+          ]
+        },
+        {
+          "name": "k1_input",
+          "role": "input",
+          "word": "wwmm",
+          "at": [
+            3,
+            1,
+            17
+          ],
+          "caps": [
+            null,
+            null,
+            6,
+            6
+          ]
+        },
+        {
+          "name": "k0_output",
+          "role": "output",
+          "word": "mmww",
+          "at": [
+            0,
+            1,
+            15
+          ]
+        },
+        {
+          "name": "n_output",
+          "role": "output",
+          "word": "wmmw",
+          "at": [
+            2,
+            0,
+            15
+          ]
+        }
+      ],
+      "prescribed_strokes_per_period": 3,
+      "reference": {
+        "endogenous_max_load": 7,
+        "orders_80_samples": {
+          "before_natural": true,
+          "after_natural": true
+        }
+      },
+      "best": {
+        "status": "reference only; frozen-body search pending",
+        "search_dir": "flyers/WIP/experiments/extension_bank_20261012/contracts/n2_05/search_frozen"
+      },
+      "path": "flyers/extension_bank/n2/n2_05",
+      "note": "PL7 rear cap (K0/N pull); same fixture as extension_contract_20261011/prescribed_fixture/rear_cap"
+    },
+    {
+      "id": "n2_06",
+      "family": "N2",
+      "period_ticks": 8,
+      "advance": 2,
+      "bps": 2.5,
+      "key": "N2|C:mwmw/wmwm|S:-|pull@0|T:mwmw",
+      "source_flyer": "flyers/bank/pl8/hop_pair_rod_observer.flyer",
+      "cells": 15,
+      "recurrence": "exact",
+      "boundary_envelope": null,
+      "ports": [
+        {
+          "name": "b2_mwmw",
+          "role": "input",
+          "word": "mwmw",
+          "at": [
+            14,
+            2,
+            16
+          ],
+          "caps": [
+            8,
+            null,
+            8,
+            null
+          ]
+        },
+        {
+          "name": "b3_wmwm",
+          "role": "output",
+          "word": "wmwm",
+          "at": [
+            15,
+            0,
+            15
+          ]
+        }
+      ],
+      "prescribed_strokes_per_period": 1,
+      "reference": {
+        "endogenous_max_load": 8,
+        "orders_80_samples": {
+          "before_natural": true,
+          "after_natural": true
+        }
+      },
+      "best": {
+        "status": "reference only; frozen-body search pending",
+        "search_dir": "flyers/WIP/experiments/extension_bank_20261012/contracts/n2_06/search_frozen"
+      },
+      "path": "flyers/extension_bank/n2/n2_06",
+      "note": "rotated occurrence (pull@1, target wmwm); nearly the whole flyer"
+    },
+    {
+      "id": "n3_07",
+      "family": "N3",
+      "period_ticks": 10,
+      "advance": 3,
+      "bps": 3.0,
+      "key": "N3|C:wwmmm|S:mmmww|push@0|T:mmmww",
+      "source_flyer": "flyers/bank/pl12/human_3bps_original.flyer",
+      "cells": 17,
+      "recurrence": "exact",
+      "boundary_envelope": null,
+      "ports": [
+        {
+          "name": "b40_carrier_in",
+          "role": "input",
+          "word": "wwmmm",
+          "at": [
+            5,
+            0,
+            14
+          ],
+          "caps": [
+            null,
+            null,
+            12,
+            12,
+            12
+          ]
+        },
+        {
+          "name": "b54_out",
+          "role": "output",
+          "word": "mmmww",
+          "at": [
+            7,
+            1,
+            13
+          ]
+        }
+      ],
+      "prescribed_strokes_per_period": 3,
+      "reference": {
+        "endogenous_max_load": 7,
+        "orders_80_samples": {
+          "before_natural": true,
+          "after_natural": true
+        }
+      },
+      "best": {
+        "status": "reference only; frozen-body search pending",
+        "search_dir": "flyers/WIP/experiments/extension_bank_20261012/contracts/n3_07/search_frozen"
+      },
+      "path": "flyers/extension_bank/n3/n3_07",
+      "note": "snapshot at tick 100"
+    },
+    {
+      "id": "n3_08",
+      "family": "N3",
+      "period_ticks": 10,
+      "advance": 3,
+      "bps": 3.0,
+      "key": "N3|C:-|S:mmmww|push@1|T:mmmww",
+      "source_flyer": "flyers/bank/pl12/human_3bps_original.flyer",
+      "cells": 16,
+      "recurrence": "exact",
+      "boundary_envelope": null,
+      "ports": [
+        {
+          "name": "b40_carrier_in",
+          "role": "input",
+          "word": "wwmmm",
+          "at": [
+            5,
+            0,
+            14
+          ],
+          "caps": [
+            null,
+            null,
+            12,
+            12,
+            12
+          ]
+        },
+        {
+          "name": "b54_in",
+          "role": "input",
+          "word": "mmmww",
+          "at": [
+            7,
+            2,
+            13
+          ],
+          "caps": [
+            7,
+            6,
+            5,
+            null,
+            null
+          ]
+        },
+        {
+          "name": "b54_out",
+          "role": "output",
+          "word": "mmmww",
+          "at": [
+            7,
+            1,
+            13
+          ]
+        }
+      ],
+      "prescribed_strokes_per_period": 4,
+      "reference": {
+        "endogenous_max_load": 6,
+        "orders_80_samples": {
+          "before_natural": true,
+          "after_natural": false
+        }
+      },
+      "best": {
+        "status": "reference only; frozen-body search pending",
+        "search_dir": "flyers/WIP/experiments/extension_bank_20261012/contracts/n3_08/search_frozen"
+      },
+      "path": "flyers/extension_bank/n3/n3_08",
+      "note": "variant of n3_07's cluster; before_natural only"
+    },
+    {
+      "id": "n3_09",
+      "family": "N3",
+      "period_ticks": 10,
+      "advance": 3,
+      "bps": 3.0,
+      "key": "N3|C:-|S:mmmww|push@2|T:mmmww",
+      "source_flyer": "flyers/bank/pl12/human_3bps_original.flyer",
+      "cells": 15,
+      "recurrence": "exact",
+      "boundary_envelope": null,
+      "ports": [
+        {
+          "name": "b40_carrier_in",
+          "role": "input",
+          "word": "wwmmm",
+          "at": [
+            5,
+            0,
+            14
+          ],
+          "caps": [
+            null,
+            null,
+            12,
+            12,
+            12
+          ]
+        },
+        {
+          "name": "b54_in",
+          "role": "input",
+          "word": "mmmww",
+          "at": [
+            7,
+            2,
+            13
+          ],
+          "caps": [
+            7,
+            6,
+            5,
+            null,
+            null
+          ]
+        },
+        {
+          "name": "b54_out",
+          "role": "output",
+          "word": "mmmww",
+          "at": [
+            7,
+            1,
+            13
+          ]
+        }
+      ],
+      "prescribed_strokes_per_period": 5,
+      "reference": {
+        "endogenous_max_load": 5,
+        "orders_80_samples": {
+          "before_natural": true,
+          "after_natural": false
+        }
+      },
+      "best": {
+        "status": "reference only; frozen-body search pending",
+        "search_dir": "flyers/WIP/experiments/extension_bank_20261012/contracts/n3_09/search_frozen"
+      },
+      "path": "flyers/extension_bank/n3/n3_09",
+      "note": "variant of n3_07's cluster; before_natural only"
+    },
+    {
+      "id": "n3_10",
+      "family": "N3",
+      "period_ticks": 10,
+      "advance": 3,
+      "bps": 3.0,
+      "key": "N3|C:mwwmm|S:-|pull@2|T:mmmww",
+      "source_flyer": "flyers/bank/pl12/human_3bps_original.flyer",
+      "cells": 26,
+      "recurrence": "bounded",
+      "boundary_envelope": {
+        "min": [
+          1,
+          0,
+          12
+        ],
+        "max": [
+          7,
+          3,
+          14
+        ]
+      },
+      "ports": [
+        {
+          "name": "b23_in",
+          "role": "input",
+          "word": "mmwwm",
+          "at": [
+            2,
+            1,
+            13
+          ],
+          "caps": [
+            7,
+            8,
+            null,
+            null,
+            7
+          ]
+        },
+        {
+          "name": "b23_out",
+          "role": "output",
+          "word": "mmwwm",
+          "at": [
+            2,
+            2,
+            12
+          ]
+        },
+        {
+          "name": "b40_out",
+          "role": "output",
+          "word": "wwmmm",
+          "at": [
+            5,
+            0,
+            14
+          ]
+        },
+        {
+          "name": "b54_out",
+          "role": "output",
+          "word": "mmmww",
+          "at": [
+            7,
+            1,
+            13
+          ]
+        }
+      ],
+      "prescribed_strokes_per_period": 2,
+      "reference": {
+        "endogenous_max_load": 12,
+        "orders_80_samples": {
+          "before_natural": true,
+          "after_natural": true
+        }
+      },
+      "best": {
+        "status": "reference only; frozen-body search pending",
+        "search_dir": "flyers/WIP/experiments/extension_bank_20261012/contracts/n3_10/search_frozen"
+      },
+      "path": "flyers/extension_bank/n3/n3_10",
+      "note": "bounded recurrence (interchangeable pistons)"
+    },
+    {
+      "id": "n3_11",
+      "family": "N3",
+      "period_ticks": 10,
+      "advance": 3,
+      "bps": 3.0,
+      "key": "N3|C:wwmmm|S:-|pull@1|T:mmwmw",
+      "source_flyer": "flyers/bank/pl14/mmwmw_two_pulls.flyer",
+      "cells": 54,
+      "recurrence": "bounded",
+      "boundary_envelope": {
+        "min": [
+          2,
+          0,
+          5
+        ],
+        "max": [
+          9,
+          6,
+          9
+        ]
+      },
+      "ports": [
+        {
+          "name": "b20_in",
+          "role": "input",
+          "word": "mmwmw",
+          "at": [
+            2,
+            2,
+            9
+          ],
+          "caps": [
+            13,
+            13,
+            null,
+            13,
+            null
+          ]
+        },
+        {
+          "name": "b30_in",
+          "role": "input",
+          "word": "mmwwm",
+          "at": [
+            4,
+            4,
+            7
+          ],
+          "caps": [
+            13,
+            14,
+            null,
+            null,
+            13
+          ]
+        },
+        {
+          "name": "b20_out",
+          "role": "output",
+          "word": "mmwmw",
+          "at": [
+            2,
+            3,
+            9
+          ]
+        },
+        {
+          "name": "b30_out",
+          "role": "output",
+          "word": "mmwwm",
+          "at": [
+            4,
+            4,
+            8
+          ]
+        },
+        {
+          "name": "b37_out",
+          "role": "output",
+          "word": "wwmmm",
+          "at": [
+            7,
+            2,
+            8
+          ]
+        },
+        {
+          "name": "b42_out",
+          "role": "output",
+          "word": "mmmww",
+          "at": [
+            8,
+            0,
+            8
+          ]
+        }
+      ],
+      "prescribed_strokes_per_period": 3,
+      "reference": {
+        "endogenous_max_load": 14,
+        "orders_80_samples": {
+          "before_natural": true,
+          "after_natural": true
+        }
+      },
+      "best": {
+        "status": "reference only; frozen-body search pending",
+        "search_dir": "flyers/WIP/experiments/extension_bank_20261012/contracts/n3_11/search_frozen"
+      },
+      "path": "flyers/extension_bank/n3/n3_11",
+      "note": "bounded recurrence; 54 cells, not minimised"
+    },
+    {
+      "id": "n4_12",
+      "family": "N4",
+      "period_ticks": 12,
+      "advance": 4,
+      "bps": 3.333,
+      "key": "N4|C:wwmmmm|S:mmmmww|push@0|T:mmmmww",
+      "source_flyer": "flyers/bank/pl22/four_push_ring.flyer",
+      "cells": 40,
+      "recurrence": "exact",
+      "boundary_envelope": null,
+      "ports": [
+        {
+          "name": "target_out",
+          "role": "output",
+          "word": "mmmmww",
+          "at": [
+            13,
+            0,
+            18
+          ]
+        },
+        {
+          "name": "carrier_in",
+          "role": "input",
+          "word": "wwmmmm",
+          "at": [
+            14,
+            0,
+            16
+          ],
+          "caps": [
+            null,
+            null,
+            19,
+            20,
+            21,
+            22
+          ]
+        }
+      ],
+      "prescribed_strokes_per_period": 4,
+      "reference": {
+        "endogenous_max_load": 21,
+        "orders_80_samples": {
+          "before_natural": true,
+          "after_natural": true
+        }
+      },
+      "best": {
+        "status": "reference only; frozen-body search pending",
+        "search_dir": "flyers/WIP/experiments/extension_bank_20261012/contracts/n4_12/search_frozen"
+      },
+      "path": "flyers/extension_bank/n4/n4_12",
+      "note": "48-tick snapshot"
+    },
+    {
+      "id": "n4_13",
+      "family": "N4",
+      "period_ticks": 12,
+      "advance": 4,
+      "bps": 3.333,
+      "key": "N4|C:mmwmmw|S:mmwmmw|push@1|T:mmwmmw",
+      "source_flyer": "flyers/bank/pl22/pull_twice_mmwmmw.flyer",
+      "cells": 20,
+      "recurrence": "exact",
+      "boundary_envelope": null,
+      "ports": [
+        {
+          "name": "target_in",
+          "role": "input",
+          "word": "mmwmmw",
+          "at": [
+            0,
+            3,
+            4
+          ],
+          "caps": [
+            20,
+            19,
+            null,
+            19,
+            18,
+            null
+          ]
+        },
+        {
+          "name": "target_out",
+          "role": "output",
+          "word": "mmwmmw",
+          "at": [
+            0,
+            3,
+            4
+          ]
+        },
+        {
+          "name": "piston4_in",
+          "role": "input",
+          "word": "mmmmww",
+          "at": [
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "name": "piston6_in",
+          "role": "input",
+          "word": "mwwmmm",
+          "at": [
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "name": "piston11_in",
+          "role": "input",
+          "word": "mmmwwm",
+          "at": [
+            5,
+            0,
+            4
+          ]
+        }
+      ],
+      "prescribed_strokes_per_period": 6,
+      "reference": {
+        "endogenous_max_load": 19,
+        "orders_80_samples": {
+          "before_natural": true,
+          "after_natural": true
+        }
+      },
+      "best": {
+        "status": "reference only; frozen-body search pending",
+        "search_dir": "flyers/WIP/experiments/extension_bank_20261012/contracts/n4_13/search_frozen"
+      },
+      "path": "flyers/extension_bank/n4/n4_13",
+      "note": ""
+    },
+    {
+      "id": "n4_14",
+      "family": "N4",
+      "period_ticks": 12,
+      "advance": 4,
+      "bps": 3.333,
+      "key": "N4|C:wmmmmw|S:-|pull@0|T:mmmmww",
+      "source_flyer": "flyers/bank/pl22/exclusive_roles_3p333.flyer",
+      "cells": 35,
+      "recurrence": "exact",
+      "boundary_envelope": null,
+      "ports": [
+        {
+          "name": "src60_in",
+          "role": "input",
+          "word": "mwwmmm",
+          "at": [
+            17,
+            5,
+            2
+          ],
+          "caps": [
+            1,
+            null,
+            null,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "name": "carrier_in",
+          "role": "input",
+          "word": "mmmwwm",
+          "at": [
+            13,
+            5,
+            1
+          ],
+          "caps": [
+            18,
+            18,
+            18,
+            null,
+            null,
+            18
+          ]
+        },
+        {
+          "name": "target_out",
+          "role": "output",
+          "word": "mmwwmm",
+          "at": [
+            10,
+            0,
+            3
+          ]
+        },
+        {
+          "name": "target_in",
+          "role": "input",
+          "word": "mmwwmm",
+          "at": [
+            10,
+            0,
+            3
+          ],
+          "caps": [
+            16,
+            16,
+            null,
+            null,
+            16,
+            16
+          ]
+        }
+      ],
+      "prescribed_strokes_per_period": 11,
+      "reference": {
+        "endogenous_max_load": 16,
+        "orders_80_samples": {
+          "before_natural": true,
+          "after_natural": true
+        }
+      },
+      "best": {
+        "status": "reference only; frozen-body search pending",
+        "search_dir": "flyers/WIP/experiments/extension_bank_20261012/contracts/n4_14/search_frozen"
+      },
+      "path": "flyers/extension_bank/n4/n4_14",
+      "note": "48-tick snapshot; power via one prescribed redstone block"
+    }
+  ]
+}

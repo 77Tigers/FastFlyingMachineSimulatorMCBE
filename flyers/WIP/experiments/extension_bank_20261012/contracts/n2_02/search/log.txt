@@ -1,0 +1,44 @@
+seed (target 4, limit 24, recurrence advance) score (12, 5, 12, 11, 60) presc_max 5 input_loads {"carrier_wwmm":[null,null,5,5],"target_mmww":[5,5,null,null],"rod_a":[1,1,null,null]}
+thread 0 new best score (6, 5, 6, 10, 54) presc_max 5 after 62 evals
+thread 2 new best score (6, 5, 6, 10, 54) presc_max 5 after 66 evals
+thread 3 new best score (6, 5, 6, 10, 54) presc_max 5 after 112 evals
+thread 3 new best score (0, 4, 12, 9, 48) presc_max 4 after 273 evals
+thread 5 new best score (6, 5, 6, 10, 54) presc_max 5 after 359 evals
+thread 1 new best score (6, 5, 6, 10, 54) presc_max 5 after 677 evals
+thread 0 new best score (0, 4, 12, 9, 48) presc_max 4 after 838 evals
+thread 1 new best score (0, 4, 12, 9, 48) presc_max 4 after 876 evals
+thread 5 new best score (0, 4, 12, 9, 48) presc_max 4 after 934 evals
+thread 1 new best score (0, 4, 6, 8, 42) presc_max 4 after 2023 evals
+thread 1 new best score (0, 4, 6, 7, 36) presc_max 4 after 2142 evals
+thread 0 new best score (0, 4, 6, 8, 42) presc_max 4 after 3767 evals
+thread 0 new best score (0, 4, 6, 7, 36) presc_max 4 after 5389 evals
+thread 4 new best score (6, 5, 6, 10, 54) presc_max 5 after 22254 evals
+thread 4 new best score (0, 4, 12, 9, 48) presc_max 4 after 22279 evals
+thread 4 new best score (0, 4, 6, 8, 42) presc_max 4 after 22319 evals
+thread 2 new best score (0, 4, 12, 9, 48) presc_max 4 after 25154 evals
+thread 2 new best score (0, 4, 6, 8, 42) presc_max 4 after 25582 evals
+thread 2 new best score (0, 4, 6, 7, 36) presc_max 4 after 25722 evals
+thread 4 new best score (0, 4, 6, 7, 36) presc_max 4 after 109505 evals
+thread 5 new best score (0, 4, 6, 8, 42) presc_max 4 after 117462 evals
+thread 5 new best score (0, 4, 6, 7, 36) presc_max 4 after 117483 evals
+thread 3 new best score (0, 4, 6, 8, 42) presc_max 4 after 124367 evals
+thread 3 new best score (0, 4, 6, 7, 36) presc_max 4 after 191279 evals
+  fail   382108  [before_natural] tick : prescribed move at  failed: Blocked
+  fail   267845  [before_natural] tick : prescribed move at  failed: LoadExce
+  fail   184541  [before_natural] tick : permanent identity  at  is not its o
+  fail    82888  [before_natural] tick : port target_mmww expected move +X ac
+  fail    43641  [before_natural] tick : extension failure
+  fail    32071  [before_natural] tick : port carrier_wwmm expected move +X a
+  fail    25470  [before_natural] tick : input target_mmww load budget exceed
+  fail    10515  [before_natural] tick : port carrier_wwmm expected wait actu
+  fail     3314  [before_natural] tick : input carrier_wwmm load budget excee
+  fail     2967  [after_natural] tick : prescribed move at  failed: MissingIn
+  fail     2867  [before_natural] tick : movement failed immovable obstructio
+  fail     1115  [before_natural] tick : prescribed move at  failed: MovingIn
+done: 1111339 evals (71449 passing) in 240.0s = 4630.5 evals/s; pareto size 1
+  pareto excess=0 max_load=4 count=6 presc_max=4 blocks=7 sum=36 samples80=80/80
+best score (0, 4, 6, 7, 36) (excess 0, max 4, count 6, blocks 7) samples80=80/80
+    - (3,1,0) RedstoneBlock
+    - (4,0,1) Piston(dir1 sticky state0)
+    - (4,1,0) Slime
+    - (7,2,2) Piston(dir0 state0)

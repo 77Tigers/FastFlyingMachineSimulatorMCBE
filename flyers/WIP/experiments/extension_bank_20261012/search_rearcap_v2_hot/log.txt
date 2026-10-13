@@ -1,0 +1,16 @@
+seed (target 6, limit 24, recurrence advance) score (6, 7, 6, 14, 168) presc_max 6 input_loads {"redstone_input":[1,1,null,null],"k1_input":[null,null,6,6]}
+  fail   137038  [before_natural] tick : prescribed move at  failed: LoadExce
+  fail    55987  [before_natural] tick : extension failure
+  fail     5267  [before_natural] tick : prescribed move at  failed: Blocked
+  fail     3381  [before_natural] tick : port k_output expected move +X actua
+  fail     1213  [before_natural] tick : port k_output expected position  act
+  fail     1090  [before_natural] tick : port k_input expected wait actual mo
+  fail      101  [before_natural] tick : port n_output expected wait actual m
+  fail       58  [before_natural] tick : permanent identity  at  is not its o
+  fail       43  [before_natural] tick : movement failed immovable obstructio
+  fail       31  [before_natural] tick : port n_output expected move +X actua
+  fail       25  [before_natural] tick : port k_input expected move +X actual
+  fail        8  [before_natural] tick : input k_input load budget exceeded; 
+done: 204262 evals (15 passing) in 180.0s = 1134.8 evals/s; pareto size 1
+  pareto excess=6 max_load=7 count=6 presc_max=6 blocks=14 sum=168 samples80=80/80
+best score (6, 7, 6, 14, 168) (excess 6, max 7, count 6, blocks 14) samples80=80/80

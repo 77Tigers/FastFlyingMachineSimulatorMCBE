@@ -1,0 +1,237 @@
+{
+  "version": 1,
+  "name": "n2_05-bank-migration-after_natural",
+  "flyer": "..\\..\\..\\..\\..\\bank_migration\\n2_05\\candidate.flyer",
+  "period_ticks": 8,
+  "advance": 2,
+  "cycles": 3,
+  "ports": [
+    {
+      "name": "redstone_input",
+      "role": "input",
+      "at": [
+        3,
+        2,
+        16
+      ],
+      "word": "mmww",
+      "provenance": [
+        "unsupported"
+      ],
+      "baseline_load": [
+        1,
+        1,
+        null,
+        null
+      ],
+      "spare_load": [
+        0,
+        0,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "k1_input",
+      "role": "input",
+      "at": [
+        3,
+        1,
+        17
+      ],
+      "word": "wwmm",
+      "provenance": [
+        null,
+        null,
+        "internal",
+        "supplied"
+      ],
+      "baseline_load": [
+        null,
+        null,
+        6,
+        6
+      ],
+      "spare_load": [
+        null,
+        null,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "k0_output",
+      "role": "output",
+      "at": [
+        0,
+        1,
+        15
+      ],
+      "word": "mmww",
+      "provenance": [
+        "internal",
+        "internal",
+        null,
+        null
+      ]
+    },
+    {
+      "name": "n_output",
+      "role": "output",
+      "at": [
+        2,
+        0,
+        15
+      ],
+      "word": "wmmw",
+      "provenance": [
+        null,
+        "internal",
+        "internal",
+        null
+      ]
+    }
+  ],
+  "prescribed_script": "..\\..\\..\\..\\..\\bank_migration\\n2_05\\after_natural\\prescribed.txt",
+  "prescribed_order": "after_natural",
+  "recurrence": "exact",
+  "required_cells": [
+    {
+      "at": [
+        0,
+        0,
+        15
+      ],
+      "cell": 9
+    },
+    {
+      "at": [
+        0,
+        0,
+        16
+      ],
+      "cell": 3
+    },
+    {
+      "at": [
+        0,
+        1,
+        15
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        0,
+        1,
+        16
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        0,
+        1,
+        17
+      ],
+      "cell": 9
+    },
+    {
+      "at": [
+        1,
+        1,
+        15
+      ],
+      "cell": 10
+    },
+    {
+      "at": [
+        2,
+        0,
+        15
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        2,
+        0,
+        17
+      ],
+      "cell": 168
+    },
+    {
+      "at": [
+        2,
+        1,
+        15
+      ],
+      "cell": 2345
+    },
+    {
+      "at": [
+        3,
+        0,
+        16
+      ],
+      "cell": 423
+    },
+    {
+      "at": [
+        3,
+        0,
+        17
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        3,
+        1,
+        16
+      ],
+      "cell": 297
+    },
+    {
+      "at": [
+        3,
+        1,
+        17
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        3,
+        2,
+        16
+      ],
+      "cell": 6
+    },
+    {
+      "at": [
+        3,
+        2,
+        17
+      ],
+      "cell": 9
+    }
+  ],
+  "contacts": [
+    {
+      "name": "redstone_to_carrier_offset",
+      "a": "redstone_input",
+      "b": "k1_input",
+      "slots": [
+        0
+      ],
+      "relation": "offset",
+      "offset": [
+        0,
+        -1,
+        1
+      ],
+      "required": true
+    }
+  ]
+}

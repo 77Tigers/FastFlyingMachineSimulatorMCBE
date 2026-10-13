@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "name": "pl7-rear-cap-mixed-natural-supplied",
+  "flyer": "candidate.flyer",
+  "period_ticks": 8,
+  "advance": 2,
+  "cycles": 3,
+  "recurrence": "exact",
+  "prescribed_order": "before_natural",
+  "ports": [
+    {"name":"redstone_input","role":"input","at":[3,2,16],"word":"mmww","provenance":["supplied","supplied",null,null],"prescribed_max_load":[1,1,null,null],"baseline_load":[1,1,null,null],"spare_load":[0,0,null,null]},
+    {"name":"k1_input","role":"input","at":[3,1,17],"word":"wwmm","provenance":[null,null,"internal","supplied"],"prescribed_max_load":[null,null,null,6],"baseline_load":[null,null,6,6],"spare_load":[null,null,0,0]},
+    {"name":"k0_output","role":"output","at":[0,1,15],"word":"mmww","provenance":["internal","internal",null,null]},
+    {"name":"n_output","role":"output","at":[2,0,15],"word":"wmmw","provenance":[null,"internal","internal",null]}
+  ],
+  "supplied_order": [["redstone_input"],["redstone_input"],[],["k1_input"]],
+  "contacts": [
+    {"name":"redstone-follows-k0","a":"k0_output","b":"redstone_input","slots":[0,1,2,3],"relation":"offset","offset":[3,1,1]}
+  ],
+  "required_cells": [
+    {"at":[0,0,15],"cell":9}, {"at":[0,0,16],"cell":3},
+    {"at":[0,1,15],"cell":1}, {"at":[0,1,16],"cell":1},
+    {"at":[0,1,17],"cell":9}, {"at":[1,1,15],"cell":10},
+    {"at":[2,0,15],"cell":1}, {"at":[2,0,17],"cell":168},
+    {"at":[2,1,15],"cell":2345}, {"at":[3,0,16],"cell":423},
+    {"at":[3,0,17],"cell":1}, {"at":[3,1,16],"cell":297},
+    {"at":[3,1,17],"cell":1}, {"at":[3,2,16],"cell":6},
+    {"at":[3,2,17],"cell":9}
+  ]
+}
+

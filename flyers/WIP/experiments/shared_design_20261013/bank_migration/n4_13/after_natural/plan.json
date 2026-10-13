@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "name": "n4_13-bank-migration-after_natural",
+  "slot_ticks": 2,
+  "period_slots": 6,
+  "advance": 4,
+  "objects": [
+    {
+      "name": "target_in",
+      "at": [
+        0,
+        3,
+        4
+      ],
+      "word": "mmwmmw"
+    },
+    {
+      "name": "target_out",
+      "at": [
+        0,
+        3,
+        4
+      ],
+      "word": "mmwmmw"
+    },
+    {
+      "name": "piston4_in",
+      "at": [
+        2,
+        3,
+        4
+      ],
+      "word": "mmmmww"
+    },
+    {
+      "name": "piston6_in",
+      "at": [
+        3,
+        4,
+        5
+      ],
+      "word": "mwwmmm"
+    },
+    {
+      "name": "piston11_in",
+      "at": [
+        5,
+        0,
+        4
+      ],
+      "word": "mmmwwm"
+    }
+  ],
+  "contacts": [
+    {
+      "name": "target_input_output_alias",
+      "a": "target_in",
+      "b": "target_out",
+      "slots": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "relation": "same",
+      "required": true
+    }
+  ]
+}

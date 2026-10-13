@@ -1,0 +1,2416 @@
+{
+  "version": 1,
+  "name": "n2_03-pl9rigid-before_natural",
+  "period_ticks": 8,
+  "advance": 2,
+  "cycles": 3,
+  "recurrence": "exact",
+  "drive_script": null,
+  "prescribed_script": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\extension_bank_20261012\\contracts\\n2_03\\drive.txt",
+  "prescribed_order": "before_natural",
+  "boundary_envelope": null,
+  "passed": true,
+  "cases": [
+    {
+      "rng": 0,
+      "phase_x": 0,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.399356,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 0,
+      "phase_x": 0,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.021057,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 0,
+      "phase_x": 0,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.020157,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 0,
+      "phase_x": 0,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.019902,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 0,
+      "phase_x": 7,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.019766,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 0,
+      "phase_x": 7,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.019702,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 0,
+      "phase_x": 7,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.026561,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 0,
+      "phase_x": 7,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.033594,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 0,
+      "phase_x": 8,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.162181,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 0,
+      "phase_x": 8,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.024403,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 0,
+      "phase_x": 8,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.023112,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 0,
+      "phase_x": 8,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 1.073588,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 0,
+      "phase_x": 15,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.01928,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 0,
+      "phase_x": 15,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.021015,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 0,
+      "phase_x": 15,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.021147,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 0,
+      "phase_x": 15,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.023264,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 1,
+      "phase_x": 0,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.020324,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 1,
+      "phase_x": 0,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.021529,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 1,
+      "phase_x": 0,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.017763,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 1,
+      "phase_x": 0,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.018212,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 1,
+      "phase_x": 7,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.097118,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 1,
+      "phase_x": 7,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.015685,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 1,
+      "phase_x": 7,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.016576,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 1,
+      "phase_x": 7,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.017403,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 1,
+      "phase_x": 8,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.018185,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 1,
+      "phase_x": 8,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.018356,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 1,
+      "phase_x": 8,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.018357,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 1,
+      "phase_x": 8,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.414204,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 1,
+      "phase_x": 15,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.015729,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 1,
+      "phase_x": 15,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.01618,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 1,
+      "phase_x": 15,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.016231,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 1,
+      "phase_x": 15,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.018168,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 2,
+      "phase_x": 0,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.015479,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 2,
+      "phase_x": 0,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.016966,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 2,
+      "phase_x": 0,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.017182,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 2,
+      "phase_x": 0,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.01614,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 2,
+      "phase_x": 7,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.018976,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 2,
+      "phase_x": 7,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.129341,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 2,
+      "phase_x": 7,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.019134,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 2,
+      "phase_x": 7,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 1.069706,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 2,
+      "phase_x": 8,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.016029,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 2,
+      "phase_x": 8,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.017824,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 2,
+      "phase_x": 8,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.018984,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 2,
+      "phase_x": 8,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.018091,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 2,
+      "phase_x": 15,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.018161,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 2,
+      "phase_x": 15,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.016681,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 2,
+      "phase_x": 15,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.018116,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 2,
+      "phase_x": 15,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.089681,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 5,
+      "phase_x": 0,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.020717,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 5,
+      "phase_x": 0,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.017678,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 5,
+      "phase_x": 0,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.017713,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 5,
+      "phase_x": 0,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.018736,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 5,
+      "phase_x": 7,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.018604,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 5,
+      "phase_x": 7,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.017408,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 5,
+      "phase_x": 7,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.01958,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 5,
+      "phase_x": 7,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.396765,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 5,
+      "phase_x": 8,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.019149,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 5,
+      "phase_x": 8,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.028332,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 5,
+      "phase_x": 8,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.018601,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 5,
+      "phase_x": 8,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.018252,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 5,
+      "phase_x": 15,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.017692,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 5,
+      "phase_x": 15,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.019209,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 5,
+      "phase_x": 15,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.121754,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 5,
+      "phase_x": 15,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.021072,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 42,
+      "phase_x": 0,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 1.092245,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 42,
+      "phase_x": 0,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.020892,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 42,
+      "phase_x": 0,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.021867,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 42,
+      "phase_x": 0,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.023471,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 42,
+      "phase_x": 7,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.022344,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 42,
+      "phase_x": 7,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.021772,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 42,
+      "phase_x": 7,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.020276,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 42,
+      "phase_x": 7,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.019769,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 42,
+      "phase_x": 8,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.019393,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 42,
+      "phase_x": 8,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.103009,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 42,
+      "phase_x": 8,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.031144,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 42,
+      "phase_x": 8,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.017579,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 42,
+      "phase_x": 15,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.019029,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 42,
+      "phase_x": 15,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.022058,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 42,
+      "phase_x": 15,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 1.048488,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    },
+    {
+      "rng": 42,
+      "phase_x": 15,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.022393,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "target_wwmm": [
+          null,
+          null,
+          5,
+          6
+        ],
+        "carrier_mwwm": [
+          1,
+          null,
+          null,
+          6
+        ],
+        "ob1": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 6
+    }
+  ],
+  "claim": "prescribed input injection (before_natural); validated start/settlement ledger + sampled ports + candidate-state recurrence; does not establish natural driver realization"
+}

@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "name": "pl7-rear-cap-mixed-natural-supplied",
+  "slot_ticks": 2,
+  "period_slots": 4,
+  "advance": 2,
+  "objects": [
+    {
+      "name": "redstone_input",
+      "at": [
+        3,
+        2,
+        16
+      ],
+      "word": "mmww"
+    },
+    {
+      "name": "k1_input",
+      "at": [
+        3,
+        1,
+        17
+      ],
+      "word": "wwmm"
+    },
+    {
+      "name": "k0_output",
+      "at": [
+        0,
+        1,
+        15
+      ],
+      "word": "mmww"
+    },
+    {
+      "name": "n_output",
+      "at": [
+        2,
+        0,
+        15
+      ],
+      "word": "wmmw"
+    }
+  ],
+  "contacts": [
+    {
+      "name": "redstone-follows-k0",
+      "a": "k0_output",
+      "b": "redstone_input",
+      "slots": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "relation": "offset",
+      "offset": [
+        3,
+        1,
+        1
+      ],
+      "required": true
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "name": "pl7-rear-cap-mixed-natural-supplied",
+  "passed": true,
+  "first_failure": null,
+  "plan": {
+    "verdict": "consistent",
+    "name": "pl7-rear-cap-mixed-natural-supplied",
+    "message": "CONSISTENT: sparse contact obligations only; power, states, connectivity, intermediate-order safety and routing unresolved"
+  },
+  "case": {
+    "rng": null,
+    "phase_x": null,
+    "phase_z": null,
+    "passed": true,
+    "ticks": 24,
+    "elapsed_seconds": 0.048711,
+    "diagnostic": null,
+    "first_failure": null,
+    "input_max_action_loads": {
+      "redstone_input": [
+        1,
+        1,
+        null,
+        null
+      ],
+      "k1_input": [
+        null,
+        null,
+        6,
+        6
+      ]
+    },
+    "whole_assembly_max_action": 7
+  }
+}

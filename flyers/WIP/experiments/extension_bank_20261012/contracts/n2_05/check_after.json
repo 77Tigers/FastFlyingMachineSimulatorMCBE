@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "name": "n2_05-pl7-rearcap-after_natural",
+  "period_ticks": 8,
+  "advance": 2,
+  "cycles": 3,
+  "recurrence": "exact",
+  "drive_script": null,
+  "prescribed_script": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\extension_bank_20261012\\contracts\\n2_05\\drive.txt",
+  "prescribed_order": "after_natural",
+  "boundary_envelope": null,
+  "passed": true,
+  "cases": [
+    {
+      "rng": null,
+      "phase_x": null,
+      "phase_z": null,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.894475,
+      "diagnostic": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    }
+  ],
+  "claim": "prescribed input injection (after_natural); validated start/settlement ledger + sampled ports + candidate-state recurrence; does not establish natural driver realization"
+}

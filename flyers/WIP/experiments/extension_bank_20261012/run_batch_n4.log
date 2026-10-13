@@ -1,0 +1,7 @@
+== n4_12: ref endogenous 21 (all 22) own=exact advance_pass=True -> search advance
+   search done in 246s
+   best: excess 0 end_max 14 all_max 20 count 6 blocks 31 diff ['- (13,0,19) Slime', '- (13,0,20) Slime', '- (13,1,19) Slime', '- (13,1,20) Slime', '- (13,1,21) Slime', '- (13,2,20) Slime', '- (14,0,20) Piston(dir0 state0)', '- (14,2,16) Slime', '+ (15,1,18) Slime', '+ (15,2,15) Slime', '- (16,0,17) Slime', '- (16,0,18) Slime', '+ (16,1,18) Slime', '~ (16,3,15) Slime -> Honey', '+ (17,3,17) RedstoneBlock', '+ (17,4,15) Piston(dir1 sticky state0)', '- (17,4,17) RedstoneBlock', '- (18,3,15) Slime', '- (18,4,18) Slime', '- (18,5,17) Slime']
+== n4_13: ref endogenous None (all None) own=exact advance_pass=False -> search exact
+   seed does not pass, skipping
+== n4_14: ref endogenous None (all None) own=exact advance_pass=False -> search exact
+   seed does not pass, skipping

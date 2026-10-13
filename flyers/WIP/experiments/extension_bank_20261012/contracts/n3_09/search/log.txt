@@ -1,0 +1,50 @@
+seed (target 4, limit 24, recurrence advance) score (3, 5, 3, 15, 15) presc_max 10 input_loads {"b40_carrier_in":[null,null,9,9,10],"b54_in":[6,6,5,null,null]}
+thread 2 new best score (0, 4, 3, 14, 12) presc_max 10 after 20 evals
+thread 0 new best score (0, 4, 3, 15, 12) presc_max 11 after 28 evals
+thread 1 new best score (0, 4, 3, 15, 12) presc_max 11 after 31 evals
+thread 3 new best score (0, 4, 3, 14, 12) presc_max 10 after 31 evals
+thread 5 new best score (0, 4, 3, 14, 12) presc_max 10 after 39 evals
+thread 4 new best score (0, 4, 3, 16, 12) presc_max 12 after 50 evals
+thread 1 new best score (0, 4, 3, 14, 12) presc_max 10 after 20338 evals
+thread 0 new best score (0, 4, 3, 14, 12) presc_max 10 after 37165 evals
+thread 0 new best score (0, 4, 3, 13, 12) presc_max 9 after 42469 evals
+thread 3 new best score (0, 4, 3, 13, 12) presc_max 9 after 56727 evals
+thread 1 new best score (0, 4, 3, 13, 12) presc_max 9 after 79111 evals
+thread 0 new best score (0, 4, 3, 12, 12) presc_max 8 after 107979 evals
+thread 4 new best score (0, 4, 3, 15, 12) presc_max 11 after 120507 evals
+thread 5 new best score (0, 4, 3, 13, 12) presc_max 9 after 147980 evals
+thread 0 new best score (0, 4, 3, 11, 12) presc_max 7 after 149846 evals
+thread 3 new best score (0, 4, 3, 12, 12) presc_max 8 after 152425 evals
+thread 1 new best score (0, 4, 3, 12, 12) presc_max 8 after 168430 evals
+thread 4 new best score (0, 4, 3, 14, 12) presc_max 10 after 182709 evals
+thread 2 new best score (0, 4, 3, 13, 12) presc_max 9 after 193256 evals
+thread 0 new best score (0, 3, 3, 15, 9) presc_max 12 after 369574 evals
+thread 0 new best score (0, 3, 3, 14, 9) presc_max 11 after 369861 evals
+thread 0 new best score (0, 3, 3, 13, 9) presc_max 10 after 369912 evals
+thread 0 new best score (0, 3, 3, 12, 9) presc_max 9 after 387910 evals
+thread 0 new best score (0, 3, 3, 11, 9) presc_max 8 after 434204 evals
+thread 0 new best score (0, 3, 3, 10, 9) presc_max 7 after 448276 evals
+thread 1 new best score (0, 4, 3, 11, 12) presc_max 7 after 475696 evals
+thread 0 new best score (0, 3, 3, 9, 9) presc_max 6 after 596617 evals
+thread 0 new best score (0, 3, 3, 8, 9) presc_max 5 after 689833 evals
+  fail   351702  [before_natural] tick : prescribed move at  failed: LoadExce
+  fail   346608  [before_natural] tick : prescribed move at  failed: Blocked
+  fail    19161  [before_natural] tick : port b_in expected move +X actual di
+  fail    17920  [before_natural] tick : permanent identity  at  is not its o
+  fail      393  [before_natural] tick : extension failure
+  fail      385  [before_natural] tick : port b_in expected wait actual moved
+  fail      305  [before_natural] tick : port b_carrier_in expected wait actu
+  fail       44  [before_natural] tick : port b_in expected position  actual 
+  fail        4  [before_natural] tick : movement failed immovable obstructio
+done: 759446 evals (22924 passing) in 240.0s = 3164.3 evals/s; pareto size 1
+  pareto excess=0 max_load=3 count=3 presc_max=5 blocks=8 sum=9 samples80=80/80
+best score (0, 3, 3, 8, 9) (excess 0, max 3, count 3, blocks 8) samples80=80/80
+    - (4,0,14) RedstoneBlock
+    - (4,3,14) RedstoneBlock
+    - (5,2,13) Piston(dir1 sticky state0)
+    - (5,3,13) Slime
+    - (5,3,14) Slime
+    + (6,1,13) Piston(dir0 state0)
+    - (6,3,13) Piston(dir0 state0)
+    - (7,2,14) Slime
+    - (7,3,13) Slime

@@ -1,0 +1,2012 @@
+{
+  "name": "pl7-rear-cap-mixed-natural-supplied",
+  "passed": true,
+  "first_failure": null,
+  "plan": {
+    "verdict": "consistent",
+    "name": "pl7-rear-cap-mixed-natural-supplied",
+    "message": "CONSISTENT: sparse contact obligations only; power, states, connectivity, intermediate-order safety and routing unresolved"
+  },
+  "case": [
+    {
+      "rng": 0,
+      "phase_x": 0,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.092327,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 0,
+      "phase_x": 0,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.062576,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          5,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 0,
+      "phase_x": 0,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.081899,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          5,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 0,
+      "phase_x": 0,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.050466,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 0,
+      "phase_x": 7,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.079399,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 0,
+      "phase_x": 7,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.080528,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          5,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 0,
+      "phase_x": 7,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.095581,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          5,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 0,
+      "phase_x": 7,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.083483,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 0,
+      "phase_x": 8,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.056753,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 0,
+      "phase_x": 8,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.081531,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          5,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 0,
+      "phase_x": 8,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.055701,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          5,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 0,
+      "phase_x": 8,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.082194,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 0,
+      "phase_x": 15,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.081846,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 0,
+      "phase_x": 15,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.05143,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          5,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 0,
+      "phase_x": 15,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.073064,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          5,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 0,
+      "phase_x": 15,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.050275,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 1,
+      "phase_x": 0,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.07899,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 1,
+      "phase_x": 0,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.080975,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 1,
+      "phase_x": 0,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.089265,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 1,
+      "phase_x": 0,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.092564,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 1,
+      "phase_x": 7,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.079687,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 1,
+      "phase_x": 7,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.084827,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 1,
+      "phase_x": 7,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.085012,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 1,
+      "phase_x": 7,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.095089,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 1,
+      "phase_x": 8,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.059919,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 1,
+      "phase_x": 8,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.05819,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 1,
+      "phase_x": 8,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.081626,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 1,
+      "phase_x": 8,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.053642,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 1,
+      "phase_x": 15,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.086217,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 1,
+      "phase_x": 15,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.050866,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 1,
+      "phase_x": 15,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.078162,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 1,
+      "phase_x": 15,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.086591,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 2,
+      "phase_x": 0,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.048937,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 2,
+      "phase_x": 0,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.049557,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 2,
+      "phase_x": 0,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.074336,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 2,
+      "phase_x": 0,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.086973,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 2,
+      "phase_x": 7,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.08616,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 2,
+      "phase_x": 7,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.085371,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 2,
+      "phase_x": 7,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.09235,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 2,
+      "phase_x": 7,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.093651,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 2,
+      "phase_x": 8,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.094013,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 2,
+      "phase_x": 8,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.084588,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 2,
+      "phase_x": 8,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.052162,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 2,
+      "phase_x": 8,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.079314,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 2,
+      "phase_x": 15,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.085323,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 2,
+      "phase_x": 15,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.047133,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 2,
+      "phase_x": 15,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.04978,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 2,
+      "phase_x": 15,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.06774,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 5,
+      "phase_x": 0,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.071439,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 5,
+      "phase_x": 0,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.084106,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          5,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 5,
+      "phase_x": 0,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.077106,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          5,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 5,
+      "phase_x": 0,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.077012,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 5,
+      "phase_x": 7,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.086743,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 5,
+      "phase_x": 7,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.050989,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          5,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 5,
+      "phase_x": 7,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.063563,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          5,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 5,
+      "phase_x": 7,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.084357,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 5,
+      "phase_x": 8,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.085407,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 5,
+      "phase_x": 8,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.082624,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          5,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 5,
+      "phase_x": 8,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.077668,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          5,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 5,
+      "phase_x": 8,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.080809,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 5,
+      "phase_x": 15,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.07,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 5,
+      "phase_x": 15,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.074584,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          5,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 5,
+      "phase_x": 15,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.048744,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          5,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 5,
+      "phase_x": 15,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.072708,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 42,
+      "phase_x": 0,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.084851,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 42,
+      "phase_x": 0,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.075808,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 42,
+      "phase_x": 0,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.085343,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 42,
+      "phase_x": 0,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.070446,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 42,
+      "phase_x": 7,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.049666,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 42,
+      "phase_x": 7,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.073034,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 42,
+      "phase_x": 7,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.048781,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 42,
+      "phase_x": 7,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.072111,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 42,
+      "phase_x": 8,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.082056,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 42,
+      "phase_x": 8,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.047036,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 42,
+      "phase_x": 8,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.047846,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 42,
+      "phase_x": 8,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.064929,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 42,
+      "phase_x": 15,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.067651,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 42,
+      "phase_x": 15,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.071117,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 42,
+      "phase_x": 15,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.084941,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    },
+    {
+      "rng": 42,
+      "phase_x": 15,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 24,
+      "elapsed_seconds": 0.087768,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "redstone_input": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "k1_input": [
+          null,
+          null,
+          6,
+          6
+        ]
+      },
+      "whole_assembly_max_action": 7
+    }
+  ]
+}

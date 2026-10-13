@@ -22,9 +22,10 @@ python tools/extension_contract.py flyers/WIP/experiments/extension_contract_202
 python tools/extension_contract.py flyers/WIP/experiments/extension_contract_20261011/benchmarks/payload.json --samples --out flyers/WIP/experiments/extension_contract_20261011/out/payload_samples.json
 ```
 
-Build just this binary: unrelated older research binaries may reference a newer
-trace API than the current core provides. The new backend uses only the existing
-public simulator API. No simulator, editor, format or bank changes are required.
+Build the named binaries individually: unrelated older research binaries have
+an existing trace API mismatch. Prescribed mode uses the opt-in
+`PrescribedSession` API in this checkout; rebuild its backend after simulator
+API changes.
 
 Calibration results are in [RESULTS.json](RESULTS.json), with interpretation
 and limits in [FINDINGS.md](FINDINGS.md). The human 3 bps reference and its
@@ -34,8 +35,7 @@ test of weaker-agent capability.
 
 The separate [external-drive fixture](external_drive/RESULTS.json) tests three
 commanded glue-column schedules: `mmmww`, `mmmmww`, and `mmwmmw`, each over 80
-RNG/phase cases. The current contract and contact-plan unit suites pass 30
-tests, including real-backend integration for both trace backends. Rebuild it with
+RNG/phase cases. Regression tests include real-backend integration. Rebuild it with
 `python flyers/WIP/experiments/extension_contract_20261011/external_drive/build.py`,
 then run `python tools/extension_contract.py flyers/WIP/experiments/extension_contract_20261011/external_drive/contracts/mmmww.json --samples --out flyers/WIP/experiments/extension_contract_20261011/external_drive/out/mmmww_samples.json`
 and summarize with `python flyers/WIP/experiments/extension_contract_20261011/external_drive/summarize.py`.
@@ -188,8 +188,9 @@ axial piston pickup as a warning to explain, rather than a universal ban.
 
 The passive side payload is a harness calibration, not a novel extension
 mechanism. The scripted fixture is likewise a primitive calibration, not
-independent mechanism discovery. Next require a separate target body with a
-different movement phase, then two targets and literal repeated modules.
+independent mechanism discovery. The rear-cap example below now provides
+separate target phases. Two targets and literal repeated modules remain useful
+additional benchmark shapes.
 Scripted drives must retain explicit ordering and ordinary simulator movement
 discovery; never teleport exactly a listed set and hide its adhesive passengers.
 
@@ -215,4 +216,4 @@ for each natural-action order with exact translated cell/owner recurrence.
 The [fresh diagnostic trial](diagnostic_trial_v2/REPORT.md) repaired a supplied
 broken candidate with one added block and passed 80/80 without manual hints.
 These establish bounded task results, not a new flyer record or a controlled
-measurement of weaker-agent improvement. Current Python regression: 50 tests.
+measurement of weaker-agent improvement. See the current checkpoint for test counts.

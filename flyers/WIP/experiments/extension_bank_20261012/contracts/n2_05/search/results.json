@@ -1,0 +1,250 @@
+{
+ "id": "n2_05",
+ "orders": "both",
+ "own_recurrence": "exact",
+ "search_recurrence": "advance",
+ "seed_own": {
+  "name": "n2_05-pl7-rearcap-before_natural",
+  "pass": true,
+  "recurrence": "exact",
+  "orders": [
+   "before_natural",
+   "after_natural"
+  ],
+  "rank": "endogenous",
+  "excess": 0,
+  "max_load": 7,
+  "all_max_load": 7,
+  "count_at_max": 6,
+  "max_prescribed_input_load": 6,
+  "blocks": 14,
+  "sum_load": 120,
+  "input_loads": {
+   "redstone_input": [
+    1,
+    1,
+    null,
+    null
+   ],
+   "k1_input": [
+    null,
+    null,
+    6,
+    6
+   ]
+  }
+ },
+ "seed_advance": {
+  "name": "n2_05-pl7-rearcap-before_natural",
+  "pass": true,
+  "recurrence": "advance",
+  "orders": [
+   "before_natural",
+   "after_natural"
+  ],
+  "rank": "endogenous",
+  "excess": 0,
+  "max_load": 7,
+  "all_max_load": 7,
+  "count_at_max": 6,
+  "max_prescribed_input_load": 6,
+  "blocks": 14,
+  "sum_load": 120,
+  "input_loads": {
+   "redstone_input": [
+    1,
+    1,
+    null,
+    null
+   ],
+   "k1_input": [
+    null,
+    null,
+    6,
+    6
+   ]
+  }
+ },
+ "ref_endogenous_max": 7,
+ "search_cmd": "contract-search flyers/WIP/experiments/extension_bank_20261012/contracts/n2_05/before_natural.json 240 6 flyers/WIP/experiments/extension_bank_20261012/contracts/n2_05/search --target 6 --order both --recurrence advance --seed 1",
+ "summary": {
+  "contract": "n2_05-pl7-rearcap-before_natural",
+  "seconds": 240.0,
+  "threads": 6,
+  "seed": 1,
+  "orders": [
+   "before_natural",
+   "after_natural"
+  ],
+  "recurrence": "advance",
+  "target": 6,
+  "search_limit": 24,
+  "file_limit": 7,
+  "margin": 2,
+  "evaluations": 986145,
+  "passing_evaluations": 35169,
+  "evals_per_sec": 4108.9,
+  "seed_score": {
+   "excess": 6,
+   "max_load": 7,
+   "count_at_max": 6,
+   "blocks": 14,
+   "sum_load": 120,
+   "max_prescribed_input_load": 6
+  },
+  "inprocess_80_sample_pass": [
+   80
+  ],
+  "best_inprocess_80_sample_pass": 80,
+  "failure_histogram": [
+   [
+    "[before_natural] tick : prescribed move at  failed: LoadExce",
+    344564
+   ],
+   [
+    "[before_natural] tick : extension failure",
+    243583
+   ],
+   [
+    "[before_natural] tick : port k_output expected move +X actua",
+    152922
+   ],
+   [
+    "[before_natural] tick : permanent identity  at  is not its o",
+    69009
+   ],
+   [
+    "[before_natural] tick : port k_input expected move +X actual",
+    32406
+   ],
+   [
+    "[before_natural] tick : port k_input expected wait actual mo",
+    29160
+   ],
+   [
+    "[before_natural] tick : port n_output expected wait actual m",
+    25370
+   ],
+   [
+    "[before_natural] tick : port n_output expected move +X actua",
+    19095
+   ],
+   [
+    "[before_natural] tick : port k_output expected position  act",
+    10029
+   ],
+   [
+    "[before_natural] tick : input k_input load budget exceeded; ",
+    9885
+   ],
+   [
+    "[after_natural] tick : prescribed move at  failed: MissingIn",
+    6629
+   ],
+   [
+    "[before_natural] tick : movement failed immovable obstructio",
+    4270
+   ]
+  ],
+  "best": {
+   "file": "best.flyer",
+   "score": [
+    6,
+    7,
+    6,
+    13,
+    114
+   ],
+   "excess": 6,
+   "max_load": 7,
+   "all_max_load": 7,
+   "count_at_max": 6,
+   "max_prescribed_input_load": 5,
+   "blocks": 13,
+   "input_loads": {
+    "redstone_input": [
+     1,
+     1,
+     null,
+     null
+    ],
+    "k1_input": [
+     null,
+     null,
+     5,
+     5
+    ]
+   },
+   "diff_vs_seed": [
+    "- (3,2,17) Piston(dir0 state0)"
+   ]
+  },
+  "pareto": [
+   {
+    "file": "pareto_7_5_13.flyer",
+    "max_load": 7,
+    "all_max_load": 7,
+    "count_at_max": 6,
+    "max_prescribed_input_load": 5,
+    "blocks": 13,
+    "sum_load": 114,
+    "input_loads": {
+     "redstone_input": [
+      1,
+      1,
+      null,
+      null
+     ],
+     "k1_input": [
+      null,
+      null,
+      5,
+      5
+     ]
+    }
+   }
+  ]
+ },
+ "confirm": [
+  {
+   "file": "pareto_7_5_13.flyer",
+   "limit": 7,
+   "blocks": 13,
+   "rust": {
+    "before_advance_single": {
+     "pass": true,
+     "max_load": 7,
+     "all_max_load": 7,
+     "count_at_max": 3,
+     "max_prescribed_input_load": 5,
+     "first_failure": null
+    },
+    "before_advance_samples": "80/80",
+    "before_exact_samples": "80/80",
+    "before_advance_8cycles": true,
+    "after_advance_single": {
+     "pass": true,
+     "max_load": 7,
+     "all_max_load": 7,
+     "count_at_max": 3,
+     "max_prescribed_input_load": 5,
+     "first_failure": null
+    },
+    "after_advance_samples": "80/80",
+    "after_exact_samples": "80/80",
+    "after_advance_8cycles": true
+   },
+   "python": {
+    "before_own": {
+     "single": "PASS",
+     "samples": "80/80 samples"
+    },
+    "after_own": {
+     "single": "PASS",
+     "samples": "80/80 samples"
+    }
+   },
+   "is_seed": false
+  }
+ ]
+}

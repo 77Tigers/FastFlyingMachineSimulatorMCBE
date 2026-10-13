@@ -1,0 +1,49 @@
+{
+ "version": 1,
+ "name": "n4_12-pareto_19_16_32-before-own",
+ "flyer": "../pareto_19_16_32.flyer",
+ "prescribed_script": "../../drive.txt",
+ "prescribed_order": "before_natural",
+ "period_ticks": 12,
+ "advance": 4,
+ "cycles": 3,
+ "recurrence": "exact",
+ "ports": [
+  {
+   "name": "target_out",
+   "role": "output",
+   "at": [
+    13,
+    0,
+    18
+   ],
+   "word": "mmmmww"
+  },
+  {
+   "name": "carrier_in",
+   "role": "input",
+   "at": [
+    14,
+    0,
+    16
+   ],
+   "word": "wwmmmm",
+   "baseline_load": [
+    null,
+    null,
+    19,
+    20,
+    21,
+    22
+   ],
+   "spare_load": [
+    null,
+    null,
+    0,
+    0,
+    0,
+    0
+   ]
+  }
+ ]
+}

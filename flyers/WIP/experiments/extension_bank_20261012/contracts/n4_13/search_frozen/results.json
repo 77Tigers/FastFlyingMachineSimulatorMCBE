@@ -1,0 +1,300 @@
+{
+ "id": "n4_13",
+ "orders": "both",
+ "own_recurrence": "exact",
+ "search_recurrence": "advance",
+ "seed_own": {
+  "name": "n4_13-before_natural",
+  "pass": true,
+  "recurrence": "exact",
+  "orders": [
+   "before_natural",
+   "after_natural"
+  ],
+  "rank": "endogenous",
+  "excess": 0,
+  "max_load": 19,
+  "all_max_load": 20,
+  "count_at_max": 6,
+  "max_prescribed_input_load": 20,
+  "blocks": 20,
+  "sum_load": 222,
+  "input_loads": {
+   "target_in": [
+    20,
+    19,
+    null,
+    19,
+    18,
+    null
+   ],
+   "piston4_in": [
+    20,
+    19,
+    1,
+    19,
+    null,
+    null
+   ],
+   "piston6_in": [
+    20,
+    null,
+    null,
+    19,
+    18,
+    1
+   ],
+   "piston11_in": [
+    20,
+    19,
+    1,
+    null,
+    null,
+    1
+   ]
+  }
+ },
+ "seed_advance": {
+  "name": "n4_13-before_natural",
+  "pass": true,
+  "recurrence": "advance",
+  "orders": [
+   "before_natural",
+   "after_natural"
+  ],
+  "rank": "endogenous",
+  "excess": 0,
+  "max_load": 19,
+  "all_max_load": 20,
+  "count_at_max": 6,
+  "max_prescribed_input_load": 20,
+  "blocks": 20,
+  "sum_load": 222,
+  "input_loads": {
+   "target_in": [
+    20,
+    19,
+    null,
+    19,
+    18,
+    null
+   ],
+   "piston4_in": [
+    20,
+    19,
+    1,
+    19,
+    null,
+    null
+   ],
+   "piston6_in": [
+    20,
+    null,
+    null,
+    19,
+    18,
+    1
+   ],
+   "piston11_in": [
+    20,
+    19,
+    1,
+    null,
+    null,
+    1
+   ]
+  }
+ },
+ "ref_endogenous_max": 19,
+ "search_cmd": "contract-search flyers/WIP/experiments/extension_bank_20261012/contracts/n4_13/before_natural.json 180 6 flyers/WIP/experiments/extension_bank_20261012/contracts/n4_13/search_frozen --target 18 --order both --recurrence advance --seed 1 --freeze-bodies",
+ "summary": {
+  "contract": "n4_13-before_natural",
+  "seconds": 180.0,
+  "threads": 6,
+  "seed": 1,
+  "orders": [
+   "before_natural",
+   "after_natural"
+  ],
+  "recurrence": "advance",
+  "target": 18,
+  "search_limit": 24,
+  "file_limit": 22,
+  "margin": 2,
+  "evaluations": 2000484,
+  "passing_evaluations": 2,
+  "evals_per_sec": 11113.7,
+  "seed_score": {
+   "excess": 6,
+   "max_load": 19,
+   "count_at_max": 6,
+   "blocks": 20,
+   "sum_load": 222,
+   "max_prescribed_input_load": 20
+  },
+  "inprocess_80_sample_pass": [
+   80
+  ],
+  "best_inprocess_80_sample_pass": 80,
+  "failure_histogram": [
+   [
+    "[before_natural] tick : prescribed move at  failed: LoadExce",
+    1576297
+   ],
+   [
+    "[before_natural] tick : permanent identity  at  is not its o",
+    176686
+   ],
+   [
+    "[before_natural] tick : prescribed move at  failed: Blocked",
+    134956
+   ],
+   [
+    "[before_natural] tick : input target_in load budget exceeded",
+    107468
+   ],
+   [
+    "[before_natural] tick : extension failure",
+    5075
+   ]
+  ],
+  "best": {
+   "file": "best.flyer",
+   "score": [
+    6,
+    19,
+    6,
+    20,
+    222
+   ],
+   "excess": 6,
+   "max_load": 19,
+   "all_max_load": 20,
+   "count_at_max": 6,
+   "max_prescribed_input_load": 20,
+   "blocks": 20,
+   "input_loads": {
+    "target_in": [
+     20,
+     19,
+     null,
+     19,
+     18,
+     null
+    ],
+    "piston4_in": [
+     20,
+     19,
+     1,
+     19,
+     null,
+     null
+    ],
+    "piston6_in": [
+     20,
+     null,
+     null,
+     19,
+     18,
+     1
+    ],
+    "piston11_in": [
+     20,
+     19,
+     1,
+     null,
+     null,
+     1
+    ]
+   },
+   "diff_vs_seed": []
+  },
+  "pareto": [
+   {
+    "file": "pareto_19_20_20.flyer",
+    "max_load": 19,
+    "all_max_load": 20,
+    "count_at_max": 6,
+    "max_prescribed_input_load": 20,
+    "blocks": 20,
+    "sum_load": 222,
+    "input_loads": {
+     "target_in": [
+      20,
+      19,
+      null,
+      19,
+      18,
+      null
+     ],
+     "piston4_in": [
+      20,
+      19,
+      1,
+      19,
+      null,
+      null
+     ],
+     "piston6_in": [
+      20,
+      null,
+      null,
+      19,
+      18,
+      1
+     ],
+     "piston11_in": [
+      20,
+      19,
+      1,
+      null,
+      null,
+      1
+     ]
+    }
+   }
+  ]
+ },
+ "confirm": [
+  {
+   "file": "pareto_19_20_20.flyer",
+   "limit": 22,
+   "blocks": 20,
+   "rust": {
+    "before_advance_single": {
+     "pass": true,
+     "max_load": 19,
+     "all_max_load": 20,
+     "count_at_max": 3,
+     "max_prescribed_input_load": 20,
+     "first_failure": null
+    },
+    "before_advance_samples": "80/80",
+    "before_exact_samples": "80/80",
+    "before_advance_8cycles": true,
+    "after_advance_single": {
+     "pass": true,
+     "max_load": 19,
+     "all_max_load": 20,
+     "count_at_max": 3,
+     "max_prescribed_input_load": 20,
+     "first_failure": null
+    },
+    "after_advance_samples": "80/80",
+    "after_exact_samples": "80/80",
+    "after_advance_8cycles": true
+   },
+   "python": {
+    "before_own": {
+     "single": "PASS",
+     "samples": "80/80 samples"
+    },
+    "after_own": {
+     "single": "PASS",
+     "samples": "80/80 samples"
+    }
+   },
+   "is_seed": true
+  }
+ ]
+}

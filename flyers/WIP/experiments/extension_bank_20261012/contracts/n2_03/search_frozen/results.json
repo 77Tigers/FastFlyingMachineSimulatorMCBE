@@ -1,0 +1,264 @@
+{
+ "id": "n2_03",
+ "orders": "both",
+ "own_recurrence": "exact",
+ "search_recurrence": "advance",
+ "seed_own": {
+  "name": "n2_03-pl9rigid-before_natural",
+  "pass": true,
+  "recurrence": "exact",
+  "orders": [
+   "before_natural",
+   "after_natural"
+  ],
+  "rank": "endogenous",
+  "excess": 0,
+  "max_load": 5,
+  "all_max_load": 6,
+  "count_at_max": 6,
+  "max_prescribed_input_load": 6,
+  "blocks": 7,
+  "sum_load": 30,
+  "input_loads": {
+   "target_wwmm": [
+    null,
+    null,
+    5,
+    6
+   ],
+   "carrier_mwwm": [
+    1,
+    null,
+    null,
+    6
+   ],
+   "ob1": [
+    1,
+    1,
+    null,
+    null
+   ]
+  }
+ },
+ "seed_advance": {
+  "name": "n2_03-pl9rigid-before_natural",
+  "pass": true,
+  "recurrence": "advance",
+  "orders": [
+   "before_natural",
+   "after_natural"
+  ],
+  "rank": "endogenous",
+  "excess": 0,
+  "max_load": 5,
+  "all_max_load": 6,
+  "count_at_max": 6,
+  "max_prescribed_input_load": 6,
+  "blocks": 7,
+  "sum_load": 30,
+  "input_loads": {
+   "target_wwmm": [
+    null,
+    null,
+    5,
+    6
+   ],
+   "carrier_mwwm": [
+    1,
+    null,
+    null,
+    6
+   ],
+   "ob1": [
+    1,
+    1,
+    null,
+    null
+   ]
+  }
+ },
+ "ref_endogenous_max": 5,
+ "search_cmd": "contract-search flyers/WIP/experiments/extension_bank_20261012/contracts/n2_03/before_natural.json 180 6 flyers/WIP/experiments/extension_bank_20261012/contracts/n2_03/search_frozen --target 4 --order both --recurrence advance --seed 1 --freeze-bodies",
+ "summary": {
+  "contract": "n2_03-pl9rigid-before_natural",
+  "seconds": 180.0,
+  "threads": 6,
+  "seed": 1,
+  "orders": [
+   "before_natural",
+   "after_natural"
+  ],
+  "recurrence": "advance",
+  "target": 4,
+  "search_limit": 24,
+  "file_limit": 9,
+  "margin": 2,
+  "evaluations": 702155,
+  "passing_evaluations": 1,
+  "evals_per_sec": 3900.8,
+  "seed_score": {
+   "excess": 6,
+   "max_load": 5,
+   "count_at_max": 6,
+   "blocks": 7,
+   "sum_load": 30,
+   "max_prescribed_input_load": 6
+  },
+  "inprocess_80_sample_pass": [
+   80
+  ],
+  "best_inprocess_80_sample_pass": 80,
+  "failure_histogram": [
+   [
+    "[before_natural] tick : prescribed move at  failed: LoadExce",
+    335770
+   ],
+   [
+    "[before_natural] tick : input target_wwmm load budget exceed",
+    184145
+   ],
+   [
+    "[before_natural] tick : permanent identity  at  is not its o",
+    105593
+   ],
+   [
+    "[before_natural] tick : extension failure",
+    62795
+   ],
+   [
+    "[before_natural] tick : port target_wwmm expected wait actua",
+    5777
+   ],
+   [
+    "[before_natural] tick : movement failed immovable obstructio",
+    3898
+   ],
+   [
+    "[before_natural] tick : port target_wwmm expected move +X ac",
+    2351
+   ],
+   [
+    "[before_natural] tick : prescribed move at  failed: Blocked",
+    1645
+   ],
+   [
+    "[before_natural] tick : movement failed push limit exceeded ",
+    126
+   ],
+   [
+    "[before_natural] tick : port carrier_mwwm expected wait actu",
+    54
+   ]
+  ],
+  "best": {
+   "file": "best.flyer",
+   "score": [
+    6,
+    5,
+    6,
+    7,
+    30
+   ],
+   "excess": 6,
+   "max_load": 5,
+   "all_max_load": 6,
+   "count_at_max": 6,
+   "max_prescribed_input_load": 6,
+   "blocks": 7,
+   "input_loads": {
+    "target_wwmm": [
+     null,
+     null,
+     5,
+     6
+    ],
+    "carrier_mwwm": [
+     1,
+     null,
+     null,
+     6
+    ],
+    "ob1": [
+     1,
+     1,
+     null,
+     null
+    ]
+   },
+   "diff_vs_seed": []
+  },
+  "pareto": [
+   {
+    "file": "pareto_5_6_7.flyer",
+    "max_load": 5,
+    "all_max_load": 6,
+    "count_at_max": 6,
+    "max_prescribed_input_load": 6,
+    "blocks": 7,
+    "sum_load": 30,
+    "input_loads": {
+     "target_wwmm": [
+      null,
+      null,
+      5,
+      6
+     ],
+     "carrier_mwwm": [
+      1,
+      null,
+      null,
+      6
+     ],
+     "ob1": [
+      1,
+      1,
+      null,
+      null
+     ]
+    }
+   }
+  ]
+ },
+ "confirm": [
+  {
+   "file": "pareto_5_6_7.flyer",
+   "limit": 9,
+   "blocks": 7,
+   "rust": {
+    "before_advance_single": {
+     "pass": true,
+     "max_load": 5,
+     "all_max_load": 6,
+     "count_at_max": 3,
+     "max_prescribed_input_load": 6,
+     "first_failure": null
+    },
+    "before_advance_samples": "80/80",
+    "before_exact_samples": "80/80",
+    "before_advance_8cycles": true,
+    "after_advance_single": {
+     "pass": true,
+     "max_load": 5,
+     "all_max_load": 6,
+     "count_at_max": 3,
+     "max_prescribed_input_load": 6,
+     "first_failure": null
+    },
+    "after_advance_samples": "80/80",
+    "after_exact_samples": "80/80",
+    "after_advance_8cycles": true
+   },
+   "python": {
+    "before_own": {
+     "single": "PASS",
+     "samples": "80/80 samples"
+    },
+    "after_own": {
+     "single": "PASS",
+     "samples": "80/80 samples"
+    }
+   },
+   "is_seed": true
+  }
+ ]
+}

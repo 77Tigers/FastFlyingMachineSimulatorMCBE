@@ -1,0 +1,11 @@
+seed (target 4, limit 24, recurrence advance) score (3, 5, 3, 15, 15) presc_max 10 input_loads {"b40_carrier_in":[null,null,9,9,10],"b54_in":[6,6,5,null,null]}
+  fail   699071  [before_natural] tick : prescribed move at  failed: Blocked
+  fail   256077  [before_natural] tick : prescribed move at  failed: LoadExce
+  fail    34890  [before_natural] tick : permanent identity  at  is not its o
+  fail      726  [before_natural] tick : port b_carrier_in expected wait actu
+  fail      367  [before_natural] tick : extension failure
+  fail       32  [before_natural] tick : input b_in load budget exceeded; mov
+  fail       12  [before_natural] tick : movement failed immovable obstructio
+done: 1002770 evals (11595 passing) in 180.0s = 5570.9 evals/s; pareto size 1
+  pareto excess=3 max_load=5 count=3 presc_max=10 blocks=15 sum=15 samples80=80/80
+best score (3, 5, 3, 15, 15) (excess 3, max 5, count 3, blocks 15) samples80=80/80

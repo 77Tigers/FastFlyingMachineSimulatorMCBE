@@ -1,0 +1,272 @@
+{
+ "id": "n4_14",
+ "orders": "both",
+ "own_recurrence": "exact",
+ "search_recurrence": "advance",
+ "seed_own": {
+  "name": "n4_14-before_natural",
+  "pass": true,
+  "recurrence": "exact",
+  "orders": [
+   "before_natural",
+   "after_natural"
+  ],
+  "rank": "endogenous",
+  "excess": 0,
+  "max_load": 16,
+  "all_max_load": 18,
+  "count_at_max": 6,
+  "max_prescribed_input_load": 18,
+  "blocks": 35,
+  "sum_load": 96,
+  "input_loads": {
+   "src60_in": [
+    1,
+    null,
+    null,
+    1,
+    1,
+    1
+   ],
+   "carrier_in": [
+    18,
+    18,
+    18,
+    null,
+    null,
+    18
+   ],
+   "target_in": [
+    16,
+    16,
+    null,
+    null,
+    16,
+    16
+   ]
+  }
+ },
+ "seed_advance": {
+  "name": "n4_14-before_natural",
+  "pass": true,
+  "recurrence": "advance",
+  "orders": [
+   "before_natural",
+   "after_natural"
+  ],
+  "rank": "endogenous",
+  "excess": 0,
+  "max_load": 16,
+  "all_max_load": 18,
+  "count_at_max": 6,
+  "max_prescribed_input_load": 18,
+  "blocks": 35,
+  "sum_load": 96,
+  "input_loads": {
+   "src60_in": [
+    1,
+    null,
+    null,
+    1,
+    1,
+    1
+   ],
+   "carrier_in": [
+    18,
+    18,
+    18,
+    null,
+    null,
+    18
+   ],
+   "target_in": [
+    16,
+    16,
+    null,
+    null,
+    16,
+    16
+   ]
+  }
+ },
+ "ref_endogenous_max": 16,
+ "search_cmd": "contract-search flyers/WIP/experiments/extension_bank_20261012/contracts/n4_14/before_natural.json 180 6 flyers/WIP/experiments/extension_bank_20261012/contracts/n4_14/search_frozen --target 15 --order both --recurrence advance --seed 1 --freeze-bodies",
+ "summary": {
+  "contract": "n4_14-before_natural",
+  "seconds": 180.0,
+  "threads": 6,
+  "seed": 1,
+  "orders": [
+   "before_natural",
+   "after_natural"
+  ],
+  "recurrence": "advance",
+  "target": 15,
+  "search_limit": 24,
+  "file_limit": 22,
+  "margin": 2,
+  "evaluations": 997563,
+  "passing_evaluations": 0,
+  "evals_per_sec": 5541.9,
+  "seed_score": {
+   "excess": 6,
+   "max_load": 16,
+   "count_at_max": 6,
+   "blocks": 35,
+   "sum_load": 96,
+   "max_prescribed_input_load": 18
+  },
+  "inprocess_80_sample_pass": [
+   80
+  ],
+  "best_inprocess_80_sample_pass": 80,
+  "failure_histogram": [
+   [
+    "[before_natural] tick : prescribed move at  failed: LoadExce",
+    880050
+   ],
+   [
+    "[before_natural] tick : prescribed move at  failed: Blocked",
+    103747
+   ],
+   [
+    "[before_natural] tick : permanent identity  at  is not its o",
+    9725
+   ],
+   [
+    "[before_natural] tick : input target_in load budget exceeded",
+    3626
+   ],
+   [
+    "[before_natural] tick : extension failure",
+    315
+   ],
+   [
+    "[before_natural] tick : movement failed immovable obstructio",
+    100
+   ]
+  ],
+  "best": {
+   "file": "best.flyer",
+   "score": [
+    6,
+    16,
+    6,
+    35,
+    96
+   ],
+   "excess": 6,
+   "max_load": 16,
+   "all_max_load": 18,
+   "count_at_max": 6,
+   "max_prescribed_input_load": 18,
+   "blocks": 35,
+   "input_loads": {
+    "src60_in": [
+     1,
+     null,
+     null,
+     1,
+     1,
+     1
+    ],
+    "carrier_in": [
+     18,
+     18,
+     18,
+     null,
+     null,
+     18
+    ],
+    "target_in": [
+     16,
+     16,
+     null,
+     null,
+     16,
+     16
+    ]
+   },
+   "diff_vs_seed": []
+  },
+  "pareto": [
+   {
+    "file": "pareto_16_18_35.flyer",
+    "max_load": 16,
+    "all_max_load": 18,
+    "count_at_max": 6,
+    "max_prescribed_input_load": 18,
+    "blocks": 35,
+    "sum_load": 96,
+    "input_loads": {
+     "src60_in": [
+      1,
+      null,
+      null,
+      1,
+      1,
+      1
+     ],
+     "carrier_in": [
+      18,
+      18,
+      18,
+      null,
+      null,
+      18
+     ],
+     "target_in": [
+      16,
+      16,
+      null,
+      null,
+      16,
+      16
+     ]
+    }
+   }
+  ]
+ },
+ "confirm": [
+  {
+   "file": "pareto_16_18_35.flyer",
+   "limit": 22,
+   "blocks": 35,
+   "rust": {
+    "before_advance_single": {
+     "pass": true,
+     "max_load": 16,
+     "all_max_load": 18,
+     "count_at_max": 3,
+     "max_prescribed_input_load": 18,
+     "first_failure": null
+    },
+    "before_advance_samples": "80/80",
+    "before_exact_samples": "80/80",
+    "before_advance_8cycles": true,
+    "after_advance_single": {
+     "pass": true,
+     "max_load": 16,
+     "all_max_load": 18,
+     "count_at_max": 3,
+     "max_prescribed_input_load": 18,
+     "first_failure": null
+    },
+    "after_advance_samples": "80/80",
+    "after_exact_samples": "80/80",
+    "after_advance_8cycles": true
+   },
+   "python": {
+    "before_own": {
+     "single": "PASS",
+     "samples": "80/80 samples"
+    },
+    "after_own": {
+     "single": "PASS",
+     "samples": "80/80 samples"
+    }
+   },
+   "is_seed": true
+  }
+ ]
+}

@@ -1,0 +1,103 @@
+seed (target 13, limit 24, recurrence bounded) score (30, 14, 30, 53, 726) presc_max 13 input_loads {"b20_in":[13,13,null,13,null],"b30_in":[13,14,null,null,12]}
+thread 3 new best score (30, 14, 30, 53, 724) presc_max 13 after 51 evals
+thread 5 new best score (24, 14, 24, 52, 720) presc_max 13 after 98 evals
+thread 4 new best score (24, 14, 24, 52, 720) presc_max 13 after 120 evals
+thread 3 new best score (24, 14, 24, 52, 718) presc_max 13 after 459 evals
+thread 2 new best score (24, 14, 24, 52, 720) presc_max 13 after 510 evals
+thread 4 new best score (24, 14, 24, 51, 714) presc_max 13 after 2179 evals
+thread 0 new best score (24, 14, 24, 52, 720) presc_max 13 after 2183 evals
+thread 3 new best score (24, 14, 24, 51, 708) presc_max 12 after 2728 evals
+thread 2 new best score (24, 14, 24, 51, 708) presc_max 12 after 3326 evals
+thread 1 new best score (28, 14, 28, 53, 724) presc_max 13 after 5531 evals
+thread 1 new best score (24, 14, 24, 52, 720) presc_max 13 after 5914 evals
+thread 5 new best score (24, 14, 24, 51, 708) presc_max 12 after 7968 evals
+thread 4 new best score (24, 14, 24, 51, 712) presc_max 13 after 15305 evals
+thread 2 new best score (24, 14, 24, 51, 704) presc_max 12 after 15520 evals
+thread 0 new best score (24, 14, 24, 51, 714) presc_max 13 after 17071 evals
+thread 1 new best score (24, 14, 24, 52, 718) presc_max 13 after 18438 evals
+thread 2 new best score (24, 14, 24, 50, 698) presc_max 12 after 19562 evals
+thread 0 new best score (24, 14, 24, 50, 702) presc_max 12 after 19818 evals
+thread 4 new best score (24, 14, 24, 50, 702) presc_max 12 after 25483 evals
+thread 5 new best score (24, 14, 24, 51, 706) presc_max 12 after 25925 evals
+thread 2 new best score (24, 14, 24, 50, 694) presc_max 12 after 27005 evals
+thread 2 new best score (24, 14, 24, 49, 690) presc_max 12 after 27453 evals
+thread 2 new best score (24, 14, 24, 49, 686) presc_max 11 after 44426 evals
+thread 3 new best score (24, 14, 24, 50, 706) presc_max 13 after 44670 evals
+thread 2 new best score (24, 14, 24, 49, 684) presc_max 11 after 66715 evals
+thread 1 new best score (24, 14, 24, 51, 706) presc_max 12 after 68047 evals
+thread 5 new best score (24, 14, 24, 50, 702) presc_max 12 after 76605 evals
+thread 5 new best score (24, 14, 24, 50, 694) presc_max 12 after 97588 evals
+thread 2 new best score (24, 14, 24, 48, 682) presc_max 11 after 113355 evals
+thread 4 new best score (24, 14, 24, 50, 696) presc_max 12 after 120410 evals
+thread 1 new best score (24, 14, 24, 50, 696) presc_max 12 after 121390 evals
+thread 1 new best score (24, 14, 24, 50, 694) presc_max 12 after 122120 evals
+thread 4 new best score (24, 14, 24, 49, 690) presc_max 11 after 122246 evals
+thread 0 new best score (24, 14, 24, 50, 700) presc_max 12 after 124917 evals
+thread 4 new best score (24, 14, 24, 48, 678) presc_max 11 after 131111 evals
+thread 0 new best score (24, 14, 24, 50, 698) presc_max 12 after 132472 evals
+thread 3 new best score (24, 14, 24, 50, 700) presc_max 12 after 134212 evals
+thread 0 new best score (24, 14, 24, 49, 698) presc_max 13 after 141945 evals
+thread 1 new best score (24, 14, 24, 50, 692) presc_max 12 after 148048 evals
+thread 1 new best score (24, 14, 24, 49, 690) presc_max 11 after 162659 evals
+thread 0 new best score (24, 14, 24, 49, 686) presc_max 11 after 165007 evals
+thread 5 new best score (24, 14, 24, 49, 696) presc_max 13 after 187637 evals
+thread 5 new best score (24, 14, 24, 48, 688) presc_max 12 after 194487 evals
+thread 3 new best score (24, 14, 24, 50, 698) presc_max 12 after 212740 evals
+thread 5 new best score (24, 14, 24, 48, 682) presc_max 11 after 224866 evals
+thread 3 new best score (24, 14, 24, 50, 696) presc_max 12 after 229918 evals
+thread 0 new best score (24, 14, 24, 48, 682) presc_max 11 after 263944 evals
+thread 0 new best score (24, 14, 24, 47, 678) presc_max 11 after 313384 evals
+thread 5 new best score (24, 14, 24, 47, 678) presc_max 11 after 324229 evals
+thread 3 new best score (24, 14, 24, 49, 688) presc_max 12 after 339794 evals
+thread 2 new best score (24, 14, 24, 47, 678) presc_max 10 after 440383 evals
+thread 3 new best score (24, 14, 24, 49, 678) presc_max 12 after 526412 evals
+thread 3 new best score (24, 14, 24, 48, 672) presc_max 11 after 526546 evals
+thread 1 new best score (24, 14, 24, 49, 686) presc_max 11 after 614964 evals
+thread 1 new best score (24, 14, 24, 49, 684) presc_max 11 after 836041 evals
+thread 0 new best score (24, 14, 24, 46, 666) presc_max 10 after 871446 evals
+thread 1 new best score (24, 14, 24, 48, 676) presc_max 11 after 958156 evals
+thread 5 new best score (24, 14, 24, 47, 670) presc_max 10 after 990463 evals
+thread 5 new best score (24, 14, 24, 46, 666) presc_max 10 after 995740 evals
+thread 2 new best score (24, 14, 24, 46, 672) presc_max 10 after 1133858 evals
+thread 4 new best score (24, 14, 24, 47, 672) presc_max 10 after 1234382 evals
+thread 1 new best score (24, 14, 24, 47, 672) presc_max 10 after 1285664 evals
+thread 4 new best score (24, 14, 24, 46, 666) presc_max 10 after 1375007 evals
+thread 3 new best score (24, 14, 24, 47, 668) presc_max 10 after 1404239 evals
+thread 3 new best score (24, 14, 24, 46, 664) presc_max 10 after 1485239 evals
+thread 2 new best score (24, 14, 24, 46, 668) presc_max 10 after 1540405 evals
+  fail  1343539  [before_natural] initial permanent identity outside boundary
+  fail   183045  [before_natural] tick : port b_out expected move +X actual d
+  fail    81198  [before_natural] tick : port b_in expected move +X actual di
+  fail    31069  [before_natural] tick : extension failure
+  fail    23751  [before_natural] tick : movement failed immovable obstructio
+  fail    19182  [before_natural] tick : input b_in load budget exceeded; mov
+  fail    16263  [before_natural] tick : permanent identity  at  outside tran
+  fail     9148  [before_natural] tick : port b_out expected wait actual move
+  fail     7610  [before_natural] tick : prescribed move at  failed: LoadExce
+  fail     5523  [before_natural] tick : prescribed move at  failed: Blocked
+  fail     4399  [before_natural] tick : port b_out expected position  actual
+  fail     3395  [before_natural] tick : port b_in expected wait actual moved
+done: 1795696 evals (65343 passing) in 240.0s = 7481.7 evals/s; pareto size 1
+  pareto excess=24 max_load=14 count=24 presc_max=10 blocks=46 sum=664 samples80=80/80
+best score (24, 14, 24, 46, 664) (excess 24, max 14, count 24, blocks 46) samples80=80/80
+    - (2,6,9) Slime
+    - (3,1,7) RedstoneBlock
+    - (3,6,9) Slime
+    - (4,0,7) Slime
+    - (4,1,7) Slime
+    - (4,3,7) Piston(dir0 state0)
+    - (4,3,8) Piston(dir0 state0)
+    - (4,4,6) Piston(dir1 sticky state0)
+    - (4,5,7) RedstoneBlock
+    + (4,5,8) Honey
+    + (4,5,9) Slime
+    + (4,6,9) Slime
+    + (5,3,7) Piston(dir0 state0)
+    + (5,3,8) Piston(dir0 state0)
+    - (5,4,7) Honey
+    - (5,5,5) RedstoneBlock
+    - (5,5,6) Honey
+    - (5,5,7) Honey
+    + (5,5,8) Honey
+    - (5,6,7) Honey
+    + (8,5,7) RedstoneBlock

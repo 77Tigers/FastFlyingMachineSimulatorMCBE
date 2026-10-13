@@ -1,0 +1,49 @@
+{
+  "name": "n2_04-bank-migration-known-negative-after_natural",
+  "passed": false,
+  "first_failure": {
+    "stage": "trace",
+    "code": "contract_failure",
+    "tick": null,
+    "port": null,
+    "expected": null,
+    "actual": null,
+    "message": "tick 4: prescribed start failed or has unexpected action prescribed move failed"
+  },
+  "plan": {
+    "verdict": "consistent",
+    "name": "n2_04-bank-migration-known-negative-after_natural",
+    "message": "CONSISTENT: sparse contact obligations only; power, states, connectivity, intermediate-order safety and routing unresolved"
+  },
+  "case": {
+    "rng": null,
+    "phase_x": null,
+    "phase_z": null,
+    "passed": false,
+    "ticks": 5,
+    "elapsed_seconds": 0.631902,
+    "diagnostic": "tick 4: prescribed start failed or has unexpected action prescribed move failed",
+    "first_failure": null,
+    "input_max_action_loads": {
+      "k0_mmww": [
+        5,
+        7,
+        null,
+        null
+      ],
+      "rod": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "obs": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    "whole_assembly_max_action": 7
+  }
+}

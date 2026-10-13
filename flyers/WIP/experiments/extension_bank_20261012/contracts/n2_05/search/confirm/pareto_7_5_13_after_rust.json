@@ -1,0 +1,77 @@
+{
+ "version": 1,
+ "name": "n2_05-pl7-rearcap-after_natural",
+ "flyer": "../pareto_7_5_13.flyer",
+ "prescribed_script": "../../drive.txt",
+ "prescribed_order": "after_natural",
+ "period_ticks": 8,
+ "advance": 2,
+ "cycles": 3,
+ "recurrence": "exact",
+ "ports": [
+  {
+   "name": "redstone_input",
+   "role": "input",
+   "at": [
+    3,
+    2,
+    16
+   ],
+   "word": "mmww",
+   "baseline_load": [
+    1,
+    1,
+    null,
+    null
+   ],
+   "spare_load": [
+    0,
+    0,
+    null,
+    null
+   ]
+  },
+  {
+   "name": "k1_input",
+   "role": "input",
+   "at": [
+    3,
+    1,
+    17
+   ],
+   "word": "wwmm",
+   "baseline_load": [
+    null,
+    null,
+    6,
+    6
+   ],
+   "spare_load": [
+    null,
+    null,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "k0_output",
+   "role": "output",
+   "at": [
+    0,
+    1,
+    15
+   ],
+   "word": "mmww"
+  },
+  {
+   "name": "n_output",
+   "role": "output",
+   "at": [
+    2,
+    0,
+    15
+   ],
+   "word": "wmmw"
+  }
+ ]
+}

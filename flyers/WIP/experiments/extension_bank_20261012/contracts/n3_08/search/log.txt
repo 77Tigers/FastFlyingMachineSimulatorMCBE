@@ -1,0 +1,33 @@
+seed (target 5, limit 24, recurrence advance) score (3, 6, 3, 16, 33) presc_max 11 input_loads {"b40_carrier_in":[null,null,9,10,11],"b54_in":[7,6,5,null,null]}
+thread 1 new best score (0, 5, 3, 15, 27) presc_max 11 after 21 evals
+thread 2 new best score (0, 5, 3, 15, 27) presc_max 11 after 21 evals
+thread 3 new best score (0, 5, 3, 15, 27) presc_max 11 after 31 evals
+thread 4 new best score (0, 5, 3, 15, 27) presc_max 11 after 43 evals
+thread 5 new best score (0, 5, 3, 15, 27) presc_max 11 after 50 evals
+thread 0 new best score (0, 5, 3, 16, 27) presc_max 12 after 57 evals
+thread 0 new best score (0, 5, 3, 15, 27) presc_max 11 after 1157 evals
+thread 0 new best score (0, 5, 3, 14, 27) presc_max 10 after 3982 evals
+thread 0 new best score (0, 5, 3, 13, 27) presc_max 9 after 4234 evals
+thread 0 new best score (0, 5, 3, 12, 27) presc_max 8 after 4343 evals
+thread 2 new best score (0, 5, 3, 14, 27) presc_max 10 after 41787 evals
+thread 1 new best score (0, 5, 3, 14, 27) presc_max 10 after 192635 evals
+thread 1 new best score (0, 5, 3, 13, 27) presc_max 9 after 365162 evals
+thread 2 new best score (0, 5, 3, 13, 27) presc_max 9 after 485263 evals
+thread 2 new best score (0, 5, 3, 12, 27) presc_max 8 after 776801 evals
+  fail   381239  [before_natural] tick : prescribed move at  failed: LoadExce
+  fail   334318  [before_natural] tick : prescribed move at  failed: Blocked
+  fail    37180  [before_natural] tick : port b_in expected move +X actual di
+  fail    16811  [before_natural] tick : permanent identity  at  is not its o
+  fail     2477  [before_natural] tick : port b_in expected wait actual moved
+  fail      630  [before_natural] tick : port b_in expected position  actual 
+  fail      480  [before_natural] tick : extension failure
+  fail      444  [before_natural] tick : port b_carrier_in expected wait actu
+  fail      402  [before_natural] tick : input b_in load budget exceeded; mov
+  fail       40  [before_natural] tick : movement failed immovable obstructio
+done: 792806 evals (18785 passing) in 240.0s = 3303.3 evals/s; pareto size 1
+  pareto excess=0 max_load=5 count=3 presc_max=8 blocks=12 sum=27 samples80=80/80
+best score (0, 5, 3, 12, 27) (excess 0, max 5, count 3, blocks 12) samples80=80/80
+    - (4,0,14) RedstoneBlock
+    - (4,3,14) RedstoneBlock
+    - (5,2,13) Piston(dir1 sticky state0)
+    - (7,2,14) Slime

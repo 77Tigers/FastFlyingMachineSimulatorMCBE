@@ -1,0 +1,274 @@
+{
+  "version": 1,
+  "name": "n4_13-bank-migration-after_natural",
+  "flyer": "..\\..\\..\\..\\..\\bank_migration\\n4_13\\candidate.flyer",
+  "period_ticks": 12,
+  "advance": 4,
+  "cycles": 3,
+  "ports": [
+    {
+      "name": "target_in",
+      "role": "input",
+      "at": [
+        0,
+        3,
+        4
+      ],
+      "word": "mmwmmw",
+      "provenance": [
+        "supplied",
+        "internal",
+        null,
+        "supplied",
+        "internal",
+        null
+      ],
+      "baseline_load": [
+        20,
+        19,
+        null,
+        19,
+        18,
+        null
+      ],
+      "spare_load": [
+        0,
+        0,
+        null,
+        0,
+        0,
+        null
+      ]
+    },
+    {
+      "name": "target_out",
+      "role": "output",
+      "at": [
+        0,
+        3,
+        4
+      ],
+      "word": "mmwmmw",
+      "provenance": [
+        "supplied",
+        "internal",
+        null,
+        "supplied",
+        "internal",
+        null
+      ]
+    },
+    {
+      "name": "piston4_in",
+      "role": "input",
+      "at": [
+        2,
+        3,
+        4
+      ],
+      "word": "mmmmww",
+      "provenance": [
+        "supplied",
+        "internal",
+        "supplied",
+        "supplied",
+        null,
+        null
+      ]
+    },
+    {
+      "name": "piston6_in",
+      "role": "input",
+      "at": [
+        3,
+        4,
+        5
+      ],
+      "word": "mwwmmm",
+      "provenance": [
+        "supplied",
+        null,
+        null,
+        "supplied",
+        "internal",
+        "supplied"
+      ]
+    },
+    {
+      "name": "piston11_in",
+      "role": "input",
+      "at": [
+        5,
+        0,
+        4
+      ],
+      "word": "mmmwwm",
+      "provenance": [
+        "supplied",
+        "internal",
+        "supplied",
+        null,
+        null,
+        "supplied"
+      ]
+    }
+  ],
+  "prescribed_script": "..\\..\\..\\..\\..\\bank_migration\\n4_13\\after_natural\\prescribed.txt",
+  "prescribed_order": "after_natural",
+  "recurrence": "exact",
+  "required_cells": [
+    {
+      "at": [
+        0,
+        3,
+        4
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        0,
+        3,
+        5
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        0,
+        3,
+        6
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        1,
+        3,
+        4
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        1,
+        4,
+        4
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        2,
+        4,
+        4
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        3,
+        4,
+        4
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        3,
+        5,
+        4
+      ],
+      "cell": 103
+    },
+    {
+      "at": [
+        4,
+        1,
+        4
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        4,
+        2,
+        4
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        4,
+        3,
+        4
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        4,
+        4,
+        4
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        4,
+        4,
+        5
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        5,
+        1,
+        4
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        5,
+        4,
+        4
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        6,
+        1,
+        4
+      ],
+      "cell": 6
+    },
+    {
+      "at": [
+        6,
+        4,
+        4
+      ],
+      "cell": 1
+    }
+  ],
+  "contacts": [
+    {
+      "name": "target_input_output_alias",
+      "a": "target_in",
+      "b": "target_out",
+      "slots": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "relation": "same",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "source_flyer": "flyers/bank/pl7/tm_7pl_2.5bps.flyer",
+  "source_extension_bank_contract": "flyers/extension_bank/n2/n2_05/before_natural.json",
+  "source_mask_cells": 15,
+  "frozen_required_cells": 15,
+  "frozen_subset": "all",
+  "supported_orders": [
+    "before_natural",
+    "after_natural"
+  ],
+  "contacts_are": "observed named-port relative offsets at pre-even boundaries; they assert geometry, not power causation",
+  "notes": "PL7 rear cap only; source-front hop pistons are omitted.",
+  "measured_provenance": {
+    "redstone_input": [
+      "supplied",
+      "supplied",
+      null,
+      null
+    ],
+    "k1_input": [
+      null,
+      null,
+      "internal",
+      "supplied"
+    ],
+    "k0_output": [
+      "internal",
+      "internal",
+      null,
+      null
+    ],
+    "n_output": [
+      null,
+      "internal",
+      "internal",
+      null
+    ]
+  },
+  "script_first_period_order": [
+    [
+      "redstone_input"
+    ],
+    [
+      "redstone_input"
+    ],
+    [],
+    [
+      "k1_input"
+    ]
+  ]
+}

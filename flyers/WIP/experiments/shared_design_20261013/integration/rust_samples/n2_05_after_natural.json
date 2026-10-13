@@ -1,0 +1,8 @@
+{
+  "name": "n2_05-bank-migration-after_natural",
+  "pass": true,
+  "samples_passed": 80,
+  "samples_total": 80,
+  "max_load": 7,
+  "first_failure": null
+}

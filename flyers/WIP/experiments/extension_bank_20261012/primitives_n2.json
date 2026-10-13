@@ -1,0 +1,11585 @@
+{
+ "family": "N2",
+ "w0s": [
+  80,
+  88,
+  96,
+  104,
+  112,
+  120,
+  128,
+  160,
+  200,
+  224
+ ],
+ "period": 8,
+ "per_flyer": {
+  "flyers/bank/pl10/human_observer_hop.flyer": {
+   "actions": 4,
+   "ext0_per_period": [
+    2
+   ],
+   "body_counts": [
+    6
+   ],
+   "keys": 2,
+   "notes": [],
+   "key_w0_hits": {
+    "N2|C:mwmw/wmwm|S:-|pull@0|T:mwmw": 10,
+    "N2|C:mwmw/wmwm|S:wmwm|push@0|T:mwmw": 10
+   }
+  },
+  "flyers/bank/pl10/pulling_alternating.flyer": {
+   "actions": 4,
+   "ext0_per_period": [
+    4
+   ],
+   "body_counts": [
+    6
+   ],
+   "keys": 1,
+   "notes": [],
+   "key_w0_hits": {
+    "N2|C:mwmw/wmwm|S:-|pull@0|T:mwmw": 10
+   }
+  },
+  "flyers/bank/pl11/diagonal_alternating.flyer": {
+   "actions": 4,
+   "ext0_per_period": [
+    0
+   ],
+   "body_counts": [
+    6
+   ],
+   "keys": 1,
+   "notes": [],
+   "key_w0_hits": {
+    "N2|C:mwmw/wmwm|S:wmwm|push@0|T:mwmw": 10
+   }
+  },
+  "flyers/bank/pl11/human_hopping_pistons.flyer": {
+   "actions": 6,
+   "ext0_per_period": [
+    0
+   ],
+   "body_counts": [
+    5,
+    6
+   ],
+   "keys": 4,
+   "notes": [],
+   "key_w0_hits": {
+    "N2|C:mwmm|S:mmww|push@1|T:mmww": 10,
+    "N2|C:mwwm|S:mmww|push@1|T:mmww": 3,
+    "N2|C:wwmm|S:mmww|push@0|T:mmww": 10,
+    "N2|C:wwmm|S:mmww|push@1|T:mmww": 1
+   }
+  },
+  "flyers/bank/pl12/ab_push_pull_2body.flyer": {
+   "actions": 4,
+   "ext0_per_period": [
+    2
+   ],
+   "body_counts": [
+    6
+   ],
+   "keys": 2,
+   "notes": [],
+   "key_w0_hits": {
+    "N2|C:mwmw/wmwm|S:-|pull@0|T:mwmw": 10,
+    "N2|C:mwmw/wmwm|S:wmwm|push@0|T:mwmw": 10
+   }
+  },
+  "flyers/bank/pl12/human_hopping_pistons_uneven.flyer": {
+   "actions": 7,
+   "ext0_per_period": [
+    0
+   ],
+   "body_counts": [
+    5,
+    6
+   ],
+   "keys": 5,
+   "notes": [],
+   "key_w0_hits": {
+    "N2|C:mmww/wwmm|S:mmww|push@0|T:mmww": 5,
+    "N2|C:mmww|S:mmww|push@1|T:mmww": 5,
+    "N2|C:mwmm|S:mmww|push@1|T:mmww": 10,
+    "N2|C:mwwm|S:mmww|push@1|T:mmww": 1,
+    "N2|C:wwmm|S:mmww|push@0|T:mmww": 10
+   }
+  },
+  "flyers/bank/pl13/crosslayer_materialswap.flyer": {
+   "actions": 7,
+   "ext0_per_period": [
+    0
+   ],
+   "body_counts": [
+    5,
+    6
+   ],
+   "keys": 6,
+   "notes": [],
+   "key_w0_hits": {
+    "N2|C:mmww/wwmm|S:mmww|push@0|T:mmww": 10,
+    "N2|C:mmww/wwmm|S:mmww|push@1|T:mmww": 6,
+    "N2|C:mmww|S:mmww|push@1|T:mmww": 10,
+    "N2|C:mwmm|S:mmww|push@1|T:mmww": 2,
+    "N2|C:mwwm|S:mmww|push@1|T:mmww": 2,
+    "N2|C:wwmm|S:mmww|push@0|T:mmww": 6
+   }
+  },
+  "flyers/bank/pl13/crosslayer_mirrorz.flyer": {
+   "actions": 7,
+   "ext0_per_period": [
+    0
+   ],
+   "body_counts": [
+    5,
+    6
+   ],
+   "keys": 6,
+   "notes": [],
+   "key_w0_hits": {
+    "N2|C:mmww/wwmm|S:mmww|push@0|T:mmww": 10,
+    "N2|C:mmww/wwmm|S:mmww|push@1|T:mmww": 5,
+    "N2|C:mmww|S:mmww|push@1|T:mmww": 10,
+    "N2|C:mwmm|S:mmww|push@1|T:mmww": 3,
+    "N2|C:mwwm|S:mmww|push@1|T:mmww": 2,
+    "N2|C:wwmm|S:mmww|push@0|T:mmww": 5
+   }
+  },
+  "flyers/bank/pl13/crosslayer_rodpower.flyer": {
+   "actions": 7,
+   "ext0_per_period": [
+    0
+   ],
+   "body_counts": [
+    5,
+    6
+   ],
+   "keys": 6,
+   "notes": [],
+   "key_w0_hits": {
+    "N2|C:mmww/wwmm|S:mmww|push@0|T:mmww": 10,
+    "N2|C:mmww/wwmm|S:mmww|push@1|T:mmww": 6,
+    "N2|C:mmww|S:mmww|push@1|T:mmww": 10,
+    "N2|C:mwmm|S:mmww|push@1|T:mmww": 2,
+    "N2|C:mwwm|S:mmww|push@1|T:mmww": 2,
+    "N2|C:wwmm|S:mmww|push@0|T:mmww": 6
+   }
+  },
+  "flyers/bank/pl13/crosslayer_upright.flyer": {
+   "actions": 7,
+   "ext0_per_period": [
+    0
+   ],
+   "body_counts": [
+    4,
+    5,
+    6
+   ],
+   "keys": 6,
+   "notes": [],
+   "key_w0_hits": {
+    "N2|C:mmww/wwmm|S:mmww|push@0|T:mmww": 10,
+    "N2|C:mmww/wwmm|S:mmww|push@1|T:mmww": 1,
+    "N2|C:mmww|S:mmww|push@1|T:mmww": 10,
+    "N2|C:mwmm|S:mmww|push@1|T:mmww": 7,
+    "N2|C:mwwm|S:mmww|push@1|T:mmww": 2,
+    "N2|C:wwmm|S:mmww|push@0|T:mmww": 1
+   }
+  },
+  "flyers/bank/pl13/crosslayer_upright_swap.flyer": {
+   "actions": 7,
+   "ext0_per_period": [
+    0
+   ],
+   "body_counts": [
+    4,
+    5,
+    6
+   ],
+   "keys": 6,
+   "notes": [],
+   "key_w0_hits": {
+    "N2|C:mmww/wwmm|S:mmww|push@0|T:mmww": 10,
+    "N2|C:mmww/wwmm|S:mmww|push@1|T:mmww": 1,
+    "N2|C:mmww|S:mmww|push@1|T:mmww": 10,
+    "N2|C:mwmm|S:mmww|push@1|T:mmww": 7,
+    "N2|C:mwwm|S:mmww|push@1|T:mmww": 2,
+    "N2|C:wwmm|S:mmww|push@0|T:mmww": 1
+   }
+  },
+  "flyers/bank/pl14/lightning_rods.flyer": {
+   "actions": 6,
+   "ext0_per_period": [
+    0
+   ],
+   "body_counts": [
+    4,
+    5
+   ],
+   "keys": 5,
+   "notes": [],
+   "key_w0_hits": {
+    "N2|C:mmww|S:mmww|push@1|T:mmww": 10,
+    "N2|C:mwmm|S:mmww|push@1|T:mmww": 5,
+    "N2|C:mwwm|S:mmww|push@1|T:mmww": 2,
+    "N2|C:wwmm|S:mmww|push@0|T:mmww": 10,
+    "N2|C:wwmm|S:mmww|push@1|T:mmww": 3
+   }
+  },
+  "flyers/bank/pl14/material_swap.flyer": {
+   "actions": 6,
+   "ext0_per_period": [
+    0
+   ],
+   "body_counts": [
+    4,
+    5
+   ],
+   "keys": 5,
+   "notes": [],
+   "key_w0_hits": {
+    "N2|C:mmww|S:mmww|push@1|T:mmww": 10,
+    "N2|C:mwmm|S:mmww|push@1|T:mmww": 5,
+    "N2|C:mwwm|S:mmww|push@1|T:mmww": 2,
+    "N2|C:wwmm|S:mmww|push@0|T:mmww": 10,
+    "N2|C:wwmm|S:mmww|push@1|T:mmww": 3
+   }
+  },
+  "flyers/bank/pl14/shared_redstone.flyer": {
+   "actions": 6,
+   "ext0_per_period": [
+    0
+   ],
+   "body_counts": [
+    4,
+    5
+   ],
+   "keys": 5,
+   "notes": [],
+   "key_w0_hits": {
+    "N2|C:mmww|S:mmww|push@1|T:mmww": 10,
+    "N2|C:mwmm|S:mmww|push@1|T:mmww": 5,
+    "N2|C:mwwm|S:mmww|push@1|T:mmww": 2,
+    "N2|C:wwmm|S:mmww|push@0|T:mmww": 10,
+    "N2|C:wwmm|S:mmww|push@1|T:mmww": 3
+   }
+  },
+  "flyers/bank/pl14/upright.flyer": {
+   "actions": 6,
+   "ext0_per_period": [
+    0
+   ],
+   "body_counts": [
+    4,
+    5
+   ],
+   "keys": 5,
+   "notes": [],
+   "key_w0_hits": {
+    "N2|C:mmww|S:mmww|push@1|T:mmww": 10,
+    "N2|C:mwmm|S:mmww|push@1|T:mmww": 4,
+    "N2|C:mwwm|S:mmww|push@1|T:mmww": 2,
+    "N2|C:wwmm|S:mmww|push@0|T:mmww": 10,
+    "N2|C:wwmm|S:mmww|push@1|T:mmww": 4
+   }
+  },
+  "flyers/bank/pl15/four_segment_ring.flyer": {
+   "actions": 10,
+   "ext0_per_period": [
+    0
+   ],
+   "body_counts": [
+    10,
+    11,
+    12
+   ],
+   "keys": 3,
+   "notes": [],
+   "key_w0_hits": {
+    "N2|C:mwmm|S:mmww|push@1|T:mmww": 10,
+    "N2|C:mwwm|S:mmww|push@1|T:mmww": 3,
+    "N2|C:wwmm|S:mmww|push@0|T:mmww": 10
+   }
+  },
+  "flyers/bank/pl16/crossfeed_compact.flyer": {
+   "actions": 4,
+   "ext0_per_period": [
+    0
+   ],
+   "body_counts": [
+    4
+   ],
+   "keys": 3,
+   "notes": [],
+   "key_w0_hits": {
+    "N2|C:mmww|S:mmww|push@1|T:mmww": 10,
+    "N2|C:mwwm|S:mmww|push@1|T:mmww": 10,
+    "N2|C:wwmm|S:mmww|push@0|T:mmww": 10
+   }
+  },
+  "flyers/bank/pl16/crossfeed_honey_front.flyer": {
+   "actions": 4,
+   "ext0_per_period": [
+    0
+   ],
+   "body_counts": [
+    4
+   ],
+   "keys": 3,
+   "notes": [],
+   "key_w0_hits": {
+    "N2|C:mmww|S:mmww|push@1|T:mmww": 10,
+    "N2|C:mwwm|S:mmww|push@1|T:mmww": 10,
+    "N2|C:wwmm|S:mmww|push@0|T:mmww": 10
+   }
+  },
+  "flyers/bank/pl16/crossfeed_upright.flyer": {
+   "actions": 4,
+   "ext0_per_period": [
+    0
+   ],
+   "body_counts": [
+    4
+   ],
+   "keys": 3,
+   "notes": [],
+   "key_w0_hits": {
+    "N2|C:mmww|S:mmww|push@1|T:mmww": 10,
+    "N2|C:mwwm|S:mmww|push@1|T:mmww": 10,
+    "N2|C:wwmm|S:mmww|push@0|T:mmww": 10
+   }
+  },
+  "flyers/bank/pl17/crossfeed_sidebridge.flyer": {
+   "actions": 4,
+   "ext0_per_period": [
+    0
+   ],
+   "body_counts": [
+    4
+   ],
+   "keys": 3,
+   "notes": [],
+   "key_w0_hits": {
+    "N2|C:mmww|S:mmww|push@1|T:mmww": 10,
+    "N2|C:mwwm|S:mmww|push@1|T:mmww": 10,
+    "N2|C:wwmm|S:mmww|push@0|T:mmww": 10
+   }
+  },
+  "flyers/bank/pl18/crossfeed_longbridge.flyer": {
+   "actions": 4,
+   "ext0_per_period": [
+    0
+   ],
+   "body_counts": [
+    4
+   ],
+   "keys": 3,
+   "notes": [],
+   "key_w0_hits": {
+    "N2|C:mmww|S:mmww|push@1|T:mmww": 10,
+    "N2|C:mwwm|S:mmww|push@1|T:mmww": 10,
+    "N2|C:wwmm|S:mmww|push@0|T:mmww": 10
+   }
+  },
+  "flyers/bank/pl19/crossfeed_offset_rear.flyer": {
+   "actions": 4,
+   "ext0_per_period": [
+    0
+   ],
+   "body_counts": [
+    4
+   ],
+   "keys": 2,
+   "notes": [],
+   "key_w0_hits": {
+    "N2|C:mwwm|S:mmww|push@1|T:mmww": 10,
+    "N2|C:wwmm|S:mmww|push@0|T:mmww": 10
+   }
+  },
+  "flyers/bank/pl20/crossfeed_wide_rear.flyer": {
+   "actions": 4,
+   "ext0_per_period": [
+    0
+   ],
+   "body_counts": [
+    4
+   ],
+   "keys": 2,
+   "notes": [],
+   "key_w0_hits": {
+    "N2|C:mwwm|S:mmww|push@1|T:mmww": 10,
+    "N2|C:wwmm|S:mmww|push@0|T:mmww": 10
+   }
+  },
+  "flyers/bank/pl7/tm_7pl_2.5bps.flyer": {
+   "actions": 14,
+   "ext0_per_period": [
+    4
+   ],
+   "body_counts": [
+    9,
+    10
+   ],
+   "keys": 9,
+   "notes": [],
+   "key_w0_hits": {
+    "N2|C:mwmm|S:mmww|push@0|T:mmww": 3,
+    "N2|C:mwmm|S:mmww|push@1|T:mmww": 10,
+    "N2|C:mwwm|S:mmww|push@1|T:mmww": 3,
+    "N2|C:mwwm|S:mwwm/wmmw|push@1|T:mmww": 5,
+    "N2|C:mwwm|S:mwwm/wmmw|push@1|T:mmww+wmmw": 5,
+    "N2|C:wmmw|S:-|pull@0|T:mmww": 10,
+    "N2|C:wwmm|S:-|pull@1|T:mmww": 10,
+    "N2|C:wwmm|S:-|pull@1|T:mmww+wmmw": 10,
+    "N2|C:wwmm|S:mmww|push@0|T:mmww": 10
+   }
+  },
+  "flyers/bank/pl8/hop_pair_rod_observer.flyer": {
+   "actions": 4,
+   "ext0_per_period": [
+    2
+   ],
+   "body_counts": [
+    6
+   ],
+   "keys": 2,
+   "notes": [],
+   "key_w0_hits": {
+    "N2|C:mwmw/wmwm|S:-|pull@0|T:mwmw": 10,
+    "N2|C:mwmw/wmwm|S:mwmw|push@0|T:mwmw": 10
+   }
+  },
+  "flyers/bank/pl8/mirrored_chains_shared_mwmw.flyer": {
+   "actions": 30,
+   "ext0_per_period": [
+    12
+   ],
+   "body_counts": [
+    17
+   ],
+   "keys": 10,
+   "notes": [],
+   "key_w0_hits": {
+    "N2|C:mmww|S:mwmw|push@2|T:mwmw": 10,
+    "N2|C:mwwm|S:mmww|push@1|T:mmww": 10,
+    "N2|C:mwwm|S:mwwm/wmmw|push@1|T:mmww": 7,
+    "N2|C:mwwm|S:mwwm/wmmw|push@1|T:mmww+wmmw": 4,
+    "N2|C:wmmw|S:-|pull@0|T:mmww": 10,
+    "N2|C:wwmm|S:-|pull@1|T:mmww": 10,
+    "N2|C:wwmm|S:-|pull@1|T:mmww+wmmw": 10,
+    "N2|C:wwmm|S:mmww/wwmm|push@0|T:mmww": 10,
+    "N2|C:wwmm|S:mmww/wwmm|push@0|T:mmww+mwwm": 6,
+    "N2|C:wwmm|S:mmww|push@0|T:mmww": 10
+   }
+  },
+  "flyers/bank/pl8/opus_cool.flyer": {
+   "actions": 62,
+   "ext0_per_period": [
+    28
+   ],
+   "body_counts": [
+    33
+   ],
+   "keys": 11,
+   "notes": [],
+   "key_w0_hits": {
+    "N2|C:mmww/wwmm|S:mmww/wwmm|push@0|T:mmww": 10,
+    "N2|C:mmww|S:mwmw|push@2|T:mwmw": 10,
+    "N2|C:mwwm|S:mmww|push@1|T:mmww": 10,
+    "N2|C:mwwm|S:mwwm/wmmw|push@1|T:mmww": 6,
+    "N2|C:mwwm|S:mwwm/wmmw|push@1|T:mmww+wmmw": 6,
+    "N2|C:wmmw|S:-|pull@0|T:mmww": 10,
+    "N2|C:wwmm|S:-|pull@1|T:mmww": 10,
+    "N2|C:wwmm|S:-|pull@1|T:mmww+wmmw": 10,
+    "N2|C:wwmm|S:mmww/wwmm|push@0|T:mmww": 10,
+    "N2|C:wwmm|S:mmww/wwmm|push@0|T:mmww+mwwm": 6,
+    "N2|C:wwmm|S:mmww|push@0|T:mmww": 10
+   }
+  },
+  "flyers/bank/pl9/human_observer_hop.flyer": {
+   "actions": 4,
+   "ext0_per_period": [
+    2
+   ],
+   "body_counts": [
+    6
+   ],
+   "keys": 2,
+   "notes": [],
+   "key_w0_hits": {
+    "N2|C:mwmw/wmwm|S:-|pull@0|T:mwmw": 10,
+    "N2|C:mwmw/wmwm|S:wmwm|push@0|T:mwmw": 10
+   }
+  },
+  "flyers/bank/pl9/pulling_loop4.flyer": {
+   "actions": 8,
+   "ext0_per_period": [
+    8
+   ],
+   "body_counts": [
+    12
+   ],
+   "keys": 1,
+   "notes": [],
+   "key_w0_hits": {
+    "N2|C:mwmw/wmwm|S:-|pull@0|T:mwmw": 10
+   }
+  },
+  "flyers/bank/pl9/rigid_chain_capped.flyer": {
+   "actions": 17,
+   "ext0_per_period": [
+    6
+   ],
+   "body_counts": [
+    11
+   ],
+   "keys": 6,
+   "notes": [],
+   "key_w0_hits": {
+    "N2|C:mmww|S:mwmw|push@2|T:mwmw": 10,
+    "N2|C:mwmw|S:-|pull@0|T:mmww": 6,
+    "N2|C:mwwm|S:mmww|push@1|T:mmww": 10,
+    "N2|C:wmmw|S:-|pull@0|T:mmww": 4,
+    "N2|C:wwmm|S:-|pull@1|T:mmww": 10,
+    "N2|C:wwmm|S:mmww|push@0|T:mmww": 10
+   }
+  }
+ },
+ "groups": [
+  {
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "count": 75,
+   "min_load": 5,
+   "max_load": 20,
+   "n_flyers": 23,
+   "min_w0_hits": 1,
+   "flyers": [
+    "flyers/bank/pl11/human_hopping_pistons.flyer",
+    "flyers/bank/pl12/human_hopping_pistons_uneven.flyer",
+    "flyers/bank/pl13/crosslayer_materialswap.flyer",
+    "flyers/bank/pl13/crosslayer_mirrorz.flyer",
+    "flyers/bank/pl13/crosslayer_rodpower.flyer",
+    "flyers/bank/pl13/crosslayer_upright.flyer",
+    "flyers/bank/pl13/crosslayer_upright_swap.flyer",
+    "flyers/bank/pl14/lightning_rods.flyer",
+    "flyers/bank/pl14/material_swap.flyer",
+    "flyers/bank/pl14/shared_redstone.flyer",
+    "flyers/bank/pl14/upright.flyer",
+    "flyers/bank/pl15/four_segment_ring.flyer",
+    "flyers/bank/pl16/crossfeed_compact.flyer",
+    "flyers/bank/pl16/crossfeed_honey_front.flyer",
+    "flyers/bank/pl16/crossfeed_upright.flyer",
+    "flyers/bank/pl17/crossfeed_sidebridge.flyer",
+    "flyers/bank/pl18/crossfeed_longbridge.flyer",
+    "flyers/bank/pl19/crossfeed_offset_rear.flyer",
+    "flyers/bank/pl20/crossfeed_wide_rear.flyer",
+    "flyers/bank/pl7/tm_7pl_2.5bps.flyer",
+    "flyers/bank/pl8/mirrored_chains_shared_mwmw.flyer",
+    "flyers/bank/pl8/opus_cool.flyer",
+    "flyers/bank/pl9/rigid_chain_capped.flyer"
+   ]
+  },
+  {
+   "key": "N2|C:wwmm|S:-|pull@1|T:mmww",
+   "count": 39,
+   "min_load": 5,
+   "max_load": 9,
+   "n_flyers": 4,
+   "min_w0_hits": 10,
+   "flyers": [
+    "flyers/bank/pl7/tm_7pl_2.5bps.flyer",
+    "flyers/bank/pl8/mirrored_chains_shared_mwmw.flyer",
+    "flyers/bank/pl8/opus_cool.flyer",
+    "flyers/bank/pl9/rigid_chain_capped.flyer"
+   ]
+  },
+  {
+   "key": "N2|C:mwwm|S:mmww|push@1|T:mmww",
+   "count": 29,
+   "min_load": 4,
+   "max_load": 20,
+   "n_flyers": 23,
+   "min_w0_hits": 1,
+   "flyers": [
+    "flyers/bank/pl11/human_hopping_pistons.flyer",
+    "flyers/bank/pl12/human_hopping_pistons_uneven.flyer",
+    "flyers/bank/pl13/crosslayer_materialswap.flyer",
+    "flyers/bank/pl13/crosslayer_mirrorz.flyer",
+    "flyers/bank/pl13/crosslayer_rodpower.flyer",
+    "flyers/bank/pl13/crosslayer_upright.flyer",
+    "flyers/bank/pl13/crosslayer_upright_swap.flyer",
+    "flyers/bank/pl14/lightning_rods.flyer",
+    "flyers/bank/pl14/material_swap.flyer",
+    "flyers/bank/pl14/shared_redstone.flyer",
+    "flyers/bank/pl14/upright.flyer",
+    "flyers/bank/pl15/four_segment_ring.flyer",
+    "flyers/bank/pl16/crossfeed_compact.flyer",
+    "flyers/bank/pl16/crossfeed_honey_front.flyer",
+    "flyers/bank/pl16/crossfeed_upright.flyer",
+    "flyers/bank/pl17/crossfeed_sidebridge.flyer",
+    "flyers/bank/pl18/crossfeed_longbridge.flyer",
+    "flyers/bank/pl19/crossfeed_offset_rear.flyer",
+    "flyers/bank/pl20/crossfeed_wide_rear.flyer",
+    "flyers/bank/pl7/tm_7pl_2.5bps.flyer",
+    "flyers/bank/pl8/mirrored_chains_shared_mwmw.flyer",
+    "flyers/bank/pl8/opus_cool.flyer",
+    "flyers/bank/pl9/rigid_chain_capped.flyer"
+   ]
+  },
+  {
+   "key": "N2|C:mwmw/wmwm|S:-|pull@0|T:mwmw",
+   "count": 20,
+   "min_load": 8,
+   "max_load": 12,
+   "n_flyers": 6,
+   "min_w0_hits": 10,
+   "flyers": [
+    "flyers/bank/pl10/human_observer_hop.flyer",
+    "flyers/bank/pl10/pulling_alternating.flyer",
+    "flyers/bank/pl12/ab_push_pull_2body.flyer",
+    "flyers/bank/pl8/hop_pair_rod_observer.flyer",
+    "flyers/bank/pl9/human_observer_hop.flyer",
+    "flyers/bank/pl9/pulling_loop4.flyer"
+   ]
+  },
+  {
+   "key": "N2|C:mwmm|S:mmww|push@1|T:mmww",
+   "count": 19,
+   "min_load": 4,
+   "max_load": 15,
+   "n_flyers": 13,
+   "min_w0_hits": 2,
+   "flyers": [
+    "flyers/bank/pl11/human_hopping_pistons.flyer",
+    "flyers/bank/pl12/human_hopping_pistons_uneven.flyer",
+    "flyers/bank/pl13/crosslayer_materialswap.flyer",
+    "flyers/bank/pl13/crosslayer_mirrorz.flyer",
+    "flyers/bank/pl13/crosslayer_rodpower.flyer",
+    "flyers/bank/pl13/crosslayer_upright.flyer",
+    "flyers/bank/pl13/crosslayer_upright_swap.flyer",
+    "flyers/bank/pl14/lightning_rods.flyer",
+    "flyers/bank/pl14/material_swap.flyer",
+    "flyers/bank/pl14/shared_redstone.flyer",
+    "flyers/bank/pl14/upright.flyer",
+    "flyers/bank/pl15/four_segment_ring.flyer",
+    "flyers/bank/pl7/tm_7pl_2.5bps.flyer"
+   ]
+  },
+  {
+   "key": "N2|C:mmww|S:mmww|push@1|T:mmww",
+   "count": 15,
+   "min_load": 12,
+   "max_load": 14,
+   "n_flyers": 15,
+   "min_w0_hits": 5,
+   "flyers": [
+    "flyers/bank/pl12/human_hopping_pistons_uneven.flyer",
+    "flyers/bank/pl13/crosslayer_materialswap.flyer",
+    "flyers/bank/pl13/crosslayer_mirrorz.flyer",
+    "flyers/bank/pl13/crosslayer_rodpower.flyer",
+    "flyers/bank/pl13/crosslayer_upright.flyer",
+    "flyers/bank/pl13/crosslayer_upright_swap.flyer",
+    "flyers/bank/pl14/lightning_rods.flyer",
+    "flyers/bank/pl14/material_swap.flyer",
+    "flyers/bank/pl14/shared_redstone.flyer",
+    "flyers/bank/pl14/upright.flyer",
+    "flyers/bank/pl16/crossfeed_compact.flyer",
+    "flyers/bank/pl16/crossfeed_honey_front.flyer",
+    "flyers/bank/pl16/crossfeed_upright.flyer",
+    "flyers/bank/pl17/crossfeed_sidebridge.flyer",
+    "flyers/bank/pl18/crossfeed_longbridge.flyer"
+   ]
+  },
+  {
+   "key": "N2|C:mmww/wwmm|S:mmww|push@0|T:mmww",
+   "count": 11,
+   "min_load": 12,
+   "max_load": 13,
+   "n_flyers": 6,
+   "min_w0_hits": 5,
+   "flyers": [
+    "flyers/bank/pl12/human_hopping_pistons_uneven.flyer",
+    "flyers/bank/pl13/crosslayer_materialswap.flyer",
+    "flyers/bank/pl13/crosslayer_mirrorz.flyer",
+    "flyers/bank/pl13/crosslayer_rodpower.flyer",
+    "flyers/bank/pl13/crosslayer_upright.flyer",
+    "flyers/bank/pl13/crosslayer_upright_swap.flyer"
+   ]
+  },
+  {
+   "key": "N2|C:mwmw/wmwm|S:wmwm|push@0|T:mwmw",
+   "count": 10,
+   "min_load": 7,
+   "max_load": 11,
+   "n_flyers": 4,
+   "min_w0_hits": 10,
+   "flyers": [
+    "flyers/bank/pl10/human_observer_hop.flyer",
+    "flyers/bank/pl11/diagonal_alternating.flyer",
+    "flyers/bank/pl12/ab_push_pull_2body.flyer",
+    "flyers/bank/pl9/human_observer_hop.flyer"
+   ]
+  },
+  {
+   "key": "N2|C:wmmw|S:-|pull@0|T:mmww",
+   "count": 6,
+   "min_load": 5,
+   "max_load": 5,
+   "n_flyers": 4,
+   "min_w0_hits": 4,
+   "flyers": [
+    "flyers/bank/pl7/tm_7pl_2.5bps.flyer",
+    "flyers/bank/pl8/mirrored_chains_shared_mwmw.flyer",
+    "flyers/bank/pl8/opus_cool.flyer",
+    "flyers/bank/pl9/rigid_chain_capped.flyer"
+   ]
+  },
+  {
+   "key": "N2|C:mmww|S:mwmw|push@2|T:mwmw",
+   "count": 6,
+   "min_load": 8,
+   "max_load": 9,
+   "n_flyers": 3,
+   "min_w0_hits": 10,
+   "flyers": [
+    "flyers/bank/pl8/mirrored_chains_shared_mwmw.flyer",
+    "flyers/bank/pl8/opus_cool.flyer",
+    "flyers/bank/pl9/rigid_chain_capped.flyer"
+   ]
+  },
+  {
+   "key": "N2|C:mwwm|S:mwwm/wmmw|push@1|T:mmww",
+   "count": 5,
+   "min_load": 2,
+   "max_load": 2,
+   "n_flyers": 3,
+   "min_w0_hits": 5,
+   "flyers": [
+    "flyers/bank/pl7/tm_7pl_2.5bps.flyer",
+    "flyers/bank/pl8/mirrored_chains_shared_mwmw.flyer",
+    "flyers/bank/pl8/opus_cool.flyer"
+   ]
+  },
+  {
+   "key": "N2|C:wwmm|S:-|pull@1|T:mmww+wmmw",
+   "count": 5,
+   "min_load": 7,
+   "max_load": 7,
+   "n_flyers": 3,
+   "min_w0_hits": 10,
+   "flyers": [
+    "flyers/bank/pl7/tm_7pl_2.5bps.flyer",
+    "flyers/bank/pl8/mirrored_chains_shared_mwmw.flyer",
+    "flyers/bank/pl8/opus_cool.flyer"
+   ]
+  },
+  {
+   "key": "N2|C:wwmm|S:mmww|push@1|T:mmww",
+   "count": 5,
+   "min_load": 11,
+   "max_load": 14,
+   "n_flyers": 5,
+   "min_w0_hits": 1,
+   "flyers": [
+    "flyers/bank/pl11/human_hopping_pistons.flyer",
+    "flyers/bank/pl14/lightning_rods.flyer",
+    "flyers/bank/pl14/material_swap.flyer",
+    "flyers/bank/pl14/shared_redstone.flyer",
+    "flyers/bank/pl14/upright.flyer"
+   ]
+  },
+  {
+   "key": "N2|C:mmww/wwmm|S:mmww|push@1|T:mmww",
+   "count": 5,
+   "min_load": 12,
+   "max_load": 12,
+   "n_flyers": 5,
+   "min_w0_hits": 1,
+   "flyers": [
+    "flyers/bank/pl13/crosslayer_materialswap.flyer",
+    "flyers/bank/pl13/crosslayer_mirrorz.flyer",
+    "flyers/bank/pl13/crosslayer_rodpower.flyer",
+    "flyers/bank/pl13/crosslayer_upright.flyer",
+    "flyers/bank/pl13/crosslayer_upright_swap.flyer"
+   ]
+  },
+  {
+   "key": "N2|C:wwmm|S:mmww/wwmm|push@0|T:mmww",
+   "count": 4,
+   "min_load": 8,
+   "max_load": 8,
+   "n_flyers": 2,
+   "min_w0_hits": 10,
+   "flyers": [
+    "flyers/bank/pl8/mirrored_chains_shared_mwmw.flyer",
+    "flyers/bank/pl8/opus_cool.flyer"
+   ]
+  },
+  {
+   "key": "N2|C:mwwm|S:mwwm/wmmw|push@1|T:mmww+wmmw",
+   "count": 3,
+   "min_load": 3,
+   "max_load": 3,
+   "n_flyers": 3,
+   "min_w0_hits": 4,
+   "flyers": [
+    "flyers/bank/pl7/tm_7pl_2.5bps.flyer",
+    "flyers/bank/pl8/mirrored_chains_shared_mwmw.flyer",
+    "flyers/bank/pl8/opus_cool.flyer"
+   ]
+  },
+  {
+   "key": "N2|C:wwmm|S:mmww/wwmm|push@0|T:mmww+mwwm",
+   "count": 2,
+   "min_load": 3,
+   "max_load": 3,
+   "n_flyers": 2,
+   "min_w0_hits": 6,
+   "flyers": [
+    "flyers/bank/pl8/mirrored_chains_shared_mwmw.flyer",
+    "flyers/bank/pl8/opus_cool.flyer"
+   ]
+  },
+  {
+   "key": "N2|C:mmww/wwmm|S:mmww/wwmm|push@0|T:mmww",
+   "count": 2,
+   "min_load": 6,
+   "max_load": 6,
+   "n_flyers": 1,
+   "min_w0_hits": 10,
+   "flyers": [
+    "flyers/bank/pl8/opus_cool.flyer"
+   ]
+  },
+  {
+   "key": "N2|C:mwmw/wmwm|S:mwmw|push@0|T:mwmw",
+   "count": 2,
+   "min_load": 8,
+   "max_load": 8,
+   "n_flyers": 1,
+   "min_w0_hits": 10,
+   "flyers": [
+    "flyers/bank/pl8/hop_pair_rod_observer.flyer"
+   ]
+  },
+  {
+   "key": "N2|C:mwmm|S:mmww|push@0|T:mmww",
+   "count": 1,
+   "min_load": 5,
+   "max_load": 5,
+   "n_flyers": 1,
+   "min_w0_hits": 3,
+   "flyers": [
+    "flyers/bank/pl7/tm_7pl_2.5bps.flyer"
+   ]
+  },
+  {
+   "key": "N2|C:mwmw|S:-|pull@0|T:mmww",
+   "count": 1,
+   "min_load": 5,
+   "max_load": 5,
+   "n_flyers": 1,
+   "min_w0_hits": 6,
+   "flyers": [
+    "flyers/bank/pl9/rigid_chain_capped.flyer"
+   ]
+  }
+ ],
+ "records": [
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl10/human_observer_hop.flyer",
+   "slot": 0,
+   "actor": "B5",
+   "action": "pull",
+   "load": 9,
+   "carrier": [
+    {
+     "body": "B2",
+     "word": "mwmw"
+    },
+    {
+     "body": "B3",
+     "word": "wmwm"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B2",
+     "word": "mwmw",
+     "n": 7,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B1",
+     "word": "mwwm",
+     "n": 1
+    },
+    {
+     "body": "B4",
+     "word": "mwwm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwmw/wmwm|S:-|pull@0|T:mwmw",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    9,
+    9
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl10/human_observer_hop.flyer",
+   "slot": 2,
+   "actor": "B4",
+   "action": "pull",
+   "load": 9,
+   "carrier": [
+    {
+     "body": "B2",
+     "word": "mwmw"
+    },
+    {
+     "body": "B3",
+     "word": "wmwm"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B2",
+     "word": "mwmw",
+     "n": 7,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "wmmw",
+     "n": 1
+    },
+    {
+     "body": "B5",
+     "word": "wmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwmw/wmwm|S:-|pull@0|T:mwmw",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    9,
+    9
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl10/human_observer_hop.flyer",
+   "slot": 1,
+   "actor": "B1",
+   "action": "push",
+   "load": 7,
+   "carrier": [
+    {
+     "body": "B2",
+     "word": "mwmw"
+    },
+    {
+     "body": "B3",
+     "word": "wmwm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B2",
+     "word": "mwmw"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B3",
+     "word": "wmwm",
+     "n": 5,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "wmmw",
+     "n": 1
+    },
+    {
+     "body": "B5",
+     "word": "wmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwmw/wmwm|S:wmwm|push@0|T:mwmw",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    7,
+    7
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl10/human_observer_hop.flyer",
+   "slot": 3,
+   "actor": "B0",
+   "action": "push",
+   "load": 7,
+   "carrier": [
+    {
+     "body": "B2",
+     "word": "mwmw"
+    },
+    {
+     "body": "B3",
+     "word": "wmwm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B2",
+     "word": "mwmw"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B3",
+     "word": "wmwm",
+     "n": 5,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B1",
+     "word": "mwwm",
+     "n": 1
+    },
+    {
+     "body": "B4",
+     "word": "mwwm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwmw/wmwm|S:wmwm|push@0|T:mwmw",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    7,
+    7
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl10/pulling_alternating.flyer",
+   "slot": 0,
+   "actor": "B1",
+   "action": "pull",
+   "load": 10,
+   "carrier": [
+    {
+     "body": "B0",
+     "word": "mwmw"
+    },
+    {
+     "body": "B3",
+     "word": "wmwm"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B0",
+     "word": "mwmw",
+     "n": 8,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B2",
+     "word": "mwwm",
+     "n": 1
+    },
+    {
+     "body": "B4",
+     "word": "mmww",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwmw/wmwm|S:-|pull@0|T:mwmw",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    10,
+    10
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl10/pulling_alternating.flyer",
+   "slot": 1,
+   "actor": "B5",
+   "action": "pull",
+   "load": 10,
+   "carrier": [
+    {
+     "body": "B0",
+     "word": "mwmw"
+    },
+    {
+     "body": "B3",
+     "word": "wmwm"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B3",
+     "word": "wmwm",
+     "n": 8,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B1",
+     "word": "wmmw",
+     "n": 1
+    },
+    {
+     "body": "B4",
+     "word": "mmww",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwmw/wmwm|S:-|pull@0|T:mwmw",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    10,
+    10
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl10/pulling_alternating.flyer",
+   "slot": 2,
+   "actor": "B2",
+   "action": "pull",
+   "load": 10,
+   "carrier": [
+    {
+     "body": "B0",
+     "word": "mwmw"
+    },
+    {
+     "body": "B3",
+     "word": "wmwm"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B0",
+     "word": "mwmw",
+     "n": 8,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B1",
+     "word": "wmmw",
+     "n": 1
+    },
+    {
+     "body": "B5",
+     "word": "wwmm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwmw/wmwm|S:-|pull@0|T:mwmw",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    10,
+    10
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl10/pulling_alternating.flyer",
+   "slot": 3,
+   "actor": "B4",
+   "action": "pull",
+   "load": 10,
+   "carrier": [
+    {
+     "body": "B0",
+     "word": "mwmw"
+    },
+    {
+     "body": "B3",
+     "word": "wmwm"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B3",
+     "word": "wmwm",
+     "n": 8,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B2",
+     "word": "mwwm",
+     "n": 1
+    },
+    {
+     "body": "B5",
+     "word": "wwmm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwmw/wmwm|S:-|pull@0|T:mwmw",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    10,
+    10
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl11/diagonal_alternating.flyer",
+   "slot": 0,
+   "actor": "B5",
+   "action": "push",
+   "load": 11,
+   "carrier": [
+    {
+     "body": "B2",
+     "word": "wmwm"
+    },
+    {
+     "body": "B4",
+     "word": "mwmw"
+    }
+   ],
+   "power": [
+    {
+     "body": "B2",
+     "word": "wmwm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B4",
+     "word": "mwmw",
+     "n": 9,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B1",
+     "word": "mwwm",
+     "n": 1
+    },
+    {
+     "body": "B3",
+     "word": "mmww",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwmw/wmwm|S:wmwm|push@0|T:mwmw",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    9,
+    11
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl11/diagonal_alternating.flyer",
+   "slot": 1,
+   "actor": "B1",
+   "action": "push",
+   "load": 9,
+   "carrier": [
+    {
+     "body": "B2",
+     "word": "wmwm"
+    },
+    {
+     "body": "B4",
+     "word": "mwmw"
+    }
+   ],
+   "power": [
+    {
+     "body": "B4",
+     "word": "mwmw"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B2",
+     "word": "wmwm",
+     "n": 7,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "wmmw",
+     "n": 1
+    },
+    {
+     "body": "B3",
+     "word": "mmww",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwmw/wmwm|S:wmwm|push@0|T:mwmw",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    9,
+    11
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl11/diagonal_alternating.flyer",
+   "slot": 2,
+   "actor": "B3",
+   "action": "push",
+   "load": 11,
+   "carrier": [
+    {
+     "body": "B2",
+     "word": "wmwm"
+    },
+    {
+     "body": "B4",
+     "word": "mwmw"
+    }
+   ],
+   "power": [
+    {
+     "body": "B2",
+     "word": "wmwm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B4",
+     "word": "mwmw",
+     "n": 9,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "wmmw",
+     "n": 1
+    },
+    {
+     "body": "B5",
+     "word": "wwmm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwmw/wmwm|S:wmwm|push@0|T:mwmw",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    9,
+    11
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl11/diagonal_alternating.flyer",
+   "slot": 3,
+   "actor": "B0",
+   "action": "push",
+   "load": 9,
+   "carrier": [
+    {
+     "body": "B2",
+     "word": "wmwm"
+    },
+    {
+     "body": "B4",
+     "word": "mwmw"
+    }
+   ],
+   "power": [
+    {
+     "body": "B4",
+     "word": "mwmw"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B2",
+     "word": "wmwm",
+     "n": 7,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B1",
+     "word": "mwwm",
+     "n": 1
+    },
+    {
+     "body": "B5",
+     "word": "wwmm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwmw/wmwm|S:wmwm|push@0|T:mwmw",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    9,
+    11
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl11/human_hopping_pistons.flyer",
+   "slot": 0,
+   "actor": "B2",
+   "action": "push",
+   "load": 11,
+   "carrier": [
+    {
+     "body": "B2",
+     "word": "wmmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B4",
+     "word": "mwwm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B4",
+     "word": "mwwm",
+     "n": 9
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "mmwm",
+     "n": 1
+    },
+    {
+     "body": "B1",
+     "word": "mmwm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwmm|S:mmww|push@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    11,
+    11
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl11/human_hopping_pistons.flyer",
+   "slot": 2,
+   "actor": "B0",
+   "action": "push",
+   "load": 11,
+   "carrier": [
+    {
+     "body": "B0",
+     "word": "mmwm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B5",
+     "word": "wmmw"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B5",
+     "word": "wmmw",
+     "n": 9
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B2",
+     "word": "wmmm",
+     "n": 1
+    },
+    {
+     "body": "B3",
+     "word": "wmmm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwmm|S:mmww|push@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    11,
+    11
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl11/human_hopping_pistons.flyer",
+   "slot": 1,
+   "actor": "B1",
+   "action": "push",
+   "load": 11,
+   "carrier": [
+    {
+     "body": "B4",
+     "word": "mwwm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B5",
+     "word": "wmmw"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B5",
+     "word": "wmmw",
+     "n": 9
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "mmwm",
+     "n": 1
+    },
+    {
+     "body": "B3",
+     "word": "wmmm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    11,
+    11
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl11/human_hopping_pistons.flyer",
+   "slot": 3,
+   "actor": "B2",
+   "action": "push",
+   "load": 11,
+   "carrier": [
+    {
+     "body": "B5",
+     "word": "wmmw"
+    }
+   ],
+   "power": [
+    {
+     "body": "B4",
+     "word": "mwwm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B4",
+     "word": "mwwm",
+     "n": 9
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B1",
+     "word": "mmwm",
+     "n": 1
+    },
+    {
+     "body": "B3",
+     "word": "wmmm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    11,
+    11
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl11/human_hopping_pistons.flyer",
+   "slot": 0,
+   "actor": "B2",
+   "action": "push",
+   "load": 11,
+   "carrier": [
+    {
+     "body": "B2",
+     "word": "wmmw"
+    }
+   ],
+   "power": [
+    {
+     "body": "B4",
+     "word": "mwwm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B4",
+     "word": "mwwm",
+     "n": 9
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "mmwm",
+     "n": 1
+    },
+    {
+     "body": "B1",
+     "word": "mmwm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:wwmm|S:mmww|push@1|T:mmww",
+   "w0": 104,
+   "w0_hits": "1/10",
+   "load_range_over_w0": [
+    11,
+    11
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl11/human_hopping_pistons.flyer",
+   "slot": 0,
+   "actor": "B2",
+   "action": "push",
+   "load": 11,
+   "carrier": [
+    {
+     "body": "B2",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B4",
+     "word": "mwwm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B4",
+     "word": "mwwm",
+     "n": 9
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "mmwm",
+     "n": 1
+    },
+    {
+     "body": "B1",
+     "word": "mmwm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwwm|S:mmww|push@1|T:mmww",
+   "w0": 112,
+   "w0_hits": "3/10",
+   "load_range_over_w0": [
+    11,
+    11
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl12/ab_push_pull_2body.flyer",
+   "slot": 0,
+   "actor": "B5",
+   "action": "push",
+   "load": 10,
+   "carrier": [
+    {
+     "body": "B1",
+     "word": "wmwm"
+    },
+    {
+     "body": "B4",
+     "word": "mwmw"
+    }
+   ],
+   "power": [
+    {
+     "body": "B1",
+     "word": "wmwm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B4",
+     "word": "mwmw",
+     "n": 8,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "mmww",
+     "n": 1
+    },
+    {
+     "body": "B3",
+     "word": "mmww",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwmw/wmwm|S:wmwm|push@0|T:mwmw",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    10,
+    10
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl12/ab_push_pull_2body.flyer",
+   "slot": 2,
+   "actor": "B3",
+   "action": "push",
+   "load": 10,
+   "carrier": [
+    {
+     "body": "B1",
+     "word": "wmwm"
+    },
+    {
+     "body": "B4",
+     "word": "mwmw"
+    }
+   ],
+   "power": [
+    {
+     "body": "B1",
+     "word": "wmwm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B4",
+     "word": "mwmw",
+     "n": 8,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B2",
+     "word": "wwmm",
+     "n": 1
+    },
+    {
+     "body": "B5",
+     "word": "wwmm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwmw/wmwm|S:wmwm|push@0|T:mwmw",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    10,
+    10
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl12/ab_push_pull_2body.flyer",
+   "slot": 1,
+   "actor": "B2",
+   "action": "pull",
+   "load": 12,
+   "carrier": [
+    {
+     "body": "B1",
+     "word": "wmwm"
+    },
+    {
+     "body": "B4",
+     "word": "mwmw"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B1",
+     "word": "wmwm",
+     "n": 10,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "mmww",
+     "n": 1
+    },
+    {
+     "body": "B3",
+     "word": "mmww",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwmw/wmwm|S:-|pull@0|T:mwmw",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    12,
+    12
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl12/ab_push_pull_2body.flyer",
+   "slot": 3,
+   "actor": "B0",
+   "action": "pull",
+   "load": 12,
+   "carrier": [
+    {
+     "body": "B1",
+     "word": "wmwm"
+    },
+    {
+     "body": "B4",
+     "word": "mwmw"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B1",
+     "word": "wmwm",
+     "n": 10,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B2",
+     "word": "wwmm",
+     "n": 1
+    },
+    {
+     "body": "B5",
+     "word": "wwmm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwmw/wmwm|S:-|pull@0|T:mwmw",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    12,
+    12
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl12/human_hopping_pistons_uneven.flyer",
+   "slot": 0,
+   "actor": "B1",
+   "action": "push",
+   "load": 6,
+   "carrier": [
+    {
+     "body": "B5",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B2",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B2",
+     "word": "mmww",
+     "n": 4
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "mwmm",
+     "n": 1
+    },
+    {
+     "body": "B3",
+     "word": "mmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 88,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    6,
+    12
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl12/human_hopping_pistons_uneven.flyer",
+   "slot": 2,
+   "actor": "B4",
+   "action": "push",
+   "load": 12,
+   "carrier": [
+    {
+     "body": "B2",
+     "word": "mmww"
+    }
+   ],
+   "power": [
+    {
+     "body": "B5",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B5",
+     "word": "wwmm",
+     "n": 10
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B1",
+     "word": "mwmm",
+     "n": 1
+    },
+    {
+     "body": "B3",
+     "word": "mmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 88,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    6,
+    12
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl12/human_hopping_pistons_uneven.flyer",
+   "slot": 1,
+   "actor": "B1",
+   "action": "push",
+   "load": 6,
+   "carrier": [
+    {
+     "body": "B1",
+     "word": "mwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B2",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B2",
+     "word": "mmww",
+     "n": 4
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B3",
+     "word": "mmmw",
+     "n": 1
+    },
+    {
+     "body": "B4",
+     "word": "mmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwmm|S:mmww|push@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    6,
+    12
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl12/human_hopping_pistons_uneven.flyer",
+   "slot": 3,
+   "actor": "B4",
+   "action": "push",
+   "load": 12,
+   "carrier": [
+    {
+     "body": "B4",
+     "word": "mmmw"
+    }
+   ],
+   "power": [
+    {
+     "body": "B5",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B5",
+     "word": "wwmm",
+     "n": 10
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "mwmm",
+     "n": 1
+    },
+    {
+     "body": "B1",
+     "word": "mwmm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwmm|S:mmww|push@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    6,
+    12
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl12/human_hopping_pistons_uneven.flyer",
+   "slot": 2,
+   "actor": "B3",
+   "action": "push",
+   "load": 12,
+   "carrier": [
+    {
+     "body": "B2",
+     "word": "mmww"
+    },
+    {
+     "body": "B5",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B5",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B5",
+     "word": "wwmm",
+     "n": 10,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "mwmm",
+     "n": 1
+    },
+    {
+     "body": "B4",
+     "word": "mmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mmww/wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "5/10",
+   "load_range_over_w0": [
+    12,
+    12
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl12/human_hopping_pistons_uneven.flyer",
+   "slot": 3,
+   "actor": "B3",
+   "action": "push",
+   "load": 12,
+   "carrier": [
+    {
+     "body": "B5",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B5",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B5",
+     "word": "wwmm",
+     "n": 10,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "mwmm",
+     "n": 1
+    },
+    {
+     "body": "B1",
+     "word": "mwmm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mmww|S:mmww|push@1|T:mmww",
+   "w0": 88,
+   "w0_hits": "5/10",
+   "load_range_over_w0": [
+    12,
+    12
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl12/human_hopping_pistons_uneven.flyer",
+   "slot": 1,
+   "actor": "B0",
+   "action": "push",
+   "load": 6,
+   "carrier": [
+    {
+     "body": "B0",
+     "word": "mwwm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B1",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B1",
+     "word": "mmww",
+     "n": 4
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B2",
+     "word": "mmmw",
+     "n": 1
+    },
+    {
+     "body": "B3",
+     "word": "mmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwwm|S:mmww|push@1|T:mmww",
+   "w0": 120,
+   "w0_hits": "1/10",
+   "load_range_over_w0": [
+    6,
+    6
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl13/crosslayer_materialswap.flyer",
+   "slot": 0,
+   "actor": "B3",
+   "action": "push",
+   "load": 12,
+   "carrier": [
+    {
+     "body": "B2",
+     "word": "mmww"
+    },
+    {
+     "body": "B5",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B2",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B2",
+     "word": "mmww",
+     "n": 10,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "mmmw",
+     "n": 1
+    },
+    {
+     "body": "B4",
+     "word": "mwmm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mmww/wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    12,
+    13
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl13/crosslayer_materialswap.flyer",
+   "slot": 2,
+   "actor": "B1",
+   "action": "push",
+   "load": 13,
+   "carrier": [
+    {
+     "body": "B2",
+     "word": "mmww"
+    },
+    {
+     "body": "B5",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B5",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B5",
+     "word": "wwmm",
+     "n": 11,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "mmmw",
+     "n": 1
+    },
+    {
+     "body": "B3",
+     "word": "mwmm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mmww/wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    12,
+    13
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl13/crosslayer_materialswap.flyer",
+   "slot": 1,
+   "actor": "B4",
+   "action": "push",
+   "load": 12,
+   "carrier": [
+    {
+     "body": "B4",
+     "word": "mwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B2",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B2",
+     "word": "mmww",
+     "n": 10
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "mmmw",
+     "n": 1
+    },
+    {
+     "body": "B1",
+     "word": "mmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwmm|S:mmww|push@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "2/10",
+   "load_range_over_w0": [
+    12,
+    12
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl13/crosslayer_materialswap.flyer",
+   "slot": 3,
+   "actor": "B0",
+   "action": "push",
+   "load": 13,
+   "carrier": [
+    {
+     "body": "B5",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B5",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B5",
+     "word": "wwmm",
+     "n": 11,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B3",
+     "word": "mwmm",
+     "n": 1
+    },
+    {
+     "body": "B4",
+     "word": "mwmm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mmww|S:mmww|push@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    13,
+    13
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl13/crosslayer_materialswap.flyer",
+   "slot": 0,
+   "actor": "B4",
+   "action": "push",
+   "load": 12,
+   "carrier": [
+    {
+     "body": "B5",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B2",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B2",
+     "word": "mmww",
+     "n": 10
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "mmmw",
+     "n": 1
+    },
+    {
+     "body": "B3",
+     "word": "mwmm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 96,
+   "w0_hits": "6/10",
+   "load_range_over_w0": [
+    12,
+    12
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl13/crosslayer_materialswap.flyer",
+   "slot": 1,
+   "actor": "B3",
+   "action": "push",
+   "load": 12,
+   "carrier": [
+    {
+     "body": "B2",
+     "word": "mmww"
+    },
+    {
+     "body": "B5",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B2",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B2",
+     "word": "mmww",
+     "n": 10,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "mmmw",
+     "n": 1
+    },
+    {
+     "body": "B1",
+     "word": "mmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mmww/wwmm|S:mmww|push@1|T:mmww",
+   "w0": 96,
+   "w0_hits": "6/10",
+   "load_range_over_w0": [
+    12,
+    12
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl13/crosslayer_materialswap.flyer",
+   "slot": 1,
+   "actor": "B3",
+   "action": "push",
+   "load": 12,
+   "carrier": [
+    {
+     "body": "B3",
+     "word": "mwwm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B2",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B2",
+     "word": "mmww",
+     "n": 10
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "wmmw",
+     "n": 1
+    },
+    {
+     "body": "B1",
+     "word": "mmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwwm|S:mmww|push@1|T:mmww",
+   "w0": 120,
+   "w0_hits": "2/10",
+   "load_range_over_w0": [
+    12,
+    12
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl13/crosslayer_mirrorz.flyer",
+   "slot": 0,
+   "actor": "B3",
+   "action": "push",
+   "load": 12,
+   "carrier": [
+    {
+     "body": "B5",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B2",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B2",
+     "word": "mmww",
+     "n": 10
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "mmmw",
+     "n": 1
+    },
+    {
+     "body": "B4",
+     "word": "mwmm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "5/10",
+   "load_range_over_w0": [
+    12,
+    12
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl13/crosslayer_mirrorz.flyer",
+   "slot": 1,
+   "actor": "B4",
+   "action": "push",
+   "load": 12,
+   "carrier": [
+    {
+     "body": "B2",
+     "word": "mmww"
+    },
+    {
+     "body": "B5",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B2",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B2",
+     "word": "mmww",
+     "n": 10,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "mmmw",
+     "n": 1
+    },
+    {
+     "body": "B1",
+     "word": "mmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mmww/wwmm|S:mmww|push@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "5/10",
+   "load_range_over_w0": [
+    12,
+    12
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl13/crosslayer_mirrorz.flyer",
+   "slot": 0,
+   "actor": "B4",
+   "action": "push",
+   "load": 12,
+   "carrier": [
+    {
+     "body": "B2",
+     "word": "mmww"
+    },
+    {
+     "body": "B4",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B2",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B2",
+     "word": "mmww",
+     "n": 10,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "mmmw",
+     "n": 1
+    },
+    {
+     "body": "B3",
+     "word": "mwwm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mmww/wwmm|S:mmww|push@0|T:mmww",
+   "w0": 96,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    12,
+    13
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl13/crosslayer_mirrorz.flyer",
+   "slot": 2,
+   "actor": "B0",
+   "action": "push",
+   "load": 13,
+   "carrier": [
+    {
+     "body": "B2",
+     "word": "mmww"
+    },
+    {
+     "body": "B4",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B4",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B4",
+     "word": "wwmm",
+     "n": 12,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B1",
+     "word": "mmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mmww/wwmm|S:mmww|push@0|T:mmww",
+   "w0": 96,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    12,
+    13
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl13/crosslayer_mirrorz.flyer",
+   "slot": 3,
+   "actor": "B0",
+   "action": "push",
+   "load": 13,
+   "carrier": [
+    {
+     "body": "B5",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B5",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B5",
+     "word": "wwmm",
+     "n": 11,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B3",
+     "word": "mwmm",
+     "n": 1
+    },
+    {
+     "body": "B4",
+     "word": "mwmm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mmww|S:mmww|push@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    13,
+    13
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl13/crosslayer_mirrorz.flyer",
+   "slot": 1,
+   "actor": "B3",
+   "action": "push",
+   "load": 12,
+   "carrier": [
+    {
+     "body": "B3",
+     "word": "mwwm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B2",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B2",
+     "word": "mmww",
+     "n": 10
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "mmmw",
+     "n": 1
+    },
+    {
+     "body": "B1",
+     "word": "mmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwwm|S:mmww|push@1|T:mmww",
+   "w0": 96,
+   "w0_hits": "2/10",
+   "load_range_over_w0": [
+    12,
+    12
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl13/crosslayer_mirrorz.flyer",
+   "slot": 1,
+   "actor": "B3",
+   "action": "push",
+   "load": 12,
+   "carrier": [
+    {
+     "body": "B3",
+     "word": "mwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B2",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B2",
+     "word": "mmww",
+     "n": 10
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "mmww",
+     "n": 1
+    },
+    {
+     "body": "B1",
+     "word": "mmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwmm|S:mmww|push@1|T:mmww",
+   "w0": 112,
+   "w0_hits": "3/10",
+   "load_range_over_w0": [
+    12,
+    12
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl13/crosslayer_rodpower.flyer",
+   "slot": 0,
+   "actor": "B3",
+   "action": "push",
+   "load": 12,
+   "carrier": [
+    {
+     "body": "B2",
+     "word": "mmww"
+    },
+    {
+     "body": "B5",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B2",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B2",
+     "word": "mmww",
+     "n": 10,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "mmmw",
+     "n": 1
+    },
+    {
+     "body": "B4",
+     "word": "mwmm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mmww/wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    12,
+    13
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl13/crosslayer_rodpower.flyer",
+   "slot": 2,
+   "actor": "B1",
+   "action": "push",
+   "load": 13,
+   "carrier": [
+    {
+     "body": "B2",
+     "word": "mmww"
+    },
+    {
+     "body": "B5",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B5",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B5",
+     "word": "wwmm",
+     "n": 11,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "mmmw",
+     "n": 1
+    },
+    {
+     "body": "B3",
+     "word": "mwmm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mmww/wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    12,
+    13
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl13/crosslayer_rodpower.flyer",
+   "slot": 1,
+   "actor": "B4",
+   "action": "push",
+   "load": 12,
+   "carrier": [
+    {
+     "body": "B4",
+     "word": "mwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B2",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B2",
+     "word": "mmww",
+     "n": 10
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "mmmw",
+     "n": 1
+    },
+    {
+     "body": "B1",
+     "word": "mmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwmm|S:mmww|push@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "2/10",
+   "load_range_over_w0": [
+    12,
+    12
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl13/crosslayer_rodpower.flyer",
+   "slot": 3,
+   "actor": "B0",
+   "action": "push",
+   "load": 13,
+   "carrier": [
+    {
+     "body": "B5",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B5",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B5",
+     "word": "wwmm",
+     "n": 11,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B3",
+     "word": "mwmm",
+     "n": 1
+    },
+    {
+     "body": "B4",
+     "word": "mwmm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mmww|S:mmww|push@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    13,
+    13
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl13/crosslayer_rodpower.flyer",
+   "slot": 0,
+   "actor": "B4",
+   "action": "push",
+   "load": 12,
+   "carrier": [
+    {
+     "body": "B5",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B2",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B2",
+     "word": "mmww",
+     "n": 10
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "mmmw",
+     "n": 1
+    },
+    {
+     "body": "B3",
+     "word": "mwmm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 96,
+   "w0_hits": "6/10",
+   "load_range_over_w0": [
+    12,
+    12
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl13/crosslayer_rodpower.flyer",
+   "slot": 1,
+   "actor": "B3",
+   "action": "push",
+   "load": 12,
+   "carrier": [
+    {
+     "body": "B2",
+     "word": "mmww"
+    },
+    {
+     "body": "B5",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B2",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B2",
+     "word": "mmww",
+     "n": 10,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "mmmw",
+     "n": 1
+    },
+    {
+     "body": "B1",
+     "word": "mmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mmww/wwmm|S:mmww|push@1|T:mmww",
+   "w0": 96,
+   "w0_hits": "6/10",
+   "load_range_over_w0": [
+    12,
+    12
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl13/crosslayer_rodpower.flyer",
+   "slot": 1,
+   "actor": "B3",
+   "action": "push",
+   "load": 12,
+   "carrier": [
+    {
+     "body": "B3",
+     "word": "mwwm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B2",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B2",
+     "word": "mmww",
+     "n": 10
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "wmmw",
+     "n": 1
+    },
+    {
+     "body": "B1",
+     "word": "mmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwwm|S:mmww|push@1|T:mmww",
+   "w0": 120,
+   "w0_hits": "2/10",
+   "load_range_over_w0": [
+    12,
+    12
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl13/crosslayer_upright.flyer",
+   "slot": 0,
+   "actor": "B3",
+   "action": "push",
+   "load": 12,
+   "carrier": [
+    {
+     "body": "B1",
+     "word": "mmww"
+    },
+    {
+     "body": "B3",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B1",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B1",
+     "word": "mmww",
+     "n": 11,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B2",
+     "word": "mwwm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mmww/wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    12,
+    13
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl13/crosslayer_upright.flyer",
+   "slot": 2,
+   "actor": "B1",
+   "action": "push",
+   "load": 13,
+   "carrier": [
+    {
+     "body": "B1",
+     "word": "mmww"
+    },
+    {
+     "body": "B3",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B3",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B3",
+     "word": "wwmm",
+     "n": 12,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "wmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mmww/wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    12,
+    13
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl13/crosslayer_upright.flyer",
+   "slot": 1,
+   "actor": "B2",
+   "action": "push",
+   "load": 12,
+   "carrier": [
+    {
+     "body": "B2",
+     "word": "mwwm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B1",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B1",
+     "word": "mmww",
+     "n": 11
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "wmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwwm|S:mmww|push@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "2/10",
+   "load_range_over_w0": [
+    12,
+    12
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl13/crosslayer_upright.flyer",
+   "slot": 3,
+   "actor": "B0",
+   "action": "push",
+   "load": 13,
+   "carrier": [
+    {
+     "body": "B3",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B3",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B3",
+     "word": "wwmm",
+     "n": 12,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B2",
+     "word": "mwwm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mmww|S:mmww|push@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    13,
+    13
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl13/crosslayer_upright.flyer",
+   "slot": 1,
+   "actor": "B4",
+   "action": "push",
+   "load": 12,
+   "carrier": [
+    {
+     "body": "B4",
+     "word": "mwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B2",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B2",
+     "word": "mmww",
+     "n": 10
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "wmmw",
+     "n": 1
+    },
+    {
+     "body": "B1",
+     "word": "mmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwmm|S:mmww|push@1|T:mmww",
+   "w0": 88,
+   "w0_hits": "7/10",
+   "load_range_over_w0": [
+    12,
+    12
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl13/crosslayer_upright.flyer",
+   "slot": 0,
+   "actor": "B4",
+   "action": "push",
+   "load": 12,
+   "carrier": [
+    {
+     "body": "B5",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B2",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B2",
+     "word": "mmww",
+     "n": 10
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "mmmw",
+     "n": 1
+    },
+    {
+     "body": "B3",
+     "word": "mwmm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 112,
+   "w0_hits": "1/10",
+   "load_range_over_w0": [
+    12,
+    12
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl13/crosslayer_upright.flyer",
+   "slot": 1,
+   "actor": "B3",
+   "action": "push",
+   "load": 12,
+   "carrier": [
+    {
+     "body": "B2",
+     "word": "mmww"
+    },
+    {
+     "body": "B5",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B2",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B2",
+     "word": "mmww",
+     "n": 10,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "mmmw",
+     "n": 1
+    },
+    {
+     "body": "B1",
+     "word": "mmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mmww/wwmm|S:mmww|push@1|T:mmww",
+   "w0": 112,
+   "w0_hits": "1/10",
+   "load_range_over_w0": [
+    12,
+    12
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl13/crosslayer_upright_swap.flyer",
+   "slot": 0,
+   "actor": "B3",
+   "action": "push",
+   "load": 12,
+   "carrier": [
+    {
+     "body": "B1",
+     "word": "mmww"
+    },
+    {
+     "body": "B3",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B1",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B1",
+     "word": "mmww",
+     "n": 11,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B2",
+     "word": "mwwm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mmww/wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    12,
+    13
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl13/crosslayer_upright_swap.flyer",
+   "slot": 2,
+   "actor": "B1",
+   "action": "push",
+   "load": 13,
+   "carrier": [
+    {
+     "body": "B1",
+     "word": "mmww"
+    },
+    {
+     "body": "B3",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B3",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B3",
+     "word": "wwmm",
+     "n": 12,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "wmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mmww/wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    12,
+    13
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl13/crosslayer_upright_swap.flyer",
+   "slot": 1,
+   "actor": "B2",
+   "action": "push",
+   "load": 12,
+   "carrier": [
+    {
+     "body": "B2",
+     "word": "mwwm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B1",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B1",
+     "word": "mmww",
+     "n": 11
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "wmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwwm|S:mmww|push@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "2/10",
+   "load_range_over_w0": [
+    12,
+    12
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl13/crosslayer_upright_swap.flyer",
+   "slot": 3,
+   "actor": "B0",
+   "action": "push",
+   "load": 13,
+   "carrier": [
+    {
+     "body": "B3",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B3",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B3",
+     "word": "wwmm",
+     "n": 12,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B2",
+     "word": "mwwm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mmww|S:mmww|push@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    13,
+    13
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl13/crosslayer_upright_swap.flyer",
+   "slot": 1,
+   "actor": "B4",
+   "action": "push",
+   "load": 12,
+   "carrier": [
+    {
+     "body": "B4",
+     "word": "mwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B2",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B2",
+     "word": "mmww",
+     "n": 10
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "wmmw",
+     "n": 1
+    },
+    {
+     "body": "B1",
+     "word": "mmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwmm|S:mmww|push@1|T:mmww",
+   "w0": 88,
+   "w0_hits": "7/10",
+   "load_range_over_w0": [
+    12,
+    12
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl13/crosslayer_upright_swap.flyer",
+   "slot": 0,
+   "actor": "B4",
+   "action": "push",
+   "load": 12,
+   "carrier": [
+    {
+     "body": "B5",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B2",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B2",
+     "word": "mmww",
+     "n": 10
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "mmmw",
+     "n": 1
+    },
+    {
+     "body": "B3",
+     "word": "mwmm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 112,
+   "w0_hits": "1/10",
+   "load_range_over_w0": [
+    12,
+    12
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl13/crosslayer_upright_swap.flyer",
+   "slot": 1,
+   "actor": "B3",
+   "action": "push",
+   "load": 12,
+   "carrier": [
+    {
+     "body": "B2",
+     "word": "mmww"
+    },
+    {
+     "body": "B5",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B2",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B2",
+     "word": "mmww",
+     "n": 10,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "mmmw",
+     "n": 1
+    },
+    {
+     "body": "B1",
+     "word": "mmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mmww/wwmm|S:mmww|push@1|T:mmww",
+   "w0": 112,
+   "w0_hits": "1/10",
+   "load_range_over_w0": [
+    12,
+    12
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl14/lightning_rods.flyer",
+   "slot": 0,
+   "actor": "B3",
+   "action": "push",
+   "load": 14,
+   "carrier": [
+    {
+     "body": "B3",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B1",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B1",
+     "word": "mmww",
+     "n": 13
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B2",
+     "word": "mwwm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    12,
+    14
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl14/lightning_rods.flyer",
+   "slot": 2,
+   "actor": "B1",
+   "action": "push",
+   "load": 12,
+   "carrier": [
+    {
+     "body": "B1",
+     "word": "mmww"
+    }
+   ],
+   "power": [
+    {
+     "body": "B3",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B3",
+     "word": "wwmm",
+     "n": 11
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "wmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    12,
+    14
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl14/lightning_rods.flyer",
+   "slot": 1,
+   "actor": "B2",
+   "action": "push",
+   "load": 14,
+   "carrier": [
+    {
+     "body": "B2",
+     "word": "mwwm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B1",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B1",
+     "word": "mmww",
+     "n": 13
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "wmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwwm|S:mmww|push@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "2/10",
+   "load_range_over_w0": [
+    14,
+    14
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl14/lightning_rods.flyer",
+   "slot": 3,
+   "actor": "B0",
+   "action": "push",
+   "load": 12,
+   "carrier": [
+    {
+     "body": "B3",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B3",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B3",
+     "word": "wwmm",
+     "n": 11,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B2",
+     "word": "mwwm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mmww|S:mmww|push@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    12,
+    12
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl14/lightning_rods.flyer",
+   "slot": 1,
+   "actor": "B3",
+   "action": "push",
+   "load": 14,
+   "carrier": [
+    {
+     "body": "B3",
+     "word": "mwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B1",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B1",
+     "word": "mmww",
+     "n": 13
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "wmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwmm|S:mmww|push@1|T:mmww",
+   "w0": 88,
+   "w0_hits": "5/10",
+   "load_range_over_w0": [
+    14,
+    14
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl14/lightning_rods.flyer",
+   "slot": 1,
+   "actor": "B2",
+   "action": "push",
+   "load": 14,
+   "carrier": [
+    {
+     "body": "B4",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B1",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B1",
+     "word": "mmww",
+     "n": 13
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "wmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:wwmm|S:mmww|push@1|T:mmww",
+   "w0": 112,
+   "w0_hits": "3/10",
+   "load_range_over_w0": [
+    14,
+    14
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl14/material_swap.flyer",
+   "slot": 0,
+   "actor": "B3",
+   "action": "push",
+   "load": 14,
+   "carrier": [
+    {
+     "body": "B3",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B1",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B1",
+     "word": "mmww",
+     "n": 13
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B2",
+     "word": "mwwm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    12,
+    14
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl14/material_swap.flyer",
+   "slot": 2,
+   "actor": "B1",
+   "action": "push",
+   "load": 12,
+   "carrier": [
+    {
+     "body": "B1",
+     "word": "mmww"
+    }
+   ],
+   "power": [
+    {
+     "body": "B3",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B3",
+     "word": "wwmm",
+     "n": 11
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "wmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    12,
+    14
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl14/material_swap.flyer",
+   "slot": 1,
+   "actor": "B2",
+   "action": "push",
+   "load": 14,
+   "carrier": [
+    {
+     "body": "B2",
+     "word": "mwwm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B1",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B1",
+     "word": "mmww",
+     "n": 13
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "wmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwwm|S:mmww|push@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "2/10",
+   "load_range_over_w0": [
+    14,
+    14
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl14/material_swap.flyer",
+   "slot": 3,
+   "actor": "B0",
+   "action": "push",
+   "load": 12,
+   "carrier": [
+    {
+     "body": "B3",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B3",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B3",
+     "word": "wwmm",
+     "n": 11,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B2",
+     "word": "mwwm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mmww|S:mmww|push@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    12,
+    12
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl14/material_swap.flyer",
+   "slot": 1,
+   "actor": "B3",
+   "action": "push",
+   "load": 14,
+   "carrier": [
+    {
+     "body": "B3",
+     "word": "mwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B1",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B1",
+     "word": "mmww",
+     "n": 13
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "wmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwmm|S:mmww|push@1|T:mmww",
+   "w0": 88,
+   "w0_hits": "5/10",
+   "load_range_over_w0": [
+    14,
+    14
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl14/material_swap.flyer",
+   "slot": 1,
+   "actor": "B2",
+   "action": "push",
+   "load": 14,
+   "carrier": [
+    {
+     "body": "B4",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B1",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B1",
+     "word": "mmww",
+     "n": 13
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "wmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:wwmm|S:mmww|push@1|T:mmww",
+   "w0": 112,
+   "w0_hits": "3/10",
+   "load_range_over_w0": [
+    14,
+    14
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl14/shared_redstone.flyer",
+   "slot": 0,
+   "actor": "B3",
+   "action": "push",
+   "load": 14,
+   "carrier": [
+    {
+     "body": "B3",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B1",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B1",
+     "word": "mmww",
+     "n": 13
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B2",
+     "word": "mwwm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    12,
+    14
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl14/shared_redstone.flyer",
+   "slot": 2,
+   "actor": "B1",
+   "action": "push",
+   "load": 12,
+   "carrier": [
+    {
+     "body": "B1",
+     "word": "mmww"
+    }
+   ],
+   "power": [
+    {
+     "body": "B3",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B3",
+     "word": "wwmm",
+     "n": 11
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "wmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    12,
+    14
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl14/shared_redstone.flyer",
+   "slot": 1,
+   "actor": "B2",
+   "action": "push",
+   "load": 14,
+   "carrier": [
+    {
+     "body": "B2",
+     "word": "mwwm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B1",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B1",
+     "word": "mmww",
+     "n": 13
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "wmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwwm|S:mmww|push@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "2/10",
+   "load_range_over_w0": [
+    14,
+    14
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl14/shared_redstone.flyer",
+   "slot": 3,
+   "actor": "B0",
+   "action": "push",
+   "load": 12,
+   "carrier": [
+    {
+     "body": "B3",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B3",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B3",
+     "word": "wwmm",
+     "n": 11,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B2",
+     "word": "mwwm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mmww|S:mmww|push@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    12,
+    12
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl14/shared_redstone.flyer",
+   "slot": 1,
+   "actor": "B3",
+   "action": "push",
+   "load": 14,
+   "carrier": [
+    {
+     "body": "B3",
+     "word": "mwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B1",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B1",
+     "word": "mmww",
+     "n": 13
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "wmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwmm|S:mmww|push@1|T:mmww",
+   "w0": 88,
+   "w0_hits": "5/10",
+   "load_range_over_w0": [
+    14,
+    14
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl14/shared_redstone.flyer",
+   "slot": 1,
+   "actor": "B2",
+   "action": "push",
+   "load": 14,
+   "carrier": [
+    {
+     "body": "B4",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B1",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B1",
+     "word": "mmww",
+     "n": 13
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "wmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:wwmm|S:mmww|push@1|T:mmww",
+   "w0": 112,
+   "w0_hits": "3/10",
+   "load_range_over_w0": [
+    14,
+    14
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl14/upright.flyer",
+   "slot": 0,
+   "actor": "B3",
+   "action": "push",
+   "load": 14,
+   "carrier": [
+    {
+     "body": "B4",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B1",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B1",
+     "word": "mmww",
+     "n": 13
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B2",
+     "word": "mwmm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    12,
+    14
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl14/upright.flyer",
+   "slot": 2,
+   "actor": "B1",
+   "action": "push",
+   "load": 12,
+   "carrier": [
+    {
+     "body": "B1",
+     "word": "mmww"
+    }
+   ],
+   "power": [
+    {
+     "body": "B4",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B4",
+     "word": "wwmm",
+     "n": 10
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "wmmw",
+     "n": 1
+    },
+    {
+     "body": "B3",
+     "word": "mwmm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    12,
+    14
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl14/upright.flyer",
+   "slot": 1,
+   "actor": "B2",
+   "action": "push",
+   "load": 14,
+   "carrier": [
+    {
+     "body": "B4",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B1",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B1",
+     "word": "mmww",
+     "n": 13
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "wmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:wwmm|S:mmww|push@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "4/10",
+   "load_range_over_w0": [
+    14,
+    14
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl14/upright.flyer",
+   "slot": 3,
+   "actor": "B0",
+   "action": "push",
+   "load": 12,
+   "carrier": [
+    {
+     "body": "B4",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B4",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B4",
+     "word": "wwmm",
+     "n": 10,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B2",
+     "word": "mwmm",
+     "n": 1
+    },
+    {
+     "body": "B3",
+     "word": "mwmm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mmww|S:mmww|push@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    12,
+    12
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl14/upright.flyer",
+   "slot": 1,
+   "actor": "B3",
+   "action": "push",
+   "load": 14,
+   "carrier": [
+    {
+     "body": "B3",
+     "word": "mwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B1",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B1",
+     "word": "mmww",
+     "n": 13
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "wmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwmm|S:mmww|push@1|T:mmww",
+   "w0": 96,
+   "w0_hits": "4/10",
+   "load_range_over_w0": [
+    14,
+    14
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl14/upright.flyer",
+   "slot": 1,
+   "actor": "B2",
+   "action": "push",
+   "load": 14,
+   "carrier": [
+    {
+     "body": "B2",
+     "word": "mwwm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B1",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B1",
+     "word": "mmww",
+     "n": 13
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "wmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwwm|S:mmww|push@1|T:mmww",
+   "w0": 200,
+   "w0_hits": "2/10",
+   "load_range_over_w0": [
+    14,
+    14
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl15/four_segment_ring.flyer",
+   "slot": 0,
+   "actor": "B9",
+   "action": "push",
+   "load": 15,
+   "carrier": [
+    {
+     "body": "B11",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B3",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B3",
+     "word": "mmww",
+     "n": 13
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B4",
+     "word": "mmmw",
+     "n": 1
+    },
+    {
+     "body": "B8",
+     "word": "mwmm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    15,
+    15
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl15/four_segment_ring.flyer",
+   "slot": 0,
+   "actor": "B7",
+   "action": "push",
+   "load": 15,
+   "carrier": [
+    {
+     "body": "B10",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B2",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B2",
+     "word": "mmww",
+     "n": 13
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B5",
+     "word": "mwmm",
+     "n": 1
+    },
+    {
+     "body": "B6",
+     "word": "mmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    15,
+    15
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl15/four_segment_ring.flyer",
+   "slot": 2,
+   "actor": "B1",
+   "action": "push",
+   "load": 15,
+   "carrier": [
+    {
+     "body": "B3",
+     "word": "mmww"
+    }
+   ],
+   "power": [
+    {
+     "body": "B10",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B10",
+     "word": "wwmm",
+     "n": 13
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B4",
+     "word": "mmmw",
+     "n": 1
+    },
+    {
+     "body": "B7",
+     "word": "mwmm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    15,
+    15
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl15/four_segment_ring.flyer",
+   "slot": 2,
+   "actor": "B0",
+   "action": "push",
+   "load": 15,
+   "carrier": [
+    {
+     "body": "B2",
+     "word": "mmww"
+    }
+   ],
+   "power": [
+    {
+     "body": "B11",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B11",
+     "word": "wwmm",
+     "n": 13
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B6",
+     "word": "mmmw",
+     "n": 1
+    },
+    {
+     "body": "B9",
+     "word": "mwmm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    15,
+    15
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl15/four_segment_ring.flyer",
+   "slot": 1,
+   "actor": "B8",
+   "action": "push",
+   "load": 15,
+   "carrier": [
+    {
+     "body": "B8",
+     "word": "mwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B3",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B3",
+     "word": "mmww",
+     "n": 13
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B1",
+     "word": "mmmw",
+     "n": 1
+    },
+    {
+     "body": "B4",
+     "word": "mmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwmm|S:mmww|push@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    15,
+    15
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl15/four_segment_ring.flyer",
+   "slot": 1,
+   "actor": "B5",
+   "action": "push",
+   "load": 15,
+   "carrier": [
+    {
+     "body": "B5",
+     "word": "mwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B2",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B2",
+     "word": "mmww",
+     "n": 13
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "mmmw",
+     "n": 1
+    },
+    {
+     "body": "B6",
+     "word": "mmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwmm|S:mmww|push@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    15,
+    15
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl15/four_segment_ring.flyer",
+   "slot": 3,
+   "actor": "B6",
+   "action": "push",
+   "load": 15,
+   "carrier": [
+    {
+     "body": "B6",
+     "word": "mmmw"
+    }
+   ],
+   "power": [
+    {
+     "body": "B11",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B11",
+     "word": "wwmm",
+     "n": 13
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B8",
+     "word": "mwmm",
+     "n": 1
+    },
+    {
+     "body": "B9",
+     "word": "mwmm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwmm|S:mmww|push@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    15,
+    15
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl15/four_segment_ring.flyer",
+   "slot": 3,
+   "actor": "B4",
+   "action": "push",
+   "load": 15,
+   "carrier": [
+    {
+     "body": "B4",
+     "word": "mmmw"
+    }
+   ],
+   "power": [
+    {
+     "body": "B10",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B10",
+     "word": "wwmm",
+     "n": 13
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B5",
+     "word": "mwmm",
+     "n": 1
+    },
+    {
+     "body": "B7",
+     "word": "mwmm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwmm|S:mmww|push@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    15,
+    15
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl15/four_segment_ring.flyer",
+   "slot": 1,
+   "actor": "B6",
+   "action": "push",
+   "load": 15,
+   "carrier": [
+    {
+     "body": "B6",
+     "word": "mwwm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B1",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B1",
+     "word": "mmww",
+     "n": 14
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B7",
+     "word": "wmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwwm|S:mmww|push@1|T:mmww",
+   "w0": 224,
+   "w0_hits": "3/10",
+   "load_range_over_w0": [
+    15,
+    15
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl15/four_segment_ring.flyer",
+   "slot": 3,
+   "actor": "B7",
+   "action": "push",
+   "load": 15,
+   "carrier": [
+    {
+     "body": "B7",
+     "word": "wmmw"
+    }
+   ],
+   "power": [
+    {
+     "body": "B9",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B9",
+     "word": "wwmm",
+     "n": 13
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B4",
+     "word": "mwmm",
+     "n": 1
+    },
+    {
+     "body": "B5",
+     "word": "mwmm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwwm|S:mmww|push@1|T:mmww",
+   "w0": 224,
+   "w0_hits": "3/10",
+   "load_range_over_w0": [
+    15,
+    15
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl16/crossfeed_compact.flyer",
+   "slot": 0,
+   "actor": "B3",
+   "action": "push",
+   "load": 16,
+   "carrier": [
+    {
+     "body": "B3",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B1",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B1",
+     "word": "mmww",
+     "n": 15
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B2",
+     "word": "mwwm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    12,
+    16
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl16/crossfeed_compact.flyer",
+   "slot": 2,
+   "actor": "B1",
+   "action": "push",
+   "load": 12,
+   "carrier": [
+    {
+     "body": "B1",
+     "word": "mmww"
+    }
+   ],
+   "power": [
+    {
+     "body": "B3",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B3",
+     "word": "wwmm",
+     "n": 11
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "wmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    12,
+    16
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl16/crossfeed_compact.flyer",
+   "slot": 1,
+   "actor": "B2",
+   "action": "push",
+   "load": 16,
+   "carrier": [
+    {
+     "body": "B2",
+     "word": "mwwm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B1",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B1",
+     "word": "mmww",
+     "n": 15
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "wmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwwm|S:mmww|push@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    16,
+    16
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl16/crossfeed_compact.flyer",
+   "slot": 3,
+   "actor": "B0",
+   "action": "push",
+   "load": 12,
+   "carrier": [
+    {
+     "body": "B3",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B3",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B3",
+     "word": "wwmm",
+     "n": 11,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B2",
+     "word": "mwwm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mmww|S:mmww|push@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    12,
+    12
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl16/crossfeed_honey_front.flyer",
+   "slot": 0,
+   "actor": "B3",
+   "action": "push",
+   "load": 16,
+   "carrier": [
+    {
+     "body": "B3",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B1",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B1",
+     "word": "mmww",
+     "n": 15
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B2",
+     "word": "mwwm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    12,
+    16
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl16/crossfeed_honey_front.flyer",
+   "slot": 2,
+   "actor": "B1",
+   "action": "push",
+   "load": 12,
+   "carrier": [
+    {
+     "body": "B1",
+     "word": "mmww"
+    }
+   ],
+   "power": [
+    {
+     "body": "B3",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B3",
+     "word": "wwmm",
+     "n": 11
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "wmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    12,
+    16
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl16/crossfeed_honey_front.flyer",
+   "slot": 1,
+   "actor": "B2",
+   "action": "push",
+   "load": 16,
+   "carrier": [
+    {
+     "body": "B2",
+     "word": "mwwm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B1",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B1",
+     "word": "mmww",
+     "n": 15
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "wmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwwm|S:mmww|push@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    16,
+    16
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl16/crossfeed_honey_front.flyer",
+   "slot": 3,
+   "actor": "B0",
+   "action": "push",
+   "load": 12,
+   "carrier": [
+    {
+     "body": "B3",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B3",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B3",
+     "word": "wwmm",
+     "n": 11,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B2",
+     "word": "mwwm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mmww|S:mmww|push@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    12,
+    12
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl16/crossfeed_upright.flyer",
+   "slot": 0,
+   "actor": "B3",
+   "action": "push",
+   "load": 16,
+   "carrier": [
+    {
+     "body": "B3",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B1",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B1",
+     "word": "mmww",
+     "n": 15
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B2",
+     "word": "mwwm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    12,
+    16
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl16/crossfeed_upright.flyer",
+   "slot": 2,
+   "actor": "B1",
+   "action": "push",
+   "load": 12,
+   "carrier": [
+    {
+     "body": "B1",
+     "word": "mmww"
+    }
+   ],
+   "power": [
+    {
+     "body": "B3",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B3",
+     "word": "wwmm",
+     "n": 11
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "wmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    12,
+    16
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl16/crossfeed_upright.flyer",
+   "slot": 1,
+   "actor": "B2",
+   "action": "push",
+   "load": 16,
+   "carrier": [
+    {
+     "body": "B2",
+     "word": "mwwm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B1",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B1",
+     "word": "mmww",
+     "n": 15
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "wmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwwm|S:mmww|push@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    16,
+    16
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl16/crossfeed_upright.flyer",
+   "slot": 3,
+   "actor": "B0",
+   "action": "push",
+   "load": 12,
+   "carrier": [
+    {
+     "body": "B3",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B3",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B3",
+     "word": "wwmm",
+     "n": 11,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B2",
+     "word": "mwwm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mmww|S:mmww|push@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    12,
+    12
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl17/crossfeed_sidebridge.flyer",
+   "slot": 0,
+   "actor": "B3",
+   "action": "push",
+   "load": 17,
+   "carrier": [
+    {
+     "body": "B3",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B2",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B2",
+     "word": "mmww",
+     "n": 16
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B1",
+     "word": "mwwm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    14,
+    17
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl17/crossfeed_sidebridge.flyer",
+   "slot": 2,
+   "actor": "B2",
+   "action": "push",
+   "load": 14,
+   "carrier": [
+    {
+     "body": "B2",
+     "word": "mmww"
+    }
+   ],
+   "power": [
+    {
+     "body": "B3",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B3",
+     "word": "wwmm",
+     "n": 13
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "wmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    14,
+    17
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl17/crossfeed_sidebridge.flyer",
+   "slot": 1,
+   "actor": "B1",
+   "action": "push",
+   "load": 17,
+   "carrier": [
+    {
+     "body": "B1",
+     "word": "mwwm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B2",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B2",
+     "word": "mmww",
+     "n": 16
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "wmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwwm|S:mmww|push@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    17,
+    17
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl17/crossfeed_sidebridge.flyer",
+   "slot": 3,
+   "actor": "B0",
+   "action": "push",
+   "load": 14,
+   "carrier": [
+    {
+     "body": "B3",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B3",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B3",
+     "word": "wwmm",
+     "n": 13,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B1",
+     "word": "mwwm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mmww|S:mmww|push@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    14,
+    14
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl18/crossfeed_longbridge.flyer",
+   "slot": 0,
+   "actor": "B3",
+   "action": "push",
+   "load": 18,
+   "carrier": [
+    {
+     "body": "B3",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B2",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B2",
+     "word": "mmww",
+     "n": 17
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B1",
+     "word": "mwwm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    14,
+    18
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl18/crossfeed_longbridge.flyer",
+   "slot": 2,
+   "actor": "B2",
+   "action": "push",
+   "load": 14,
+   "carrier": [
+    {
+     "body": "B2",
+     "word": "mmww"
+    }
+   ],
+   "power": [
+    {
+     "body": "B3",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B3",
+     "word": "wwmm",
+     "n": 13
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "wmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    14,
+    18
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl18/crossfeed_longbridge.flyer",
+   "slot": 1,
+   "actor": "B1",
+   "action": "push",
+   "load": 18,
+   "carrier": [
+    {
+     "body": "B1",
+     "word": "mwwm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B2",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B2",
+     "word": "mmww",
+     "n": 17
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "wmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwwm|S:mmww|push@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    18,
+    18
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl18/crossfeed_longbridge.flyer",
+   "slot": 3,
+   "actor": "B0",
+   "action": "push",
+   "load": 14,
+   "carrier": [
+    {
+     "body": "B3",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B3",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B3",
+     "word": "wwmm",
+     "n": 13,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B1",
+     "word": "mwwm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mmww|S:mmww|push@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    14,
+    14
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl19/crossfeed_offset_rear.flyer",
+   "slot": 0,
+   "actor": "B3",
+   "action": "push",
+   "load": 19,
+   "carrier": [
+    {
+     "body": "B3",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B2",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B2",
+     "word": "mmww",
+     "n": 18
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B1",
+     "word": "mwwm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    14,
+    19
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl19/crossfeed_offset_rear.flyer",
+   "slot": 2,
+   "actor": "B2",
+   "action": "push",
+   "load": 14,
+   "carrier": [
+    {
+     "body": "B2",
+     "word": "mmww"
+    }
+   ],
+   "power": [
+    {
+     "body": "B3",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B3",
+     "word": "wwmm",
+     "n": 13
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "wmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    14,
+    19
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl19/crossfeed_offset_rear.flyer",
+   "slot": 1,
+   "actor": "B1",
+   "action": "push",
+   "load": 19,
+   "carrier": [
+    {
+     "body": "B1",
+     "word": "mwwm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B2",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B2",
+     "word": "mmww",
+     "n": 18
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "wmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwwm|S:mmww|push@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    14,
+    19
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl19/crossfeed_offset_rear.flyer",
+   "slot": 3,
+   "actor": "B0",
+   "action": "push",
+   "load": 14,
+   "carrier": [
+    {
+     "body": "B0",
+     "word": "wmmw"
+    }
+   ],
+   "power": [
+    {
+     "body": "B3",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B3",
+     "word": "wwmm",
+     "n": 13
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B1",
+     "word": "mwwm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwwm|S:mmww|push@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    14,
+    19
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl20/crossfeed_wide_rear.flyer",
+   "slot": 0,
+   "actor": "B3",
+   "action": "push",
+   "load": 20,
+   "carrier": [
+    {
+     "body": "B3",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B2",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B2",
+     "word": "mmww",
+     "n": 19
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B1",
+     "word": "mwwm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    15,
+    20
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl20/crossfeed_wide_rear.flyer",
+   "slot": 2,
+   "actor": "B2",
+   "action": "push",
+   "load": 15,
+   "carrier": [
+    {
+     "body": "B2",
+     "word": "mmww"
+    }
+   ],
+   "power": [
+    {
+     "body": "B3",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B3",
+     "word": "wwmm",
+     "n": 14
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "wmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    15,
+    20
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl20/crossfeed_wide_rear.flyer",
+   "slot": 1,
+   "actor": "B1",
+   "action": "push",
+   "load": 20,
+   "carrier": [
+    {
+     "body": "B1",
+     "word": "mwwm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B2",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B2",
+     "word": "mmww",
+     "n": 19
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "wmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwwm|S:mmww|push@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    15,
+    20
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl20/crossfeed_wide_rear.flyer",
+   "slot": 3,
+   "actor": "B0",
+   "action": "push",
+   "load": 15,
+   "carrier": [
+    {
+     "body": "B0",
+     "word": "wmmw"
+    }
+   ],
+   "power": [
+    {
+     "body": "B3",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B3",
+     "word": "wwmm",
+     "n": 14
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B1",
+     "word": "mwwm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwwm|S:mmww|push@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    15,
+    20
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl7/tm_7pl_2.5bps.flyer",
+   "slot": 0,
+   "actor": "B1",
+   "action": "pull",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B1",
+     "word": "wmmw"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B0",
+     "word": "mmww",
+     "n": 5
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wmmw|S:-|pull@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    5
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl7/tm_7pl_2.5bps.flyer",
+   "slot": 0,
+   "actor": "B2",
+   "action": "push",
+   "load": 6,
+   "carrier": [
+    {
+     "body": "B2",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B3",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B3",
+     "word": "mmww",
+     "n": 5
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B4",
+     "word": "mmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    7
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl7/tm_7pl_2.5bps.flyer",
+   "slot": 0,
+   "actor": "B6",
+   "action": "push",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B6",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B8",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B8",
+     "word": "mmww",
+     "n": 4
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B7",
+     "word": "mwwm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    7
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl7/tm_7pl_2.5bps.flyer",
+   "slot": 2,
+   "actor": "B5",
+   "action": "push",
+   "load": 7,
+   "carrier": [
+    {
+     "body": "B3",
+     "word": "mmww"
+    }
+   ],
+   "power": [
+    {
+     "body": "B6",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B6",
+     "word": "wwmm",
+     "n": 6
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B4",
+     "word": "mmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    7
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl7/tm_7pl_2.5bps.flyer",
+   "slot": 2,
+   "actor": "B0",
+   "action": "push",
+   "load": 6,
+   "carrier": [
+    {
+     "body": "B0",
+     "word": "mmww"
+    }
+   ],
+   "power": [
+    {
+     "body": "B2",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B2",
+     "word": "wwmm",
+     "n": 6
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    7
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl7/tm_7pl_2.5bps.flyer",
+   "slot": 1,
+   "actor": "B2",
+   "action": "pull",
+   "load": 7,
+   "carrier": [
+    {
+     "body": "B2",
+     "word": "wwmm"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B0",
+     "word": "mmww",
+     "n": 5
+    },
+    {
+     "body": "B1",
+     "word": "wmmw",
+     "n": 2
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:-|pull@1|T:mmww+wmmw",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    7,
+    7
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl7/tm_7pl_2.5bps.flyer",
+   "slot": 1,
+   "actor": "B7",
+   "action": "push",
+   "load": 4,
+   "carrier": [
+    {
+     "body": "B7",
+     "word": "mwwm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B8",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B8",
+     "word": "mmww",
+     "n": 4
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:mwwm|S:mmww|push@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "3/10",
+   "load_range_over_w0": [
+    4,
+    7
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl7/tm_7pl_2.5bps.flyer",
+   "slot": 1,
+   "actor": "B6",
+   "action": "pull",
+   "load": 7,
+   "carrier": [
+    {
+     "body": "B6",
+     "word": "wwmm"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B3",
+     "word": "mmww",
+     "n": 5
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B4",
+     "word": "mmmw",
+     "n": 1
+    },
+    {
+     "body": "B5",
+     "word": "mmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:wwmm|S:-|pull@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    6,
+    7
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl7/tm_7pl_2.5bps.flyer",
+   "slot": 3,
+   "actor": "B3",
+   "action": "pull",
+   "load": 6,
+   "carrier": [
+    {
+     "body": "B3",
+     "word": "mmww"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B2",
+     "word": "wwmm",
+     "n": 6
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:-|pull@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    6,
+    7
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl7/tm_7pl_2.5bps.flyer",
+   "slot": 2,
+   "actor": "B0",
+   "action": "push",
+   "load": 2,
+   "carrier": [
+    {
+     "body": "B0",
+     "word": "mmww"
+    }
+   ],
+   "power": [
+    {
+     "body": "B0",
+     "word": "mmww"
+    },
+    {
+     "body": "B2",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B1",
+     "word": "wmmw",
+     "n": 2
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:mwwm|S:mwwm/wmmw|push@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "5/10",
+   "load_range_over_w0": [
+    2,
+    2
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl7/tm_7pl_2.5bps.flyer",
+   "slot": 1,
+   "actor": "B7",
+   "action": "push",
+   "load": 4,
+   "carrier": [
+    {
+     "body": "B7",
+     "word": "mwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B9",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B9",
+     "word": "mmww",
+     "n": 4
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:mwmm|S:mmww|push@1|T:mmww",
+   "w0": 88,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    4,
+    7
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl7/tm_7pl_2.5bps.flyer",
+   "slot": 3,
+   "actor": "B4",
+   "action": "push",
+   "load": 7,
+   "carrier": [
+    {
+     "body": "B4",
+     "word": "mmmw"
+    }
+   ],
+   "power": [
+    {
+     "body": "B6",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B6",
+     "word": "wwmm",
+     "n": 5
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B7",
+     "word": "mwmm",
+     "n": 1
+    },
+    {
+     "body": "B8",
+     "word": "mwmm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwmm|S:mmww|push@1|T:mmww",
+   "w0": 88,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    4,
+    7
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl7/tm_7pl_2.5bps.flyer",
+   "slot": 2,
+   "actor": "B0",
+   "action": "push",
+   "load": 3,
+   "carrier": [
+    {
+     "body": "B0",
+     "word": "mmww"
+    }
+   ],
+   "power": [
+    {
+     "body": "B0",
+     "word": "mmww"
+    },
+    {
+     "body": "B2",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B1",
+     "word": "wmmw",
+     "n": 2
+    },
+    {
+     "body": "B2",
+     "word": "wwmm",
+     "n": 1
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:mwwm|S:mwwm/wmmw|push@1|T:mmww+wmmw",
+   "w0": 104,
+   "w0_hits": "5/10",
+   "load_range_over_w0": [
+    3,
+    3
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl7/tm_7pl_2.5bps.flyer",
+   "slot": 0,
+   "actor": "B7",
+   "action": "push",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B7",
+     "word": "mwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B9",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B9",
+     "word": "mmww",
+     "n": 4
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B8",
+     "word": "mwmm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwmm|S:mmww|push@0|T:mmww",
+   "w0": 112,
+   "w0_hits": "3/10",
+   "load_range_over_w0": [
+    5,
+    5
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/hop_pair_rod_observer.flyer",
+   "slot": 0,
+   "actor": "B1",
+   "action": "push",
+   "load": 8,
+   "carrier": [
+    {
+     "body": "B2",
+     "word": "mwmw"
+    },
+    {
+     "body": "B3",
+     "word": "wmwm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B2",
+     "word": "mwmw"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B2",
+     "word": "mwmw",
+     "n": 6,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "mmww",
+     "n": 1
+    },
+    {
+     "body": "B4",
+     "word": "mmww",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwmw/wmwm|S:mwmw|push@0|T:mwmw",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    8,
+    8
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/hop_pair_rod_observer.flyer",
+   "slot": 2,
+   "actor": "B0",
+   "action": "push",
+   "load": 8,
+   "carrier": [
+    {
+     "body": "B2",
+     "word": "mwmw"
+    },
+    {
+     "body": "B3",
+     "word": "wmwm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B2",
+     "word": "mwmw"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B2",
+     "word": "mwmw",
+     "n": 6,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B1",
+     "word": "wwmm",
+     "n": 1
+    },
+    {
+     "body": "B5",
+     "word": "wwmm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwmw/wmwm|S:mwmw|push@0|T:mwmw",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    8,
+    8
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/hop_pair_rod_observer.flyer",
+   "slot": 1,
+   "actor": "B5",
+   "action": "pull",
+   "load": 8,
+   "carrier": [
+    {
+     "body": "B2",
+     "word": "mwmw"
+    },
+    {
+     "body": "B3",
+     "word": "wmwm"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B3",
+     "word": "wmwm",
+     "n": 6,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "mmww",
+     "n": 1
+    },
+    {
+     "body": "B4",
+     "word": "mmww",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwmw/wmwm|S:-|pull@0|T:mwmw",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    8,
+    8
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/hop_pair_rod_observer.flyer",
+   "slot": 3,
+   "actor": "B4",
+   "action": "pull",
+   "load": 8,
+   "carrier": [
+    {
+     "body": "B2",
+     "word": "mwmw"
+    },
+    {
+     "body": "B3",
+     "word": "wmwm"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B3",
+     "word": "wmwm",
+     "n": 6,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B1",
+     "word": "wwmm",
+     "n": 1
+    },
+    {
+     "body": "B5",
+     "word": "wwmm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwmw/wmwm|S:-|pull@0|T:mwmw",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    8,
+    8
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/mirrored_chains_shared_mwmw.flyer",
+   "slot": 0,
+   "actor": "B15",
+   "action": "push",
+   "load": 8,
+   "carrier": [
+    {
+     "body": "B15",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B16",
+     "word": "mwmw"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B16",
+     "word": "mwmw",
+     "n": 8
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:mmww|S:mwmw|push@2|T:mwmw",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    8,
+    8
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/mirrored_chains_shared_mwmw.flyer",
+   "slot": 2,
+   "actor": "B14",
+   "action": "push",
+   "load": 8,
+   "carrier": [
+    {
+     "body": "B14",
+     "word": "mmww"
+    }
+   ],
+   "power": [
+    {
+     "body": "B16",
+     "word": "mwmw"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B16",
+     "word": "mwmw",
+     "n": 8
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:mmww|S:mwmw|push@2|T:mwmw",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    8,
+    8
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/mirrored_chains_shared_mwmw.flyer",
+   "slot": 0,
+   "actor": "B1",
+   "action": "push",
+   "load": 6,
+   "carrier": [
+    {
+     "body": "B1",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B2",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B2",
+     "word": "mmww",
+     "n": 6
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    7
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/mirrored_chains_shared_mwmw.flyer",
+   "slot": 0,
+   "actor": "B5",
+   "action": "push",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B5",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B6",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B6",
+     "word": "mmww",
+     "n": 5
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    7
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/mirrored_chains_shared_mwmw.flyer",
+   "slot": 0,
+   "actor": "B7",
+   "action": "push",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B7",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B8",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B8",
+     "word": "mmww",
+     "n": 5
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    7
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/mirrored_chains_shared_mwmw.flyer",
+   "slot": 0,
+   "actor": "B9",
+   "action": "push",
+   "load": 7,
+   "carrier": [
+    {
+     "body": "B9",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B10",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B10",
+     "word": "mmww",
+     "n": 7
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    7
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/mirrored_chains_shared_mwmw.flyer",
+   "slot": 2,
+   "actor": "B6",
+   "action": "push",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B6",
+     "word": "mmww"
+    }
+   ],
+   "power": [
+    {
+     "body": "B9",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B9",
+     "word": "wwmm",
+     "n": 5
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    7
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/mirrored_chains_shared_mwmw.flyer",
+   "slot": 2,
+   "actor": "B0",
+   "action": "push",
+   "load": 6,
+   "carrier": [
+    {
+     "body": "B0",
+     "word": "mmww"
+    }
+   ],
+   "power": [
+    {
+     "body": "B5",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B5",
+     "word": "wwmm",
+     "n": 6
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    7
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/mirrored_chains_shared_mwmw.flyer",
+   "slot": 2,
+   "actor": "B8",
+   "action": "push",
+   "load": 7,
+   "carrier": [
+    {
+     "body": "B8",
+     "word": "mmww"
+    }
+   ],
+   "power": [
+    {
+     "body": "B11",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B11",
+     "word": "wwmm",
+     "n": 7
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    7
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/mirrored_chains_shared_mwmw.flyer",
+   "slot": 2,
+   "actor": "B2",
+   "action": "push",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B2",
+     "word": "mmww"
+    }
+   ],
+   "power": [
+    {
+     "body": "B7",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B7",
+     "word": "wwmm",
+     "n": 5
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    7
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/mirrored_chains_shared_mwmw.flyer",
+   "slot": 0,
+   "actor": "B11",
+   "action": "push",
+   "load": 8,
+   "carrier": [
+    {
+     "body": "B11",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B11",
+     "word": "wwmm"
+    },
+    {
+     "body": "B14",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B14",
+     "word": "mmww",
+     "n": 7
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B13",
+     "word": "mwwm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:wwmm|S:mmww/wwmm|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    8,
+    8
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/mirrored_chains_shared_mwmw.flyer",
+   "slot": 2,
+   "actor": "B10",
+   "action": "push",
+   "load": 8,
+   "carrier": [
+    {
+     "body": "B10",
+     "word": "mmww"
+    }
+   ],
+   "power": [
+    {
+     "body": "B10",
+     "word": "mmww"
+    },
+    {
+     "body": "B15",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B15",
+     "word": "wwmm",
+     "n": 7
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B12",
+     "word": "wmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:wwmm|S:mmww/wwmm|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    8,
+    8
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/mirrored_chains_shared_mwmw.flyer",
+   "slot": 0,
+   "actor": "B1",
+   "action": "push",
+   "load": 2,
+   "carrier": [
+    {
+     "body": "B1",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B1",
+     "word": "wwmm"
+    },
+    {
+     "body": "B2",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B4",
+     "word": "mwwm",
+     "n": 2
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:mwwm|S:mwwm/wmmw|push@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "7/10",
+   "load_range_over_w0": [
+    2,
+    2
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/mirrored_chains_shared_mwmw.flyer",
+   "slot": 2,
+   "actor": "B0",
+   "action": "push",
+   "load": 2,
+   "carrier": [
+    {
+     "body": "B0",
+     "word": "mmww"
+    }
+   ],
+   "power": [
+    {
+     "body": "B0",
+     "word": "mmww"
+    },
+    {
+     "body": "B5",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B3",
+     "word": "wmmw",
+     "n": 2
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:mwwm|S:mwwm/wmmw|push@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "7/10",
+   "load_range_over_w0": [
+    2,
+    2
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/mirrored_chains_shared_mwmw.flyer",
+   "slot": 0,
+   "actor": "B3",
+   "action": "pull",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B3",
+     "word": "wmmw"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B0",
+     "word": "mmww",
+     "n": 5
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wmmw|S:-|pull@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    5
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/mirrored_chains_shared_mwmw.flyer",
+   "slot": 2,
+   "actor": "B4",
+   "action": "pull",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B4",
+     "word": "mwwm"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B1",
+     "word": "wwmm",
+     "n": 5
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wmmw|S:-|pull@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    5
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/mirrored_chains_shared_mwmw.flyer",
+   "slot": 1,
+   "actor": "B15",
+   "action": "pull",
+   "load": 8,
+   "carrier": [
+    {
+     "body": "B15",
+     "word": "wwmm"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B10",
+     "word": "mmww",
+     "n": 7
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B12",
+     "word": "wmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:wwmm|S:-|pull@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    8
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/mirrored_chains_shared_mwmw.flyer",
+   "slot": 1,
+   "actor": "B7",
+   "action": "pull",
+   "load": 6,
+   "carrier": [
+    {
+     "body": "B7",
+     "word": "wwmm"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B2",
+     "word": "mmww",
+     "n": 6
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:-|pull@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    8
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/mirrored_chains_shared_mwmw.flyer",
+   "slot": 1,
+   "actor": "B9",
+   "action": "pull",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B9",
+     "word": "wwmm"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B6",
+     "word": "mmww",
+     "n": 5
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:-|pull@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    8
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/mirrored_chains_shared_mwmw.flyer",
+   "slot": 1,
+   "actor": "B11",
+   "action": "pull",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B11",
+     "word": "wwmm"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B8",
+     "word": "mmww",
+     "n": 5
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:-|pull@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    8
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/mirrored_chains_shared_mwmw.flyer",
+   "slot": 3,
+   "actor": "B14",
+   "action": "pull",
+   "load": 8,
+   "carrier": [
+    {
+     "body": "B14",
+     "word": "mmww"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B11",
+     "word": "wwmm",
+     "n": 7
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B13",
+     "word": "mwwm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:wwmm|S:-|pull@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    8
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/mirrored_chains_shared_mwmw.flyer",
+   "slot": 3,
+   "actor": "B10",
+   "action": "pull",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B10",
+     "word": "mmww"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B9",
+     "word": "wwmm",
+     "n": 5
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:-|pull@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    8
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/mirrored_chains_shared_mwmw.flyer",
+   "slot": 3,
+   "actor": "B6",
+   "action": "pull",
+   "load": 6,
+   "carrier": [
+    {
+     "body": "B6",
+     "word": "mmww"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B5",
+     "word": "wwmm",
+     "n": 6
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:-|pull@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    8
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/mirrored_chains_shared_mwmw.flyer",
+   "slot": 3,
+   "actor": "B8",
+   "action": "pull",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B8",
+     "word": "mmww"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B7",
+     "word": "wwmm",
+     "n": 5
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:-|pull@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    8
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/mirrored_chains_shared_mwmw.flyer",
+   "slot": 1,
+   "actor": "B5",
+   "action": "pull",
+   "load": 7,
+   "carrier": [
+    {
+     "body": "B5",
+     "word": "wwmm"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B0",
+     "word": "mmww",
+     "n": 5
+    },
+    {
+     "body": "B3",
+     "word": "wmmw",
+     "n": 2
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:-|pull@1|T:mmww+wmmw",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    7,
+    7
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/mirrored_chains_shared_mwmw.flyer",
+   "slot": 3,
+   "actor": "B2",
+   "action": "pull",
+   "load": 7,
+   "carrier": [
+    {
+     "body": "B2",
+     "word": "mmww"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B1",
+     "word": "wwmm",
+     "n": 5
+    },
+    {
+     "body": "B4",
+     "word": "mwwm",
+     "n": 2
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:-|pull@1|T:mmww+wmmw",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    7,
+    7
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/mirrored_chains_shared_mwmw.flyer",
+   "slot": 1,
+   "actor": "B13",
+   "action": "push",
+   "load": 7,
+   "carrier": [
+    {
+     "body": "B13",
+     "word": "mwwm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B14",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B14",
+     "word": "mmww",
+     "n": 7
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:mwwm|S:mmww|push@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    7,
+    7
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/mirrored_chains_shared_mwmw.flyer",
+   "slot": 3,
+   "actor": "B12",
+   "action": "push",
+   "load": 7,
+   "carrier": [
+    {
+     "body": "B12",
+     "word": "wmmw"
+    }
+   ],
+   "power": [
+    {
+     "body": "B15",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B15",
+     "word": "wwmm",
+     "n": 7
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:mwwm|S:mmww|push@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    7,
+    7
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/mirrored_chains_shared_mwmw.flyer",
+   "slot": 0,
+   "actor": "B1",
+   "action": "push",
+   "load": 3,
+   "carrier": [
+    {
+     "body": "B1",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B1",
+     "word": "wwmm"
+    },
+    {
+     "body": "B2",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B2",
+     "word": "mmww",
+     "n": 1
+    },
+    {
+     "body": "B4",
+     "word": "mwwm",
+     "n": 2
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:mmww/wwmm|push@0|T:mmww+mwwm",
+   "w0": 88,
+   "w0_hits": "6/10",
+   "load_range_over_w0": [
+    3,
+    3
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/mirrored_chains_shared_mwmw.flyer",
+   "slot": 2,
+   "actor": "B0",
+   "action": "push",
+   "load": 3,
+   "carrier": [
+    {
+     "body": "B0",
+     "word": "mmww"
+    }
+   ],
+   "power": [
+    {
+     "body": "B0",
+     "word": "mmww"
+    },
+    {
+     "body": "B5",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B3",
+     "word": "wmmw",
+     "n": 2
+    },
+    {
+     "body": "B5",
+     "word": "wwmm",
+     "n": 1
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:mwwm|S:mwwm/wmmw|push@1|T:mmww+wmmw",
+   "w0": 104,
+   "w0_hits": "4/10",
+   "load_range_over_w0": [
+    3,
+    3
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 0,
+   "actor": "B31",
+   "action": "push",
+   "load": 8,
+   "carrier": [
+    {
+     "body": "B31",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B32",
+     "word": "mwmw"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B32",
+     "word": "mwmw",
+     "n": 8
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:mmww|S:mwmw|push@2|T:mwmw",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    8,
+    8
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 2,
+   "actor": "B30",
+   "action": "push",
+   "load": 8,
+   "carrier": [
+    {
+     "body": "B30",
+     "word": "mmww"
+    }
+   ],
+   "power": [
+    {
+     "body": "B32",
+     "word": "mwmw"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B32",
+     "word": "mwmw",
+     "n": 8
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:mmww|S:mwmw|push@2|T:mwmw",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    8,
+    8
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 0,
+   "actor": "B9",
+   "action": "push",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B9",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B10",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B10",
+     "word": "mmww",
+     "n": 5
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    7
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 0,
+   "actor": "B13",
+   "action": "push",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B13",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B14",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B14",
+     "word": "mmww",
+     "n": 5
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    7
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 0,
+   "actor": "B7",
+   "action": "push",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B7",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B8",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B8",
+     "word": "mmww",
+     "n": 5
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    7
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 0,
+   "actor": "B5",
+   "action": "push",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B5",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B6",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B6",
+     "word": "mmww",
+     "n": 5
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    7
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 0,
+   "actor": "B1",
+   "action": "push",
+   "load": 6,
+   "carrier": [
+    {
+     "body": "B1",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B2",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B2",
+     "word": "mmww",
+     "n": 6
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    7
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 0,
+   "actor": "B11",
+   "action": "push",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B11",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B12",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B12",
+     "word": "mmww",
+     "n": 5
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    7
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 0,
+   "actor": "B23",
+   "action": "push",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B23",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B24",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B24",
+     "word": "mmww",
+     "n": 5
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    7
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 0,
+   "actor": "B19",
+   "action": "push",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B19",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B20",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B20",
+     "word": "mmww",
+     "n": 5
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    7
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 0,
+   "actor": "B21",
+   "action": "push",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B21",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B22",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B22",
+     "word": "mmww",
+     "n": 5
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    7
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 0,
+   "actor": "B17",
+   "action": "push",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B17",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B18",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B18",
+     "word": "mmww",
+     "n": 5
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    7
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 0,
+   "actor": "B25",
+   "action": "push",
+   "load": 7,
+   "carrier": [
+    {
+     "body": "B25",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B26",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B26",
+     "word": "mmww",
+     "n": 7
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    7
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 2,
+   "actor": "B20",
+   "action": "push",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B20",
+     "word": "mmww"
+    }
+   ],
+   "power": [
+    {
+     "body": "B23",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B23",
+     "word": "wwmm",
+     "n": 5
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    7
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 2,
+   "actor": "B18",
+   "action": "push",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B18",
+     "word": "mmww"
+    }
+   ],
+   "power": [
+    {
+     "body": "B21",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B21",
+     "word": "wwmm",
+     "n": 5
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    7
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 2,
+   "actor": "B24",
+   "action": "push",
+   "load": 7,
+   "carrier": [
+    {
+     "body": "B24",
+     "word": "mmww"
+    }
+   ],
+   "power": [
+    {
+     "body": "B27",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B27",
+     "word": "wwmm",
+     "n": 7
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    7
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 2,
+   "actor": "B12",
+   "action": "push",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B12",
+     "word": "mmww"
+    }
+   ],
+   "power": [
+    {
+     "body": "B15",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B15",
+     "word": "wwmm",
+     "n": 5
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    7
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 2,
+   "actor": "B16",
+   "action": "push",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B16",
+     "word": "mmww"
+    }
+   ],
+   "power": [
+    {
+     "body": "B19",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B19",
+     "word": "wwmm",
+     "n": 5
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    7
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 2,
+   "actor": "B22",
+   "action": "push",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B22",
+     "word": "mmww"
+    }
+   ],
+   "power": [
+    {
+     "body": "B25",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B25",
+     "word": "wwmm",
+     "n": 5
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    7
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 2,
+   "actor": "B8",
+   "action": "push",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B8",
+     "word": "mmww"
+    }
+   ],
+   "power": [
+    {
+     "body": "B11",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B11",
+     "word": "wwmm",
+     "n": 5
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    7
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 2,
+   "actor": "B2",
+   "action": "push",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B2",
+     "word": "mmww"
+    }
+   ],
+   "power": [
+    {
+     "body": "B7",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B7",
+     "word": "wwmm",
+     "n": 5
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    7
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 2,
+   "actor": "B10",
+   "action": "push",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B10",
+     "word": "mmww"
+    }
+   ],
+   "power": [
+    {
+     "body": "B13",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B13",
+     "word": "wwmm",
+     "n": 5
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    7
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 2,
+   "actor": "B0",
+   "action": "push",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B0",
+     "word": "mmww"
+    }
+   ],
+   "power": [
+    {
+     "body": "B5",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B5",
+     "word": "wwmm",
+     "n": 5
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    7
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 2,
+   "actor": "B6",
+   "action": "push",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B6",
+     "word": "mmww"
+    }
+   ],
+   "power": [
+    {
+     "body": "B9",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B9",
+     "word": "wwmm",
+     "n": 5
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    7
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 0,
+   "actor": "B1",
+   "action": "push",
+   "load": 2,
+   "carrier": [
+    {
+     "body": "B1",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B1",
+     "word": "wwmm"
+    },
+    {
+     "body": "B2",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B4",
+     "word": "mwwm",
+     "n": 2
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:mwwm|S:mwwm/wmmw|push@1|T:mmww",
+   "w0": 96,
+   "w0_hits": "6/10",
+   "load_range_over_w0": [
+    2,
+    2
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 2,
+   "actor": "B0",
+   "action": "push",
+   "load": 2,
+   "carrier": [
+    {
+     "body": "B0",
+     "word": "mmww"
+    }
+   ],
+   "power": [
+    {
+     "body": "B0",
+     "word": "mmww"
+    },
+    {
+     "body": "B5",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B3",
+     "word": "wmmw",
+     "n": 2
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:mwwm|S:mwwm/wmmw|push@1|T:mmww",
+   "w0": 96,
+   "w0_hits": "6/10",
+   "load_range_over_w0": [
+    2,
+    2
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 0,
+   "actor": "B15",
+   "action": "push",
+   "load": 6,
+   "carrier": [
+    {
+     "body": "B15",
+     "word": "wwmm"
+    },
+    {
+     "body": "B16",
+     "word": "mmww"
+    }
+   ],
+   "power": [
+    {
+     "body": "B15",
+     "word": "wwmm"
+    },
+    {
+     "body": "B16",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B16",
+     "word": "mmww",
+     "n": 6,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:mmww/wwmm|S:mmww/wwmm|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    6,
+    6
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 2,
+   "actor": "B14",
+   "action": "push",
+   "load": 6,
+   "carrier": [
+    {
+     "body": "B14",
+     "word": "mmww"
+    },
+    {
+     "body": "B17",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B14",
+     "word": "mmww"
+    },
+    {
+     "body": "B17",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B17",
+     "word": "wwmm",
+     "n": 6,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:mmww/wwmm|S:mmww/wwmm|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    6,
+    6
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 0,
+   "actor": "B27",
+   "action": "push",
+   "load": 8,
+   "carrier": [
+    {
+     "body": "B27",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B27",
+     "word": "wwmm"
+    },
+    {
+     "body": "B30",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B30",
+     "word": "mmww",
+     "n": 7
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B29",
+     "word": "mwwm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:wwmm|S:mmww/wwmm|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    8,
+    8
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 2,
+   "actor": "B26",
+   "action": "push",
+   "load": 8,
+   "carrier": [
+    {
+     "body": "B26",
+     "word": "mmww"
+    }
+   ],
+   "power": [
+    {
+     "body": "B26",
+     "word": "mmww"
+    },
+    {
+     "body": "B31",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B31",
+     "word": "wwmm",
+     "n": 7
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B28",
+     "word": "wmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:wwmm|S:mmww/wwmm|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    8,
+    8
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 0,
+   "actor": "B3",
+   "action": "pull",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B3",
+     "word": "wmmw"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B0",
+     "word": "mmww",
+     "n": 5
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wmmw|S:-|pull@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    5
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 2,
+   "actor": "B4",
+   "action": "pull",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B4",
+     "word": "mwwm"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B1",
+     "word": "wwmm",
+     "n": 5
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wmmw|S:-|pull@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    5
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 1,
+   "actor": "B15",
+   "action": "pull",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B15",
+     "word": "wwmm"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B12",
+     "word": "mmww",
+     "n": 5
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:-|pull@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    8
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 1,
+   "actor": "B31",
+   "action": "pull",
+   "load": 8,
+   "carrier": [
+    {
+     "body": "B31",
+     "word": "wwmm"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B26",
+     "word": "mmww",
+     "n": 7
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B28",
+     "word": "wmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:wwmm|S:-|pull@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    8
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 1,
+   "actor": "B23",
+   "action": "pull",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B23",
+     "word": "wwmm"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B20",
+     "word": "mmww",
+     "n": 5
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:-|pull@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    8
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 1,
+   "actor": "B25",
+   "action": "pull",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B25",
+     "word": "wwmm"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B22",
+     "word": "mmww",
+     "n": 5
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:-|pull@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    8
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 1,
+   "actor": "B19",
+   "action": "pull",
+   "load": 6,
+   "carrier": [
+    {
+     "body": "B19",
+     "word": "wwmm"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B16",
+     "word": "mmww",
+     "n": 6
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:-|pull@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    8
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 1,
+   "actor": "B27",
+   "action": "pull",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B27",
+     "word": "wwmm"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B24",
+     "word": "mmww",
+     "n": 5
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:-|pull@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    8
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 1,
+   "actor": "B17",
+   "action": "pull",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B17",
+     "word": "wwmm"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B14",
+     "word": "mmww",
+     "n": 5
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:-|pull@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    8
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 1,
+   "actor": "B21",
+   "action": "pull",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B21",
+     "word": "wwmm"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B18",
+     "word": "mmww",
+     "n": 5
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:-|pull@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    8
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 1,
+   "actor": "B9",
+   "action": "pull",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B9",
+     "word": "wwmm"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B6",
+     "word": "mmww",
+     "n": 5
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:-|pull@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    8
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 1,
+   "actor": "B13",
+   "action": "pull",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B13",
+     "word": "wwmm"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B10",
+     "word": "mmww",
+     "n": 5
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:-|pull@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    8
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 1,
+   "actor": "B11",
+   "action": "pull",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B11",
+     "word": "wwmm"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B8",
+     "word": "mmww",
+     "n": 5
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:-|pull@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    8
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 1,
+   "actor": "B7",
+   "action": "pull",
+   "load": 6,
+   "carrier": [
+    {
+     "body": "B7",
+     "word": "wwmm"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B2",
+     "word": "mmww",
+     "n": 6
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:-|pull@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    8
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 3,
+   "actor": "B6",
+   "action": "pull",
+   "load": 6,
+   "carrier": [
+    {
+     "body": "B6",
+     "word": "mmww"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B5",
+     "word": "wwmm",
+     "n": 6
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:-|pull@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    8
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 3,
+   "actor": "B8",
+   "action": "pull",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B8",
+     "word": "mmww"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B7",
+     "word": "wwmm",
+     "n": 5
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:-|pull@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    8
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 3,
+   "actor": "B10",
+   "action": "pull",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B10",
+     "word": "mmww"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B9",
+     "word": "wwmm",
+     "n": 5
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:-|pull@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    8
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 3,
+   "actor": "B16",
+   "action": "pull",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B16",
+     "word": "mmww"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B15",
+     "word": "wwmm",
+     "n": 5
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:-|pull@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    8
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 3,
+   "actor": "B26",
+   "action": "pull",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B26",
+     "word": "mmww"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B25",
+     "word": "wwmm",
+     "n": 5
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:-|pull@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    8
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 3,
+   "actor": "B24",
+   "action": "pull",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B24",
+     "word": "mmww"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B23",
+     "word": "wwmm",
+     "n": 5
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:-|pull@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    8
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 3,
+   "actor": "B12",
+   "action": "pull",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B12",
+     "word": "mmww"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B11",
+     "word": "wwmm",
+     "n": 5
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:-|pull@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    8
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 3,
+   "actor": "B14",
+   "action": "pull",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B14",
+     "word": "mmww"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B13",
+     "word": "wwmm",
+     "n": 5
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:-|pull@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    8
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 3,
+   "actor": "B22",
+   "action": "pull",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B22",
+     "word": "mmww"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B21",
+     "word": "wwmm",
+     "n": 5
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:-|pull@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    8
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 3,
+   "actor": "B20",
+   "action": "pull",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B20",
+     "word": "mmww"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B19",
+     "word": "wwmm",
+     "n": 5
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:-|pull@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    8
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 3,
+   "actor": "B18",
+   "action": "pull",
+   "load": 6,
+   "carrier": [
+    {
+     "body": "B18",
+     "word": "mmww"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B17",
+     "word": "wwmm",
+     "n": 6
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:-|pull@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    8
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 3,
+   "actor": "B30",
+   "action": "pull",
+   "load": 8,
+   "carrier": [
+    {
+     "body": "B30",
+     "word": "mmww"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B27",
+     "word": "wwmm",
+     "n": 7
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B29",
+     "word": "mwwm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:wwmm|S:-|pull@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    8
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 1,
+   "actor": "B29",
+   "action": "push",
+   "load": 7,
+   "carrier": [
+    {
+     "body": "B29",
+     "word": "mwwm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B30",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B30",
+     "word": "mmww",
+     "n": 7
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:mwwm|S:mmww|push@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    7,
+    7
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 3,
+   "actor": "B28",
+   "action": "push",
+   "load": 7,
+   "carrier": [
+    {
+     "body": "B28",
+     "word": "wmmw"
+    }
+   ],
+   "power": [
+    {
+     "body": "B31",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B31",
+     "word": "wwmm",
+     "n": 7
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:mwwm|S:mmww|push@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    7,
+    7
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 1,
+   "actor": "B5",
+   "action": "pull",
+   "load": 7,
+   "carrier": [
+    {
+     "body": "B5",
+     "word": "wwmm"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B0",
+     "word": "mmww",
+     "n": 5
+    },
+    {
+     "body": "B3",
+     "word": "wmmw",
+     "n": 2
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:-|pull@1|T:mmww+wmmw",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    7,
+    7
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 3,
+   "actor": "B2",
+   "action": "pull",
+   "load": 7,
+   "carrier": [
+    {
+     "body": "B2",
+     "word": "mmww"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B1",
+     "word": "wwmm",
+     "n": 5
+    },
+    {
+     "body": "B4",
+     "word": "mwwm",
+     "n": 2
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:-|pull@1|T:mmww+wmmw",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    7,
+    7
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 2,
+   "actor": "B0",
+   "action": "push",
+   "load": 3,
+   "carrier": [
+    {
+     "body": "B0",
+     "word": "mmww"
+    }
+   ],
+   "power": [
+    {
+     "body": "B0",
+     "word": "mmww"
+    },
+    {
+     "body": "B5",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B3",
+     "word": "wmmw",
+     "n": 2
+    },
+    {
+     "body": "B5",
+     "word": "wwmm",
+     "n": 1
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:mwwm|S:mwwm/wmmw|push@1|T:mmww+wmmw",
+   "w0": 80,
+   "w0_hits": "6/10",
+   "load_range_over_w0": [
+    3,
+    3
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl8/opus_cool.flyer",
+   "slot": 0,
+   "actor": "B1",
+   "action": "push",
+   "load": 3,
+   "carrier": [
+    {
+     "body": "B1",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B1",
+     "word": "wwmm"
+    },
+    {
+     "body": "B2",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B2",
+     "word": "mmww",
+     "n": 1
+    },
+    {
+     "body": "B4",
+     "word": "mwwm",
+     "n": 2
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:mmww/wwmm|push@0|T:mmww+mwwm",
+   "w0": 104,
+   "w0_hits": "6/10",
+   "load_range_over_w0": [
+    3,
+    3
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl9/human_observer_hop.flyer",
+   "slot": 0,
+   "actor": "B1",
+   "action": "push",
+   "load": 7,
+   "carrier": [
+    {
+     "body": "B2",
+     "word": "mwmw"
+    },
+    {
+     "body": "B3",
+     "word": "wmwm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B3",
+     "word": "wmwm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B2",
+     "word": "mwmw",
+     "n": 5,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "mmww",
+     "n": 1
+    },
+    {
+     "body": "B4",
+     "word": "mmww",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwmw/wmwm|S:wmwm|push@0|T:mwmw",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    7,
+    7
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl9/human_observer_hop.flyer",
+   "slot": 2,
+   "actor": "B0",
+   "action": "push",
+   "load": 7,
+   "carrier": [
+    {
+     "body": "B2",
+     "word": "mwmw"
+    },
+    {
+     "body": "B3",
+     "word": "wmwm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B3",
+     "word": "wmwm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B2",
+     "word": "mwmw",
+     "n": 5,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B1",
+     "word": "wwmm",
+     "n": 1
+    },
+    {
+     "body": "B5",
+     "word": "wwmm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwmw/wmwm|S:wmwm|push@0|T:mwmw",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    7,
+    7
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl9/human_observer_hop.flyer",
+   "slot": 1,
+   "actor": "B5",
+   "action": "pull",
+   "load": 9,
+   "carrier": [
+    {
+     "body": "B2",
+     "word": "mwmw"
+    },
+    {
+     "body": "B3",
+     "word": "wmwm"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B3",
+     "word": "wmwm",
+     "n": 7,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B0",
+     "word": "mmww",
+     "n": 1
+    },
+    {
+     "body": "B4",
+     "word": "mmww",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwmw/wmwm|S:-|pull@0|T:mwmw",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    9,
+    9
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl9/human_observer_hop.flyer",
+   "slot": 3,
+   "actor": "B4",
+   "action": "pull",
+   "load": 9,
+   "carrier": [
+    {
+     "body": "B2",
+     "word": "mwmw"
+    },
+    {
+     "body": "B3",
+     "word": "wmwm"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B3",
+     "word": "wmwm",
+     "n": 7,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B1",
+     "word": "wwmm",
+     "n": 1
+    },
+    {
+     "body": "B5",
+     "word": "wwmm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwmw/wmwm|S:-|pull@0|T:mwmw",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    9,
+    9
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl9/pulling_loop4.flyer",
+   "slot": 0,
+   "actor": "B5",
+   "action": "pull",
+   "load": 9,
+   "carrier": [
+    {
+     "body": "B0",
+     "word": "wmwm"
+    },
+    {
+     "body": "B1",
+     "word": "mwmw"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B1",
+     "word": "mwmw",
+     "n": 7,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B7",
+     "word": "mwwm",
+     "n": 1
+    },
+    {
+     "body": "B8",
+     "word": "mmww",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwmw/wmwm|S:-|pull@0|T:mwmw",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    9,
+    9
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl9/pulling_loop4.flyer",
+   "slot": 0,
+   "actor": "B9",
+   "action": "pull",
+   "load": 9,
+   "carrier": [
+    {
+     "body": "B3",
+     "word": "mwmw"
+    },
+    {
+     "body": "B4",
+     "word": "wmwm"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B3",
+     "word": "mwmw",
+     "n": 7,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B2",
+     "word": "mmww",
+     "n": 1
+    },
+    {
+     "body": "B11",
+     "word": "mwwm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwmw/wmwm|S:-|pull@0|T:mwmw",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    9,
+    9
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl9/pulling_loop4.flyer",
+   "slot": 1,
+   "actor": "B10",
+   "action": "pull",
+   "load": 9,
+   "carrier": [
+    {
+     "body": "B1",
+     "word": "mwmw"
+    },
+    {
+     "body": "B4",
+     "word": "wmwm"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B4",
+     "word": "wmwm",
+     "n": 7,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B8",
+     "word": "mmww",
+     "n": 1
+    },
+    {
+     "body": "B9",
+     "word": "wmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwmw/wmwm|S:-|pull@0|T:mwmw",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    9,
+    9
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl9/pulling_loop4.flyer",
+   "slot": 1,
+   "actor": "B6",
+   "action": "pull",
+   "load": 9,
+   "carrier": [
+    {
+     "body": "B0",
+     "word": "wmwm"
+    },
+    {
+     "body": "B3",
+     "word": "mwmw"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B0",
+     "word": "wmwm",
+     "n": 7,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B2",
+     "word": "mmww",
+     "n": 1
+    },
+    {
+     "body": "B5",
+     "word": "wmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwmw/wmwm|S:-|pull@0|T:mwmw",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    9,
+    9
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl9/pulling_loop4.flyer",
+   "slot": 2,
+   "actor": "B7",
+   "action": "pull",
+   "load": 9,
+   "carrier": [
+    {
+     "body": "B0",
+     "word": "wmwm"
+    },
+    {
+     "body": "B1",
+     "word": "mwmw"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B1",
+     "word": "mwmw",
+     "n": 7,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B5",
+     "word": "wmmw",
+     "n": 1
+    },
+    {
+     "body": "B10",
+     "word": "wwmm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwmw/wmwm|S:-|pull@0|T:mwmw",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    9,
+    9
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl9/pulling_loop4.flyer",
+   "slot": 2,
+   "actor": "B11",
+   "action": "pull",
+   "load": 9,
+   "carrier": [
+    {
+     "body": "B3",
+     "word": "mwmw"
+    },
+    {
+     "body": "B4",
+     "word": "wmwm"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B3",
+     "word": "mwmw",
+     "n": 7,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B6",
+     "word": "wwmm",
+     "n": 1
+    },
+    {
+     "body": "B9",
+     "word": "wmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwmw/wmwm|S:-|pull@0|T:mwmw",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    9,
+    9
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl9/pulling_loop4.flyer",
+   "slot": 3,
+   "actor": "B2",
+   "action": "pull",
+   "load": 9,
+   "carrier": [
+    {
+     "body": "B0",
+     "word": "wmwm"
+    },
+    {
+     "body": "B3",
+     "word": "mwmw"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B0",
+     "word": "wmwm",
+     "n": 7,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B6",
+     "word": "wwmm",
+     "n": 1
+    },
+    {
+     "body": "B7",
+     "word": "mwwm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwmw/wmwm|S:-|pull@0|T:mwmw",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    9,
+    9
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl9/pulling_loop4.flyer",
+   "slot": 3,
+   "actor": "B8",
+   "action": "pull",
+   "load": 9,
+   "carrier": [
+    {
+     "body": "B1",
+     "word": "mwmw"
+    },
+    {
+     "body": "B4",
+     "word": "wmwm"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B4",
+     "word": "wmwm",
+     "n": 7,
+     "is_carrier": true
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B10",
+     "word": "wwmm",
+     "n": 1
+    },
+    {
+     "body": "B11",
+     "word": "mwwm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwmw/wmwm|S:-|pull@0|T:mwmw",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    9,
+    9
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl9/rigid_chain_capped.flyer",
+   "slot": 0,
+   "actor": "B0",
+   "action": "push",
+   "load": 9,
+   "carrier": [
+    {
+     "body": "B0",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B3",
+     "word": "mwmw"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B3",
+     "word": "mwmw",
+     "n": 8
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B2",
+     "word": "mwwm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mmww|S:mwmw|push@2|T:mwmw",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    8,
+    9
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl9/rigid_chain_capped.flyer",
+   "slot": 2,
+   "actor": "B1",
+   "action": "push",
+   "load": 8,
+   "carrier": [
+    {
+     "body": "B1",
+     "word": "mmww"
+    }
+   ],
+   "power": [
+    {
+     "body": "B3",
+     "word": "mwmw"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B3",
+     "word": "mwmw",
+     "n": 8
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:mmww|S:mwmw|push@2|T:mwmw",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    8,
+    9
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl9/rigid_chain_capped.flyer",
+   "slot": 0,
+   "actor": "B6",
+   "action": "push",
+   "load": 9,
+   "carrier": [
+    {
+     "body": "B6",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B8",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B8",
+     "word": "mmww",
+     "n": 8
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B7",
+     "word": "mwwm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    9
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl9/rigid_chain_capped.flyer",
+   "slot": 0,
+   "actor": "B4",
+   "action": "push",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B4",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B5",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B5",
+     "word": "mmww",
+     "n": 5
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    9
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl9/rigid_chain_capped.flyer",
+   "slot": 0,
+   "actor": "B0",
+   "action": "push",
+   "load": 7,
+   "carrier": [
+    {
+     "body": "B0",
+     "word": "wwmm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B1",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B1",
+     "word": "mmww",
+     "n": 7
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    9
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl9/rigid_chain_capped.flyer",
+   "slot": 2,
+   "actor": "B5",
+   "action": "push",
+   "load": 8,
+   "carrier": [
+    {
+     "body": "B5",
+     "word": "mmww"
+    }
+   ],
+   "power": [
+    {
+     "body": "B6",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B6",
+     "word": "wwmm",
+     "n": 8
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    9
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl9/rigid_chain_capped.flyer",
+   "slot": 2,
+   "actor": "B1",
+   "action": "push",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B1",
+     "word": "mmww"
+    }
+   ],
+   "power": [
+    {
+     "body": "B4",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B4",
+     "word": "wwmm",
+     "n": 5
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    9
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl9/rigid_chain_capped.flyer",
+   "slot": 2,
+   "actor": "B8",
+   "action": "push",
+   "load": 7,
+   "carrier": [
+    {
+     "body": "B8",
+     "word": "mmww"
+    }
+   ],
+   "power": [
+    {
+     "body": "B10",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B10",
+     "word": "wwmm",
+     "n": 6
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B9",
+     "word": "wmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:wwmm|S:mmww|push@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    9
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl9/rigid_chain_capped.flyer",
+   "slot": 1,
+   "actor": "B7",
+   "action": "push",
+   "load": 9,
+   "carrier": [
+    {
+     "body": "B7",
+     "word": "mwwm"
+    }
+   ],
+   "power": [
+    {
+     "body": "B8",
+     "word": "mmww"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B8",
+     "word": "mmww",
+     "n": 8
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B9",
+     "word": "wmmw",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:mwwm|S:mmww|push@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    6,
+    9
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl9/rigid_chain_capped.flyer",
+   "slot": 3,
+   "actor": "B9",
+   "action": "push",
+   "load": 6,
+   "carrier": [
+    {
+     "body": "B9",
+     "word": "wmmw"
+    }
+   ],
+   "power": [
+    {
+     "body": "B10",
+     "word": "wwmm"
+    }
+   ],
+   "targets": [
+    {
+     "body": "B10",
+     "word": "wwmm",
+     "n": 6
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:mwwm|S:mmww|push@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    6,
+    9
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl9/rigid_chain_capped.flyer",
+   "slot": 1,
+   "actor": "B6",
+   "action": "pull",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B6",
+     "word": "wwmm"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B5",
+     "word": "mmww",
+     "n": 5
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:-|pull@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    9
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl9/rigid_chain_capped.flyer",
+   "slot": 1,
+   "actor": "B4",
+   "action": "pull",
+   "load": 7,
+   "carrier": [
+    {
+     "body": "B4",
+     "word": "wwmm"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B1",
+     "word": "mmww",
+     "n": 7
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:-|pull@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    9
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl9/rigid_chain_capped.flyer",
+   "slot": 3,
+   "actor": "B1",
+   "action": "pull",
+   "load": 6,
+   "carrier": [
+    {
+     "body": "B1",
+     "word": "mmww"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B0",
+     "word": "wwmm",
+     "n": 5
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B2",
+     "word": "mwwm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:wwmm|S:-|pull@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    9
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl9/rigid_chain_capped.flyer",
+   "slot": 3,
+   "actor": "B8",
+   "action": "pull",
+   "load": 9,
+   "carrier": [
+    {
+     "body": "B8",
+     "word": "mmww"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B6",
+     "word": "wwmm",
+     "n": 8
+    }
+   ],
+   "passengers": [
+    {
+     "body": "B7",
+     "word": "mwwm",
+     "n": 1
+    }
+   ],
+   "key": "N2|C:wwmm|S:-|pull@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    9
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl9/rigid_chain_capped.flyer",
+   "slot": 3,
+   "actor": "B5",
+   "action": "pull",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B5",
+     "word": "mmww"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B4",
+     "word": "wwmm",
+     "n": 5
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wwmm|S:-|pull@1|T:mmww",
+   "w0": 80,
+   "w0_hits": "10/10",
+   "load_range_over_w0": [
+    5,
+    9
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl9/rigid_chain_capped.flyer",
+   "slot": 2,
+   "actor": "B2",
+   "action": "pull",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B3",
+     "word": "mwmw"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B0",
+     "word": "wwmm",
+     "n": 5
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:mwmw|S:-|pull@0|T:mmww",
+   "w0": 80,
+   "w0_hits": "6/10",
+   "load_range_over_w0": [
+    5,
+    5
+   ]
+  },
+  {
+   "family": "N2",
+   "flyer": "flyers/bank/pl9/rigid_chain_capped.flyer",
+   "slot": 2,
+   "actor": "B2",
+   "action": "pull",
+   "load": 5,
+   "carrier": [
+    {
+     "body": "B2",
+     "word": "mwwm"
+    }
+   ],
+   "power": [],
+   "targets": [
+    {
+     "body": "B0",
+     "word": "wwmm",
+     "n": 5
+    }
+   ],
+   "passengers": [],
+   "key": "N2|C:wmmw|S:-|pull@0|T:mmww",
+   "w0": 104,
+   "w0_hits": "4/10",
+   "load_range_over_w0": [
+    5,
+    5
+   ]
+  }
+ ]
+}

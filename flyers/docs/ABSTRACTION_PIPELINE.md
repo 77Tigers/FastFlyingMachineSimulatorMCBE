@@ -4,6 +4,13 @@ Purpose: keep architectural reasoning compact and make bounded construction and 
 
 ## Current direction: executable extension contracts
 
+The [shared design CLI](EXTENSION_DESIGN.md) now generates the contact plan,
+physical contract and supplied schedule from one source, checking named contacts
+and per-slot supplied/internal provenance against the trace. Required initial
+cells protect target contents, and `advance` recurrence checks each permanent
+identity's displacement. These are additive tools; the bank's older contracts
+remain usable. See the guide for the assertions omitted by lower-level tools.
+
 User direction (2026-10-11): prioritize the reusable bridge across stages 4–6
 and fast feedback before expensive routing. Long-term target **3.333 bps at
 PL12**; useful intermediate work includes **3 bps at PL10–11**, compacting

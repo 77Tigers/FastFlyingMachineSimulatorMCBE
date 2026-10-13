@@ -1,0 +1,113 @@
+{
+  "version": 1,
+  "name": "n3_11-before_natural",
+  "flyer": "candidate.flyer",
+  "prescribed_script": "drive.txt",
+  "prescribed_order": "before_natural",
+  "period_ticks": 10,
+  "advance": 3,
+  "cycles": 3,
+  "recurrence": "bounded",
+  "ports": [
+    {
+      "name": "b20_in",
+      "role": "input",
+      "at": [
+        2,
+        2,
+        9
+      ],
+      "word": "mmwmw",
+      "baseline_load": [
+        13,
+        13,
+        null,
+        13,
+        null
+      ],
+      "spare_load": [
+        0,
+        0,
+        null,
+        0,
+        null
+      ]
+    },
+    {
+      "name": "b30_in",
+      "role": "input",
+      "at": [
+        4,
+        4,
+        7
+      ],
+      "word": "mmwwm",
+      "baseline_load": [
+        13,
+        14,
+        null,
+        null,
+        13
+      ],
+      "spare_load": [
+        0,
+        0,
+        null,
+        null,
+        0
+      ]
+    },
+    {
+      "name": "b20_out",
+      "role": "output",
+      "at": [
+        2,
+        3,
+        9
+      ],
+      "word": "mmwmw"
+    },
+    {
+      "name": "b30_out",
+      "role": "output",
+      "at": [
+        4,
+        4,
+        8
+      ],
+      "word": "mmwwm"
+    },
+    {
+      "name": "b37_out",
+      "role": "output",
+      "at": [
+        7,
+        2,
+        8
+      ],
+      "word": "wwmmm"
+    },
+    {
+      "name": "b42_out",
+      "role": "output",
+      "at": [
+        8,
+        0,
+        8
+      ],
+      "word": "mmmww"
+    }
+  ],
+  "boundary_envelope": {
+    "min": [
+      2,
+      0,
+      5
+    ],
+    "max": [
+      9,
+      6,
+      9
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+== n2_01: ref endogenous 6 (all 6) own=exact advance_pass=True -> search advance
+   search done in 241s
+   best: excess 0 end_max 4 all_max 4 count 6 blocks 8 diff ['- (2,0,1) Rod(dir5)', '- (3,0,0) Observer(dir5)', '- (3,1,0) Piston(dir1 sticky state0)', '- (4,2,2) Piston(dir0 state0)']
+== n2_02: ref endogenous 5 (all 5) own=exact advance_pass=True -> search advance
+   search done in 241s
+   best: excess 0 end_max 4 all_max 4 count 6 blocks 7 diff ['- (3,1,0) RedstoneBlock', '- (4,0,1) Piston(dir1 sticky state0)', '- (4,1,0) Slime', '- (7,2,2) Piston(dir0 state0)']
+== n2_03: ref endogenous 5 (all 6) own=exact advance_pass=True -> search advance
+   search done in 240s
+   best: excess 0 end_max 1 all_max 2 count 6 blocks 3 diff ['- (15,0,14) Piston(dir0 state0)', '- (15,0,16) Honey', '- (15,1,16) Honey', '- (15,2,16) Piston(dir0 state0)']
+== n2_04: ref endogenous 5 (all 7) own=exact advance_pass=True -> search advance
+   search done in 240s
+   best: excess 0 end_max 4 all_max 6 count 3 blocks 8 diff ['- (0,1,17) Piston(dir0 state0)']
+== n2_05: ref endogenous 7 (all 7) own=exact advance_pass=True -> search advance
+   search done in 241s
+   best: excess 6 end_max 7 all_max 7 count 6 blocks 13 diff ['- (3,2,17) Piston(dir0 state0)']
+== n2_06: ref endogenous 8 (all 8) own=exact advance_pass=True -> search advance
+   search done in 241s
+   best: excess 6 end_max 8 all_max 8 count 6 blocks 15 diff []
+== n3_07: ref endogenous 7 (all 12) own=exact advance_pass=True -> search advance
+   search done in 241s
+   best: excess 6 end_max 7 all_max 9 count 6 blocks 14 diff ['- (4,0,14) RedstoneBlock', '- (4,3,14) RedstoneBlock', '- (5,2,13) Piston(dir1 sticky state0)']
+== n3_08: ref endogenous 6 (all 11) own=exact advance_pass=True -> search advance
+   search done in 240s
+   best: excess 0 end_max 5 all_max 8 count 3 blocks 12 diff ['- (4,0,14) RedstoneBlock', '- (4,3,14) RedstoneBlock', '- (5,2,13) Piston(dir1 sticky state0)', '- (7,2,14) Slime']
+== n3_09: ref endogenous 5 (all 10) own=exact advance_pass=True -> search advance
+   search done in 240s
+   best: excess 0 end_max 3 all_max 5 count 3 blocks 8 diff ['- (4,0,14) RedstoneBlock', '- (4,3,14) RedstoneBlock', '- (5,2,13) Piston(dir1 sticky state0)', '- (5,3,13) Slime', '- (5,3,14) Slime', '+ (6,1,13) Piston(dir0 state0)', '- (6,3,13) Piston(dir0 state0)', '- (7,2,14) Slime', '- (7,3,13) Slime']
+== n3_10: ref endogenous 12 (all 12) own=bounded advance_pass=False -> search bounded
+   search done in 241s
+   best: excess 18 end_max 12 all_max 12 count 18 blocks 23 diff ['- (1,2,13) RedstoneBlock', '- (2,0,13) Piston(dir1 sticky state0)', '- (2,3,13) Piston(dir0 state0)', '+ (3,3,13) Piston(dir0 state0)']
+== n3_11: ref endogenous 14 (all 14) own=bounded advance_pass=False -> search bounded
+   search done in 242s
+   best: excess 24 end_max 14 all_max 14 count 24 blocks 46 diff ['- (2,6,9) Slime', '- (3,1,7) RedstoneBlock', '- (3,6,9) Slime', '- (4,0,7) Slime', '- (4,1,7) Slime', '- (4,3,7) Piston(dir0 state0)', '- (4,3,8) Piston(dir0 state0)', '- (4,4,6) Piston(dir1 sticky state0)', '- (4,5,7) RedstoneBlock', '+ (4,5,8) Honey', '+ (4,5,9) Slime', '+ (4,6,9) Slime', '+ (5,3,7) Piston(dir0 state0)', '+ (5,3,8) Piston(dir0 state0)', '- (5,4,7) Honey', '- (5,5,5) RedstoneBlock', '- (5,5,6) Honey', '- (5,5,7) Honey', '+ (5,5,8) Honey', '- (5,6,7) Honey', '+ (8,5,7) RedstoneBlock']

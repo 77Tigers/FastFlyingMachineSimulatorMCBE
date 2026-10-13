@@ -1,5 +1,34 @@
 # Current research checkpoint
 
+The 4:44am resumption completed shared-contract integration: Python and Rust
+now enforce compiled provenance, contacts and required cells; Rust protects
+required cells during mutation. Three preserved bank seeds pass 400 samples
+per evaluator, 26 migration differential checks pass, and 25 old bank contracts
+still pass in both. Current Python suite: 81 tests. See
+`../shared_design_20261013/README.md`. The following earlier snapshots retain
+historical limitations that this integration has superseded.
+
+## Update, 2026-10-13
+
+The scheduled shared-design implementation is complete; its one-time automation
+is paused. See `flyers/docs/EXTENSION_DESIGN.md` and
+`../shared_design_20261013/README.md`. One design now compiles contact plan,
+contract and ordered schedule, with runtime supplied/internal provenance and
+named contacts. Required initial cells and `advance` identity recurrence are
+supported by the base Python checker. Structured failures expose load sources,
+port mismatches and recurrence differences. Both 80-case rear-cap sweeps pass.
+The combined Python regression suite passes 75 tests.
+
+Claude added `flyers/extension_bank/` (14 entries, 25 published order contracts)
+and `tools/src/bin/contract-search.rs`. All 25 contracts independently replayed
+successfully here; saved reports total 2,000 passing cases. Its frozen-body
+search was still running when inspected and was left untouched. Required cells
+address its body-deletion loophole. Its Rust evaluator does not yet enforce
+all shared-design assertions; final validation should use the design CLI.
+
+The earlier implementation has since been committed as `92344df`; this update
+and some other work remain local. The following is the prior checkpoint.
+
 User explicitly resumed work after the two earlier authorized usage windows.
 Workspace is writable again. The old wake-up automation remains paused; no
 new timer or credits were requested or used. No commits or pushes were made.

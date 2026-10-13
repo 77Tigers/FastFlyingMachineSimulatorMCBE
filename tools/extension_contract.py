@@ -28,7 +28,9 @@ SAMPLES = [(rng, px, pz) for rng in (0, 1, 2, 5, 42)
 
 
 class ContractError(ValueError):
-    pass
+    def __init__(self, message: str, *, first_failure: dict[str, Any] | None = None):
+        super().__init__(message)
+        self.first_failure = first_failure
 
 
 def _keys(obj: dict[str, Any], required: set[str], optional: set[str], where: str) -> None:
@@ -61,6 +63,18 @@ class Port:
     word: str
     baseline: tuple[int | None, ...] | None
     spare: tuple[int | None, ...] | None
+    provenance: tuple[str | None, ...] | None = None
+
+
+@dataclass(frozen=True)
+class Contact:
+    name: str
+    a: str
+    b: str
+    relation: str
+    slots: tuple[int, ...]
+    offset: tuple[int, int, int] | None = None
+    required: bool = True
 
 
 @dataclass(frozen=True)
@@ -104,6 +118,8 @@ class Contract:
     prescribed_script: Path | None = None
     prescribed_order: str | None = None
     prescribed: tuple[PrescribedEvent, ...] = ()
+    required_cells: tuple[tuple[tuple[int, int, int], int], ...] = ()
+    contacts: tuple[Contact, ...] = ()
 
 
 def _read_drive_script(path: Path, period_ticks: int, total_ticks: int) -> tuple[DriveEvent, ...]:
@@ -206,7 +222,7 @@ def load_contract(path: Path) -> Contract:
         raise ContractError("contract: expected a JSON object")
     _keys(raw, {"version", "name", "flyer", "period_ticks", "advance", "ports"},
           {"cycles", "recurrence", "boundary_envelope", "drive_script",
-           "prescribed_script", "prescribed_order"}, "contract")
+           "prescribed_script", "prescribed_order", "required_cells", "contacts"}, "contract")
     if raw["version"] != 1 or type(raw["version"]) is not int:
         raise ContractError("contract.version: expected 1")
     if not isinstance(raw["name"], str) or not raw["name"].strip():
@@ -248,8 +264,8 @@ def load_contract(path: Path) -> Contract:
         prescribed_order = raw["prescribed_order"]
         prescribed = _read_prescribed_script(prescribed_script, period, period * cycles)
     recurrence = raw.get("recurrence", "exact")
-    if recurrence not in ("exact", "bounded"):
-        raise ContractError("contract.recurrence: expected 'exact' or 'bounded'")
+    if recurrence not in ("exact", "bounded", "advance"):
+        raise ContractError("contract.recurrence: expected 'exact', 'bounded', or 'advance'")
     envelope = None
     if recurrence == "bounded":
         value = raw.get("boundary_envelope")
@@ -272,7 +288,7 @@ def load_contract(path: Path) -> Contract:
         if not isinstance(item, dict):
             raise ContractError(f"{where}: expected an object")
         _keys(item, {"name", "role", "at", "word"},
-              {"spare_load", "baseline_load"}, where)
+              {"spare_load", "baseline_load", "provenance"}, where)
         if not isinstance(item["name"], str) or not item["name"].strip():
             raise ContractError(f"{where}.name: expected a nonempty string")
         if item["name"] in names:
@@ -290,11 +306,76 @@ def load_contract(path: Path) -> Contract:
             raise ContractError(f"{where}: load arrays must be omitted or contain per-slot values")
         baseline = _loads(item.get("baseline_load"), f"{where}.baseline_load", period // 2)
         spare = _loads(item.get("spare_load"), f"{where}.spare_load", period // 2)
+        provenance = None
+        if "provenance" in item:
+            values = item["provenance"]
+            if not isinstance(values, list) or len(values) != period // 2:
+                raise ContractError(f"{where}.provenance: expected an array of {period // 2} movement sources")
+            normalized: list[str | None] = []
+            for slot, source in enumerate(values):
+                if word[slot] == "w":
+                    if source is not None:
+                        raise ContractError(f"{where}.provenance[{slot}]: waits must be null")
+                elif source not in ("internal", "supplied"):
+                    raise ContractError(f"{where}.provenance[{slot}]: moving slots need internal or supplied provenance")
+                normalized.append(source)
+            provenance = tuple(normalized)
         ports.append(Port(item["name"], role, _coord(item["at"], f"{where}.at"),
-                          word, baseline, spare))
+                          word, baseline, spare, provenance))
+    required_cells = []
+    required_positions = set()
+    if not isinstance(raw.get("required_cells", []), list):
+        raise ContractError("contract.required_cells: expected an array")
+    for i, cell in enumerate(raw.get("required_cells", [])):
+        where = f"contract.required_cells[{i}]"
+        if not isinstance(cell, dict):
+            raise ContractError(f"{where}: expected an object")
+        _keys(cell, {"at", "cell"}, set(), where)
+        at = _coord(cell["at"], where + ".at")
+        encoded = _int(cell["cell"], where + ".cell", minimum=1)
+        if at in required_positions:
+            raise ContractError(f"{where}: duplicate coordinate {at}")
+        required_positions.add(at)
+        required_cells.append((at, encoded))
+    contacts: list[Contact] = []
+    if "contacts" in raw:
+        values = raw["contacts"]
+        if not isinstance(values, list):
+            raise ContractError("contract.contacts: expected an array")
+        contact_names: set[str] = set()
+        port_names = {port.name for port in ports}
+        for i, value in enumerate(values):
+            where = f"contract.contacts[{i}]"
+            if not isinstance(value, dict):
+                raise ContractError(f"{where}: expected an object")
+            _keys(value, {"name", "a", "b", "relation", "slots"},
+                  {"offset", "required"}, where)
+            name = value["name"]
+            if not isinstance(name, str) or not name.strip() or name in contact_names:
+                raise ContractError(f"{where}.name: expected a unique nonempty string")
+            contact_names.add(name)
+            a, b = value["a"], value["b"]
+            if not isinstance(a, str) or not isinstance(b, str) or a not in port_names or b not in port_names:
+                raise ContractError(f"{where}: a/b must name declared ports")
+            relation = value["relation"]
+            if relation not in ("same", "adjacent", "offset"):
+                raise ContractError(f"{where}.relation: expected 'same', 'adjacent', or 'offset'")
+            if (relation == "offset") != ("offset" in value):
+                raise ContractError(f"{where}.offset: required only for offset relation")
+            offset = _coord(value["offset"], f"{where}.offset") if relation == "offset" else None
+            slots_value = value["slots"]
+            if (not isinstance(slots_value, list) or not slots_value or
+                    any(type(slot) is not int or slot < 0 or slot >= period // 2 for slot in slots_value)):
+                raise ContractError(f"{where}.slots: expected nonempty slot indices in [0, {period // 2})")
+            if len(set(slots_value)) != len(slots_value):
+                raise ContractError(f"{where}.slots: duplicate slot")
+            required = value.get("required", True)
+            if type(required) is not bool:
+                raise ContractError(f"{where}.required: expected boolean")
+            contacts.append(Contact(name, a, b, relation, tuple(slots_value), offset, required))
     contract = Contract(raw["name"], path.parent / flyer_path, period, advance, cycles,
                         tuple(ports), recurrence, envelope, drive_script, drives,
-                        prescribed_script, prescribed_order, prescribed)
+                        prescribed_script, prescribed_order, prescribed, tuple(required_cells), tuple(contacts))
     motion_error = _validate_word_motion(contract)
     if motion_error:
         raise ContractError(motion_error)
@@ -355,6 +436,14 @@ class CaseChecker:
     def __init__(self, contract: Contract, trace: dict[str, Any]):
         self.contract = contract
         self.initial_cells, self.initial_owners = _parse_initial(trace)
+        for at, encoded in contract.required_cells:
+            actual = self.initial_cells.get(at)
+            if actual != encoded:
+                message = f"required cell at {at}: expected encoded {encoded}, actual {actual}"
+                raise ContractError(message, first_failure={
+                    "stage": "initial", "code": "required_cell_mismatch", "tick": 0,
+                    "port": None, "expected": {"at": list(at), "cell": encoded},
+                    "actual": {"at": list(at), "cell": actual}, "message": message})
         self.cells = dict(self.initial_cells)
         self.owners = self.initial_owners
         self.id_origins = tuple(sorted(p for p, c in self.cells.items() if (c & 15) != ARMS_KIND))
@@ -391,6 +480,57 @@ class CaseChecker:
         self.pending_prescribed: list[dict[str, Any]] = []
         self.prescribed_ids_seen: set[int] = set()
         self.next_prescribed_id = 0
+        self.first_failure: dict[str, Any] | None = None
+
+    def _check_contract_contacts(self, tick: int) -> str | None:
+        if tick % 2:
+            return None
+        slot = (tick % self.contract.period_ticks) // 2
+        for contact in self.contract.contacts:
+            if slot not in contact.slots:
+                continue
+            a = self.ids[self.port_ids[contact.a]]
+            b = self.ids[self.port_ids[contact.b]]
+            vector = tuple(b[i] - a[i] for i in range(3))
+            holds = (vector == (0, 0, 0) if contact.relation == "same" else
+                     sum(abs(v) for v in vector) == 1 if contact.relation == "adjacent" else
+                     vector == contact.offset)
+            if holds != contact.required:
+                message = (f"tick {tick}: contact {contact.name} expected {contact.relation}="
+                           f"{contact.required}, actual vector {vector}")
+                return self.report_failure(
+                    "contact", "contact_mismatch", tick,
+                    expected={"relation": contact.relation, "required": contact.required},
+                    actual=list(vector), message=message)
+        return None
+
+    def _check_contract_provenance(self, tick: int) -> str | None:
+        if tick % 2:
+            return None
+        slot = (tick % self.contract.period_ticks) // 2
+        for port in self.contract.ports:
+            if port.provenance is None:
+                continue
+            expected = port.provenance[slot]
+            identity = self.port_ids[port.name]
+            action = self.tick_actions.get(identity)
+            actual = ("supplied" if action == "prescribed move" else
+                      "internal" if identity in self.tick_moves else None)
+            if actual != expected:
+                message = (f"tick {tick}: {port.name} expected provenance {expected}, "
+                           f"observed {actual}")
+                return self.report_failure(
+                    "provenance", "movement_source_mismatch", tick, port=port.name,
+                    expected=expected, actual=actual, message=message)
+        return None
+
+    def report_failure(self, stage: str, code: str, tick: int, *,
+                       port: str | None = None, expected: Any = None,
+                       actual: Any = None, message: str) -> str:
+        self.first_failure = {"stage": stage, "code": code, "tick": tick,
+                              "port": port, "expected": expected,
+                              "actual": actual, "message": message}
+        return message
 
     def validate_prescribed_wrapper(self, wrapper: dict[str, Any], tick: int) -> str | None:
         """Validate injected moves and their session ledger without inferring a natural actuator."""
@@ -635,6 +775,9 @@ class CaseChecker:
         incoming, incoming_owners = _parse_initial(trace)
         if incoming != self.cells or incoming_owners != self.owners:
             return f"tick {expected_tick}: trace initial state does not match previous tick final state"
+        contact_failure = self._check_contract_contacts(expected_tick)
+        if contact_failure:
+            return contact_failure
         tick_moves: dict[int, tuple[tuple[int, int, int], tuple[int, int, int]]] = {}
         tick_actions: dict[int, str] = {}
         drive_matches = {i: 0 for i, event in enumerate(self.contract.drives)
@@ -655,8 +798,13 @@ class CaseChecker:
                 failure = movement.get("failure")
                 if failure is not None:
                     actor = step.get("active_piston")
-                    return (f"tick {expected_tick}: movement failed at actor {actor}: "
-                            f"{failure.get('reason', 'unknown reason')} at {failure.get('pos')}")
+                    return self.report_failure(
+                        "movement", "movement_failed", expected_tick,
+                        expected="successful movement",
+                        actual={"actor": actor, "reason": failure.get("reason"),
+                                "position": failure.get("pos")},
+                        message=(f"tick {expected_tick}: movement failed at actor {actor}: "
+                                 f"{failure.get('reason', 'unknown reason')} at {failure.get('pos')}"))
                 sources, destinations = movement.get("sources"), movement.get("destinations")
                 if sources is not None and destinations is not None:
                     if len(sources) != len(destinations):
@@ -717,13 +865,19 @@ class CaseChecker:
                                     total = source_count
                                     allowed = bound_base + (bound_spare or 0)
                                     if total > allowed:
-                                        return (f"tick {expected_tick}: input {port.name} load budget exceeded; "
+                                        return self.report_failure(
+                                            "load", "input_budget_exceeded", expected_tick,
+                                            port=port.name, expected=allowed,
+                                            actual={"load": total, "actor": step.get("active_piston"),
+                                                    "sources": sources, "action": action},
+                                            message=(f"tick {expected_tick}: input {port.name} load budget exceeded; "
                                                 f"action {action} moved {total} sources, baseline {bound_base} "
                                                 f"+ spare {bound_spare or 0} = {allowed}; "
-                                                f"actor={step.get('active_piston')}")
+                                                f"actor={step.get('active_piston')}"))
                         if action == "prescribed move":
                             event = next((event for event in self.contract.prescribed
-                                          if event.tick == expected_tick), None)
+                                          if event.tick == expected_tick
+                                          and list(event.input) == step.get("active_input")), None)
                             if event is None:
                                 return f"tick {expected_tick}: undeclared prescribed move action"
                             if len(sources) > event.limit:
@@ -771,6 +925,9 @@ class CaseChecker:
         message = self._check_ports(expected_tick, tick_moves, tick_actions)
         if message:
             return message
+        message = self._check_contract_provenance(expected_tick)
+        if message:
+            return message
         if not defer_recurrence:
             return self.check_boundary(expected_tick)
         return None
@@ -785,10 +942,21 @@ class CaseChecker:
                 expected_owners = tuple(sorted((translate(owner), translate(member))
                                                for owner, member in self.initial_owners))
                 if self.cells != expected:
-                    return f"tick {expected_tick}: recurrence mismatch at cycle {cycles} boundary"
+                    positions = sorted(p for p in self.cells.keys() | expected.keys()
+                                       if self.cells.get(p) != expected.get(p))
+                    first = positions[0]
+                    return self.report_failure(
+                        "recurrence", "cell_state_mismatch", expected_tick,
+                        expected={"at": list(first), "cell": expected.get(first)},
+                        actual={"at": list(first), "cell": self.cells.get(first),
+                                "mismatched_positions": len(positions)},
+                        message=f"tick {expected_tick}: recurrence mismatch at cycle {cycles} boundary")
                 if self.owners != expected_owners:
-                    return f"tick {expected_tick}: piston owner recurrence mismatch at cycle {cycles} boundary"
-            else:
+                    return self.report_failure(
+                        "recurrence", "piston_owner_mismatch", expected_tick,
+                        expected=expected_owners, actual=self.owners,
+                        message=f"tick {expected_tick}: piston owner recurrence mismatch at cycle {cycles} boundary")
+            elif self.contract.recurrence == "bounded":
                 assert self.contract.boundary_envelope is not None
                 lower, upper = self.contract.boundary_envelope
                 dx = self.contract.advance * cycles
@@ -796,8 +964,23 @@ class CaseChecker:
                 shifted_upper = (upper[0] + dx, upper[1], upper[2])
                 for identity, pos in self.ids.items():
                     if any(pos[i] < shifted_lower[i] or pos[i] > shifted_upper[i] for i in range(3)):
-                        return (f"tick {expected_tick}: permanent identity {identity} at {pos} is outside "
-                                f"translated boundary_envelope {shifted_lower}..{shifted_upper}")
+                        return self.report_failure(
+                            "recurrence", "outside_boundary", expected_tick,
+                            expected={"min": shifted_lower, "max": shifted_upper},
+                            actual={"identity": identity, "at": pos},
+                            message=(f"tick {expected_tick}: permanent identity {identity} at {pos} is outside "
+                                     f"translated boundary_envelope {shifted_lower}..{shifted_upper}"))
+            else:  # advance: every original identity follows the contract's X displacement.
+                dx = self.contract.advance * cycles
+                for identity, origin in enumerate(self.id_origins):
+                    expected = (origin[0] + dx, origin[1], origin[2])
+                    actual = self.ids[identity]
+                    if actual != expected:
+                        message = (f"tick {expected_tick}: permanent identity {identity} at {actual} is not "
+                                   f"its origin advanced by {self.contract.advance} at cycle {cycles} boundary; "
+                                   f"expected {expected}")
+                        return self.report_failure("recurrence", "identity_position", expected_tick,
+                                                   expected=expected, actual=actual, message=message)
         return None
 
     def _check_ports(self, tick: int,
@@ -816,7 +999,10 @@ class CaseChecker:
                 moved_ids = sorted(tick_moves)
                 actions = sorted(set(tick_actions.values()))
                 detail = f"action={','.join(actions) or 'none'} moved_ids={moved_ids}"
-                return f"tick {tick}: port {port.name} expected {expected}, actual {actual}; {detail}"
+                return self.report_failure(
+                    "motion", "port_motion_mismatch", tick, port=port.name,
+                    expected=expected, actual=actual,
+                    message=f"tick {tick}: port {port.name} expected {expected}, actual {actual}; {detail}")
             pos = self.ids[ident]
             origin = self.id_origins[ident]
             complete_cycles, rem = divmod(tick, self.contract.period_ticks)
@@ -828,8 +1014,11 @@ class CaseChecker:
                 moved_ids = sorted(tick_moves)
                 actions = sorted(set(tick_actions.values()))
                 detail = f"action={','.join(actions) or 'none'} moved_ids={moved_ids}"
-                return (f"tick {tick}: port {port.name} expected position {expected}, "
-                        f"actual {pos}; {detail}")
+                return self.report_failure(
+                    "motion", "port_position_mismatch", tick, port=port.name,
+                    expected=list(expected), actual=list(pos),
+                    message=(f"tick {tick}: port {port.name} expected position {expected}, "
+                             f"actual {pos}; {detail}"))
             cell = self.cells.get(pos)
             moving = bool(cell is not None and cell & 16)
             expected_moving = should_move
@@ -837,8 +1026,11 @@ class CaseChecker:
                 moved_ids = sorted(tick_moves)
                 actions = sorted(set(tick_actions.values()))
                 detail = f"action={','.join(actions) or 'none'} moved_ids={moved_ids}"
-                return (f"tick {tick}: port {port.name} expected moving={expected_moving}, "
-                        f"actual moving={moving}; {detail}")
+                return self.report_failure(
+                    "settlement", "port_moving_state_mismatch", tick, port=port.name,
+                    expected=expected_moving, actual=moving,
+                    message=(f"tick {tick}: port {port.name} expected moving={expected_moving}, "
+                             f"actual moving={moving}; {detail}"))
         return None
 
 
@@ -883,7 +1075,8 @@ def _flyer_initial_trace(flyer_path: Path) -> dict[str, Any]:
     }
 
 
-def run_case(contract: Contract, driver: Path, sample: tuple[int, int, int] | None) -> dict[str, Any]:
+def run_case(contract: Contract, driver: Path, sample: tuple[int, int, int] | None,
+             *, checker_factory=CaseChecker) -> dict[str, Any]:
     started = time.perf_counter()
     rng, px, pz = sample if sample is not None else (None, None, None)
     args = [str(driver), str(contract.flyer), str(contract.period_ticks * contract.cycles)]
@@ -898,12 +1091,14 @@ def run_case(contract: Contract, driver: Path, sample: tuple[int, int, int] | No
                                encoding="utf-8", errors="replace", bufsize=1)
     checker: CaseChecker | None = None
     failure: str | None = None
+    initialization_failure = None
     tick_count = 0
     try:
         try:
-            checker = CaseChecker(contract, _flyer_initial_trace(contract.flyer))
+            checker = checker_factory(contract, _flyer_initial_trace(contract.flyer))
         except Exception as exc:
             failure = f"tick 0: cannot initialize contract checker from Flyer.load: {exc}"
+            initialization_failure = getattr(exc, "first_failure", None)
         assert process.stdout is not None
         for line_no, line in enumerate(process.stdout, 1):
             if failure:
@@ -970,7 +1165,9 @@ def run_case(contract: Contract, driver: Path, sample: tuple[int, int, int] | No
     whole_max = checker.whole_assembly_max_action if checker is not None else 0
     return {"rng": rng, "phase_x": px, "phase_z": pz, "passed": failure is None,
             "ticks": tick_count, "elapsed_seconds": round(time.perf_counter() - started, 6),
-            "diagnostic": failure, "input_max_action_loads": input_loads,
+            "diagnostic": failure,
+            "first_failure": (getattr(checker, "first_failure", None) or initialization_failure) if failure else None,
+            "input_max_action_loads": input_loads,
             "whole_assembly_max_action": whole_max}
 
 
@@ -1002,19 +1199,19 @@ def main(argv: Iterable[str] | None = None) -> int:
                                          "max": contract.boundary_envelope[1]}
                                         if contract.boundary_envelope else None),
                   "passed": all(case["passed"] for case in cases), "cases": cases}
+        recurrence_claim = {
+            "exact": "exact translated state recurrence",
+            "bounded": "bounded hardware; no exact-state recurrence claim",
+            "advance": "permanent-identity advance recurrence; no piston-state recurrence claim",
+        }[contract.recurrence]
         if contract.prescribed_script is not None:
             result["claim"] = (f"prescribed input injection ({contract.prescribed_order}); "
-                               "validated start/settlement ledger + sampled ports + candidate-state recurrence; "
+                               f"validated start/settlement ledger + sampled ports + {recurrence_claim}; "
                                "does not establish natural driver realization")
         elif contract.drive_script is not None:
-            result["claim"] = ("externally driven fixture; sampled ports + bounded hardware; "
-                               "no exact-state recurrence claim"
-                               if contract.recurrence == "bounded" else
-                               "externally driven fixture; sampled ports + exact translated candidate-state recurrence")
+            result["claim"] = f"externally driven fixture; sampled ports + {recurrence_claim}"
         else:
-            result["claim"] = ("sampled ports + bounded hardware; no exact-state recurrence claim"
-                               if contract.recurrence == "bounded" else
-                               "sampled ports + exact translated state recurrence")
+            result["claim"] = f"sampled ports + {recurrence_claim}"
         if args.out:
             args.out.parent.mkdir(parents=True, exist_ok=True)
             args.out.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")

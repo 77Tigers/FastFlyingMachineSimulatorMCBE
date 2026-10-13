@@ -1,0 +1,44 @@
+seed (target 4, limit 24, recurrence advance) score (6, 5, 6, 7, 30) presc_max 6 input_loads {"target_wwmm":[null,null,5,6],"carrier_mwwm":[1,null,null,6],"ob1":[1,1,null,null]}
+thread 1 new best score (0, 4, 6, 6, 24) presc_max 5 after 41 evals
+thread 3 new best score (0, 4, 6, 6, 24) presc_max 5 after 53 evals
+thread 3 new best score (0, 3, 6, 5, 18) presc_max 4 after 72 evals
+thread 4 new best score (0, 4, 6, 6, 24) presc_max 5 after 81 evals
+thread 2 new best score (0, 4, 6, 6, 24) presc_max 5 after 107 evals
+thread 0 new best score (0, 4, 6, 6, 24) presc_max 5 after 174 evals
+thread 1 new best score (0, 3, 6, 5, 18) presc_max 4 after 305 evals
+thread 0 new best score (0, 3, 6, 5, 18) presc_max 4 after 391 evals
+thread 1 new best score (0, 2, 6, 4, 12) presc_max 3 after 440 evals
+thread 1 new best score (0, 1, 6, 3, 6) presc_max 2 after 523 evals
+thread 0 new best score (0, 2, 6, 4, 12) presc_max 3 after 851 evals
+thread 0 new best score (0, 1, 6, 3, 6) presc_max 2 after 1198 evals
+thread 3 new best score (0, 2, 6, 4, 12) presc_max 3 after 16303 evals
+thread 2 new best score (0, 3, 6, 5, 18) presc_max 4 after 18773 evals
+thread 2 new best score (0, 2, 6, 4, 12) presc_max 3 after 18788 evals
+thread 4 new best score (0, 3, 6, 5, 18) presc_max 4 after 18961 evals
+thread 4 new best score (0, 2, 6, 4, 12) presc_max 3 after 18984 evals
+thread 2 new best score (0, 1, 6, 3, 6) presc_max 2 after 19022 evals
+thread 4 new best score (0, 1, 6, 3, 6) presc_max 2 after 19113 evals
+thread 3 new best score (0, 1, 6, 3, 6) presc_max 2 after 34949 evals
+thread 5 new best score (0, 4, 6, 6, 24) presc_max 5 after 54375 evals
+thread 5 new best score (0, 3, 6, 5, 18) presc_max 4 after 54388 evals
+thread 5 new best score (0, 2, 6, 4, 12) presc_max 3 after 54402 evals
+thread 5 new best score (0, 1, 6, 3, 6) presc_max 2 after 54407 evals
+  fail   407848  [before_natural] tick : prescribed move at  failed: LoadExce
+  fail   101848  [before_natural] tick : permanent identity  at  is not its o
+  fail    68155  [before_natural] tick : extension failure
+  fail     7083  [before_natural] tick : input target_wwmm load budget exceed
+  fail     6154  [before_natural] tick : port target_wwmm expected wait actua
+  fail     5338  [before_natural] tick : port target_wwmm expected move +X ac
+  fail     4905  [before_natural] tick : movement failed immovable obstructio
+  fail     2487  [before_natural] tick : prescribed move at  failed: Blocked
+  fail      538  [after_natural] tick : prescribed move at  failed: Blocked
+  fail       81  [before_natural] tick : port ob expected wait actual moved
+  fail       31  [before_natural] tick : port carrier_mwwm expected wait actu
+  fail        2  [before_natural] tick : movement failed push limit exceeded 
+done: 668293 evals (63823 passing) in 240.0s = 2784.5 evals/s; pareto size 1
+  pareto excess=0 max_load=1 count=6 presc_max=2 blocks=3 sum=6 samples80=80/80
+best score (0, 1, 6, 3, 6) (excess 0, max 1, count 6, blocks 3) samples80=80/80
+    - (15,0,14) Piston(dir0 state0)
+    - (15,0,16) Honey
+    - (15,1,16) Honey
+    - (15,2,16) Piston(dir0 state0)

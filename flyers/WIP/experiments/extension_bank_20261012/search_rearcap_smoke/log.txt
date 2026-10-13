@@ -1,0 +1,15 @@
+seed score (7, 6, 14, 168) presc_max 6 input_loads {"redstone_input":[1,1,null,null],"k1_input":[null,null,6,6]}
+  fail   216207  [before_natural] tick : port k_output expected move +X actua
+  fail   153342  [before_natural] tick : recurrence mismatch at cycle  bounda
+  fail   144466  [before_natural] tick : movement failed push limit exceeded 
+  fail    32735  [before_natural] tick : extension failure
+  fail    30854  [before_natural] tick : port n_output expected wait actual m
+  fail    23878  [before_natural] tick : port k_input expected move +X actual
+  fail    13428  [before_natural] tick : input k_input load budget exceeded; 
+  fail     2765  [before_natural] tick : port n_output expected move +X actua
+  fail     2672  [before_natural] tick : prescribed move at  failed: LoadExce
+  fail     2343  [before_natural] tick : prescribed move at  failed: Blocked
+  fail       94  [before_natural] tick : port redstone_input expected wait ac
+  fail        2  [before_natural] tick : port k_input expected wait actual mo
+done: 622786 evals in 120.0s = 5189.8 evals/s; pareto size 1
+  pareto max_load=7 count=6 presc_max=6 blocks=14 sum=168 samples80=80/80

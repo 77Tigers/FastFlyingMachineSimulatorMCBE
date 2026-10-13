@@ -1,0 +1,44 @@
+seed (target 5, limit 24, recurrence advance) score (6, 6, 6, 12, 66) presc_max 6 input_loads {"carrier_wwmm":[null,null,6,6],"target_mmww":[5,5,null,null],"next_rb":[null,null,1,1]}
+thread 3 new best score (0, 5, 12, 11, 60) presc_max 5 after 65 evals
+thread 1 new best score (0, 5, 12, 11, 60) presc_max 5 after 100 evals
+thread 0 new best score (0, 5, 12, 11, 60) presc_max 5 after 117 evals
+thread 0 new best score (0, 5, 6, 10, 54) presc_max 5 after 328 evals
+thread 2 new best score (0, 5, 12, 11, 60) presc_max 5 after 368 evals
+thread 0 new best score (0, 4, 12, 9, 48) presc_max 4 after 470 evals
+thread 5 new best score (0, 5, 12, 11, 60) presc_max 5 after 510 evals
+thread 1 new best score (0, 5, 6, 10, 54) presc_max 5 after 725 evals
+thread 1 new best score (0, 4, 12, 9, 48) presc_max 4 after 1310 evals
+thread 2 new best score (0, 5, 6, 10, 54) presc_max 5 after 2228 evals
+thread 2 new best score (0, 4, 12, 9, 48) presc_max 4 after 2377 evals
+thread 1 new best score (0, 4, 6, 8, 42) presc_max 4 after 3678 evals
+thread 0 new best score (0, 4, 6, 8, 42) presc_max 4 after 4472 evals
+thread 3 new best score (0, 5, 6, 10, 54) presc_max 5 after 18950 evals
+thread 4 new best score (0, 5, 12, 11, 60) presc_max 5 after 24668 evals
+thread 4 new best score (0, 5, 6, 10, 54) presc_max 5 after 24696 evals
+thread 2 new best score (0, 4, 6, 8, 42) presc_max 4 after 27729 evals
+thread 3 new best score (0, 4, 12, 9, 48) presc_max 4 after 40782 evals
+thread 4 new best score (0, 4, 12, 9, 48) presc_max 4 after 60294 evals
+thread 5 new best score (0, 5, 6, 10, 54) presc_max 5 after 66525 evals
+thread 5 new best score (0, 4, 12, 9, 48) presc_max 4 after 66880 evals
+thread 3 new best score (0, 4, 6, 8, 42) presc_max 4 after 121319 evals
+thread 4 new best score (0, 4, 6, 8, 42) presc_max 4 after 286979 evals
+thread 5 new best score (0, 4, 6, 8, 42) presc_max 4 after 594227 evals
+  fail   676095  [before_natural] tick : extension failure
+  fail   171511  [before_natural] tick : permanent identity  at  is not its o
+  fail   103690  [before_natural] tick : port target_mmww expected move +X ac
+  fail    58115  [before_natural] tick : input target_mmww load budget exceed
+  fail    30165  [before_natural] tick : port carrier_wwmm expected move +X a
+  fail    24843  [before_natural] tick : port carrier_wwmm expected wait actu
+  fail     8037  [before_natural] tick : prescribed move at  failed: LoadExce
+  fail     4469  [after_natural] tick : prescribed move at  failed: MissingIn
+  fail     2905  [before_natural] tick : prescribed move at  failed: Blocked
+  fail     2766  [before_natural] tick : port target_mmww expected position  
+  fail     1554  [before_natural] tick : port target_mmww expected wait actua
+  fail     1512  [before_natural] tick : input carrier_wwmm load budget excee
+done: 1155082 evals (68089 passing) in 240.0s = 4812.8 evals/s; pareto size 1
+  pareto excess=0 max_load=4 count=6 presc_max=4 blocks=8 sum=42 samples80=80/80
+best score (0, 4, 6, 8, 42) (excess 0, max 4, count 6, blocks 8) samples80=80/80
+    - (2,0,1) Rod(dir5)
+    - (3,0,0) Observer(dir5)
+    - (3,1,0) Piston(dir1 sticky state0)
+    - (4,2,2) Piston(dir0 state0)
