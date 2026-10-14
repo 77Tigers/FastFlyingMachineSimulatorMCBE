@@ -1,0 +1,167 @@
+{
+  "version": 1,
+  "name": "n3_105-before_natural",
+  "flyer": "candidate.flyer",
+  "prescribed_script": "drive.txt",
+  "prescribed_order": "before_natural",
+  "period_ticks": 10,
+  "advance": 3,
+  "cycles": 3,
+  "recurrence": "exact",
+  "ports": [
+    {
+      "name": "b55",
+      "role": "input",
+      "at": [
+        13,
+        0,
+        9
+      ],
+      "word": "wmmmw",
+      "baseline_load": [
+        null,
+        11,
+        11,
+        11,
+        null
+      ],
+      "spare_load": [
+        null,
+        0,
+        0,
+        0,
+        null
+      ]
+    },
+    {
+      "name": "b68",
+      "role": "input",
+      "at": [
+        16,
+        0,
+        8
+      ],
+      "word": "mmwwm",
+      "baseline_load": [
+        6,
+        5,
+        null,
+        null,
+        7
+      ],
+      "spare_load": [
+        0,
+        0,
+        null,
+        null,
+        0
+      ]
+    }
+  ],
+  "required_cells": [
+    {
+      "at": [
+        12,
+        2,
+        9
+      ],
+      "cell": 6
+    },
+    {
+      "at": [
+        13,
+        0,
+        8
+      ],
+      "cell": 4
+    },
+    {
+      "at": [
+        13,
+        0,
+        9
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        13,
+        1,
+        8
+      ],
+      "cell": 2345
+    },
+    {
+      "at": [
+        13,
+        1,
+        9
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        13,
+        2,
+        8
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        13,
+        2,
+        9
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        13,
+        3,
+        9
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        15,
+        1,
+        8
+      ],
+      "cell": 6
+    },
+    {
+      "at": [
+        16,
+        0,
+        8
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        16,
+        1,
+        8
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        16,
+        1,
+        9
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        16,
+        2,
+        8
+      ],
+      "cell": 1
+    }
+  ]
+}

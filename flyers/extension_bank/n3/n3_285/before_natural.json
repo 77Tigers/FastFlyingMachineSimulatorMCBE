@@ -1,0 +1,239 @@
+{
+  "version": 1,
+  "name": "n3_285-before_natural",
+  "flyer": "candidate.flyer",
+  "prescribed_script": "drive.txt",
+  "prescribed_order": "before_natural",
+  "period_ticks": 10,
+  "advance": 3,
+  "cycles": 3,
+  "recurrence": "exact",
+  "ports": [
+    {
+      "name": "b37",
+      "role": "input",
+      "at": [
+        8,
+        0,
+        17
+      ],
+      "word": "wmmmw",
+      "baseline_load": [
+        null,
+        14,
+        14,
+        14,
+        null
+      ],
+      "spare_load": [
+        null,
+        0,
+        0,
+        0,
+        null
+      ]
+    },
+    {
+      "name": "b45",
+      "role": "input",
+      "at": [
+        11,
+        0,
+        15
+      ],
+      "word": "mmwwm",
+      "baseline_load": [
+        12,
+        11,
+        null,
+        null,
+        13
+      ],
+      "spare_load": [
+        0,
+        0,
+        null,
+        null,
+        0
+      ]
+    }
+  ],
+  "required_cells": [
+    {
+      "at": [
+        8,
+        0,
+        16
+      ],
+      "cell": 6
+    },
+    {
+      "at": [
+        8,
+        0,
+        17
+      ],
+      "cell": 2
+    },
+    {
+      "at": [
+        8,
+        0,
+        18
+      ],
+      "cell": 2345
+    },
+    {
+      "at": [
+        8,
+        1,
+        15
+      ],
+      "cell": 2345
+    },
+    {
+      "at": [
+        8,
+        1,
+        16
+      ],
+      "cell": 2
+    },
+    {
+      "at": [
+        8,
+        1,
+        17
+      ],
+      "cell": 2
+    },
+    {
+      "at": [
+        8,
+        1,
+        18
+      ],
+      "cell": 2
+    },
+    {
+      "at": [
+        8,
+        1,
+        19
+      ],
+      "cell": 2
+    },
+    {
+      "at": [
+        8,
+        1,
+        20
+      ],
+      "cell": 2
+    },
+    {
+      "at": [
+        7,
+        1,
+        17
+      ],
+      "cell": 6
+    },
+    {
+      "at": [
+        7,
+        1,
+        20
+      ],
+      "cell": 6
+    },
+    {
+      "at": [
+        10,
+        0,
+        18
+      ],
+      "cell": 6
+    },
+    {
+      "at": [
+        10,
+        0,
+        19
+      ],
+      "cell": 6
+    },
+    {
+      "at": [
+        10,
+        1,
+        15
+      ],
+      "cell": 6
+    },
+    {
+      "at": [
+        11,
+        0,
+        15
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        11,
+        0,
+        16
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        11,
+        0,
+        17
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        11,
+        0,
+        18
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        11,
+        0,
+        19
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        11,
+        1,
+        15
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        11,
+        1,
+        18
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        11,
+        1,
+        19
+      ],
+      "cell": 1
+    }
+  ]
+}

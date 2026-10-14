@@ -9,6 +9,8 @@ __pycache__/
 *.flyer
 # Keep verified bank entries under version control.
 !/flyers/bank/**/*.flyer
+# Extension-bank contracts reference their candidate.flyer by relative path.
+!/flyers/extension_bank/**/*.flyer
 /viewer/node_modules/
 /viewer/.npm-cache/
 # Keep compiled artifacts local, including archived research executables.
@@ -30,6 +32,17 @@ __pycache__/
 # Generated research output: keep summaries (CSV/JSON/FINDINGS) next to the
 # generator and send bulk runs, traces and logs to an ignored out/ directory.
 /flyers/WIP/**/out/
+# Per-candidate scratch fixtures written by extract.py (regenerable; summarised
+# in the experiment's REPORT.md / state.json).
+/flyers/WIP/experiments/**/extract/work/
+# Full 80-sample interleaved result dumps (2-19 MB each); regenerable with
+# `extension_contract.py --samples`. Keep only the small samples_*_natural.json.
+/flyers/extension_bank/**/samples_interleaved.json
+/flyers/WIP/experiments/**/samples_interleaved.json
+/flyers/WIP/experiments/**/samples_exact_interleaved.json
+# Per-sample before/after results for the generated n3 candidates (verdicts are in
+# each NOTES.md and flyers/WIP/experiments/pl11_3bps_*/catalogue.json).
+/flyers/extension_bank/n3/*/samples_*_natural.json
 *.out
 *.err
 /tools/target/

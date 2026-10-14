@@ -1,0 +1,10 @@
+v=(1, 0, 1) -> INFEASIBLE 1.7s build 7.5s
+v=(1, 0, 2) -> INFEASIBLE 13.0s build 4.8s
+v=(1, 1, 1) -> INFEASIBLE 6.9s build 5.8s
+v=(1, 0, 3) -> INFEASIBLE 45.6s build 3.4s
+v=(1, 1, 2) -> INFEASIBLE 36.8s build 8.5s
+v=(0, 0, 2) -> INFEASIBLE 2.0s build 3.8s
+v=(0, 1, 1) -> INFEASIBLE 2.6s build 4.0s
+v=(2, 0, 2) -> INFEASIBLE 57.1s build 4.8s
+v=(2, 1, 1) -> INFEASIBLE 14.7s build 6.2s
+v=(0, 0, 3) -> INFEASIBLE 1.6s build 3.0s

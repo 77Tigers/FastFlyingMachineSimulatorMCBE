@@ -1,0 +1,6667 @@
+{
+  "version": 1,
+  "name": "core0-before_natural",
+  "period_ticks": 10,
+  "advance": 3,
+  "cycles": 3,
+  "recurrence": "bounded",
+  "drive_script": null,
+  "prescribed_script": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\pl11_3bps_20261013\\stacked\\loop\\core0_np\\drive.txt",
+  "prescribed_order": "before_natural",
+  "boundary_envelope": {
+    "min": [
+      14,
+      0,
+      8
+    ],
+    "max": [
+      22,
+      8,
+      15
+    ]
+  },
+  "passed": true,
+  "cases": [
+    {
+      "rng": 0,
+      "phase_x": 0,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.212404,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 0,
+      "phase_x": 0,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.177971,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 0,
+      "phase_x": 0,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.17294,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 0,
+      "phase_x": 0,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.177925,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 0,
+      "phase_x": 7,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.192815,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 0,
+      "phase_x": 7,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.171986,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 0,
+      "phase_x": 7,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.196055,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 0,
+      "phase_x": 7,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.175392,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 0,
+      "phase_x": 8,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.166729,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 0,
+      "phase_x": 8,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 2.065218,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 0,
+      "phase_x": 8,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.513796,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 0,
+      "phase_x": 8,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 1.164867,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 0,
+      "phase_x": 15,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.173141,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 0,
+      "phase_x": 15,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.152358,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 0,
+      "phase_x": 15,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.154835,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 0,
+      "phase_x": 15,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.147766,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 1,
+      "phase_x": 0,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.197541,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 1,
+      "phase_x": 0,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.161871,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 1,
+      "phase_x": 0,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.173997,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 1,
+      "phase_x": 0,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.141128,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 1,
+      "phase_x": 7,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.165851,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 1,
+      "phase_x": 7,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.17026,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 1,
+      "phase_x": 7,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.162359,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 1,
+      "phase_x": 7,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.141556,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 1,
+      "phase_x": 8,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.15279,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 1,
+      "phase_x": 8,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.172448,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 1,
+      "phase_x": 8,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.170762,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 1,
+      "phase_x": 8,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.152987,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 1,
+      "phase_x": 15,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.16972,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 1,
+      "phase_x": 15,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.179195,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 1,
+      "phase_x": 15,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.178609,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 1,
+      "phase_x": 15,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.17155,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 2,
+      "phase_x": 0,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.172371,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 2,
+      "phase_x": 0,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.17449,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 2,
+      "phase_x": 0,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.168033,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 2,
+      "phase_x": 0,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.162015,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 2,
+      "phase_x": 7,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.163513,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 2,
+      "phase_x": 7,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.170311,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 2,
+      "phase_x": 7,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.165381,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 2,
+      "phase_x": 7,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.197083,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 2,
+      "phase_x": 8,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.18224,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 2,
+      "phase_x": 8,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.187508,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 2,
+      "phase_x": 8,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.200122,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 2,
+      "phase_x": 8,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.174887,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 2,
+      "phase_x": 15,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.164075,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 2,
+      "phase_x": 15,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.205409,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 2,
+      "phase_x": 15,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.196454,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 2,
+      "phase_x": 15,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.198099,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 5,
+      "phase_x": 0,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.227977,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 5,
+      "phase_x": 0,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.179767,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 5,
+      "phase_x": 0,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.164907,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 5,
+      "phase_x": 0,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.162858,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 5,
+      "phase_x": 7,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.186906,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 5,
+      "phase_x": 7,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.177669,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 5,
+      "phase_x": 7,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.151136,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 5,
+      "phase_x": 7,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.16662,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 5,
+      "phase_x": 8,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.165375,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 5,
+      "phase_x": 8,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.179435,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 5,
+      "phase_x": 8,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.153357,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 5,
+      "phase_x": 8,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.146572,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 5,
+      "phase_x": 15,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.157816,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 5,
+      "phase_x": 15,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.159941,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 5,
+      "phase_x": 15,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.171497,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 5,
+      "phase_x": 15,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.162048,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 42,
+      "phase_x": 0,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.166729,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 42,
+      "phase_x": 0,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.168285,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 42,
+      "phase_x": 0,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.147164,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 42,
+      "phase_x": 0,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.154699,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 42,
+      "phase_x": 7,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.159529,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 42,
+      "phase_x": 7,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.179758,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 42,
+      "phase_x": 7,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.177337,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 42,
+      "phase_x": 7,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.179846,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 42,
+      "phase_x": 8,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.172331,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 42,
+      "phase_x": 8,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.183719,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 42,
+      "phase_x": 8,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.171598,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 42,
+      "phase_x": 8,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.174682,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 42,
+      "phase_x": 15,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.158219,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 42,
+      "phase_x": 15,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.185364,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 42,
+      "phase_x": 15,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.163299,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    },
+    {
+      "rng": 42,
+      "phase_x": 15,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.176984,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b23": [
+          5,
+          5,
+          null,
+          null,
+          6
+        ],
+        "b24": [
+          9,
+          8,
+          8,
+          null,
+          null
+        ],
+        "b28": [
+          null,
+          8,
+          7,
+          7,
+          null
+        ],
+        "b29": [
+          null,
+          null,
+          9,
+          8,
+          8
+        ],
+        "b33": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "pw_b42_6_3_14": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "pw_b40_6_5_14": [
+          null,
+          null,
+          1,
+          1,
+          1
+        ],
+        "pw_b41_6_6_11": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ],
+        "pw_b47_7_1_11": [
+          1,
+          null,
+          null,
+          1,
+          1
+        ],
+        "pw_b55_8_4_9": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 12
+    }
+  ],
+  "claim": "prescribed input injection (before_natural); validated start/settlement ledger + sampled ports + bounded hardware; no exact-state recurrence claim; does not establish natural driver realization"
+}

@@ -1,0 +1,16 @@
+seed,sticky_mask,best_positive,best_negative,positive_state,negative_state
+symmetric12,1,0,-20,0,16
+symmetric12,2,19,0,80,0
+symmetric12,5,0,-20,0,16
+symmetric12,6,19,0,80,0
+symmetric12,9,0,-20,0,16
+symmetric12,10,20,0,160,0
+symmetric12,13,0,-20,0,16
+symmetric12,14,3,0,144,0
+symmetric14,1,0,-20,0,16
+symmetric14,2,19,0,80,0
+symmetric14,5,0,-20,0,16
+symmetric14,6,20,0,160,0
+symmetric14,9,0,-20,0,16
+symmetric14,10,20,0,160,0
+symmetric14,13,0,-20,0,16

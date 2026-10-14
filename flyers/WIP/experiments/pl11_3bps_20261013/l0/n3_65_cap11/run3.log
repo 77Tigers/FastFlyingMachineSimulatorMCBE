@@ -1,0 +1,23 @@
+seed (target 11, limit 24, recurrence bounded) score (24, 12, 24, 53, 702) presc_max 12 input_loads {"b9":[9,null,null,9,9],"b10":[null,11,11,12,null],"b15":[12,12,12,null,null],"b18":[null,null,9,9,9]}
+thread 5 new best score (22, 12, 22, 53, 700) presc_max 12 after 393 evals
+thread 5 new best score (22, 12, 22, 53, 698) presc_max 12 after 2717 evals
+thread 1 new best score (22, 12, 22, 53, 700) presc_max 12 after 4418 evals
+thread 1 new best score (22, 12, 22, 52, 688) presc_max 12 after 4686 evals
+thread 3 new best score (24, 12, 24, 53, 700) presc_max 12 after 6419 evals
+thread 2 new best score (22, 12, 22, 55, 722) presc_max 12 after 6908 evals
+thread 2 new best score (22, 12, 22, 54, 710) presc_max 12 after 8880 evals
+thread 0 new best score (22, 12, 22, 54, 712) presc_max 12 after 9153 evals
+thread 3 new best score (24, 12, 24, 52, 690) presc_max 12 after 9200 evals
+thread 3 new best score (22, 12, 22, 53, 700) presc_max 12 after 10255 evals
+thread 0 new best score (22, 12, 22, 54, 710) presc_max 12 after 11172 evals
+thread 0 new best score (22, 12, 22, 53, 698) presc_max 12 after 11227 evals
+thread 3 new best score (22, 12, 22, 53, 698) presc_max 12 after 11291 evals
+thread 2 new best score (22, 12, 22, 53, 700) presc_max 12 after 18332 evals
+thread 0 new best score (22, 12, 22, 53, 696) presc_max 12 after 20868 evals
+thread 1 new best score (22, 12, 22, 52, 686) presc_max 12 after 31937 evals
+thread 3 new best score (22, 12, 22, 52, 686) presc_max 12 after 34823 evals
+thread 4 new best score (22, 12, 22, 53, 700) presc_max 12 after 35139 evals
+thread 2 new best score (22, 12, 22, 53, 698) presc_max 12 after 43711 evals
+thread 2 new best score (22, 12, 22, 53, 696) presc_max 12 after 45650 evals
+thread 4 new best score (22, 12, 22, 52, 688) presc_max 12 after 53804 evals
+thread 1 new best score (22, 12, 22, 52, 684) presc_max 12 after 73645 evals

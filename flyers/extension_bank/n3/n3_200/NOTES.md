@@ -1,0 +1,11 @@
+# n3_200  N3 S (single primitive)  `N3|C:-|S:mmmww|push@1|T:mmmww`  status: PASS before_natural (80/80 Rust + Python), exact recurrence
+Source: flyers/bank/pl15/human_original_victim_observer.flyer period at tick 100 (state from extension-trace row 100, original rng/phase/push_limit); label `S:push:B43:s1`. Generator: extract/extract.py + publish.py.
+Selected actions: s1 B38 push L9->B43
+Variant: spec-faithful (all passengers kept, strict reference caps)
+Kept bodies (22 cells, 4 pistons): B33 B36 B38 B43; power cells kept alone: none
+Prescribed (removed hardware): b33 slots [2, 3] caps [14, 14]; b43 slots [0] caps [10]
+Endogenous (natural) max load 14; primitive loads in fixture: [(1, 9)]
+Ports: b33:input, b43:input
+Pinned: required_cells = every cell of every kept glue body + power cells (20 cells).
+Orders: ['before_natural'] (interleaved is the synthetic stress mode; index.json lists before/after only). Canonical hash a8c39cd2b56e0892.
+dedup twins: none.

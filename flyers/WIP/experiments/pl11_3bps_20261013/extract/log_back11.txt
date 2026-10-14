@@ -1,0 +1,7 @@
+human_tm_smol_back11: 39 moving events, back loop ['B8', 'B9', 'B10', 'B16', 'B13'] loop=['B10', 'B13', 'B16', 'B8', 'B9'], requests 53 (0.5s)
+built 39 unique of 53 (1.5s)
+{('S', 'pass'): 17, ('S', 'dup'): 6, ('C', 'pass'): 5, ('C', 'dup'): 7, ('L', 'dup'): 8, ('L', 'pass'): 3, ('K', 'pass'): 5, ('R', 'pass'): 1, ('F', 'pass'): 1}
+done in 26.1s -> C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\pl11_3bps_20261013\extract\work\human_tm_smol_back11\results.json
+copied 32 fixtures; confirming 80 contracts with the Python checker (8 workers)
+python confirmation: 62s wall
+published 32 entries (dropped orders: []); 70s

@@ -1,0 +1,223 @@
+{
+  "version": 1,
+  "name": "n3_201-before_natural",
+  "flyer": "candidate.flyer",
+  "prescribed_script": "drive.txt",
+  "prescribed_order": "before_natural",
+  "period_ticks": 10,
+  "advance": 3,
+  "cycles": 3,
+  "recurrence": "exact",
+  "ports": [
+    {
+      "name": "b33",
+      "role": "input",
+      "at": [
+        3,
+        1,
+        13
+      ],
+      "word": "wwmmm",
+      "baseline_load": [
+        null,
+        null,
+        14,
+        14,
+        15
+      ],
+      "spare_load": [
+        null,
+        null,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "b43",
+      "role": "input",
+      "at": [
+        5,
+        1,
+        14
+      ],
+      "word": "mmmww",
+      "baseline_load": [
+        10,
+        9,
+        8,
+        null,
+        null
+      ],
+      "spare_load": [
+        0,
+        0,
+        0,
+        null,
+        null
+      ]
+    }
+  ],
+  "required_cells": [
+    {
+      "at": [
+        2,
+        1,
+        15
+      ],
+      "cell": 6
+    },
+    {
+      "at": [
+        3,
+        1,
+        13
+      ],
+      "cell": 2
+    },
+    {
+      "at": [
+        3,
+        1,
+        14
+      ],
+      "cell": 2
+    },
+    {
+      "at": [
+        3,
+        1,
+        15
+      ],
+      "cell": 2
+    },
+    {
+      "at": [
+        3,
+        2,
+        13
+      ],
+      "cell": 4
+    },
+    {
+      "at": [
+        3,
+        2,
+        14
+      ],
+      "cell": 297
+    },
+    {
+      "at": [
+        3,
+        2,
+        15
+      ],
+      "cell": 2
+    },
+    {
+      "at": [
+        4,
+        0,
+        15
+      ],
+      "cell": 2
+    },
+    {
+      "at": [
+        4,
+        1,
+        15
+      ],
+      "cell": 2
+    },
+    {
+      "at": [
+        5,
+        0,
+        15
+      ],
+      "cell": 2
+    },
+    {
+      "at": [
+        6,
+        0,
+        15
+      ],
+      "cell": 2
+    },
+    {
+      "at": [
+        7,
+        0,
+        15
+      ],
+      "cell": 327
+    },
+    {
+      "at": [
+        4,
+        2,
+        14
+      ],
+      "cell": 6
+    },
+    {
+      "at": [
+        5,
+        1,
+        14
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        5,
+        1,
+        15
+      ],
+      "cell": 297
+    },
+    {
+      "at": [
+        5,
+        1,
+        16
+      ],
+      "cell": 4
+    },
+    {
+      "at": [
+        5,
+        2,
+        13
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        5,
+        2,
+        14
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        5,
+        2,
+        15
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        5,
+        2,
+        16
+      ],
+      "cell": 1
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+[package]
+name = "two-way-research"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+fastflyer = { path = "../.." }
+fastflyer-tools = { path = "../../tools" }
+
+[[bin]]
+name = "two-way-search"
+path = "search.rs"
+
+[[bin]]
+name = "two-way-audit"
+path = "audit.rs"
+
+[[bin]]
+name = "two-way-symsearch"
+path = "symsearch.rs"

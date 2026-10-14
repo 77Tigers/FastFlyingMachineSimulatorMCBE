@@ -1,0 +1,17 @@
+INFEASIBLE
+CpSolverResponse summary:
+status: INFEASIBLE
+objective: NA
+best_bound: NA
+integers: 341
+booleans: 1213
+conflicts: 15046
+branches: 53515
+propagations: 3886646
+integer_propagations: 746860
+restarts: 53
+lp_iterations: 0
+walltime: 2.00921
+usertime: 2.00921
+deterministic_time: 4.33956
+gap_integral: 0

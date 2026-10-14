@@ -1,0 +1,1 @@
+error: seed candidate fails: sample(rng=0, phase_x=0, phase_z=0) [before_natural] tick 9: permanent identity 30 at (20,6,13) is not its origin advanced by 3 at cycle 1 boundary

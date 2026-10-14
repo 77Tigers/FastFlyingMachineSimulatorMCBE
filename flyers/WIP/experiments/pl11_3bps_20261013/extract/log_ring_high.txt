@@ -1,0 +1,7 @@
+five_segment_ring_high: 15 moving events, back loop ['B1', 'B13', 'B14', 'B12', 'B19'] loop=['B1', 'B12', 'B13', 'B14', 'B19'], requests 2 (0.4s)
+built 1 unique of 2 (0.4s)
+{('R', 'fail'): 1, ('F', 'unbuildable'): 1}
+done in 2.7s -> C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\pl11_3bps_20261013\extract\work\five_segment_ring_high\results.json
+copied 0 fixtures; confirming 0 contracts with the Python checker (8 workers)
+python confirmation: 0s wall
+published 0 entries (dropped orders: []); 0s

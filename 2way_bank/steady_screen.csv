@@ -1,0 +1,5 @@
+file,limit,rng,phase_x,phase_z,ticks,distance,end_blocks,extensions,extension_failures,movement_failures,first_failure_tick,first_failure_kind,conservation_mismatch_ticks,max_successful_action,clean
+"2way_bank/steady_candidates\steady14_s15_A.flyer",12,42,0,0,600,5,14,37,0,2,40,"(Coord { x: 22, y: 0, z: 16 }, ""immovable obstruction"")",0,9,false
+"2way_bank/steady_candidates\steady14_s15_B.flyer",12,42,0,0,600,-12,15,190,0,0,,"",0,10,true
+"2way_bank/steady_candidates\steady14_s9_A.flyer",12,42,0,0,600,100,16,300,0,0,,"",0,10,true
+"2way_bank/steady_candidates\steady14_s9_B.flyer",12,42,0,0,600,99,15,299,0,0,,"",0,10,true

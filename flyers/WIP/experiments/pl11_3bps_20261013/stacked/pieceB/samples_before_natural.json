@@ -1,0 +1,3307 @@
+{
+  "version": 1,
+  "name": "stackedB-before_natural",
+  "period_ticks": 10,
+  "advance": 3,
+  "cycles": 3,
+  "recurrence": "bounded",
+  "drive_script": null,
+  "prescribed_script": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\pl11_3bps_20261013\\stacked\\pieceB\\drive.txt",
+  "prescribed_order": "before_natural",
+  "boundary_envelope": {
+    "min": [
+      14,
+      0,
+      8
+    ],
+    "max": [
+      22,
+      4,
+      10
+    ]
+  },
+  "passed": true,
+  "cases": [
+    {
+      "rng": 0,
+      "phase_x": 0,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.07356,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          9,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 0,
+      "phase_x": 0,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.07213,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 0,
+      "phase_x": 0,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.088182,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          9,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 0,
+      "phase_x": 0,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.089364,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          9,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 0,
+      "phase_x": 7,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.071753,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          9,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 0,
+      "phase_x": 7,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.096505,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 0,
+      "phase_x": 7,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.066077,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          9,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 0,
+      "phase_x": 7,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.082099,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          9,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 0,
+      "phase_x": 8,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.114398,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 0,
+      "phase_x": 8,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.094892,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 0,
+      "phase_x": 8,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.083153,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 0,
+      "phase_x": 8,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.090162,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 0,
+      "phase_x": 15,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.047166,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          9,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 0,
+      "phase_x": 15,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.087661,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 0,
+      "phase_x": 15,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.085878,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          9,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 0,
+      "phase_x": 15,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.073674,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          9,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 1,
+      "phase_x": 0,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.075751,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          9,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 1,
+      "phase_x": 0,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.075052,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 1,
+      "phase_x": 0,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.073869,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          9,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 1,
+      "phase_x": 0,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.082981,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          9,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 1,
+      "phase_x": 7,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.047299,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          9,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 1,
+      "phase_x": 7,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.097523,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 1,
+      "phase_x": 7,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.088846,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          9,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 1,
+      "phase_x": 7,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.082791,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          9,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 1,
+      "phase_x": 8,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.085274,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 1,
+      "phase_x": 8,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.089129,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 1,
+      "phase_x": 8,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.078057,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 1,
+      "phase_x": 8,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.076221,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 1,
+      "phase_x": 15,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.073375,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          9,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 1,
+      "phase_x": 15,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.083693,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 1,
+      "phase_x": 15,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.06951,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          9,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 1,
+      "phase_x": 15,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.075588,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          9,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 2,
+      "phase_x": 0,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.075703,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 2,
+      "phase_x": 0,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.077855,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 2,
+      "phase_x": 0,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.075384,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 2,
+      "phase_x": 0,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.08343,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 2,
+      "phase_x": 7,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.096525,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 2,
+      "phase_x": 7,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.063669,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 2,
+      "phase_x": 7,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.087654,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 2,
+      "phase_x": 7,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.091733,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 2,
+      "phase_x": 8,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.093301,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 2,
+      "phase_x": 8,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.087305,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 2,
+      "phase_x": 8,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.099485,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 2,
+      "phase_x": 8,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.101504,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 2,
+      "phase_x": 15,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.092862,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 2,
+      "phase_x": 15,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.060836,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 2,
+      "phase_x": 15,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.059135,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 2,
+      "phase_x": 15,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.078568,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 5,
+      "phase_x": 0,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.081508,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 5,
+      "phase_x": 0,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.055168,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 5,
+      "phase_x": 0,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.08531,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 5,
+      "phase_x": 0,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.075973,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 5,
+      "phase_x": 7,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.054405,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 5,
+      "phase_x": 7,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.0924,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 5,
+      "phase_x": 7,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.087532,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 5,
+      "phase_x": 7,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.054119,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 5,
+      "phase_x": 8,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.09591,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 5,
+      "phase_x": 8,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.101967,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 5,
+      "phase_x": 8,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.056238,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 5,
+      "phase_x": 8,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.107592,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 5,
+      "phase_x": 15,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.109565,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 5,
+      "phase_x": 15,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.094603,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 5,
+      "phase_x": 15,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.105667,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 5,
+      "phase_x": 15,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.110879,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 42,
+      "phase_x": 0,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.104067,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 42,
+      "phase_x": 0,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.103454,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          9,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 42,
+      "phase_x": 0,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.112508,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 42,
+      "phase_x": 0,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.055562,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 42,
+      "phase_x": 7,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.106213,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 42,
+      "phase_x": 7,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.100048,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          9,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 42,
+      "phase_x": 7,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.057326,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 42,
+      "phase_x": 7,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.10868,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 42,
+      "phase_x": 8,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.102833,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 42,
+      "phase_x": 8,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.061872,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          9,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 42,
+      "phase_x": 8,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.054541,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 42,
+      "phase_x": 8,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.083951,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 42,
+      "phase_x": 15,
+      "phase_z": 0,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.052304,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 42,
+      "phase_x": 15,
+      "phase_z": 7,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.110149,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          9,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 42,
+      "phase_x": 15,
+      "phase_z": 8,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.112777,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    },
+    {
+      "rng": 42,
+      "phase_x": 15,
+      "phase_z": 15,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.111468,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "x": [
+          10,
+          10,
+          10,
+          null,
+          null
+        ],
+        "t": [
+          8,
+          null,
+          null,
+          9,
+          8
+        ],
+        "n": [
+          2,
+          2,
+          2,
+          null,
+          null
+        ],
+        "pw": [
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 10
+    }
+  ],
+  "claim": "prescribed input injection (before_natural); validated start/settlement ledger + sampled ports + bounded hardware; no exact-state recurrence claim; does not establish natural driver realization"
+}

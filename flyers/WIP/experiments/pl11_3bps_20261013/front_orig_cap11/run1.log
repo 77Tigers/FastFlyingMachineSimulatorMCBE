@@ -1,0 +1,110 @@
+seed (target 11, limit 24, recurrence bounded) score (36, 12, 36, 183, 2778) presc_max 11 input_loads {"b7":[10,10,null,null,9],"b8":[null,9,10,10,null],"b9":[10,11,11,null,null],"b15":[10,null,null,9,10],"b16":[null,null,8,9,9]}
+thread 0 new best score (34, 12, 34, 187, 2834) presc_max 11 after 910 evals
+thread 2 new best score (34, 12, 34, 188, 2846) presc_max 11 after 1196 evals
+thread 5 new best score (34, 12, 34, 191, 2892) presc_max 11 after 1333 evals
+thread 4 new best score (34, 12, 34, 189, 2862) presc_max 11 after 1348 evals
+thread 3 new best score (34, 12, 34, 188, 2840) presc_max 11 after 1412 evals
+thread 4 new best score (34, 12, 34, 189, 2856) presc_max 11 after 1705 evals
+thread 3 new best score (34, 12, 34, 187, 2824) presc_max 11 after 1835 evals
+thread 1 new best score (34, 12, 34, 188, 2830) presc_max 11 after 2413 evals
+thread 4 new best score (34, 12, 34, 189, 2854) presc_max 11 after 2602 evals
+thread 1 new best score (34, 12, 34, 188, 2828) presc_max 11 after 2619 evals
+thread 0 new best score (32, 12, 32, 193, 2920) presc_max 11 after 3175 evals
+thread 0 new best score (28, 12, 28, 194, 2926) presc_max 11 after 4185 evals
+thread 0 new best score (28, 12, 28, 193, 2908) presc_max 11 after 4532 evals
+thread 0 new best score (28, 12, 28, 193, 2906) presc_max 11 after 5031 evals
+thread 0 new best score (28, 12, 28, 192, 2902) presc_max 11 after 6174 evals
+thread 0 new best score (28, 12, 28, 192, 2900) presc_max 11 after 6549 evals
+thread 5 new best score (34, 12, 34, 190, 2880) presc_max 11 after 12820 evals
+thread 3 new best score (34, 12, 34, 187, 2822) presc_max 11 after 23119 evals
+thread 0 new best score (28, 12, 28, 192, 2898) presc_max 11 after 28161 evals
+thread 0 new best score (28, 12, 28, 191, 2882) presc_max 11 after 28193 evals
+thread 2 new best score (34, 12, 34, 187, 2834) presc_max 11 after 38589 evals
+thread 5 new best score (34, 12, 34, 189, 2862) presc_max 11 after 41399 evals
+thread 3 new best score (34, 12, 34, 187, 2820) presc_max 11 after 43087 evals
+thread 4 new best score (34, 12, 34, 188, 2846) presc_max 11 after 45378 evals
+thread 1 new best score (34, 12, 34, 188, 2826) presc_max 11 after 47524 evals
+thread 1 new best score (34, 12, 34, 187, 2812) presc_max 11 after 47819 evals
+thread 1 new best score (34, 12, 34, 186, 2808) presc_max 11 after 47932 evals
+thread 5 new best score (34, 12, 34, 189, 2860) presc_max 11 after 57450 evals
+thread 5 new best score (34, 12, 34, 189, 2858) presc_max 11 after 57567 evals
+thread 5 new best score (34, 12, 34, 189, 2856) presc_max 11 after 57978 evals
+thread 1 new best score (31, 12, 31, 201, 3026) presc_max 11 after 58096 evals
+thread 1 new best score (29, 12, 29, 203, 3062) presc_max 11 after 59311 evals
+thread 1 new best score (29, 12, 29, 202, 3044) presc_max 11 after 59536 evals
+thread 2 new best score (34, 12, 34, 187, 2832) presc_max 11 after 59866 evals
+thread 2 new best score (34, 12, 34, 187, 2830) presc_max 11 after 59923 evals
+thread 1 new best score (29, 12, 29, 202, 3042) presc_max 11 after 60009 evals
+thread 1 new best score (28, 12, 28, 206, 3116) presc_max 11 after 61261 evals
+thread 1 new best score (28, 12, 28, 205, 3104) presc_max 11 after 61865 evals
+thread 1 new best score (28, 12, 28, 205, 3102) presc_max 11 after 61900 evals
+thread 1 new best score (28, 12, 28, 204, 3086) presc_max 11 after 62355 evals
+thread 1 new best score (28, 12, 28, 203, 3068) presc_max 11 after 62728 evals
+thread 1 new best score (28, 12, 28, 203, 3066) presc_max 11 after 62874 evals
+thread 1 new best score (28, 12, 28, 203, 3064) presc_max 11 after 63007 evals
+thread 1 new best score (28, 12, 28, 203, 3036) presc_max 11 after 78309 evals
+thread 2 new best score (34, 12, 34, 186, 2822) presc_max 11 after 78755 evals
+thread 1 new best score (28, 12, 28, 202, 3030) presc_max 11 after 79322 evals
+thread 3 new best score (34, 12, 34, 187, 2818) presc_max 11 after 83241 evals
+thread 3 new best score (34, 12, 34, 186, 2800) presc_max 11 after 102651 evals
+thread 3 new best score (34, 12, 34, 186, 2798) presc_max 11 after 102690 evals
+thread 4 new best score (34, 12, 34, 187, 2828) presc_max 11 after 114265 evals
+thread 1 new best score (28, 12, 28, 202, 3028) presc_max 11 after 114912 evals
+thread 1 new best score (28, 12, 28, 202, 3008) presc_max 11 after 115871 evals
+thread 2 new best score (34, 12, 34, 186, 2806) presc_max 11 after 115976 evals
+thread 1 new best score (28, 12, 28, 201, 2990) presc_max 11 after 116004 evals
+thread 1 new best score (28, 12, 28, 201, 2988) presc_max 11 after 116212 evals
+thread 1 new best score (28, 12, 28, 201, 2986) presc_max 11 after 134029 evals
+thread 1 new best score (28, 12, 28, 201, 2984) presc_max 11 after 134193 evals
+thread 2 new best score (34, 12, 34, 185, 2806) presc_max 11 after 134541 evals
+thread 0 new best score (28, 12, 28, 191, 2880) presc_max 11 after 138261 evals
+thread 1 new best score (28, 12, 28, 201, 2982) presc_max 11 after 150712 evals
+thread 1 new best score (28, 12, 28, 200, 2984) presc_max 11 after 151684 evals
+thread 1 new best score (28, 12, 28, 200, 2966) presc_max 11 after 151972 evals
+thread 4 new best score (34, 12, 34, 187, 2826) presc_max 11 after 153276 evals
+thread 3 new best score (34, 12, 34, 186, 2792) presc_max 11 after 158245 evals
+thread 3 new best score (34, 12, 34, 186, 2790) presc_max 11 after 158340 evals
+thread 3 new best score (34, 12, 34, 186, 2778) presc_max 11 after 158781 evals
+thread 4 new best score (32, 12, 32, 198, 2996) presc_max 11 after 162876 evals
+thread 4 new best score (28, 12, 28, 198, 2984) presc_max 11 after 163637 evals
+thread 4 new best score (28, 12, 28, 198, 2982) presc_max 11 after 170459 evals
+thread 5 new best score (34, 12, 34, 189, 2834) presc_max 11 after 185959 evals
+thread 5 new best score (34, 12, 34, 189, 2832) presc_max 11 after 186332 evals
+thread 5 new best score (34, 12, 34, 188, 2826) presc_max 11 after 186455 evals
+thread 4 new best score (28, 12, 28, 198, 2978) presc_max 11 after 186649 evals
+thread 2 new best score (34, 12, 34, 185, 2798) presc_max 11 after 190341 evals
+thread 1 new best score (28, 12, 28, 199, 2968) presc_max 11 after 192149 evals
+thread 5 new best score (34, 12, 34, 187, 2808) presc_max 11 after 201225 evals
+  fail    97753  samplerng= phase_x= phase_z= [before_natural] tick : port b 
+  fail    24717  samplerng= phase_x= phase_z= [before_natural] tick : extensi
+  fail    24305  samplerng= phase_x= phase_z= [before_natural] initial perman
+  fail    14917  samplerng= phase_x= phase_z= [before_natural] tick : movemen
+  fail     8617  samplerng= phase_x= phase_z= [before_natural] tick : permane
+  fail     7593  samplerng= phase_x= phase_z= [before_natural] tick : prescri
+  fail     1774  samplerng= phase_x= phase_z= [after_natural] tick : port b e
+  fail     1569  samplerng= phase_x= phase_z= [before_natural] tick : input b
+  fail     1013  samplerng= phase_x= phase_z= [after_natural] tick : extensio
+  fail      797  samplerng= phase_x= phase_z= [after_natural] tick : movement
+  fail      146  samplerng= phase_x= phase_z= [after_natural] tick : prescrib
+  fail       15  samplerng= phase_x= phase_z= [after_natural] tick : input b 
+done: 201722 evals (18506 passing) in 1200.0s = 168.1 evals/s; pareto size 1
+  pareto excess=36 max_load=12 count=36 presc_max=11 blocks=183 sum=2778 samples80=80/80
+best score (28, 12, 28, 191, 2880) (excess 28, max 12, count 28, blocks 191) samples80=17/80
+    + (14,2,11) Piston(dir1 sticky state0)
+    - (18,7,14) Piston(dir0 state0)
+    + (19,6,13) Honey
+    + (19,7,14) Piston(dir0 state0)
+    + (20,5,11) Piston(dir2 sticky state0)
+    + (20,6,12) Piston(dir0 sticky state0)
+    - (21,9,10) Slime
+    - (22,2,16) Piston(dir0 state0)
+    + (22,7,9) Piston(dir4 state0)
+    - (22,7,10) Piston(dir0 state0)
+    - (22,8,11) Piston(dir0 state0)
+    + (22,9,10) Slime
+    + (23,2,16) Piston(dir0 state0)
+    + (23,7,10) Piston(dir0 state0)
+    + (23,8,11) Piston(dir0 state0)
+    + (25,1,11) Piston(dir3 sticky state0)
+    + (25,7,14) RedstoneBlock
+    + (26,2,16) Piston(dir2 sticky state0)

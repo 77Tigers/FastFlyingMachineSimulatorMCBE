@@ -1,0 +1,6 @@
+/research/target/
+/seeds/
+/candidates/
+*.log
+!A.flyer
+!B.flyer

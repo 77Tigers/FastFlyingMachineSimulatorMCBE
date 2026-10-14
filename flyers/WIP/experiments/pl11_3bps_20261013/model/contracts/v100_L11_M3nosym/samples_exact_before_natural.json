@@ -1,0 +1,4896 @@
+{
+  "version": 1,
+  "name": "v100_L11_M3nosym-before_natural",
+  "period_ticks": 10,
+  "advance": 3,
+  "cycles": 3,
+  "recurrence": "exact",
+  "drive_script": null,
+  "prescribed_script": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\pl11_3bps_20261013\\model\\contracts\\v100_L11_M3nosym\\drive.txt",
+  "prescribed_order": "before_natural",
+  "boundary_envelope": null,
+  "passed": false,
+  "cases": [
+    {
+      "rng": 0,
+      "phase_x": 0,
+      "phase_z": 0,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.023269,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 0,
+      "phase_x": 0,
+      "phase_z": 7,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.013838,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 0,
+      "phase_x": 0,
+      "phase_z": 8,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.01437,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 0,
+      "phase_x": 0,
+      "phase_z": 15,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.014059,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 0,
+      "phase_x": 7,
+      "phase_z": 0,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.015295,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 0,
+      "phase_x": 7,
+      "phase_z": 7,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.016104,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 0,
+      "phase_x": 7,
+      "phase_z": 8,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.015817,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 0,
+      "phase_x": 7,
+      "phase_z": 15,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.014289,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 0,
+      "phase_x": 8,
+      "phase_z": 0,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.014113,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 0,
+      "phase_x": 8,
+      "phase_z": 7,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.013837,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 0,
+      "phase_x": 8,
+      "phase_z": 8,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.013096,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 0,
+      "phase_x": 8,
+      "phase_z": 15,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.01516,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 0,
+      "phase_x": 15,
+      "phase_z": 0,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.015645,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 0,
+      "phase_x": 15,
+      "phase_z": 7,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.015083,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 0,
+      "phase_x": 15,
+      "phase_z": 8,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.014737,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 0,
+      "phase_x": 15,
+      "phase_z": 15,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.014244,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 1,
+      "phase_x": 0,
+      "phase_z": 0,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.014193,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 1,
+      "phase_x": 0,
+      "phase_z": 7,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.013519,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 1,
+      "phase_x": 0,
+      "phase_z": 8,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.012913,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 1,
+      "phase_x": 0,
+      "phase_z": 15,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.013818,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 1,
+      "phase_x": 7,
+      "phase_z": 0,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.016286,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 1,
+      "phase_x": 7,
+      "phase_z": 7,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.013164,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 1,
+      "phase_x": 7,
+      "phase_z": 8,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.015812,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 1,
+      "phase_x": 7,
+      "phase_z": 15,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.015463,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 1,
+      "phase_x": 8,
+      "phase_z": 0,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.01551,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 1,
+      "phase_x": 8,
+      "phase_z": 7,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.013851,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 1,
+      "phase_x": 8,
+      "phase_z": 8,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.01372,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 1,
+      "phase_x": 8,
+      "phase_z": 15,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.01353,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 1,
+      "phase_x": 15,
+      "phase_z": 0,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.01317,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 1,
+      "phase_x": 15,
+      "phase_z": 7,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.013912,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 1,
+      "phase_x": 15,
+      "phase_z": 8,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.017441,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 1,
+      "phase_x": 15,
+      "phase_z": 15,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.018918,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 2,
+      "phase_x": 0,
+      "phase_z": 0,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.035439,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 2,
+      "phase_x": 0,
+      "phase_z": 7,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.014475,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 2,
+      "phase_x": 0,
+      "phase_z": 8,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.016822,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 2,
+      "phase_x": 0,
+      "phase_z": 15,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.019804,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 2,
+      "phase_x": 7,
+      "phase_z": 0,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.020895,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 2,
+      "phase_x": 7,
+      "phase_z": 7,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.018056,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 2,
+      "phase_x": 7,
+      "phase_z": 8,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.017432,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 2,
+      "phase_x": 7,
+      "phase_z": 15,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.016413,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 2,
+      "phase_x": 8,
+      "phase_z": 0,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.014938,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 2,
+      "phase_x": 8,
+      "phase_z": 7,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.014004,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 2,
+      "phase_x": 8,
+      "phase_z": 8,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.01371,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 2,
+      "phase_x": 8,
+      "phase_z": 15,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.013814,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 2,
+      "phase_x": 15,
+      "phase_z": 0,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.014571,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 2,
+      "phase_x": 15,
+      "phase_z": 7,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.014806,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 2,
+      "phase_x": 15,
+      "phase_z": 8,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.018575,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 2,
+      "phase_x": 15,
+      "phase_z": 15,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.013892,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 5,
+      "phase_x": 0,
+      "phase_z": 0,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.013235,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 5,
+      "phase_x": 0,
+      "phase_z": 7,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.012853,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 5,
+      "phase_x": 0,
+      "phase_z": 8,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.012913,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 5,
+      "phase_x": 0,
+      "phase_z": 15,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.013636,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 5,
+      "phase_x": 7,
+      "phase_z": 0,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.013666,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 5,
+      "phase_x": 7,
+      "phase_z": 7,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.013227,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 5,
+      "phase_x": 7,
+      "phase_z": 8,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.013998,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 5,
+      "phase_x": 7,
+      "phase_z": 15,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.01356,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 5,
+      "phase_x": 8,
+      "phase_z": 0,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.012438,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 5,
+      "phase_x": 8,
+      "phase_z": 7,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.012874,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 5,
+      "phase_x": 8,
+      "phase_z": 8,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.012957,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 5,
+      "phase_x": 8,
+      "phase_z": 15,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.013927,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 5,
+      "phase_x": 15,
+      "phase_z": 0,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.013857,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 5,
+      "phase_x": 15,
+      "phase_z": 7,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.014416,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 5,
+      "phase_x": 15,
+      "phase_z": 8,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.012108,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 5,
+      "phase_x": 15,
+      "phase_z": 15,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.013533,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 42,
+      "phase_x": 0,
+      "phase_z": 0,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.016046,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 42,
+      "phase_x": 0,
+      "phase_z": 7,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.013549,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 42,
+      "phase_x": 0,
+      "phase_z": 8,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.012713,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 42,
+      "phase_x": 0,
+      "phase_z": 15,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.012911,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 42,
+      "phase_x": 7,
+      "phase_z": 0,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.012996,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 42,
+      "phase_x": 7,
+      "phase_z": 7,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.013579,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 42,
+      "phase_x": 7,
+      "phase_z": 8,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.013045,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 42,
+      "phase_x": 7,
+      "phase_z": 15,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.013615,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 42,
+      "phase_x": 8,
+      "phase_z": 0,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.014715,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 42,
+      "phase_x": 8,
+      "phase_z": 7,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.031992,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 42,
+      "phase_x": 8,
+      "phase_z": 8,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.013166,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 42,
+      "phase_x": 8,
+      "phase_z": 15,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.013399,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 42,
+      "phase_x": 15,
+      "phase_z": 0,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.013184,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 42,
+      "phase_x": 15,
+      "phase_z": 7,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.012428,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 42,
+      "phase_x": 15,
+      "phase_z": 8,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.012343,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    },
+    {
+      "rng": 42,
+      "phase_x": 15,
+      "phase_z": 15,
+      "passed": false,
+      "ticks": 7,
+      "elapsed_seconds": 0.012639,
+      "diagnostic": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]",
+      "first_failure": {
+        "stage": "prescribed",
+        "code": "prescribed_move_failed",
+        "tick": 6,
+        "port": null,
+        "expected": {
+          "input": [
+            16,
+            1,
+            14
+          ],
+          "max_load": 4
+        },
+        "actual": {
+          "action": "prescribed move failed",
+          "failure": {
+            "pos": [
+              16,
+              1,
+              14
+            ],
+            "reason": "blocked or simulator push limit exceeded"
+          },
+          "sources": [],
+          "prescribed_move_id": 6
+        },
+        "message": "tick 6: prescribed input (16, 1, 14) failed under max_load 4; action=prescribed move failed, overlay failure={'pos': [16, 1, 14], 'reason': 'blocked or simulator push limit exceeded'}, sources=[]"
+      },
+      "input_max_action_loads": {
+        "a0": [
+          9,
+          9,
+          9,
+          null,
+          null
+        ],
+        "a1": [
+          8,
+          null,
+          null,
+          null,
+          null
+        ],
+        "a2": [
+          null,
+          3,
+          3,
+          null,
+          null
+        ]
+      },
+      "whole_assembly_max_action": 9
+    }
+  ],
+  "claim": "prescribed input injection (before_natural); validated start/settlement ledger + sampled ports + exact translated state recurrence; does not establish natural driver realization"
+}

@@ -1,0 +1,187 @@
+{
+  "version": 1,
+  "name": "n3_212-before_natural",
+  "flyer": "candidate.flyer",
+  "prescribed_script": "drive.txt",
+  "prescribed_order": "before_natural",
+  "period_ticks": 10,
+  "advance": 3,
+  "cycles": 3,
+  "recurrence": "bounded",
+  "ports": [
+    {
+      "name": "b42",
+      "role": "input",
+      "at": [
+        5,
+        0,
+        11
+      ],
+      "word": "mmwwm",
+      "baseline_load": [
+        12,
+        12,
+        null,
+        null,
+        12
+      ],
+      "spare_load": [
+        0,
+        0,
+        null,
+        null,
+        0
+      ]
+    },
+    {
+      "name": "b62",
+      "role": "input",
+      "at": [
+        9,
+        1,
+        10
+      ],
+      "word": "wwmmm",
+      "baseline_load": [
+        null,
+        null,
+        7,
+        6,
+        5
+      ],
+      "spare_load": [
+        null,
+        null,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "required_cells": [
+    {
+      "at": [
+        4,
+        0,
+        11
+      ],
+      "cell": 6
+    },
+    {
+      "at": [
+        4,
+        3,
+        11
+      ],
+      "cell": 6
+    },
+    {
+      "at": [
+        5,
+        0,
+        11
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        5,
+        1,
+        10
+      ],
+      "cell": 4
+    },
+    {
+      "at": [
+        5,
+        1,
+        11
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        5,
+        2,
+        10
+      ],
+      "cell": 297
+    },
+    {
+      "at": [
+        5,
+        2,
+        11
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        5,
+        3,
+        10
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        5,
+        3,
+        11
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        8,
+        2,
+        10
+      ],
+      "cell": 6
+    },
+    {
+      "at": [
+        9,
+        1,
+        10
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        9,
+        2,
+        10
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        9,
+        2,
+        11
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        9,
+        3,
+        10
+      ],
+      "cell": 1
+    }
+  ],
+  "boundary_envelope": {
+    "min": [
+      4,
+      0,
+      10
+    ],
+    "max": [
+      9,
+      3,
+      11
+    ]
+  }
+}

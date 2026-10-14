@@ -1,0 +1,75 @@
+{
+  "version": 1,
+  "name": "front_orig_cap11-before_natural",
+  "period_ticks": 10,
+  "advance": 3,
+  "cycles": 3,
+  "recurrence": "bounded",
+  "drive_script": null,
+  "prescribed_script": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\pl11_3bps_20261013\\front_orig_cap11\\drive.txt",
+  "prescribed_order": "before_natural",
+  "boundary_envelope": {
+    "min": [
+      14,
+      0,
+      8
+    ],
+    "max": [
+      26,
+      9,
+      16
+    ]
+  },
+  "passed": true,
+  "cases": [
+    {
+      "rng": null,
+      "phase_x": null,
+      "phase_z": null,
+      "passed": true,
+      "ticks": 30,
+      "elapsed_seconds": 0.20751,
+      "diagnostic": null,
+      "first_failure": null,
+      "input_max_action_loads": {
+        "b7": [
+          10,
+          10,
+          null,
+          null,
+          9
+        ],
+        "b8": [
+          null,
+          9,
+          10,
+          10,
+          null
+        ],
+        "b9": [
+          10,
+          11,
+          11,
+          null,
+          null
+        ],
+        "b15": [
+          10,
+          null,
+          null,
+          9,
+          10
+        ],
+        "b16": [
+          null,
+          null,
+          8,
+          9,
+          9
+        ]
+      },
+      "whole_assembly_max_action": 12
+    }
+  ],
+  "claim": "prescribed input injection (before_natural); validated start/settlement ledger + sampled ports + bounded hardware; no exact-state recurrence claim; does not establish natural driver realization"
+}

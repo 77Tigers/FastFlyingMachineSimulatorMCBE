@@ -1,0 +1,100 @@
+{
+  "pass": true,
+  "push_limit": 16,
+  "permanent_blocks": 30,
+  "all_blocks_settled": true,
+  "file_coordinate_map": {
+    "x": "offset_x - A.x",
+    "offset": [
+      32,
+      0,
+      0
+    ]
+  },
+  "state_changes": [
+    {
+      "A": [
+        15,
+        0,
+        2
+      ],
+      "B": [
+        17,
+        0,
+        2
+      ],
+      "kind": "OBSERVER",
+      "state": [
+        0,
+        0
+      ],
+      "powered": [
+        true,
+        false
+      ]
+    },
+    {
+      "A": [
+        16,
+        2,
+        2
+      ],
+      "B": [
+        16,
+        2,
+        2
+      ],
+      "kind": "OBSERVER",
+      "state": [
+        0,
+        0
+      ],
+      "powered": [
+        true,
+        false
+      ]
+    },
+    {
+      "A": [
+        17,
+        2,
+        2
+      ],
+      "B": [
+        15,
+        2,
+        2
+      ],
+      "kind": "OBSERVER",
+      "state": [
+        0,
+        0
+      ],
+      "powered": [
+        false,
+        true
+      ]
+    },
+    {
+      "A": [
+        18,
+        0,
+        2
+      ],
+      "B": [
+        14,
+        0,
+        2
+      ],
+      "kind": "OBSERVER",
+      "state": [
+        0,
+        0
+      ],
+      "powered": [
+        false,
+        true
+      ]
+    }
+  ]
+}

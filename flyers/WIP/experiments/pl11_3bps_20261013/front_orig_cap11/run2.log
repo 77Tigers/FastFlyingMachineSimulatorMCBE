@@ -1,0 +1,117 @@
+seed (target 11, limit 24, recurrence bounded) score (36, 12, 36, 183, 2778) presc_max 11 input_loads {"b7":[10,10,null,null,9],"b8":[null,9,10,10,null],"b9":[10,11,11,null,null],"b15":[10,null,null,9,10],"b16":[null,null,8,9,9]}
+thread 0 new best score (34, 12, 34, 184, 2792) presc_max 11 after 111 evals
+thread 0 new best score (34, 12, 34, 184, 2790) presc_max 11 after 193 evals
+thread 4 new best score (34, 12, 34, 184, 2782) presc_max 11 after 205 evals
+thread 3 new best score (34, 12, 34, 187, 2836) presc_max 11 after 553 evals
+thread 5 new best score (34, 12, 34, 186, 2820) presc_max 11 after 843 evals
+thread 2 new best score (34, 12, 34, 190, 2868) presc_max 11 after 956 evals
+thread 1 new best score (34, 12, 34, 190, 2854) presc_max 11 after 1637 evals
+thread 2 new best score (34, 12, 34, 190, 2866) presc_max 11 after 18237 evals
+thread 2 new best score (34, 12, 34, 190, 2864) presc_max 11 after 19011 evals
+thread 1 new best score (34, 12, 34, 189, 2838) presc_max 11 after 21440 evals
+thread 5 new best score (32, 12, 32, 195, 2938) presc_max 11 after 22845 evals
+thread 5 new best score (28, 12, 28, 194, 2926) presc_max 11 after 22958 evals
+thread 5 new best score (28, 12, 28, 193, 2908) presc_max 11 after 23241 evals
+thread 5 new best score (28, 12, 28, 192, 2894) presc_max 11 after 31653 evals
+thread 5 new best score (28, 12, 28, 192, 2892) presc_max 11 after 31948 evals
+thread 3 new best score (34, 12, 34, 187, 2834) presc_max 11 after 44062 evals
+thread 2 new best score (34, 12, 34, 190, 2862) presc_max 11 after 54446 evals
+thread 2 new best score (32, 12, 32, 196, 2932) presc_max 11 after 58281 evals
+thread 2 new best score (32, 12, 32, 195, 2932) presc_max 11 after 58742 evals
+thread 2 new best score (28, 12, 28, 194, 2920) presc_max 11 after 58858 evals
+thread 1 new best score (34, 12, 34, 189, 2832) presc_max 11 after 59522 evals
+thread 2 new best score (28, 12, 28, 194, 2918) presc_max 11 after 79947 evals
+thread 2 new best score (28, 12, 28, 194, 2916) presc_max 11 after 80283 evals
+thread 3 new best score (32, 12, 32, 207, 3120) presc_max 11 after 82962 evals
+thread 3 new best score (32, 12, 32, 206, 3120) presc_max 11 after 83046 evals
+thread 3 new best score (28, 12, 28, 206, 3120) presc_max 11 after 83900 evals
+thread 3 new best score (28, 12, 28, 206, 3118) presc_max 11 after 84039 evals
+thread 3 new best score (28, 12, 28, 205, 3100) presc_max 11 after 84106 evals
+thread 3 new best score (28, 12, 28, 204, 3084) presc_max 11 after 84497 evals
+thread 3 new best score (28, 12, 28, 204, 3074) presc_max 11 after 87974 evals
+thread 3 new best score (28, 12, 28, 204, 3072) presc_max 11 after 89176 evals
+thread 3 new best score (28, 12, 28, 203, 3060) presc_max 11 after 89629 evals
+thread 5 new best score (28, 12, 28, 192, 2890) presc_max 11 after 93098 evals
+thread 5 new best score (28, 12, 28, 192, 2888) presc_max 11 after 93223 evals
+thread 5 new best score (28, 12, 28, 191, 2888) presc_max 11 after 93590 evals
+thread 3 new best score (28, 12, 28, 203, 3046) presc_max 11 after 96973 evals
+thread 3 new best score (28, 12, 28, 202, 3028) presc_max 11 after 97191 evals
+thread 5 new best score (28, 12, 28, 191, 2882) presc_max 11 after 101672 evals
+thread 2 new best score (28, 12, 28, 194, 2904) presc_max 11 after 104314 evals
+thread 2 new best score (28, 12, 28, 193, 2904) presc_max 11 after 104454 evals
+thread 2 new best score (28, 12, 28, 193, 2900) presc_max 11 after 107688 evals
+thread 3 new best score (28, 12, 28, 201, 3012) presc_max 11 after 119505 evals
+thread 3 new best score (28, 12, 28, 200, 2994) presc_max 11 after 121389 evals
+thread 2 new best score (28, 12, 28, 192, 2884) presc_max 11 after 125560 evals
+thread 2 new best score (28, 12, 28, 191, 2866) presc_max 11 after 125590 evals
+thread 2 new best score (28, 12, 28, 190, 2862) presc_max 11 after 125678 evals
+thread 0 new best score (32, 12, 32, 198, 2944) presc_max 11 after 129464 evals
+thread 0 new best score (28, 12, 28, 198, 2950) presc_max 11 after 129868 evals
+thread 0 new best score (28, 12, 28, 198, 2948) presc_max 11 after 130603 evals
+thread 0 new best score (28, 12, 28, 198, 2946) presc_max 11 after 132604 evals
+thread 0 new best score (28, 12, 28, 197, 2934) presc_max 11 after 134019 evals
+thread 5 new best score (28, 12, 28, 191, 2880) presc_max 11 after 143866 evals
+thread 0 new best score (28, 12, 28, 197, 2902) presc_max 11 after 156140 evals
+thread 0 new best score (28, 12, 28, 196, 2902) presc_max 11 after 157271 evals
+thread 0 new best score (28, 12, 28, 196, 2900) presc_max 11 after 157537 evals
+thread 0 new best score (28, 12, 28, 196, 2896) presc_max 11 after 158452 evals
+thread 0 new best score (28, 12, 28, 195, 2894) presc_max 11 after 158762 evals
+thread 0 new best score (28, 12, 28, 195, 2892) presc_max 11 after 158974 evals
+thread 0 new best score (28, 12, 28, 194, 2892) presc_max 11 after 159027 evals
+thread 3 new best score (28, 12, 28, 200, 2992) presc_max 11 after 160686 evals
+thread 5 new best score (28, 12, 28, 190, 2876) presc_max 11 after 161458 evals
+thread 1 new best score (32, 12, 32, 203, 3056) presc_max 11 after 169292 evals
+thread 1 new best score (32, 12, 32, 203, 3054) presc_max 11 after 169382 evals
+thread 2 new best score (28, 12, 28, 190, 2860) presc_max 11 after 179627 evals
+thread 0 new best score (28, 12, 28, 194, 2890) presc_max 11 after 180083 evals
+thread 1 new best score (32, 12, 32, 202, 3060) presc_max 11 after 190994 evals
+thread 1 new best score (28, 12, 28, 204, 3080) presc_max 11 after 192248 evals
+thread 1 new best score (28, 12, 28, 204, 3078) presc_max 11 after 192298 evals
+thread 1 new best score (28, 12, 28, 203, 3060) presc_max 11 after 192732 evals
+thread 1 new best score (28, 12, 28, 203, 3042) presc_max 11 after 193515 evals
+thread 2 new best score (28, 12, 28, 190, 2858) presc_max 11 after 201046 evals
+thread 0 new best score (28, 12, 28, 194, 2882) presc_max 11 after 201646 evals
+thread 5 new best score (28, 12, 28, 189, 2858) presc_max 11 after 209822 evals
+thread 5 new best score (28, 12, 28, 189, 2856) presc_max 11 after 210092 evals
+thread 0 new best score (28, 12, 28, 194, 2880) presc_max 11 after 227987 evals
+thread 4 new best score (34, 12, 34, 184, 2780) presc_max 11 after 234862 evals
+thread 5 new best score (28, 12, 28, 189, 2854) presc_max 11 after 246404 evals
+thread 1 new best score (28, 12, 28, 203, 3038) presc_max 11 after 248535 evals
+thread 2 new best score (28, 12, 28, 190, 2856) presc_max 11 after 249063 evals
+thread 1 new best score (28, 12, 28, 203, 3034) presc_max 11 after 250188 evals
+thread 3 new best score (28, 12, 28, 199, 2992) presc_max 11 after 263063 evals
+thread 0 new best score (28, 12, 28, 193, 2884) presc_max 11 after 272311 evals
+thread 5 new best score (28, 12, 28, 188, 2842) presc_max 11 after 281366 evals
+thread 1 new best score (28, 12, 28, 202, 3030) presc_max 11 after 291990 evals
+thread 1 new best score (28, 12, 28, 202, 3018) presc_max 11 after 294702 evals
+thread 1 new best score (28, 12, 28, 202, 3016) presc_max 11 after 294732 evals
+  fail   137158  samplerng= phase_x= phase_z= [before_natural] tick : port b 
+  fail    60481  samplerng= phase_x= phase_z= [before_natural] initial perman
+  fail    31637  samplerng= phase_x= phase_z= [before_natural] tick : extensi
+  fail    24956  samplerng= phase_x= phase_z= [before_natural] tick : movemen
+  fail    11100  samplerng= phase_x= phase_z= [before_natural] tick : permane
+  fail     9986  samplerng= phase_x= phase_z= [before_natural] tick : prescri
+  fail     2586  samplerng= phase_x= phase_z= [after_natural] tick : port b e
+  fail     2064  samplerng= phase_x= phase_z= [after_natural] tick : movement
+  fail     1933  samplerng= phase_x= phase_z= [before_natural] tick : input b
+  fail      750  samplerng= phase_x= phase_z= [after_natural] tick : extensio
+  fail       19  samplerng= phase_x= phase_z= [after_natural] tick : prescrib
+  fail       13  samplerng= phase_x= phase_z= [after_natural] tick : input b 
+done: 305727 evals (23042 passing) in 1200.1s = 254.8 evals/s; pareto size 1
+  pareto excess=36 max_load=12 count=36 presc_max=11 blocks=183 sum=2778 samples80=80/80
+best score (28, 12, 28, 188, 2842) (excess 28, max 12, count 28, blocks 188) samples80=4/80
+    + (15,7,11) Honey
+    + (16,1,13) Piston(dir0 state0)
+    - (18,5,13) Piston(dir1 sticky state0)
+    + (19,5,13) Piston(dir1 sticky state0)
+    + (19,8,12) Slime
+    - (19,9,10) Piston(dir0 state2)
+    + (20,6,13) Honey
+    ~ (20,9,10) PistonArm -> Piston(dir0 state2)
+    - (21,8,10) Piston(dir1 sticky state0)
+    ~ (21,9,10) Slime -> PistonArm
+    + (22,8,10) Piston(dir1 sticky state0)
+    - (22,8,11) Piston(dir0 state0)
+    + (22,9,10) Slime
+    + (23,8,11) Piston(dir0 state0)
+    + (25,9,11) Piston(dir2 state0)

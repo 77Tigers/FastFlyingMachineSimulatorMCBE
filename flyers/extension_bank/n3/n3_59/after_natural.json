@@ -1,0 +1,327 @@
+{
+  "version": 1,
+  "name": "n3_59-after_natural",
+  "flyer": "candidate.flyer",
+  "prescribed_script": "drive.txt",
+  "prescribed_order": "after_natural",
+  "period_ticks": 10,
+  "advance": 3,
+  "cycles": 3,
+  "recurrence": "exact",
+  "ports": [
+    {
+      "name": "b10",
+      "role": "input",
+      "at": [
+        1,
+        0,
+        7
+      ],
+      "word": "wmmmw",
+      "baseline_load": [
+        null,
+        11,
+        11,
+        12,
+        null
+      ],
+      "spare_load": [
+        null,
+        0,
+        0,
+        0,
+        null
+      ]
+    },
+    {
+      "name": "b29",
+      "role": "input",
+      "at": [
+        6,
+        2,
+        7
+      ],
+      "word": "mmwwm",
+      "baseline_load": [
+        11,
+        12,
+        null,
+        null,
+        11
+      ],
+      "spare_load": [
+        0,
+        0,
+        null,
+        null,
+        0
+      ]
+    },
+    {
+      "name": "b36",
+      "role": "input",
+      "at": [
+        9,
+        1,
+        6
+      ],
+      "word": "wwmmm",
+      "baseline_load": [
+        null,
+        null,
+        11,
+        11,
+        11
+      ],
+      "spare_load": [
+        null,
+        null,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "pw_b41_12_5_8",
+      "role": "input",
+      "at": [
+        10,
+        2,
+        8
+      ],
+      "word": "mmmww",
+      "baseline_load": [
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "spare_load": [
+        0,
+        0,
+        0,
+        null,
+        null
+      ]
+    }
+  ],
+  "required_cells": [
+    {
+      "at": [
+        1,
+        0,
+        7
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        1,
+        1,
+        7
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        2,
+        1,
+        7
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        2,
+        2,
+        7
+      ],
+      "cell": 6
+    },
+    {
+      "at": [
+        3,
+        1,
+        7
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        3,
+        2,
+        6
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        3,
+        2,
+        7
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        3,
+        3,
+        7
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        4,
+        2,
+        6
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        6,
+        2,
+        6
+      ],
+      "cell": 297
+    },
+    {
+      "at": [
+        6,
+        2,
+        7
+      ],
+      "cell": 2
+    },
+    {
+      "at": [
+        6,
+        2,
+        8
+      ],
+      "cell": 2
+    },
+    {
+      "at": [
+        6,
+        3,
+        7
+      ],
+      "cell": 6
+    },
+    {
+      "at": [
+        7,
+        2,
+        7
+      ],
+      "cell": 2
+    },
+    {
+      "at": [
+        7,
+        3,
+        5
+      ],
+      "cell": 6
+    },
+    {
+      "at": [
+        7,
+        3,
+        6
+      ],
+      "cell": 2
+    },
+    {
+      "at": [
+        7,
+        3,
+        7
+      ],
+      "cell": 2
+    },
+    {
+      "at": [
+        7,
+        4,
+        7
+      ],
+      "cell": 2
+    },
+    {
+      "at": [
+        8,
+        1,
+        6
+      ],
+      "cell": 6
+    },
+    {
+      "at": [
+        8,
+        1,
+        9
+      ],
+      "cell": 6
+    },
+    {
+      "at": [
+        9,
+        1,
+        6
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        9,
+        1,
+        7
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        9,
+        1,
+        8
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        9,
+        1,
+        9
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        9,
+        2,
+        8
+      ],
+      "cell": 297
+    },
+    {
+      "at": [
+        9,
+        2,
+        9
+      ],
+      "cell": 1
+    },
+    {
+      "at": [
+        10,
+        2,
+        8
+      ],
+      "cell": 6
+    }
+  ]
+}

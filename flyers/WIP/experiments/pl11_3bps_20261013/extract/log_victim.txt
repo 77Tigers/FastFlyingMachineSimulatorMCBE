@@ -1,0 +1,7 @@
+human_original_victim_observer: 57 moving events, back loop ['B8', 'B17', 'B15', 'B16', 'B9'] loop=['B15', 'B16', 'B17', 'B8', 'B9'], requests 84 (1.0s)
+built 51 unique of 84 (2.2s)
+{('S', 'dup'): 14, ('S', 'pass'): 25, ('S', 'fail'): 1, ('C', 'pass'): 4, ('C', 'dup'): 14, ('L', 'dup'): 15, ('L', 'pass'): 3, ('P', 'pass'): 2, ('K', 'pass'): 1, ('K', 'dup'): 3, ('R', 'dup'): 1, ('F', 'pass'): 1}
+done in 53.0s -> C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\pl11_3bps_20261013\extract\work\human_original_victim_observer\results.json
+copied 36 fixtures; confirming 76 contracts with the Python checker (8 workers)
+python confirmation: 71s wall
+published 36 entries (dropped orders: []); 80s

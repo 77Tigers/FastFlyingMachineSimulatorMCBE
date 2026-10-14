@@ -24,31 +24,49 @@ BLOCKED_SUFFIXES = {
 ALLOWED_BINARY_SUFFIXES = {".mcstructure"}
 
 
-def git_paths(staged: bool) -> list[str]:
-    if staged:
-        args = ["git", "diff", "--cached", "--name-only", "--diff-filter=ACMR", "-z"]
-    else:
-        args = ["git", "ls-files", "-z"]
-    out = subprocess.run(args, cwd=ROOT, check=True, capture_output=True).stdout
-    return [p for p in out.decode("utf-8").split("\0") if p]
+def staged_sizes() -> dict[str, int]:
+    """Map each staged (added/copied/modified/renamed) path to its blob size.
+
+    One `git diff` plus one `git cat-file --batch-check` for the whole commit,
+    instead of a git process per file (slow on Windows/OneDrive).
+    """
+    raw = subprocess.run(
+        ["git", "diff", "--cached", "--raw", "--no-abbrev", "-z", "--diff-filter=ACMR"],
+        cwd=ROOT, check=True, capture_output=True,
+    ).stdout.decode("utf-8")
+    fields = raw.split("\0")
+    entries: list[tuple[str, str]] = []  # (path, blob sha)
+    i = 0
+    while i + 1 < len(fields) and fields[i].startswith(":"):
+        meta = fields[i].split()  # :old-mode new-mode old-sha new-sha status
+        if meta[4][0] in "RC":  # rename/copy list source then destination
+            path, i = fields[i + 2], i + 3
+        else:
+            path, i = fields[i + 1], i + 2
+        entries.append((path, meta[3]))
+    if not entries:
+        return {}
+    shas = "".join(f"{sha}\n" for _, sha in entries)
+    sizes = subprocess.run(
+        ["git", "cat-file", "--batch-check=%(objectsize)"],
+        cwd=ROOT, check=True, capture_output=True, input=shas.encode(),
+    ).stdout.decode().split()
+    return {path: int(size) for (path, _), size in zip(entries, sizes)}
 
 
-def staged_size(path: str) -> int:
-    out = subprocess.run(
-        ["git", "cat-file", "-s", f":{path}"], cwd=ROOT, check=True, capture_output=True
-    ).stdout
-    return int(out)
+def tracked_sizes() -> dict[str, int]:
+    out = subprocess.run(["git", "ls-files", "-z"], cwd=ROOT, check=True, capture_output=True).stdout
+    paths = [p for p in out.decode("utf-8").split("\0") if p]
+    return {p: (ROOT / p).stat().st_size for p in paths}
 
 
 def problems(staged: bool) -> list[str]:
     found = []
-    for path in git_paths(staged):
+    for path, size in (staged_sizes() if staged else tracked_sizes()).items():
         suffix = Path(path).suffix.lower()
         if suffix in BLOCKED_SUFFIXES:
             found.append(f"blocked file type: {path}")
-            continue
-        size = staged_size(path) if staged else (ROOT / path).stat().st_size
-        if size > MAX_BYTES and suffix not in ALLOWED_BINARY_SUFFIXES:
+        elif size > MAX_BYTES and suffix not in ALLOWED_BINARY_SUFFIXES:
             found.append(f"larger than {MAX_BYTES // 1000} kB ({size // 1000} kB): {path}")
     return found
 

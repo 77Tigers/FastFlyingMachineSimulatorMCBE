@@ -1,0 +1,129 @@
+file,limit,rng,phase_x,phase_z,ticks,distance,end_blocks,extensions,extension_failures,movement_failures,first_failure_tick,first_failure_kind,conservation_mismatch_ticks,max_successful_action,clean
+"2way_bank/steady_b_states\state_000.flyer",12,42,0,0,120,0,14,0,0,0,,"",0,0,true
+"2way_bank/steady_b_states\state_001.flyer",12,42,0,0,120,0,14,0,0,0,,"",0,0,true
+"2way_bank/steady_b_states\state_004.flyer",12,42,0,0,120,-21,16,60,0,0,,"",0,10,true
+"2way_bank/steady_b_states\state_005.flyer",12,42,0,0,120,-21,16,60,0,0,,"",0,10,true
+"2way_bank/steady_b_states\state_008.flyer",12,42,0,0,120,0,14,0,0,0,,"",0,0,true
+"2way_bank/steady_b_states\state_009.flyer",12,42,0,0,120,0,14,0,0,0,,"",0,0,true
+"2way_bank/steady_b_states\state_012.flyer",12,42,0,0,120,0,14,0,0,0,,"",0,3,true
+"2way_bank/steady_b_states\state_013.flyer",12,42,0,0,120,0,14,0,0,0,,"",0,3,true
+"2way_bank/steady_b_states\state_016.flyer",12,42,0,0,120,0,14,0,0,0,,"",0,0,true
+"2way_bank/steady_b_states\state_017.flyer",12,42,0,0,120,0,14,0,0,0,,"",0,0,true
+"2way_bank/steady_b_states\state_020.flyer",12,42,0,0,120,-21,16,60,0,0,,"",0,10,true
+"2way_bank/steady_b_states\state_021.flyer",12,42,0,0,120,-21,16,60,0,0,,"",0,10,true
+"2way_bank/steady_b_states\state_024.flyer",12,42,0,0,120,0,14,0,0,0,,"",0,0,true
+"2way_bank/steady_b_states\state_025.flyer",12,42,0,0,120,0,14,0,0,0,,"",0,0,true
+"2way_bank/steady_b_states\state_028.flyer",12,42,0,0,120,0,14,0,0,0,,"",0,3,true
+"2way_bank/steady_b_states\state_029.flyer",12,42,0,0,120,0,14,0,0,0,,"",0,3,true
+"2way_bank/steady_b_states\state_032.flyer",12,42,0,0,120,0,14,1,0,0,,"",0,4,true
+"2way_bank/steady_b_states\state_033.flyer",12,42,0,0,120,19,15,61,0,1,16,"(Coord { x: 14, y: 1, z: 15 }, ""push limit exceeded"")",0,10,false
+"2way_bank/steady_b_states\state_036.flyer",12,42,0,0,120,-20,16,61,0,0,,"",0,10,true
+"2way_bank/steady_b_states\state_037.flyer",12,42,0,0,120,19,15,61,1,2,2,"(Coord { x: 12, y: 0, z: 16 }, ""immovable obstruction"")",0,10,false
+"2way_bank/steady_b_states\state_040.flyer",12,42,0,0,120,0,14,1,0,0,,"",0,4,true
+"2way_bank/steady_b_states\state_041.flyer",12,42,0,0,120,19,15,61,0,1,16,"(Coord { x: 14, y: 1, z: 15 }, ""push limit exceeded"")",0,10,false
+"2way_bank/steady_b_states\state_044.flyer",12,42,0,0,120,0,14,1,0,0,,"",0,4,true
+"2way_bank/steady_b_states\state_045.flyer",12,42,0,0,120,19,15,59,0,0,,"",0,10,true
+"2way_bank/steady_b_states\state_048.flyer",12,42,0,0,120,0,14,1,0,0,,"",0,4,true
+"2way_bank/steady_b_states\state_049.flyer",12,42,0,0,120,19,15,61,0,1,16,"(Coord { x: 14, y: 1, z: 15 }, ""push limit exceeded"")",0,10,false
+"2way_bank/steady_b_states\state_052.flyer",12,42,0,0,120,-20,16,61,0,0,,"",0,10,true
+"2way_bank/steady_b_states\state_053.flyer",12,42,0,0,120,19,15,61,1,2,2,"(Coord { x: 12, y: 0, z: 16 }, ""immovable obstruction"")",0,10,false
+"2way_bank/steady_b_states\state_056.flyer",12,42,0,0,120,0,14,1,0,0,,"",0,4,true
+"2way_bank/steady_b_states\state_057.flyer",12,42,0,0,120,19,15,61,0,1,16,"(Coord { x: 14, y: 1, z: 15 }, ""push limit exceeded"")",0,10,false
+"2way_bank/steady_b_states\state_060.flyer",12,42,0,0,120,0,14,1,0,0,,"",0,4,true
+"2way_bank/steady_b_states\state_061.flyer",12,42,0,0,120,19,15,59,0,0,,"",0,10,true
+"2way_bank/steady_b_states\state_064.flyer",12,42,0,0,120,-20,15,59,0,0,,"",0,10,true
+"2way_bank/steady_b_states\state_065.flyer",12,42,0,0,120,-20,15,59,0,0,,"",0,10,true
+"2way_bank/steady_b_states\state_068.flyer",12,42,0,0,120,-21,16,60,0,0,,"",0,10,true
+"2way_bank/steady_b_states\state_069.flyer",12,42,0,0,120,-21,16,60,0,0,,"",0,10,true
+"2way_bank/steady_b_states\state_072.flyer",12,42,0,0,120,-20,15,59,0,0,,"",0,10,true
+"2way_bank/steady_b_states\state_073.flyer",12,42,0,0,120,-20,15,59,0,0,,"",0,10,true
+"2way_bank/steady_b_states\state_076.flyer",12,42,0,0,120,-21,16,60,0,0,,"",0,10,true
+"2way_bank/steady_b_states\state_077.flyer",12,42,0,0,120,-21,16,60,0,0,,"",0,10,true
+"2way_bank/steady_b_states\state_080.flyer",12,42,0,0,120,-20,15,59,0,0,,"",0,10,true
+"2way_bank/steady_b_states\state_081.flyer",12,42,0,0,120,-20,15,59,0,0,,"",0,10,true
+"2way_bank/steady_b_states\state_084.flyer",12,42,0,0,120,-21,16,60,0,0,,"",0,10,true
+"2way_bank/steady_b_states\state_085.flyer",12,42,0,0,120,-21,16,60,0,0,,"",0,10,true
+"2way_bank/steady_b_states\state_088.flyer",12,42,0,0,120,-20,15,59,0,0,,"",0,10,true
+"2way_bank/steady_b_states\state_089.flyer",12,42,0,0,120,-20,15,59,0,0,,"",0,10,true
+"2way_bank/steady_b_states\state_092.flyer",12,42,0,0,120,-21,16,60,0,0,,"",0,10,true
+"2way_bank/steady_b_states\state_093.flyer",12,42,0,0,120,-21,16,60,0,0,,"",0,10,true
+"2way_bank/steady_b_states\state_096.flyer",12,42,0,0,120,-20,15,60,0,0,,"",0,10,true
+"2way_bank/steady_b_states\state_097.flyer",12,42,0,0,120,19,15,62,0,1,16,"(Coord { x: 14, y: 1, z: 15 }, ""push limit exceeded"")",0,10,false
+"2way_bank/steady_b_states\state_100.flyer",12,42,0,0,120,-21,16,61,0,0,,"",0,10,true
+"2way_bank/steady_b_states\state_101.flyer",12,42,0,0,120,1,14,9,2,2,13,"(Coord { x: 13, y: 0, z: 16 }, ""immovable obstruction"")",0,10,false
+"2way_bank/steady_b_states\state_104.flyer",12,42,0,0,120,-20,15,60,0,0,,"",0,10,true
+"2way_bank/steady_b_states\state_105.flyer",12,42,0,0,120,19,15,62,0,1,16,"(Coord { x: 14, y: 1, z: 15 }, ""push limit exceeded"")",0,10,false
+"2way_bank/steady_b_states\state_108.flyer",12,42,0,0,120,-21,16,61,0,0,,"",0,10,true
+"2way_bank/steady_b_states\state_109.flyer",12,42,0,0,120,1,14,9,2,2,13,"(Coord { x: 13, y: 0, z: 16 }, ""immovable obstruction"")",0,10,false
+"2way_bank/steady_b_states\state_112.flyer",12,42,0,0,120,-20,15,60,0,0,,"",0,10,true
+"2way_bank/steady_b_states\state_113.flyer",12,42,0,0,120,19,15,62,0,1,16,"(Coord { x: 14, y: 1, z: 15 }, ""push limit exceeded"")",0,10,false
+"2way_bank/steady_b_states\state_116.flyer",12,42,0,0,120,-21,16,61,0,0,,"",0,10,true
+"2way_bank/steady_b_states\state_117.flyer",12,42,0,0,120,1,14,9,2,2,13,"(Coord { x: 13, y: 0, z: 16 }, ""immovable obstruction"")",0,10,false
+"2way_bank/steady_b_states\state_120.flyer",12,42,0,0,120,-20,15,60,0,0,,"",0,10,true
+"2way_bank/steady_b_states\state_121.flyer",12,42,0,0,120,19,15,62,0,1,16,"(Coord { x: 14, y: 1, z: 15 }, ""push limit exceeded"")",0,10,false
+"2way_bank/steady_b_states\state_124.flyer",12,42,0,0,120,-21,16,61,0,0,,"",0,10,true
+"2way_bank/steady_b_states\state_125.flyer",12,42,0,0,120,1,14,9,2,2,13,"(Coord { x: 13, y: 0, z: 16 }, ""immovable obstruction"")",0,10,false
+"2way_bank/steady_b_states\state_128.flyer",12,42,0,0,120,0,14,1,0,0,,"",0,0,true
+"2way_bank/steady_b_states\state_129.flyer",12,42,0,0,120,0,14,1,0,0,,"",0,0,true
+"2way_bank/steady_b_states\state_132.flyer",12,42,0,0,120,-21,16,60,0,0,,"",0,10,true
+"2way_bank/steady_b_states\state_133.flyer",12,42,0,0,120,-21,16,60,0,0,,"",0,10,true
+"2way_bank/steady_b_states\state_136.flyer",12,42,0,0,120,0,14,0,0,0,,"",0,0,true
+"2way_bank/steady_b_states\state_137.flyer",12,42,0,0,120,0,14,0,0,0,,"",0,0,true
+"2way_bank/steady_b_states\state_140.flyer",12,42,0,0,120,0,14,0,0,0,,"",0,3,true
+"2way_bank/steady_b_states\state_141.flyer",12,42,0,0,120,0,14,0,0,0,,"",0,3,true
+"2way_bank/steady_b_states\state_144.flyer",12,42,0,0,120,0,14,1,0,0,,"",0,0,true
+"2way_bank/steady_b_states\state_145.flyer",12,42,0,0,120,0,14,1,0,0,,"",0,0,true
+"2way_bank/steady_b_states\state_148.flyer",12,42,0,0,120,-21,16,60,0,0,,"",0,10,true
+"2way_bank/steady_b_states\state_149.flyer",12,42,0,0,120,-21,16,60,0,0,,"",0,10,true
+"2way_bank/steady_b_states\state_152.flyer",12,42,0,0,120,0,14,0,0,0,,"",0,0,true
+"2way_bank/steady_b_states\state_153.flyer",12,42,0,0,120,0,14,0,0,0,,"",0,0,true
+"2way_bank/steady_b_states\state_156.flyer",12,42,0,0,120,0,14,0,0,0,,"",0,3,true
+"2way_bank/steady_b_states\state_157.flyer",12,42,0,0,120,0,14,0,0,0,,"",0,3,true
+"2way_bank/steady_b_states\state_160.flyer",12,42,0,0,120,0,14,2,0,0,,"",0,4,true
+"2way_bank/steady_b_states\state_161.flyer",12,42,0,0,120,19,15,62,0,1,16,"(Coord { x: 14, y: 1, z: 15 }, ""push limit exceeded"")",0,10,false
+"2way_bank/steady_b_states\state_164.flyer",12,42,0,0,120,-20,16,61,0,0,,"",0,10,true
+"2way_bank/steady_b_states\state_165.flyer",12,42,0,0,120,19,15,61,1,2,2,"(Coord { x: 12, y: 0, z: 16 }, ""immovable obstruction"")",0,10,false
+"2way_bank/steady_b_states\state_168.flyer",12,42,0,0,120,0,14,1,0,0,,"",0,4,true
+"2way_bank/steady_b_states\state_169.flyer",12,42,0,0,120,19,15,61,0,1,16,"(Coord { x: 14, y: 1, z: 15 }, ""push limit exceeded"")",0,10,false
+"2way_bank/steady_b_states\state_172.flyer",12,42,0,0,120,0,14,1,0,0,,"",0,4,true
+"2way_bank/steady_b_states\state_173.flyer",12,42,0,0,120,19,15,59,0,0,,"",0,10,true
+"2way_bank/steady_b_states\state_176.flyer",12,42,0,0,120,0,14,2,0,0,,"",0,4,true
+"2way_bank/steady_b_states\state_177.flyer",12,42,0,0,120,19,15,62,0,1,16,"(Coord { x: 14, y: 1, z: 15 }, ""push limit exceeded"")",0,10,false
+"2way_bank/steady_b_states\state_180.flyer",12,42,0,0,120,-20,16,61,0,0,,"",0,10,true
+"2way_bank/steady_b_states\state_181.flyer",12,42,0,0,120,19,15,61,1,2,2,"(Coord { x: 12, y: 0, z: 16 }, ""immovable obstruction"")",0,10,false
+"2way_bank/steady_b_states\state_184.flyer",12,42,0,0,120,0,14,1,0,0,,"",0,4,true
+"2way_bank/steady_b_states\state_185.flyer",12,42,0,0,120,19,15,61,0,1,16,"(Coord { x: 14, y: 1, z: 15 }, ""push limit exceeded"")",0,10,false
+"2way_bank/steady_b_states\state_188.flyer",12,42,0,0,120,0,14,1,0,0,,"",0,4,true
+"2way_bank/steady_b_states\state_189.flyer",12,42,0,0,120,19,15,59,0,0,,"",0,10,true
+"2way_bank/steady_b_states\state_192.flyer",12,42,0,0,120,0,14,2,0,0,,"",0,3,true
+"2way_bank/steady_b_states\state_193.flyer",12,42,0,0,120,0,14,2,0,0,,"",0,3,true
+"2way_bank/steady_b_states\state_196.flyer",12,42,0,0,120,0,14,1,0,0,,"",0,3,true
+"2way_bank/steady_b_states\state_197.flyer",12,42,0,0,120,0,14,1,0,0,,"",0,3,true
+"2way_bank/steady_b_states\state_200.flyer",12,42,0,0,120,-20,15,59,0,0,,"",0,10,true
+"2way_bank/steady_b_states\state_201.flyer",12,42,0,0,120,-20,15,59,0,0,,"",0,10,true
+"2way_bank/steady_b_states\state_204.flyer",12,42,0,0,120,0,14,0,0,0,,"",0,3,true
+"2way_bank/steady_b_states\state_205.flyer",12,42,0,0,120,0,14,0,0,0,,"",0,3,true
+"2way_bank/steady_b_states\state_208.flyer",12,42,0,0,120,0,14,2,0,0,,"",0,3,true
+"2way_bank/steady_b_states\state_209.flyer",12,42,0,0,120,0,14,2,0,0,,"",0,3,true
+"2way_bank/steady_b_states\state_212.flyer",12,42,0,0,120,0,14,1,0,0,,"",0,3,true
+"2way_bank/steady_b_states\state_213.flyer",12,42,0,0,120,0,14,1,0,0,,"",0,3,true
+"2way_bank/steady_b_states\state_216.flyer",12,42,0,0,120,-20,15,59,0,0,,"",0,10,true
+"2way_bank/steady_b_states\state_217.flyer",12,42,0,0,120,-20,15,59,0,0,,"",0,10,true
+"2way_bank/steady_b_states\state_220.flyer",12,42,0,0,120,0,14,0,0,0,,"",0,3,true
+"2way_bank/steady_b_states\state_221.flyer",12,42,0,0,120,0,14,0,0,0,,"",0,3,true
+"2way_bank/steady_b_states\state_224.flyer",12,42,0,0,120,0,14,3,0,0,,"",0,4,true
+"2way_bank/steady_b_states\state_225.flyer",12,42,0,0,120,19,15,61,0,0,,"",0,10,true
+"2way_bank/steady_b_states\state_228.flyer",12,42,0,0,120,0,14,2,0,0,,"",0,4,true
+"2way_bank/steady_b_states\state_229.flyer",12,42,0,0,120,19,15,60,0,0,,"",0,10,true
+"2way_bank/steady_b_states\state_232.flyer",12,42,0,0,120,-20,15,60,0,0,,"",0,10,true
+"2way_bank/steady_b_states\state_233.flyer",12,42,0,0,120,19,15,62,0,1,16,"(Coord { x: 14, y: 1, z: 15 }, ""push limit exceeded"")",0,10,false
+"2way_bank/steady_b_states\state_236.flyer",12,42,0,0,120,0,14,1,0,0,,"",0,4,true
+"2way_bank/steady_b_states\state_237.flyer",12,42,0,0,120,19,15,59,0,0,,"",0,10,true
+"2way_bank/steady_b_states\state_240.flyer",12,42,0,0,120,0,14,3,0,0,,"",0,4,true
+"2way_bank/steady_b_states\state_241.flyer",12,42,0,0,120,19,15,61,0,0,,"",0,10,true
+"2way_bank/steady_b_states\state_244.flyer",12,42,0,0,120,0,14,2,0,0,,"",0,4,true
+"2way_bank/steady_b_states\state_245.flyer",12,42,0,0,120,19,15,60,0,0,,"",0,10,true
+"2way_bank/steady_b_states\state_248.flyer",12,42,0,0,120,-20,15,60,0,0,,"",0,10,true
+"2way_bank/steady_b_states\state_249.flyer",12,42,0,0,120,19,15,62,0,1,16,"(Coord { x: 14, y: 1, z: 15 }, ""push limit exceeded"")",0,10,false
+"2way_bank/steady_b_states\state_252.flyer",12,42,0,0,120,0,14,1,0,0,,"",0,4,true
+"2way_bank/steady_b_states\state_253.flyer",12,42,0,0,120,19,15,59,0,0,,"",0,10,true
