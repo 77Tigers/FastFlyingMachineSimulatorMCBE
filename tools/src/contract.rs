@@ -294,6 +294,9 @@ pub struct Ctx {
     /// Soft scoring (search only): keep simulating past port-word and recurrence errors; Progress.checks_ok
     /// then counts per-(port,tick) move/wait correctness and Progress.soft_penalty counts recurrence misses.
     pub soft: bool,
+    /// Scaffold contexts only: a powered piston that cannot extend is not a failure (supplied strokes may
+    /// already have moved its target). The final natural check never sets this.
+    pub allow_ext_fail: bool,
 }
 
 pub fn order_name(o: PrescribedOrder) -> &'static str {
@@ -574,6 +577,7 @@ pub fn load_ctx(path: &Path, recurrence_override: Option<&str>) -> Result<Ctx, S
         owners,
         base_cells,
         soft: false,
+        allow_ext_fail: false,
     })
 }
 
@@ -710,7 +714,7 @@ pub fn run_order(ctx: &Ctx, cells: &Cells, order: PrescribedOrder, sample: Sampl
                 return Err(format!("tick {tick}: prescribed move at ({},{},{}) failed: {:?}", a.input.x, a.input.y, a.input.z, r));
             }
         }
-        if report.natural.extension_failures > 0 {
+        if report.natural.extension_failures > 0 && !ctx.allow_ext_fail {
             return Err(format!("tick {tick}: extension failure"));
         }
         if trace.steps.is_empty() {

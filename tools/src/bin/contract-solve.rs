@@ -41,11 +41,12 @@ fn main() {
 fn run() -> Result<(), String> {
     let t0 = Instant::now();
     let a: Vec<String> = std::env::args().skip(1).collect();
-    let usage = "usage: contract-solve PROBLEM.json OUT_DIR [--budget SECS] [--threads N] [--library INDEX.json] [--holdout] [--seed N] [--quiet]";
+    let usage = "usage: contract-solve PROBLEM.json OUT_DIR [--budget SECS] [--threads N] [--library INDEX.json] [--holdout] [--seed N] [--quiet] [--library-dir DIR]... [--exclude-source SUBSTR]...";
     let mut pos = vec![];
     let (mut budget, mut threads, mut seed) = (5.0f64, std::thread::available_parallelism().map(|n| n.get()).unwrap_or(4).min(8), 1u64);
     let mut library = PathBuf::from("flyers/extension_bank/index.json");
     let (mut holdout, mut quiet) = (false, false);
+    let (mut lib_dirs, mut exclude): (Vec<PathBuf>, Vec<String>) = (vec![], vec![]);
     let mut i = 0;
     while i < a.len() {
         let v = |i: usize| a.get(i + 1).cloned().ok_or(format!("missing value for {}", a[i]));
@@ -55,6 +56,8 @@ fn run() -> Result<(), String> {
             "--seed" => { seed = v(i)?.parse().map_err(|_| "bad --seed")?; i += 1; }
             "--library" => { library = PathBuf::from(v(i)?); i += 1; }
             "--holdout" => holdout = true,
+            "--library-dir" => { lib_dirs.push(PathBuf::from(v(i)?)); i += 1; }
+            "--exclude-source" => { exclude.push(v(i)?); i += 1; }
             "--quiet" => quiet = true,
             s if s.starts_with("--") => return Err(format!("unknown option {s}\n{usage}")),
             _ => pos.push(a[i].clone()),
@@ -87,8 +90,12 @@ fn run() -> Result<(), String> {
     vctx.orders = ORDERS.to_vec();
     vctx.push_limit = ctx.push_limit;
     vctx.envelope = ctx.envelope;
-    if ctx.events.is_empty() {
+    // With no supplied strokes the three orders are the same simulation (the interleaved schedule draws from its
+    // own RNG stream and has nothing to insert), so one order is verified and the report says so.
+    let orders_equivalent = ctx.events.is_empty();
+    if orders_equivalent {
         ctx.orders = vec![PrescribedOrder::BeforeNatural];
+        vctx.orders = vec![PrescribedOrder::BeforeNatural];
     }
     ctx.soft = true;
     let base = ctx.base_cells.clone();
@@ -109,7 +116,12 @@ fn run() -> Result<(), String> {
     pool.extend(r);
 
     // transplant
-    let lib = load_library(&library);
+    let mut lib = load_library(&library);
+    for d in &lib_dirs {
+        lib.extend(load_flyer_library(d));
+    }
+    lib.retain(|e| !exclude.iter().any(|x| e.id.contains(x.as_str())));
+    lib.extend(self_entry(&base));
     let pinned: Vec<(Coord, u16)> = ctx.required_cells.clone();
     let tc = transplant_candidates(&lib, &pinned, &base, holdout, 400);
     log.push(format!("library: {} entries, {} transplant candidates ({:.2}s)", lib.len(), tc.len(), t0.elapsed().as_secs_f64()));
@@ -232,8 +244,8 @@ fn run() -> Result<(), String> {
         (None, Some(b)) => ("near_miss", Some(b.clone())),
         _ => ("none", None),
     };
-    let mut report = format!("{{\"problem\":{},\"status\":{},\"seconds\":{:.3},\"evaluations\":{},\"threads\":{},\"holdout\":{}",
-        jstr(&problem.display().to_string()), jstr(status), elapsed, evals, threads, holdout);
+    let mut report = format!("{{\"problem\":{},\"status\":{},\"seconds\":{:.3},\"evaluations\":{},\"threads\":{},\"holdout\":{},\"orders_equivalent\":{}",
+        jstr(&problem.display().to_string()), jstr(status), elapsed, evals, threads, holdout, orders_equivalent);
     if let Some(s) = &pick {
         let limit = s.ev.as_ref().map(|e| e.all_max.max(1)).unwrap_or(ctx.file_limit);
         write_solution(&ctx, &problem, &out, &s.cells, limit)?;

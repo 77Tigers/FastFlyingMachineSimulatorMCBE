@@ -41,6 +41,24 @@ Generator: every banked flyer's reference passes its generated contract at exact
 (slot moves spanning >1 slot; not expressible yet) and human_hopping_pistons (its 4-tick glue period fails;
 should fall back to the identity period when the bounded reference fails).
 
+## Night session 2026-10-15 (user asleep; focus N2, N4, some N3; bodies-from-pistons next)
+
+* **Scaffold decomposition** (`tools/src/solve.rs::decompose`): supply every internal move as a prescribed
+  stroke except the one being solved, search actors per move, combine by DFS. Detection starts fully natural and
+  supplies only moves that do not happen by themselves. Scaffolds tolerate extension failures and accept a pass
+  in either before/after order (supplied strokes only approximate natural moves; final check is natural).
+  f6: 72/120 verified (was 38), 64 via decompose. N2 whole-flyer 19/25, N2 near 33/50; N4 0/9.
+* **Timing-aware actors** (`timed_actors`): pusher behind B at slot k on a carrier still at k,k+1; sticky two
+  ahead on a carrier still at k-1,k; optional power (redstone block or rod on a body that moves during the
+  firing slot so the power switches off). rigid_chain_capped (PL9 2.5 bps, 16 moves) rebuilt from its skeleton
+  at load 9.
+* Diagnostics: `contract-score PROBLEM REF.flyer` (soft score of reference pieces), `contract-scaffold PROBLEM
+  [REF]` (moves, natural detection, single reference pieces vs single moves).
+* Why N4 fails: mmmmww bodies are pushed 4 slots in a row by a pusher column ("first push drags the rest");
+  single pushers cannot be judged with the neighbouring strokes supplied. Library transplants from other N4
+  flyers (`--library-dir flyerprobs`, own source excluded) are the current attempt.
+* Bodies-from-pistons level 1 (`contract-from-flyer --mode bare`: pistons AND power removed): 0/9 so far.
+
 ## Lessons (search)
 
 * Soft scoring (keep simulating past port errors; count per-(port,tick) move/wait correctness; penalise

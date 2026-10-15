@@ -162,18 +162,43 @@ pub fn load_library(index: &Path) -> Vec<LibEntry> {
     out
 }
 
+/// Library entries from flyer-derived references: DIR/<stem>/reference/reference.flyer. Pinned = every
+/// non-piston cell, hardware = pistons and arms. Ids are "ref:<stem>".
+pub fn load_flyer_library(dir: &Path) -> Vec<LibEntry> {
+    let mut out = vec![];
+    let Ok(rd) = fs::read_dir(dir) else { return out };
+    let mut dirs: Vec<_> = rd.flatten().map(|e| e.path()).collect();
+    dirs.sort();
+    for d in dirs {
+        let Ok(f) = Flyer::load(d.join("reference").join("reference.flyer")) else { continue };
+        let (mut pinned, mut hw) = (vec![], vec![]);
+        for (p, b) in f.blocks() {
+            let c = b.cell() & !16;
+            if c & 15 == 9 || c & 15 == 10 {
+                hw.push((p, c));
+            } else {
+                pinned.push((p, c));
+            }
+        }
+        if !hw.is_empty() {
+            out.push(LibEntry { id: format!("ref:{}", d.file_name().unwrap().to_string_lossy()), pinned, hw });
+        }
+    }
+    out
+}
+
 // Candidate transplants: (votes, entry index, sym, translation).
 pub fn transplant_candidates(lib: &[LibEntry], pinned: &[(Coord, u16)], base: &Cells, holdout: bool, max_n: usize) -> Vec<(Cells, String)> {
     let mut scored: Vec<(f64, usize, Sym, Coord)> = vec![];
     let mut by_cell: HashMap<u16, Vec<Coord>> = HashMap::new();
     for (p, c) in pinned {
-        by_cell.entry(*c).or_default().push(*p);
+        by_cell.entry(*c & !16).or_default().push(*p);
     }
     for (ei, e) in lib.iter().enumerate() {
         for s in syms() {
             let mut votes: HashMap<Coord, u32> = HashMap::new();
             for (q, c) in &e.pinned {
-                let Some(ps) = by_cell.get(&sym_cell(s, *c)) else { continue };
+                let Some(ps) = by_cell.get(&(sym_cell(s, *c) & !16)) else { continue };
                 let sq = sym_coord(s, *q, Coord::new(0, 0, 0));
                 for p in ps {
                     *votes.entry(Coord::new(p.x - sq.x, p.y - sq.y, p.z - sq.z)).or_default() += 1;
@@ -181,9 +206,19 @@ pub fn transplant_candidates(lib: &[LibEntry], pinned: &[(Coord, u16)], base: &C
             }
             let mut best: Vec<(u32, Coord)> = votes.into_iter().map(|(t, v)| (v, t)).collect();
             best.sort_by(|a, b| b.0.cmp(&a.0).then(a.1.cmp(&b.1)));
-            for &(v, t) in best.iter().take(3) {
+            let is_self = e.id == "self";
+            for &(v, t) in best.iter().take(if is_self { 10 } else { 3 }) {
                 let frac_l = v as f64 / e.pinned.len().max(1) as f64;
                 let frac_p = v as f64 / pinned.len().max(1) as f64;
+                if is_self {
+                    // repeated structure inside the problem itself: any non-identity map with a few matches
+                    let identity = !s.swap && s.sy == 1 && s.sz == 1 && t == Coord::new(0, 0, 0);
+                    if identity || v < 4 {
+                        continue;
+                    }
+                    scored.push((0.4 + 0.5 * frac_p, ei, s, t));
+                    continue;
+                }
                 if v < 3 || frac_l.max(frac_p) < 0.5 {
                     continue;
                 }
@@ -535,6 +570,9 @@ pub fn scaffold_ctx_o(ctx: &Ctx, moves: &[Move], natural: &[bool], order: Prescr
         }
     }
     c.orders = vec![order];
+    c.allow_ext_fail = true;
+    // two cycles are enough to screen actors; the final natural check runs the contract's cycles
+    c.cycles = c.cycles.min(2);
     c
 }
 
@@ -615,6 +653,57 @@ pub fn actor_candidates(cur: &Cells, body: &[Coord], lo: Coord, hi: Coord) -> Ve
     out
 }
 
+/// Which internal moves are made by the hardware already in `base` (natural) and which must be supplied.
+pub fn detect_natural(ctx: &Ctx, moves: &[Move], base: &Cells, s: Sample) -> Vec<bool> {
+    // 1. start fully natural; supply exactly the moves that do not happen by themselves (strict first failure
+    //    "expected move +X, actual did not move"), so moves made by pinned hardware stay natural
+    let mut natural = vec![true; moves.len()];
+    let strict = { let mut c = ctx.clone(); c.soft = false; c };
+    for _ in 0..=moves.len() {
+        let sc = scaffold_ctx(&strict, moves, &natural);
+        match evaluate(&sc, base, s, false) {
+            Ok(_) => break,
+            Err(e) => {
+                let missing = e.msg.contains("expected move +X, actual did not move");
+                let Some(tick) = e.msg.split("tick ").nth(1).and_then(|t| t.split(':').next()).and_then(|t| t.trim().parse::<usize>().ok()) else { break };
+                let slot = (tick % ctx.period) / 2;
+                let k = moves.iter().enumerate().position(|(k, &(pi, sl))| natural[k] && sl == slot && (missing && e.msg.contains(&format!("port {} ", ctx.ports[pi].name))));
+                match k {
+                    Some(k) => natural[k] = false,
+                    None => {
+                        // other failure (e.g. a wrong extra move): supply every move of that slot still natural
+                        let ks: Vec<usize> = moves.iter().enumerate().filter(|(k, m)| natural[*k] && m.1 == slot).map(|(k, _)| k).collect();
+                        if ks.is_empty() {
+                            break;
+                        }
+                        for k in ks {
+                            natural[k] = false;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // supplied moves that conflict with pinned hardware (stroke blocked / double move) go back to natural
+    for _ in 0..=moves.len() {
+        let sc = scaffold_ctx(ctx, moves, &natural);
+        match evaluate(&sc, base, s, false) {
+            Ok(_) => break,
+            Err(e) => {
+                let hard = e.msg.contains("prescribed move") || e.msg.contains("moved more than once") || e.msg.contains("prescribed closures");
+                if !hard {
+                    break;
+                }
+                match blamed_move(ctx, moves, &natural, &e.msg) {
+                    Some(k) => natural[k] = true,
+                    None => break,
+                }
+            }
+        }
+    }
+    natural
+}
+
 /// Parallel soft evaluation of cell sets under one context: (cost, passed, progress) per input, same order.
 pub fn par_eval(ctx: &Ctx, cands: &[Cells], s: Sample, threads: usize, deadline: Instant) -> Vec<(f64, bool, f64)> {
     let next = AtomicUsize::new(0);
@@ -654,25 +743,9 @@ pub fn decompose(ctx: &Ctx, base: &Cells, lo: Coord, hi: Coord, threads: usize, 
     if moves.is_empty() {
         return Decomp { cands: vec![], log: vec!["decompose: no internal moves".into()] };
     }
-    // 1. moves already made by pinned hardware must stay natural
-    let mut natural = vec![false; moves.len()];
-    for _ in 0..=moves.len() {
-        let sc = scaffold_ctx(ctx, &moves, &natural);
-        match evaluate(&sc, base, s, false) {
-            Ok(_) => break,
-            Err(e) => {
-                let hard = e.msg.contains("prescribed move") || e.msg.contains("moved more than once") || e.msg.contains("prescribed closures");
-                if !hard {
-                    break;
-                }
-                match blamed_move(ctx, &moves, &natural, &e.msg) {
-                    Some(k) => natural[k] = true,
-                    None => break,
-                }
-            }
-        }
-    }
+    let natural = detect_natural(ctx, &moves, base, s);
     let pinned_nat = natural.clone();
+    let bodies = port_bodies(ctx, base);
     let todo: Vec<usize> = (0..moves.len()).filter(|&k| !natural[k]).collect();
     log.push(format!("decompose: {} moves, {} made by pinned hardware, {} to solve", moves.len(), moves.len() - todo.len(), todo.len()));
     // 2. per-move actor search
@@ -686,23 +759,49 @@ pub fn decompose(ctx: &Ctx, base: &Cells, lo: Coord, hi: Coord, threads: usize, 
         nat[k] = true;
         let sc = scaffold_ctx(ctx, &moves, &nat);
         let body = body_cells(base, ctx.ports[pi].at);
-        let mut acts = actor_candidates(base, &body, lo, hi);
-        acts.insert(0, (vec![], "no actor".into()));
-        let cells: Vec<Cells> = acts.iter().map(|(a, _)| {
-            let mut c = base.clone();
-            for &(p, v) in a {
-                c.insert(p, v);
-            }
-            c
-        }).collect();
-        let r1 = par_eval(&sc, &cells, s, threads, deadline);
+        // timing-derived actors first (pusher/sticky on a carrier that is still, with optional power), then the
+        // generic near-body candidates
+        let mut acts: Vec<(Vec<(Coord, u16)>, String)> = vec![(vec![], "no actor".into())];
+        if let Some(bi) = bodies.iter().position(|b| b.cells.first() == body.first()) {
+            acts.extend(timed_actors(&bodies, base, bi, slot, true));
+        }
+        let n_timed = acts.len() - 1;
         let sc2 = scaffold_ctx_o(ctx, &moves, &nat, PrescribedOrder::AfterNatural);
-        let r2 = par_eval(&sc2, &cells, s, threads, deadline);
-        let r: Vec<(f64, bool, f64)> = r1.into_iter().zip(r2).map(|(a, b)| if a.0 <= b.0 { a } else { b }).collect();
-        let mut scored: Vec<(f64, bool, Vec<(Coord, u16)>, String)> = r.into_iter().zip(acts).map(|((c, ok, _), (a, d))| (c, ok, a, d)).collect();
+        // each remaining move gets a fair share of the remaining stage time
+        let left = todo.iter().filter(|&&j| j >= k).count().max(1) as u32;
+        let move_deadline = Instant::now() + deadline.saturating_duration_since(Instant::now()) / (left + 1);
+        let eval_set = |acts: &[(Vec<(Coord, u16)>, String)]| -> Vec<(f64, bool, Vec<(Coord, u16)>, String)> {
+            let cells: Vec<Cells> = acts.iter().map(|(a, _)| {
+                let mut c = base.clone();
+                for &(p, v) in a {
+                    c.insert(p, v);
+                }
+                c
+            }).collect();
+            let mut r = par_eval(&sc, &cells, s, threads, move_deadline);
+            // second (after_natural) look only for the better half of the before-order failures
+            let mut fails: Vec<usize> = (0..r.len()).filter(|&i| !r[i].1 && r[i].0.is_finite()).collect();
+            fails.sort_by(|&a, &b| r[a].0.partial_cmp(&r[b].0).unwrap());
+            fails.truncate((fails.len() + 1) / 2);
+            let sub: Vec<Cells> = fails.iter().map(|&i| cells[i].clone()).collect();
+            let r2 = par_eval(&sc2, &sub, s, threads, move_deadline);
+            for (j, &i) in fails.iter().enumerate() {
+                if r2[j].0 < r[i].0 {
+                    r[i] = r2[j];
+                }
+            }
+            r.into_iter().zip(acts.iter().cloned()).map(|((c, ok, _), (a, d))| (c, ok, a, d)).collect()
+        };
+        let mut scored = eval_set(&acts);
+        if !scored.iter().any(|x| x.1) {
+            let mut gen = actor_candidates(base, &body, lo, hi);
+            gen.truncate(900);
+            scored.extend(eval_set(&gen));
+        }
+        acts.clear();
         scored.sort_by(|a, b| a.0.partial_cmp(&b.0).unwrap());
         let npass = scored.iter().filter(|x| x.1).count();
-        log.push(format!("  move {} slot {slot}: {} actors tried, {npass} pass; best {}", ctx.ports[pi].name, scored.len(), scored.first().map_or(String::new(), |x| x.3.clone())));
+        log.push(format!("  move {} slot {slot}: {} actors tried ({n_timed} timed), {npass} pass; best {}", ctx.ports[pi].name, scored.len(), scored.first().map_or(String::new(), |x| x.3.clone())));
         scored.truncate(8);
         options.push((k, scored));
     }
@@ -711,7 +810,7 @@ pub fn decompose(ctx: &Ctx, base: &Cells, lo: Coord, hi: Coord, threads: usize, 
     let mut out: Vec<(Cells, String)> = vec![];
     let mut best_partial: (usize, Cells, String) = (0, base.clone(), String::new());
     fn dfs(ctx: &Ctx, moves: &[Move], options: &[(usize, Vec<(f64, bool, Vec<(Coord, u16)>, String)>)], depth: usize, cells: &Cells, nat: &mut Vec<bool>,
-           desc: String, s: Sample, deadline: Instant, out: &mut Vec<(Cells, String)>, best_partial: &mut (usize, Cells, String), nodes: &mut usize) {
+           desc: String, s: Sample, deadline: Instant, out: &mut Vec<(Cells, String)>, best_partial: &mut (usize, Cells, String), nodes: &mut usize, soft_left: usize) {
         if Instant::now() >= deadline || out.len() >= 6 || *nodes > 4000 {
             return;
         }
@@ -725,6 +824,7 @@ pub fn decompose(ctx: &Ctx, base: &Cells, lo: Coord, hi: Coord, threads: usize, 
         let (k, opts) = &options[depth];
         let any_pass = opts.iter().any(|o| o.1);
         let mut tried = 0;
+        let mut any_child = false;
         for (_, ok, actor, d) in opts {
             if any_pass && !ok {
                 continue;
@@ -745,17 +845,229 @@ pub fn decompose(ctx: &Ctx, base: &Cells, lo: Coord, hi: Coord, threads: usize, 
             *nodes += 1;
             let pass = scaffold_ok(ctx, moves, nat, &c, s);
             if pass || !any_pass {
-                dfs(ctx, moves, options, depth + 1, &c, nat, format!("{desc} | {d}"), s, deadline, out, best_partial, nodes);
+                any_child = true;
+                dfs(ctx, moves, options, depth + 1, &c, nat, format!("{desc} | {d}"), s, deadline, out, best_partial, nodes, soft_left);
             }
             nat[*k] = false;
+        }
+        // nothing passed in combination: accept the best option anyway (bounded), the natural check decides
+        if !any_child && soft_left > 0 && out.is_empty() {
+            if let Some((_, _, actor, d)) = opts.iter().find(|o| !o.2.iter().any(|(p, v)| cells.get(p).map_or(false, |x| x != v))) {
+                let mut c = cells.clone();
+                for &(p, v) in actor {
+                    c.insert(p, v);
+                }
+                nat[*k] = true;
+                dfs(ctx, moves, options, depth + 1, &c, nat, format!("{desc} | {d}(soft)"), s, deadline, out, best_partial, nodes, soft_left - 1);
+                nat[*k] = false;
+            }
         }
     }
     let mut nat = pinned_nat.clone();
     let mut nodes = 0;
-    dfs(ctx, &moves, &options, 0, base, &mut nat, "decompose".into(), s, deadline, &mut out, &mut best_partial, &mut nodes);
+    dfs(ctx, &moves, &options, 0, base, &mut nat, "decompose".into(), s, deadline, &mut out, &mut best_partial, &mut nodes, 3);
     log.push(format!("decompose: {} complete combinations, deepest {} of {}, {} nodes", out.len(), best_partial.0, options.len(), nodes));
     if out.is_empty() && best_partial.0 > 0 {
         out.push((best_partial.1, format!("{} (partial)", best_partial.2)));
     }
     Decomp { cands: out, log }
+}
+
+// ---------------------------------------------------------------- timing-aware actors (pistons + power)
+/// A port body: its cells (t0), word, and x-shift before each slot.
+pub struct BodyT {
+    pub port: usize,
+    pub cells: Vec<Coord>,
+    pub word: Vec<bool>,
+    pub shift: Vec<i64>, // shift[k] = moves before slot k (k = 0..=slots)
+}
+
+pub fn port_bodies(ctx: &Ctx, base: &Cells) -> Vec<BodyT> {
+    let mut out: Vec<BodyT> = vec![];
+    for (pi, p) in ctx.ports.iter().enumerate() {
+        let cells = body_cells(base, p.at);
+        if out.iter().any(|b| b.cells.first() == cells.first()) {
+            continue;
+        }
+        let mut shift = vec![0i64];
+        for &m in &p.word {
+            shift.push(shift.last().unwrap() + m as i64);
+        }
+        out.push(BodyT { port: pi, cells, word: p.word.clone(), shift });
+    }
+    out
+}
+
+fn adj6(a: Coord, b: Coord) -> bool {
+    (a.x - b.x).abs() + (a.y - b.y).abs() + (a.z - b.z).abs() == 1
+}
+
+/// Power sources for a piston at `q` (t0 frame, on carrier `c`, facing `dir`) that must be powered at slot `k` and
+/// switch off one slot later. Timing rule: the powering body must move during slot k (so its offset to the carrier
+/// changes and the power goes away), e.g. the pushed body itself ("self-resetting push").
+/// Kinds: a redstone block stuck to body d beside the piston, or a rod on body d hard-powering a glue cell that
+/// touches the piston at slot k (not the piston's front cell).
+fn power_options(bodies: &[BodyT], base: &Cells, c: usize, q: Coord, dir: usize, k: usize, avoid: &[Coord]) -> Vec<Vec<(Coord, u16)>> {
+    let s = bodies[0].word.len();
+    let mut out = vec![];
+    let rb = Block::plain(fastflyer::Kind::RedstoneBlock, false).unwrap().cell();
+    let qk = Coord::new(q.x + bodies[c].shift[k % s], q.y, q.z);
+    let front_k = nbr(qk, DIRS[dir]);
+    let at_k = |bi: usize, p: Coord| Coord::new(p.x + bodies[bi].shift[k % s], p.y, p.z);
+    // observers: a body that moved in slot k-1 pulses once at slot k (moved-observer pulse, consumed by the next
+    // power stage). The observer may face a glue cell touching the piston at slot k, or the piston itself.
+    // Allowed on the carrier too (a pulse switches itself off).
+    let km1 = (k + s - 1) % s;
+    for (di, d) in bodies.iter().enumerate() {
+        if !d.word[km1] {
+            continue;
+        }
+        let stuck = |r: Coord| d.cells.iter().any(|g| adj6(*g, r));
+        let mut targets: Vec<Coord> = vec![qk];
+        for (ei, e) in bodies.iter().enumerate() {
+            for g in &e.cells {
+                let gk = at_k(ei, *g);
+                if adj6(gk, qk) && gk != front_k {
+                    targets.push(gk);
+                }
+            }
+        }
+        for t_k in targets {
+            for (od, dv) in DIRS.iter().enumerate() {
+                let r_k = Coord::new(t_k.x - dv.0, t_k.y - dv.1, t_k.z - dv.2);
+                if r_k == qk {
+                    continue;
+                }
+                let r = Coord::new(r_k.x - d.shift[k % s], r_k.y, r_k.z);
+                if base.contains_key(&r) || avoid.contains(&r) || !stuck(r) {
+                    continue;
+                }
+                out.push(vec![(r, Block::observer(od as u8, false, false).unwrap().cell())]);
+            }
+        }
+    }
+    for (di, d) in bodies.iter().enumerate() {
+        if di == c || !d.word[k % s] {
+            continue; // on the carrier it would power permanently; a still body would not switch it off
+        }
+        let stuck = |r: Coord| d.cells.iter().any(|g| adj6(*g, r));
+        // redstone block beside the piston at slot k
+        for nd in DIRS {
+            let pos_k = nbr(qk, nd);
+            if pos_k == front_k {
+                continue;
+            }
+            let r = Coord::new(pos_k.x - d.shift[k % s], pos_k.y, pos_k.z);
+            if !base.contains_key(&r) && !avoid.contains(&r) && stuck(r) {
+                out.push(vec![(r, rb)]);
+            }
+        }
+        // rod on d facing a glue cell (any body) that touches the piston at slot k
+        for (ei, e) in bodies.iter().enumerate() {
+            for g in &e.cells {
+                let gk = at_k(ei, *g);
+                if !adj6(gk, qk) || gk == front_k {
+                    continue;
+                }
+                for (rd, dv) in DIRS.iter().enumerate() {
+                    let r_k = Coord::new(gk.x - dv.0, gk.y - dv.1, gk.z - dv.2);
+                    let r = Coord::new(r_k.x - d.shift[k % s], r_k.y, r_k.z);
+                    if base.contains_key(&r) || avoid.contains(&r) || !stuck(r) || r_k == qk {
+                        continue;
+                    }
+                    out.push(vec![(r, Block::rod(rd as u8, false).unwrap().cell())]);
+                }
+            }
+        }
+    }
+    out
+}
+
+/// Timing-derived actor candidates for move (body index `bi`, slot `k`). Each candidate is a list of cells.
+pub fn timed_actors(bodies: &[BodyT], base: &Cells, bi: usize, k: usize, with_power: bool) -> Vec<(Vec<(Coord, u16)>, String)> {
+    let s = bodies[bi].word.len();
+    let b = &bodies[bi];
+    let pusher = Block::piston(0, false, false, 0, false).unwrap().cell();
+    let sticky = Block::piston(1, true, false, 0, false).unwrap().cell();
+    let mut out = vec![];
+    let mut keys = HashSet::new();
+    for (ci, c) in bodies.iter().enumerate() {
+        if ci == bi {
+            continue;
+        }
+        // rigid pusher: carrier still at k and k+1; front cell = a cell of B at slot k
+        if !c.word[k % s] && !c.word[(k + 1) % s] {
+            for g in &b.cells {
+                let front_k = Coord::new(g.x + b.shift[k], g.y, g.z);
+                let q = Coord::new(front_k.x - 1 - c.shift[k], front_k.y, front_k.z);
+                if base.contains_key(&q) || !c.cells.iter().any(|x| adj6(*x, q) && *x != nbr(q, DIRS[0])) {
+                    continue;
+                }
+                let mut opts: Vec<Vec<(Coord, u16)>> = vec![vec![(q, pusher)]];
+                if with_power {
+                    for pw in power_options(bodies, base, ci, q, 0, k, &[q]) {
+                        let mut o = vec![(q, pusher)];
+                        o.extend(pw);
+                        opts.push(o);
+                    }
+                }
+                for o in opts {
+                    let mut key = o.clone();
+                    key.sort();
+                    if keys.insert(key) {
+                        let d = format!("push b{}@{} by b{} {}", bi, k, ci, if o.len() > 1 { "+power" } else { "" });
+                        out.push((o, d));
+                    }
+                }
+            }
+        }
+        // rigid sticky pull at k: extends at k-1 (carrier still at k-1, k), arm cell ahead of B at k-1 free,
+        // pulls B's cell two ahead of the base at k
+        let km1 = (k + s - 1) % s;
+        if !c.word[km1] && !c.word[k % s] {
+            for g in &b.cells {
+                let gk = Coord::new(g.x + b.shift[k], g.y, g.z); // B position at slot k (before its move)
+                let q_k = Coord::new(gk.x + 2, gk.y, gk.z);
+                let q = Coord::new(q_k.x - c.shift[k], q_k.y, q_k.z);
+                let gap0 = Coord::new(g.x + 1, g.y, g.z);
+                if base.contains_key(&q) || !c.cells.iter().any(|x| adj6(*x, q) && *x != nbr(q, DIRS[1])) {
+                    continue;
+                }
+                if b.cells.contains(&gap0) {
+                    continue;
+                }
+                let mut opts: Vec<Vec<(Coord, u16)>> = vec![vec![(q, sticky)]];
+                if with_power {
+                    for pw in power_options(bodies, base, ci, q, 1, km1, &[q]) {
+                        let mut o = vec![(q, sticky)];
+                        o.extend(pw);
+                        opts.push(o);
+                    }
+                }
+                for o in opts {
+                    let mut key = o.clone();
+                    key.sort();
+                    if keys.insert(key) {
+                        let d = format!("pull b{}@{} by b{} {}", bi, k, ci, if o.len() > 1 { "+power" } else { "" });
+                        out.push((o, d));
+                    }
+                }
+            }
+        }
+    }
+    out
+}
+
+/// The problem's own pistons as a library entry ("self"): pinned = every non-piston cell, hardware = pistons/arms.
+pub fn self_entry(base: &Cells) -> Option<LibEntry> {
+    let (mut pinned, mut hw) = (vec![], vec![]);
+    for (&p, &c) in base {
+        let c = c & !16;
+        if c & 15 == 9 || c & 15 == 10 {
+            hw.push((p, c));
+        } else {
+            pinned.push((p, c));
+        }
+    }
+    (!hw.is_empty()).then(|| LibEntry { id: "self".into(), pinned, hw })
 }

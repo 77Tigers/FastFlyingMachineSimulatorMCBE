@@ -1,0 +1,1 @@
+{"version":1,"name":"human_observer_hop-reference","flyer":"reference.flyer","period_ticks":4,"advance":1,"cycles":3,"recurrence":"bounded","boundary_envelope":{"min":[7,-3,-2],"max":[16,5,6]},"ports":[{"name":"body0","role":"output","at":[10,2,3],"word":"mw"},{"name":"body1","role":"output","at":[11,0,2],"word":"wm"}],"required_cells":[]}

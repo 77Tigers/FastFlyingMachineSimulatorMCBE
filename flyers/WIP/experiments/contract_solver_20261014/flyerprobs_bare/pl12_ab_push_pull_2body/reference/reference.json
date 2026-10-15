@@ -1,0 +1,1 @@
+{"version":1,"name":"ab_push_pull_2body-reference","flyer":"reference.flyer","period_ticks":4,"advance":1,"cycles":3,"recurrence":"bounded","boundary_envelope":{"min":[7,-3,-1],"max":[17,5,7]},"ports":[{"name":"body0","role":"output","at":[10,1,2],"word":"wm"},{"name":"body1","role":"output","at":[11,2,2],"word":"mw"}],"required_cells":[]}

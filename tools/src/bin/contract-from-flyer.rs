@@ -1,6 +1,6 @@
 // Turn a working flyer into contract-solve problems ("strip pistons, keep the skeleton").
 //
-// usage: contract-from-flyer FLYER OUT_DIR --speed BPS [--t0 100] [--mode all|near|both] [--max-bodies N]
+// usage: contract-from-flyer FLYER OUT_DIR --speed BPS [--t0 100] [--mode all|near|bare|both] [--max-bodies N]
 //        contract-from-flyer FLYER OUT_DIR --period P --advance A [...]
 //
 // The flyer is warmed up for t0 ticks (natural), then its true identity period is detected (every permanent
@@ -9,6 +9,7 @@
 // Problems written (each in OUT_DIR/<name>/ with problem.json, problem.flyer, problem_meta.json):
 //   all        every piston (and arm) removed: re-place all pistons of the flyer
 //   near_<k>   only the pistons touching body k (6-neighbours at the snapshot) removed
+//   bare       pistons and all power sources removed (glue skeleton only)
 // Every remaining cell is a required cell; recurrence is `advance` (or `bounded`, bbox +- 3, when pistons swap roles); there is no prescribed script, so the
 // problem is a plain natural contract (it must fly by itself). The reference (unstripped) snapshot is saved as
 // reference.flyer with reference.json, a contract that it passes by construction (checked here).
@@ -129,7 +130,7 @@ fn main() {
 
 fn run() -> Result<(), String> {
     let a: Vec<String> = std::env::args().skip(1).collect();
-    let usage = "usage: contract-from-flyer FLYER OUT_DIR (--speed BPS | --period P --advance A) [--t0 100] [--mode all|near|both] [--max-bodies N]";
+    let usage = "usage: contract-from-flyer FLYER OUT_DIR (--speed BPS | --period P --advance A) [--t0 100] [--mode all|near|bare|both] [--max-bodies N]";
     let mut pos = vec![];
     let (mut speed, mut period, mut advance, mut t0, mut mode, mut max_bodies) = (None::<f64>, None::<usize>, None::<i64>, 100usize, "both".to_string(), 8usize);
     let mut i = 0;
@@ -228,6 +229,10 @@ fn run() -> Result<(), String> {
     let mut problems: Vec<(String, BTreeSet<Coord>)> = vec![];
     if mode == "all" || mode == "both" {
         problems.push(("all".into(), cells.iter().filter(|(_, &c)| is_piston_or_arm(c)).map(|(q, _)| *q).collect()));
+    }
+    if mode == "bare" || mode == "both" {
+        // pistons, arms and every power source (redstone block, observer, rod) removed: glue skeleton only
+        problems.push(("bare".into(), cells.iter().filter(|(_, &c)| is_piston_or_arm(c) || matches!(c & 15, 6 | 7 | 8)).map(|(q, _)| *q).collect()));
     }
     if mode == "near" || mode == "both" {
         for (k, (comp, _)) in bodies.iter().enumerate().take(max_bodies) {

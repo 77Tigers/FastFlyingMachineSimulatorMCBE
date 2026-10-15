@@ -81,6 +81,7 @@ def main() -> int:
     ap.add_argument("--extra", nargs="*", default=[])
     ap.add_argument("--lookup", action="store_true", help="allow exact lookup (default: holdout)")
     ap.add_argument("--only", default="", help="regex filter on extra problem paths")
+    ap.add_argument("--flyer-library", action="store_true", help="also transplant from flyerprobs references (own source excluded)")
     ap.add_argument("--pycheck", type=int, default=0)
     a = ap.parse_args()
     idx = {e["id"]: e for e in json.loads((ROOT / "flyers/extension_bank/index.json").read_text())["entries"]}
@@ -107,6 +108,10 @@ def main() -> int:
     for pid, prob, ref, key in jobs:
         out = run_dir / pid.replace("/", "__")
         cmd = [str(SOLVER), str(prob), str(out), "--budget", str(a.budget), "--quiet"] + ([] if a.lookup else ["--holdout"])
+        if a.flyer_library:
+            cmd += ["--library-dir", str(HERE / "flyerprobs")]
+            if "/" in pid:  # flyer-derived problem: exclude its own source flyer
+                cmd += ["--exclude-source", "ref:" + pid.split("/")[0]]
         t = time.time()
         r = subprocess.run(cmd, capture_output=True, text=True, cwd=ROOT)
         wall = time.time() - t

@@ -40,6 +40,47 @@ fn main() {
             Err(e) => println!("{label:30} {}", e.msg.chars().take(150).collect::<String>()),
         }
     };
+    let det = detect_natural(&ctx, &moves, &ctx.base_cells, s);
+    println!("detected on bare problem: supplied moves {:?}", (0..moves.len()).filter(|&k| !det[k]).collect::<Vec<_>>());
+    for k in (0..moves.len()).filter(|&k| !det[k]) {
+        let mut n = det.clone();
+        n[k] = true;
+        for o in [PrescribedOrder::BeforeNatural, PrescribedOrder::AfterNatural] {
+            let sc = scaffold_ctx_o(&ctx, &moves, &n, o);
+            match evaluate(&sc, &cells, s, false) {
+                Ok(_) => println!("  reference, move {k} natural ({o:?}): PASS"),
+                Err(e) => println!("  reference, move {k} natural ({o:?}): {}", e.msg.chars().take(140).collect::<String>()),
+            }
+        }
+    }
+    // single reference pieces (piston + arm) against single supplied moves
+    let base = ctx.base_cells.clone();
+    let mut groups: Vec<Vec<(Coord, u16)>> = vec![];
+    for (&p, &c) in cells.iter() {
+        if c & 15 == 9 && !base.contains_key(&p) {
+            let mut g = vec![(p, c)];
+            if let Some(a) = arm_of(&cells, p, c) {
+                g.push((a, ARM));
+            }
+            groups.push(g);
+        }
+    }
+    for g in &groups {
+        let mut c = base.clone();
+        for &(p, v) in g {
+            c.insert(p, v);
+        }
+        for k in (0..moves.len()).filter(|&k| !det[k]) {
+            let mut n = det.clone();
+            n[k] = true;
+            let mut res = vec![];
+            for o in [PrescribedOrder::BeforeNatural, PrescribedOrder::AfterNatural] {
+                let sc = scaffold_ctx_o(&ctx, &moves, &n, o);
+                res.push(match evaluate(&sc, &c, s, false) { Ok(_) => "PASS".to_string(), Err(e) => e.msg.split("] ").nth(1).unwrap_or("").chars().take(70).collect() });
+            }
+            println!("  piece {} ({},{},{}) move {k}: {} || {}", cell_desc(g[0].1), g[0].0.x, g[0].0.y, g[0].0.z, res[0], res[1]);
+        }
+    }
     show("all supplied".into(), &vec![false; moves.len()]);
     show("all natural".into(), &vec![true; moves.len()]);
     for k in 0..moves.len() {

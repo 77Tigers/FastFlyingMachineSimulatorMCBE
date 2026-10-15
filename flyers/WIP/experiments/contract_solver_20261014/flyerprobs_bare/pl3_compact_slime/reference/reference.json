@@ -1,0 +1,1 @@
+{"version":1,"name":"compact_slime-reference","flyer":"reference.flyer","period_ticks":6,"advance":1,"cycles":3,"recurrence":"advance","ports":[{"name":"body0","role":"output","at":[0,0,1],"word":"mww"},{"name":"body1","role":"output","at":[2,0,0],"word":"wmw"}],"required_cells":[]}
