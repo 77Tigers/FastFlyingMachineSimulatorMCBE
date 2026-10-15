@@ -34,6 +34,8 @@ def main():
     ap.add_argument("--workers", type=int, default=8)
     ap.add_argument("--maxglue", type=int, default=6)
     ap.add_argument("--obj", default="maxload")
+    ap.add_argument("--rider-fires", default="", help="comma list of fire slots; each adds a lone-piston rider whose "
+                    "word is every slot except f, f+1 (it is carried by the moving bodies the rest of the time)")
     a = ap.parse_args()
     if a.problem:
         c = json.loads(a.problem.read_text())
@@ -42,11 +44,17 @@ def main():
         words_s = a.words.split(",")
     NS = len(words_s[0])
     words = [tuple(i for i, ch in enumerate(w) if ch == "m") for w in words_s]
+    nb = len(words)
+    for f in (int(x) for x in a.rider_fires.split(",") if x):
+        words.append(tuple(s for s in range(NS) if s not in (f % NS, (f + 1) % NS)))
+    riders = list(range(nb, len(words)))
+    names = [f"s{i}" for i in range(nb)] + [f"r{i}" for i in range(len(riders))]
     box = list(itertools.product(*[rng(r) for r in a.box.split(",")]))
     kinds = ["g", "R"] + [f"D{q}" for q in range(6)] + [f"O{q}" for q in range(6)]
     t = time.time()
     try:
-        S = FlyerSAT(words, box, a.L, NS=NS, kinds=kinds, leaf=True, maxglue=a.maxglue, anchor=(0, 0, 0))
+        S = FlyerSAT(words, box, a.L, NS=NS, kinds=kinds, leaf=True, maxglue=a.maxglue, anchor=(0, 0, 0),
+                     riders=riders, names=names)
     except Infeasible as e:
         print("trivially infeasible:", e)
         return 1
@@ -57,6 +65,7 @@ def main():
     sol = S.extract()
     ml = max(S.loads().values())
     print(show(sol))
+    print("causes:", " ".join(f"{t}:{a}<-{k}({b})" for t, a, k, b, _ in S.causes()))
     a.out.mkdir(parents=True, exist_ok=True)
     f = to_flyer(sol, max(ml, 1), NS)
     f.save(a.out / "design.flyer")

@@ -43,6 +43,8 @@ __pycache__/
 # Per-sample before/after results for the generated n3 candidates (verdicts are in
 # each NOTES.md and flyers/WIP/experiments/pl11_3bps_*/catalogue.json).
 /flyers/extension_bank/n3/*/samples_*_natural.json
+# 2026-10-15: no per-sample dumps in the bank at all (verdicts are in index.json orders_80_samples).
+/flyers/extension_bank/**/samples_*.json
 *.out
 *.err
 /tools/target/
