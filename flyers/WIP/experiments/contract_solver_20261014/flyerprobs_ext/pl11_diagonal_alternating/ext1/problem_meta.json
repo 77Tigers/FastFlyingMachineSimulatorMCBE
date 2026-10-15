@@ -1,1 +1,1 @@
-{"source":"flyers/bank/pl11/diagonal_alternating.flyer","t0":100,"period":4,"advance":1,"kind":"ext","target_body":1,"reference_load":null,"reference_pass":null,"reference_orders":"BeforeNatural"}
+{"source":"flyers/bank/pl11/diagonal_alternating.flyer","t0":100,"period":4,"advance":1,"kind":"ext","target_body":1,"reference_load":8,"reference_pass":true,"reference_orders":"BeforeNatural,AfterNatural,Interleaved"}

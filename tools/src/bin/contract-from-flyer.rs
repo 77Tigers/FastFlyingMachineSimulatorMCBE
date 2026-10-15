@@ -325,7 +325,14 @@ fn run() -> Result<(), String> {
         let mut snaps = vec![];
         let mut alog: ActorLog = vec![];
         let ids0: Vec<Coord> = g.blocks().into_iter().filter(|(_, b)| b.kind() != Kind::PistonArm).map(|(q, _)| q).collect();
-        track_log(&mut g, t0, p, p, &mut snaps, &mut alog)?;
+        track_log(&mut g, t0, 3 * p, p, &mut snaps, &mut alog)?;
+        // slots are taken modulo the period (hopping hardware may have a longer cycle than the glue)
+        for e in alog.iter_mut() {
+            e.0 %= p;
+        }
+        // a pull cannot be replaced by a supplied stroke (a stroke pushes; the puller's arm would block it):
+        // actors that are sticky pistons stay as real hardware and the moves they make stay natural
+        let is_sticky = |id: usize| cells.get(&ids0[id]).map_or(false, |&c| c & 15 == 9 && c & 0x100 != 0);
         let actors_of = |comp: &Vec<Coord>| -> BTreeSet<Coord> {
             let ids: BTreeSet<usize> = comp.iter().filter_map(|q| ids0.iter().position(|o| o == q)).collect();
             alog.iter().filter(|(_, moved, _)| moved.iter().any(|m| ids.contains(m))).filter_map(|(_, _, a)| a.map(|a| ids0[a])).collect()
@@ -346,7 +353,7 @@ fn run() -> Result<(), String> {
             let mut others = BTreeSet::new();
             for (j, (cj, _)) in bodies.iter().enumerate() {
                 if j != k {
-                    others.extend(actors_of(cj));
+                    others.extend(actors_of(cj).into_iter().filter(|q| !ids0.iter().position(|o| o == q).map_or(false, |id| is_sticky(id))));
                 }
             }
             let all_p: BTreeSet<Coord> = mine.union(&with_arms(&others)).copied().collect();
@@ -360,6 +367,21 @@ fn run() -> Result<(), String> {
                 jstr(n), if j == k { "\"output\"" } else { "\"input\"" }, sh(*at), jstr(w))).collect();
             let req_s: Vec<String> = kept.iter().map(|(q, c)| format!("{{\"at\":{},\"cell\":{}}}", sh(*q), c)).collect();
             let env_s = if rec == "bounded" { format!(",\"boundary_envelope\":{{\"min\":{},\"max\":{}}}", sh(env.0), sh(env.1)) } else { String::new() };
+            // merged moves: if one of body k's own actions also moves body j in slot s, j's move there is natural
+            let ids_of = |c: &Vec<Coord>| -> BTreeSet<usize> { c.iter().filter_map(|q| ids0.iter().position(|o| o == q)).collect() };
+            let ids_k = ids_of(comp);
+            let mut merged: BTreeSet<(usize, usize)> = BTreeSet::new();
+            // any action by one of body k's actors (or that moves k) makes the moves it causes natural
+            let my_actor_ids: BTreeSet<usize> = alog.iter().filter(|(_, moved, _)| moved.iter().any(|m| ids_k.contains(m))).filter_map(|(_, _, a)| *a).collect();
+            for (t, moved, actor) in &alog {
+                if moved.iter().any(|m| ids_k.contains(m)) || actor.map_or(false, |a| my_actor_ids.contains(&a) || is_sticky(a)) {
+                    for (j, (cj, _)) in bodies.iter().enumerate() {
+                        if j != k && moved.iter().any(|m| ids_of(cj).contains(m)) {
+                            merged.insert((j, t / 2));
+                        }
+                    }
+                }
+            }
             let mut script = String::new();
             for cyc in 0..3usize {
                 for (j, (_, at, w)) in ports.iter().enumerate() {
@@ -371,15 +393,21 @@ fn run() -> Result<(), String> {
                         if ch == 'm' {
                             let tick = cyc * p + 2 * sl;
                             let x = at.x + cyc as i64 * adv + before;
-                            script += &format!("{tick} {} {} {} {cap}
+                            if !merged.contains(&(j, sl)) {
+                                script += &format!("{tick} {} {} {} {cap}
 ", x + d.x, at.y + d.y, at.z + d.z);
+                            }
                             before += 1;
                         }
                     }
                 }
             }
-            fs::write(dir.join("drive.txt"), script).map_err(|e| e.to_string())?;
-            let cj = format!("{{\"version\":1,\"name\":{},\"flyer\":\"problem.flyer\",\"prescribed_script\":\"drive.txt\",\"prescribed_order\":\"before_natural\",\"period_ticks\":{p},\"advance\":{adv},\"cycles\":3,\"recurrence\":{}{},\"ports\":[{}],\"required_cells\":[{}]}}
+            // all moves natural (every other move is a pull or made by body k's actors): plain natural contract
+            let presc = if script.is_empty() { String::new() } else {
+                fs::write(dir.join("drive.txt"), &script).map_err(|e| e.to_string())?;
+                "\"prescribed_script\":\"drive.txt\",\"prescribed_order\":\"before_natural\",".to_string()
+            };
+            let cj = format!("{{\"version\":1,\"name\":{},\"flyer\":\"problem.flyer\",{presc}\"period_ticks\":{p},\"advance\":{adv},\"cycles\":3,\"recurrence\":{}{},\"ports\":[{}],\"required_cells\":[{}]}}
 ",
                 jstr(&format!("{stem}-{name}")), jstr(rec), env_s, ports_s.join(","), req_s.join(","));
             fs::write(dir.join("problem.json"), cj).map_err(|e| e.to_string())?;
@@ -394,9 +422,12 @@ fn run() -> Result<(), String> {
             let mut load = 0;
             for o in [fastflyer::PrescribedOrder::BeforeNatural, fastflyer::PrescribedOrder::AfterNatural, fastflyer::PrescribedOrder::Interleaved] {
                 ctx.orders = vec![o];
-                if let Ok(ev) = evaluate(&ctx, &cand, Sample { rng: ctx.rng, px: ctx.px, pz: ctx.pz }, false) {
-                    ok_orders.push(format!("{o:?}"));
-                    load = load.max(ev.max_load);
+                match evaluate(&ctx, &cand, Sample { rng: ctx.rng, px: ctx.px, pz: ctx.pz }, false) {
+                    Ok(ev) => {
+                        ok_orders.push(format!("{o:?}"));
+                        load = load.max(ev.max_load);
+                    }
+                    Err(e) => eprintln!("    {name} reference [{o:?}]: {}", e.msg.split("] ").nth(1).unwrap_or(&e.msg).chars().take(140).collect::<String>()),
                 }
             }
             let full = ok_orders.len() == 3;

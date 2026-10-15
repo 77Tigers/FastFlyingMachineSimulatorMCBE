@@ -730,6 +730,10 @@ pub fn par_eval(ctx: &Ctx, cands: &[Cells], s: Sample, threads: usize, deadline:
     v
 }
 
+thread_local! {
+    static FALLBACKS: std::cell::RefCell<Vec<(Cells, String)>> = std::cell::RefCell::new(vec![]);
+}
+
 pub struct Decomp {
     pub cands: Vec<(Cells, String)>,
     pub log: Vec<String>,
@@ -826,8 +830,15 @@ pub fn decompose(ctx: &Ctx, base: &Cells, lo: Coord, hi: Coord, threads: usize, 
             *nodes += 1;
             if evaluate(&real, cells, s, false).is_ok() {
                 out.push((cells.clone(), desc));
-            } else if best_partial.0 < depth + 1 {
-                *best_partial = (depth + 1, cells.clone(), format!("{desc} (complete, fails natural)"));
+            } else {
+                if best_partial.0 < depth + 1 {
+                    *best_partial = (depth + 1, cells.clone(), format!("{desc} (complete, fails natural)"));
+                }
+                // keep a few failing complete combinations: later stages (beam/anneal) often repair them
+                let fb = FALLBACKS.with(|f| f.borrow().len());
+                if fb < 4 {
+                    FALLBACKS.with(|f| f.borrow_mut().push((cells.clone(), format!("{desc} (fallback)"))));
+                }
             }
             return;
         }
@@ -874,10 +885,14 @@ pub fn decompose(ctx: &Ctx, base: &Cells, lo: Coord, hi: Coord, threads: usize, 
             }
         }
     }
+    FALLBACKS.with(|f| f.borrow_mut().clear());
     let mut nat = pinned_nat.clone();
     let mut nodes = 0;
     dfs(ctx, &moves, &options, 0, base, &mut nat, "decompose".into(), s, deadline, &mut out, &mut best_partial, &mut nodes, 3);
     log.push(format!("decompose: {} passing combinations, deepest {} of {}, {} nodes", out.len(), best_partial.0.min(options.len()), options.len(), nodes));
+    if out.is_empty() {
+        out.extend(FALLBACKS.with(|f| f.borrow_mut().drain(..).collect::<Vec<_>>()));
+    }
     if out.is_empty() && best_partial.0 > 0 {
         out.push((best_partial.1, format!("{} (partial)", best_partial.2)));
     }

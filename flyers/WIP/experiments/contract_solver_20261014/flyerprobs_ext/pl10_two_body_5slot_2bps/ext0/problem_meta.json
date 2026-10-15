@@ -1,1 +1,1 @@
-{"source":"flyers/bank/pl10/two_body_5slot_2bps.flyer","t0":100,"period":10,"advance":2,"kind":"ext","target_body":0,"reference_load":8,"reference_pass":true,"reference_orders":"BeforeNatural,AfterNatural,Interleaved"}
+{"source":"flyers/bank/pl10/two_body_5slot_2bps.flyer","t0":100,"period":10,"advance":2,"kind":"ext","target_body":0,"reference_load":10,"reference_pass":true,"reference_orders":"BeforeNatural,AfterNatural,Interleaved"}

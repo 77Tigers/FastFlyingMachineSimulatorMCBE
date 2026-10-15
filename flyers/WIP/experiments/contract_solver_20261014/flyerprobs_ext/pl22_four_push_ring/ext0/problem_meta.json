@@ -1,1 +1,1 @@
-{"source":"flyers/bank/pl22/four_push_ring.flyer","t0":100,"period":12,"advance":4,"kind":"ext","target_body":0,"reference_load":null,"reference_pass":null,"reference_orders":""}
+{"source":"flyers/bank/pl22/four_push_ring.flyer","t0":100,"period":12,"advance":4,"kind":"ext","target_body":0,"reference_load":21,"reference_pass":true,"reference_orders":"BeforeNatural,AfterNatural,Interleaved"}

@@ -1,1 +1,1 @@
-{"source":"flyers/bank/pl9/pulling_loop4.flyer","t0":100,"period":4,"advance":1,"kind":"ext","target_body":2,"reference_load":null,"reference_pass":null,"reference_orders":""}
+{"source":"flyers/bank/pl9/pulling_loop4.flyer","t0":100,"period":4,"advance":1,"kind":"ext","target_body":2,"reference_load":9,"reference_pass":true,"reference_orders":"BeforeNatural,AfterNatural,Interleaved"}
