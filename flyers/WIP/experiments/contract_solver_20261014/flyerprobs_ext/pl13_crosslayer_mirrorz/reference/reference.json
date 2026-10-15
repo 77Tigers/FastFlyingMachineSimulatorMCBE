@@ -1,0 +1,1 @@
+{"version":1,"name":"crosslayer_mirrorz-reference","flyer":"reference.flyer","period_ticks":8,"advance":2,"cycles":3,"recurrence":"advance","ports":[{"name":"body0","role":"output","at":[8,0,17],"word":"mmww"},{"name":"body1","role":"output","at":[8,1,15],"word":"wwmm"}],"required_cells":[]}

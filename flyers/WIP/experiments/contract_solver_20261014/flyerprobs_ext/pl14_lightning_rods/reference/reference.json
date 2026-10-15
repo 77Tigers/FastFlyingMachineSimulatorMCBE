@@ -1,0 +1,1 @@
+{"version":1,"name":"lightning_rods-reference","flyer":"reference.flyer","period_ticks":8,"advance":2,"cycles":3,"recurrence":"bounded","boundary_envelope":{"min":[5,-3,11],"max":[14,5,21]},"ports":[{"name":"body0","role":"output","at":[8,2,14],"word":"wwmm"},{"name":"body1","role":"output","at":[8,1,16],"word":"mmww"}],"required_cells":[]}

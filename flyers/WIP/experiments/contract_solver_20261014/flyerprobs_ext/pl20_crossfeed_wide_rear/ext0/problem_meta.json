@@ -1,0 +1,1 @@
+{"source":"flyers/bank/pl20/crossfeed_wide_rear.flyer","t0":100,"period":8,"advance":2,"kind":"ext","target_body":0,"reference_load":19,"reference_pass":true,"reference_orders":"BeforeNatural,AfterNatural,Interleaved"}

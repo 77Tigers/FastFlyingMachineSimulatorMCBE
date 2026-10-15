@@ -1,0 +1,1 @@
+{"version":1,"name":"crossfeed_honey_front-reference","flyer":"reference.flyer","period_ticks":8,"advance":2,"cycles":3,"recurrence":"advance","ports":[{"name":"body0","role":"output","at":[8,3,14],"word":"wwmm"},{"name":"body1","role":"output","at":[8,2,16],"word":"mmww"}],"required_cells":[]}

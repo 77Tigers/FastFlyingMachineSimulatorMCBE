@@ -58,6 +58,19 @@ should fall back to the identity period when the bounded reference fails).
   single pushers cannot be judged with the neighbouring strokes supplied. Library transplants from other N4
   flyers (`--library-dir flyerprobs`, own source excluded) are the current attempt.
 * Bodies-from-pistons level 1 (`contract-from-flyer --mode bare`: pistons AND power removed): 0/9 so far.
+  Power proposals now include redstone blocks, rods (hard-powering a glue cell beside the piston) and observers
+  (moved-observer pulse one slot after their body moves), with the switch-off timing rule.
+* **Extension contracts from real flyers** (`contract-from-flyer --mode ext`, -> `flyerprobs_ext/`): body k
+  natural (output), every other body driven by supplied strokes (input, cap = PL). Each body move is attributed
+  to the piston that made it (trace `active_piston`); actors of all moves are stripped, passive hardware stays;
+  reference = problem + body k's actors. 110 contracts from 42 flyers; 57 have a reference passing all three
+  orders (N2 mostly, 2 four_push_ring N4); no mmwmmw reference passes (its moves are pulls: a supplied stroke
+  is not a pull).
+* Natural contracts (no supplied strokes): the three orders are the same simulation (interleaved draws from its
+  own RNG stream and inserts nothing), so the solver verifies one order and reports `orders_equivalent`.
+* Self-transplant: the problem's own pistons are a library entry (non-identity symmetries/translations), for
+  repeated structure (chains, mirrored arms, rings).
+* Benchmark noise: never run other solver jobs during a bench run (CPU contention changes wall-clock results).
 
 ## Lessons (search)
 

@@ -1,0 +1,1 @@
+{"version":1,"name":"crosslayer_upright-reference","flyer":"reference.flyer","period_ticks":8,"advance":2,"cycles":3,"recurrence":"bounded","boundary_envelope":{"min":[5,-3,-3],"max":[14,6,6]},"ports":[{"name":"body0","role":"output","at":[8,0,0],"word":"mmww"},{"name":"body1","role":"output","at":[8,0,1],"word":"wwmm"}],"required_cells":[]}

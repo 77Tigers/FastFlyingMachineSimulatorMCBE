@@ -1,0 +1,1 @@
+{"version":1,"name":"upright-reference","flyer":"reference.flyer","period_ticks":8,"advance":2,"cycles":3,"recurrence":"bounded","boundary_envelope":{"min":[5,-3,-3],"max":[14,7,5]},"ports":[{"name":"body0","role":"output","at":[8,0,2],"word":"wwmm"},{"name":"body1","role":"output","at":[8,2,1],"word":"mmww"}],"required_cells":[]}

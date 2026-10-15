@@ -1,6 +1,6 @@
 // Turn a working flyer into contract-solve problems ("strip pistons, keep the skeleton").
 //
-// usage: contract-from-flyer FLYER OUT_DIR --speed BPS [--t0 100] [--mode all|near|bare|both] [--max-bodies N]
+// usage: contract-from-flyer FLYER OUT_DIR --speed BPS [--t0 100] [--mode all|near|bare|both|ext] [--max-bodies N]
 //        contract-from-flyer FLYER OUT_DIR --period P --advance A [...]
 //
 // The flyer is warmed up for t0 ticks (natural), then its true identity period is detected (every permanent
@@ -10,6 +10,8 @@
 //   all        every piston (and arm) removed: re-place all pistons of the flyer
 //   near_<k>   only the pistons touching body k (6-neighbours at the snapshot) removed
 //   bare       pistons and all power sources removed (glue skeleton only)
+//   ext<k>     (--mode ext) extension contract: all pistons removed, body k natural (output), every other body
+//              driven by supplied strokes (input, cap = push limit)
 // Every remaining cell is a required cell; recurrence is `advance` (or `bounded`, bbox +- 3, when pistons swap roles); there is no prescribed script, so the
 // problem is a plain natural contract (it must fly by itself). The reference (unstripped) snapshot is saved as
 // reference.flyer with reference.json, a contract that it passes by construction (checked here).
@@ -36,7 +38,15 @@ fn snapshot(f: &Flyer) -> (Cells, BTreeMap<Coord, Vec<Coord>>) {
 
 // Run `ticks` natural ticks, following permanent identities; returns per-identity move ticks and final positions.
 // Positions are also snapshotted every `every` ticks (snaps[k] = positions after (k+1)*every ticks).
+/// Actor log: (tick offset, moved identities, actor identity) for every successful piston action.
+pub type ActorLog = Vec<(usize, Vec<usize>, Option<usize>)>;
+
 fn track(f: &mut Flyer, start_tick: usize, ticks: usize, every: usize, snaps: &mut Vec<Vec<Coord>>) -> Result<(Vec<Coord>, Vec<Vec<usize>>), String> {
+    let mut log = vec![];
+    track_log(f, start_tick, ticks, every, snaps, &mut log)
+}
+
+fn track_log(f: &mut Flyer, start_tick: usize, ticks: usize, every: usize, snaps: &mut Vec<Vec<Coord>>, log: &mut ActorLog) -> Result<(Vec<Coord>, Vec<Vec<usize>>), String> {
     let origins: Vec<Coord> = f.blocks().into_iter().filter(|(_, b)| b.kind() != Kind::PistonArm).map(|(p, _)| p).collect();
     let mut at: HashMap<Coord, usize> = origins.iter().enumerate().map(|(i, &p)| (p, i)).collect();
     let mut pos = origins.clone();
@@ -50,6 +60,8 @@ fn track(f: &mut Flyer, start_tick: usize, ticks: usize, every: usize, snaps: &m
                 continue;
             }
             let this: Vec<(usize, Coord)> = mv.sources.iter().zip(mv.destinations.iter()).filter_map(|(s, d)| at.get(s).map(|&id| (id, *d))).collect();
+            let actor = step.info.active_piston.and_then(|p| at.get(&p).copied());
+            log.push((t, this.iter().map(|x| x.0).collect(), actor));
             for &(id, _) in &this {
                 at.remove(&pos[id]);
             }
@@ -130,7 +142,7 @@ fn main() {
 
 fn run() -> Result<(), String> {
     let a: Vec<String> = std::env::args().skip(1).collect();
-    let usage = "usage: contract-from-flyer FLYER OUT_DIR (--speed BPS | --period P --advance A) [--t0 100] [--mode all|near|bare|both] [--max-bodies N]";
+    let usage = "usage: contract-from-flyer FLYER OUT_DIR (--speed BPS | --period P --advance A) [--t0 100] [--mode all|near|bare|both|ext] [--max-bodies N]";
     let mut pos = vec![];
     let (mut speed, mut period, mut advance, mut t0, mut mode, mut max_bodies) = (None::<f64>, None::<usize>, None::<i64>, 100usize, "both".to_string(), 8usize);
     let mut i = 0;
@@ -303,6 +315,96 @@ fn run() -> Result<(), String> {
         fs::write(dir.join("problem_meta.json"), format!("{{\"source\":{},\"t0\":{t0},\"period\":{p},\"advance\":{adv},\"stripped_pistons\":{n_p},\"reference_load\":{},\"reference_pass\":{ref_ok}}}\n",
             jstr(&src.display().to_string()), if ref_ok { ref_load.to_string() } else { "null".into() })).map_err(|e| e.to_string())?;
         println!("  {name}: stripped {n_p} pistons");
+    }
+    if mode == "ext" {
+        // extension contracts: body k natural (output), every other body driven by supplied strokes (input,
+        // cap = the flyer's push limit), all pistons stripped. Reference = the pistons touching body k, if that passes.
+        let cap = f.push_limit.max(if ref_ok { ref_load } else { 0 });
+        // attribute every body move in one period to the piston that made it
+        let mut g = Flyer::from_bytes(&bytes).map_err(|e| e.to_string())?;
+        let mut snaps = vec![];
+        let mut alog: ActorLog = vec![];
+        let ids0: Vec<Coord> = g.blocks().into_iter().filter(|(_, b)| b.kind() != Kind::PistonArm).map(|(q, _)| q).collect();
+        track_log(&mut g, t0, p, p, &mut snaps, &mut alog)?;
+        let actors_of = |comp: &Vec<Coord>| -> BTreeSet<Coord> {
+            let ids: BTreeSet<usize> = comp.iter().filter_map(|q| ids0.iter().position(|o| o == q)).collect();
+            alog.iter().filter(|(_, moved, _)| moved.iter().any(|m| ids.contains(m))).filter_map(|(_, _, a)| a.map(|a| ids0[a])).collect()
+        };
+        let with_arms = |set: &BTreeSet<Coord>| -> BTreeSet<Coord> {
+            let mut out = set.clone();
+            for q in set {
+                if let Some(&c) = cells.get(q) {
+                    if let Some(a) = arm_of(&cells, *q, c) {
+                        out.insert(a);
+                    }
+                }
+            }
+            out
+        };
+        for (k, (comp, _)) in bodies.iter().enumerate().take(max_bodies) {
+            let mine = with_arms(&actors_of(comp));
+            let mut others = BTreeSet::new();
+            for (j, (cj, _)) in bodies.iter().enumerate() {
+                if j != k {
+                    others.extend(actors_of(cj));
+                }
+            }
+            let all_p: BTreeSet<Coord> = mine.union(&with_arms(&others)).copied().collect();
+            let name = format!("ext{k}");
+            let dir = out.join(&name);
+            fs::create_dir_all(&dir).map_err(|e| e.to_string())?;
+            let kept: Cells = cells.iter().filter(|(q, _)| !all_p.contains(q)).map(|(q, c)| (*q, *c)).collect();
+            let d = save(&kept, &owners, &f, f.push_limit, &dir.join("problem.flyer"))?;
+            let sh = |c: Coord| format!("[{},{},{}]", c.x + d.x, c.y + d.y, c.z + d.z);
+            let ports_s: Vec<String> = ports.iter().enumerate().map(|(j, (n, at, w))| format!("{{\"name\":{},\"role\":{},\"at\":{},\"word\":{}}}",
+                jstr(n), if j == k { "\"output\"" } else { "\"input\"" }, sh(*at), jstr(w))).collect();
+            let req_s: Vec<String> = kept.iter().map(|(q, c)| format!("{{\"at\":{},\"cell\":{}}}", sh(*q), c)).collect();
+            let env_s = if rec == "bounded" { format!(",\"boundary_envelope\":{{\"min\":{},\"max\":{}}}", sh(env.0), sh(env.1)) } else { String::new() };
+            let mut script = String::new();
+            for cyc in 0..3usize {
+                for (j, (_, at, w)) in ports.iter().enumerate() {
+                    if j == k {
+                        continue;
+                    }
+                    let mut before = 0i64;
+                    for (sl, ch) in w.chars().enumerate() {
+                        if ch == 'm' {
+                            let tick = cyc * p + 2 * sl;
+                            let x = at.x + cyc as i64 * adv + before;
+                            script += &format!("{tick} {} {} {} {cap}
+", x + d.x, at.y + d.y, at.z + d.z);
+                            before += 1;
+                        }
+                    }
+                }
+            }
+            fs::write(dir.join("drive.txt"), script).map_err(|e| e.to_string())?;
+            let cj = format!("{{\"version\":1,\"name\":{},\"flyer\":\"problem.flyer\",\"prescribed_script\":\"drive.txt\",\"prescribed_order\":\"before_natural\",\"period_ticks\":{p},\"advance\":{adv},\"cycles\":3,\"recurrence\":{}{},\"ports\":[{}],\"required_cells\":[{}]}}
+",
+                jstr(&format!("{stem}-{name}")), jstr(rec), env_s, ports_s.join(","), req_s.join(","));
+            fs::write(dir.join("problem.json"), cj).map_err(|e| e.to_string())?;
+            // reference attempt: the stripped pistons that touch body k (in the problem's saved frame)
+            let mut ctx = load_ctx(&dir.join("problem.json"), None)?;
+            ctx.push_limit = ctx.push_limit.max(64);
+            let mut cand = ctx.base_cells.clone();
+            for q in &mine {
+                cand.insert(Coord::new(q.x + d.x, q.y + d.y, q.z + d.z), cells[q]);
+            }
+            let mut ok_orders = vec![];
+            let mut load = 0;
+            for o in [fastflyer::PrescribedOrder::BeforeNatural, fastflyer::PrescribedOrder::AfterNatural, fastflyer::PrescribedOrder::Interleaved] {
+                ctx.orders = vec![o];
+                if let Ok(ev) = evaluate(&ctx, &cand, Sample { rng: ctx.rng, px: ctx.px, pz: ctx.pz }, false) {
+                    ok_orders.push(format!("{o:?}"));
+                    load = load.max(ev.max_load);
+                }
+            }
+            let full = ok_orders.len() == 3;
+            fs::write(dir.join("problem_meta.json"), format!("{{\"source\":{},\"t0\":{t0},\"period\":{p},\"advance\":{adv},\"kind\":\"ext\",\"target_body\":{k},\"reference_load\":{},\"reference_pass\":{},\"reference_orders\":{}}}
+",
+                jstr(&src.display().to_string()), if full { load.to_string() } else { "null".into() }, if full { "true" } else { "null" }, jstr(&ok_orders.join(",")))).map_err(|e| e.to_string())?;
+            println!("  {name}: target body{k}, {} actor cells, {} stripped, reference passes {:?}", mine.len(), all_p.len(), ok_orders);
+        }
     }
     Ok(())
 }
