@@ -406,8 +406,12 @@ pub fn neighbours_moves(ctx: &Ctx, cur: &Cells, pinned: &BTreeSet<Coord>, lo: Co
 }
 
 // ---------------------------------------------------------------- verification
-pub fn verify(ctx: &Ctx, cells: &Cells, threads: usize, deadline: Instant) -> (usize, usize, Option<String>) {
+/// Returns (passed, total, first failure, max action load over the verified samples, max endogenous load).
+/// The saved flyer must carry a push limit >= every load any sample needs (loads differ between samples).
+pub fn verify(ctx: &Ctx, cells: &Cells, threads: usize, deadline: Instant) -> (usize, usize, Option<String>, u64, u64) {
     let list = samples_list();
+    let max_all = std::sync::atomic::AtomicU64::new(0);
+    let max_endo = std::sync::atomic::AtomicU64::new(0);
     let next = AtomicUsize::new(0);
     // a sample is not interruptible: only start one if the slowest sample so far still fits before the deadline
     let slowest_ns = std::sync::atomic::AtomicU64::new(0);
@@ -428,8 +432,10 @@ pub fn verify(ctx: &Ctx, cells: &Cells, threads: usize, deadline: Instant) -> (u
                 let r = evaluate(ctx, cells, list[i], false);
                 slowest_ns.fetch_max(t_s.elapsed().as_nanos() as u64, Ordering::Relaxed);
                 match r {
-                    Ok(_) => {
+                    Ok(ev) => {
                         passed.fetch_add(1, Ordering::Relaxed);
+                        max_all.fetch_max(ev.all_max, Ordering::Relaxed);
+                        max_endo.fetch_max(ev.max_load, Ordering::Relaxed);
                     }
                     Err(e) => {
                         fail.lock().unwrap().get_or_insert(e.msg);
@@ -438,7 +444,7 @@ pub fn verify(ctx: &Ctx, cells: &Cells, threads: usize, deadline: Instant) -> (u
             });
         }
     });
-    (passed.into_inner(), list.len(), fail.into_inner().unwrap())
+    (passed.into_inner(), list.len(), fail.into_inner().unwrap(), max_all.into_inner(), max_endo.into_inner())
 }
 
 // ---------------------------------------------------------------- output (coordinate-shift aware)

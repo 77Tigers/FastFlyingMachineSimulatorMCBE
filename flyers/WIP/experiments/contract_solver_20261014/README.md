@@ -1,5 +1,23 @@
 # Contract solver (2026-10-14/15)
 
+## Status update (2026-10-15 evening / 16th)
+
+* Benchmarks with the current binary: **extension contracts e13 136/170 verified** (e9 127; N3 56/60, mmwmmw
+  12/18 (was 6), N4 7/18, N2 40/42 + 15/16 four-tick), **natural flyer problems f18 176/263** (f16 156; set
+  now includes PL 71-127 flyers), max wall 4.4 s, none over 5 s.
+* Bare skeletons (glue only -> flyer): 1/9 -> 6/9 (see "Schedule -> contracts -> flyer" below).
+* New in the solver: period doubling for hopping hardware, extended-at-t0 and self-carrier actors,
+  pairwise-compatibility combination with lazy conflict learning, power-aware combination (global power
+  placement), `--schedule` hints, budget fixes for large flyers (detect_natural / DFS / beam deadlines).
+* Bug found by the Python re-check (2 of 43 answers, f18): the saved flyer's push limit was the main sample's
+  max load, but other samples can need one more (verification runs with a raised limit) -> "push limit
+  exceeded" in the file. Fixed: verify returns the max over all 80 samples and that is the saved limit;
+  reports add `max_load_all_samples` / `saved_push_limit` (`endogenous_max_load` stays the main-sample value,
+  comparable to reference loads). Both cases now pass the Python checker 80/80. Remaining 41 rechecked
+  answers (incl. 12+11 from the new stages) agreed.
+* Extension bank: 186 N3 fixtures stripped (solver regenerates them, rechecked with the final binary 187/187;
+  n3_134 kept because pieceA.py reads it). See flyers/extension_bank/README.md.
+
 ## Status for the user (2026-10-15 morning)
 
 * `contract-solve PROBLEM.json OUT` (5 s budget, everything verified inside it: all 3 orders x 80 samples,

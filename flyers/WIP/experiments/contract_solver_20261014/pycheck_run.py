@@ -9,6 +9,9 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[3]
 tag = sys.argv[1]; n = int(sys.argv[2]) if len(sys.argv) > 2 else 20
 rows = [r for r in csv.DictReader(open(HERE / f"runs/{tag}/results.csv")) if r["status"] == "verified"]
+if len(sys.argv) > 3:  # optional regex on the answer's source (e.g. new stages: "x2|paircomb|powercomb")
+    import re
+    rows = [r for r in rows if re.search(sys.argv[3], r["source"])]
 random.seed(11)
 pick = random.sample(rows, min(n, len(rows)))
 lines = []

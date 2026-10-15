@@ -292,17 +292,17 @@ fn run() -> Result<(), String> {
     pool.sort_by(|a, b| a.cost.partial_cmp(&b.cost).unwrap());
 
     // verify distinct passing candidates in cost order
-    let mut chosen: Option<(Scored, usize, usize)> = None;
+    let mut chosen: Option<(Scored, usize, usize, u64, u64)> = None;
     let mut tried = HashSet::new();
     let mut verify_log = vec![];
     for s in pool.iter().filter(|s| s.ev.is_some()) {
         if Instant::now() >= end || !tried.insert(hash_cells(&s.cells)) {
             continue;
         }
-        let (p, n, f) = verify(&vctx, &s.cells, threads, end);
+        let (p, n, f, smax_all, smax_endo) = verify(&vctx, &s.cells, threads, end);
         verify_log.push(format!("{:.1} {}/{} {}", s.cost, p, n, f.clone().unwrap_or_default()));
         if p == n {
-            chosen = Some((s.clone(), p, n));
+            chosen = Some((s.clone(), p, n, smax_all, smax_endo));
             break;
         }
         if tried.len() >= 12 {
@@ -313,7 +313,7 @@ fn run() -> Result<(), String> {
     let evals = sh.evals.load(Ordering::Relaxed);
     let best_any = pool.first().cloned();
     let (status, pick) = match (&chosen, &best_any) {
-        (Some((s, _, _)), _) => ("verified", Some(s.clone())),
+        (Some((s, _, _, _, _)), _) => ("verified", Some(s.clone())),
         (None, Some(b)) if b.ev.is_some() => ("unverified_pass", Some(b.clone())),
         (None, Some(b)) => ("near_miss", Some(b.clone())),
         _ => ("none", None),
@@ -321,7 +321,9 @@ fn run() -> Result<(), String> {
     let mut report = format!("{{\"problem\":{},\"status\":{},\"seconds\":{:.3},\"evaluations\":{},\"threads\":{},\"holdout\":{},\"orders_equivalent\":{}",
         jstr(&problem.display().to_string()), jstr(status), elapsed, evals, threads, holdout, orders_equivalent);
     if let Some(s) = &pick {
-        let limit = s.ev.as_ref().map(|e| e.all_max.max(1)).unwrap_or(ctx.file_limit);
+        // the saved push limit must cover every sample's heaviest action (verification ran with a raised limit)
+        let sample_max = chosen.as_ref().map_or(0, |c| c.3);
+        let limit = s.ev.as_ref().map(|e| e.all_max.max(sample_max).max(1)).unwrap_or(ctx.file_limit);
         write_solution(&ctx, &problem, &out, &s.cells, limit)?;
         let added: Vec<String> = diff_cells(&base, &s.cells).iter().map(|d| jstr(d)).collect();
         report += &format!(",\"source\":{},\"progress\":{:.4},\"first_failure\":{}", jstr(&s.src), s.progress, if s.msg.is_empty() { "null".into() } else { jstr(&s.msg) });
@@ -329,8 +331,8 @@ fn run() -> Result<(), String> {
             report += &format!(",\"endogenous_max_load\":{},\"count_at_max\":{},\"all_max_load\":{},\"max_prescribed_input_load\":{},\"blocks\":{},\"input_loads\":{}",
                 e.max_load, e.count_max, e.all_max, e.presc_max, e.blocks, input_loads_json(&ctx, &e.input_loads));
         }
-        if let Some((_, p, n)) = &chosen {
-            report += &format!(",\"verified_samples\":[{p},{n}]");
+        if let Some((_, p, n, sa, se)) = &chosen {
+            report += &format!(",\"verified_samples\":[{p},{n}],\"max_load_all_samples\":{se},\"all_max_load_all_samples\":{sa},\"saved_push_limit\":{limit}");
         }
         report += &format!(",\"diff_vs_problem\":[{}]", added.join(","));
     }
