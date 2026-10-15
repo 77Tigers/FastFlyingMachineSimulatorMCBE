@@ -109,9 +109,9 @@ def main() -> int:
         out = run_dir / pid.replace("/", "__")
         cmd = [str(SOLVER), str(prob), str(out), "--budget", str(a.budget), "--quiet"] + ([] if a.lookup else ["--holdout"])
         if a.flyer_library:
-            cmd += ["--library-dir", str(HERE / "flyerprobs")]
-            if "/" in pid:  # flyer-derived problem: exclude its own source flyer
-                cmd += ["--exclude-source", "ref:" + pid.split("/")[0]]
+            cmd += ["--library-dir", str(HERE / "flyerprobs"), "--ext-library-dir", str(HERE / "flyerprobs_ext")]
+            if "/" in pid:  # flyer-derived problem: exclude everything from its own source flyer
+                cmd += ["--exclude-source", "ref:" + pid.split("/")[0], "--exclude-source", "ext:" + pid.split("/")[0] + "/"]
         t = time.time()
         r = subprocess.run(cmd, capture_output=True, text=True, cwd=ROOT)
         wall = time.time() - t

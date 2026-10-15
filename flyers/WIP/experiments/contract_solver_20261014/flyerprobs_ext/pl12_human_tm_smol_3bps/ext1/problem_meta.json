@@ -1,1 +1,0 @@
-{"source":"flyers/bank/pl12/human_tm_smol_3bps.flyer","t0":100,"period":10,"advance":3,"kind":"ext","target_body":1,"reference_load":10,"reference_pass":true,"reference_orders":"BeforeNatural,AfterNatural,Interleaved"}

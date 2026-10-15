@@ -437,6 +437,14 @@ fn run() -> Result<(), String> {
                 }
             }
             let full = ok_orders.len() == 3;
+            // the reference solution (problem + body k's actors) for diagnostics and libraries
+            {
+                let mut rf = Flyer::new(ctx.px, ctx.pz, ctx.rng, f.push_limit).map_err(|e| e.to_string())?;
+                for (&q, &c) in &cand {
+                    rf.set(q, Block::from_cell(c).map_err(|e| e.to_string())?);
+                }
+                rf.save(dir.join("reference.flyer")).map_err(|e| e.to_string())?;
+            }
             fs::write(dir.join("problem_meta.json"), format!("{{\"source\":{},\"t0\":{t0},\"period\":{p},\"advance\":{adv},\"kind\":\"ext\",\"target_body\":{k},\"reference_load\":{},\"reference_pass\":{},\"reference_orders\":{}}}
 ",
                 jstr(&src.display().to_string()), if full { load.to_string() } else { "null".into() }, if full { "true" } else { "null" }, jstr(&ok_orders.join(",")))).map_err(|e| e.to_string())?;

@@ -1,1 +1,0 @@
-{"version":1,"name":"human_hopping_pistons_uneven-reference","flyer":"reference.flyer","period_ticks":8,"advance":2,"cycles":3,"recurrence":"bounded","boundary_envelope":{"min":[7,-3,5],"max":[17,5,13]},"ports":[{"name":"body0","role":"output","at":[10,2,8],"word":"mmww"},{"name":"body1","role":"output","at":[13,1,9],"word":"wwmm"}],"required_cells":[]}

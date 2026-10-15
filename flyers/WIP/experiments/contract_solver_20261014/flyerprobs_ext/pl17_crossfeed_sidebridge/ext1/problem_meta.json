@@ -1,1 +1,0 @@
-{"source":"flyers/bank/pl17/crossfeed_sidebridge.flyer","t0":100,"period":8,"advance":2,"kind":"ext","target_body":1,"reference_load":13,"reference_pass":true,"reference_orders":"BeforeNatural,AfterNatural,Interleaved"}

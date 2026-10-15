@@ -1,1 +1,0 @@
-{"version":1,"name":"human_hopping_pistons-reference","flyer":"reference.flyer","period_ticks":4,"advance":1,"cycles":3,"recurrence":"bounded","boundary_envelope":{"min":[7,-3,5],"max":[15,7,13]},"ports":[{"name":"body0","role":"output","at":[10,1,9],"word":"wm"},{"name":"body1","role":"output","at":[10,3,8],"word":"mw"}],"required_cells":[]}

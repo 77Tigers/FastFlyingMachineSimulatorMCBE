@@ -1,1 +1,0 @@
-{"version":1,"name":"crossfeed_offset_rear-reference","flyer":"reference.flyer","period_ticks":8,"advance":2,"cycles":3,"recurrence":"advance","ports":[{"name":"body0","role":"output","at":[8,3,13],"word":"wwmm"},{"name":"body1","role":"output","at":[8,1,12],"word":"mmww"}],"required_cells":[]}

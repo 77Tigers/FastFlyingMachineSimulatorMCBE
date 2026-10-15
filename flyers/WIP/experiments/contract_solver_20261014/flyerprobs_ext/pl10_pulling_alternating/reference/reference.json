@@ -1,1 +1,0 @@
-{"version":1,"name":"pulling_alternating-reference","flyer":"reference.flyer","period_ticks":4,"advance":1,"cycles":3,"recurrence":"bounded","boundary_envelope":{"min":[6,-3,-3],"max":[16,6,5]},"ports":[{"name":"body0","role":"output","at":[9,2,0],"word":"mw"},{"name":"body1","role":"output","at":[11,1,1],"word":"wm"}],"required_cells":[]}

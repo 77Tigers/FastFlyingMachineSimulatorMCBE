@@ -187,6 +187,31 @@ pub fn load_flyer_library(dir: &Path) -> Vec<LibEntry> {
     out
 }
 
+/// Library entries from extension-contract references: DIR/<stem>/<ext*>/reference.flyer (ids "ext:<stem>/<extk>").
+pub fn load_ext_library(dir: &Path) -> Vec<LibEntry> {
+    let mut out = vec![];
+    let Ok(rd) = fs::read_dir(dir) else { return out };
+    let mut stems: Vec<_> = rd.flatten().map(|e| e.path()).collect();
+    stems.sort();
+    for st in stems {
+        let Ok(rd2) = fs::read_dir(&st) else { continue };
+        let mut subs: Vec<_> = rd2.flatten().map(|e| e.path()).collect();
+        subs.sort();
+        for d in subs {
+            let Ok(f) = Flyer::load(d.join("reference.flyer")) else { continue };
+            let (mut pinned, mut hw) = (vec![], vec![]);
+            for (p, b) in f.blocks() {
+                let c = b.cell() & !16;
+                if c & 15 == 9 || c & 15 == 10 { hw.push((p, c)); } else { pinned.push((p, c)); }
+            }
+            if !hw.is_empty() {
+                out.push(LibEntry { id: format!("ext:{}/{}", st.file_name().unwrap().to_string_lossy(), d.file_name().unwrap().to_string_lossy()), pinned, hw });
+            }
+        }
+    }
+    out
+}
+
 // Candidate transplants: (votes, entry index, sym, translation).
 pub fn transplant_candidates(lib: &[LibEntry], pinned: &[(Coord, u16)], base: &Cells, holdout: bool, max_n: usize) -> Vec<(Cells, String)> {
     let mut scored: Vec<(f64, usize, Sym, Coord)> = vec![];
@@ -814,7 +839,7 @@ pub fn decompose(ctx: &Ctx, base: &Cells, lo: Coord, hi: Coord, threads: usize, 
         scored.sort_by(|a, b| a.0.partial_cmp(&b.0).unwrap());
         let npass = scored.iter().filter(|x| x.1).count();
         log.push(format!("  move {} slot {slot}: {} actors tried ({n_timed} timed), {npass} pass; best {}", ctx.ports[pi].name, scored.len(), scored.first().map_or(String::new(), |x| x.3.clone())));
-        scored.truncate(16);
+        scored.truncate(30);
         options.push((k, scored));
     }
     // 3. combine: most constrained first, DFS with scaffold checks
@@ -898,6 +923,50 @@ pub fn decompose(ctx: &Ctx, base: &Cells, lo: Coord, hi: Coord, threads: usize, 
     let mut nodes = 0;
     dfs(ctx, &moves, &options, 0, base, &mut nat, "decompose".into(), s, deadline, &mut out, &mut best_partial, &mut nodes, 3);
     log.push(format!("decompose: {} passing combinations, deepest {} of {}, {} nodes", out.len(), best_partial.0.min(options.len()), options.len(), nodes));
+    // pair search: few moves and nothing passing -> evaluate pairs of top per-move candidates in the real contract
+    if out.is_empty() && (2..=3).contains(&options.len()) && Instant::now() < deadline {
+        let mut real = ctx.clone();
+        real.soft = true;
+        let a = &options[0].1;
+        let b = &options[1].1;
+        let mut cands: Vec<Cells> = vec![];
+        let mut descs: Vec<String> = vec![];
+        for x in a.iter().take(30) {
+            for y in b.iter().take(30) {
+                if x.2.iter().chain(y.2.iter()).any(|(p, v)| base.get(p).map_or(false, |o| o != v)) {
+                    continue;
+                }
+                let mut c = base.clone();
+                let mut clash = false;
+                for &(p, v) in x.2.iter().chain(y.2.iter()) {
+                    if let Some(o) = c.insert(p, v) {
+                        if o != v && !base.contains_key(&p) {
+                            clash = true;
+                        }
+                    }
+                }
+                if clash {
+                    continue;
+                }
+                if options.len() == 3 {
+                    // third move: its best option
+                    for &(p, v) in options[2].1.first().map(|o| o.2.as_slice()).unwrap_or(&[]) {
+                        c.entry(p).or_insert(v);
+                    }
+                }
+                cands.push(c);
+                descs.push(format!("decompose pair | {} | {}", x.3, y.3));
+            }
+        }
+        let r = par_eval(&real, &cands, s, threads, deadline);
+        let mut idx: Vec<usize> = (0..r.len()).collect();
+        idx.sort_by(|&i, &j| r[i].0.partial_cmp(&r[j].0).unwrap());
+        let npass = idx.iter().filter(|&&i| r[i].1).count();
+        log.push(format!("decompose pair search: {} pairs, {npass} pass", cands.len()));
+        for &i in idx.iter().take(4) {
+            out.push((cands[i].clone(), descs[i].clone()));
+        }
+    }
     if out.is_empty() {
         out.extend(FALLBACKS.with(|f| f.borrow_mut().drain(..).collect::<Vec<_>>()));
     }
