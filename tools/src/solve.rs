@@ -362,7 +362,12 @@ pub fn neighbours_moves(ctx: &Ctx, cur: &Cells, pinned: &BTreeSet<Coord>, lo: Co
     }
     let _ = ctx;
     // extended pistons whose ARM lands on a spot touching existing cells (pushers behind, stickies ahead)
+    // large flyers: thousands of spots x 24 variants, each a full clone -> cap the neighbourhood (beam stage only)
+    const MAX_OUT: usize = 3000;
     for &q in &spots {
+        if out.len() >= MAX_OUT {
+            break;
+        }
         for v in piston_variants() {
             if piston_state(v) != 2 {
                 continue;
@@ -380,6 +385,9 @@ pub fn neighbours_moves(ctx: &Ctx, cur: &Cells, pinned: &BTreeSet<Coord>, lo: Co
         }
     }
     for q in spots {
+        if out.len() >= 2 * MAX_OUT {
+            break;
+        }
         for v in piston_variants() {
             let d = piston_dir(v);
             let mut c = cur.clone();
@@ -871,6 +879,7 @@ pub fn decompose(ctx: &Ctx, base: &Cells, lo: Coord, hi: Coord, threads: usize, 
     // 2. per-move actor search
     // many moves: half of the stage for per-move search, the rest for combination; few moves: 3/4 (generic
     // candidates for the last move matter more than combination time)
+    let t_dec = Instant::now();
     let per_move_end = Instant::now() + deadline.saturating_duration_since(Instant::now()) * (if todo.len() >= 6 { 2 } else { 3 }) / 4;
     let mut options: Vec<(usize, Vec<(f64, bool, Vec<(Coord, u16)>, String)>)> = vec![];
     for &k in &todo {
@@ -1035,7 +1044,7 @@ pub fn decompose(ctx: &Ctx, base: &Cells, lo: Coord, hi: Coord, threads: usize, 
                 continue;
             }
             // adaptive branching: few moves -> try more alternatives per move
-            if tried >= (200 / options.len().max(1)).clamp(4, 16) {
+            if tried >= (200 / options.len().max(1)).clamp(4, 16) || Instant::now() >= deadline {
                 break;
             }
             // an actor already present (same cells) can serve several moves; a different cell there conflicts
@@ -1082,7 +1091,7 @@ pub fn decompose(ctx: &Ctx, base: &Cells, lo: Coord, hi: Coord, threads: usize, 
     let dfs_share = if options.len() >= 6 { 1 } else { 3 };
     let dfs_deadline = Instant::now() + deadline.saturating_duration_since(Instant::now()) * dfs_share / 4;
     dfs(ctx, &moves, &options, 0, base, &mut nat, "decompose".into(), s, dfs_deadline, &mut out, &mut best_partial, &mut nodes, 3);
-    log.push(format!("decompose: {} passing combinations, deepest {} of {}, {} nodes", out.len(), best_partial.0.min(options.len()), options.len(), nodes));
+    log.push(format!("decompose: {} passing combinations, deepest {} of {}, {} nodes [{:.2}s]", out.len(), best_partial.0.min(options.len()), options.len(), nodes, t_dec.elapsed().as_secs_f64()));
     let df = DEEP_FAIL.with(|f| std::mem::take(&mut *f.borrow_mut()));
     if out.is_empty() && !df.is_empty() {
         log.push(format!("decompose: deepest failure {df}"));
@@ -1091,7 +1100,7 @@ pub fn decompose(ctx: &Ctx, base: &Cells, lo: Coord, hi: Coord, threads: usize, 
     if out.is_empty() && options.len() >= 2 && Instant::now() < deadline && std::env::var("NO_POWERCOMB").is_err() {
         let pc_deadline = Instant::now() + deadline.saturating_duration_since(Instant::now()) * 2 / 3;
         let (cands, msg) = power_combine(ctx, base, &moves, &options, &bodies, s, pc_deadline);
-        log.push(msg);
+        log.push(format!("{msg} [{:.2}s]", t_dec.elapsed().as_secs_f64()));
         for (c, d, pass) in cands {
             if pass {
                 out.push((c, d));
@@ -1265,7 +1274,7 @@ pub fn decompose(ctx: &Ctx, base: &Cells, lo: Coord, hi: Coord, threads: usize, 
                 // complete but failing sets are only fallbacks so later stages can repair them
                 FALLBACKS.with(|fb| fb.borrow_mut().extend(failing));
             }
-            log.push(format!("decompose paircomb: {} options, {}/{} pairs pre-tested, {} incompatible ({learned} learned), {sets} complete sets, {npass} pass natural", n, tested, pairs.len(), bad.len()));
+            log.push(format!("decompose paircomb: {} options, {}/{} pairs pre-tested, {} incompatible ({learned} learned), {sets} complete sets, {npass} pass natural [{:.2}s]", n, tested, pairs.len(), bad.len(), t_dec.elapsed().as_secs_f64()));
         }
     }
     // sequential in-context combination: moves in time order; each move's top isolated candidates (and their
@@ -1318,7 +1327,7 @@ pub fn decompose(ctx: &Ctx, base: &Cells, lo: Coord, hi: Coord, threads: usize, 
                 _ => break,
             }
         }
-        log.push(format!("decompose seq: {done} of {} moves placed in context", options.len()));
+        log.push(format!("decompose seq: {done} of {} moves placed in context [{:.2}s]", options.len(), t_dec.elapsed().as_secs_f64()));
         if done == options.len() {
             let mut real = ctx.clone();
             real.soft = false;

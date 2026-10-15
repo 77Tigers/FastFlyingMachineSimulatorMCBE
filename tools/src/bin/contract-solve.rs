@@ -175,9 +175,9 @@ fn run() -> Result<(), String> {
     // nothing passing from the library: decomposition is the main route and gets more of the budget
     let dec_frac = if pool.iter().any(|s| s.ev.is_some()) { 0.4 } else { 0.5 };
     let dec_end = (t0 + Duration::from_secs_f64(budget * dec_frac)).min(search_end);
-    // decomposition evaluates thousands of candidates; on very large flyers (one evaluation > 50 ms) it cannot
-    // finish and its in-flight evaluations overrun the budget -> skipped (and with it the doubled passes)
-    let heavy = t_eval > 0.05;
+    // decomposition evaluates thousands of candidates; on very large flyers it cannot
+    // finish and its in-flight evaluations overrun the budget -> skipped above 150 ms (and with it the doubled passes)
+    let heavy = t_eval * 1000.0 > std::env::var("HEAVY_MS").ok().and_then(|v| v.parse::<f64>().ok()).unwrap_or(150.0);
     let dec = if heavy { Decomp { cands: vec![], log: vec![format!("decompose: skipped (eval {:.0} ms)", t_eval * 1000.0)] } } else { decompose(&ctx, &base, blo, bhi, threads, dec_end) };
     log.extend(dec.log.iter().cloned());
     // doubling only helps hopping hardware: some move had no rigid (still-carrier) actor
