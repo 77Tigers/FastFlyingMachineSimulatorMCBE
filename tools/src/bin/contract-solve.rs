@@ -70,7 +70,8 @@ fn run() -> Result<(), String> {
     let out = PathBuf::from(pos.get(1).ok_or(usage)?);
     fs::create_dir_all(&out).map_err(|e| e.to_string())?;
     let end = t0 + Duration::from_secs_f64(budget * 0.88);
-    let search_end = t0 + Duration::from_secs_f64(budget * 0.6);
+    // natural contracts verify in one order (3x cheaper), so they get a longer search share
+    let mut search_end = t0 + Duration::from_secs_f64(budget * 0.6);
 
     let mut ctx = load_ctx(&problem, None)?;
     ctx.orders = ORDERS.to_vec();
@@ -96,6 +97,7 @@ fn run() -> Result<(), String> {
     // own RNG stream and has nothing to insert), so one order is verified and the report says so.
     let orders_equivalent = ctx.events.is_empty();
     if orders_equivalent {
+        search_end = t0 + Duration::from_secs_f64(budget * 0.72);
         ctx.orders = vec![PrescribedOrder::BeforeNatural];
         vctx.orders = vec![PrescribedOrder::BeforeNatural];
     }

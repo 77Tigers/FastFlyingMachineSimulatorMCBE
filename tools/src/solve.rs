@@ -756,6 +756,7 @@ pub fn par_eval(ctx: &Ctx, cands: &[Cells], s: Sample, threads: usize, deadline:
 }
 
 thread_local! {
+    static DEEP_FAIL: std::cell::RefCell<String> = std::cell::RefCell::new(String::new());
     static FALLBACKS: std::cell::RefCell<Vec<(Cells, String)>> = std::cell::RefCell::new(vec![]);
 }
 
@@ -917,6 +918,11 @@ pub fn decompose(ctx: &Ctx, base: &Cells, lo: Coord, hi: Coord, threads: usize, 
             nat[*k] = true;
             *nodes += 1;
             let pass = scaffold_ok(ctx, moves, nat, &c, s);
+            if !pass && depth + 1 >= best_partial.0 {
+                if let Err(e) = evaluate(&scaffold_ctx(ctx, moves, nat), &c, s, false) {
+                    DEEP_FAIL.with(|f| *f.borrow_mut() = format!("depth {} move {} ({}): {}", depth + 1, *k, d, e.msg.split("] ").nth(1).unwrap_or("").chars().take(120).collect::<String>()));
+                }
+            }
             if pass || !any_pass {
                 any_child = true;
                 dfs(ctx, moves, options, depth + 1, &c, nat, format!("{desc} | {d}"), s, deadline, out, best_partial, nodes, soft_left);
@@ -939,8 +945,76 @@ pub fn decompose(ctx: &Ctx, base: &Cells, lo: Coord, hi: Coord, threads: usize, 
     FALLBACKS.with(|f| f.borrow_mut().clear());
     let mut nat = pinned_nat.clone();
     let mut nodes = 0;
-    dfs(ctx, &moves, &options, 0, base, &mut nat, "decompose".into(), s, deadline, &mut out, &mut best_partial, &mut nodes, 3);
+    // the DFS gets half of the remaining stage time; the sequential in-context pass (below) the rest
+    let dfs_deadline = Instant::now() + deadline.saturating_duration_since(Instant::now()) / 2;
+    dfs(ctx, &moves, &options, 0, base, &mut nat, "decompose".into(), s, dfs_deadline, &mut out, &mut best_partial, &mut nodes, 3);
     log.push(format!("decompose: {} passing combinations, deepest {} of {}, {} nodes", out.len(), best_partial.0.min(options.len()), options.len(), nodes));
+    let df = DEEP_FAIL.with(|f| std::mem::take(&mut *f.borrow_mut()));
+    if out.is_empty() && !df.is_empty() {
+        log.push(format!("decompose: deepest failure {df}"));
+    }
+    // sequential in-context combination: moves in time order; each move's top isolated candidates (and their
+    // shared-power variants) are re-scored with the actors chosen so far present
+    if out.is_empty() && options.len() > 3 && Instant::now() < deadline {
+        let mut order: Vec<usize> = (0..options.len()).collect();
+        order.sort_by_key(|&i| (moves[options[i].0].1, moves[options[i].0].0));
+        let mut cells = base.clone();
+        let mut nat = pinned_nat.clone();
+        let mut soft_used = 0;
+        let mut desc = String::from("decompose seq");
+        let mut done = 0;
+        for &oi in &order {
+            if Instant::now() >= deadline {
+                break;
+            }
+            let (k, opts) = &options[oi];
+            nat[*k] = true;
+            let mut cand_cells: Vec<Cells> = vec![];
+            let mut cand_desc: Vec<String> = vec![];
+            for (_, _, actor, d) in opts.iter().take(30) {
+                let bare: Vec<(Coord, u16)> = actor.iter().copied().filter(|(_, v)| !matches!(v & 15, 6 | 7 | 8)).collect();
+                for (a, dd) in [(bare, format!("{d}(shared)")), (actor.clone(), d.clone())] {
+                    if a.iter().any(|(p, v)| cells.get(p).map_or(false, |x| x != v)) {
+                        continue;
+                    }
+                    let mut c = cells.clone();
+                    for &(p, v) in &a {
+                        c.insert(p, v);
+                    }
+                    cand_cells.push(c);
+                    cand_desc.push(dd);
+                }
+            }
+            let sc = scaffold_ctx(ctx, &moves, &nat);
+            let sc2 = scaffold_ctx_o(ctx, &moves, &nat, PrescribedOrder::AfterNatural);
+            let r1 = par_eval(&sc, &cand_cells, s, threads, deadline);
+            let r2 = par_eval(&sc2, &cand_cells, s, threads, deadline);
+            let best = (0..cand_cells.len()).map(|i| if r1[i].0 <= r2[i].0 { (i, r1[i]) } else { (i, r2[i]) })
+                .min_by(|a, b| a.1 .0.partial_cmp(&b.1 .0).unwrap());
+            match best {
+                Some((i, (_, ok, _))) if ok || soft_used < 3 => {
+                    if !ok {
+                        soft_used += 1;
+                    }
+                    cells = cand_cells[i].clone();
+                    desc = format!("{desc} | {}{}", cand_desc[i], if ok { "" } else { "(soft)" });
+                    done += 1;
+                }
+                _ => break,
+            }
+        }
+        log.push(format!("decompose seq: {done} of {} moves placed in context", options.len()));
+        if done == options.len() {
+            let mut real = ctx.clone();
+            real.soft = false;
+            real.allow_ext_fail = false;
+            let ok = evaluate(&real, &cells, s, false).is_ok();
+            log.push(format!("decompose seq: complete, natural check {}", if ok { "PASS" } else { "fails" }));
+            out.push((cells, desc));
+        } else if done > best_partial.0 {
+            out.push((cells, format!("{desc} (partial)")));
+        }
+    }
     // pair search: few moves and nothing passing -> evaluate pairs of top per-move candidates in the real contract
     if out.is_empty() && (2..=3).contains(&options.len()) && Instant::now() < deadline {
         let mut real = ctx.clone();
