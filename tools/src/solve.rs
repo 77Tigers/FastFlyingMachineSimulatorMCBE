@@ -216,20 +216,33 @@ pub fn load_ext_library(dir: &Path) -> Vec<LibEntry> {
 pub fn transplant_candidates(lib: &[LibEntry], pinned: &[(Coord, u16)], base: &Cells, holdout: bool, max_n: usize) -> Vec<(Cells, String)> {
     let mut scored: Vec<(f64, usize, Sym, Coord)> = vec![];
     let mut by_cell: HashMap<u16, Vec<Coord>> = HashMap::new();
+    let mut pinned_set: HashMap<Coord, u16> = HashMap::new();
     for (p, c) in pinned {
         by_cell.entry(*c & !16).or_default().push(*p);
+        pinned_set.insert(*p, *c & !16);
     }
-    for (ei, e) in lib.iter().enumerate() {
+    // score entries in parallel (independent per entry)
+    let per_entry = |ei: usize, e: &LibEntry| -> Vec<(f64, usize, Sym, Coord)> {
+        let mut scored: Vec<(f64, usize, Sym, Coord)> = vec![];
+        // vote with at most 24 evenly spaced sample cells, then count exact matches for the top placements
+        let step = (e.pinned.len() / 24).max(1);
+        let sample: Vec<&(Coord, u16)> = e.pinned.iter().step_by(step).collect();
         for s in syms() {
             let mut votes: HashMap<Coord, u32> = HashMap::new();
-            for (q, c) in &e.pinned {
+            for (q, c) in sample.iter().map(|x| (&x.0, &x.1)) {
                 let Some(ps) = by_cell.get(&(sym_cell(s, *c) & !16)) else { continue };
                 let sq = sym_coord(s, *q, Coord::new(0, 0, 0));
                 for p in ps {
                     *votes.entry(Coord::new(p.x - sq.x, p.y - sq.y, p.z - sq.z)).or_default() += 1;
                 }
             }
-            let mut best: Vec<(u32, Coord)> = votes.into_iter().map(|(t, v)| (v, t)).collect();
+            let mut top: Vec<(u32, Coord)> = votes.into_iter().map(|(t, v)| (v, t)).collect();
+            top.sort_by(|a, b| b.0.cmp(&a.0).then(a.1.cmp(&b.1)));
+            top.truncate(if e.id == "self" { 12 } else { 4 });
+            let mut best: Vec<(u32, Coord)> = top.into_iter().map(|(_, t)| {
+                let full = e.pinned.iter().filter(|(q, c)| pinned_set.get(&sym_coord(s, *q, t)) == Some(&(sym_cell(s, *c) & !16))).count() as u32;
+                (full, t)
+            }).collect();
             best.sort_by(|a, b| b.0.cmp(&a.0).then(a.1.cmp(&b.1)));
             let is_self = e.id == "self";
             for &(v, t) in best.iter().take(if is_self { 10 } else { 3 }) {
@@ -253,7 +266,23 @@ pub fn transplant_candidates(lib: &[LibEntry], pinned: &[(Coord, u16)], base: &C
                 scored.push((frac_l.min(frac_p) + 0.5 * frac_l.max(frac_p), ei, s, t));
             }
         }
-    }
+            scored
+    };
+    let next = AtomicUsize::new(0);
+    let acc: Mutex<Vec<(f64, usize, Sym, Coord)>> = Mutex::new(vec![]);
+    std::thread::scope(|scope| {
+        for _ in 0..std::thread::available_parallelism().map(|n| n.get()).unwrap_or(4) {
+            scope.spawn(|| loop {
+                let i = next.fetch_add(1, Ordering::Relaxed);
+                if i >= lib.len() {
+                    break;
+                }
+                let r = per_entry(i, &lib[i]);
+                acc.lock().unwrap().extend(r);
+            });
+        }
+    });
+    scored = acc.into_inner().unwrap();
     scored.sort_by(|a, b| b.0.partial_cmp(&a.0).unwrap());
     let mut out = vec![];
     let mut keys = HashSet::new();
@@ -1532,5 +1561,43 @@ pub fn path_actors(bodies: &[BodyT], base: &Cells, bi: usize, k: usize, maxlen: 
         }
     }
     out.sort_by_key(|(o, _)| o.len());
+    out
+}
+
+// ---------------------------------------------------------------- compact library file
+// Text format, one entry per block:  "E <id>" then "P x y z cell" (pinned) / "H x y z cell" (hardware) lines.
+pub fn save_library_file(lib: &[LibEntry], path: &Path) -> Result<(), String> {
+    let mut s = String::new();
+    for e in lib {
+        s += &format!("E {}\n", e.id);
+        for (p, c) in &e.pinned {
+            s += &format!("P {} {} {} {}\n", p.x, p.y, p.z, c);
+        }
+        for (p, c) in &e.hw {
+            s += &format!("H {} {} {} {}\n", p.x, p.y, p.z, c);
+        }
+    }
+    fs::write(path, s).map_err(|e| e.to_string())
+}
+
+pub fn load_library_file(path: &Path) -> Vec<LibEntry> {
+    let Ok(text) = fs::read_to_string(path) else { return vec![] };
+    let mut out: Vec<LibEntry> = vec![];
+    for line in text.lines() {
+        let mut it = line.split_whitespace();
+        match it.next() {
+            Some("E") => out.push(LibEntry { id: it.next().unwrap_or("?").to_string(), pinned: vec![], hw: vec![] }),
+            Some(t @ ("P" | "H")) => {
+                let v: Vec<i64> = it.filter_map(|x| x.parse().ok()).collect();
+                if v.len() == 4 {
+                    if let Some(e) = out.last_mut() {
+                        let item = (Coord::new(v[0], v[1], v[2]), v[3] as u16);
+                        if t == "P" { e.pinned.push(item) } else { e.hw.push(item) }
+                    }
+                }
+            }
+            _ => {}
+        }
+    }
     out
 }

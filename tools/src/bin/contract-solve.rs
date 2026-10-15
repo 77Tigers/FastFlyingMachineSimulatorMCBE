@@ -41,13 +41,14 @@ fn main() {
 fn run() -> Result<(), String> {
     let t0 = Instant::now();
     let a: Vec<String> = std::env::args().skip(1).collect();
-    let usage = "usage: contract-solve PROBLEM.json OUT_DIR [--budget SECS] [--threads N] [--library INDEX.json] [--holdout] [--seed N] [--quiet] [--library-dir DIR]... [--ext-library-dir DIR]... [--exclude-source SUBSTR]...";
+    let usage = "usage: contract-solve PROBLEM.json OUT_DIR [--budget SECS] [--threads N] [--library INDEX.json] [--holdout] [--seed N] [--quiet] [--library-dir DIR]... [--ext-library-dir DIR]... [--exclude-source SUBSTR]... [--library-file F] [--build-library F]";
     let mut pos = vec![];
     let (mut budget, mut threads, mut seed) = (5.0f64, std::thread::available_parallelism().map(|n| n.get()).unwrap_or(4).min(8), 1u64);
     let mut library = PathBuf::from("flyers/extension_bank/index.json");
     let (mut holdout, mut quiet) = (false, false);
     let (mut lib_dirs, mut exclude): (Vec<PathBuf>, Vec<String>) = (vec![], vec![]);
     let mut ext_dirs: Vec<PathBuf> = vec![];
+    let (mut lib_file, mut build_lib): (Option<PathBuf>, Option<PathBuf>) = (None, None);
     let mut i = 0;
     while i < a.len() {
         let v = |i: usize| a.get(i + 1).cloned().ok_or(format!("missing value for {}", a[i]));
@@ -59,6 +60,8 @@ fn run() -> Result<(), String> {
             "--holdout" => holdout = true,
             "--library-dir" => { lib_dirs.push(PathBuf::from(v(i)?)); i += 1; }
             "--ext-library-dir" => { ext_dirs.push(PathBuf::from(v(i)?)); i += 1; }
+            "--library-file" => { lib_file = Some(PathBuf::from(v(i)?)); i += 1; }
+            "--build-library" => { build_lib = Some(PathBuf::from(v(i)?)); i += 1; }
             "--exclude-source" => { exclude.push(v(i)?); i += 1; }
             "--quiet" => quiet = true,
             s if s.starts_with("--") => return Err(format!("unknown option {s}\n{usage}")),
@@ -120,18 +123,32 @@ fn run() -> Result<(), String> {
     pool.extend(r);
 
     // transplant
-    let mut lib = load_library(&library);
-    for d in &lib_dirs {
-        lib.extend(load_flyer_library(d));
+    // a compact library file (--library-file, built with --build-library) loads in milliseconds; otherwise the
+    // bank index and library directories are parsed (slow: ~1.5 s for 600 entries)
+    let mut lib = match &lib_file {
+        Some(f) => load_library_file(f),
+        None => {
+            let mut l = load_library(&library);
+            for d in &lib_dirs {
+                l.extend(load_flyer_library(d));
+            }
+            for d in &ext_dirs {
+                l.extend(load_ext_library(d));
+            }
+            l
+        }
+    };
+    if let Some(out_lib) = &build_lib {
+        save_library_file(&lib, out_lib)?;
+        println!("library written: {} entries -> {}", lib.len(), out_lib.display());
+        return Ok(());
     }
-    for d in &ext_dirs {
-        lib.extend(load_ext_library(d));
-    }
+    let t_lib = t0.elapsed().as_secs_f64();
     lib.retain(|e| !exclude.iter().any(|x| e.id.contains(x.as_str())));
     lib.extend(self_entry(&base));
     let pinned: Vec<(Coord, u16)> = ctx.required_cells.clone();
     let tc = transplant_candidates(&lib, &pinned, &base, holdout, 400);
-    log.push(format!("library: {} entries, {} transplant candidates ({:.2}s)", lib.len(), tc.len(), t0.elapsed().as_secs_f64()));
+    log.push(format!("library: {} entries (loaded at {:.2}s), {} transplant candidates ({:.2}s)", lib.len(), t_lib, tc.len(), t0.elapsed().as_secs_f64()));
     let r = eval_all(&sh, tc, threads, search_end);
     note("transplant", &r, &mut log);
     pool.extend(r.into_iter().take(40));

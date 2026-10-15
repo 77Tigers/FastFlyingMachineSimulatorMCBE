@@ -103,13 +103,18 @@ def main() -> int:
             jobs.append((p.parent.parent.name + "/" + p.parent.name, p, ref, "extra"))
     run_dir = HERE / "runs" / a.tag
     run_dir.mkdir(parents=True, exist_ok=True)
+    libfile = run_dir / "solver_library.txt"
+    if a.flyer_library and jobs:
+        # compact library (bank + flyer references + extension references), built once per run
+        subprocess.run([str(SOLVER), str(jobs[0][1]), str(run_dir / "_libbuild"), "--library-dir", str(HERE / "flyerprobs"),
+                        "--ext-library-dir", str(HERE / "flyerprobs_ext"), "--build-library", str(libfile)], cwd=ROOT, capture_output=True)
     rows = []
     checked = 0
     for pid, prob, ref, key in jobs:
         out = run_dir / pid.replace("/", "__")
         cmd = [str(SOLVER), str(prob), str(out), "--budget", str(a.budget), "--quiet"] + ([] if a.lookup else ["--holdout"])
         if a.flyer_library:
-            cmd += ["--library-dir", str(HERE / "flyerprobs"), "--ext-library-dir", str(HERE / "flyerprobs_ext")]
+            cmd += ["--library-file", str(libfile)]
             if "/" in pid:  # flyer-derived problem: exclude everything from its own source flyer
                 cmd += ["--exclude-source", "ref:" + pid.split("/")[0], "--exclude-source", "ext:" + pid.split("/")[0] + "/"]
         t = time.time()
