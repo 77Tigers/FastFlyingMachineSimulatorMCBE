@@ -72,6 +72,28 @@ should fall back to the identity period when the bounded reference fails).
   repeated structure (chains, mirrored arms, rings).
 * Benchmark noise: never run other solver jobs during a bench run (CPU contention changes wall-clock results).
 
+### Extension-contract benchmark (`flyerprobs_ext/`, regenerate with the loop in this README's history or
+`contract-from-flyer FLYER OUT --speed BPS --mode ext --max-bodies 4` per banked flyer)
+
+Generator rules (all needed for references to pass): actors attributed per move from the trace; actors of
+other bodies' pushes are stripped and replaced by supplied strokes; **sticky pullers stay as real hardware**
+(a supplied stroke is a push, a puller's arm blocks it); every move made by body k's actors or merged with a
+body-k move stays natural; actor log covers 3 periods (hopping hardware); rows sorted by tick (Python checker
+requirement); `reference.flyer` saved next to each contract. 170 contracts from 57 flyers (N2, N3, N4,
+mmwmmw, 2 bps), 156 with a reference passing all three orders.
+
+| Run | Result (reference-known problems: solved at <= reference load) |
+| --- | --- |
+| e3 | N2 P8: 40/42, N2 P4: 14/16, 2 bps: 2/2, N3: 45/60 (+1 better: human_original_victim_observer/ext1 12->11, Python-confirmed 3 orders x 80), N4 P12: 6/18, mmwmmw P6: 0/18. 111/170 verified overall |
+| e3 pycheck | 20 random verified answers re-checked with `tools/extension_contract.py`: 20/20 agree |
+
+* Body growth (`grown_actors`): timed actors may add one glue cell to the carrier or target. First
+  bodies-from-pistons success: `two_body_5slot_2bps/bare` (no pistons, no power given) solved at load 10 =
+  the banked PL10, Python-confirmed.
+* mmwmmw (pull-twice) extensions need 4 pistons jointly (no carrier is ever still for two slots, so no rigid
+  actor exists); single pieces score nothing, pairs found nothing. Needs a dedicated pull-twice family solver
+  or sibling transplants (pl22 vs pl24 references differ in body shape, so votes stay low).
+
 ## Lessons (search)
 
 * Soft scoring (keep simulating past port errors; count per-(port,tick) move/wait correctness; penalise
