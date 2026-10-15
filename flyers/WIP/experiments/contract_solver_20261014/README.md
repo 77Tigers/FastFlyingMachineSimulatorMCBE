@@ -48,6 +48,16 @@ Solver stages: seed -> library transplant (8 yz symmetries x translations voted 
 beam (add/remove/toggle pistons, incl. extended pistons whose arm touches the body) -> anneal (shared
 mutation operators) -> verify (80 samples x 3 orders) — all inside the budget.
 
+## Library file (fast transplants)
+
+`contract-solve ANY_PROBLEM.json OUT --library-dir flyerprobs --ext-library-dir flyerprobs_ext --build-library
+solver_library.txt` writes every library entry (bank fixtures + flyer references + extension references) as
+plain text (`E id` / `P x y z cell` pinned / `H x y z cell` hardware): 626 entries, ~0.5 MB, loads in ~10 ms.
+Use it with `--library-file solver_library.txt` (plus `--exclude-source` for holdout). Alignment votes with <= 24
+sample cells per entry and exact counts for the top placements, in parallel: library stage 1.4 s -> 0.15 s.
+This file is the storage-light replacement for keeping full fixtures: a bank entry only needs its pinned cells
+and hardware cells.
+
 ## Results so far (holdout = no exact lookup; 5 s budget, 16 threads)
 
 | Run | Set | Result |
