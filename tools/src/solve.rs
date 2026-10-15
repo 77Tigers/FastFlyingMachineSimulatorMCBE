@@ -831,6 +831,13 @@ pub fn decompose(ctx: &Ctx, base: &Cells, lo: Coord, hi: Coord, threads: usize, 
             }
         }
         if !scored.iter().any(|x| x.1) {
+            if let Some(bi) = bodies.iter().position(|b| b.cells.first() == body.first()) {
+                let mut rel = timed_actors_r(&bodies, base, bi, slot, true, true);
+                rel.truncate(600);
+                scored.extend(eval_set(&rel));
+            }
+        }
+        if !scored.iter().any(|x| x.1) {
             let mut gen = actor_candidates(base, &body, lo, hi);
             gen.truncate(900);
             scored.extend(eval_set(&gen));
@@ -1088,6 +1095,12 @@ fn power_options(bodies: &[BodyT], base: &Cells, c: usize, q: Coord, dir: usize,
 
 /// Timing-derived actor candidates for move (body index `bi`, slot `k`). Each candidate is a list of cells.
 pub fn timed_actors(bodies: &[BodyT], base: &Cells, bi: usize, k: usize, with_power: bool) -> Vec<(Vec<(Coord, u16)>, String)> {
+    timed_actors_r(bodies, base, bi, k, with_power, false)
+}
+
+/// `relaxed`: drop the carrier-stillness rule (riders that change carrier, e.g. pull-twice mmwmmw where every
+/// piston sits between two bodies and no carrier is still for two slots).
+pub fn timed_actors_r(bodies: &[BodyT], base: &Cells, bi: usize, k: usize, with_power: bool, relaxed: bool) -> Vec<(Vec<(Coord, u16)>, String)> {
     let s = bodies[bi].word.len();
     let b = &bodies[bi];
     let pusher = Block::piston(0, false, false, 0, false).unwrap().cell();
@@ -1099,7 +1112,7 @@ pub fn timed_actors(bodies: &[BodyT], base: &Cells, bi: usize, k: usize, with_po
             continue;
         }
         // rigid pusher: carrier still at k and k+1; front cell = a cell of B at slot k
-        if !c.word[k % s] && !c.word[(k + 1) % s] {
+        if relaxed || (!c.word[k % s] && !c.word[(k + 1) % s]) {
             for g in &b.cells {
                 let front_k = Coord::new(g.x + b.shift[k], g.y, g.z);
                 let q = Coord::new(front_k.x - 1 - c.shift[k], front_k.y, front_k.z);
@@ -1118,7 +1131,7 @@ pub fn timed_actors(bodies: &[BodyT], base: &Cells, bi: usize, k: usize, with_po
                     let mut key = o.clone();
                     key.sort();
                     if keys.insert(key) {
-                        let d = format!("push b{}@{} by b{} {}", bi, k, ci, if o.len() > 1 { "+power" } else { "" });
+                        let d = format!("{}push b{}@{} by b{} {}", if relaxed { "r" } else { "" }, bi, k, ci, if o.len() > 1 { "+power" } else { "" });
                         out.push((o, d));
                     }
                 }
@@ -1127,7 +1140,7 @@ pub fn timed_actors(bodies: &[BodyT], base: &Cells, bi: usize, k: usize, with_po
         // rigid sticky pull at k: extends at k-1 (carrier still at k-1, k), arm cell ahead of B at k-1 free,
         // pulls B's cell two ahead of the base at k
         let km1 = (k + s - 1) % s;
-        if !c.word[km1] && !c.word[k % s] {
+        if relaxed || (!c.word[km1] && !c.word[k % s]) {
             for g in &b.cells {
                 let gk = Coord::new(g.x + b.shift[k], g.y, g.z); // B position at slot k (before its move)
                 let q_k = Coord::new(gk.x + 2, gk.y, gk.z);
@@ -1151,7 +1164,7 @@ pub fn timed_actors(bodies: &[BodyT], base: &Cells, bi: usize, k: usize, with_po
                     let mut key = o.clone();
                     key.sort();
                     if keys.insert(key) {
-                        let d = format!("pull b{}@{} by b{} {}", bi, k, ci, if o.len() > 1 { "+power" } else { "" });
+                        let d = format!("{}pull b{}@{} by b{} {}", if relaxed { "r" } else { "" }, bi, k, ci, if o.len() > 1 { "+power" } else { "" });
                         out.push((o, d));
                     }
                 }
