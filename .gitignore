@@ -49,3 +49,8 @@ __pycache__/
 *.egg-info/
 # Bulk enumeration output (summarised in REPORT.md)
 /flyers/WIP/experiments/topology_20261007/runs/enum_*.json
+
+# contract solver: regenerable benchmark outputs
+flyers/WIP/experiments/contract_solver_20261014/runs/
+flyers/WIP/experiments/contract_solver_20261014/flyerprobs/
+flyers/WIP/experiments/contract_solver_20261014/problems/

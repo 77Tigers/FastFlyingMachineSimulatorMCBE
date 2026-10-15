@@ -1234,6 +1234,9 @@ def run_case(contract: Contract, driver: Path, sample: tuple[int, int, int] | No
     if failure and first_failure is None and contract.prescribed_order == "interleaved":
         first_failure = {"stage": "trace", "code": "contract_failure", "tick": max(0, tick_count - 1),
                          "port": None, "expected": None, "actual": None, "message": failure}
+    if not KEEP_REPLAY:
+        # Replay logs are regenerable from rng/phase; keep them only on request (--keep-replay).
+        replay = {"rng": rng, "phase_x": px, "phase_z": pz, "schedule_seed": schedule_seed}
     if first_failure is not None and contract.prescribed_order == "interleaved":
         first_failure = {**first_failure, "replay": replay}
     result = {"rng": rng, "phase_x": px, "phase_z": pz, "passed": failure is None,
@@ -1243,18 +1246,27 @@ def run_case(contract: Contract, driver: Path, sample: tuple[int, int, int] | No
             "input_max_action_loads": input_loads,
             "whole_assembly_max_action": whole_max}
     if contract.prescribed_order == "interleaved":
-        result.update({"schedule_seed": schedule_seed, "schedule_seeds": schedule_seeds,
-                       "realized_action_order": realized_action_order})
+        result["schedule_seed"] = schedule_seed
+        if KEEP_REPLAY:
+            result.update({"schedule_seeds": schedule_seeds,
+                           "realized_action_order": realized_action_order})
     return result
+
+
+KEEP_REPLAY = False
 
 
 def main(argv: Iterable[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("contract", type=Path)
     parser.add_argument("--samples", action="store_true", help="run 80 RNG/phase combinations")
+    parser.add_argument("--keep-replay", action="store_true",
+                        help="store full interleaved realized action order per case (large; regenerable)")
     parser.add_argument("--out", type=Path, help="write machine-readable result JSON")
     parser.add_argument("--driver", type=Path, help="path to extension trace/drive executable")
     args = parser.parse_args(argv)
+    global KEEP_REPLAY
+    KEEP_REPLAY = bool(args.keep_replay)
     try:
         contract = load_contract(args.contract.resolve())
         motion_error = _validate_word_motion(contract)

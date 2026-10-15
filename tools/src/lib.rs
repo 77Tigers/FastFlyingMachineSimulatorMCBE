@@ -1,6 +1,7 @@
 //! Shared helpers for the research tools. Uses only the public simulator API.
 use fastflyer::{debug::TickTrace, Block, Coord, Flyer, Kind};
 use std::sync::mpsc;
+pub mod contract;
 use std::sync::atomic::{AtomicUsize, Ordering};
 
 pub type Error = Box<dyn std::error::Error>;
