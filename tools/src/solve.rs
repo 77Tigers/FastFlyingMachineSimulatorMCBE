@@ -1008,6 +1008,120 @@ pub fn decompose(ctx: &Ctx, base: &Cells, lo: Coord, hi: Coord, threads: usize, 
     if out.is_empty() && !df.is_empty() {
         log.push(format!("decompose: deepest failure {df}"));
     }
+    // pairwise compatibility combination: stray power (one actor's power source firing another move's piston) is
+    // mostly a pairwise effect. Test every pair of top options of different moves with just those two moves
+    // natural, then pick one option per move with all pairs compatible (forward-checking DFS, no simulation),
+    // and check the complete sets in the real contract.
+    if out.is_empty() && options.len() >= 3 && Instant::now() < deadline && std::env::var("NO_PAIRCOMB").is_err() {
+        let per = 6usize;
+        // moves with no passing option ("weak") contribute their best-scoring options; pair tests skip them
+        let weak: Vec<bool> = options.iter().map(|(_, v)| !v.iter().any(|o| o.1)).collect();
+        let opt: Vec<Vec<&(f64, bool, Vec<(Coord, u16)>, String)>> = options.iter().zip(&weak).map(|((_, v), &w)| if w { v.iter().take(3).collect() } else { v.iter().filter(|o| o.1).take(per).collect() }).collect();
+        if opt.iter().all(|v| !v.is_empty()) && weak.iter().filter(|&&w| w).count() <= 2 {
+            let idx: Vec<(usize, usize)> = opt.iter().enumerate().flat_map(|(m, v)| (0..v.len()).map(move |i| (m, i))).collect();
+            let id_of = |m: usize, i: usize| idx.iter().position(|&x| x == (m, i)).unwrap();
+            let n = idx.len();
+            let mut pairs: Vec<(usize, usize)> = vec![];
+            for a in 0..n {
+                for b in a + 1..n {
+                    if idx[a].0 != idx[b].0 && !weak[idx[a].0] && !weak[idx[b].0] {
+                        pairs.push((a, b));
+                    }
+                }
+            }
+            let pair_deadline = Instant::now() + deadline.saturating_duration_since(Instant::now()) / 2;
+            let next = AtomicUsize::new(0);
+            let compat: Mutex<HashSet<(usize, usize)>> = Mutex::new(HashSet::new());
+            let tested = AtomicUsize::new(0);
+            std::thread::scope(|scope| {
+                for _ in 0..threads.max(1) {
+                    scope.spawn(|| loop {
+                        if Instant::now() >= pair_deadline {
+                            break;
+                        }
+                        let i = next.fetch_add(1, Ordering::Relaxed);
+                        if i >= pairs.len() {
+                            break;
+                        }
+                        let (a, b) = pairs[i];
+                        let (oa, ob) = (opt[idx[a].0][idx[a].1], opt[idx[b].0][idx[b].1]);
+                        let mut c = base.clone();
+                        let mut clash = false;
+                        for &(p, v) in oa.2.iter().chain(ob.2.iter()) {
+                            if let Some(o) = c.insert(p, v) {
+                                if o != v {
+                                    clash = true;
+                                }
+                            }
+                        }
+                        tested.fetch_add(1, Ordering::Relaxed);
+                        if clash {
+                            continue;
+                        }
+                        let mut nat = pinned_nat.clone();
+                        nat[options[idx[a].0].0] = true;
+                        nat[options[idx[b].0].0] = true;
+                        if scaffold_ok(ctx, &moves, &nat, &c, s) {
+                            compat.lock().unwrap().insert((a, b));
+                        }
+                    });
+                }
+            });
+            let compat = compat.into_inner().unwrap();
+            let ok = |a: usize, b: usize| weak[idx[a].0] || weak[idx[b].0] || compat.contains(&(a.min(b), a.max(b)));
+            let tested = tested.load(Ordering::Relaxed);
+            // forward-checking DFS over moves (fewest live options first)
+            let mut found: Vec<Vec<usize>> = vec![];
+            let mut nodes = 0usize;
+            fn fc(m_order: &mut Vec<usize>, domains: Vec<Vec<usize>>, chosen: &mut Vec<usize>, ok: &dyn Fn(usize, usize) -> bool, found: &mut Vec<Vec<usize>>, nodes: &mut usize, deadline: Instant) {
+                if found.len() >= 6 || *nodes > 200_000 || Instant::now() >= deadline {
+                    return;
+                }
+                *nodes += 1;
+                // pick the unassigned move with the smallest domain
+                let Some((mi, _)) = domains.iter().enumerate().filter(|(m, _)| !m_order.contains(m)).min_by_key(|(_, d)| d.len()) else {
+                    found.push(chosen.clone());
+                    return;
+                };
+                for &o in &domains[mi] {
+                    let nd: Vec<Vec<usize>> = domains.iter().enumerate().map(|(m, d)| if m == mi || m_order.contains(&m) { d.clone() } else { d.iter().copied().filter(|&x| ok(o, x)).collect() }).collect();
+                    if nd.iter().enumerate().any(|(m, d)| m != mi && !m_order.contains(&m) && d.is_empty()) {
+                        continue;
+                    }
+                    m_order.push(mi);
+                    chosen.push(o);
+                    fc(m_order, nd, chosen, ok, found, nodes, deadline);
+                    chosen.pop();
+                    m_order.pop();
+                }
+            }
+            let domains: Vec<Vec<usize>> = (0..opt.len()).map(|m| (0..opt[m].len()).map(|i| id_of(m, i)).collect()).collect();
+            fc(&mut vec![], domains, &mut vec![], &ok, &mut found, &mut nodes, deadline);
+            let mut real = ctx.clone();
+            real.soft = false;
+            real.allow_ext_fail = false;
+            let mut npass = 0;
+            for f in &found {
+                let mut c = base.clone();
+                for &o in f {
+                    for &(p, v) in &opt[idx[o].0][idx[o].1].2 {
+                        c.insert(p, v);
+                    }
+                }
+                let pass = evaluate(&real, &c, s, false).is_ok();
+                npass += pass as usize;
+                let d = f.iter().map(|&o| opt[idx[o].0][idx[o].1].3.clone()).collect::<Vec<_>>().join(" | ");
+                out.push((c, format!("decompose paircomb{} | {d}", if pass { "" } else { " (fails natural)" })));
+            }
+            out.sort_by_key(|(_, d)| d.contains("fails natural"));
+            if npass == 0 {
+                // complete but failing sets are only fallbacks; keep at most two so later stages can repair them
+                let keep: Vec<(Cells, String)> = out.drain(..).take(2).collect();
+                FALLBACKS.with(|fb| fb.borrow_mut().extend(keep));
+            }
+            log.push(format!("decompose paircomb: {} options, {}/{} pairs tested, {} compatible, {} complete sets, {npass} pass natural", n, tested, pairs.len(), compat.len(), found.len()));
+        }
+    }
     // sequential in-context combination: moves in time order; each move's top isolated candidates (and their
     // shared-power variants) are re-scored with the actors chosen so far present
     if out.is_empty() && options.len() > 3 && Instant::now() < deadline {
@@ -1238,6 +1352,10 @@ pub fn timed_actors(bodies: &[BodyT], base: &Cells, bi: usize, k: usize, with_po
     timed_actors_r(bodies, base, bi, k, with_power, false)
 }
 
+/// Relaxed actors may also be stickies stuck to the body they pull (hoppers). Off by default: these options pass
+/// their own move often and crowd the combination search, so contract-solve enables them in a second pass only.
+pub static SELF_CARRIER: std::sync::atomic::AtomicBool = std::sync::atomic::AtomicBool::new(false);
+
 /// `relaxed`: drop the carrier-stillness rule (riders that change carrier, e.g. pull-twice mmwmmw where every
 /// piston sits between two bodies and no carrier is still for two slots).
 pub fn timed_actors_r(bodies: &[BodyT], base: &Cells, bi: usize, k: usize, with_power: bool, relaxed: bool) -> Vec<(Vec<(Coord, u16)>, String)> {
@@ -1245,24 +1363,34 @@ pub fn timed_actors_r(bodies: &[BodyT], base: &Cells, bi: usize, k: usize, with_
     let b = &bodies[bi];
     let pusher = Block::piston(0, false, false, 0, false).unwrap().cell();
     let sticky = Block::piston(1, true, false, 0, false).unwrap().cell();
+    let pusher_ext = Block::piston(0, false, false, 2, false).unwrap().cell();
+    let sticky_ext = Block::piston(1, true, false, 2, false).unwrap().cell();
     let mut out = vec![];
     let mut keys = HashSet::new();
     for (ci, c) in bodies.iter().enumerate() {
-        if ci == bi {
+        // relaxed: the actor may sit on the body it moves (a hopper stuck to B pulls B away from itself and is
+        // carried off later by the other body)
+        if ci == bi && !(relaxed && SELF_CARRIER.load(Ordering::Relaxed)) {
             continue;
         }
-        // rigid pusher: carrier still at k and k+1; front cell = a cell of B at slot k
-        if relaxed || (!c.word[k % s] && !c.word[(k + 1) % s]) {
+        // rigid pusher: carrier still at k and k+1; front cell = a cell of B at slot k (never on B itself)
+        if ci != bi && (relaxed || (!c.word[k % s] && !c.word[(k + 1) % s])) {
             for g in &b.cells {
                 let front_k = Coord::new(g.x + b.shift[k], g.y, g.z);
                 let q = Coord::new(front_k.x - 1 - c.shift[k], front_k.y, front_k.z);
-                if base.contains_key(&q) || !c.cells.iter().any(|x| adj6(*x, q) && *x != nbr(q, DIRS[0])) {
+                if base.contains_key(&q) || !(if relaxed { bodies.iter().flat_map(|b| b.cells.iter()).any(|x| adj6(*x, q) && *x != nbr(q, DIRS[0])) } else { c.cells.iter().any(|x| adj6(*x, q) && *x != nbr(q, DIRS[0])) }) {
                     continue;
                 }
-                let mut opts: Vec<Vec<(Coord, u16)>> = vec![vec![(q, pusher)]];
+                // a pusher firing in the last slot is still extended at tick 0 (it retracts at slot 0)
+                let head: Vec<(Coord, u16)> = if (k + 1) % s == 0 && !base.contains_key(&nbr(q, DIRS[0])) {
+                    vec![(q, pusher_ext), (nbr(q, DIRS[0]), ARM)]
+                } else {
+                    vec![(q, pusher)]
+                };
+                let mut opts: Vec<Vec<(Coord, u16)>> = vec![head.clone()];
                 if with_power {
-                    for pw in power_options(bodies, base, ci, q, 0, k, &[q]) {
-                        let mut o = vec![(q, pusher)];
+                    for pw in power_options(bodies, base, ci, q, 0, k, &[q, nbr(q, DIRS[0])]) {
+                        let mut o = head.clone();
                         o.extend(pw);
                         opts.push(o);
                     }
@@ -1286,16 +1414,22 @@ pub fn timed_actors_r(bodies: &[BodyT], base: &Cells, bi: usize, k: usize, with_
                 let q_k = Coord::new(gk.x + 2, gk.y, gk.z);
                 let q = Coord::new(q_k.x - c.shift[k], q_k.y, q_k.z);
                 let gap0 = Coord::new(g.x + 1, g.y, g.z);
-                if base.contains_key(&q) || !c.cells.iter().any(|x| adj6(*x, q) && *x != nbr(q, DIRS[1])) {
+                if base.contains_key(&q) || !(if relaxed { bodies.iter().flat_map(|b| b.cells.iter()).any(|x| adj6(*x, q) && *x != nbr(q, DIRS[1])) } else { c.cells.iter().any(|x| adj6(*x, q) && *x != nbr(q, DIRS[1])) }) {
                     continue;
                 }
                 if b.cells.contains(&gap0) {
                     continue;
                 }
-                let mut opts: Vec<Vec<(Coord, u16)>> = vec![vec![(q, sticky)]];
+                // a sticky extending in the last slot (pull at slot 0) is extended at tick 0, arm toward B
+                let head: Vec<(Coord, u16)> = if k % s == 0 && !base.contains_key(&nbr(q, DIRS[1])) {
+                    vec![(q, sticky_ext), (nbr(q, DIRS[1]), ARM)]
+                } else {
+                    vec![(q, sticky)]
+                };
+                let mut opts: Vec<Vec<(Coord, u16)>> = vec![head.clone()];
                 if with_power {
-                    for pw in power_options(bodies, base, ci, q, 1, km1, &[q]) {
-                        let mut o = vec![(q, sticky)];
+                    for pw in power_options(bodies, base, ci, q, 1, km1, &[q, nbr(q, DIRS[1])]) {
+                        let mut o = head.clone();
                         o.extend(pw);
                         opts.push(o);
                     }

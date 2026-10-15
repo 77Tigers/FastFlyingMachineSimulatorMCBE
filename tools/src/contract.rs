@@ -1458,6 +1458,37 @@ pub fn rec_name(ctx: &Ctx) -> &'static str {
     }
 }
 
+/// The same contract with an n-fold period (words repeated, advance x n). Hopping hardware that alternates
+/// between two pistons per glue period recurs only every 2 periods; in the doubled contract each move instance
+/// has one actor again. Supplied strokes are re-derived for the new cycle count.
+pub fn multiplied(ctx: &Ctx, n: usize) -> Result<Ctx, String> {
+    let mut c = ctx.clone();
+    let slots = ctx.period / 2;
+    let rep = |v: &Vec<Option<u64>>| -> Vec<Option<u64>> { (0..n).flat_map(|_| v.iter().copied()).collect() };
+    for p in c.ports.iter_mut() {
+        p.word = (0..n).flat_map(|_| p.word.iter().copied()).collect();
+        p.prefix = vec![0];
+        for &m in &p.word {
+            p.prefix.push(p.prefix.last().unwrap() + m as usize);
+        }
+        p.baseline = p.baseline.as_ref().map(rep);
+        p.spare = p.spare.as_ref().map(rep);
+        p.provenance = p.provenance.as_ref().map(|v| (0..n).flat_map(|_| v.iter().copied()).collect());
+    }
+    for k in c.contacts.iter_mut() {
+        k.slots = (0..n).flat_map(|j| k.slots.iter().map(move |s| s + j * slots)).collect();
+    }
+    c.period = ctx.period * n;
+    c.advance = ctx.advance * n as i64;
+    let cyc = ((ctx.cycles + n - 1) / n).max(2);
+    if c.events.is_empty() {
+        c.cycles = cyc;
+    } else {
+        set_cycles(&mut c, cyc)?;
+    }
+    Ok(c)
+}
+
 // Re-derive the prescribed schedule for N periods by replicating the first period, shifted by the advance per cycle.
 pub fn set_cycles(ctx: &mut Ctx, n: usize) -> Result<(), String> {
     let first: Vec<(usize, Coord, u64)> = ctx.events.iter().copied().filter(|e| e.0 < ctx.period).collect();
