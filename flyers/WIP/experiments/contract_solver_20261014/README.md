@@ -1,5 +1,24 @@
 # Contract solver (2026-10-14/15)
 
+## Status for the user (2026-10-15 morning)
+
+* `contract-solve PROBLEM.json OUT` (5 s budget, everything verified inside it: all 3 orders x 80 samples,
+  natural contracts once since orders coincide; wall p95 ~4.2 s, max 4.4 s after the last deadline fix).
+* **Extension contracts from 57 banked flyers (170, actor-attributed, own source excluded from libraries):
+  126 verified, 121 at <= reference load.** N2 40/42 (+14/16 four-tick, 2/2 2 bps), N3 54/60, N4 mmmmww 6/18,
+  mmwmmw 6/18. Beat references (Python-confirmed, 3 orders x 80): victim_observer ext1 12->10, bank n3_317
+  13->11, n3_325 11->10, n3_235 endogenous 10->8.
+* Natural flyer problems (pistons stripped from banked flyers): 90/135. Bank N3 problems: 11/11 fair.
+* Independent re-checks (`pycheck_run.py`, `bench.py --pycheck`): every sampled answer agrees with
+  `tools/extension_contract.py` (24 extension + 8 natural + 10 bank).
+* Bodies from pistons: bare skeletons 1/9 (two_body_5slot_2bps at PL10); glue-path growth exists; from-scratch
+  designs show what is missing (riders for mwmw pairs, closure stretch for mmww pairs) -> global layout model.
+* Weakest classes: N4 four-push riders (lone pistons hopping between bodies), pull-twice mmwmmw (4 coupled
+  riders), bare skeletons. `flyer-ledger` shows their mechanisms.
+* Storage: replay logs stripped (898 MB -> 23 MB). Bank entries could become contract + short solution diff.
+* Work is on local branch `contract-solver` (not pushed); generated problems/runs are gitignored and
+  regenerable (`gen_flyerprobs.py`, `contract-from-flyer --mode ext|bare`, `bench.py`).
+
 User task: code that takes an extension contract and outputs the best solution it can in < 5 s, useful for
 wide classes of extensions (N2–N5, mv4, mmwmmw, mmwmw...), so the bank need not store every fixture.
 Side goals: find which extension classes are useful, use them as a benchmark, explore the space.
@@ -109,8 +128,17 @@ confirmed). Where it stops:
   added power blocks fire other pistons at wrong times. Next: shared power (one block powering the pusher of X
   and the sticky pulling X, the user's power trick) and power-aware combination (prefer actors whose power
   touches no other piston at other slots).
-* Real bodies-from-pistons (anchors only, bodies grown to fit a role plan) is not started; the growth
-  machinery (`growth_ok`, one-cell growth per actor) is the building block.
+* Combination failures on bare skeletons are structural, not time: a 30 s budget gives the same depth
+  (rigid_chain_capped/bare: sequential in-context pass places 6/16 moves; added power blocks and one-shot
+  pre-extended stickies interfere).
+* **From-scratch designs** (`design_problem.py OUT SPEC.json`; `designs/d1..d3`): glue bodies + words only.
+  `glue paths` (`path_actors`, <= 5 grown cells for carrier support / target face) give passing actors for
+  some moves. What the model misses: (1) mwmw/wmwm two-body designs have no rigid actor at all (every slot
+  one body moves) -> need hand-off riders; (2) mmww/wwmm pairs need the partner both behind (push) and ahead
+  (pull) of each body = the closure stretch identity (~4 cells of reach) -> the layout must be chosen with
+  that in mind before growing; local growth does not find it. A real bodies-from-pistons engine probably
+  needs a global layout model (satflyer-style CP-SAT for N2 already does glue+pistons+power; generalising it
+  to any word set and calling it offline is the natural next step).
 
 `flyer-ledger FLYER --period P` prints who moves whom (extend/retract, carrier bodies, loads) — the input for
 family solvers. Pull-twice mmwmmw ledger: every slot one body is pulled (load ~22 incl. 7 riders) and one

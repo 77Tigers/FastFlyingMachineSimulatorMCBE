@@ -69,7 +69,7 @@ fn run() -> Result<(), String> {
     let problem = PathBuf::from(pos.first().ok_or(usage)?);
     let out = PathBuf::from(pos.get(1).ok_or(usage)?);
     fs::create_dir_all(&out).map_err(|e| e.to_string())?;
-    let end = t0 + Duration::from_secs_f64(budget * 0.88);
+    let end = t0 + Duration::from_secs_f64(budget * 0.82); // margin: one verify sample of a big flyer is not interruptible
     // natural contracts verify in one order (3x cheaper), so they get a longer search share
     let mut search_end = t0 + Duration::from_secs_f64(budget * 0.6);
 
