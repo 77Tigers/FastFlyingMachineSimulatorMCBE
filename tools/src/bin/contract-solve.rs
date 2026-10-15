@@ -175,8 +175,13 @@ fn run() -> Result<(), String> {
     // nothing passing from the library: decomposition is the main route and gets more of the budget
     let dec_frac = if pool.iter().any(|s| s.ev.is_some()) { 0.4 } else { 0.5 };
     let dec_end = (t0 + Duration::from_secs_f64(budget * dec_frac)).min(search_end);
-    let dec = decompose(&ctx, &base, blo, bhi, threads, dec_end);
+    // decomposition evaluates thousands of candidates; on very large flyers (one evaluation > 50 ms) it cannot
+    // finish and its in-flight evaluations overrun the budget -> skipped (and with it the doubled passes)
+    let heavy = t_eval > 0.05;
+    let dec = if heavy { Decomp { cands: vec![], log: vec![format!("decompose: skipped (eval {:.0} ms)", t_eval * 1000.0)] } } else { decompose(&ctx, &base, blo, bhi, threads, dec_end) };
     log.extend(dec.log.iter().cloned());
+    // doubling only helps hopping hardware: some move had no rigid (still-carrier) actor
+    let hoppy = dec.log.iter().any(|l| l.contains("no rigid actor"));
     let r = eval_all(&sh, dec.cands, threads, search_end);
     note("decompose", &r, &mut log);
     pool.extend(r);
@@ -184,15 +189,18 @@ fn run() -> Result<(), String> {
 
     // period doubling: hopping hardware (two pistons alternating per glue period) has one actor per move instance
     // in the doubled contract; candidates are judged in the original contract like everything else
-    if !pool.iter().any(|s| s.ev.is_some()) && std::env::var("NO_X2").is_err() {
+    if !heavy && hoppy && !pool.iter().any(|s| s.ev.is_some()) && std::env::var("NO_X2").is_err() {
         if let Ok(c2) = multiplied(&ctx, 2) {
             // pass 1 as before; pass 2 adds hoppers stuck to the body they pull (SELF_CARRIER)
-            for (pass, frac) in [(1, 0.48), (2, 0.6)] {
+            for (pass, frac) in [(1, 0.46), (2, 0.56)] {
                 if pool.iter().any(|s| s.ev.is_some()) {
                     break;
                 }
                 SELF_CARRIER.store(pass == 2, std::sync::atomic::Ordering::Relaxed);
                 let x2_end = (t0 + Duration::from_secs_f64(budget * frac)).min(search_end);
+                if Instant::now() + Duration::from_millis(100) >= x2_end {
+                    break;
+                }
                 let dec2 = decompose(&c2, &base, blo, bhi, threads, x2_end);
                 log.extend(dec2.log.iter().map(|l| format!("x2.{pass} {l}")));
                 let r = eval_all(&sh, dec2.cands.into_iter().map(|(c, d)| (c, format!("x2.{pass} {d}"))).collect(), threads, search_end);
@@ -208,7 +216,8 @@ fn run() -> Result<(), String> {
     let width = 4;
     let mut frontier: Vec<Scored> = pool.iter().take(width).cloned().collect();
     let mut rounds = 0;
-    let beam_end = (t0 + Duration::from_secs_f64(budget * 0.52)).min(search_end);
+    // the beam always gets a slice (decomposition / doubling may have used the stages before it)
+    let beam_end = (t0 + Duration::from_secs_f64(budget * 0.52)).max(Instant::now() + Duration::from_secs_f64(budget * 0.1)).min(search_end);
     while Instant::now() < beam_end && rounds < 60 {
         rounds += 1;
         let mut cands = vec![];

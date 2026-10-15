@@ -195,13 +195,38 @@ def apply():
     print(f"stripped {n} fixtures")
 
 
+def recheck():
+    """Re-run the removable set with the CURRENT solver binary (kept-only library, seeds 1 and 4) right before
+    apply; entries that no longer reproduce are taken off the list."""
+    rem = sorted(set((RUN / "removable.txt").read_text().split()))
+    by = {e["id"]: e for e in entries()}
+    keep, rows = [], []
+    for eid in rem:
+        p = problem_of(by[eid])
+        ok = True
+        for seed in (1, 4):
+            r = solve(by[eid], p, RUN / f"recheck_{seed}" / eid, seed, set(rem) - {eid})
+            rows.append(r)
+            print(f"[R] {eid} seed {seed} {r['status']} load={r['load']} ref={r['ref']} {r['wall']}s {'OK' if r['ok'] else 'DROP'}", flush=True)
+            if not r["ok"]:
+                ok = False
+                break
+        if ok:
+            keep.append(eid)
+    write("recheck.csv", rows)
+    (RUN / "removable.txt").write_text("".join(f"{x}\n" for x in keep))
+    print(f"recheck: {len(keep)}/{len(rem)} still reproduce")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("mode", choices=["sweep", "apply"])
+    ap.add_argument("mode", choices=["sweep", "recheck", "apply"])
     ap.add_argument("--ids", default="")
     a = ap.parse_args()
     if a.mode == "sweep":
         sweep([x for x in a.ids.split(",") if x])
+    elif a.mode == "recheck":
+        recheck()
     else:
         apply()
     return 0

@@ -57,6 +57,8 @@ def ref_orders(e: dict) -> str:
 def ensure_problem(e: dict) -> Path:
     d = HERE / "problems" / e["id"]
     p = d / "problem.json"
+    if not p.exists() and e.get("fixture") == "regenerate":
+        return ROOT / e["problem"]  # fixture stripped from the bank; the stored problem is the input
     if not p.exists():
         make_problem(ROOT / e["path"] / "before_natural.json", d)
     return p

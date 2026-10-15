@@ -715,11 +715,19 @@ pub fn actor_candidates(cur: &Cells, body: &[Coord], lo: Coord, hi: Coord) -> Ve
 
 /// Which internal moves are made by the hardware already in `base` (natural) and which must be supplied.
 pub fn detect_natural(ctx: &Ctx, moves: &[Move], base: &Cells, s: Sample) -> Vec<bool> {
+    detect_natural_until(ctx, moves, base, s, None)
+}
+
+/// detect_natural with a deadline (large flyers: one evaluation per move adds up); stops refining when it passes.
+pub fn detect_natural_until(ctx: &Ctx, moves: &[Move], base: &Cells, s: Sample, deadline: Option<Instant>) -> Vec<bool> {
     // 1. start fully natural; supply exactly the moves that do not happen by themselves (strict first failure
     //    "expected move +X, actual did not move"), so moves made by pinned hardware stay natural
     let mut natural = vec![true; moves.len()];
     let strict = { let mut c = ctx.clone(); c.soft = false; c };
     for _ in 0..=moves.len() {
+        if deadline.map_or(false, |d| Instant::now() >= d) {
+            break;
+        }
         let sc = scaffold_ctx(&strict, moves, &natural);
         match evaluate(&sc, base, s, false) {
             Ok(_) => break,
@@ -746,6 +754,9 @@ pub fn detect_natural(ctx: &Ctx, moves: &[Move], base: &Cells, s: Sample) -> Vec
     }
     // supplied moves that conflict with pinned hardware (stroke blocked / double move) go back to natural
     for _ in 0..=moves.len() {
+        if deadline.map_or(false, |d| Instant::now() >= d) {
+            break;
+        }
         let sc = scaffold_ctx(ctx, moves, &natural);
         match evaluate(&sc, base, s, false) {
             Ok(_) => break,
@@ -849,13 +860,18 @@ pub fn decompose(ctx: &Ctx, base: &Cells, lo: Coord, hi: Coord, threads: usize, 
     if moves.is_empty() {
         return Decomp { cands: vec![], log: vec!["decompose: no internal moves".into()] };
     }
-    let natural = detect_natural(ctx, &moves, base, s);
+    let natural = detect_natural_until(ctx, &moves, base, s, Some(deadline));
+    if Instant::now() >= deadline {
+        return Decomp { cands: vec![], log: vec![format!("decompose: {} moves, deadline passed while detecting natural moves", moves.len())] };
+    }
     let pinned_nat = natural.clone();
     let bodies = port_bodies(ctx, base);
     let todo: Vec<usize> = (0..moves.len()).filter(|&k| !natural[k]).collect();
     log.push(format!("decompose: {} moves, {} made by pinned hardware, {} to solve", moves.len(), moves.len() - todo.len(), todo.len()));
     // 2. per-move actor search
-    let per_move_end = Instant::now() + deadline.saturating_duration_since(Instant::now()) / 2;
+    // many moves: half of the stage for per-move search, the rest for combination; few moves: 3/4 (generic
+    // candidates for the last move matter more than combination time)
+    let per_move_end = Instant::now() + deadline.saturating_duration_since(Instant::now()) * (if todo.len() >= 6 { 2 } else { 3 }) / 4;
     let mut options: Vec<(usize, Vec<(f64, bool, Vec<(Coord, u16)>, String)>)> = vec![];
     for &k in &todo {
         if Instant::now() >= deadline {
@@ -874,6 +890,15 @@ pub fn decompose(ctx: &Ctx, base: &Cells, lo: Coord, hi: Coord, threads: usize, 
         let has_power = base.values().any(|&c| matches!(c & 15, 6 | 7 | 8));
         if let Some(bi) = bodies.iter().position(|b| b.cells.first() == body.first()) {
             acts.extend(timed_actors(&bodies, base, bi, slot, !has_power));
+        }
+        // no carrier is still for two slots (2.5 bps hoppers, pull-twice): relaxed riders are the real candidates;
+        // evaluate them first instead of after ~1400 grown/generic ones
+        let relaxed_first = acts.len() == 1;
+        if relaxed_first {
+            log.push(format!("    (move {} slot {slot}: no rigid actor, relaxed first)", ctx.ports[pi].name));
+            if let Some(bi) = bodies.iter().position(|b| b.cells.first() == body.first()) {
+                acts.extend(timed_actors_r(&bodies, base, bi, slot, true, true));
+            }
         }
         let n_timed = acts.len() - 1;
         let sc2 = scaffold_ctx_o(ctx, &moves, &nat, PrescribedOrder::AfterNatural);
@@ -919,8 +944,8 @@ pub fn decompose(ctx: &Ctx, base: &Cells, lo: Coord, hi: Coord, threads: usize, 
                 scored.extend(eval_set(&pw));
             }
         }
-        if !scored.iter().any(|x| x.1) {
-            // no rigid timed actor passes: grown actors (+1 glue cell, costs load) and generic near-body
+        if (!scored.iter().any(|x| x.1) || relaxed_first) && Instant::now() < move_deadline {
+            // no rigid timed actor passes (or only relaxed riders exist: keep the generic ones as alternatives): grown actors (+1 glue cell, costs load) and generic near-body
             // candidates are evaluated together so the lower-load option ranks first
             if let Some(bi) = bodies.iter().position(|b| b.cells.first() == body.first()) {
                 let mut grown = grown_actors(&bodies, base, bi, slot, true);
@@ -931,7 +956,7 @@ pub fn decompose(ctx: &Ctx, base: &Cells, lo: Coord, hi: Coord, threads: usize, 
             gen.truncate(900);
             scored.extend(eval_set(&gen));
         }
-        if !scored.iter().any(|x| x.1) {
+        if !scored.iter().any(|x| x.1) && Instant::now() < move_deadline {
             // bodies from pistons: timed actor + glue paths (<= 3 cells) growing carrier support / target face
             if let Some(bi) = bodies.iter().position(|b| b.cells.first() == body.first()) {
                 let mut pa = path_actors(&bodies, base, bi, slot, 5, true);
@@ -940,7 +965,7 @@ pub fn decompose(ctx: &Ctx, base: &Cells, lo: Coord, hi: Coord, threads: usize, 
                 scored.extend(eval_set(&pa));
             }
         }
-        if !scored.iter().any(|x| x.1) {
+        if !scored.iter().any(|x| x.1) && Instant::now() < move_deadline {
             // riders that change carrier (no stillness rule)
             if let Some(bi) = bodies.iter().position(|b| b.cells.first() == body.first()) {
                 let mut rel = timed_actors_r(&bodies, base, bi, slot, true, true);
