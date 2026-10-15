@@ -790,6 +790,47 @@ pub fn par_eval(ctx: &Ctx, cands: &[Cells], s: Sample, threads: usize, deadline:
     v
 }
 
+/// Abstract schedule for decompose (contract-solve --schedule): (period, [(port, slot, kinds, carrier bodies)]).
+/// A move's candidates are restricted to actors of a listed kind ("push"/"pull") sitting on a listed carrier
+/// body (index into port_bodies; empty = any). Slots map modulo the schedule's period (doubled contracts reuse it).
+pub static SCHEDULE: Mutex<Option<(usize, Vec<(String, usize, Vec<String>, Vec<usize>)>)>> = Mutex::new(None);
+
+pub fn schedule_entry(port: &str, slot: usize, period: usize) -> Option<(Vec<String>, Vec<usize>)> {
+    let g = SCHEDULE.lock().unwrap();
+    let (sp, moves) = g.as_ref()?;
+    if period % sp != 0 {
+        return None;
+    }
+    let s = slot % (sp / 2);
+    moves.iter().find(|m| m.0 == port && m.1 == s).map(|m| (m.2.clone(), m.3.clone()))
+}
+
+/// Does a timed/grown/path actor description ("[r]push b1@0 by b2 ...") match the scheduled kind and carrier?
+/// Generic candidates (no "by b") never match.
+pub fn sched_match(desc: &str, kinds: &[String], carriers: &[usize]) -> bool {
+    let d = desc.trim_start_matches('r');
+    let kind_ok = kinds.iter().any(|k| d.starts_with(k.as_str()));
+    let by = d.split(" by b").nth(1).and_then(|t| t.split(|c: char| !c.is_ascii_digit()).next()).and_then(|t| t.parse::<usize>().ok());
+    kind_ok && by.map_or(false, |c| carriers.is_empty() || carriers.contains(&c))
+}
+
+pub fn load_schedule(path: &Path) -> Result<(), String> {
+    let text = fs::read_to_string(path).map_err(|e| e.to_string())?;
+    let j = parse_json(&text)?;
+    let period = j.get("period").and_then(J::int).ok_or("schedule.period")? as usize;
+    let mut out = vec![];
+    for m in j.get("moves").and_then(J::arr).cloned().unwrap_or_default() {
+        let port = m.get("port").and_then(J::str).ok_or("schedule move.port")?.to_string();
+        let slot = m.get("slot").and_then(J::int).ok_or("schedule move.slot")? as usize;
+        let kinds: Vec<String> = m.get("kind").and_then(J::str).unwrap_or("push/pull").split('/').map(String::from).collect();
+        let carriers: Vec<usize> = m.get("carriers").and_then(J::arr).cloned().unwrap_or_default().iter()
+            .filter_map(|c| c.str().and_then(|s| s.trim_start_matches('b').parse().ok())).collect();
+        out.push((port, slot, kinds, carriers));
+    }
+    *SCHEDULE.lock().unwrap() = Some((period, out));
+    Ok(())
+}
+
 thread_local! {
     static DEEP_FAIL: std::cell::RefCell<String> = std::cell::RefCell::new(String::new());
     static FALLBACKS: std::cell::RefCell<Vec<(Cells, String)>> = std::cell::RefCell::new(vec![]);
@@ -814,6 +855,7 @@ pub fn decompose(ctx: &Ctx, base: &Cells, lo: Coord, hi: Coord, threads: usize, 
     let todo: Vec<usize> = (0..moves.len()).filter(|&k| !natural[k]).collect();
     log.push(format!("decompose: {} moves, {} made by pinned hardware, {} to solve", moves.len(), moves.len() - todo.len(), todo.len()));
     // 2. per-move actor search
+    let per_move_end = Instant::now() + deadline.saturating_duration_since(Instant::now()) / 2;
     let mut options: Vec<(usize, Vec<(f64, bool, Vec<(Coord, u16)>, String)>)> = vec![];
     for &k in &todo {
         if Instant::now() >= deadline {
@@ -835,10 +877,20 @@ pub fn decompose(ctx: &Ctx, base: &Cells, lo: Coord, hi: Coord, threads: usize, 
         }
         let n_timed = acts.len() - 1;
         let sc2 = scaffold_ctx_o(ctx, &moves, &nat, PrescribedOrder::AfterNatural);
-        // each remaining move gets a fair share of the remaining stage time
+        // each remaining move gets a fair share of the per-move half of the stage (combination needs the rest)
         let left = todo.iter().filter(|&&j| j >= k).count().max(1) as u32;
-        let move_deadline = Instant::now() + deadline.saturating_duration_since(Instant::now()) / (left + 1);
+        let move_deadline = Instant::now() + per_move_end.saturating_duration_since(Instant::now()) / left;
+        // abstract schedule (--schedule): only actors of the scheduled kind on a scheduled carrier
+        let sched_entry = schedule_entry(&ctx.ports[pi].name, slot, ctx.period);
         let eval_set = |acts: &[(Vec<(Coord, u16)>, String)]| -> Vec<(f64, bool, Vec<(Coord, u16)>, String)> {
+            let filtered: Vec<(Vec<(Coord, u16)>, String)>;
+            let acts: &[(Vec<(Coord, u16)>, String)] = match &sched_entry {
+                Some((kinds, carriers)) => {
+                    filtered = acts.iter().filter(|(_, d)| d == "no actor" || sched_match(d, kinds, carriers)).cloned().collect();
+                    &filtered
+                }
+                None => acts,
+            };
             let cells: Vec<Cells> = acts.iter().map(|(a, _)| {
                 let mut c = base.clone();
                 for &(p, v) in a {
@@ -1001,12 +1053,27 @@ pub fn decompose(ctx: &Ctx, base: &Cells, lo: Coord, hi: Coord, threads: usize, 
     let mut nat = pinned_nat.clone();
     let mut nodes = 0;
     // the DFS gets half of the remaining stage time; the sequential in-context pass (below) the rest
-    let dfs_deadline = Instant::now() + deadline.saturating_duration_since(Instant::now()) * 3 / 4;
+    // many moves: the node-limited DFS rarely completes; leave most of the time to the pairwise combination
+    let dfs_share = if options.len() >= 6 { 1 } else { 3 };
+    let dfs_deadline = Instant::now() + deadline.saturating_duration_since(Instant::now()) * dfs_share / 4;
     dfs(ctx, &moves, &options, 0, base, &mut nat, "decompose".into(), s, dfs_deadline, &mut out, &mut best_partial, &mut nodes, 3);
     log.push(format!("decompose: {} passing combinations, deepest {} of {}, {} nodes", out.len(), best_partial.0.min(options.len()), options.len(), nodes));
     let df = DEEP_FAIL.with(|f| std::mem::take(&mut *f.borrow_mut()));
     if out.is_empty() && !df.is_empty() {
         log.push(format!("decompose: deepest failure {df}"));
+    }
+    // power-aware combination: rigid pistons first (one per move, power stripped), then power placed globally
+    if out.is_empty() && options.len() >= 2 && Instant::now() < deadline && std::env::var("NO_POWERCOMB").is_err() {
+        let pc_deadline = Instant::now() + deadline.saturating_duration_since(Instant::now()) * 2 / 3;
+        let (cands, msg) = power_combine(ctx, base, &moves, &options, &bodies, s, pc_deadline);
+        log.push(msg);
+        for (c, d, pass) in cands {
+            if pass {
+                out.push((c, d));
+            } else if FALLBACKS.with(|f| f.borrow().len()) < 4 {
+                FALLBACKS.with(|f| f.borrow_mut().push((c, d)));
+            }
+        }
     }
     // pairwise compatibility combination: stray power (one actor's power source firing another move's piston) is
     // mostly a pairwise effect. Test every pair of top options of different moves with just those two moves
@@ -1029,6 +1096,8 @@ pub fn decompose(ctx: &Ctx, base: &Cells, lo: Coord, hi: Coord, threads: usize, 
                     }
                 }
             }
+            // best-ranked options first: with a deadline the untested pairs are the ones least likely to be used
+            pairs.sort_by_key(|&(a, b)| idx[a].1 + idx[b].1);
             let pair_deadline = Instant::now() + deadline.saturating_duration_since(Instant::now()) / 2;
             let next = AtomicUsize::new(0);
             let compat: Mutex<HashSet<(usize, usize)>> = Mutex::new(HashSet::new());
@@ -1056,31 +1125,36 @@ pub fn decompose(ctx: &Ctx, base: &Cells, lo: Coord, hi: Coord, threads: usize, 
                         }
                         tested.fetch_add(1, Ordering::Relaxed);
                         if clash {
+                            compat.lock().unwrap().insert((a, b));
                             continue;
                         }
                         let mut nat = pinned_nat.clone();
                         nat[options[idx[a].0].0] = true;
                         nat[options[idx[b].0].0] = true;
-                        if scaffold_ok(ctx, &moves, &nat, &c, s) {
+                        if !scaffold_ok(ctx, &moves, &nat, &c, s) {
                             compat.lock().unwrap().insert((a, b));
                         }
                     });
                 }
             });
-            let compat = compat.into_inner().unwrap();
-            let ok = |a: usize, b: usize| weak[idx[a].0] || weak[idx[b].0] || compat.contains(&(a.min(b), a.max(b)));
+            // `bad` holds the pairs found incompatible; untested pairs (deadline) count as compatible and are
+            // tested lazily when a complete set fails (conflict learning)
+            let mut bad = compat.into_inner().unwrap();
+            let mut done_pairs: HashSet<(usize, usize)> = pairs.iter().take(tested.load(Ordering::Relaxed)).copied().collect();
             let tested = tested.load(Ordering::Relaxed);
-            // forward-checking DFS over moves (fewest live options first)
-            let mut found: Vec<Vec<usize>> = vec![];
-            let mut nodes = 0usize;
-            fn fc(m_order: &mut Vec<usize>, domains: Vec<Vec<usize>>, chosen: &mut Vec<usize>, ok: &dyn Fn(usize, usize) -> bool, found: &mut Vec<Vec<usize>>, nodes: &mut usize, deadline: Instant) {
-                if found.len() >= 6 || *nodes > 200_000 || Instant::now() >= deadline {
+            // forward-checking DFS over moves (fewest live options first); complete sets in `nogoods` are skipped
+            fn fc(m_order: &mut Vec<usize>, domains: Vec<Vec<usize>>, chosen: &mut Vec<usize>, ok: &dyn Fn(usize, usize) -> bool, found: &mut Vec<Vec<usize>>, nodes: &mut usize, deadline: Instant, nogoods: &HashSet<Vec<usize>>) {
+                if !found.is_empty() || *nodes > 200_000 || Instant::now() >= deadline {
                     return;
                 }
                 *nodes += 1;
                 // pick the unassigned move with the smallest domain
                 let Some((mi, _)) = domains.iter().enumerate().filter(|(m, _)| !m_order.contains(m)).min_by_key(|(_, d)| d.len()) else {
-                    found.push(chosen.clone());
+                    let mut key = chosen.clone();
+                    key.sort();
+                    if !nogoods.contains(&key) {
+                        found.push(key);
+                    }
                     return;
                 };
                 for &o in &domains[mi] {
@@ -1090,36 +1164,83 @@ pub fn decompose(ctx: &Ctx, base: &Cells, lo: Coord, hi: Coord, threads: usize, 
                     }
                     m_order.push(mi);
                     chosen.push(o);
-                    fc(m_order, nd, chosen, ok, found, nodes, deadline);
+                    fc(m_order, nd, chosen, ok, found, nodes, deadline, nogoods);
                     chosen.pop();
                     m_order.pop();
                 }
             }
-            let domains: Vec<Vec<usize>> = (0..opt.len()).map(|m| (0..opt[m].len()).map(|i| id_of(m, i)).collect()).collect();
-            fc(&mut vec![], domains, &mut vec![], &ok, &mut found, &mut nodes, deadline);
             let mut real = ctx.clone();
             real.soft = false;
             real.allow_ext_fail = false;
-            let mut npass = 0;
-            for f in &found {
+            let (mut npass, mut sets, mut learned, mut nodes) = (0usize, 0usize, 0usize, 0usize);
+            let mut nogoods: HashSet<Vec<usize>> = HashSet::new();
+            let mut failing: Vec<(Cells, String)> = vec![];
+            let pair_test = |a: usize, b: usize| -> bool {
                 let mut c = base.clone();
-                for &o in f {
+                for &(p, v) in opt[idx[a].0][idx[a].1].2.iter().chain(opt[idx[b].0][idx[b].1].2.iter()) {
+                    if c.insert(p, v).map_or(false, |o| o != v) {
+                        return false;
+                    }
+                }
+                let mut nat = pinned_nat.clone();
+                nat[options[idx[a].0].0] = true;
+                nat[options[idx[b].0].0] = true;
+                scaffold_ok(ctx, &moves, &nat, &c, s)
+            };
+            while Instant::now() < deadline && npass < 3 && sets < 60 {
+                let mut found: Vec<Vec<usize>> = vec![];
+                {
+                    let ok = |a: usize, b: usize| weak[idx[a].0] || weak[idx[b].0] || !bad.contains(&(a.min(b), a.max(b)));
+                    let domains: Vec<Vec<usize>> = (0..opt.len()).map(|m| (0..opt[m].len()).map(|i| id_of(m, i)).collect()).collect();
+                    fc(&mut vec![], domains, &mut vec![], &ok, &mut found, &mut nodes, deadline, &nogoods);
+                }
+                let Some(f) = found.pop() else { break };
+                sets += 1;
+                let mut c = base.clone();
+                for &o in &f {
                     for &(p, v) in &opt[idx[o].0][idx[o].1].2 {
                         c.insert(p, v);
                     }
                 }
-                let pass = evaluate(&real, &c, s, false).is_ok();
-                npass += pass as usize;
                 let d = f.iter().map(|&o| opt[idx[o].0][idx[o].1].3.clone()).collect::<Vec<_>>().join(" | ");
-                out.push((c, format!("decompose paircomb{} | {d}", if pass { "" } else { " (fails natural)" })));
+                nogoods.insert(f.clone());
+                match evaluate(&real, &c, s, false) {
+                    Ok(_) => {
+                        npass += 1;
+                        out.push((c, format!("decompose paircomb | {d}")));
+                    }
+                    Err(e) => {
+                        if failing.len() < 2 {
+                            failing.push((c, format!("decompose paircomb (fails natural) | {d}")));
+                        }
+                        // blame: the move named by the first failure (port + slot), else every chosen option
+                        let tick = e.msg.split("tick ").nth(1).and_then(|t| t.split(':').next()).and_then(|t| t.trim().parse::<usize>().ok());
+                        let blamed: Vec<usize> = f.iter().copied().filter(|&o| {
+                            let (pi, sl) = moves[options[idx[o].0].0];
+                            tick.map_or(true, |t| (t % ctx.period) / 2 == sl && e.msg.contains(&format!("port {} ", ctx.ports[pi].name)))
+                        }).collect();
+                        let blamed = if blamed.is_empty() { f.clone() } else { blamed };
+                        for &a in blamed.iter().take(2) {
+                            for &b in &f {
+                                let key = (a.min(b), a.max(b));
+                                if a == b || done_pairs.contains(&key) || Instant::now() >= deadline {
+                                    continue;
+                                }
+                                done_pairs.insert(key);
+                                if !pair_test(key.0, key.1) {
+                                    bad.insert(key);
+                                    learned += 1;
+                                }
+                            }
+                        }
+                    }
+                }
             }
-            out.sort_by_key(|(_, d)| d.contains("fails natural"));
             if npass == 0 {
-                // complete but failing sets are only fallbacks; keep at most two so later stages can repair them
-                let keep: Vec<(Cells, String)> = out.drain(..).take(2).collect();
-                FALLBACKS.with(|fb| fb.borrow_mut().extend(keep));
+                // complete but failing sets are only fallbacks so later stages can repair them
+                FALLBACKS.with(|fb| fb.borrow_mut().extend(failing));
             }
-            log.push(format!("decompose paircomb: {} options, {}/{} pairs tested, {} compatible, {} complete sets, {npass} pass natural", n, tested, pairs.len(), compat.len(), found.len()));
+            log.push(format!("decompose paircomb: {} options, {}/{} pairs pre-tested, {} incompatible ({learned} learned), {sets} complete sets, {npass} pass natural", n, tested, pairs.len(), bad.len()));
         }
     }
     // sequential in-context combination: moves in time order; each move's top isolated candidates (and their
@@ -1446,6 +1567,355 @@ pub fn timed_actors_r(bodies: &[BodyT], base: &Cells, bi: usize, k: usize, with_
         }
     }
     out
+}
+
+// ---------------------------------------------------------------- power-aware combination
+// Slot-level power model of the engine (src/sim.rs power_stage), evaluated at each slot start when nothing moves:
+// a piston is powered if a non-front neighbour is a redstone block or rod, or a powered observer facing it, or a
+// solid (glue) block hard-powered by a rod / powered observer facing it. An observer is powered in the slot after
+// its own body moved. Positions follow the body words: a cell on body d at slot t sits at x + shift_d[t].
+#[derive(Clone)]
+struct PSrc {
+    cell: Coord,
+    v: u16,
+    body: Option<usize>,
+}
+
+#[derive(Clone)]
+struct PPist {
+    mv: usize,
+    q: Coord,
+    v: u16,
+    arm: Option<Coord>,
+    carrier: usize,
+    need: Vec<bool>,
+    srcs: Vec<PSrc>,
+    desc: String,
+}
+
+fn at_slot(bodies: &[BodyT], body: Option<usize>, x: Coord, t: usize) -> Coord {
+    match body {
+        Some(b) => Coord::new(x.x + bodies[b].shift[t], x.y, x.z),
+        None => x,
+    }
+}
+
+/// Slots (one period) in which source `s` powers piston `p`.
+fn src_covers(bodies: &[BodyT], glue_at: &[HashSet<Coord>], s: &PSrc, p: &PPist) -> Vec<bool> {
+    let n = bodies[0].word.len();
+    let kind = s.v & 15;
+    let sdir = ((s.v >> 5) & 7) as usize;
+    (0..n).map(|t| {
+        let r = at_slot(bodies, s.body, s.cell, t);
+        let q = at_slot(bodies, Some(p.carrier), p.q, t);
+        let front = nbr(q, DIRS[piston_dir(p.v)]);
+        let pulse = kind == 7 && s.body.map_or(false, |d| bodies[d].word[(t + n - 1) % n]);
+        if adj6(r, q) && r != front && (kind == 6 || kind == 8 || (pulse && nbr(r, DIRS[sdir.min(5)]) == q)) {
+            return true;
+        }
+        if kind == 8 || pulse {
+            let tg = nbr(r, DIRS[sdir.min(5)]);
+            if glue_at[t].contains(&tg) && adj6(tg, q) && tg != front {
+                return true;
+            }
+        }
+        false
+    }).collect()
+}
+
+/// Rigid actor options -> pistons (power stripped) with their candidate power sources. Returns per move the
+/// pistons, or None for a move without rigid options.
+fn rigid_pistons(bodies: &[BodyT], base: &Cells, mv: usize, opts: &[(f64, bool, Vec<(Coord, u16)>, String)]) -> Vec<PPist> {
+    let n = bodies[0].word.len();
+    let mut out: Vec<PPist> = vec![];
+    for (_, _, actor, d) in opts {
+        // "push b1@0 by b2 ..." / "pull ..." (rigid timed actors only)
+        // relaxed actors ("rpush"/"rpull") are modelled as riding their carrier too; the simulation decides
+        let mut it = d.split_whitespace();
+        let kind = it.next().unwrap_or("").trim_start_matches('r');
+        if kind != "push" && kind != "pull" {
+            continue;
+        }
+        let Some(k) = it.next().and_then(|t| t.split('@').nth(1)).and_then(|t| t.parse::<usize>().ok()) else { continue };
+        let Some(ci) = d.split(" by b").nth(1).and_then(|t| t.split(|c: char| !c.is_ascii_digit()).next()).and_then(|t| t.parse::<usize>().ok()) else { continue };
+        if d.contains("grow") || d.contains("path") || ci >= bodies.len() {
+            continue;
+        }
+        let Some(&(q, v)) = actor.iter().find(|(_, v)| v & 15 == 9) else { continue };
+        if out.iter().any(|p| p.q == q && p.v == v) {
+            continue;
+        }
+        let arm = actor.iter().find(|(_, v)| v & 15 == ARM).map(|x| x.0);
+        let mut need = vec![false; n];
+        let fire = if kind == "push" { k % n } else { (k + n - 1) % n };
+        need[fire] = true;
+        let dir = piston_dir(v);
+        let avoid: Vec<Coord> = std::iter::once(q).chain(arm).collect();
+        let mut srcs = vec![];
+        for o in power_options(bodies, base, ci, q, dir, fire, &avoid) {
+            for &(c, sv) in &o {
+                // stuck to exactly one body (a source touching two bodies would tie them together)
+                let touching: BTreeSet<usize> = bodies.iter().enumerate().filter(|(_, b)| b.cells.iter().any(|g| adj6(*g, c))).map(|(i, _)| i).collect();
+                if touching.len() != 1 {
+                    continue;
+                }
+                let body = touching.iter().next().copied();
+                // observers start powered when their body moved in the last slot (steady-state phase)
+                let sv = if sv & 15 == 7 { Block::observer(((sv >> 5) & 7) as u8, body.map_or(false, |b| bodies[b].word[n - 1]), false).unwrap().cell() } else { sv };
+                srcs.push(PSrc { cell: c, v: sv, body });
+            }
+        }
+        out.push(PPist { mv, q, v, arm, carrier: ci, need, srcs, desc: d.clone() });
+    }
+    out
+}
+
+/// Power-aware combination (bodies from pistons): choose one rigid piston per move, keep only power sources that
+/// never power any chosen piston in a wrong slot, cover every piston's fire slot (shared sources preferred), then
+/// check the complete flyer in the real contract. Returns (cells, description, passes) and a log line.
+pub fn power_combine(ctx: &Ctx, base: &Cells, moves: &[Move], options: &[(usize, Vec<(f64, bool, Vec<(Coord, u16)>, String)>)], bodies: &[BodyT], s: Sample, deadline: Instant) -> (Vec<(Cells, String, bool)>, String) {
+    let n = bodies[0].word.len();
+    // per move: the pistons of options that passed their scaffold first, then every rigid and relaxed timed piston
+    // (no per-move simulation needed: power is placed analytically and complete sets are simulated)
+    let per_all: Vec<Vec<PPist>> = options.iter().map(|(k, v)| {
+        let mut ps = rigid_pistons(bodies, base, *k, v);
+        let (pi, slot) = moves[*k];
+        let body = body_cells(base, ctx.ports[pi].at);
+        if let Some(bi) = bodies.iter().position(|b| b.cells.first() == body.first()) {
+            for relaxed in [false, true] {
+                let extra: Vec<(f64, bool, Vec<(Coord, u16)>, String)> = timed_actors_r(bodies, base, bi, slot, false, relaxed).into_iter().map(|(a, d)| (0.0, false, a, d)).collect();
+                for p in rigid_pistons(bodies, base, *k, &extra) {
+                    if !ps.iter().any(|x| x.q == p.q && x.v == p.v) {
+                        ps.push(p);
+                    }
+                }
+            }
+        }
+        ps.truncate(24);
+        ps
+    }).collect();
+    // moves without modellable options keep their best full actor (with its own power) as fixed hardware
+    let weak: Vec<usize> = (0..per_all.len()).filter(|&m| per_all[m].is_empty()).collect();
+    if weak.len() > 3 || weak.iter().any(|&m| options[m].1.is_empty()) {
+        return (vec![], format!("decompose powercomb: skipped ({} moves without rigid options)", weak.len()));
+    }
+    let mut base_w = base.clone();
+    let mut weak_desc = vec![];
+    for &m in &weak {
+        for &(p, v) in &options[m].1[0].2 {
+            base_w.insert(p, v);
+        }
+        weak_desc.push(format!("{}(fixed)", options[m].1[0].3.trim()));
+    }
+    let base = &base_w;
+    let per: Vec<Vec<PPist>> = per_all.into_iter().filter(|v| !v.is_empty()).collect();
+    let glue_at: Vec<HashSet<Coord>> = (0..n).map(|t| bodies.iter().flat_map(|b| b.cells.iter().map(move |g| Coord::new(g.x + b.shift[t], g.y, g.z))).collect()).collect();
+    // fixed power already in the problem (pinned sources) and the fixed actors' power
+    let fixed: Vec<PSrc> = base.iter().filter(|(_, v)| matches!(*v & 15, 6 | 7 | 8)).map(|(&c, &v)| {
+        let body = bodies.iter().position(|b| b.cells.iter().any(|g| adj6(*g, c)));
+        PSrc { cell: c, v, body }
+    }).collect();
+    // power outside the fire slot only misfires a piston whose carrier is still in that slot (on a moving carrier the
+    // piston is carried along / inert, or its extension fails harmlessly; the simulation is the final judge)
+    let wrong = |cov: &[bool], p: &PPist| cov.iter().zip(&p.need).enumerate().any(|(t, (&c, &nd))| c && !nd && !bodies[p.carrier].word[t]);
+    if std::env::var("POWERDBG").is_ok() {
+        for v in &per {
+            for p in v {
+                let good = p.srcs.iter().filter(|sc| { let c = src_covers(bodies, &glue_at, sc, p); !wrong(&c, p) && c.iter().zip(&p.need).any(|(&a, &b)| a && b) }).count();
+                let covs: Vec<String> = p.srcs.iter().take(4).map(|sc| format!("{}@({},{},{}) b{:?} {:?}", cell_desc(sc.v), sc.cell.x, sc.cell.y, sc.cell.z, sc.body,
+                    src_covers(bodies, &glue_at, sc, p).iter().map(|&x| x as u8).collect::<Vec<_>>())).collect();
+                let fx = fixed.iter().any(|f| wrong(&src_covers(bodies, &glue_at, f, p), p));
+                eprintln!("POWERDBG {} need {:?}: {} srcs, {good} good, fixed-wrong {fx}; {}", p.desc.trim(), p.need.iter().map(|&x| x as u8).collect::<Vec<_>>(), p.srcs.len(), covs.join("; "));
+            }
+        }
+    }
+    let mut real = ctx.clone();
+    real.soft = false;
+    real.allow_ext_fail = false;
+    // moves in time order (fewest pistons first within a slot): a failure at slot t is then blamed on the deepest
+    // choice made for a move at slot <= t (chronological backjumping)
+    let slot_of = |m: usize| moves[per[m][0].mv].1;
+    let mut order: Vec<usize> = (0..per.len()).collect();
+    order.sort_by_key(|&m| (slot_of(m), per[m].len()));
+    let order_slots: Vec<usize> = order.iter().map(|&m| slot_of(m)).collect();
+    let mut out: Vec<(Cells, String, bool)> = vec![];
+    let (mut leaves, mut sims, mut nodes, mut npass, mut jumps) = (0usize, 0usize, 0usize, 0usize, 0usize);
+    // returns Some(target depth) to unwind to (usize::MAX = stop), None = options exhausted
+    fn rec(depth: usize, order: &[usize], per: &[Vec<PPist>], chosen: &mut Vec<PPist>, occupied: &mut HashSet<Coord>, base: &Cells, bodies: &[BodyT], glue_at: &[HashSet<Coord>],
+           fixed: &[PSrc], wrong: &dyn Fn(&[bool], &PPist) -> bool, leaf: &mut dyn FnMut(&[PPist], &[Vec<usize>]) -> usize, nodes: &mut usize, deadline: Instant) -> Option<usize> {
+        if Instant::now() >= deadline || *nodes > 50_000 {
+            return Some(usize::MAX);
+        }
+        *nodes += 1;
+        if depth == order.len() {
+            // admissible sources per piston: no wrong slot on ANY chosen piston, cell free
+            let mut adm: Vec<Vec<usize>> = vec![];
+            for p in chosen.iter() {
+                let a: Vec<usize> = (0..p.srcs.len()).filter(|&i| {
+                    let sc = &p.srcs[i];
+                    !occupied.contains(&sc.cell) && !base.contains_key(&sc.cell) && chosen.iter().all(|o| !wrong(&src_covers(bodies, glue_at, sc, o), o))
+                }).collect();
+                adm.push(a);
+            }
+            return Some(leaf(chosen, &adm));
+        }
+        let m = order[depth];
+        for p in &per[m] {
+            if occupied.contains(&p.q) || p.arm.map_or(false, |a| occupied.contains(&a)) {
+                continue;
+            }
+            // fixed sources must not power it wrongly; it must still be coverable by some source that does not
+            // misfire it or an earlier chosen piston
+            if fixed.iter().any(|f| wrong(&src_covers(bodies, glue_at, f, p), p)) {
+                continue;
+            }
+            let fixed_cov = fixed.iter().any(|f| src_covers(bodies, glue_at, f, p).iter().zip(&p.need).any(|(&c, &nd)| c && nd));
+            let coverable = fixed_cov || p.srcs.iter().any(|sc| {
+                if occupied.contains(&sc.cell) || sc.cell == p.q || p.arm == Some(sc.cell) {
+                    return false;
+                }
+                let cov = src_covers(bodies, glue_at, sc, p);
+                !wrong(&cov, p) && cov.iter().zip(&p.need).any(|(&c, &nd)| c && nd) && chosen.iter().all(|o| !wrong(&src_covers(bodies, glue_at, sc, o), o))
+            });
+            if !coverable {
+                continue;
+            }
+            // earlier pistons must stay coverable with p present
+            let ok_prev = chosen.iter().all(|o| {
+                fixed.iter().any(|f| src_covers(bodies, glue_at, f, o).iter().zip(&o.need).any(|(&c, &nd)| c && nd)) || o.srcs.iter().any(|sc| {
+                    let cov = src_covers(bodies, glue_at, sc, o);
+                    cov.iter().zip(&o.need).any(|(&c, &nd)| c && nd) && !wrong(&cov, o) && !wrong(&src_covers(bodies, glue_at, sc, p), p)
+                })
+            });
+            if !ok_prev {
+                continue;
+            }
+            chosen.push(p.clone());
+            occupied.insert(p.q);
+            if let Some(a) = p.arm {
+                occupied.insert(a);
+            }
+            let r = rec(depth + 1, order, per, chosen, occupied, base, bodies, glue_at, fixed, wrong, leaf, nodes, deadline);
+            occupied.remove(&p.q);
+            if let Some(a) = p.arm {
+                occupied.remove(&a);
+            }
+            chosen.pop();
+            if let Some(t) = r {
+                if t < depth || t == usize::MAX {
+                    return Some(t);
+                }
+            }
+        }
+        None
+    }
+    let last = order.len().saturating_sub(1);
+    let mut leaf = |chosen: &[PPist], adm: &[Vec<usize>]| -> usize {
+        leaves += 1;
+        // greedy cover: needs (piston, slot); prefer sources covering the most open needs (shared power)
+        let mut cells = base.clone();
+        for p in chosen {
+            cells.insert(p.q, p.v);
+            if let Some(a) = p.arm {
+                cells.insert(a, ARM);
+            }
+        }
+        let mut open: Vec<(usize, usize)> = vec![];
+        for (i, p) in chosen.iter().enumerate() {
+            let fixed_cov: Vec<bool> = (0..n).map(|t| fixed.iter().any(|f| src_covers(bodies, &glue_at, f, p)[t])).collect();
+            for t in 0..n {
+                if p.need[t] && !fixed_cov[t] {
+                    open.push((i, t));
+                }
+            }
+        }
+        let pool: Vec<&PSrc> = chosen.iter().zip(adm).flat_map(|(p, a)| a.iter().map(move |&i| &p.srcs[i])).collect();
+        let covs: Vec<Vec<Vec<bool>>> = pool.iter().map(|sc| chosen.iter().map(|p| src_covers(bodies, &glue_at, sc, p)).collect()).collect();
+        let mut used: Vec<usize> = vec![];
+        while !open.is_empty() {
+            let best = (0..pool.len()).filter(|&i| !cells.contains_key(&pool[i].cell)).max_by_key(|&i| open.iter().filter(|&&(pi, t)| covs[i][pi][t]).count());
+            let Some(b) = best else { break };
+            let gain = open.iter().filter(|&&(pi, t)| covs[b][pi][t]).count();
+            if gain == 0 {
+                break;
+            }
+            cells.insert(pool[b].cell, pool[b].v);
+            used.push(b);
+            open.retain(|&(pi, t)| !covs[b][pi][t]);
+        }
+        if !open.is_empty() {
+            if std::env::var("POWERDBG").is_ok() && leaves < 6 {
+                let (pi, _) = open[0];
+                let a = &adm[pi];
+                eprintln!("POWERCOVER {} open, pool {}, first open piston {} has {} admissible: {}", open.len(), pool.len(), chosen[pi].desc.trim(), a.len(),
+                    a.iter().map(|&i| {
+                        let sc = &chosen[pi].srcs[i];
+                        format!("{}@({},{},{}) taken={} cov={:?}", cell_desc(sc.v), sc.cell.x, sc.cell.y, sc.cell.z, cells.get(&sc.cell).map_or("-".to_string(), |&v| cell_desc(v)), src_covers(bodies, &glue_at, sc, &chosen[pi]))
+                    }).collect::<Vec<_>>().join("; "));
+            }
+            // conflict-directed backjump: the deepest piston that blocks a source of the first unpowered piston (by
+            // occupying its cell or being misfired by it); chosen[j] was chosen at depth j. Sources lost to the
+            // greedy cover itself give no information -> plain backtrack.
+            let (pi, _) = open[0];
+            let p = &chosen[pi];
+            let mut target = pi;
+            for sc in &p.srcs {
+                let cov = src_covers(bodies, &glue_at, sc, p);
+                if wrong(&cov, p) || !cov.iter().zip(&p.need).any(|(&c, &nd)| c && nd) || base.contains_key(&sc.cell) {
+                    continue;
+                }
+                let culprits: Vec<usize> = (0..chosen.len()).filter(|&j| j != pi && (chosen[j].q == sc.cell || chosen[j].arm == Some(sc.cell)
+                    || wrong(&src_covers(bodies, &glue_at, sc, &chosen[j]), &chosen[j]))).collect();
+                if culprits.is_empty() {
+                    return last;
+                }
+                target = target.max(*culprits.iter().max().unwrap());
+            }
+            return target.min(last);
+        }
+        sims += 1;
+        let r = evaluate(&real, &cells, s, false);
+        if let (Err(e), true) = (&r, std::env::var("POWERDBG").is_ok()) {
+            eprintln!("POWERLEAF {} power: {}", used.len(), e.msg.split("] ").nth(1).unwrap_or(&e.msg).chars().take(140).collect::<String>());
+            if sims == 1 {
+                if let Ok(p) = std::env::var("POWERDUMP") {
+                    let _ = save_flyer(ctx, &cells, Path::new(&p), 64);
+                }
+            }
+        }
+        let pass = r.is_ok();
+        npass += pass as usize;
+        let d = format!("decompose powercomb | {} | {}{} power", chosen.iter().map(|p| p.desc.trim().to_string()).collect::<Vec<_>>().join(" | "),
+            weak_desc.iter().map(|w| format!("{w} | ")).collect::<String>(), used.len());
+        let fail_tick = r.as_ref().err().and_then(|e| e.msg.split("tick ").nth(1).and_then(|t| t.split(':').next()).and_then(|t| t.trim().parse::<usize>().ok()));
+        if pass || out.len() < 2 {
+            out.push((cells, d, pass));
+        }
+        if npass >= 3 || sims >= 150 {
+            return usize::MAX;
+        }
+        match fail_tick {
+            // first-period failure at slot t: the deepest choice for a move at slot <= t
+            Some(tk) if tk < ctx.period => {
+                let fs = tk / 2;
+                match order_slots.iter().rposition(|&sl| sl <= fs) {
+                    Some(d) if d < last => {
+                        jumps += 1;
+                        d
+                    }
+                    _ => last,
+                }
+            }
+            _ => last,
+        }
+    };
+    let mut chosen = vec![];
+    let mut occupied = HashSet::new();
+    rec(0, &order, &per, &mut chosen, &mut occupied, base, bodies, &glue_at, &fixed, &wrong, &mut leaf, &mut nodes, deadline);
+    out.sort_by_key(|x| !x.2);
+    let msg = format!("decompose powercomb: {} moves, {} pistons, {nodes} nodes, {leaves} leaves, {sims} simulated ({jumps} backjumps), {npass} pass natural",
+        per.len(), per.iter().map(|v| v.len()).sum::<usize>());
+    (out, msg)
 }
 
 /// The problem's own pistons as a library entry ("self"): pinned = every non-piston cell, hardware = pistons/arms.

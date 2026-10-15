@@ -41,7 +41,7 @@ fn main() {
 fn run() -> Result<(), String> {
     let t0 = Instant::now();
     let a: Vec<String> = std::env::args().skip(1).collect();
-    let usage = "usage: contract-solve PROBLEM.json OUT_DIR [--budget SECS] [--threads N] [--library INDEX.json] [--holdout] [--seed N] [--quiet] [--library-dir DIR]... [--ext-library-dir DIR]... [--exclude-source SUBSTR]... [--exclude-id ID,ID]... [--library-file F] [--build-library F]";
+    let usage = "usage: contract-solve PROBLEM.json OUT_DIR [--budget SECS] [--threads N] [--library INDEX.json] [--holdout] [--seed N] [--quiet] [--library-dir DIR]... [--ext-library-dir DIR]... [--exclude-source SUBSTR]... [--exclude-id ID,ID]... [--schedule SCHED.json] [--library-file F] [--build-library F]";
     let mut pos = vec![];
     let (mut budget, mut threads, mut seed) = (5.0f64, std::thread::available_parallelism().map(|n| n.get()).unwrap_or(4).min(8), 1u64);
     let mut library = PathBuf::from("flyers/extension_bank/index.json");
@@ -64,6 +64,7 @@ fn run() -> Result<(), String> {
             "--library-file" => { lib_file = Some(PathBuf::from(v(i)?)); i += 1; }
             "--build-library" => { build_lib = Some(PathBuf::from(v(i)?)); i += 1; }
             "--exclude-source" => { exclude.push(v(i)?); i += 1; }
+            "--schedule" => { load_schedule(&PathBuf::from(v(i)?))?; i += 1; }
             "--exclude-id" => { exclude_id.extend(v(i)?.split(',').map(String::from)); i += 1; }
             "--quiet" => quiet = true,
             s if s.starts_with("--") => return Err(format!("unknown option {s}\n{usage}")),
@@ -171,7 +172,9 @@ fn run() -> Result<(), String> {
     pool.sort_by(|a, b| a.cost.partial_cmp(&b.cost).unwrap());
 
     // scaffold decomposition (per-move actors under supplied strokes, then combination)
-    let dec_end = (t0 + Duration::from_secs_f64(budget * 0.4)).min(search_end);
+    // nothing passing from the library: decomposition is the main route and gets more of the budget
+    let dec_frac = if pool.iter().any(|s| s.ev.is_some()) { 0.4 } else { 0.5 };
+    let dec_end = (t0 + Duration::from_secs_f64(budget * dec_frac)).min(search_end);
     let dec = decompose(&ctx, &base, blo, bhi, threads, dec_end);
     log.extend(dec.log.iter().cloned());
     let r = eval_all(&sh, dec.cands, threads, search_end);

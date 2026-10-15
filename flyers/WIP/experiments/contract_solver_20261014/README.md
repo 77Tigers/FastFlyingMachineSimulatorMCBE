@@ -163,8 +163,55 @@ next: satflyer5 `riders=` for N4. 2 bps `mmwww,wwmwm`: L10 FEASIBLE in 151 s (20
 300 s in box m2:3,m1:2,m1:2 (not a negative; pin a hand layout before retrying, as the log advises).
 3 bps rigid pair `mmmww,wwmmm`: INFEASIBLE in 1.2 s (L14, box m2:4,m1:2,m1:2; model only, bounded).
 
-`flyer-ledger FLYER --period P` prints who moves whom (extend/retract, carrier bodies, loads) — the input for
-family solvers. Pull-twice mmwmmw ledger: every slot one body is pulled (load ~22 incl. 7 riders) and one
+### Schedule -> contracts -> flyer: blocker map (2026-10-15 evening)
+
+Question (user): what blocks going from an abstract representation ("X pushes Y in slots a, b") to a working
+flyer through extension contracts? Tool: `contract-blockers PROBLEM.json REFERENCE.flyer [--gen] [--self]
+[--write-schedule S.json]` aligns the reference to a stripped problem, attributes every body move to the
+piston(s) that made it over 4 periods (the abstract schedule), and per move tests the one-move contract (every
+other move supplied) with the true actor only (oracle) and with the solver's generators (`--gen`).
+
+Findings on the 9 bare skeletons (glue only, 66 moves):
+1. **Decomposition is not the blocker**: with correct attribution 62/66 true actors pass their one-move
+   contract. Exceptions: merged moves (one stroke moves two bodies: mirrored_chains b13/b14) — supplying the
+   two halves separately breaks the stroke.
+2. **Hopping hardware has a 2-period cycle**: in every 2.5 bps hopper flyer and in pull-twice mmwmmw, each
+   move is made by two pistons alternating per glue period (the piston hops to the other body). One actor per
+   move does not exist -> generators found 0/~200-680. **Fix: period doubling** (`multiplied(ctx, 2)`,
+   `tools/double_period.py`): each move instance has one actor again. Pull-twice: 1/6 -> 12/12 moves
+   generator-solvable; hop flyers 0/4 -> 8/8.
+3. **Generator gaps** (true actor passes, no generated actor does), each now closed: pistons that fire in the
+   last slot are *extended at tick 0* (pusher retracting at slot 0 / sticky pulling at slot 0); hoppers that are
+   *stuck to the body they pull* (self-carrier stickies, contract-solve tries them in a second doubled pass:
+   they pass their own move often and crowd the combination search); riders touching another body at tick 0.
+   Open: pusher whose carrier moves in its retraction slot, powered by an observer on the target
+   (rigid_chain_capped b3@1).
+4. **Composition is the main remaining blocker, and it is power**: rigid_chain_capped has 15/16 moves with
+   dozens of passing actors each, yet with all 2836 option pairs tested *no* pairwise-compatible set exists
+   (403 incompatible): every option brings its own power block and those fire other pistons. The reference
+   shares 11 power blocks among 16 pistons. -> `power_combine`: pistons chosen without power, power placed
+   globally with a slot-level model of the engine's power stage (sources on bodies move with the words;
+   observers pulse after their body moved; power outside the fire slot only counts when the carrier is still),
+   set cover with shared sources, conflict-directed backjumping, then simulation. Status: complete powered sets
+   are produced, failures move from power to geometry (arms / blocked retractions) — not solved yet.
+   Pairwise-compatibility combination (`paircomb`, with lazy conflict learning) solves the small doubled cases.
+5. **Abstract schedule as a hint** (`contract-solve --schedule S.json`, kind + carrier per move): 4/9 bare;
+   helps ab_push_pull (load 11 < reference 12) but carriers taken at tick 0 mislabel hoppers. Not a fix alone.
+
+Result: bare skeletons (glue only -> working flyer, 5 s): **1/9 -> 6/9 at reference load or +1**
+(two_body_5slot_2bps 10, diagonal_alternating 12 (ref 11), ab_push_pull 12, compact_slime 3, hop_pair 9 (ref 8),
+human_observer_hop 9). Open: pull_twice_mmwmmw (12 moves generator-solvable after doubling, composition),
+rigid_chain_capped (power/geometry composition), mirrored_chains (merged moves). Measured with 2-8 threads while
+another benchmark ran; rerun on an idle machine before quoting exact numbers.
+
+What extension contracts still lack for compiling abstract designs: (a) a hardware period (actors may recur only
+every k glue periods — doubling covers k = 2); (b) merged moves (one action, several bodies); (c) shared
+resources between contracts — power above all: per-move contracts cannot see that another move's power block
+fires their piston, so power has to be a global step; (d) geometry from the abstract schedule (bodies): the
+local route needs a layout; the CP-SAT route (`design_sat.py`) provides one offline.
+
+`flyer-ledger FLYER --period P` prints who moves whom (extend/retract, carrier bodies, loads, piston ids) — the
+input for family solvers. Pull-twice mmwmmw ledger: every slot one body is pulled (load ~22 incl. 7 riders) and one
 pushed (~20); almost every piston touches two bodies (riders between bodies).
 
 ## Lessons (search)

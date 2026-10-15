@@ -26,6 +26,8 @@ fn main() {
         std::process::exit(2);
     }
     let gen = a.iter().any(|x| x == "--gen");
+    // --self: include hoppers stuck to the body they pull (contract-solve's second doubling pass)
+    SELF_CARRIER.store(a.iter().any(|x| x == "--self"), std::sync::atomic::Ordering::Relaxed);
     let threads: usize = a.iter().position(|x| x == "--threads").and_then(|i| a.get(i + 1)).and_then(|v| v.parse().ok()).unwrap_or(4);
     let mut ctx = load_ctx(&PathBuf::from(&a[0]), None).unwrap();
     ctx.orders = if ctx.events.is_empty() { vec![PrescribedOrder::BeforeNatural] } else { ORDERS.to_vec() };
@@ -100,6 +102,7 @@ fn main() {
     let (lo, hi) = (Coord::new(lo.x - 2, lo.y - 2, lo.z - 2), Coord::new(hi.x + 2, hi.y + 2, hi.z + 2));
     let none_nat = vec![false; moves.len()];
     let mut summary: BTreeMap<String, usize> = BTreeMap::new();
+    let mut sched: Vec<String> = vec![];
     let actors_of = |pi: usize, slot: usize| -> BTreeSet<usize> {
         let body: BTreeSet<Coord> = body_cells(&base, ctx.ports[pi].at).into_iter().collect();
         log.iter().filter(|(tk, _, _, mv)| (tk % ctx.period) / 2 == slot && mv.iter().any(|q| body.contains(q))).map(|x| x.2).collect()
@@ -131,6 +134,13 @@ fn main() {
             }
         }
         let mut desc = vec![];
+        // abstract schedule entry: push/pull and the bodies the actor sits on (none = rider: any carrier)
+        let kinds_k: BTreeSet<&str> = acts.iter().map(|x| x.1).collect();
+        let carriers_k: BTreeSet<String> = actor_ids.iter().flat_map(|&id| carrier(origins[id]).split('+').map(String::from).collect::<Vec<_>>()).filter(|c| c != "rider").collect();
+        if !kinds_k.is_empty() {
+            sched.push(format!("{{\"port\":{},\"slot\":{slot},\"kind\":{},\"carriers\":[{}]}}", jstr(&ctx.ports[pi].name),
+                jstr(&kinds_k.into_iter().collect::<Vec<_>>().join("/")), carriers_k.iter().map(|c| jstr(c)).collect::<Vec<_>>().join(",")));
+        }
         for &id in &actor_ids {
             let q = origins[id];
             let c = rc[&q];
@@ -192,4 +202,9 @@ fn main() {
             match &oracle { Ok(_) => "PASS".to_string(), Err(m) => format!("FAIL {}", m.chars().take(110).collect::<String>()) });
     }
     println!("  summary: {}", summary.iter().map(|(k, v)| format!("{k} {v}")).collect::<Vec<_>>().join(", "));
+    if let Some(i) = a.iter().position(|x| x == "--write-schedule") {
+        let path = a.get(i + 1).expect("--write-schedule PATH");
+        std::fs::write(path, format!("{{\"period\":{},\"moves\":[{}]}}\n", ctx.period, sched.join(","))).unwrap();
+        println!("  schedule -> {path}");
+    }
 }
