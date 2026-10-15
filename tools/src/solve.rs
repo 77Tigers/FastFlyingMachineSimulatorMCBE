@@ -802,7 +802,7 @@ pub fn decompose(ctx: &Ctx, base: &Cells, lo: Coord, hi: Coord, threads: usize, 
         scored.sort_by(|a, b| a.0.partial_cmp(&b.0).unwrap());
         let npass = scored.iter().filter(|x| x.1).count();
         log.push(format!("  move {} slot {slot}: {} actors tried ({n_timed} timed), {npass} pass; best {}", ctx.ports[pi].name, scored.len(), scored.first().map_or(String::new(), |x| x.3.clone())));
-        scored.truncate(8);
+        scored.truncate(16);
         options.push((k, scored));
     }
     // 3. combine: most constrained first, DFS with scaffold checks
@@ -814,11 +814,21 @@ pub fn decompose(ctx: &Ctx, base: &Cells, lo: Coord, hi: Coord, threads: usize, 
         if Instant::now() >= deadline || out.len() >= 6 || *nodes > 4000 {
             return;
         }
-        if depth > best_partial.0 {
+        if depth > best_partial.0 && depth < options.len() {
             *best_partial = (depth, cells.clone(), desc.clone());
         }
         if depth == options.len() {
-            out.push((cells.clone(), desc));
+            // leaf: the real contract, strict (no tolerated extension failures, its own orders); failing
+            // combinations are kept as fallbacks only
+            let mut real = ctx.clone();
+            real.soft = false;
+            real.allow_ext_fail = false;
+            *nodes += 1;
+            if evaluate(&real, cells, s, false).is_ok() {
+                out.push((cells.clone(), desc));
+            } else if best_partial.0 < depth + 1 {
+                *best_partial = (depth + 1, cells.clone(), format!("{desc} (complete, fails natural)"));
+            }
             return;
         }
         let (k, opts) = &options[depth];
@@ -829,7 +839,8 @@ pub fn decompose(ctx: &Ctx, base: &Cells, lo: Coord, hi: Coord, threads: usize, 
             if any_pass && !ok {
                 continue;
             }
-            if tried >= 4 {
+            // adaptive branching: few moves -> try more alternatives per move
+            if tried >= (200 / options.len().max(1)).clamp(4, 16) {
                 break;
             }
             // an actor already present (same cells) can serve several moves; a different cell there conflicts
@@ -866,7 +877,7 @@ pub fn decompose(ctx: &Ctx, base: &Cells, lo: Coord, hi: Coord, threads: usize, 
     let mut nat = pinned_nat.clone();
     let mut nodes = 0;
     dfs(ctx, &moves, &options, 0, base, &mut nat, "decompose".into(), s, deadline, &mut out, &mut best_partial, &mut nodes, 3);
-    log.push(format!("decompose: {} complete combinations, deepest {} of {}, {} nodes", out.len(), best_partial.0, options.len(), nodes));
+    log.push(format!("decompose: {} passing combinations, deepest {} of {}, {} nodes", out.len(), best_partial.0.min(options.len()), options.len(), nodes));
     if out.is_empty() && best_partial.0 > 0 {
         out.push((best_partial.1, format!("{} (partial)", best_partial.2)));
     }
