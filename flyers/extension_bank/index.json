@@ -1141,7 +1141,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_15",
-      "note": "S S:push:B10:s1 @t0=100; variant: lone-piston passengers not kept"
+      "note": "S S:push:B10:s1 @t0=100; variant: lone-piston passengers not kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_15/problem.json"
     },
     {
       "id": "n3_16",
@@ -1269,7 +1271,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_17",
-      "note": "S S:push:B11:s1 @t0=100; variant: actors of 3 consecutive periods kept, lone-piston passengers not kept"
+      "note": "S S:push:B11:s1 @t0=100; variant: actors of 3 consecutive periods kept, lone-piston passengers not kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_17/problem.json"
     },
     {
       "id": "n3_18",
@@ -1331,7 +1335,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_18",
-      "note": "S S:push:B18:s2 @t0=100; spec-faithful"
+      "note": "S S:push:B18:s2 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_18/problem.json"
     },
     {
       "id": "n3_19",
@@ -1476,7 +1482,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_20",
-      "note": "S S:push:B19:s1 @t0=100; variant: actors of 3 consecutive periods kept"
+      "note": "S S:push:B19:s1 @t0=100; variant: actors of 3 consecutive periods kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_20/problem.json"
     },
     {
       "id": "n3_21",
@@ -1808,7 +1816,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_24",
-      "note": "S S:push:B29:s0 @t0=100; variant: actors of 3 consecutive periods kept, lone-piston passengers not kept"
+      "note": "S S:push:B29:s0 @t0=100; variant: actors of 3 consecutive periods kept, lone-piston passengers not kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_24/problem.json"
     },
     {
       "id": "n3_25",
@@ -1881,7 +1891,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_25",
-      "note": "S S:push:B29:s4 @t0=100; spec-faithful"
+      "note": "S S:push:B29:s4 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_25/problem.json"
     },
     {
       "id": "n3_26",
@@ -1954,7 +1966,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_26",
-      "note": "S S:push:B35:s3 @t0=100; spec-faithful"
+      "note": "S S:push:B35:s3 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_26/problem.json"
     },
     {
       "id": "n3_27",
@@ -2110,7 +2124,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_28",
-      "note": "S S:push:B36:s2 @t0=100; spec-faithful"
+      "note": "S S:push:B36:s2 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_28/problem.json"
     },
     {
       "id": "n3_29",
@@ -2193,7 +2209,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_29",
-      "note": "S S:push:B36:s3 @t0=100; variant: actors of 3 consecutive periods kept"
+      "note": "S S:push:B36:s3 @t0=100; variant: actors of 3 consecutive periods kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_29/problem.json"
     },
     {
       "id": "n3_30",
@@ -2557,7 +2575,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_34",
-      "note": "S S:push:B41:s0 @t0=100; spec-faithful"
+      "note": "S S:push:B41:s0 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_34/problem.json"
     },
     {
       "id": "n3_35",
@@ -2871,7 +2891,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_39",
-      "note": "S S:push:B45:s4 @t0=100; spec-faithful"
+      "note": "S S:push:B45:s4 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_39/problem.json"
     },
     {
       "id": "n3_40",
@@ -2944,7 +2966,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_40",
-      "note": "S S:push:B9:s3 @t0=100; spec-faithful"
+      "note": "S S:push:B9:s3 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_40/problem.json"
     },
     {
       "id": "n3_41",
@@ -3068,7 +3092,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_42",
-      "note": "C C:B10 @t0=100; variant: lone-piston passengers not kept"
+      "note": "C C:B10 @t0=100; variant: lone-piston passengers not kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_42/problem.json"
     },
     {
       "id": "n3_43",
@@ -3130,7 +3156,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_43",
-      "note": "C C:B15 @t0=100; variant: lone-piston passengers not kept"
+      "note": "C C:B15 @t0=100; variant: lone-piston passengers not kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_43/problem.json"
     },
     {
       "id": "n3_44",
@@ -3192,7 +3220,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_44",
-      "note": "C C:B18 @t0=100; variant: lone-piston passengers not kept"
+      "note": "C C:B18 @t0=100; variant: lone-piston passengers not kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_44/problem.json"
     },
     {
       "id": "n3_45",
@@ -3264,7 +3294,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_45",
-      "note": "C C:B24 @t0=100; variant: lone-piston passengers not kept"
+      "note": "C C:B24 @t0=100; variant: lone-piston passengers not kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_45/problem.json"
     },
     {
       "id": "n3_46",
@@ -3437,7 +3469,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_47",
-      "note": "C C:B35 @t0=100; variant: lone-piston passengers not kept"
+      "note": "C C:B35 @t0=100; variant: lone-piston passengers not kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_47/problem.json"
     },
     {
       "id": "n3_48",
@@ -3520,7 +3554,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_48",
-      "note": "C C:B36 @t0=100; variant: lone-piston passengers not kept"
+      "note": "C C:B36 @t0=100; variant: lone-piston passengers not kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_48/problem.json"
     },
     {
       "id": "n3_49",
@@ -3665,7 +3701,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_50",
-      "note": "C C:B9 @t0=100; variant: lone-piston passengers not kept"
+      "note": "C C:B9 @t0=100; variant: lone-piston passengers not kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_50/problem.json"
     },
     {
       "id": "n3_51",
@@ -3754,7 +3792,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_51",
-      "note": "L L:B10 @t0=100; variant: lone-piston passengers not kept"
+      "note": "L L:B10 @t0=100; variant: lone-piston passengers not kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_51/problem.json"
     },
     {
       "id": "n3_52",
@@ -3843,7 +3883,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_52",
-      "note": "L L:B15 @t0=100; variant: lone-piston passengers not kept"
+      "note": "L L:B15 @t0=100; variant: lone-piston passengers not kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_52/problem.json"
     },
     {
       "id": "n3_53",
@@ -3925,7 +3967,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_53",
-      "note": "L L:B18 @t0=100; spec-faithful"
+      "note": "L L:B18 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_53/problem.json"
     },
     {
       "id": "n3_54",
@@ -4018,7 +4062,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_54",
-      "note": "L L:B29 @t0=100; spec-faithful"
+      "note": "L L:B29 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_54/problem.json"
     },
     {
       "id": "n3_55",
@@ -4111,7 +4157,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_55",
-      "note": "L L:B35 @t0=100; spec-faithful"
+      "note": "L L:B35 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_55/problem.json"
     },
     {
       "id": "n3_56",
@@ -4317,7 +4365,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_57",
-      "note": "K K2:B19.B9<-B29.B10 @t0=100; variant: lone-piston passengers not kept"
+      "note": "K K2:B19.B9<-B29.B10 @t0=100; variant: lone-piston passengers not kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_57/problem.json"
     },
     {
       "id": "n3_58",
@@ -4430,7 +4480,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_58",
-      "note": "K K2:B24.B18<-B35.B15 @t0=100; variant: lone-piston passengers not kept"
+      "note": "K K2:B24.B18<-B35.B15 @t0=100; variant: lone-piston passengers not kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_58/problem.json"
     },
     {
       "id": "n3_59",
@@ -4526,7 +4578,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_59",
-      "note": "K K2:B29.B10<-B36.B29 @t0=100; variant: lone-piston passengers not kept"
+      "note": "K K2:B29.B10<-B36.B29 @t0=100; variant: lone-piston passengers not kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_59/problem.json"
     },
     {
       "id": "n3_60",
@@ -4626,7 +4680,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_60",
-      "note": "K K2:B35.B15<-B37.B35 @t0=100; spec-faithful"
+      "note": "K K2:B35.B15<-B37.B35 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_60/problem.json"
     },
     {
       "id": "n3_61",
@@ -4756,7 +4812,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_61",
-      "note": "K K3:B19.B9<-B29.B10<-B36.B29 @t0=100; variant: lone-piston passengers not kept"
+      "note": "K K3:B19.B9<-B29.B10<-B36.B29 @t0=100; variant: lone-piston passengers not kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_61/problem.json"
     },
     {
       "id": "n3_62",
@@ -4886,7 +4944,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_62",
-      "note": "K K3:B24.B18<-B35.B15<-B37.B35 @t0=100; variant: lone-piston passengers not kept"
+      "note": "K K3:B24.B18<-B35.B15<-B37.B35 @t0=100; variant: lone-piston passengers not kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_62/problem.json"
     },
     {
       "id": "n3_63",
@@ -5016,7 +5076,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_63",
-      "note": "K K3h:B19.B9<-B29.B10<-B36.B29+B41 @t0=100; variant: lone-piston passengers not kept"
+      "note": "K K3h:B19.B9<-B29.B10<-B36.B29+B41 @t0=100; variant: lone-piston passengers not kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_63/problem.json"
     },
     {
       "id": "n3_64",
@@ -5146,7 +5208,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_64",
-      "note": "K K3h:B24.B18<-B35.B15<-B37.B35+B45 @t0=100; variant: lone-piston passengers not kept"
+      "note": "K K3h:B24.B18<-B35.B15<-B37.B35+B45 @t0=100; variant: lone-piston passengers not kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_64/problem.json"
     },
     {
       "id": "n3_65",
@@ -5263,7 +5327,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_65",
-      "note": "R R @t0=100; variant: actors of 3 consecutive periods kept, lone-piston passengers not kept"
+      "note": "R R @t0=100; variant: actors of 3 consecutive periods kept, lone-piston passengers not kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_65/problem.json"
     },
     {
       "id": "n3_66",
@@ -5529,7 +5595,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_67",
-      "note": "S S:pull:B16:s4 @t0=100; spec-faithful"
+      "note": "S S:pull:B16:s4 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_67/problem.json"
     },
     {
       "id": "n3_68",
@@ -5612,7 +5680,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_68",
-      "note": "S S:pull:B23:s1 @t0=100; spec-faithful"
+      "note": "S S:pull:B23:s1 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_68/problem.json"
     },
     {
       "id": "n3_69",
@@ -5695,7 +5765,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_69",
-      "note": "S S:pull:B24:s2 @t0=100; spec-faithful"
+      "note": "S S:pull:B24:s2 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_69/problem.json"
     },
     {
       "id": "n3_70",
@@ -5778,7 +5850,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_70",
-      "note": "S S:pull:B28:s3 @t0=100; spec-faithful"
+      "note": "S S:pull:B28:s3 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_70/problem.json"
     },
     {
       "id": "n3_71",
@@ -5850,7 +5924,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_71",
-      "note": "S S:pull:B29:s4 @t0=100; spec-faithful"
+      "note": "S S:pull:B29:s4 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_71/problem.json"
     },
     {
       "id": "n3_72",
@@ -5995,7 +6071,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_73",
-      "note": "S S:push:B15:s3 @t0=100; spec-faithful"
+      "note": "S S:push:B15:s3 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_73/problem.json"
     },
     {
       "id": "n3_74",
@@ -6057,7 +6135,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_74",
-      "note": "S S:push:B16:s2 @t0=100; spec-faithful"
+      "note": "S S:push:B16:s2 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_74/problem.json"
     },
     {
       "id": "n3_75",
@@ -6209,7 +6289,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_76",
-      "note": "S S:push:B23:s0 @t0=100; variant: actors of 3 consecutive periods kept, lone-piston passengers not kept"
+      "note": "S S:push:B23:s0 @t0=100; variant: actors of 3 consecutive periods kept, lone-piston passengers not kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_76/problem.json"
     },
     {
       "id": "n3_77",
@@ -6299,7 +6381,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_77",
-      "note": "S S:push:B23:s4 @t0=100; spec-faithful"
+      "note": "S S:push:B23:s4 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_77/problem.json"
     },
     {
       "id": "n3_78",
@@ -6378,7 +6462,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_78",
-      "note": "S S:push:B24:s0 @t0=100; variant: lone-piston passengers not kept"
+      "note": "S S:push:B24:s0 @t0=100; variant: lone-piston passengers not kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_78/problem.json"
     },
     {
       "id": "n3_79",
@@ -6547,7 +6633,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_80",
-      "note": "S S:push:B28:s1 @t0=100; spec-faithful"
+      "note": "S S:push:B28:s1 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_80/problem.json"
     },
     {
       "id": "n3_81",
@@ -6705,7 +6793,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_82",
-      "note": "S S:push:B29:s2 @t0=100; spec-faithful"
+      "note": "S S:push:B29:s2 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_82/problem.json"
     },
     {
       "id": "n3_83",
@@ -6874,7 +6964,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_84",
-      "note": "S S:push:B33:s3 @t0=100; spec-faithful"
+      "note": "S S:push:B33:s3 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_84/problem.json"
     },
     {
       "id": "n3_85",
@@ -7288,7 +7380,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_89",
-      "note": "S S:push:B47:s3 @t0=100; spec-faithful"
+      "note": "S S:push:B47:s3 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_89/problem.json"
     },
     {
       "id": "n3_90",
@@ -7433,7 +7527,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_91",
-      "note": "S S:push:B54:s0 @t0=100; spec-faithful"
+      "note": "S S:push:B54:s0 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_91/problem.json"
     },
     {
       "id": "n3_92",
@@ -7770,7 +7866,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_96",
-      "note": "S S:push:B63:s1 @t0=100; spec-faithful"
+      "note": "S S:push:B63:s1 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_96/problem.json"
     },
     {
       "id": "n3_97",
@@ -7960,7 +8058,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_99",
-      "note": "S S:push:B64:s2 @t0=100; spec-faithful"
+      "note": "S S:push:B64:s2 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_99/problem.json"
     },
     {
       "id": "n3_100",
@@ -8161,7 +8261,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_102",
-      "note": "S S:push:B65:s3 @t0=100; spec-faithful"
+      "note": "S S:push:B65:s3 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_102/problem.json"
     },
     {
       "id": "n3_103",
@@ -8300,7 +8402,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_104",
-      "note": "S S:push:B68:s0 @t0=100; variant: actors of 3 consecutive periods kept"
+      "note": "S S:push:B68:s0 @t0=100; variant: actors of 3 consecutive periods kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_104/problem.json"
     },
     {
       "id": "n3_105",
@@ -8435,7 +8539,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_106",
-      "note": "S S:push:B7:s4 @t0=100; spec-faithful"
+      "note": "S S:push:B7:s4 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_106/problem.json"
     },
     {
       "id": "n3_107",
@@ -8497,7 +8603,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_107",
-      "note": "S S:push:B8:s1 @t0=100; variant: lone-piston passengers not kept"
+      "note": "S S:push:B8:s1 @t0=100; variant: lone-piston passengers not kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_107/problem.json"
     },
     {
       "id": "n3_108",
@@ -8670,7 +8778,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_109",
-      "note": "C C:B15 @t0=100; variant: lone-piston passengers not kept"
+      "note": "C C:B15 @t0=100; variant: lone-piston passengers not kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_109/problem.json"
     },
     {
       "id": "n3_110",
@@ -8732,7 +8842,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_110",
-      "note": "C C:B16 @t0=100; variant: lone-piston passengers not kept"
+      "note": "C C:B16 @t0=100; variant: lone-piston passengers not kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_110/problem.json"
     },
     {
       "id": "n3_111",
@@ -8911,7 +9023,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_112",
-      "note": "C C:B24 @t0=100; variant: lone-piston passengers not kept"
+      "note": "C C:B24 @t0=100; variant: lone-piston passengers not kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_112/problem.json"
     },
     {
       "id": "n3_113",
@@ -9069,7 +9183,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_114",
-      "note": "C C:B29 @t0=100; variant: lone-piston passengers not kept"
+      "note": "C C:B29 @t0=100; variant: lone-piston passengers not kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_114/problem.json"
     },
     {
       "id": "n3_115",
@@ -9159,7 +9275,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_115",
-      "note": "C C:B33 @t0=100; variant: lone-piston passengers not kept"
+      "note": "C C:B33 @t0=100; variant: lone-piston passengers not kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_115/problem.json"
     },
     {
       "id": "n3_116",
@@ -9232,7 +9350,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_116",
-      "note": "C C:B7 @t0=100; variant: lone-piston passengers not kept"
+      "note": "C C:B7 @t0=100; variant: lone-piston passengers not kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_116/problem.json"
     },
     {
       "id": "n3_117",
@@ -9294,7 +9414,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_117",
-      "note": "C C:B8 @t0=100; variant: lone-piston passengers not kept"
+      "note": "C C:B8 @t0=100; variant: lone-piston passengers not kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_117/problem.json"
     },
     {
       "id": "n3_118",
@@ -9356,7 +9478,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_118",
-      "note": "C C:B9 @t0=100; variant: lone-piston passengers not kept"
+      "note": "C C:B9 @t0=100; variant: lone-piston passengers not kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_118/problem.json"
     },
     {
       "id": "n3_119",
@@ -9456,7 +9580,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_119",
-      "note": "L L:B15 @t0=100; spec-faithful"
+      "note": "L L:B15 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_119/problem.json"
     },
     {
       "id": "n3_120",
@@ -9545,7 +9671,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_120",
-      "note": "L L:B16 @t0=100; spec-faithful"
+      "note": "L L:B16 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_120/problem.json"
     },
     {
       "id": "n3_121",
@@ -9638,7 +9766,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_121",
-      "note": "L L:B23 @t0=100; spec-faithful"
+      "note": "L L:B23 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_121/problem.json"
     },
     {
       "id": "n3_122",
@@ -9731,7 +9861,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_122",
-      "note": "L L:B24 @t0=100; spec-faithful"
+      "note": "L L:B24 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_122/problem.json"
     },
     {
       "id": "n3_123",
@@ -9824,7 +9956,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_123",
-      "note": "L L:B28 @t0=100; spec-faithful"
+      "note": "L L:B28 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_123/problem.json"
     },
     {
       "id": "n3_124",
@@ -9999,7 +10133,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_125",
-      "note": "L L:B33 @t0=100; spec-faithful"
+      "note": "L L:B33 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_125/problem.json"
     },
     {
       "id": "n3_126",
@@ -10099,7 +10235,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_126",
-      "note": "L L:B7 @t0=100; spec-faithful"
+      "note": "L L:B7 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_126/problem.json"
     },
     {
       "id": "n3_127",
@@ -10199,7 +10337,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_127",
-      "note": "L L:B8 @t0=100; spec-faithful"
+      "note": "L L:B8 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_127/problem.json"
     },
     {
       "id": "n3_128",
@@ -10299,7 +10439,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_128",
-      "note": "L L:B9 @t0=100; spec-faithful"
+      "note": "L L:B9 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_128/problem.json"
     },
     {
       "id": "n3_129",
@@ -10392,7 +10534,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_129",
-      "note": "K K2:B23.B8<-B40.B23 @t0=100; spec-faithful"
+      "note": "K K2:B23.B8<-B40.B23 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_129/problem.json"
     },
     {
       "id": "n3_130",
@@ -10485,7 +10629,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_130",
-      "note": "K K2:B24.B16<-B47.B24 @t0=100; spec-faithful"
+      "note": "K K2:B24.B16<-B47.B24 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_130/problem.json"
     },
     {
       "id": "n3_131",
@@ -10578,7 +10724,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_131",
-      "note": "K K2:B28.B15<-B41.B28 @t0=100; spec-faithful"
+      "note": "K K2:B28.B15<-B41.B28 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_131/problem.json"
     },
     {
       "id": "n3_132",
@@ -10660,7 +10808,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_132",
-      "note": "K K2:B29.B7<-B42.B29 @t0=100; spec-faithful"
+      "note": "K K2:B29.B7<-B42.B29 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_132/problem.json"
     },
     {
       "id": "n3_133",
@@ -10753,7 +10903,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_133",
-      "note": "K K2:B33.B9<-B55.B33 @t0=100; spec-faithful"
+      "note": "K K2:B33.B9<-B55.B33 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_133/problem.json"
     },
     {
       "id": "n3_134",
@@ -11354,7 +11506,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_138",
-      "note": "S S:push:B16:s2 @t0=100; spec-faithful"
+      "note": "S S:push:B16:s2 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_138/problem.json"
     },
     {
       "id": "n3_139",
@@ -11427,7 +11581,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_139",
-      "note": "S S:push:B33:s3 @t0=100; spec-faithful"
+      "note": "S S:push:B33:s3 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_139/problem.json"
     },
     {
       "id": "n3_140",
@@ -11572,7 +11728,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_141",
-      "note": "S S:push:B34:s2 @t0=100; spec-faithful"
+      "note": "S S:push:B34:s2 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_141/problem.json"
     },
     {
       "id": "n3_142",
@@ -11655,7 +11813,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_142",
-      "note": "S S:push:B34:s3 @t0=100; variant: actors of 3 consecutive periods kept"
+      "note": "S S:push:B34:s3 @t0=100; variant: actors of 3 consecutive periods kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_142/problem.json"
     },
     {
       "id": "n3_143",
@@ -11817,7 +11977,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_144",
-      "note": "S S:push:B35:s2 @t0=100; variant: actors of 3 consecutive periods kept"
+      "note": "S S:push:B35:s2 @t0=100; variant: actors of 3 consecutive periods kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_144/problem.json"
     },
     {
       "id": "n3_145",
@@ -12086,7 +12248,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_148",
-      "note": "S S:push:B43:s4 @t0=100; spec-faithful"
+      "note": "S S:push:B43:s4 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_148/problem.json"
     },
     {
       "id": "n3_149",
@@ -12159,7 +12323,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_149",
-      "note": "S S:push:B8:s3 @t0=100; spec-faithful"
+      "note": "S S:push:B8:s3 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_149/problem.json"
     },
     {
       "id": "n3_150",
@@ -12294,7 +12460,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_151",
-      "note": "S S:push:B9:s1 @t0=100; variant: lone-piston passengers not kept"
+      "note": "S S:push:B9:s1 @t0=100; variant: lone-piston passengers not kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_151/problem.json"
     },
     {
       "id": "n3_152",
@@ -12422,7 +12590,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_153",
-      "note": "C C:B10 @t0=100; spec-faithful"
+      "note": "C C:B10 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_153/problem.json"
     },
     {
       "id": "n3_154",
@@ -12505,7 +12675,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_154",
-      "note": "C C:B22 @t0=100; spec-faithful"
+      "note": "C C:B22 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_154/problem.json"
     },
     {
       "id": "n3_155",
@@ -12612,7 +12784,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_155",
-      "note": "C C:B27 @t0=100; variant: actors of 3 consecutive periods kept, lone-piston passengers not kept"
+      "note": "C C:B27 @t0=100; variant: actors of 3 consecutive periods kept, lone-piston passengers not kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_155/problem.json"
     },
     {
       "id": "n3_156",
@@ -12685,7 +12859,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_156",
-      "note": "C C:B8 @t0=100; variant: lone-piston passengers not kept"
+      "note": "C C:B8 @t0=100; variant: lone-piston passengers not kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_156/problem.json"
     },
     {
       "id": "n3_157",
@@ -12747,7 +12923,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_157",
-      "note": "C C:B9 @t0=100; variant: lone-piston passengers not kept"
+      "note": "C C:B9 @t0=100; variant: lone-piston passengers not kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_157/problem.json"
     },
     {
       "id": "n3_158",
@@ -12847,7 +13025,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_158",
-      "note": "L L:B13 @t0=100; spec-faithful"
+      "note": "L L:B13 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_158/problem.json"
     },
     {
       "id": "n3_159",
@@ -12947,7 +13127,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_159",
-      "note": "L L:B8 @t0=100; spec-faithful"
+      "note": "L L:B8 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_159/problem.json"
     },
     {
       "id": "n3_160",
@@ -13081,7 +13263,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_160",
-      "note": "L L:B9 @t0=100; spec-faithful"
+      "note": "L L:B9 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_160/problem.json"
     },
     {
       "id": "n3_161",
@@ -13208,7 +13392,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_161",
-      "note": "K K2:B21.B8<-B27.B9 @t0=100; spec-faithful"
+      "note": "K K2:B21.B8<-B27.B9 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_161/problem.json"
     },
     {
       "id": "n3_162",
@@ -13418,7 +13604,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_163",
-      "note": "K K2:B33.B13<-B35.B33 @t0=100; spec-faithful"
+      "note": "K K2:B33.B13<-B35.B33 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_163/problem.json"
     },
     {
       "id": "n3_164",
@@ -13538,7 +13726,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_164",
-      "note": "K K3:B22.B16<-B33.B13<-B35.B33 @t0=100; spec-faithful"
+      "note": "K K3:B22.B16<-B33.B13<-B35.B33 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_164/problem.json"
     },
     {
       "id": "n3_165",
@@ -13658,7 +13848,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_165",
-      "note": "K K3h:B22.B16<-B33.B13<-B35.B33+B43 @t0=100; spec-faithful"
+      "note": "K K3h:B22.B16<-B33.B13<-B35.B33+B43 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_165/problem.json"
     },
     {
       "id": "n3_166",
@@ -14020,7 +14212,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_168",
-      "note": "S S:pull:B15:s4 @t0=100; spec-faithful"
+      "note": "S S:pull:B15:s4 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_168/problem.json"
     },
     {
       "id": "n3_169",
@@ -14082,7 +14276,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_169",
-      "note": "S S:push:B15:s2 @t0=100; spec-faithful"
+      "note": "S S:push:B15:s2 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_169/problem.json"
     },
     {
       "id": "n3_170",
@@ -14144,7 +14340,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_170",
-      "note": "S S:push:B15:s3 @t0=100; variant: lone-piston passengers not kept"
+      "note": "S S:push:B15:s3 @t0=100; variant: lone-piston passengers not kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_170/problem.json"
     },
     {
       "id": "n3_171",
@@ -14227,7 +14425,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_171",
-      "note": "S S:push:B32:s2 @t0=100; spec-faithful"
+      "note": "S S:push:B32:s2 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_171/problem.json"
     },
     {
       "id": "n3_172",
@@ -14310,7 +14510,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_172",
-      "note": "S S:push:B32:s3 @t0=100; variant: actors of 3 consecutive periods kept"
+      "note": "S S:push:B32:s3 @t0=100; variant: actors of 3 consecutive periods kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_172/problem.json"
     },
     {
       "id": "n3_173",
@@ -14692,7 +14894,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_177",
-      "note": "C C:B13 @t0=100; variant: lone-piston passengers not kept"
+      "note": "C C:B13 @t0=100; variant: lone-piston passengers not kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_177/problem.json"
     },
     {
       "id": "n3_178",
@@ -14799,7 +15003,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_178",
-      "note": "C C:B25 @t0=100; variant: actors of 3 consecutive periods kept, lone-piston passengers not kept"
+      "note": "C C:B25 @t0=100; variant: actors of 3 consecutive periods kept, lone-piston passengers not kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_178/problem.json"
     },
     {
       "id": "n3_179",
@@ -14872,7 +15078,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_179",
-      "note": "C C:B31 @t0=100; variant: lone-piston passengers not kept"
+      "note": "C C:B31 @t0=100; variant: lone-piston passengers not kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_179/problem.json"
     },
     {
       "id": "n3_180",
@@ -14955,7 +15163,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_180",
-      "note": "C C:B33 @t0=100; spec-faithful"
+      "note": "C C:B33 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_180/problem.json"
     },
     {
       "id": "n3_181",
@@ -15089,7 +15299,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_181",
-      "note": "L L:B13 @t0=110; variant: t0=110"
+      "note": "L L:B13 @t0=110; variant: t0=110",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_181/problem.json"
     },
     {
       "id": "n3_182",
@@ -15178,7 +15390,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_182",
-      "note": "L L:B15 @t0=100; spec-faithful"
+      "note": "L L:B15 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_182/problem.json"
     },
     {
       "id": "n3_183",
@@ -15312,7 +15526,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_183",
-      "note": "L L:B9 @t0=110; variant: t0=110"
+      "note": "L L:B9 @t0=110; variant: t0=110",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_183/problem.json"
     },
     {
       "id": "n3_184",
@@ -15395,7 +15611,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_184",
-      "note": "P P:B19:s1+s3 @t0=100; spec-faithful"
+      "note": "P P:B19:s1+s3 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_184/problem.json"
     },
     {
       "id": "n3_185",
@@ -15568,7 +15786,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_186",
-      "note": "P P:B24:s0+s2 @t0=100; spec-faithful"
+      "note": "P P:B24:s0+s2 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_186/problem.json"
     },
     {
       "id": "n3_187",
@@ -15785,7 +16005,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_188",
-      "note": "K K2:B19.B8<-B25.B9 @t0=110; variant: t0=110"
+      "note": "K K2:B19.B8<-B25.B9 @t0=110; variant: t0=110",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_188/problem.json"
     },
     {
       "id": "n3_189",
@@ -15912,7 +16134,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_189",
-      "note": "K K2:B24.B15<-B31.B13 @t0=110; variant: t0=110"
+      "note": "K K2:B24.B15<-B31.B13 @t0=110; variant: t0=110",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_189/problem.json"
     },
     {
       "id": "n3_190",
@@ -16329,7 +16553,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_192",
-      "note": "S S:pull:B24:s1 @t0=100; spec-faithful"
+      "note": "S S:pull:B24:s1 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_192/problem.json"
     },
     {
       "id": "n3_193",
@@ -16492,7 +16718,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_194",
-      "note": "S S:push:B16:s3 @t0=100; spec-faithful"
+      "note": "S S:push:B16:s3 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_194/problem.json"
     },
     {
       "id": "n3_195",
@@ -16761,7 +16989,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_197",
-      "note": "S S:push:B34:s3 @t0=100; spec-faithful"
+      "note": "S S:push:B34:s3 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_197/problem.json"
     },
     {
       "id": "n3_198",
@@ -16895,7 +17125,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_199",
-      "note": "S S:push:B43:s0 @t0=100; spec-faithful"
+      "note": "S S:push:B43:s0 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_199/problem.json"
     },
     {
       "id": "n3_200",
@@ -17181,7 +17413,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_203",
-      "note": "S S:push:B48:s3 @t0=100; spec-faithful"
+      "note": "S S:push:B48:s3 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_203/problem.json"
     },
     {
       "id": "n3_204",
@@ -17264,7 +17498,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_204",
-      "note": "S S:push:B48:s4 @t0=100; variant: actors of 3 consecutive periods kept"
+      "note": "S S:push:B48:s4 @t0=100; variant: actors of 3 consecutive periods kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_204/problem.json"
     },
     {
       "id": "n3_205",
@@ -17543,7 +17779,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_208",
-      "note": "S S:push:B55:s2 @t0=100; variant: actors of 3 consecutive periods kept"
+      "note": "S S:push:B55:s2 @t0=100; variant: actors of 3 consecutive periods kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_208/problem.json"
     },
     {
       "id": "n3_209",
@@ -18003,7 +18241,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_215",
-      "note": "S S:push:B65:s4 @t0=100; spec-faithful"
+      "note": "S S:push:B65:s4 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_215/problem.json"
     },
     {
       "id": "n3_216",
@@ -18076,7 +18316,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_216",
-      "note": "S S:push:B8:s4 @t0=100; spec-faithful"
+      "note": "S S:push:B8:s4 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_216/problem.json"
     },
     {
       "id": "n3_217",
@@ -18138,7 +18380,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_217",
-      "note": "C C:B15 @t0=100; variant: lone-piston passengers not kept"
+      "note": "C C:B15 @t0=100; variant: lone-piston passengers not kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_217/problem.json"
     },
     {
       "id": "n3_218",
@@ -18228,7 +18472,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_218",
-      "note": "C C:B34 @t0=100; variant: lone-piston passengers not kept"
+      "note": "C C:B34 @t0=100; variant: lone-piston passengers not kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_218/problem.json"
     },
     {
       "id": "n3_219",
@@ -18311,7 +18557,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_219",
-      "note": "C C:B41 @t0=100; spec-faithful"
+      "note": "C C:B41 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_219/problem.json"
     },
     {
       "id": "n3_220",
@@ -18394,7 +18642,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_220",
-      "note": "C C:B42 @t0=100; spec-faithful"
+      "note": "C C:B42 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_220/problem.json"
     },
     {
       "id": "n3_221",
@@ -18487,7 +18737,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_221",
-      "note": "L L:B24 @t0=100; spec-faithful"
+      "note": "L L:B24 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_221/problem.json"
     },
     {
       "id": "n3_222",
@@ -18580,7 +18832,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_222",
-      "note": "L L:B34 @t0=100; spec-faithful"
+      "note": "L L:B34 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_222/problem.json"
     },
     {
       "id": "n3_223",
@@ -18680,7 +18934,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_223",
-      "note": "L L:B8 @t0=100; spec-faithful"
+      "note": "L L:B8 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_223/problem.json"
     },
     {
       "id": "n3_224",
@@ -18910,7 +19166,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_226",
-      "note": "K K2:B24.B9<-B41.B24 @t0=100; spec-faithful"
+      "note": "K K2:B24.B9<-B41.B24 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_226/problem.json"
     },
     {
       "id": "n3_227",
@@ -19257,7 +19515,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_228",
-      "note": "S S:pull:B24:s1 @t0=100; spec-faithful"
+      "note": "S S:pull:B24:s1 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_228/problem.json"
     },
     {
       "id": "n3_229",
@@ -19340,7 +19600,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_229",
-      "note": "S S:pull:B25:s2 @t0=100; spec-faithful"
+      "note": "S S:pull:B25:s2 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_229/problem.json"
     },
     {
       "id": "n3_230",
@@ -19436,7 +19698,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_230",
-      "note": "S S:pull:B29:s4 @t0=100; variant: actors of 3 consecutive periods kept, lone-piston passengers not kept"
+      "note": "S S:pull:B29:s4 @t0=100; variant: actors of 3 consecutive periods kept, lone-piston passengers not kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_230/problem.json"
     },
     {
       "id": "n3_231",
@@ -19519,7 +19783,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_231",
-      "note": "S S:pull:B34:s0 @t0=100; spec-faithful"
+      "note": "S S:pull:B34:s0 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_231/problem.json"
     },
     {
       "id": "n3_232",
@@ -19688,7 +19954,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_233",
-      "note": "S S:pull:B40:s1 @t0=100; spec-faithful"
+      "note": "S S:pull:B40:s1 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_233/problem.json"
     },
     {
       "id": "n3_234",
@@ -19829,7 +20097,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_235",
-      "note": "S S:push:B17:s2 @t0=100; spec-faithful"
+      "note": "S S:push:B17:s2 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_235/problem.json"
     },
     {
       "id": "n3_236",
@@ -19981,7 +20251,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_237",
-      "note": "S S:push:B24:s0 @t0=100; variant: actors of 3 consecutive periods kept, lone-piston passengers not kept"
+      "note": "S S:push:B24:s0 @t0=100; variant: actors of 3 consecutive periods kept, lone-piston passengers not kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_237/problem.json"
     },
     {
       "id": "n3_238",
@@ -20071,7 +20343,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_238",
-      "note": "S S:push:B24:s4 @t0=100; spec-faithful"
+      "note": "S S:push:B24:s4 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_238/problem.json"
     },
     {
       "id": "n3_239",
@@ -20150,7 +20424,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_239",
-      "note": "S S:push:B25:s0 @t0=100; spec-faithful"
+      "note": "S S:push:B25:s0 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_239/problem.json"
     },
     {
       "id": "n3_240",
@@ -20387,7 +20663,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_242",
-      "note": "S S:push:B29:s2 @t0=100; spec-faithful"
+      "note": "S S:push:B29:s2 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_242/problem.json"
     },
     {
       "id": "n3_243",
@@ -20556,7 +20834,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_244",
-      "note": "S S:push:B34:s3 @t0=100; spec-faithful"
+      "note": "S S:push:B34:s3 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_244/problem.json"
     },
     {
       "id": "n3_245",
@@ -20763,7 +21043,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_247",
-      "note": "S S:push:B64:s1 @t0=100; spec-faithful"
+      "note": "S S:push:B64:s1 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_247/problem.json"
     },
     {
       "id": "n3_248",
@@ -20953,7 +21235,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_250",
-      "note": "S S:push:B65:s3 @t0=100; spec-faithful"
+      "note": "S S:push:B65:s3 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_250/problem.json"
     },
     {
       "id": "n3_251",
@@ -21092,7 +21376,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_252",
-      "note": "S S:push:B66:s2 @t0=100; spec-faithful"
+      "note": "S S:push:B66:s2 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_252/problem.json"
     },
     {
       "id": "n3_253",
@@ -21428,7 +21714,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_257",
-      "note": "S S:push:B69:s4 @t0=100; spec-faithful"
+      "note": "S S:push:B69:s4 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_257/problem.json"
     },
     {
       "id": "n3_258",
@@ -21501,7 +21789,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_258",
-      "note": "S S:push:B8:s4 @t0=100; spec-faithful"
+      "note": "S S:push:B8:s4 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_258/problem.json"
     },
     {
       "id": "n3_259",
@@ -21594,7 +21884,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_259",
-      "note": "L L:B24 @t0=100; spec-faithful"
+      "note": "L L:B24 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_259/problem.json"
     },
     {
       "id": "n3_260",
@@ -21687,7 +21979,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_260",
-      "note": "L L:B25 @t0=100; spec-faithful"
+      "note": "L L:B25 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_260/problem.json"
     },
     {
       "id": "n3_261",
@@ -21793,7 +22087,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_261",
-      "note": "L L:B29 @t0=100; variant: actors of 3 consecutive periods kept, lone-piston passengers not kept"
+      "note": "L L:B29 @t0=100; variant: actors of 3 consecutive periods kept, lone-piston passengers not kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_261/problem.json"
     },
     {
       "id": "n3_262",
@@ -21886,7 +22182,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_262",
-      "note": "L L:B34 @t0=100; spec-faithful"
+      "note": "L L:B34 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_262/problem.json"
     },
     {
       "id": "n3_263",
@@ -22137,7 +22435,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_264",
-      "note": "L L:B9 @t0=100; spec-faithful"
+      "note": "L L:B9 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_264/problem.json"
     },
     {
       "id": "n3_265",
@@ -22230,7 +22530,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_265",
-      "note": "K K2:B24.B9<-B41.B24 @t0=100; spec-faithful"
+      "note": "K K2:B24.B9<-B41.B24 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_265/problem.json"
     },
     {
       "id": "n3_266",
@@ -22323,7 +22625,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_266",
-      "note": "K K2:B25.B17<-B48.B25 @t0=100; spec-faithful"
+      "note": "K K2:B25.B17<-B48.B25 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_266/problem.json"
     },
     {
       "id": "n3_267",
@@ -22436,7 +22740,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_267",
-      "note": "K K2:B29.B8<-B43.B29 @t0=100; variant: actors of 3 consecutive periods kept, lone-piston passengers not kept"
+      "note": "K K2:B29.B8<-B43.B29 @t0=100; variant: actors of 3 consecutive periods kept, lone-piston passengers not kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_267/problem.json"
     },
     {
       "id": "n3_268",
@@ -22652,7 +22958,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_269",
-      "note": "K K2:B34.B15<-B55.B34 @t0=100; spec-faithful"
+      "note": "K K2:B34.B15<-B55.B34 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_269/problem.json"
     },
     {
       "id": "n3_270",
@@ -22903,7 +23211,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_271",
-      "note": "K K2:B42.B28<-B66.B40 @t0=100; spec-faithful"
+      "note": "K K2:B42.B28<-B66.B40 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_271/problem.json"
     },
     {
       "id": "n3_272",
@@ -23147,7 +23457,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_273",
-      "note": "K K3:B28.B16<-B42.B28<-B66.B40 @t0=100; spec-faithful"
+      "note": "K K3:B28.B16<-B42.B28<-B66.B40 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_273/problem.json"
     },
     {
       "id": "n3_274",
@@ -23274,7 +23586,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_274",
-      "note": "K K3h:B28.B16<-B42.B28<-B66.B40+B63 @t0=100; spec-faithful"
+      "note": "K K3h:B28.B16<-B42.B28<-B66.B40+B63 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_274/problem.json"
     },
     {
       "id": "n3_275",
@@ -23641,7 +23955,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_276",
-      "note": "S S:push:B18:s1 @t0=100; variant: actors of 3 consecutive periods kept"
+      "note": "S S:push:B18:s1 @t0=100; variant: actors of 3 consecutive periods kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_276/problem.json"
     },
     {
       "id": "n3_277",
@@ -23894,7 +24210,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_279",
-      "note": "S S:push:B29:s0 @t0=100; variant: actors of 3 consecutive periods kept, lone-piston passengers not kept"
+      "note": "S S:push:B29:s0 @t0=100; variant: actors of 3 consecutive periods kept, lone-piston passengers not kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_279/problem.json"
     },
     {
       "id": "n3_280",
@@ -23967,7 +24285,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_280",
-      "note": "S S:push:B29:s4 @t0=100; spec-faithful"
+      "note": "S S:push:B29:s4 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_280/problem.json"
     },
     {
       "id": "n3_281",
@@ -24050,7 +24370,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_281",
-      "note": "S S:push:B36:s2 @t0=100; spec-faithful"
+      "note": "S S:push:B36:s2 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_281/problem.json"
     },
     {
       "id": "n3_282",
@@ -24133,7 +24455,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_282",
-      "note": "S S:push:B36:s3 @t0=100; variant: actors of 3 consecutive periods kept"
+      "note": "S S:push:B36:s3 @t0=100; variant: actors of 3 consecutive periods kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_282/problem.json"
     },
     {
       "id": "n3_283",
@@ -24392,7 +24716,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_286",
-      "note": "S S:push:B9:s3 @t0=100; spec-faithful"
+      "note": "S S:push:B9:s3 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_286/problem.json"
     },
     {
       "id": "n3_287",
@@ -24520,7 +24846,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_288",
-      "note": "C C:B11 @t0=100; spec-faithful"
+      "note": "C C:B11 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_288/problem.json"
     },
     {
       "id": "n3_289",
@@ -24603,7 +24931,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_289",
-      "note": "C C:B24 @t0=100; spec-faithful"
+      "note": "C C:B24 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_289/problem.json"
     },
     {
       "id": "n3_290",
@@ -24776,7 +25106,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_291",
-      "note": "C C:B9 @t0=100; variant: lone-piston passengers not kept"
+      "note": "C C:B9 @t0=100; variant: lone-piston passengers not kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_291/problem.json"
     },
     {
       "id": "n3_292",
@@ -24876,7 +25208,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_292",
-      "note": "L L:B10 @t0=100; spec-faithful"
+      "note": "L L:B10 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_292/problem.json"
     },
     {
       "id": "n3_293",
@@ -25109,7 +25443,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_294",
-      "note": "L L:B29 @t0=100; spec-faithful"
+      "note": "L L:B29 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_294/problem.json"
     },
     {
       "id": "n3_295",
@@ -25545,7 +25881,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_298",
-      "note": "K K3:B18.B9<-B29.B10<-B36.B29 @t0=100; spec-faithful"
+      "note": "K K3:B18.B9<-B29.B10<-B36.B29 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_298/problem.json"
     },
     {
       "id": "n3_299",
@@ -26436,7 +26774,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_307",
-      "note": "S S:push:B36:s3 @t0=100; spec-faithful"
+      "note": "S S:push:B36:s3 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_307/problem.json"
     },
     {
       "id": "n3_308",
@@ -26515,7 +26855,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_308",
-      "note": "S S:push:B38:s1 @t0=100; variant: lone-piston passengers not kept"
+      "note": "S S:push:B38:s1 @t0=100; variant: lone-piston passengers not kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_308/problem.json"
     },
     {
       "id": "n3_309",
@@ -26598,7 +26940,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_309",
-      "note": "S S:push:B38:s2 @t0=100; variant: actors of 3 consecutive periods kept"
+      "note": "S S:push:B38:s2 @t0=100; variant: actors of 3 consecutive periods kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_309/problem.json"
     },
     {
       "id": "n3_310",
@@ -26664,7 +27008,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_310",
-      "note": "S S:push:B46:s0 @t0=100; variant: actors of 3 consecutive periods kept"
+      "note": "S S:push:B46:s0 @t0=100; variant: actors of 3 consecutive periods kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_310/problem.json"
     },
     {
       "id": "n3_311",
@@ -26737,7 +27083,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_311",
-      "note": "S S:push:B9:s3 @t0=100; spec-faithful"
+      "note": "S S:push:B9:s3 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_311/problem.json"
     },
     {
       "id": "n3_312",
@@ -26872,7 +27220,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_313",
-      "note": "C C:B15 @t0=100; variant: lone-piston passengers not kept"
+      "note": "C C:B15 @t0=100; variant: lone-piston passengers not kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_313/problem.json"
     },
     {
       "id": "n3_314",
@@ -26955,7 +27305,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_314",
-      "note": "C C:B25 @t0=100; spec-faithful"
+      "note": "C C:B25 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_314/problem.json"
     },
     {
       "id": "n3_315",
@@ -27028,7 +27380,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_315",
-      "note": "C C:B9 @t0=100; variant: lone-piston passengers not kept"
+      "note": "C C:B9 @t0=100; variant: lone-piston passengers not kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_315/problem.json"
     },
     {
       "id": "n3_316",
@@ -27128,7 +27482,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_316",
-      "note": "L L:B10 @t0=100; spec-faithful"
+      "note": "L L:B10 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_316/problem.json"
     },
     {
       "id": "n3_317",
@@ -27228,7 +27584,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_317",
-      "note": "L L:B15 @t0=100; spec-faithful"
+      "note": "L L:B15 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_317/problem.json"
     },
     {
       "id": "n3_318",
@@ -27797,7 +28155,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_322",
-      "note": "S S:push:B10:s1 @t0=110; variant: t0=110"
+      "note": "S S:push:B10:s1 @t0=110; variant: t0=110",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_322/problem.json"
     },
     {
       "id": "n3_323",
@@ -27880,7 +28240,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_323",
-      "note": "S S:push:B19:s1 @t0=100; spec-faithful"
+      "note": "S S:push:B19:s1 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_323/problem.json"
     },
     {
       "id": "n3_324",
@@ -28043,7 +28405,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_325",
-      "note": "S S:push:B37:s3 @t0=100; spec-faithful"
+      "note": "S S:push:B37:s3 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_325/problem.json"
     },
     {
       "id": "n3_326",
@@ -28178,7 +28542,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_327",
-      "note": "S S:push:B9:s3 @t0=100; spec-faithful"
+      "note": "S S:push:B9:s3 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_327/problem.json"
     },
     {
       "id": "n3_328",
@@ -28313,7 +28679,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_329",
-      "note": "C C:B37 @t0=100; variant: lone-piston passengers not kept"
+      "note": "C C:B37 @t0=100; variant: lone-piston passengers not kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_329/problem.json"
     },
     {
       "id": "n3_330",
@@ -28386,7 +28754,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_330",
-      "note": "C C:B9 @t0=100; variant: lone-piston passengers not kept"
+      "note": "C C:B9 @t0=100; variant: lone-piston passengers not kept",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_330/problem.json"
     },
     {
       "id": "n3_331",
@@ -28479,7 +28849,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_331",
-      "note": "L L:B37 @t0=110; variant: t0=110"
+      "note": "L L:B37 @t0=110; variant: t0=110",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_331/problem.json"
     },
     {
       "id": "n3_332",

@@ -29,6 +29,23 @@ strokes: `tick x y z cap`), `before_natural.json` / `after_natural.json`
 (contracts; only orders that pass are published), `samples_*.json`, `NOTES.md`
 (provenance: kept bodies, which strokes are prescribed vs endogenous and why).
 
+## Regenerated entries (2026-10-15)
+
+186 N3 entries no longer store their fixture: `index.json` marks them `"fixture": "regenerate"` and the entry
+directory keeps only the problem (`problem.json`, `problem.flyer` = pinned bodies, `drive.txt`), `NOTES.md`
+and `REGENERATE.md`. Rule (user): an entry's fixture may go when our tools reproduce it in a few seconds;
+entries we cannot reproduce stay. Test (`flyers/WIP/experiments/contract_solver_20261014/prune_bank.py`):
+`contract-solve` (5 s, exact lookup off, the entry itself and every other stripped entry excluded from the
+library) verifies all three orders x 80 samples at endogenous load <= the reference with seeds 1, 2, 3 and,
+with the final binary, 1 and 4; the Python checker agreed on every answer. Regenerate one:
+
+```powershell
+target/release/contract-solve flyers/extension_bank/n3/n3_102/problem.json OUT --budget 5
+```
+
+Originals are in git history. Per-sample dumps (`samples_*.json`) are no longer tracked; verdicts are in
+`index.json` (`orders_80_samples`) and `extension_contract.py --samples` regenerates them.
+
 ## Scoring "best"
 
 Prescribed input strokes are hard-capped and excluded from ranking. Rank by

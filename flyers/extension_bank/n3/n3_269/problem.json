@@ -1,0 +1,311 @@
+{
+ "version": 1,
+ "name": "n3_269",
+ "flyer": "problem.flyer",
+ "prescribed_script": "drive.txt",
+ "prescribed_order": "before_natural",
+ "period_ticks": 10,
+ "advance": 3,
+ "cycles": 3,
+ "recurrence": "bounded",
+ "ports": [
+  {
+   "name": "b15",
+   "role": "input",
+   "at": [
+    14,
+    3,
+    9
+   ],
+   "word": "mmmww",
+   "baseline_load": [
+    11,
+    12,
+    12,
+    null,
+    null
+   ],
+   "spare_load": [
+    0,
+    0,
+    0,
+    null,
+    null
+   ]
+  },
+  {
+   "name": "b34",
+   "role": "output",
+   "at": [
+    20,
+    1,
+    8
+   ],
+   "word": "mwwmm"
+  },
+  {
+   "name": "b55",
+   "role": "output",
+   "at": [
+    23,
+    0,
+    9
+   ],
+   "word": "wmmmw"
+  },
+  {
+   "name": "pw_b69_11_3_8",
+   "role": "input",
+   "at": [
+    25,
+    1,
+    8
+   ],
+   "word": "mmwwm",
+   "baseline_load": [
+    1,
+    1,
+    null,
+    null,
+    1
+   ],
+   "spare_load": [
+    0,
+    0,
+    null,
+    null,
+    0
+   ]
+  }
+ ],
+ "required_cells": [
+  {
+   "at": [
+    14,
+    3,
+    9
+   ],
+   "cell": 1
+  },
+  {
+   "at": [
+    15,
+    3,
+    9
+   ],
+   "cell": 1
+  },
+  {
+   "at": [
+    16,
+    2,
+    9
+   ],
+   "cell": 6
+  },
+  {
+   "at": [
+    16,
+    3,
+    9
+   ],
+   "cell": 1
+  },
+  {
+   "at": [
+    17,
+    1,
+    9
+   ],
+   "cell": 1
+  },
+  {
+   "at": [
+    17,
+    2,
+    10
+   ],
+   "cell": 1
+  },
+  {
+   "at": [
+    17,
+    2,
+    9
+   ],
+   "cell": 1
+  },
+  {
+   "at": [
+    17,
+    3,
+    9
+   ],
+   "cell": 1
+  },
+  {
+   "at": [
+    19,
+    2,
+    8
+   ],
+   "cell": 6
+  },
+  {
+   "at": [
+    20,
+    1,
+    8
+   ],
+   "cell": 1
+  },
+  {
+   "at": [
+    20,
+    1,
+    9
+   ],
+   "cell": 4
+  },
+  {
+   "at": [
+    20,
+    2,
+    8
+   ],
+   "cell": 1
+  },
+  {
+   "at": [
+    20,
+    2,
+    9
+   ],
+   "cell": 297
+  },
+  {
+   "at": [
+    20,
+    3,
+    8
+   ],
+   "cell": 1
+  },
+  {
+   "at": [
+    20,
+    3,
+    9
+   ],
+   "cell": 4
+  },
+  {
+   "at": [
+    21,
+    1,
+    8
+   ],
+   "cell": 1
+  },
+  {
+   "at": [
+    22,
+    2,
+    9
+   ],
+   "cell": 6
+  },
+  {
+   "at": [
+    23,
+    0,
+    8
+   ],
+   "cell": 4
+  },
+  {
+   "at": [
+    23,
+    0,
+    9
+   ],
+   "cell": 1
+  },
+  {
+   "at": [
+    23,
+    1,
+    8
+   ],
+   "cell": 2345
+  },
+  {
+   "at": [
+    23,
+    1,
+    9
+   ],
+   "cell": 1
+  },
+  {
+   "at": [
+    23,
+    2,
+    10
+   ],
+   "cell": 1
+  },
+  {
+   "at": [
+    23,
+    2,
+    11
+   ],
+   "cell": 2345
+  },
+  {
+   "at": [
+    23,
+    2,
+    8
+   ],
+   "cell": 1
+  },
+  {
+   "at": [
+    23,
+    2,
+    9
+   ],
+   "cell": 1
+  },
+  {
+   "at": [
+    23,
+    3,
+    9
+   ],
+   "cell": 1
+  },
+  {
+   "at": [
+    25,
+    1,
+    8
+   ],
+   "cell": 6
+  }
+ ],
+ "boundary_envelope": {
+  "min": [
+   14,
+   0,
+   8
+  ],
+  "max": [
+   25,
+   4,
+   11
+  ]
+ }
+}
