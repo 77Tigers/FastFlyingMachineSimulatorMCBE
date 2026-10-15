@@ -10,7 +10,7 @@
   13->11, n3_325 11->10, n3_235 endogenous 10->8.
 * Natural flyer problems (pistons stripped from banked flyers): 90/135. Bank N3 problems: 11/11 fair.
 * Independent re-checks (`pycheck_run.py`, `bench.py --pycheck`): every sampled answer agrees with
-  `tools/extension_contract.py` (24 extension + 8 natural + 10 bank).
+  `tools/extension_contract.py` (44 extension incl. N4/mmwmmw + 8 natural + 10 bank + 2 designs).
 * Bodies from pistons: local route (bare skeletons) 1/9; **global route works**: `design_sat.py` designs a full
   flyer from words with CP-SAT (mmww/wwmm -> 20 blocks, PL10, verified 80/80 + 10000 ticks). N4 rigid: infeasible
   (needs riders).
@@ -158,7 +158,9 @@ FEASIBLE in 90 s, 20 blocks (two 10-cell bodies, 2 pushers + 2 stickies, rods, o
 `designs/sat_mmww/design.flyer`. This is bodies-from-pistons from words alone; the 5 s solver remains the local
 "pistons from bodies" tool. N4 `mmmmww,mmwwmm,wwmmmm` with rigid segments only: INFEASIBLE at L22 in box
 m3:4,m1:3,m1:3 (23 s, model only, bounded) -- consistent with the ledger (N4 four-push designs use riders);
-next: satflyer5 `riders=` for N4.
+next: satflyer5 `riders=` for N4. 2 bps `mmwww,wwmwm`: L10 FEASIBLE in 151 s (20 blocks, verified) = the banked
+2 bps record from words alone; L9 (open question in the research log; 2-body L9 was untested): UNKNOWN after
+300 s in box m2:3,m1:2,m1:2 (not a negative; pin a hand layout before retrying, as the log advises).
 
 `flyer-ledger FLYER --period P` prints who moves whom (extend/retract, carrier bodies, loads) — the input for
 family solvers. Pull-twice mmwmmw ledger: every slot one body is pulled (load ~22 incl. 7 riders) and one
