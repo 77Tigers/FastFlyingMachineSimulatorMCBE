@@ -98,7 +98,7 @@ fn main() {
                     let front = nbr(qn, DIRS[dir]);
                     let now: BTreeSet<usize> = DIRS.iter().filter(|&&d| nbr(qn, d) != front)
                         .filter_map(|&d| at.get(&nbr(qn, d)).and_then(|&j| comp_of.get(&origins[j]).copied())).collect();
-                    format!("{}piston {} now at ({},{},{}) on {}", if c0 & 0x100 != 0 { "sticky " } else { "" }, ["+X", "-X", "+Y", "-Y", "+Z", "-Z"][dir], qn.x, qn.y, qn.z,
+                    format!("{}piston #{} {} now at ({},{},{}) on {}", if c0 & 0x100 != 0 { "sticky " } else { "" }, id.map_or("?".to_string(), |i| i.to_string()), ["+X", "-X", "+Y", "-Y", "+Z", "-Z"][dir], qn.x, qn.y, qn.z,
                         if now.is_empty() { "-".to_string() } else { now.iter().map(|b| format!("b{b}")).collect::<Vec<_>>().join("+") })
                 }
                 None => "?".into(),

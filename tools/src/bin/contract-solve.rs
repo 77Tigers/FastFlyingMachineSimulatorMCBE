@@ -41,13 +41,14 @@ fn main() {
 fn run() -> Result<(), String> {
     let t0 = Instant::now();
     let a: Vec<String> = std::env::args().skip(1).collect();
-    let usage = "usage: contract-solve PROBLEM.json OUT_DIR [--budget SECS] [--threads N] [--library INDEX.json] [--holdout] [--seed N] [--quiet] [--library-dir DIR]... [--ext-library-dir DIR]... [--exclude-source SUBSTR]... [--library-file F] [--build-library F]";
+    let usage = "usage: contract-solve PROBLEM.json OUT_DIR [--budget SECS] [--threads N] [--library INDEX.json] [--holdout] [--seed N] [--quiet] [--library-dir DIR]... [--ext-library-dir DIR]... [--exclude-source SUBSTR]... [--exclude-id ID,ID]... [--library-file F] [--build-library F]";
     let mut pos = vec![];
     let (mut budget, mut threads, mut seed) = (5.0f64, std::thread::available_parallelism().map(|n| n.get()).unwrap_or(4).min(8), 1u64);
     let mut library = PathBuf::from("flyers/extension_bank/index.json");
     let (mut holdout, mut quiet) = (false, false);
     let (mut lib_dirs, mut exclude): (Vec<PathBuf>, Vec<String>) = (vec![], vec![]);
     let mut ext_dirs: Vec<PathBuf> = vec![];
+    let mut exclude_id: BTreeSet<String> = BTreeSet::new();
     let (mut lib_file, mut build_lib): (Option<PathBuf>, Option<PathBuf>) = (None, None);
     let mut i = 0;
     while i < a.len() {
@@ -63,6 +64,7 @@ fn run() -> Result<(), String> {
             "--library-file" => { lib_file = Some(PathBuf::from(v(i)?)); i += 1; }
             "--build-library" => { build_lib = Some(PathBuf::from(v(i)?)); i += 1; }
             "--exclude-source" => { exclude.push(v(i)?); i += 1; }
+            "--exclude-id" => { exclude_id.extend(v(i)?.split(',').map(String::from)); i += 1; }
             "--quiet" => quiet = true,
             s if s.starts_with("--") => return Err(format!("unknown option {s}\n{usage}")),
             _ => pos.push(a[i].clone()),
@@ -158,7 +160,7 @@ fn run() -> Result<(), String> {
         return Ok(());
     }
     let t_lib = t0.elapsed().as_secs_f64();
-    lib.retain(|e| !exclude.iter().any(|x| e.id.contains(x.as_str())));
+    lib.retain(|e| !exclude.iter().any(|x| e.id.contains(x.as_str())) && !exclude_id.contains(&e.id));
     lib.extend(self_entry(&base));
     let pinned: Vec<(Coord, u16)> = ctx.required_cells.clone();
     let tc = transplant_candidates(&lib, &pinned, &base, holdout, 400);
