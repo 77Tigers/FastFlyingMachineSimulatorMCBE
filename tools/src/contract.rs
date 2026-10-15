@@ -238,6 +238,7 @@ pub type Cells = BTreeMap<Coord, u16>;
 pub const DIRS: [(i64, i64, i64); 6] = [(1, 0, 0), (-1, 0, 0), (0, 1, 0), (0, -1, 0), (0, 0, 1), (0, 0, -1)];
 pub const ARM: u16 = 10;
 
+#[derive(Clone)]
 pub struct Port {
     pub name: String,
     pub input: bool,
@@ -266,6 +267,7 @@ pub struct Contact {
 #[derive(Clone, Copy, Debug)]
 pub enum ContactRelation { Same, Adjacent, Offset }
 
+#[derive(Clone)]
 pub struct Ctx {
     pub name: String,
     pub period: usize,
