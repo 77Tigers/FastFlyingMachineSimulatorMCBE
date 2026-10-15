@@ -94,6 +94,25 @@ mmwmmw, 2 bps), 156 with a reference passing all three orders.
   actor exists); single pieces score nothing, pairs found nothing. Needs a dedicated pull-twice family solver
   or sibling transplants (pl22 vs pl24 references differ in body shape, so votes stay low).
 
+### Bodies from pistons (user: very important; started 2026-10-15)
+
+Levels: `bare` problems keep only the glue skeleton (pistons AND power stripped). The solver proposes pistons
+with power (redstone block / rod / observer, with the switch-off timing rule) and may grow one glue cell per
+actor (`grown_actors`). Status: 1/9 bare skeletons solved (two_body_5slot_2bps at its banked PL10, Python
+confirmed). Where it stops:
+* 2.5 bps flyers with 4-tick words (mw/wm): no carrier is ever still for two slots -> no rigid actors; these
+  designs use hand-off riders (relaxed actors exist but single riders pass nothing).
+* rigid_chain_capped/bare: 14 of 16 moves have passing actors *with power*, but combinations die at depth 5:
+  added power blocks fire other pistons at wrong times. Next: shared power (one block powering the pusher of X
+  and the sticky pulling X, the user's power trick) and power-aware combination (prefer actors whose power
+  touches no other piston at other slots).
+* Real bodies-from-pistons (anchors only, bodies grown to fit a role plan) is not started; the growth
+  machinery (`growth_ok`, one-cell growth per actor) is the building block.
+
+`flyer-ledger FLYER --period P` prints who moves whom (extend/retract, carrier bodies, loads) — the input for
+family solvers. Pull-twice mmwmmw ledger: every slot one body is pulled (load ~22 incl. 7 riders) and one
+pushed (~20); almost every piston touches two bodies (riders between bodies).
+
 ## Lessons (search)
 
 * Soft scoring (keep simulating past port errors; count per-(port,tick) move/wait correctness; penalise
@@ -105,13 +124,10 @@ mmwmmw, 2 bps), 156 with a reference passing all three orders.
   families: the bank is 97% N3.
 
 ## Next steps (live)
-1. Targeted actor proposals per (body, slot) from the timing guide: pusher behind the body carried by a
-   body still at s,s+1; sticky ahead carried by a body still at s-1,s; then power-source placement (redstone
-   block / observer on another body at the unique relative offset). Prune the generic spot list.
-2. Library from flyer-derived references too (all families), with phase shifts (simulate a library fixture
-   2r ticks when the problem's words are rotations of the library's).
-3. Make mmwmmw/N4 and hopping-piston classes solvable (currently 0): allow lone rider pistons (not adjacent
-   to glue) and carrier hand-offs.
-4. Verify-time reserve: estimate from measured eval time instead of a fixed 0.6/0.88 split.
-5. Generator: mv4 multi-slot moves; hopping_pistons fallback; design small *new* flyers (user rule: PL 6–20)
-   as contract sets.
+1. Power-aware combination for bare skeletons (shared power, avoid stray powering) -> bodies from pistons.
+2. Pull-twice mmwmmw family solver (riders between two bodies; see ledger); currently 6/18 via sibling
+   transplants only.
+3. N3 extension contracts: 42-45/60; look at failures with `contract-scaffold`.
+4. Natural whole-flyer N3 (`all`): 4/8; N4 natural 2/15, mmwmmw natural 0/9.
+5. Bank storage: with the solver at 51/57 (N2) on extension contracts, the bank could keep only contract +
+   reference hash for N2 classes and regenerate fixtures on demand (not done; ask the user first).

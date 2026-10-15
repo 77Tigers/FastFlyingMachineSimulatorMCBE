@@ -823,24 +823,24 @@ pub fn decompose(ctx: &Ctx, base: &Cells, lo: Coord, hi: Coord, threads: usize, 
         };
         let mut scored = eval_set(&acts);
         if !scored.iter().any(|x| x.1) {
-            // grow bodies to fit timed actors (one new glue cell on the carrier or the target)
+            // no rigid timed actor passes: grown actors (+1 glue cell, costs load) and generic near-body
+            // candidates are evaluated together so the lower-load option ranks first
             if let Some(bi) = bodies.iter().position(|b| b.cells.first() == body.first()) {
                 let mut grown = grown_actors(&bodies, base, bi, slot, true);
-                grown.truncate(600);
+                grown.truncate(500);
                 scored.extend(eval_set(&grown));
             }
+            let mut gen = actor_candidates(base, &body, lo, hi);
+            gen.truncate(900);
+            scored.extend(eval_set(&gen));
         }
         if !scored.iter().any(|x| x.1) {
+            // riders that change carrier (no stillness rule)
             if let Some(bi) = bodies.iter().position(|b| b.cells.first() == body.first()) {
                 let mut rel = timed_actors_r(&bodies, base, bi, slot, true, true);
                 rel.truncate(600);
                 scored.extend(eval_set(&rel));
             }
-        }
-        if !scored.iter().any(|x| x.1) {
-            let mut gen = actor_candidates(base, &body, lo, hi);
-            gen.truncate(900);
-            scored.extend(eval_set(&gen));
         }
         acts.clear();
         scored.sort_by(|a, b| a.0.partial_cmp(&b.0).unwrap());
@@ -886,7 +886,18 @@ pub fn decompose(ctx: &Ctx, base: &Cells, lo: Coord, hi: Coord, threads: usize, 
         let any_pass = opts.iter().any(|o| o.1);
         let mut tried = 0;
         let mut any_child = false;
+        // shared power: an actor that brings its own power is first tried without it (power placed for an
+        // earlier move may already drive it, and fewer power blocks fire fewer stray pistons)
+        let mut expanded: Vec<(bool, Vec<(Coord, u16)>, String)> = vec![];
         for (_, ok, actor, d) in opts {
+            let bare: Vec<(Coord, u16)> = actor.iter().copied().filter(|(_, v)| !matches!(v & 15, 6 | 7 | 8)).collect();
+            if bare.len() < actor.len() && depth > 0 {
+                expanded.push((*ok, bare, format!("{d}(shared power)")));
+            }
+            expanded.push((*ok, actor.clone(), d.clone()));
+        }
+        for (ok, actor, d) in &expanded {
+            let (ok, actor, d) = (ok, actor, d);
             if any_pass && !ok {
                 continue;
             }
