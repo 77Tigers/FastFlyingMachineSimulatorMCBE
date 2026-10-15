@@ -86,6 +86,9 @@ mmwmmw, 2 bps), 156 with a reference passing all three orders.
 | --- | --- |
 | e3 | N2 P8: 40/42, N2 P4: 14/16, 2 bps: 2/2, N3: 45/60 (+1 better: human_original_victim_observer/ext1 12->11, Python-confirmed 3 orders x 80), N4 P12: 6/18, mmwmmw P6: 0/18. 111/170 verified overall |
 | e3 pycheck | 20 random verified answers re-checked with `tools/extension_contract.py`: 20/20 agree |
+| e4 | + extension-reference library (own source excluded): mmwmmw 0->6/18; victim_observer/ext1 12->10 (Python-confirmed 3 orders x 80) |
+| e6 | grown+generic ranked together, relaxed riders last, shared power: **125/170 verified, 121 <= ref**: N2 P8 40/42, N2 P4 14/16, 2 bps 2/2, **N3 53/60**, N4 P12 6/18, mmwmmw 6/18 |
+| f11 (natural problems, same day) | 90/135 verified |
 
 * Body growth (`grown_actors`): timed actors may add one glue cell to the carrier or target. First
   bodies-from-pistons success: `two_body_5slot_2bps/bare` (no pistons, no power given) solved at load 10 =
