@@ -1,0 +1,1 @@
+{"kind": "design", "spec": {"name": "d2_side_by_side", "period": 8, "advance": 2, "bodies": [{"word": "mwmw", "material": "slime", "cells": [[0, 0, 0], [1, 0, 0], [2, 0, 0], [0, 1, 0], [2, 1, 0]]}, {"word": "wmwm", "material": "honey", "cells": [[0, 0, 2], [1, 0, 2], [2, 0, 2], [0, 1, 2], [2, 1, 2]]}]}}

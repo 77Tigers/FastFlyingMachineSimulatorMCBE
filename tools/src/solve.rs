@@ -836,6 +836,15 @@ pub fn decompose(ctx: &Ctx, base: &Cells, lo: Coord, hi: Coord, threads: usize, 
             scored.extend(eval_set(&gen));
         }
         if !scored.iter().any(|x| x.1) {
+            // bodies from pistons: timed actor + glue paths (<= 3 cells) growing carrier support / target face
+            if let Some(bi) = bodies.iter().position(|b| b.cells.first() == body.first()) {
+                let mut pa = path_actors(&bodies, base, bi, slot, 5, true);
+                pa.truncate(600);
+                log.push(format!("    (move {} slot {slot}: {} path actors)", ctx.ports[pi].name, pa.len()));
+                scored.extend(eval_set(&pa));
+            }
+        }
+        if !scored.iter().any(|x| x.1) {
             // riders that change carrier (no stillness rule)
             if let Some(bi) = bodies.iter().position(|b| b.cells.first() == body.first()) {
                 let mut rel = timed_actors_r(&bodies, base, bi, slot, true, true);
@@ -1399,5 +1408,129 @@ pub fn grown_actors(bodies: &[BodyT], base: &Cells, bi: usize, k: usize, with_po
             }
         }
     }
+    out
+}
+
+/// Shortest glue path (t0 frame) grown from body `bi` to any cell satisfying `goal`, at most `maxlen` new cells,
+/// every cell passing `growth_ok` and avoiding `avoid`. Returns the new cells (last one satisfies `goal`).
+pub fn grow_path(bodies: &[BodyT], base: &Cells, bi: usize, mat: u16, maxlen: usize, avoid: &[Coord], goal: &dyn Fn(Coord) -> bool) -> Option<Vec<Coord>> {
+    let mut prev: HashMap<Coord, Option<Coord>> = HashMap::new();
+    let mut frontier: Vec<Coord> = vec![];
+    for g in &bodies[bi].cells {
+        for d in DIRS {
+            let n = nbr(*g, d);
+            if !prev.contains_key(&n) && !avoid.contains(&n) && growth_ok(bodies, base, bi, n, mat) {
+                prev.insert(n, None);
+                frontier.push(n);
+            }
+        }
+    }
+    for depth in 1..=maxlen {
+        let mut next = vec![];
+        for &c in &frontier {
+            if goal(c) {
+                let mut path = vec![c];
+                let mut cur = c;
+                while let Some(Some(p)) = prev.get(&cur) {
+                    path.push(*p);
+                    cur = *p;
+                }
+                path.reverse();
+                return Some(path);
+            }
+            if depth == maxlen {
+                continue;
+            }
+            for d in DIRS {
+                let n = nbr(c, d);
+                if !prev.contains_key(&n) && !avoid.contains(&n) && growth_ok(bodies, base, bi, n, mat) {
+                    prev.insert(n, Some(c));
+                    next.push(n);
+                }
+            }
+        }
+        frontier = next;
+    }
+    None
+}
+
+/// Bodies-from-pistons actors: place a timed pusher/sticky where timing says it must be, then grow glue paths
+/// (<= `maxlen` cells each) from the carrier to support it and from the target to face it.
+pub fn path_actors(bodies: &[BodyT], base: &Cells, bi: usize, k: usize, maxlen: usize, with_power: bool) -> Vec<(Vec<(Coord, u16)>, String)> {
+    let s = bodies[bi].word.len();
+    let b = &bodies[bi];
+    let mb = glue_mat(base, b);
+    let pusher = Block::piston(0, false, false, 0, false).unwrap().cell();
+    let sticky = Block::piston(1, true, false, 0, false).unwrap().cell();
+    let mut out = vec![];
+    let mut keys = HashSet::new();
+    let km1 = (k + s - 1) % s;
+    for (ci, c) in bodies.iter().enumerate() {
+        if ci == bi {
+            continue;
+        }
+        let mc = glue_mat(base, c);
+        for (kind, rigid, dir, piece) in [("push", !c.word[k % s] && !c.word[(k + 1) % s], 0usize, pusher), ("pull", !c.word[km1] && !c.word[k % s], 1usize, sticky)] {
+            if !rigid {
+                continue;
+            }
+            // candidate piston cells: one per y/z line of the target, at the timing-derived x
+            let mut seen_q = HashSet::new();
+            for g in &b.cells {
+                for dy in -1i64..=1 {
+                    for dz in -1i64..=1 {
+                        // face cell F (t0 frame of B) next to an existing B cell, or the B cell itself
+                        let f = Coord::new(g.x, g.y + dy, g.z + dz);
+                        let fk = Coord::new(f.x + b.shift[k], f.y, f.z);
+                        let qk = if dir == 0 { Coord::new(fk.x - 1, fk.y, fk.z) } else { Coord::new(fk.x + 2, fk.y, fk.z) };
+                        let q = Coord::new(qk.x - c.shift[k], qk.y, qk.z);
+                        if base.contains_key(&q) || !seen_q.insert((q, f)) {
+                            continue;
+                        }
+                        let gap = Coord::new(f.x + 1, f.y, f.z);
+                        if dir == 1 && (base.contains_key(&gap) || b.cells.contains(&gap)) {
+                            continue;
+                        }
+                        // face path from B to F (empty when F is already B)
+                        let face: Vec<Coord> = if b.cells.contains(&f) { vec![] } else {
+                            match grow_path(bodies, base, bi, mb, maxlen, &[q, gap], &|x| x == f) { Some(p) => p, None => continue }
+                        };
+                        // support path from C to a cell beside q (not its front, not the gap)
+                        let front = nbr(q, DIRS[dir]);
+                        let support: Vec<Coord> = if c.cells.iter().any(|x| adj6(*x, q) && *x != front) { vec![] } else {
+                            let mut av = face.clone();
+                            av.push(q);
+                            av.push(gap);
+                            av.push(front);
+                            match grow_path(bodies, base, ci, mc, maxlen, &av, &|x| adj6(x, q) && x != front) { Some(p) => p, None => continue }
+                        };
+                        if face.is_empty() && support.is_empty() {
+                            continue; // already covered by plain timed actors
+                        }
+                        let mut o: Vec<(Coord, u16)> = vec![(q, piece)];
+                        o.extend(face.iter().map(|&x| (x, mb)));
+                        o.extend(support.iter().map(|&x| (x, mc)));
+                        let pslot = if dir == 0 { k } else { km1 };
+                        let mut opts = vec![o.clone()];
+                        if with_power {
+                            for pw in power_options(bodies, base, ci, q, dir, pslot, &[q]).into_iter().take(8) {
+                                let mut o2 = o.clone();
+                                o2.extend(pw);
+                                opts.push(o2);
+                            }
+                        }
+                        for o in opts {
+                            let mut key = o.clone();
+                            key.sort();
+                            if keys.insert(key) {
+                                out.push((o.clone(), format!("{kind} b{bi}@{k} by b{ci} path(face {} support {}){}", face.len(), support.len(), if o.len() > 1 + face.len() + support.len() { " +power" } else { "" })));
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    out.sort_by_key(|(o, _)| o.len());
     out
 }

@@ -1,0 +1,113 @@
+{
+ "version": 1,
+ "name": "d2_side_by_side",
+ "flyer": "problem.flyer",
+ "period_ticks": 8,
+ "advance": 2,
+ "cycles": 3,
+ "recurrence": "advance",
+ "ports": [
+  {
+   "name": "body0",
+   "role": "output",
+   "at": [
+    0,
+    0,
+    0
+   ],
+   "word": "mwmw"
+  },
+  {
+   "name": "body1",
+   "role": "output",
+   "at": [
+    0,
+    0,
+    2
+   ],
+   "word": "wmwm"
+  }
+ ],
+ "required_cells": [
+  {
+   "at": [
+    0,
+    0,
+    0
+   ],
+   "cell": 1
+  },
+  {
+   "at": [
+    1,
+    0,
+    0
+   ],
+   "cell": 1
+  },
+  {
+   "at": [
+    2,
+    0,
+    0
+   ],
+   "cell": 1
+  },
+  {
+   "at": [
+    0,
+    1,
+    0
+   ],
+   "cell": 1
+  },
+  {
+   "at": [
+    2,
+    1,
+    0
+   ],
+   "cell": 1
+  },
+  {
+   "at": [
+    0,
+    0,
+    2
+   ],
+   "cell": 2
+  },
+  {
+   "at": [
+    1,
+    0,
+    2
+   ],
+   "cell": 2
+  },
+  {
+   "at": [
+    2,
+    0,
+    2
+   ],
+   "cell": 2
+  },
+  {
+   "at": [
+    0,
+    1,
+    2
+   ],
+   "cell": 2
+  },
+  {
+   "at": [
+    2,
+    1,
+    2
+   ],
+   "cell": 2
+  }
+ ]
+}

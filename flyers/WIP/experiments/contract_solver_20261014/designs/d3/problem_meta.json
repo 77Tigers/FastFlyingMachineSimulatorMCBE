@@ -1,0 +1,1 @@
+{"kind": "design", "spec": {"name": "d3_mmww_pair", "period": 8, "advance": 2, "bodies": [{"word": "mmww", "material": "slime", "cells": [[0, 0, 0], [1, 0, 0], [0, 1, 0], [1, 1, 0]]}, {"word": "wwmm", "material": "honey", "cells": [[0, 0, 2], [1, 0, 2], [0, 1, 2], [1, 1, 2]]}]}}
