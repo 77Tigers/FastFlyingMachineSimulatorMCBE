@@ -5,14 +5,15 @@
 * `contract-solve PROBLEM.json OUT` (5 s budget, everything verified inside it: all 3 orders x 80 samples,
   natural contracts once since orders coincide; wall p95 ~4.2 s, max 4.4 s after the last deadline fix).
 * **Extension contracts from 57 banked flyers (170, actor-attributed, own source excluded from libraries):
-  126 verified, 121 at <= reference load.** N2 40/42 (+14/16 four-tick, 2/2 2 bps), N3 54/60, N4 mmmmww 6/18,
-  mmwmmw 6/18. Beat references (Python-confirmed, 3 orders x 80): victim_observer ext1 12->10, bank n3_317
+  127 verified, 122 at <= reference load (e9).** N2 40/42 (+14/16 four-tick, 2/2 2 bps), N3 55/60, N4 mmmmww
+  6/18, mmwmmw 6/18. Beat references (Python-confirmed, 3 orders x 80): victim_observer ext1 12->10, bank n3_317
   13->11, n3_325 11->10, n3_235 endogenous 10->8.
 * Natural flyer problems (pistons stripped from banked flyers): 90/135. Bank N3 problems: 11/11 fair.
 * Independent re-checks (`pycheck_run.py`, `bench.py --pycheck`): every sampled answer agrees with
   `tools/extension_contract.py` (24 extension + 8 natural + 10 bank).
-* Bodies from pistons: bare skeletons 1/9 (two_body_5slot_2bps at PL10); glue-path growth exists; from-scratch
-  designs show what is missing (riders for mwmw pairs, closure stretch for mmww pairs) -> global layout model.
+* Bodies from pistons: local route (bare skeletons) 1/9; **global route works**: `design_sat.py` designs a full
+  flyer from words with CP-SAT (mmww/wwmm -> 20 blocks, PL10, verified 80/80 + 10000 ticks). N4 rigid: infeasible
+  (needs riders).
 * Weakest classes: N4 four-push riders (lone pistons hopping between bodies), pull-twice mmwmmw (4 coupled
   riders), bare skeletons. `flyer-ledger` shows their mechanisms.
 * Storage: replay logs stripped (898 MB -> 23 MB). Bank entries could become contract + short solution diff.
@@ -149,6 +150,15 @@ confirmed). Where it stops:
   that in mind before growing; local growth does not find it. A real bodies-from-pistons engine probably
   needs a global layout model (satflyer-style CP-SAT for N2 already does glue+pistons+power; generalising it
   to any word set and calling it offline is the natural next step).
+
+**Global route works (`design_sat.py`, offline):** words -> exact CP-SAT design (two_bps_20261007/satflyer5.py,
+any slot count) -> natural contract -> `contract-solve` verification. `mmww,wwmm`, L10, box m2:3,m1:2,m1:2:
+FEASIBLE in 90 s, 20 blocks (two 10-cell bodies, 2 pushers + 2 stickies, rods, one redstone block), verified
+80/80 by contract-solve and the Python checker, and exact 10000-tick recurrence (2.5 bps, max action 10):
+`designs/sat_mmww/design.flyer`. This is bodies-from-pistons from words alone; the 5 s solver remains the local
+"pistons from bodies" tool. N4 `mmmmww,mmwwmm,wwmmmm` with rigid segments only: INFEASIBLE at L22 in box
+m3:4,m1:3,m1:3 (23 s, model only, bounded) -- consistent with the ledger (N4 four-push designs use riders);
+next: satflyer5 `riders=` for N4.
 
 `flyer-ledger FLYER --period P` prints who moves whom (extend/retract, carrier bodies, loads) — the input for
 family solvers. Pull-twice mmwmmw ledger: every slot one body is pulled (load ~22 incl. 7 riders) and one
