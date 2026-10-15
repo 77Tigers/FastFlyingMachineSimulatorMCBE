@@ -118,7 +118,21 @@ fn run() -> Result<(), String> {
     };
 
     // seed
+    // adaptive verification reserve: time one evaluation of the seed, scale to a full run (the seed usually
+    // fails early), then 80 samples of the verify orders spread over the threads, with margin
+    let t_seed = Instant::now();
+    let probe = evaluate(&ctx, &base, sample, false);
+    let (tt, _) = totals(&ctx);
+    let ran = match &probe { Ok(_) => tt, Err(e) => e.ticks.max(1) };
+    let t_eval = (t_seed.elapsed().as_secs_f64() * tt as f64 / ran as f64).max(0.0005) * 1.3;
     let r = eval_all(&sh, vec![(base.clone(), "seed".into())], 1, end);
+    // effective parallelism ~ half the logical CPUs (hyper-threading)
+    let reserve = 80.0 * t_eval * (vctx.orders.len() as f64 / ctx.orders.len().max(1) as f64) / (threads.max(2) / 2) as f64 * 1.5 + 0.1;
+    let latest = end.checked_sub(Duration::from_secs_f64(reserve)).unwrap_or(t0);
+    if latest < search_end {
+        search_end = latest.max(t0 + Duration::from_secs_f64(budget * 0.35));
+    }
+    log.push(format!("verify reserve {reserve:.2}s (eval ~{:.1} ms), search until {:.2}s", t_eval * 1000.0, search_end.duration_since(t0).as_secs_f64()));
     note("seed", &r, &mut log);
     pool.extend(r);
 
@@ -155,7 +169,7 @@ fn run() -> Result<(), String> {
     pool.sort_by(|a, b| a.cost.partial_cmp(&b.cost).unwrap());
 
     // scaffold decomposition (per-move actors under supplied strokes, then combination)
-    let dec_end = t0 + Duration::from_secs_f64(budget * 0.4);
+    let dec_end = (t0 + Duration::from_secs_f64(budget * 0.4)).min(search_end);
     let dec = decompose(&ctx, &base, blo, bhi, threads, dec_end);
     log.extend(dec.log.iter().cloned());
     let r = eval_all(&sh, dec.cands, threads, search_end);
@@ -167,7 +181,7 @@ fn run() -> Result<(), String> {
     let width = 4;
     let mut frontier: Vec<Scored> = pool.iter().take(width).cloned().collect();
     let mut rounds = 0;
-    let beam_end = t0 + Duration::from_secs_f64(budget * 0.52);
+    let beam_end = (t0 + Duration::from_secs_f64(budget * 0.52)).min(search_end);
     while Instant::now() < beam_end && rounds < 60 {
         rounds += 1;
         let mut cands = vec![];

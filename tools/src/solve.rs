@@ -225,7 +225,7 @@ pub fn transplant_candidates(lib: &[LibEntry], pinned: &[(Coord, u16)], base: &C
     let per_entry = |ei: usize, e: &LibEntry| -> Vec<(f64, usize, Sym, Coord)> {
         let mut scored: Vec<(f64, usize, Sym, Coord)> = vec![];
         // vote with at most 24 evenly spaced sample cells, then count exact matches for the top placements
-        let step = (e.pinned.len() / 24).max(1);
+        let step = (e.pinned.len() / 48).max(1);
         let sample: Vec<&(Coord, u16)> = e.pinned.iter().step_by(step).collect();
         for s in syms() {
             let mut votes: HashMap<Coord, u32> = HashMap::new();
@@ -238,7 +238,7 @@ pub fn transplant_candidates(lib: &[LibEntry], pinned: &[(Coord, u16)], base: &C
             }
             let mut top: Vec<(u32, Coord)> = votes.into_iter().map(|(t, v)| (v, t)).collect();
             top.sort_by(|a, b| b.0.cmp(&a.0).then(a.1.cmp(&b.1)));
-            top.truncate(if e.id == "self" { 12 } else { 4 });
+            top.truncate(if e.id == "self" { 12 } else { 8 });
             let mut best: Vec<(u32, Coord)> = top.into_iter().map(|(_, t)| {
                 let full = e.pinned.iter().filter(|(q, c)| pinned_set.get(&sym_coord(s, *q, t)) == Some(&(sym_cell(s, *c) & !16))).count() as u32;
                 (full, t)
@@ -401,19 +401,25 @@ pub fn neighbours_moves(ctx: &Ctx, cur: &Cells, pinned: &BTreeSet<Coord>, lo: Co
 pub fn verify(ctx: &Ctx, cells: &Cells, threads: usize, deadline: Instant) -> (usize, usize, Option<String>) {
     let list = samples_list();
     let next = AtomicUsize::new(0);
+    // a sample is not interruptible: only start one if the slowest sample so far still fits before the deadline
+    let slowest_ns = std::sync::atomic::AtomicU64::new(0);
     let passed = AtomicUsize::new(0);
     let fail: Mutex<Option<String>> = Mutex::new(None);
     std::thread::scope(|scope| {
         for _ in 0..threads {
             scope.spawn(|| loop {
-                if fail.lock().unwrap().is_some() || Instant::now() >= deadline {
+                let need = std::time::Duration::from_nanos(slowest_ns.load(Ordering::Relaxed));
+                if fail.lock().unwrap().is_some() || Instant::now() + need >= deadline {
                     break;
                 }
                 let i = next.fetch_add(1, Ordering::Relaxed);
                 if i >= list.len() {
                     break;
                 }
-                match evaluate(ctx, cells, list[i], false) {
+                let t_s = Instant::now();
+                let r = evaluate(ctx, cells, list[i], false);
+                slowest_ns.fetch_max(t_s.elapsed().as_nanos() as u64, Ordering::Relaxed);
+                match r {
                     Ok(_) => {
                         passed.fetch_add(1, Ordering::Relaxed);
                     }
@@ -821,8 +827,11 @@ pub fn decompose(ctx: &Ctx, base: &Cells, lo: Coord, hi: Coord, threads: usize, 
         // timing-derived actors first (pusher/sticky on a carrier that is still, with optional power), then the
         // generic near-body candidates
         let mut acts: Vec<(Vec<(Coord, u16)>, String)> = vec![(vec![], "no actor".into())];
+        // problems that already contain power sources: power-free actors first (added power blocks fire other
+        // pistons); power variants only when nothing passes without
+        let has_power = base.values().any(|&c| matches!(c & 15, 6 | 7 | 8));
         if let Some(bi) = bodies.iter().position(|b| b.cells.first() == body.first()) {
-            acts.extend(timed_actors(&bodies, base, bi, slot, true));
+            acts.extend(timed_actors(&bodies, base, bi, slot, !has_power));
         }
         let n_timed = acts.len() - 1;
         let sc2 = scaffold_ctx_o(ctx, &moves, &nat, PrescribedOrder::AfterNatural);
@@ -852,6 +861,12 @@ pub fn decompose(ctx: &Ctx, base: &Cells, lo: Coord, hi: Coord, threads: usize, 
             r.into_iter().zip(acts.iter().cloned()).map(|((c, ok, _), (a, d))| (c, ok, a, d)).collect()
         };
         let mut scored = eval_set(&acts);
+        if has_power && !scored.iter().any(|x| x.1) {
+            if let Some(bi) = bodies.iter().position(|b| b.cells.first() == body.first()) {
+                let pw: Vec<_> = timed_actors(&bodies, base, bi, slot, true).into_iter().filter(|(a, _)| a.len() > 1).collect();
+                scored.extend(eval_set(&pw));
+            }
+        }
         if !scored.iter().any(|x| x.1) {
             // no rigid timed actor passes: grown actors (+1 glue cell, costs load) and generic near-body
             // candidates are evaluated together so the lower-load option ranks first
@@ -907,7 +922,9 @@ pub fn decompose(ctx: &Ctx, base: &Cells, lo: Coord, hi: Coord, threads: usize, 
             real.soft = false;
             real.allow_ext_fail = false;
             *nodes += 1;
-            if evaluate(&real, cells, s, false).is_ok() {
+            // a second, different sample guards against RNG-fragile combinations
+            let s2 = Sample { rng: 0, px: 0, pz: 0 };
+            if evaluate(&real, cells, s, false).is_ok() && (std::env::var("NO_S2").is_ok() || evaluate(&real, cells, s2, false).is_ok()) {
                 out.push((cells.clone(), desc));
             } else {
                 if best_partial.0 < depth + 1 {
@@ -930,7 +947,7 @@ pub fn decompose(ctx: &Ctx, base: &Cells, lo: Coord, hi: Coord, threads: usize, 
         let mut expanded: Vec<(bool, Vec<(Coord, u16)>, String)> = vec![];
         for (_, ok, actor, d) in opts {
             let bare: Vec<(Coord, u16)> = actor.iter().copied().filter(|(_, v)| !matches!(v & 15, 6 | 7 | 8)).collect();
-            if bare.len() < actor.len() && depth > 0 {
+            if bare.len() < actor.len() && depth > 0 && std::env::var("NO_SHARED").is_err() {
                 expanded.push((*ok, bare, format!("{d}(shared power)")));
             }
             expanded.push((*ok, actor.clone(), d.clone()));
@@ -984,7 +1001,7 @@ pub fn decompose(ctx: &Ctx, base: &Cells, lo: Coord, hi: Coord, threads: usize, 
     let mut nat = pinned_nat.clone();
     let mut nodes = 0;
     // the DFS gets half of the remaining stage time; the sequential in-context pass (below) the rest
-    let dfs_deadline = Instant::now() + deadline.saturating_duration_since(Instant::now()) / 2;
+    let dfs_deadline = Instant::now() + deadline.saturating_duration_since(Instant::now()) * 3 / 4;
     dfs(ctx, &moves, &options, 0, base, &mut nat, "decompose".into(), s, dfs_deadline, &mut out, &mut best_partial, &mut nodes, 3);
     log.push(format!("decompose: {} passing combinations, deepest {} of {}, {} nodes", out.len(), best_partial.0.min(options.len()), options.len(), nodes));
     let df = DEEP_FAIL.with(|f| std::mem::take(&mut *f.borrow_mut()));
