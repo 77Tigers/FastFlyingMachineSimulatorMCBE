@@ -161,6 +161,7 @@ m3:4,m1:3,m1:3 (23 s, model only, bounded) -- consistent with the ledger (N4 fou
 next: satflyer5 `riders=` for N4. 2 bps `mmwww,wwmwm`: L10 FEASIBLE in 151 s (20 blocks, verified) = the banked
 2 bps record from words alone; L9 (open question in the research log; 2-body L9 was untested): UNKNOWN after
 300 s in box m2:3,m1:2,m1:2 (not a negative; pin a hand layout before retrying, as the log advises).
+3 bps rigid pair `mmmww,wwmmm`: INFEASIBLE in 1.2 s (L14, box m2:4,m1:2,m1:2; model only, bounded).
 
 `flyer-ledger FLYER --period P` prints who moves whom (extend/retract, carrier bodies, loads) — the input for
 family solvers. Pull-twice mmwmmw ledger: every slot one body is pulled (load ~22 incl. 7 riders) and one
