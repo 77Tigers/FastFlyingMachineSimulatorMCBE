@@ -402,6 +402,12 @@ fn run() -> Result<(), String> {
                     }
                 }
             }
+            // the Python checker requires nondecreasing ticks; stable sort keeps the same-tick order
+            let mut rows: Vec<&str> = script.lines().collect();
+            rows.sort_by_key(|l| l.split_whitespace().next().and_then(|t| t.parse::<usize>().ok()).unwrap_or(0));
+            let script = if rows.is_empty() { String::new() } else { rows.join("
+") + "
+" };
             // all moves natural (every other move is a pull or made by body k's actors): plain natural contract
             let presc = if script.is_empty() { String::new() } else {
                 fs::write(dir.join("drive.txt"), &script).map_err(|e| e.to_string())?;

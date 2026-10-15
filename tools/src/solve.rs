@@ -798,6 +798,14 @@ pub fn decompose(ctx: &Ctx, base: &Cells, lo: Coord, hi: Coord, threads: usize, 
         };
         let mut scored = eval_set(&acts);
         if !scored.iter().any(|x| x.1) {
+            // grow bodies to fit timed actors (one new glue cell on the carrier or the target)
+            if let Some(bi) = bodies.iter().position(|b| b.cells.first() == body.first()) {
+                let mut grown = grown_actors(&bodies, base, bi, slot, true);
+                grown.truncate(600);
+                scored.extend(eval_set(&grown));
+            }
+        }
+        if !scored.iter().any(|x| x.1) {
             let mut gen = actor_candidates(base, &body, lo, hi);
             gen.truncate(900);
             scored.extend(eval_set(&gen));
@@ -1096,4 +1104,133 @@ pub fn self_entry(base: &Cells) -> Option<LibEntry> {
         }
     }
     (!hw.is_empty()).then(|| LibEntry { id: "self".into(), pinned, hw })
+}
+
+// ---------------------------------------------------------------- body growth (bodies from pistons, local)
+/// Can body `bi` gain a glue cell `c0` (t0 frame) of material `mat` (1 slime, 2 honey) without colliding with or
+/// sticking to another body at any slot? Other non-body cells (`base` minus bodies) are treated as static at t0.
+pub fn growth_ok(bodies: &[BodyT], base: &Cells, bi: usize, c0: Coord, mat: u16) -> bool {
+    if base.contains_key(&c0) {
+        return false;
+    }
+    let s = bodies[bi].word.len();
+    for t in 0..=s {
+        let ct = Coord::new(c0.x + bodies[bi].shift[t], c0.y, c0.z);
+        for (bj, b) in bodies.iter().enumerate() {
+            if bj == bi {
+                continue;
+            }
+            for g in &b.cells {
+                let gt = Coord::new(g.x + b.shift[t], g.y, g.z);
+                if gt == ct {
+                    return false;
+                }
+                if adj6(gt, ct) && base.get(g).map_or(false, |&m| m & 15 == mat) {
+                    return false; // same-material glue of another body would stick
+                }
+            }
+        }
+    }
+    true
+}
+
+fn glue_mat(base: &Cells, b: &BodyT) -> u16 {
+    b.cells.first().and_then(|c| base.get(c)).map_or(1, |&m| m & 15)
+}
+
+/// Timed actors that may grow one glue cell on the carrier (piston support) or on the target (pusher face /
+/// sticky face). Only used when the plain timed actors find nothing for a move.
+pub fn grown_actors(bodies: &[BodyT], base: &Cells, bi: usize, k: usize, with_power: bool) -> Vec<(Vec<(Coord, u16)>, String)> {
+    let s = bodies[bi].word.len();
+    let b = &bodies[bi];
+    let pusher = Block::piston(0, false, false, 0, false).unwrap().cell();
+    let sticky = Block::piston(1, true, false, 0, false).unwrap().cell();
+    let mut out = vec![];
+    let mut keys = HashSet::new();
+    let mb = glue_mat(base, b);
+    // target faces: existing B cells plus growable B cells adjacent to B (t0 frame)
+    let mut faces: Vec<(Coord, Option<Coord>)> = b.cells.iter().map(|&g| (g, None)).collect();
+    for g in &b.cells {
+        for d in DIRS {
+            let n = nbr(*g, d);
+            if growth_ok(bodies, base, bi, n, mb) {
+                faces.push((n, Some(n)));
+            }
+        }
+    }
+    for (ci, c) in bodies.iter().enumerate() {
+        if ci == bi {
+            continue;
+        }
+        let mc = glue_mat(base, c);
+        let mut try_piston = |q: Coord, piece: u16, grown_b: Option<Coord>, out: &mut Vec<(Vec<(Coord, u16)>, String)>, kind: &str, power_slot: usize, dir: usize| {
+            if base.contains_key(&q) || grown_b == Some(q) {
+                return;
+            }
+            // support on the carrier: existing glue beside q (not its front) or one grown cell
+            let front = nbr(q, DIRS[dir]);
+            let mut supports: Vec<Option<Coord>> = vec![];
+            if c.cells.iter().any(|x| adj6(*x, q) && *x != front) {
+                supports.push(None);
+            } else {
+                for d in DIRS {
+                    let n = nbr(q, d);
+                    if n == front || Some(n) == grown_b {
+                        continue;
+                    }
+                    if c.cells.iter().any(|x| adj6(*x, n)) && growth_ok(bodies, base, ci, n, mc) {
+                        supports.push(Some(n));
+                        break;
+                    }
+                }
+            }
+            for sup in supports {
+                if sup.is_some() && grown_b.is_some() {
+                    continue; // at most one grown cell per actor
+                }
+                let mut o = vec![(q, piece)];
+                if let Some(g) = grown_b {
+                    o.push((g, mb));
+                }
+                if let Some(g) = sup {
+                    o.push((g, mc));
+                }
+                let mut opts = vec![o.clone()];
+                if with_power {
+                    for pw in power_options(bodies, base, ci, q, dir, power_slot, &[q]) {
+                        let mut o2 = o.clone();
+                        o2.extend(pw);
+                        opts.push(o2);
+                    }
+                }
+                for o in opts {
+                    let mut key = o.clone();
+                    key.sort();
+                    if keys.insert(key) {
+                        out.push((o.clone(), format!("{kind} b{bi}@{k} by b{ci} grow{}{}", if grown_b.is_some() { "B" } else { "" }, if sup.is_some() { "C" } else { "" })));
+                    }
+                }
+            }
+        };
+        if !c.word[k % s] && !c.word[(k + 1) % s] {
+            for &(f, grown) in &faces {
+                let fk = Coord::new(f.x + b.shift[k], f.y, f.z);
+                let q = Coord::new(fk.x - 1 - c.shift[k], fk.y, fk.z);
+                try_piston(q, pusher, grown, &mut out, "push", k, 0);
+            }
+        }
+        let km1 = (k + s - 1) % s;
+        if !c.word[km1] && !c.word[k % s] {
+            for &(f, grown) in &faces {
+                let fk = Coord::new(f.x + b.shift[k], f.y, f.z);
+                let q = Coord::new(fk.x + 2 - c.shift[k], fk.y, fk.z);
+                let gap = Coord::new(f.x + 1, f.y, f.z);
+                if b.cells.contains(&gap) || base.contains_key(&gap) {
+                    continue;
+                }
+                try_piston(q, sticky, grown, &mut out, "pull", km1, 1);
+            }
+        }
+    }
+    out
 }
