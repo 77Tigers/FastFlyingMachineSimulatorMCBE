@@ -63,8 +63,10 @@ fn main() {
     // identities
     let origins: Vec<Coord> = cells.iter().filter(|(_, &c)| c & 15 != 10).map(|(q, _)| *q).collect();
     let mut at: HashMap<Coord, usize> = origins.iter().enumerate().map(|(i, &q)| (q, i)).collect();
+    // carrier = bodies touching the piston on a side or its back (the front cell is what it pushes/pulls)
     let carrier = |q: Coord| -> String {
-        let s: BTreeSet<usize> = DIRS.iter().filter_map(|&d| comp_of.get(&nbr(q, d)).copied()).collect();
+        let front = cells.get(&q).map(|&c| nbr(q, DIRS[((c >> 5) & 7).min(5) as usize]));
+        let s: BTreeSet<usize> = DIRS.iter().filter(|&&d| Some(nbr(q, d)) != front).filter_map(|&d| comp_of.get(&nbr(q, d)).copied()).collect();
         if s.is_empty() { "-".into() } else { s.iter().map(|b| format!("b{b}")).collect::<Vec<_>>().join("+") }
     };
     let desc = |q: Coord| -> String {
@@ -87,7 +89,21 @@ fn main() {
             let ids: Vec<usize> = mv.sources.iter().filter_map(|s| at.get(s).copied()).collect();
             let bodies: BTreeSet<usize> = ids.iter().filter_map(|&i| comp_of.get(&origins[i]).copied()).collect();
             let others = ids.iter().filter(|&&i| !comp_of.contains_key(&origins[i])).count();
-            let actor = step.info.active_piston.and_then(|q| at.get(&q).copied()).map(|i| desc(origins[i])).unwrap_or("?".into());
+            // describe the actor where it is now: kind/facing from its t0 cell, carriers from current neighbours
+            let actor = match step.info.active_piston {
+                Some(qn) => {
+                    let id = at.get(&qn).copied();
+                    let c0 = id.map(|i| cells[&origins[i]]).unwrap_or(0);
+                    let dir = ((c0 >> 5) & 7).min(5) as usize;
+                    let front = nbr(qn, DIRS[dir]);
+                    let now: BTreeSet<usize> = DIRS.iter().filter(|&&d| nbr(qn, d) != front)
+                        .filter_map(|&d| at.get(&nbr(qn, d)).and_then(|&j| comp_of.get(&origins[j]).copied())).collect();
+                    format!("{}piston {} now at ({},{},{}) on {}", if c0 & 0x100 != 0 { "sticky " } else { "" }, ["+X", "-X", "+Y", "-Y", "+Z", "-Z"][dir], qn.x, qn.y, qn.z,
+                        if now.is_empty() { "-".to_string() } else { now.iter().map(|b| format!("b{b}")).collect::<Vec<_>>().join("+") })
+                }
+                None => "?".into(),
+            };
+            let _ = &desc;
             println!("tick {:>3} slot {} {:<7} load {:>2}  moves {:<12} (+{} other)  by {}", t, (t % p) / 2, step.info.action.unwrap(), mv.sources.len(),
                 bodies.iter().map(|b| format!("b{b}")).collect::<Vec<_>>().join(","), others, actor);
             let this: Vec<(usize, Coord)> = mv.sources.iter().zip(mv.destinations.iter()).filter_map(|(s, d)| at.get(s).map(|&i| (i, *d))).collect();
