@@ -60,3 +60,9 @@ flyers/WIP/experiments/contract_solver_20261014/problems/
 flyers/WIP/experiments/contract_solver_20261014/scratch/
 flyers/WIP/experiments/contract_solver_20261014/flyerprobs_ext/
 flyers/WIP/experiments/contract_solver_20261014/flyerprobs_bare/
+# contract solver design experiments: regenerable solver runs / logs (keep design.flyer + verify/solution.flyer)
+/flyers/WIP/experiments/contract_solver_20261014/designs/*.log
+/flyers/WIP/experiments/contract_solver_20261014/designs/*/bare_*/
+/flyers/WIP/experiments/contract_solver_20261014/designs/*/probs/
+/flyers/WIP/experiments/contract_solver_20261014/designs/*/verify/*.json
+/flyers/WIP/experiments/contract_solver_20261014/designs/_diag/

@@ -1,0 +1,1 @@
+{"period":8,"moves":[{"port":"body0","slot":0,"kind":"push","carriers":["b0","b1"]},{"port":"body0","slot":1,"kind":"pull","carriers":["b2"]},{"port":"body1","slot":2,"kind":"push","carriers":["b0"]},{"port":"body1","slot":3,"kind":"pull","carriers":["b0","b1"]},{"port":"body2","slot":2,"kind":"push","carriers":["b0"]},{"port":"body2","slot":3,"kind":"push","carriers":[]}]}
