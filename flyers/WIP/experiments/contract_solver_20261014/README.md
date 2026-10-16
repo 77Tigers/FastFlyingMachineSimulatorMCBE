@@ -39,7 +39,7 @@ timing: the front body is still then), the other moves are pushes by carried pus
   natural contract; if the merge fails, a sequential round adds bodies one at a time (bodies so far natural with
   their hardware present, retry passes, 3 seeds per step). Results: compact_slime, two_body_5slot_2bps and the N2
   chain design verify straight from the merge (load 3 / 10 / 12); rigid_chain_capped 6-7 of 8 bodies natural,
-  mirrored_chains 10 of 15, pull-twice 1 of 3 bodies solvable alone. Greedy order matters; the last bodies need
+  mirrored_chains 10 of 15, pull-twice 1 of 3 bodies solvable alone, human_3bps_original 12 of 20 bodies alone / 8 of 20 natural in the sequential round. Greedy order matters; the last bodies need
   backtracking or the power-aware combination at body level.
 * Benchmarks after body units / riders / power fixes: extension contracts **e14 139/170** (N3 57/60, N4 8/18),
   natural problems **f19 180/263**, max wall 4.3 s.
