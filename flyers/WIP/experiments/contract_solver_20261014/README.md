@@ -21,6 +21,34 @@ timing: the front body is still then), the other moves are pushes by carried pus
   design: `src_track`), rods as adjacent sources, a strict power rule (power outside the fire slot always
   misfires: piston order within a tick is random), no backjumping (it pruned the valid set), a second-sample
   guard. rigid_chain_capped now produces sets passing the main sample (load 10) but not yet robust ones.
+* **N3 chains need body units, not move units.** human_3bps_original stripped to glue (20 bodies, 60 moves):
+  true actors pass only 19/60 one-move contracts; +14 with the same body's neighbouring move natural too (pusher
+  columns: two pistons on one carrier each fire in both slots across periods), and **all 60** with all of a body's
+  moves natural (3-push tips). So the decomposition unit for chains is the body (= an extension contract);
+  decompose now builds body units from per-move candidates, but a column's pistons score badly as single moves,
+  so they are rarely among the candidates: a column generator (pistons that push each other along, firing order
+  not fixed, per the user's design notes) is the missing piece. The 5 s solver does not solve this skeleton yet.
+  Column mechanism (ledger, body 1 of human_3bps_original): slot 1 piston #11 (on carrier b3) pushes the body and
+  piston #8, stuck to the body's slime, is dragged along; slot 2 #8 fires from its new spot and pushes again; the
+  next period the two swap roles. Period doubling does not split it into one-move contracts (doubled: 0/120
+  single moves, 120/120 as whole-body contracts), so the robust unit is the body = an extension contract (the
+  solver already verifies human_3bps_original ext0-2). Next: bare skeleton -> one extension contract per body,
+  solved separately, then combined.
+* **Per-body assembly** (`assemble.py PROBLEM OUT [--budget 5]`, offline): one extension contract per body (its
+  moves natural, the others prescribed, no hardware) solved by contract-solve, hardware merged and checked as the
+  natural contract; if the merge fails, a sequential round adds bodies one at a time (bodies so far natural with
+  their hardware present, retry passes, 3 seeds per step). Results: compact_slime, two_body_5slot_2bps and the N2
+  chain design verify straight from the merge (load 3 / 10 / 12); rigid_chain_capped 6-7 of 8 bodies natural,
+  mirrored_chains 10 of 15, pull-twice 1 of 3 bodies solvable alone. Greedy order matters; the last bodies need
+  backtracking or the power-aware combination at body level.
+* Benchmarks after body units / riders / power fixes: extension contracts **e14 139/170** (N3 57/60, N4 8/18),
+  natural problems **f19 180/263**, max wall 4.3 s.
+* CP-SAT chain batch (600 s each): N2 chain of 4 UNKNOWN, 2 bps chain of 3 UNKNOWN, N3 chain of 3 INFEASIBLE
+  (20 s), N4 chain of 3 (four_push_ring words) INFEASIBLE (72 s) -- the model's riders are single pistons carried
+  by one body per move and it has no columns; human chains rely on both.
+* N4 extension contracts: every small N4 flyer passes (four_push_ring 6/6 at reference load); the failures are the
+  two 12-13-body flyers (n4_twelve_body, exclusive_roles_3p333) whose evaluations take ~200 ms: compute-bound at
+  5 s (decompose is skipped above 150 ms per evaluation).
 
 ## Status update (2026-10-15 evening / 16th)
 
