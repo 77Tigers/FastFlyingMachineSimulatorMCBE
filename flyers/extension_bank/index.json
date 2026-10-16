@@ -11384,7 +11384,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_136",
-      "note": "S S:pull:B8:s0 @t0=100; spec-faithful"
+      "note": "S S:pull:B8:s0 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_136/problem.json"
     },
     {
       "id": "n3_137",
