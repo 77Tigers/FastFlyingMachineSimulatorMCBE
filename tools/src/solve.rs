@@ -1633,6 +1633,21 @@ struct PPist {
     desc: String,
 }
 
+type PKey = (usize, Coord, u16);
+
+impl PPist {
+    fn key(&self) -> PKey {
+        (self.mv, self.q, self.v)
+    }
+}
+
+/// First "(x,y,z)" after `tag` in a failure message.
+fn coord_after(msg: &str, tag: &str) -> Option<Coord> {
+    let s = msg.split(tag).nth(1)?;
+    let v: Vec<i64> = s.split(')').next()?.split(',').filter_map(|x| x.trim().parse().ok()).collect();
+    (v.len() == 3).then(|| Coord::new(v[0], v[1], v[2]))
+}
+
 fn at_slot(bodies: &[BodyT], body: Option<usize>, x: Coord, t: usize) -> Coord {
     match body {
         Some(b) => Coord::new(x.x + bodies[b].shift[t], x.y, x.z),
@@ -1782,7 +1797,8 @@ pub fn power_combine(ctx: &Ctx, base: &Cells, moves: &[Move], options: &[(usize,
     let (mut leaves, mut sims, mut nodes, mut npass, mut jumps) = (0usize, 0usize, 0usize, 0usize, 0usize);
     // returns Some(target depth) to unwind to (usize::MAX = stop), None = options exhausted
     fn rec(depth: usize, order: &[usize], per: &[Vec<PPist>], chosen: &mut Vec<PPist>, occupied: &mut HashSet<Coord>, base: &Cells, bodies: &[BodyT], glue_at: &[HashSet<Coord>],
-           fixed: &[PSrc], wrong: &dyn Fn(&[bool], &PPist) -> bool, leaf: &mut dyn FnMut(&[PPist], &[Vec<usize>]) -> usize, nodes: &mut usize, deadline: Instant) -> Option<usize> {
+           fixed: &[PSrc], wrong: &dyn Fn(&[bool], &PPist) -> bool, leaf: &mut dyn FnMut(&[PPist], &[Vec<usize>]) -> usize, nodes: &mut usize, deadline: Instant,
+           nog: &std::cell::RefCell<HashSet<(PKey, PKey)>>) -> Option<usize> {
         if Instant::now() >= deadline || *nodes > 50_000 {
             return Some(usize::MAX);
         }
@@ -1802,6 +1818,10 @@ pub fn power_combine(ctx: &Ctx, base: &Cells, moves: &[Move], options: &[(usize,
         let m = order[depth];
         for p in &per[m] {
             if occupied.contains(&p.q) || p.arm.map_or(false, |a| occupied.contains(&a)) {
+                continue;
+            }
+            // learned geometric conflicts (one piston blocked by another in a simulated candidate)
+            if chosen.iter().any(|o| { let n = nog.borrow(); n.contains(&(o.key(), p.key())) || n.contains(&(p.key(), o.key())) }) {
                 continue;
             }
             // fixed sources must not power it wrongly; it must still be coverable by some source that does not
@@ -1835,7 +1855,7 @@ pub fn power_combine(ctx: &Ctx, base: &Cells, moves: &[Move], options: &[(usize,
             if let Some(a) = p.arm {
                 occupied.insert(a);
             }
-            let r = rec(depth + 1, order, per, chosen, occupied, base, bodies, glue_at, fixed, wrong, leaf, nodes, deadline);
+            let r = rec(depth + 1, order, per, chosen, occupied, base, bodies, glue_at, fixed, wrong, leaf, nodes, deadline, nog);
             occupied.remove(&p.q);
             if let Some(a) = p.arm {
                 occupied.remove(&a);
@@ -1850,6 +1870,8 @@ pub fn power_combine(ctx: &Ctx, base: &Cells, moves: &[Move], options: &[(usize,
         None
     }
     let last = order.len().saturating_sub(1);
+    let nog: std::cell::RefCell<HashSet<(PKey, PKey)>> = std::cell::RefCell::new(HashSet::new());
+    let mut learned = 0usize;
     let mut leaf = |chosen: &[PPist], adm: &[Vec<usize>]| -> usize {
         leaves += 1;
         // greedy cover: needs (piston, slot); prefer sources covering the most open needs (shared power)
@@ -1934,6 +1956,29 @@ pub fn power_combine(ctx: &Ctx, base: &Cells, moves: &[Move], options: &[(usize,
         if npass >= 3 || sims >= 150 {
             return usize::MAX;
         }
+        // geometric conflict: the failing piston ("actor (x,y,z)") and the chosen piston or arm sitting on the
+        // blocking cell at that tick -> pair nogood, backjump to the deeper of the two
+        if let (Some(tk), Err(e)) = (fail_tick, &r) {
+            let actor = coord_after(&e.msg, "actor (");
+            let block = coord_after(&e.msg, "blocked at (").or_else(|| coord_after(&e.msg, ") at ("));
+            let who = |c: Coord| chosen.iter().position(|p| {
+                let sh = (tk / ctx.period) as i64 * ctx.advance + bodies[p.carrier].shift[(tk % ctx.period) / 2];
+                let q = Coord::new(p.q.x + sh, p.q.y, p.q.z);
+                c == q || c == nbr(q, DIRS[piston_dir(p.v)])
+            });
+            if let (Some(ai), Some(bi)) = (actor.and_then(&who), block.and_then(&who)) {
+                if ai != bi {
+                    nog.borrow_mut().insert((chosen[ai].key(), chosen[bi].key()));
+                    learned += 1;
+                    jumps += 1;
+                    return ai.max(bi).min(last);
+                }
+            }
+            if let Some(ai) = actor.and_then(&who) {
+                jumps += 1;
+                return ai.min(last);
+            }
+        }
         match fail_tick {
             // first-period failure at slot t: the deepest choice for a move at slot <= t
             Some(tk) if tk < ctx.period => {
@@ -1951,9 +1996,9 @@ pub fn power_combine(ctx: &Ctx, base: &Cells, moves: &[Move], options: &[(usize,
     };
     let mut chosen = vec![];
     let mut occupied = HashSet::new();
-    rec(0, &order, &per, &mut chosen, &mut occupied, base, bodies, &glue_at, &fixed, &wrong, &mut leaf, &mut nodes, deadline);
+    rec(0, &order, &per, &mut chosen, &mut occupied, base, bodies, &glue_at, &fixed, &wrong, &mut leaf, &mut nodes, deadline, &nog);
     out.sort_by_key(|x| !x.2);
-    let msg = format!("decompose powercomb: {} moves, {} pistons, {nodes} nodes, {leaves} leaves, {sims} simulated ({jumps} backjumps), {npass} pass natural",
+    let msg = format!("decompose powercomb: {} moves, {} pistons, {nodes} nodes, {leaves} leaves, {sims} simulated ({jumps} backjumps, {learned} conflicts learned), {npass} pass natural",
         per.len(), per.iter().map(|v| v.len()).sum::<usize>());
     (out, msg)
 }

@@ -715,7 +715,13 @@ pub fn run_order(ctx: &Ctx, cells: &Cells, order: PrescribedOrder, sample: Sampl
             }
         }
         if report.natural.extension_failures > 0 && !ctx.allow_ext_fail {
-            return Err(format!("tick {tick}: extension failure"));
+            // name the piston and what stopped it (the combination searches learn conflicts from this)
+            let detail = trace.steps.iter().find(|st| st.info.action == Some("extend failed")).map(|st| {
+                let a = st.info.active_piston.map_or(String::new(), |p| format!(" actor ({},{},{})", p.x, p.y, p.z));
+                let f = st.info.movement.as_ref().and_then(|m| m.failure).map_or(String::new(), |(p, r)| format!(" blocked at ({},{},{}) ({r})", p.x, p.y, p.z));
+                format!("{a}{f}")
+            }).unwrap_or_default();
+            return Err(format!("tick {tick}: extension failure{detail}"));
         }
         if trace.steps.is_empty() {
             return Err(format!("tick {tick}: no steps"));
@@ -728,7 +734,8 @@ pub fn run_order(ctx: &Ctx, cells: &Cells, order: PrescribedOrder, sample: Sampl
             if let Some(mv) = &step.info.movement {
                 if action != Some("settle prescribed move") {
                     if let Some((pos, reason)) = mv.failure {
-                        return Err(format!("tick {tick}: movement failed ({}) at ({},{},{}) action {:?}", reason, pos.x, pos.y, pos.z, action));
+                        let a = step.info.active_piston.map_or(String::new(), |p| format!(" actor ({},{},{})", p.x, p.y, p.z));
+                        return Err(format!("tick {tick}: movement failed ({}) at ({},{},{}) action {:?}{a}", reason, pos.x, pos.y, pos.z, action));
                     }
                     if mv.sources.len() != mv.destinations.len() {
                         return Err(format!("tick {tick}: unequal source/destination counts"));
