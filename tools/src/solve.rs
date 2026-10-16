@@ -913,6 +913,7 @@ pub fn decompose(ctx: &Ctx, base: &Cells, lo: Coord, hi: Coord, threads: usize, 
             log.push(format!("    (move {} slot {slot}: no rigid actor, relaxed first)", ctx.ports[pi].name));
             if let Some(bi) = bodies.iter().position(|b| b.cells.first() == body.first()) {
                 acts.extend(timed_actors_r(&bodies, base, bi, slot, true, true));
+                acts.extend(rider_actors(&bodies, base, bi, slot, true));
             }
         }
         let n_timed = acts.len() - 1;
@@ -984,6 +985,7 @@ pub fn decompose(ctx: &Ctx, base: &Cells, lo: Coord, hi: Coord, threads: usize, 
             // riders that change carrier (no stillness rule)
             if let Some(bi) = bodies.iter().position(|b| b.cells.first() == body.first()) {
                 let mut rel = timed_actors_r(&bodies, base, bi, slot, true, true);
+                rel.extend(rider_actors(&bodies, base, bi, slot, true));
                 rel.truncate(600);
                 scored.extend(eval_set(&rel));
             }
@@ -1609,6 +1611,91 @@ pub fn timed_actors_r(bodies: &[BodyT], base: &Cells, bi: usize, k: usize, with_
     out
 }
 
+// ---------------------------------------------------------------- riders (lone pistons carried by the bodies)
+/// x-shift before slot t of a rider whose word is every slot except `still` (its fire slot and the next for a
+/// pusher; extend and pull slot for a sticky): it is carried in every other slot.
+pub fn rider_shift(n: usize, still: [usize; 2], t: usize) -> i64 {
+    (0..t).filter(|s| !still.contains(&(s % n))).count() as i64
+}
+
+/// Rider actors for move (body `bi`, slot `k`): a lone pusher (fires at k, still at k, k+1) or sticky (extends at
+/// k-1, pulls at k) whose tick-0 position follows the rider word, not a carrier (chains / tentacles use these for
+/// pushes no still carrier can make). Power: a redstone block or observer on any body, next to the rider at its
+/// fire slot; the simulation decides whether it switches off in time.
+pub fn rider_actors(bodies: &[BodyT], base: &Cells, bi: usize, k: usize, with_power: bool) -> Vec<(Vec<(Coord, u16)>, String)> {
+    let n = bodies[bi].word.len();
+    let b = &bodies[bi];
+    let rb = Block::plain(fastflyer::Kind::RedstoneBlock, false).unwrap().cell();
+    let mut out: Vec<(Vec<(Coord, u16)>, String)> = vec![];
+    let mut keys = HashSet::new();
+    let touches_any = |q: Coord| bodies.iter().any(|d| d.cells.iter().any(|g| adj6(*g, q)));
+    for (sticky, dir) in [(false, 0usize), (true, 1usize)] {
+        let km1 = (k + n - 1) % n;
+        let (fire, still) = if sticky { (km1, [km1, k % n]) } else { (k % n, [k % n, (k + 1) % n]) };
+        for g in &b.cells {
+            let gk = Coord::new(g.x + b.shift[k], g.y, g.z);
+            // position at slot k: pusher one behind B's cell, sticky two ahead of it
+            let qk = if sticky { Coord::new(gk.x + 2, gk.y, gk.z) } else { Coord::new(gk.x - 1, gk.y, gk.z) };
+            let q = Coord::new(qk.x - rider_shift(n, still, k), qk.y, qk.z);
+            // riders need not touch a body at tick 0 (they may be carried by being pushed along by other pistons)
+            let _ = &touches_any;
+            if base.contains_key(&q) {
+                continue;
+            }
+            if sticky && b.cells.contains(&Coord::new(g.x + 1, g.y, g.z)) {
+                continue;
+            }
+            // pre-extended at tick 0 when it fires in the last slot (pusher) / extends in the last slot (sticky)
+            let ext = fire == n - 1;
+            let arm = nbr(q, DIRS[dir]);
+            let head: Vec<(Coord, u16)> = if ext && !base.contains_key(&arm) {
+                vec![(q, Block::piston(dir as u8, sticky, false, 2, false).unwrap().cell()), (arm, ARM)]
+            } else {
+                vec![(q, Block::piston(dir as u8, sticky, false, 0, false).unwrap().cell())]
+            };
+            let mut opts = vec![head.clone()];
+            if with_power {
+                // the rider at its fire slot; sources stuck to one body, next to it (not its front)
+                let qf = Coord::new(q.x + rider_shift(n, still, fire), q.y, q.z);
+                let front = nbr(qf, DIRS[dir]);
+                for (di, d) in bodies.iter().enumerate() {
+                    for nd in DIRS {
+                        let pos_f = nbr(qf, nd);
+                        if pos_f == front {
+                            continue;
+                        }
+                        let r = Coord::new(pos_f.x - d.shift[fire], pos_f.y, pos_f.z);
+                        let stuck_bodies = bodies.iter().filter(|e| e.cells.iter().any(|g| adj6(*g, r))).count();
+                        if base.contains_key(&r) || head.iter().any(|(c, _)| *c == r) || stuck_bodies != 1 || !d.cells.iter().any(|g| adj6(*g, r)) {
+                            continue;
+                        }
+                        let mut o = head.clone();
+                        o.push((r, rb));
+                        opts.push(o);
+                        // observer facing the rider, pulsing after its body moved in the slot before the fire slot
+                        if d.word[(fire + n - 1) % n] {
+                            let od = DIRS.iter().position(|&x| (x.0 + nd.0, x.1 + nd.1, x.2 + nd.2) == (0, 0, 0)).unwrap();
+                            let mut o = head.clone();
+                            o.push((r, Block::observer(od as u8, d.word[n - 1], false).unwrap().cell()));
+                            opts.push(o);
+                        }
+                        let _ = di;
+                    }
+                }
+            }
+            for o in opts {
+                let mut key = o.clone();
+                key.sort();
+                if keys.insert(key) {
+                    let d = format!("rider {} b{}@{} {}", if sticky { "pull" } else { "push" }, bi, k, if o.len() > head.len() { "+power" } else { "" });
+                    out.push((o, d));
+                }
+            }
+        }
+    }
+    out
+}
+
 // ---------------------------------------------------------------- power-aware combination
 // Slot-level power model of the engine (src/sim.rs power_stage), evaluated at each slot start when nothing moves:
 // a piston is powered if a non-front neighbour is a redstone block or rod, or a powered observer facing it, or a
@@ -1618,7 +1705,9 @@ pub fn timed_actors_r(bodies: &[BodyT], base: &Cells, bi: usize, k: usize, with_
 struct PSrc {
     cell: Coord,
     v: u16,
-    body: Option<usize>,
+    /// x-shift before slot t (t = 0..=n): it moves +1 in a slot when a body touching it (glue adheres to any
+    /// non-glue block) or pushing into it moves. Sources touching two bodies ride both, like the user's designs.
+    track: Vec<i64>,
 }
 
 #[derive(Clone)]
@@ -1631,6 +1720,8 @@ struct PPist {
     need: Vec<bool>,
     srcs: Vec<PSrc>,
     desc: String,
+    /// lone rider: position follows its own word (still in these two slots), not `carrier`
+    rider: Option<[usize; 2]>,
 }
 
 type PKey = (usize, Coord, u16);
@@ -1638,6 +1729,19 @@ type PKey = (usize, Coord, u16);
 impl PPist {
     fn key(&self) -> PKey {
         (self.mv, self.q, self.v)
+    }
+    fn shift(&self, bodies: &[BodyT], t: usize) -> i64 {
+        let n = bodies[0].word.len();
+        match self.rider {
+            Some(st) => rider_shift(n, st, t % n) + (t / n) as i64 * rider_shift(n, st, n),
+            None => bodies[self.carrier].shift[t],
+        }
+    }
+    fn still(&self, bodies: &[BodyT], t: usize) -> bool {
+        match self.rider {
+            Some(st) => st.contains(&t),
+            None => !bodies[self.carrier].word[t],
+        }
     }
 }
 
@@ -1648,6 +1752,20 @@ fn coord_after(msg: &str, tag: &str) -> Option<Coord> {
     (v.len() == 3).then(|| Coord::new(v[0], v[1], v[2]))
 }
 
+/// Track of a loose block at `c` (tick 0) over one period, carried by the bodies that touch it; None when it does
+/// not end the period advanced by exactly the flyer's advance (it would fall behind or run ahead).
+fn src_track(bodies: &[BodyT], c: Coord) -> Option<Vec<i64>> {
+    let n = bodies[0].word.len();
+    let mut tr = vec![0i64];
+    for t in 0..n {
+        let pos = Coord::new(c.x + tr[t], c.y, c.z);
+        let moved = bodies.iter().any(|e| e.word[t] && e.cells.iter().any(|g| adj6(Coord::new(g.x + e.shift[t], g.y, g.z), pos)));
+        tr.push(tr[t] + moved as i64);
+    }
+    (tr[n] == bodies[0].shift[n]).then_some(tr)
+}
+
+#[allow(dead_code)]
 fn at_slot(bodies: &[BodyT], body: Option<usize>, x: Coord, t: usize) -> Coord {
     match body {
         Some(b) => Coord::new(x.x + bodies[b].shift[t], x.y, x.z),
@@ -1661,10 +1779,11 @@ fn src_covers(bodies: &[BodyT], glue_at: &[HashSet<Coord>], s: &PSrc, p: &PPist)
     let kind = s.v & 15;
     let sdir = ((s.v >> 5) & 7) as usize;
     (0..n).map(|t| {
-        let r = at_slot(bodies, s.body, s.cell, t);
-        let q = at_slot(bodies, Some(p.carrier), p.q, t);
+        let r = Coord::new(s.cell.x + s.track[t], s.cell.y, s.cell.z);
+        let q = Coord::new(p.q.x + p.shift(bodies, t), p.q.y, p.q.z);
         let front = nbr(q, DIRS[piston_dir(p.v)]);
-        let pulse = kind == 7 && s.body.map_or(false, |d| bodies[d].word[(t + n - 1) % n]);
+        // an observer pulses in the slot after it moved
+        let pulse = kind == 7 && (if t == 0 { s.track[n] != s.track[n - 1] } else { s.track[t] != s.track[t - 1] });
         if adj6(r, q) && r != front && (kind == 6 || kind == 8 || (pulse && nbr(r, DIRS[sdir.min(5)]) == q)) {
             return true;
         }
@@ -1686,13 +1805,17 @@ fn rigid_pistons(bodies: &[BodyT], base: &Cells, mv: usize, opts: &[(f64, bool, 
     for (_, _, actor, d) in opts {
         // "push b1@0 by b2 ..." / "pull ..." (rigid timed actors only)
         // relaxed actors ("rpush"/"rpull") are modelled as riding their carrier too; the simulation decides
-        let mut it = d.split_whitespace();
+        let is_rider = d.starts_with("rider ");
+        let mut it = d.trim_start_matches("rider ").split_whitespace();
         let kind = it.next().unwrap_or("").trim_start_matches('r');
         if kind != "push" && kind != "pull" {
             continue;
         }
         let Some(k) = it.next().and_then(|t| t.split('@').nth(1)).and_then(|t| t.parse::<usize>().ok()) else { continue };
-        let Some(ci) = d.split(" by b").nth(1).and_then(|t| t.split(|c: char| !c.is_ascii_digit()).next()).and_then(|t| t.parse::<usize>().ok()) else { continue };
+        let ci = if is_rider { 0 } else {
+            let Some(ci) = d.split(" by b").nth(1).and_then(|t| t.split(|c: char| !c.is_ascii_digit()).next()).and_then(|t| t.parse::<usize>().ok()) else { continue };
+            ci
+        };
         if d.contains("grow") || d.contains("path") || ci >= bodies.len() {
             continue;
         }
@@ -1707,20 +1830,35 @@ fn rigid_pistons(bodies: &[BodyT], base: &Cells, mv: usize, opts: &[(f64, bool, 
         let dir = piston_dir(v);
         let avoid: Vec<Coord> = std::iter::once(q).chain(arm).collect();
         let mut srcs = vec![];
-        for o in power_options(bodies, base, ci, q, dir, fire, &avoid) {
+        let rider = is_rider.then(|| [fire, (fire + 1) % n]);
+        // riders: their power comes with the options (no carrier to anchor power_options)
+        let pw: Vec<Vec<(Coord, u16)>> = if is_rider {
+            opts.iter().filter(|(_, _, a, _)| a.iter().any(|&(c, x)| c == q && x == v)).map(|(_, _, a, _)| a.iter().copied().filter(|(_, x)| matches!(x & 15, 6 | 7 | 8)).collect()).collect()
+        } else {
+            power_options(bodies, base, ci, q, dir, fire, &avoid)
+        };
+        for o in pw {
             for &(c, sv) in &o {
-                // stuck to exactly one body (a source touching two bodies would tie them together)
-                let touching: BTreeSet<usize> = bodies.iter().enumerate().filter(|(_, b)| b.cells.iter().any(|g| adj6(*g, c))).map(|(i, _)| i).collect();
-                if touching.len() != 1 {
+                // carried along by whatever touches it; must keep pace with the flyer
+                let Some(track) = src_track(bodies, c) else {
+                    if std::env::var("POWERDBG").is_ok() {
+                        eprintln!("POWERREJ {} src {}@({},{},{}) does not keep pace", d.trim(), cell_desc(sv), c.x, c.y, c.z);
+                    }
                     continue;
-                }
-                let body = touching.iter().next().copied();
+                };
                 // observers start powered when their body moved in the last slot (steady-state phase)
-                let sv = if sv & 15 == 7 { Block::observer(((sv >> 5) & 7) as u8, body.map_or(false, |b| bodies[b].word[n - 1]), false).unwrap().cell() } else { sv };
-                srcs.push(PSrc { cell: c, v: sv, body });
+                let sv = if sv & 15 == 7 { Block::observer(((sv >> 5) & 7) as u8, track[n] != track[n - 1], false).unwrap().cell() } else { sv };
+                srcs.push(PSrc { cell: c, v: sv, track: track.clone() });
+                // a rod powers its neighbours like a redstone block; any facing (the model rejects facings whose
+                // hard power reaches a piston in a wrong slot)
+                if sv & 15 == 6 {
+                    for rd in 0..6u8 {
+                        srcs.push(PSrc { cell: c, v: Block::rod(rd, false).unwrap().cell(), track: track.clone() });
+                    }
+                }
             }
         }
-        out.push(PPist { mv, q, v, arm, carrier: ci, need, srcs, desc: d.clone() });
+        out.push(PPist { mv, q, v, arm, carrier: ci, need, srcs, desc: d.clone(), rider });
     }
     out
 }
@@ -1745,8 +1883,19 @@ pub fn power_combine(ctx: &Ctx, base: &Cells, moves: &[Move], options: &[(usize,
                     }
                 }
             }
+            let riders: Vec<(f64, bool, Vec<(Coord, u16)>, String)> = rider_actors(bodies, base, bi, slot, true).into_iter().map(|(a, d)| (0.0, false, a, d)).collect();
+            for p in rigid_pistons(bodies, base, *k, &riders) {
+                if !ps.iter().any(|x| x.q == p.q && x.v == p.v) {
+                    ps.push(p);
+                }
+            }
         }
-        ps.truncate(24);
+        // diagnosis: POWERONLY="x,y,z;x,y,z" keeps only these piston cells (e.g. a reference design's pistons)
+        if let Ok(only) = std::env::var("POWERONLY") {
+            let keep: Vec<Coord> = only.split(';').filter_map(|s| { let v: Vec<i64> = s.split(',').filter_map(|x| x.trim().parse().ok()).collect(); (v.len() == 3).then(|| Coord::new(v[0], v[1], v[2])) }).collect();
+            ps.retain(|p| keep.contains(&p.q));
+        }
+        ps.truncate(64);
         ps
     }).collect();
     // moves without modellable options keep their best full actor (with its own power) as fixed hardware
@@ -1767,20 +1916,23 @@ pub fn power_combine(ctx: &Ctx, base: &Cells, moves: &[Move], options: &[(usize,
     let glue_at: Vec<HashSet<Coord>> = (0..n).map(|t| bodies.iter().flat_map(|b| b.cells.iter().map(move |g| Coord::new(g.x + b.shift[t], g.y, g.z))).collect()).collect();
     // fixed power already in the problem (pinned sources) and the fixed actors' power
     let fixed: Vec<PSrc> = base.iter().filter(|(_, v)| matches!(*v & 15, 6 | 7 | 8)).map(|(&c, &v)| {
-        let body = bodies.iter().position(|b| b.cells.iter().any(|g| adj6(*g, c)));
-        PSrc { cell: c, v, body }
+        let track = src_track(bodies, c).unwrap_or_else(|| vec![0; n + 1]);
+        PSrc { cell: c, v, track }
     }).collect();
     // power outside the fire slot only misfires a piston whose carrier is still in that slot (on a moving carrier the
     // piston is carried along / inert, or its extension fails harmlessly; the simulation is the final judge)
-    let wrong = |cov: &[bool], p: &PPist| cov.iter().zip(&p.need).enumerate().any(|(t, (&c, &nd))| c && !nd && !bodies[p.carrier].word[t]);
+    // riders are strict: power is read at slot start, before the bodies carry them, so a powered rider fires
+    // strict: power in any other slot misfires the piston. (A moving carrier does not protect it: within a tick the
+    // piston order is random, so it may extend before it is carried; seen on a chain design at cycle 3.)
+    let wrong = |cov: &[bool], p: &PPist| cov.iter().zip(&p.need).any(|(&c, &nd)| c && !nd);
     if std::env::var("POWERDBG").is_ok() {
         for v in &per {
             for p in v {
                 let good = p.srcs.iter().filter(|sc| { let c = src_covers(bodies, &glue_at, sc, p); !wrong(&c, p) && c.iter().zip(&p.need).any(|(&a, &b)| a && b) }).count();
-                let covs: Vec<String> = p.srcs.iter().take(4).map(|sc| format!("{}@({},{},{}) b{:?} {:?}", cell_desc(sc.v), sc.cell.x, sc.cell.y, sc.cell.z, sc.body,
+                let covs: Vec<String> = p.srcs.iter().take(40).map(|sc| format!("{}@({},{},{}) b{:?} {:?}", cell_desc(sc.v), sc.cell.x, sc.cell.y, sc.cell.z, sc.track,
                     src_covers(bodies, &glue_at, sc, p).iter().map(|&x| x as u8).collect::<Vec<_>>())).collect();
                 let fx = fixed.iter().any(|f| wrong(&src_covers(bodies, &glue_at, f, p), p));
-                eprintln!("POWERDBG {} need {:?}: {} srcs, {good} good, fixed-wrong {fx}; {}", p.desc.trim(), p.need.iter().map(|&x| x as u8).collect::<Vec<_>>(), p.srcs.len(), covs.join("; "));
+                eprintln!("POWERDBG {} @({},{},{}) {} need {:?}: {} srcs, {good} good, fixed-wrong {fx}; {}", p.desc.trim(), p.q.x, p.q.y, p.q.z, cell_desc(p.v), p.need.iter().map(|&x| x as u8).collect::<Vec<_>>(), p.srcs.len(), covs.join("; "));
             }
         }
     }
@@ -1799,7 +1951,7 @@ pub fn power_combine(ctx: &Ctx, base: &Cells, moves: &[Move], options: &[(usize,
     fn rec(depth: usize, order: &[usize], per: &[Vec<PPist>], chosen: &mut Vec<PPist>, occupied: &mut HashSet<Coord>, base: &Cells, bodies: &[BodyT], glue_at: &[HashSet<Coord>],
            fixed: &[PSrc], wrong: &dyn Fn(&[bool], &PPist) -> bool, leaf: &mut dyn FnMut(&[PPist], &[Vec<usize>]) -> usize, nodes: &mut usize, deadline: Instant,
            nog: &std::cell::RefCell<HashSet<(PKey, PKey)>>) -> Option<usize> {
-        if Instant::now() >= deadline || *nodes > 50_000 {
+        if Instant::now() >= deadline || *nodes > 500_000 {
             return Some(usize::MAX);
         }
         *nodes += 1;
@@ -1936,7 +2088,8 @@ pub fn power_combine(ctx: &Ctx, base: &Cells, moves: &[Move], options: &[(usize,
             return target.min(last);
         }
         sims += 1;
-        let r = evaluate(&real, &cells, s, false);
+        // a second, different sample guards against piston-order-fragile sets (as in the decompose DFS leaf)
+        let r = evaluate(&real, &cells, s, false).and_then(|ev| evaluate(&real, &cells, Sample { rng: 0, px: 0, pz: 0 }, false).map(|_| ev));
         if let (Err(e), true) = (&r, std::env::var("POWERDBG").is_ok()) {
             eprintln!("POWERLEAF {} power: {}", used.len(), e.msg.split("] ").nth(1).unwrap_or(&e.msg).chars().take(140).collect::<String>());
             if sims == 1 {
@@ -1953,7 +2106,8 @@ pub fn power_combine(ctx: &Ctx, base: &Cells, moves: &[Move], options: &[(usize,
         if pass || out.len() < 2 {
             out.push((cells, d, pass));
         }
-        if npass >= 3 || sims >= 150 {
+        // the deadline governs (small flyers simulate in ~1 ms); the cap only bounds pathological cases
+        if npass >= 3 || sims >= 5000 {
             return usize::MAX;
         }
         // geometric conflict: the failing piston ("actor (x,y,z)") and the chosen piston or arm sitting on the
@@ -1962,7 +2116,7 @@ pub fn power_combine(ctx: &Ctx, base: &Cells, moves: &[Move], options: &[(usize,
             let actor = coord_after(&e.msg, "actor (");
             let block = coord_after(&e.msg, "blocked at (").or_else(|| coord_after(&e.msg, ") at ("));
             let who = |c: Coord| chosen.iter().position(|p| {
-                let sh = (tk / ctx.period) as i64 * ctx.advance + bodies[p.carrier].shift[(tk % ctx.period) / 2];
+                let sh = (tk / ctx.period) as i64 * ctx.advance + p.shift(bodies, (tk % ctx.period) / 2);
                 let q = Coord::new(p.q.x + sh, p.q.y, p.q.z);
                 c == q || c == nbr(q, DIRS[piston_dir(p.v)])
             });
@@ -1970,29 +2124,14 @@ pub fn power_combine(ctx: &Ctx, base: &Cells, moves: &[Move], options: &[(usize,
                 if ai != bi {
                     nog.borrow_mut().insert((chosen[ai].key(), chosen[bi].key()));
                     learned += 1;
-                    jumps += 1;
-                    return ai.max(bi).min(last);
+                    // plain backtracking: backjumps pruned valid combinations (seen on a chain design)
+                    return last;
                 }
             }
-            if let Some(ai) = actor.and_then(&who) {
-                jumps += 1;
-                return ai.min(last);
-            }
+
         }
-        match fail_tick {
-            // first-period failure at slot t: the deepest choice for a move at slot <= t
-            Some(tk) if tk < ctx.period => {
-                let fs = tk / 2;
-                match order_slots.iter().rposition(|&sl| sl <= fs) {
-                    Some(d) if d < last => {
-                        jumps += 1;
-                        d
-                    }
-                    _ => last,
-                }
-            }
-            _ => last,
-        }
+        let _ = (&order_slots, &mut jumps);
+        last
     };
     let mut chosen = vec![];
     let mut occupied = HashSet::new();
