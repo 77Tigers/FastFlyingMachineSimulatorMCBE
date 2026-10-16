@@ -23,6 +23,43 @@ def rng(s):
     return range(a, b + 1)
 
 
+def chain_spec(back: str, length: int):
+    """Chain / tentacle (as in human_3bps_original): body i's LAST move is a pull by a sticky on body i+1 (the body
+    in front), so body i+1 must be still in that slot and the one before. Each body's word is the back word shifted
+    by the smallest offset that allows this; the tip is only pushed. Pushes whose slot has no carrier that is still
+    in that slot and the next get a rider (a lone pusher carried by the bodies). Returns (words, force, rider fires)."""
+    n = len(back)
+    mv = [i for i, c in enumerate(back) if c == "m"]
+    # moves as one cyclic run: the last move is the slot just before the first wait after a move
+    last0 = next(s for s in range(n) if back[s] == "m" and back[(s + 1) % n] == "w")
+    rot = lambda w, d: "".join(w[(i + d) % n] for i in range(n))  # word moving d slots earlier
+    words = [back]
+    for _ in range(length - 1):
+        prev = words[-1]
+        last = next(s for s in range(n) if prev[s] == "m" and prev[(s + 1) % n] == "w")
+        for d in range(1, n):
+            cand = rot(prev, d)
+            if cand[last] == "w" and cand[(last - 1) % n] == "w":
+                words.append(cand)
+                break
+        else:
+            raise SystemExit(f"chain: no offset lets body {len(words)} pull body {len(words) - 1}")
+    force = []
+    for i in range(length - 1):
+        last = next(s for s in range(n) if words[i][s] == "m" and words[i][(s + 1) % n] == "w")
+        force.append(f"{i}:{last}:S:{i + 1}")
+    fires = []
+    for i, w in enumerate(words):
+        last = next(s for s in range(n) if w[s] == "m" and w[(s + 1) % n] == "w")
+        for s in range(n):
+            if w[s] != "m" or (i < length - 1 and s == last):
+                continue  # pulled moves are made by the front body's sticky
+            if not any(j != i and words[j][s] == "w" and words[j][(s + 1) % n] == "w" for j in range(length)):
+                fires.append(s)
+    _ = (mv, last0)
+    return words, ",".join(force), fires
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("out", type=Path)
@@ -34,9 +71,19 @@ def main():
     ap.add_argument("--workers", type=int, default=8)
     ap.add_argument("--maxglue", type=int, default=6)
     ap.add_argument("--obj", default="maxload")
+    ap.add_argument("--skip", default="", help="comma list of satflyer5 constraint groups to drop (diagnosis only: power, adh, move, conn, cause, targets)")
+    ap.add_argument("--force", default="", help="comma list j:t:K:s = segment j's move at slot t is made by a piston "
+                    "of kind K (P push / S sticky pull) on segment s (s = body index, or r<i> for rider i). Chains "
+                    "(tentacles): each body's last move is a pull by a sticky on the body in front")
     ap.add_argument("--rider-fires", default="", help="comma list of fire slots; each adds a lone-piston rider whose "
                     "word is every slot except f, f+1 (it is carried by the moving bodies the rest of the time)")
+    ap.add_argument("--chain", type=int, default=0, help="chain (tentacle) of this many bodies from the FIRST word "
+                    "(the back body): words, pulls and riders are derived (see chain_spec)")
     a = ap.parse_args()
+    if a.chain:
+        w, force, fires = chain_spec(a.words.split(",")[0], a.chain)
+        a.words, a.force, a.rider_fires = ",".join(w), ",".join(x for x in [force, a.force] if x), ",".join(str(x) for x in fires)
+        print(f"chain: words {a.words}  pulls {force}  rider fire slots {a.rider_fires or '-'}")
     if a.problem:
         c = json.loads(a.problem.read_text())
         words_s = [p["word"] for p in c["ports"]]
@@ -54,10 +101,19 @@ def main():
     t = time.time()
     try:
         S = FlyerSAT(words, box, a.L, NS=NS, kinds=kinds, leaf=True, maxglue=a.maxglue, anchor=(0, 0, 0),
-                     riders=riders, names=names)
+                     riders=riders, names=names, skip=tuple(x for x in a.skip.split(",") if x))
     except Infeasible as e:
         print("trivially infeasible:", e)
         return 1
+    for f in (x for x in a.force.split(",") if x):
+        j, ts, kind, s = f.split(":")
+        j, ts = int(j), int(ts)
+        s = nb + int(s[1:]) if s.startswith("r") else int(s)
+        lits = [l for (l, seg, k) in S.cause_lits.get((j, ts), []) if seg == s and k[0] == kind]
+        if not lits:
+            print(f"force {f}: no candidate piston in the model (check words / box)")
+            return 1
+        S.m.Add(sum(lits) == 1)
     st, dt = S.solve(a.tl, a.workers, objective=(None if a.obj == "none" else a.obj))
     print(f"CP-SAT {st} in {time.time() - t:.1f}s (words {words_s}, NS {NS}, L {a.L}, box {a.box})")
     if st not in ("OPTIMAL", "FEASIBLE"):

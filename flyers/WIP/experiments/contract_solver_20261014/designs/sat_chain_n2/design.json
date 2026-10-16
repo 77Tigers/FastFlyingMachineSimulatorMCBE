@@ -1,0 +1,41 @@
+{
+ "version": 1,
+ "name": "design_mmww_wwmm_mmww",
+ "flyer": "design.flyer",
+ "period_ticks": 8,
+ "advance": 2,
+ "cycles": 3,
+ "recurrence": "advance",
+ "ports": [
+  {
+   "name": "s0",
+   "role": "output",
+   "at": [
+    14,
+    0,
+    15
+   ],
+   "word": "mmww"
+  },
+  {
+   "name": "s1",
+   "role": "output",
+   "at": [
+    15,
+    1,
+    17
+   ],
+   "word": "wwmm"
+  },
+  {
+   "name": "s2",
+   "role": "output",
+   "at": [
+    14,
+    3,
+    16
+   ],
+   "word": "mmww"
+  }
+ ]
+}
