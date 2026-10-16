@@ -10040,7 +10040,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_124",
-      "note": "L L:B29 @t0=100; spec-faithful"
+      "note": "L L:B29 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_124/problem.json"
     },
     {
       "id": "n3_125",
@@ -19001,7 +19003,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_224",
-      "note": "P P:B33:s2+s4 @t0=100; spec-faithful"
+      "note": "P P:B33:s2+s4 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_224/problem.json"
     },
     {
       "id": "n3_225",
@@ -26003,7 +26007,9 @@
         "search_dir": null
       },
       "path": "flyers/extension_bank/n3/n3_299",
-      "note": "K K3h:B18.B9<-B29.B10<-B36.B29+B41 @t0=100; spec-faithful"
+      "note": "K K3h:B18.B9<-B29.B10<-B36.B29+B41 @t0=100; spec-faithful",
+      "fixture": "regenerate",
+      "problem": "flyers/extension_bank/n3/n3_299/problem.json"
     },
     {
       "id": "n3_300",
