@@ -168,7 +168,58 @@ fn main() {
             }
             Err(last)
         };
-        let oracle = try_ok(&cells);
+        let mut oracle = try_ok(&cells);
+        // column / coupled moves: retry with the same body's neighbouring move (k-1 or k+1) natural too and its
+        // actors present (a two-piston column serves both pushes; one-move contracts cannot express it)
+        let mut column = false;
+        if oracle.is_err() {
+            for &(pj, sj) in moves.iter() {
+                if pj != pi || ((sj + 1) % (ctx.period / 2) != slot && (slot + 1) % (ctx.period / 2) != sj) {
+                    continue;
+                }
+                let j = moves.iter().position(|&m| m == (pj, sj)).unwrap();
+                let mut nat2 = nat.clone();
+                nat2[j] = true;
+                let mut cells2 = cells.clone();
+                for &id in &actors_of(pj, sj) {
+                    let q = origins[id];
+                    cells2.insert(q, rc[&q]);
+                    if let Some(arm) = arm_of(&rc, q, rc[&q]) {
+                        cells2.insert(arm, ARM);
+                    }
+                }
+                let ok = [PrescribedOrder::BeforeNatural, PrescribedOrder::AfterNatural].iter()
+                    .any(|&o| evaluate(&scaffold_ctx_o(&ctx, &moves, &nat2, o), &cells2, s, false).is_ok());
+                if ok {
+                    oracle = Ok(());
+                    column = true;
+                    break;
+                }
+            }
+        }
+        // whole body: every move of this body natural (3-push tips: a column of three)
+        let mut whole = false;
+        if oracle.is_err() {
+            let mut nat3 = nat.clone();
+            let mut cells3 = cells.clone();
+            for (j, &(pj, sj)) in moves.iter().enumerate() {
+                if pj != pi {
+                    continue;
+                }
+                nat3[j] = true;
+                for &id in &actors_of(pj, sj) {
+                    let q = origins[id];
+                    cells3.insert(q, rc[&q]);
+                    if let Some(arm) = arm_of(&rc, q, rc[&q]) {
+                        cells3.insert(arm, ARM);
+                    }
+                }
+            }
+            if [PrescribedOrder::BeforeNatural, PrescribedOrder::AfterNatural].iter().any(|&o| evaluate(&scaffold_ctx_o(&ctx, &moves, &nat3, o), &cells3, s, false).is_ok()) {
+                oracle = Ok(());
+                whole = true;
+            }
+        }
         let bi = bodies.iter().position(|b| b.cells.first() == body.iter().next());
         let mut gen_s = String::new();
         let mut gen_pass = 0;
@@ -191,6 +242,8 @@ fn main() {
         }
         let cat = match (&oracle, gen, gen_pass > 0) {
             _ if actor_ids.is_empty() => "no-actor(carried)",
+            (Ok(_), _, _) if column => "COLUMN(2-move contract ok)",
+            (Ok(_), _, _) if whole => "WHOLE-BODY(all its moves natural ok)",
             (Ok(_), true, true) => "ok",
             (Ok(_), true, false) => "GENERATOR-GAP",
             (Ok(_), false, _) => "oracle-ok",

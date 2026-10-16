@@ -1,5 +1,27 @@
 # Contract solver (2026-10-14/15)
 
+## Chains / tentacles (2026-10-16)
+
+User: chains (tentacles) as in human_3bps_original are insanely useful. That flyer = 5 chains of 3 bodies
+(back <- middle <- tip), one per phase; each body's LAST move is a pull by a sticky on the body in front (rigid
+timing: the front body is still then), the other moves are pushes by carried pushers; tips get 3 pushes.
+* `design_sat.py --chain L --words BACK`: derives the chain's words (each body = previous word shifted so the
+  front body is still when its sticky pulls), forces the pulls (`--force j:t:S:s`), adds a rider for every push
+  that has no still carrier. `--force` / `--skip` are also usable by hand.
+* **First chain flyer from words alone:** N2 chain of 3 (`mmww,wwmm,mmww`, one rider), CP-SAT FEASIBLE in 300 s
+  (L12), 31 blocks; verified 80/80 (Rust + Python) and exact recurrence for 10000 ticks (`flyer-longrun`):
+  `designs/sat_chain_n2/`. N3 single chain (`mmwwm` x3, 2 riders): INFEASIBLE in the boxes tried (power is not the
+  reason: still infeasible with power dropped) -- human_3bps_original interlocks 5 chains whose riders are
+  carried by the other chains; a lone N3 chain may not close. Batch (`run_chains.ps1`): N2 chain of 4 UNKNOWN
+  (600 s); 2 bps / N3 / N4 chains pending.
+* **Pipeline closed on the chain:** strip the design to its glue (3 bodies, nothing else) -> `contract-solve`
+  re-derives all pistons and power in 5 s: verified, load 12, **29 blocks** (fewer than CP-SAT's 31), Python
+  80/80, exact 10000-tick recurrence. What it took (power step): riders whose position follows their own word
+  (`rider_actors`), power sources tracked across bodies (a source touching two bodies rides both, as in the
+  design: `src_track`), rods as adjacent sources, a strict power rule (power outside the fire slot always
+  misfires: piston order within a tick is random), no backjumping (it pruned the valid set), a second-sample
+  guard. rigid_chain_capped now produces sets passing the main sample (load 10) but not yet robust ones.
+
 ## Status update (2026-10-15 evening / 16th)
 
 * Benchmarks with the current binary: **extension contracts e13 136/170 verified** (e9 127; N3 56/60, mmwmmw

@@ -997,6 +997,83 @@ pub fn decompose(ctx: &Ctx, base: &Cells, lo: Coord, hi: Coord, threads: usize, 
         scored.truncate(30);
         options.push((k, scored));
     }
+    // 2b. body units (pusher columns, 3-push tips of chains): when some of a body's moves have no passing actor,
+    // combine its moves' top candidates and test them with ALL of the body's moves natural (a column's pistons
+    // serve several pushes; one-move contracts cannot express it). A passing combination becomes an option of
+    // the body's first move; its other moves get a "covered" option (valid only together with it).
+    if std::env::var("NO_BODYUNITS").is_err() && Instant::now() < deadline {
+        let mut by_body: Vec<(usize, Vec<usize>)> = vec![]; // (port index of body, option indices)
+        for (oi, (k, _)) in options.iter().enumerate() {
+            let body0 = body_cells(base, ctx.ports[moves[*k].0].at).first().copied();
+            match by_body.iter_mut().find(|(p, _)| body_cells(base, ctx.ports[*p].at).first().copied() == body0) {
+                Some((_, v)) => v.push(oi),
+                None => by_body.push((moves[*k].0, vec![oi])),
+            }
+        }
+        let mut added = 0;
+        for (_, ois) in &by_body {
+            if ois.len() < 2 || ois.iter().all(|&oi| options[oi].1.iter().any(|o| o.1)) || Instant::now() >= deadline {
+                continue;
+            }
+            // top candidates per move (passing or not), cartesian product capped
+            let per: Vec<Vec<&(f64, bool, Vec<(Coord, u16)>, String)>> = ois.iter().map(|&oi| options[oi].1.iter().filter(|o| !o.2.is_empty()).take(4).collect()).collect();
+            if per.iter().any(|v| v.is_empty()) {
+                continue;
+            }
+            let mut combos: Vec<Vec<usize>> = vec![vec![]];
+            for v in &per {
+                combos = combos.into_iter().flat_map(|c| (0..v.len()).map(move |i| { let mut d = c.clone(); d.push(i); d })).collect();
+                combos.truncate(64);
+            }
+            let mut nat = pinned_nat.clone();
+            for &oi in ois {
+                nat[options[oi].0] = true;
+            }
+            let mut cand: Vec<Cells> = vec![];
+            let mut desc: Vec<(Vec<(Coord, u16)>, String)> = vec![];
+            for c in &combos {
+                let mut cells = base.clone();
+                let mut union: Vec<(Coord, u16)> = vec![];
+                let mut clash = false;
+                for (mi, &i) in c.iter().enumerate() {
+                    for &(p, v) in &per[mi][i].2 {
+                        if let Some(o) = cells.insert(p, v) {
+                            if o != v {
+                                clash = true;
+                            }
+                        } else {
+                            union.push((p, v));
+                        }
+                    }
+                }
+                if !clash {
+                    cand.push(cells);
+                    desc.push((union, format!("body[{}]", c.iter().enumerate().map(|(mi, &i)| per[mi][i].3.trim().to_string()).collect::<Vec<_>>().join(" + "))));
+                }
+            }
+            let sc1 = scaffold_ctx(ctx, &moves, &nat);
+            let sc2 = scaffold_ctx_o(ctx, &moves, &nat, PrescribedOrder::AfterNatural);
+            let unit_deadline = Instant::now() + deadline.saturating_duration_since(Instant::now()) / 4;
+            let r1 = par_eval(&sc1, &cand, s, threads, unit_deadline);
+            let r2 = par_eval(&sc2, &cand, s, threads, unit_deadline);
+            let mut good: Vec<(f64, usize)> = (0..cand.len()).filter(|&i| r1[i].1 || r2[i].1).map(|i| (r1[i].0.min(r2[i].0), i)).collect();
+            good.sort_by(|a, b| a.0.partial_cmp(&b.0).unwrap());
+            if good.is_empty() {
+                continue;
+            }
+            let first = ois[0];
+            for &(c, i) in good.iter().take(6) {
+                options[first].1.insert(0, (c, true, desc[i].0.clone(), desc[i].1.clone()));
+            }
+            for &oi in &ois[1..] {
+                options[oi].1.insert(0, (0.0, true, vec![], "covered by body unit".into()));
+            }
+            added += 1;
+        }
+        if added > 0 {
+            log.push(format!("decompose: {added} body units (all moves of a body natural together) [{:.2}s]", t_dec.elapsed().as_secs_f64()));
+        }
+    }
     // 3. combine: most constrained first, DFS with scaffold checks
     options.sort_by_key(|(_, v)| v.iter().filter(|x| x.1).count().max(1));
     let mut out: Vec<(Cells, String)> = vec![];
