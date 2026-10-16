@@ -31,7 +31,7 @@ strokes: `tick x y z cap`), `before_natural.json` / `after_natural.json`
 
 ## Regenerated entries (2026-10-15)
 
-186 N3 entries no longer store their fixture: `index.json` marks them `"fixture": "regenerate"` and the entry
+190 N3 entries no longer store their fixture (186 on 2026-10-15, 4 more in later sweeps 2026-10-16): `index.json` marks them `"fixture": "regenerate"` and the entry
 directory keeps only the problem (`problem.json`, `problem.flyer` = pinned bodies, `drive.txt`), `NOTES.md`
 and `REGENERATE.md`. Rule (user): an entry's fixture may go when our tools reproduce it in a few seconds;
 entries we cannot reproduce stay. Test (`flyers/WIP/experiments/contract_solver_20261014/prune_bank.py`):
