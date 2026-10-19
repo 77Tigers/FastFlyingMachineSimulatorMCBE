@@ -508,7 +508,12 @@ pub fn write_solution(ctx: &Ctx, problem: &Path, out: &Path, cells: &Cells, limi
     let mut j = parse_json(&text)?;
     if let Some(J::Arr(ports)) = obj_mut(&mut j, "ports") {
         for p in ports.iter_mut() {
+            // Geometry solvers may remove the original port representative.
+            // Export the representative actually used during verification.
+            let name = p.get("name").and_then(J::str).unwrap_or("");
+            let anchor = ctx.ports.iter().find(|q| q.name == name).map(|q| q.at);
             if let Some(at) = obj_mut(p, "at") {
+                if let Some(q) = anchor { *at = J::Arr(vec![J::Num(q.x), J::Num(q.y), J::Num(q.z)]); }
                 shift_arr(at, d);
             }
         }

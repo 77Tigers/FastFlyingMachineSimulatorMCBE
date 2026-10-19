@@ -1,0 +1,6997 @@
+{
+  "scope": "closed20-module role-model lift; no geometry, physical power or flyer verification",
+  "rear_segments": 20,
+  "total_glue_bodies": 80,
+  "phase_closes_after": 5,
+  "quarter_turn_maps_module": "+5 modulo20",
+  "quarter_turn_geometry_verified": false,
+  "material_assignment_verified": false,
+  "optimistic_permanent_mass": {
+    "X": 8,
+    "T": 7,
+    "G": 8,
+    "H": 6
+  },
+  "helper_mass_caveat": "H6 reserves RB+observer and therefore <=4 glue; shape not constructed",
+  "maximum_role_load": 12,
+  "fits_requested_PL12_role_budget": true,
+  "rear_maximum_role_load": 11,
+  "words": {
+    "X0": "mmmww",
+    "T0": "mwwmm",
+    "G0": "wmmmw",
+    "H0": "mmwwm",
+    "X1": "mwwmm",
+    "T1": "wmmmw",
+    "G1": "mmwwm",
+    "H1": "wwmmm",
+    "X2": "wmmmw",
+    "T2": "mmwwm",
+    "G2": "wwmmm",
+    "H2": "mmmww",
+    "X3": "mmwwm",
+    "T3": "wwmmm",
+    "G3": "mmmww",
+    "H3": "mwwmm",
+    "X4": "wwmmm",
+    "T4": "mmmww",
+    "G4": "mwwmm",
+    "H4": "wmmmw",
+    "X5": "mmmww",
+    "T5": "mwwmm",
+    "G5": "wmmmw",
+    "H5": "mmwwm",
+    "X6": "mwwmm",
+    "T6": "wmmmw",
+    "G6": "mmwwm",
+    "H6": "wwmmm",
+    "X7": "wmmmw",
+    "T7": "mmwwm",
+    "G7": "wwmmm",
+    "H7": "mmmww",
+    "X8": "mmwwm",
+    "T8": "wwmmm",
+    "G8": "mmmww",
+    "H8": "mwwmm",
+    "X9": "wwmmm",
+    "T9": "mmmww",
+    "G9": "mwwmm",
+    "H9": "wmmmw",
+    "X10": "mmmww",
+    "T10": "mwwmm",
+    "G10": "wmmmw",
+    "H10": "mmwwm",
+    "X11": "mwwmm",
+    "T11": "wmmmw",
+    "G11": "mmwwm",
+    "H11": "wwmmm",
+    "X12": "wmmmw",
+    "T12": "mmwwm",
+    "G12": "wwmmm",
+    "H12": "mmmww",
+    "X13": "mmwwm",
+    "T13": "wwmmm",
+    "G13": "mmmww",
+    "H13": "mwwmm",
+    "X14": "wwmmm",
+    "T14": "mmmww",
+    "G14": "mwwmm",
+    "H14": "wmmmw",
+    "X15": "mmmww",
+    "T15": "mwwmm",
+    "G15": "wmmmw",
+    "H15": "mmwwm",
+    "X16": "mwwmm",
+    "T16": "wmmmw",
+    "G16": "mmwwm",
+    "H16": "wwmmm",
+    "X17": "wmmmw",
+    "T17": "mmwwm",
+    "G17": "wwmmm",
+    "H17": "mmmww",
+    "X18": "mmwwm",
+    "T18": "wwmmm",
+    "G18": "mmmww",
+    "H18": "mwwmm",
+    "X19": "wwmmm",
+    "T19": "mmmww",
+    "G19": "mwwmm",
+    "H19": "wmmmw"
+  },
+  "loads": {
+    "X0:0": 11,
+    "X0:1": 11,
+    "X0:2": 11,
+    "T0:0": 11,
+    "T0:3": 10,
+    "T0:4": 11,
+    "G0:1": 11,
+    "G0:2": 11,
+    "G0:3": 12,
+    "H0:0": 8,
+    "H0:1": 7,
+    "H0:4": 9,
+    "X1:0": 11,
+    "X1:3": 11,
+    "X1:4": 11,
+    "T1:1": 11,
+    "T1:2": 11,
+    "T1:3": 11,
+    "G1:0": 11,
+    "G1:1": 12,
+    "G1:4": 11,
+    "H1:2": 9,
+    "H1:3": 8,
+    "H1:4": 7,
+    "X2:1": 10,
+    "X2:2": 11,
+    "X2:3": 11,
+    "T2:0": 11,
+    "T2:1": 11,
+    "T2:4": 10,
+    "G2:2": 11,
+    "G2:3": 11,
+    "G2:4": 12,
+    "H2:0": 9,
+    "H2:1": 8,
+    "H2:2": 7,
+    "X3:0": 11,
+    "X3:1": 11,
+    "X3:4": 11,
+    "T3:2": 10,
+    "T3:3": 11,
+    "T3:4": 11,
+    "G3:0": 11,
+    "G3:1": 11,
+    "G3:2": 12,
+    "H3:0": 7,
+    "H3:3": 9,
+    "H3:4": 8,
+    "X4:2": 11,
+    "X4:3": 11,
+    "X4:4": 11,
+    "T4:0": 10,
+    "T4:1": 11,
+    "T4:2": 11,
+    "G4:0": 12,
+    "G4:3": 11,
+    "G4:4": 11,
+    "H4:1": 9,
+    "H4:2": 8,
+    "H4:3": 7,
+    "X5:0": 11,
+    "X5:1": 11,
+    "X5:2": 11,
+    "T5:0": 11,
+    "T5:3": 10,
+    "T5:4": 11,
+    "G5:1": 11,
+    "G5:2": 11,
+    "G5:3": 12,
+    "H5:0": 8,
+    "H5:1": 7,
+    "H5:4": 9,
+    "X6:0": 11,
+    "X6:3": 11,
+    "X6:4": 11,
+    "T6:1": 11,
+    "T6:2": 11,
+    "T6:3": 11,
+    "G6:0": 11,
+    "G6:1": 12,
+    "G6:4": 11,
+    "H6:2": 9,
+    "H6:3": 8,
+    "H6:4": 7,
+    "X7:1": 10,
+    "X7:2": 11,
+    "X7:3": 11,
+    "T7:0": 11,
+    "T7:1": 11,
+    "T7:4": 10,
+    "G7:2": 11,
+    "G7:3": 11,
+    "G7:4": 12,
+    "H7:0": 9,
+    "H7:1": 8,
+    "H7:2": 7,
+    "X8:0": 11,
+    "X8:1": 11,
+    "X8:4": 11,
+    "T8:2": 10,
+    "T8:3": 11,
+    "T8:4": 11,
+    "G8:0": 11,
+    "G8:1": 11,
+    "G8:2": 12,
+    "H8:0": 7,
+    "H8:3": 9,
+    "H8:4": 8,
+    "X9:2": 11,
+    "X9:3": 11,
+    "X9:4": 11,
+    "T9:0": 10,
+    "T9:1": 11,
+    "T9:2": 11,
+    "G9:0": 12,
+    "G9:3": 11,
+    "G9:4": 11,
+    "H9:1": 9,
+    "H9:2": 8,
+    "H9:3": 7,
+    "X10:0": 11,
+    "X10:1": 11,
+    "X10:2": 11,
+    "T10:0": 11,
+    "T10:3": 10,
+    "T10:4": 11,
+    "G10:1": 11,
+    "G10:2": 11,
+    "G10:3": 12,
+    "H10:0": 8,
+    "H10:1": 7,
+    "H10:4": 9,
+    "X11:0": 11,
+    "X11:3": 11,
+    "X11:4": 11,
+    "T11:1": 11,
+    "T11:2": 11,
+    "T11:3": 11,
+    "G11:0": 11,
+    "G11:1": 12,
+    "G11:4": 11,
+    "H11:2": 9,
+    "H11:3": 8,
+    "H11:4": 7,
+    "X12:1": 10,
+    "X12:2": 11,
+    "X12:3": 11,
+    "T12:0": 11,
+    "T12:1": 11,
+    "T12:4": 10,
+    "G12:2": 11,
+    "G12:3": 11,
+    "G12:4": 12,
+    "H12:0": 9,
+    "H12:1": 8,
+    "H12:2": 7,
+    "X13:0": 11,
+    "X13:1": 11,
+    "X13:4": 11,
+    "T13:2": 10,
+    "T13:3": 11,
+    "T13:4": 11,
+    "G13:0": 11,
+    "G13:1": 11,
+    "G13:2": 12,
+    "H13:0": 7,
+    "H13:3": 9,
+    "H13:4": 8,
+    "X14:2": 11,
+    "X14:3": 11,
+    "X14:4": 11,
+    "T14:0": 10,
+    "T14:1": 11,
+    "T14:2": 11,
+    "G14:0": 12,
+    "G14:3": 11,
+    "G14:4": 11,
+    "H14:1": 9,
+    "H14:2": 8,
+    "H14:3": 7,
+    "X15:0": 11,
+    "X15:1": 11,
+    "X15:2": 11,
+    "T15:0": 11,
+    "T15:3": 10,
+    "T15:4": 11,
+    "G15:1": 11,
+    "G15:2": 11,
+    "G15:3": 12,
+    "H15:0": 8,
+    "H15:1": 7,
+    "H15:4": 9,
+    "X16:0": 11,
+    "X16:3": 11,
+    "X16:4": 11,
+    "T16:1": 11,
+    "T16:2": 11,
+    "T16:3": 11,
+    "G16:0": 11,
+    "G16:1": 12,
+    "G16:4": 11,
+    "H16:2": 9,
+    "H16:3": 8,
+    "H16:4": 7,
+    "X17:1": 10,
+    "X17:2": 11,
+    "X17:3": 11,
+    "T17:0": 11,
+    "T17:1": 11,
+    "T17:4": 10,
+    "G17:2": 11,
+    "G17:3": 11,
+    "G17:4": 12,
+    "H17:0": 9,
+    "H17:1": 8,
+    "H17:2": 7,
+    "X18:0": 11,
+    "X18:1": 11,
+    "X18:4": 11,
+    "T18:2": 10,
+    "T18:3": 11,
+    "T18:4": 11,
+    "G18:0": 11,
+    "G18:1": 11,
+    "G18:2": 12,
+    "H18:0": 7,
+    "H18:3": 9,
+    "H18:4": 8,
+    "X19:2": 11,
+    "X19:3": 11,
+    "X19:4": 11,
+    "T19:0": 10,
+    "T19:1": 11,
+    "T19:2": 11,
+    "G19:0": 12,
+    "G19:3": 11,
+    "G19:4": 11,
+    "H19:1": 9,
+    "H19:2": 8,
+    "H19:3": 7
+  },
+  "actions": [
+    {
+      "target": "X0",
+      "slot": 0,
+      "kind": "push",
+      "firing_slot": 0,
+      "piston_moves": [
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "X19",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "X0",
+        "kind": "redstone_block",
+        "on": 0,
+        "off_by": 1,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X0",
+      "slot": 1,
+      "kind": "push",
+      "firing_slot": 1,
+      "piston_moves": [
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "X0",
+          "touch": "11000"
+        },
+        {
+          "body": "X19",
+          "touch": "10011"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "X0",
+        "kind": "redstone_block",
+        "on": 1,
+        "off_by": 2,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X0",
+      "slot": 2,
+      "kind": "pull",
+      "firing_slot": 1,
+      "piston_moves": [
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "T0",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G0",
+        "kind": "redstone_block",
+        "on": 1,
+        "off_by": 2,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T0",
+      "slot": 0,
+      "kind": "pull",
+      "firing_slot": 4,
+      "piston_moves": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "G0",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H0",
+        "kind": "redstone_block",
+        "on": 4,
+        "off_by": 0,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T0",
+      "slot": 3,
+      "kind": "push",
+      "firing_slot": 3,
+      "piston_moves": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "X0",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "T0",
+        "kind": "redstone_block",
+        "on": 3,
+        "off_by": 4,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T0",
+      "slot": 4,
+      "kind": "push",
+      "firing_slot": 4,
+      "piston_moves": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "T0",
+          "touch": "00011"
+        },
+        {
+          "body": "T19",
+          "touch": "01110"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "T0",
+        "kind": "redstone_block",
+        "on": 4,
+        "off_by": 0,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G0",
+      "slot": 1,
+      "kind": "push",
+      "firing_slot": 1,
+      "piston_moves": [
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "T0",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G0",
+        "kind": "redstone_block",
+        "on": 1,
+        "off_by": 2,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G0",
+      "slot": 2,
+      "kind": "push",
+      "firing_slot": 2,
+      "piston_moves": [
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "T0",
+          "touch": "11001"
+        },
+        {
+          "body": "G0",
+          "touch": "01100"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G0",
+        "kind": "redstone_block",
+        "on": 2,
+        "off_by": 3,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G0",
+      "slot": 3,
+      "kind": "pull",
+      "firing_slot": 2,
+      "piston_moves": [
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "H0",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H0",
+        "kind": "observer",
+        "on": 2,
+        "off_by": 3,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H0",
+      "slot": 0,
+      "kind": "push",
+      "firing_slot": 0,
+      "piston_moves": [
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "G0",
+          "touch": "00111"
+        },
+        {
+          "body": "H0",
+          "touch": "10001"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H0",
+        "kind": "redstone_block",
+        "on": 0,
+        "off_by": 1,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H0",
+      "slot": 1,
+      "kind": "push",
+      "firing_slot": 1,
+      "piston_moves": [
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "G0",
+          "touch": "00011"
+        },
+        {
+          "body": "H0",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H0",
+        "kind": "redstone_block",
+        "on": 1,
+        "off_by": 2,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H0",
+      "slot": 4,
+      "kind": "push",
+      "firing_slot": 4,
+      "piston_moves": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "G0",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H0",
+        "kind": "redstone_block",
+        "on": 4,
+        "off_by": 0,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X1",
+      "slot": 0,
+      "kind": "pull",
+      "firing_slot": 4,
+      "piston_moves": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "T1",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G1",
+        "kind": "redstone_block",
+        "on": 4,
+        "off_by": 0,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X1",
+      "slot": 3,
+      "kind": "push",
+      "firing_slot": 3,
+      "piston_moves": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "X0",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "X1",
+        "kind": "redstone_block",
+        "on": 3,
+        "off_by": 4,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X1",
+      "slot": 4,
+      "kind": "push",
+      "firing_slot": 4,
+      "piston_moves": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "X0",
+          "touch": "01110"
+        },
+        {
+          "body": "X1",
+          "touch": "00011"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "X1",
+        "kind": "redstone_block",
+        "on": 4,
+        "off_by": 0,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T1",
+      "slot": 1,
+      "kind": "push",
+      "firing_slot": 1,
+      "piston_moves": [
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "X1",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "T1",
+        "kind": "redstone_block",
+        "on": 1,
+        "off_by": 2,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T1",
+      "slot": 2,
+      "kind": "push",
+      "firing_slot": 2,
+      "piston_moves": [
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "T0",
+          "touch": "11001"
+        },
+        {
+          "body": "T1",
+          "touch": "01100"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "T1",
+        "kind": "redstone_block",
+        "on": 2,
+        "off_by": 3,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T1",
+      "slot": 3,
+      "kind": "pull",
+      "firing_slot": 2,
+      "piston_moves": [
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "G1",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H1",
+        "kind": "redstone_block",
+        "on": 2,
+        "off_by": 3,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G1",
+      "slot": 0,
+      "kind": "push",
+      "firing_slot": 0,
+      "piston_moves": [
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "T1",
+          "touch": "00111"
+        },
+        {
+          "body": "G1",
+          "touch": "10001"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G1",
+        "kind": "redstone_block",
+        "on": 0,
+        "off_by": 1,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G1",
+      "slot": 1,
+      "kind": "pull",
+      "firing_slot": 0,
+      "piston_moves": [
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "H1",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H1",
+        "kind": "observer",
+        "on": 0,
+        "off_by": 1,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G1",
+      "slot": 4,
+      "kind": "push",
+      "firing_slot": 4,
+      "piston_moves": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "T1",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G1",
+        "kind": "redstone_block",
+        "on": 4,
+        "off_by": 0,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H1",
+      "slot": 2,
+      "kind": "push",
+      "firing_slot": 2,
+      "piston_moves": [
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "G1",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H1",
+        "kind": "redstone_block",
+        "on": 2,
+        "off_by": 3,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H1",
+      "slot": 3,
+      "kind": "push",
+      "firing_slot": 3,
+      "piston_moves": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "G1",
+          "touch": "11100"
+        },
+        {
+          "body": "H1",
+          "touch": "00110"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H1",
+        "kind": "redstone_block",
+        "on": 3,
+        "off_by": 4,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H1",
+      "slot": 4,
+      "kind": "push",
+      "firing_slot": 4,
+      "piston_moves": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "G1",
+          "touch": "01100"
+        },
+        {
+          "body": "H1",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H1",
+        "kind": "redstone_block",
+        "on": 4,
+        "off_by": 0,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X2",
+      "slot": 1,
+      "kind": "push",
+      "firing_slot": 1,
+      "piston_moves": [
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "X1",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "X2",
+        "kind": "redstone_block",
+        "on": 1,
+        "off_by": 2,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X2",
+      "slot": 2,
+      "kind": "push",
+      "firing_slot": 2,
+      "piston_moves": [
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "X1",
+          "touch": "11001"
+        },
+        {
+          "body": "X2",
+          "touch": "01100"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "X2",
+        "kind": "redstone_block",
+        "on": 2,
+        "off_by": 3,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X2",
+      "slot": 3,
+      "kind": "pull",
+      "firing_slot": 2,
+      "piston_moves": [
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "T2",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G2",
+        "kind": "redstone_block",
+        "on": 2,
+        "off_by": 3,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T2",
+      "slot": 0,
+      "kind": "push",
+      "firing_slot": 0,
+      "piston_moves": [
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "X2",
+          "touch": "00111"
+        },
+        {
+          "body": "T2",
+          "touch": "10001"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "T2",
+        "kind": "redstone_block",
+        "on": 0,
+        "off_by": 1,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T2",
+      "slot": 1,
+      "kind": "pull",
+      "firing_slot": 0,
+      "piston_moves": [
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "G2",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H2",
+        "kind": "redstone_block",
+        "on": 0,
+        "off_by": 1,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T2",
+      "slot": 4,
+      "kind": "push",
+      "firing_slot": 4,
+      "piston_moves": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "T1",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "T2",
+        "kind": "redstone_block",
+        "on": 4,
+        "off_by": 0,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G2",
+      "slot": 2,
+      "kind": "push",
+      "firing_slot": 2,
+      "piston_moves": [
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "T2",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G2",
+        "kind": "redstone_block",
+        "on": 2,
+        "off_by": 3,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G2",
+      "slot": 3,
+      "kind": "push",
+      "firing_slot": 3,
+      "piston_moves": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "T2",
+          "touch": "11100"
+        },
+        {
+          "body": "G2",
+          "touch": "00110"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G2",
+        "kind": "redstone_block",
+        "on": 3,
+        "off_by": 4,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G2",
+      "slot": 4,
+      "kind": "pull",
+      "firing_slot": 3,
+      "piston_moves": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "H2",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H2",
+        "kind": "observer",
+        "on": 3,
+        "off_by": 4,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H2",
+      "slot": 0,
+      "kind": "push",
+      "firing_slot": 0,
+      "piston_moves": [
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "G2",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H2",
+        "kind": "redstone_block",
+        "on": 0,
+        "off_by": 1,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H2",
+      "slot": 1,
+      "kind": "push",
+      "firing_slot": 1,
+      "piston_moves": [
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "G2",
+          "touch": "10011"
+        },
+        {
+          "body": "H2",
+          "touch": "11000"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H2",
+        "kind": "redstone_block",
+        "on": 1,
+        "off_by": 2,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H2",
+      "slot": 2,
+      "kind": "push",
+      "firing_slot": 2,
+      "piston_moves": [
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "G2",
+          "touch": "10001"
+        },
+        {
+          "body": "H2",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H2",
+        "kind": "redstone_block",
+        "on": 2,
+        "off_by": 3,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X3",
+      "slot": 0,
+      "kind": "push",
+      "firing_slot": 0,
+      "piston_moves": [
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "X2",
+          "touch": "00111"
+        },
+        {
+          "body": "X3",
+          "touch": "10001"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "X3",
+        "kind": "redstone_block",
+        "on": 0,
+        "off_by": 1,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X3",
+      "slot": 1,
+      "kind": "pull",
+      "firing_slot": 0,
+      "piston_moves": [
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "T3",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G3",
+        "kind": "redstone_block",
+        "on": 0,
+        "off_by": 1,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X3",
+      "slot": 4,
+      "kind": "push",
+      "firing_slot": 4,
+      "piston_moves": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "X2",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "X3",
+        "kind": "redstone_block",
+        "on": 4,
+        "off_by": 0,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T3",
+      "slot": 2,
+      "kind": "push",
+      "firing_slot": 2,
+      "piston_moves": [
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "X3",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "T3",
+        "kind": "redstone_block",
+        "on": 2,
+        "off_by": 3,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T3",
+      "slot": 3,
+      "kind": "push",
+      "firing_slot": 3,
+      "piston_moves": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "T2",
+          "touch": "11100"
+        },
+        {
+          "body": "T3",
+          "touch": "00110"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "T3",
+        "kind": "redstone_block",
+        "on": 3,
+        "off_by": 4,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T3",
+      "slot": 4,
+      "kind": "pull",
+      "firing_slot": 3,
+      "piston_moves": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "G3",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H3",
+        "kind": "redstone_block",
+        "on": 3,
+        "off_by": 4,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G3",
+      "slot": 0,
+      "kind": "push",
+      "firing_slot": 0,
+      "piston_moves": [
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "T3",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G3",
+        "kind": "redstone_block",
+        "on": 0,
+        "off_by": 1,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G3",
+      "slot": 1,
+      "kind": "push",
+      "firing_slot": 1,
+      "piston_moves": [
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "T3",
+          "touch": "10011"
+        },
+        {
+          "body": "G3",
+          "touch": "11000"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G3",
+        "kind": "redstone_block",
+        "on": 1,
+        "off_by": 2,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G3",
+      "slot": 2,
+      "kind": "pull",
+      "firing_slot": 1,
+      "piston_moves": [
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "H3",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H3",
+        "kind": "observer",
+        "on": 1,
+        "off_by": 2,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H3",
+      "slot": 0,
+      "kind": "push",
+      "firing_slot": 0,
+      "piston_moves": [
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "G3",
+          "touch": "00110"
+        },
+        {
+          "body": "H3",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H3",
+        "kind": "redstone_block",
+        "on": 0,
+        "off_by": 1,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H3",
+      "slot": 3,
+      "kind": "push",
+      "firing_slot": 3,
+      "piston_moves": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "G3",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H3",
+        "kind": "redstone_block",
+        "on": 3,
+        "off_by": 4,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H3",
+      "slot": 4,
+      "kind": "push",
+      "firing_slot": 4,
+      "piston_moves": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "G3",
+          "touch": "01110"
+        },
+        {
+          "body": "H3",
+          "touch": "00011"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H3",
+        "kind": "redstone_block",
+        "on": 4,
+        "off_by": 0,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X4",
+      "slot": 2,
+      "kind": "push",
+      "firing_slot": 2,
+      "piston_moves": [
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "X3",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "X4",
+        "kind": "redstone_block",
+        "on": 2,
+        "off_by": 3,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X4",
+      "slot": 3,
+      "kind": "push",
+      "firing_slot": 3,
+      "piston_moves": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "X3",
+          "touch": "11100"
+        },
+        {
+          "body": "X4",
+          "touch": "00110"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "X4",
+        "kind": "redstone_block",
+        "on": 3,
+        "off_by": 4,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X4",
+      "slot": 4,
+      "kind": "pull",
+      "firing_slot": 3,
+      "piston_moves": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "T4",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G4",
+        "kind": "redstone_block",
+        "on": 3,
+        "off_by": 4,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T4",
+      "slot": 0,
+      "kind": "push",
+      "firing_slot": 0,
+      "piston_moves": [
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "X4",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "T4",
+        "kind": "redstone_block",
+        "on": 0,
+        "off_by": 1,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T4",
+      "slot": 1,
+      "kind": "push",
+      "firing_slot": 1,
+      "piston_moves": [
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "T3",
+          "touch": "10011"
+        },
+        {
+          "body": "T4",
+          "touch": "11000"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "T4",
+        "kind": "redstone_block",
+        "on": 1,
+        "off_by": 2,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T4",
+      "slot": 2,
+      "kind": "pull",
+      "firing_slot": 1,
+      "piston_moves": [
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "G4",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H4",
+        "kind": "redstone_block",
+        "on": 1,
+        "off_by": 2,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G4",
+      "slot": 0,
+      "kind": "pull",
+      "firing_slot": 4,
+      "piston_moves": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "H4",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H4",
+        "kind": "observer",
+        "on": 4,
+        "off_by": 0,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G4",
+      "slot": 3,
+      "kind": "push",
+      "firing_slot": 3,
+      "piston_moves": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "T4",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G4",
+        "kind": "redstone_block",
+        "on": 3,
+        "off_by": 4,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G4",
+      "slot": 4,
+      "kind": "push",
+      "firing_slot": 4,
+      "piston_moves": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "T4",
+          "touch": "01110"
+        },
+        {
+          "body": "G4",
+          "touch": "00011"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G4",
+        "kind": "redstone_block",
+        "on": 4,
+        "off_by": 0,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H4",
+      "slot": 1,
+      "kind": "push",
+      "firing_slot": 1,
+      "piston_moves": [
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "G4",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H4",
+        "kind": "redstone_block",
+        "on": 1,
+        "off_by": 2,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H4",
+      "slot": 2,
+      "kind": "push",
+      "firing_slot": 2,
+      "piston_moves": [
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "G4",
+          "touch": "11001"
+        },
+        {
+          "body": "H4",
+          "touch": "01100"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H4",
+        "kind": "redstone_block",
+        "on": 2,
+        "off_by": 3,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H4",
+      "slot": 3,
+      "kind": "push",
+      "firing_slot": 3,
+      "piston_moves": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "G4",
+          "touch": "11000"
+        },
+        {
+          "body": "H4",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H4",
+        "kind": "redstone_block",
+        "on": 3,
+        "off_by": 4,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X5",
+      "slot": 0,
+      "kind": "push",
+      "firing_slot": 0,
+      "piston_moves": [
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "X4",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "X5",
+        "kind": "redstone_block",
+        "on": 0,
+        "off_by": 1,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X5",
+      "slot": 1,
+      "kind": "push",
+      "firing_slot": 1,
+      "piston_moves": [
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "X5",
+          "touch": "11000"
+        },
+        {
+          "body": "X4",
+          "touch": "10011"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "X5",
+        "kind": "redstone_block",
+        "on": 1,
+        "off_by": 2,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X5",
+      "slot": 2,
+      "kind": "pull",
+      "firing_slot": 1,
+      "piston_moves": [
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "T5",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G5",
+        "kind": "redstone_block",
+        "on": 1,
+        "off_by": 2,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T5",
+      "slot": 0,
+      "kind": "pull",
+      "firing_slot": 4,
+      "piston_moves": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "G5",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H5",
+        "kind": "redstone_block",
+        "on": 4,
+        "off_by": 0,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T5",
+      "slot": 3,
+      "kind": "push",
+      "firing_slot": 3,
+      "piston_moves": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "X5",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "T5",
+        "kind": "redstone_block",
+        "on": 3,
+        "off_by": 4,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T5",
+      "slot": 4,
+      "kind": "push",
+      "firing_slot": 4,
+      "piston_moves": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "T5",
+          "touch": "00011"
+        },
+        {
+          "body": "T4",
+          "touch": "01110"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "T5",
+        "kind": "redstone_block",
+        "on": 4,
+        "off_by": 0,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G5",
+      "slot": 1,
+      "kind": "push",
+      "firing_slot": 1,
+      "piston_moves": [
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "T5",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G5",
+        "kind": "redstone_block",
+        "on": 1,
+        "off_by": 2,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G5",
+      "slot": 2,
+      "kind": "push",
+      "firing_slot": 2,
+      "piston_moves": [
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "T5",
+          "touch": "11001"
+        },
+        {
+          "body": "G5",
+          "touch": "01100"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G5",
+        "kind": "redstone_block",
+        "on": 2,
+        "off_by": 3,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G5",
+      "slot": 3,
+      "kind": "pull",
+      "firing_slot": 2,
+      "piston_moves": [
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "H5",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H5",
+        "kind": "observer",
+        "on": 2,
+        "off_by": 3,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H5",
+      "slot": 0,
+      "kind": "push",
+      "firing_slot": 0,
+      "piston_moves": [
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "G5",
+          "touch": "00111"
+        },
+        {
+          "body": "H5",
+          "touch": "10001"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H5",
+        "kind": "redstone_block",
+        "on": 0,
+        "off_by": 1,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H5",
+      "slot": 1,
+      "kind": "push",
+      "firing_slot": 1,
+      "piston_moves": [
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "G5",
+          "touch": "00011"
+        },
+        {
+          "body": "H5",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H5",
+        "kind": "redstone_block",
+        "on": 1,
+        "off_by": 2,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H5",
+      "slot": 4,
+      "kind": "push",
+      "firing_slot": 4,
+      "piston_moves": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "G5",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H5",
+        "kind": "redstone_block",
+        "on": 4,
+        "off_by": 0,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X6",
+      "slot": 0,
+      "kind": "pull",
+      "firing_slot": 4,
+      "piston_moves": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "T6",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G6",
+        "kind": "redstone_block",
+        "on": 4,
+        "off_by": 0,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X6",
+      "slot": 3,
+      "kind": "push",
+      "firing_slot": 3,
+      "piston_moves": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "X5",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "X6",
+        "kind": "redstone_block",
+        "on": 3,
+        "off_by": 4,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X6",
+      "slot": 4,
+      "kind": "push",
+      "firing_slot": 4,
+      "piston_moves": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "X5",
+          "touch": "01110"
+        },
+        {
+          "body": "X6",
+          "touch": "00011"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "X6",
+        "kind": "redstone_block",
+        "on": 4,
+        "off_by": 0,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T6",
+      "slot": 1,
+      "kind": "push",
+      "firing_slot": 1,
+      "piston_moves": [
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "X6",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "T6",
+        "kind": "redstone_block",
+        "on": 1,
+        "off_by": 2,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T6",
+      "slot": 2,
+      "kind": "push",
+      "firing_slot": 2,
+      "piston_moves": [
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "T5",
+          "touch": "11001"
+        },
+        {
+          "body": "T6",
+          "touch": "01100"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "T6",
+        "kind": "redstone_block",
+        "on": 2,
+        "off_by": 3,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T6",
+      "slot": 3,
+      "kind": "pull",
+      "firing_slot": 2,
+      "piston_moves": [
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "G6",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H6",
+        "kind": "redstone_block",
+        "on": 2,
+        "off_by": 3,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G6",
+      "slot": 0,
+      "kind": "push",
+      "firing_slot": 0,
+      "piston_moves": [
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "T6",
+          "touch": "00111"
+        },
+        {
+          "body": "G6",
+          "touch": "10001"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G6",
+        "kind": "redstone_block",
+        "on": 0,
+        "off_by": 1,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G6",
+      "slot": 1,
+      "kind": "pull",
+      "firing_slot": 0,
+      "piston_moves": [
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "H6",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H6",
+        "kind": "observer",
+        "on": 0,
+        "off_by": 1,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G6",
+      "slot": 4,
+      "kind": "push",
+      "firing_slot": 4,
+      "piston_moves": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "T6",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G6",
+        "kind": "redstone_block",
+        "on": 4,
+        "off_by": 0,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H6",
+      "slot": 2,
+      "kind": "push",
+      "firing_slot": 2,
+      "piston_moves": [
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "G6",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H6",
+        "kind": "redstone_block",
+        "on": 2,
+        "off_by": 3,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H6",
+      "slot": 3,
+      "kind": "push",
+      "firing_slot": 3,
+      "piston_moves": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "G6",
+          "touch": "11100"
+        },
+        {
+          "body": "H6",
+          "touch": "00110"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H6",
+        "kind": "redstone_block",
+        "on": 3,
+        "off_by": 4,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H6",
+      "slot": 4,
+      "kind": "push",
+      "firing_slot": 4,
+      "piston_moves": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "G6",
+          "touch": "01100"
+        },
+        {
+          "body": "H6",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H6",
+        "kind": "redstone_block",
+        "on": 4,
+        "off_by": 0,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X7",
+      "slot": 1,
+      "kind": "push",
+      "firing_slot": 1,
+      "piston_moves": [
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "X6",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "X7",
+        "kind": "redstone_block",
+        "on": 1,
+        "off_by": 2,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X7",
+      "slot": 2,
+      "kind": "push",
+      "firing_slot": 2,
+      "piston_moves": [
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "X6",
+          "touch": "11001"
+        },
+        {
+          "body": "X7",
+          "touch": "01100"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "X7",
+        "kind": "redstone_block",
+        "on": 2,
+        "off_by": 3,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X7",
+      "slot": 3,
+      "kind": "pull",
+      "firing_slot": 2,
+      "piston_moves": [
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "T7",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G7",
+        "kind": "redstone_block",
+        "on": 2,
+        "off_by": 3,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T7",
+      "slot": 0,
+      "kind": "push",
+      "firing_slot": 0,
+      "piston_moves": [
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "X7",
+          "touch": "00111"
+        },
+        {
+          "body": "T7",
+          "touch": "10001"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "T7",
+        "kind": "redstone_block",
+        "on": 0,
+        "off_by": 1,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T7",
+      "slot": 1,
+      "kind": "pull",
+      "firing_slot": 0,
+      "piston_moves": [
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "G7",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H7",
+        "kind": "redstone_block",
+        "on": 0,
+        "off_by": 1,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T7",
+      "slot": 4,
+      "kind": "push",
+      "firing_slot": 4,
+      "piston_moves": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "T6",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "T7",
+        "kind": "redstone_block",
+        "on": 4,
+        "off_by": 0,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G7",
+      "slot": 2,
+      "kind": "push",
+      "firing_slot": 2,
+      "piston_moves": [
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "T7",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G7",
+        "kind": "redstone_block",
+        "on": 2,
+        "off_by": 3,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G7",
+      "slot": 3,
+      "kind": "push",
+      "firing_slot": 3,
+      "piston_moves": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "T7",
+          "touch": "11100"
+        },
+        {
+          "body": "G7",
+          "touch": "00110"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G7",
+        "kind": "redstone_block",
+        "on": 3,
+        "off_by": 4,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G7",
+      "slot": 4,
+      "kind": "pull",
+      "firing_slot": 3,
+      "piston_moves": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "H7",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H7",
+        "kind": "observer",
+        "on": 3,
+        "off_by": 4,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H7",
+      "slot": 0,
+      "kind": "push",
+      "firing_slot": 0,
+      "piston_moves": [
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "G7",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H7",
+        "kind": "redstone_block",
+        "on": 0,
+        "off_by": 1,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H7",
+      "slot": 1,
+      "kind": "push",
+      "firing_slot": 1,
+      "piston_moves": [
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "G7",
+          "touch": "10011"
+        },
+        {
+          "body": "H7",
+          "touch": "11000"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H7",
+        "kind": "redstone_block",
+        "on": 1,
+        "off_by": 2,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H7",
+      "slot": 2,
+      "kind": "push",
+      "firing_slot": 2,
+      "piston_moves": [
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "G7",
+          "touch": "10001"
+        },
+        {
+          "body": "H7",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H7",
+        "kind": "redstone_block",
+        "on": 2,
+        "off_by": 3,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X8",
+      "slot": 0,
+      "kind": "push",
+      "firing_slot": 0,
+      "piston_moves": [
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "X7",
+          "touch": "00111"
+        },
+        {
+          "body": "X8",
+          "touch": "10001"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "X8",
+        "kind": "redstone_block",
+        "on": 0,
+        "off_by": 1,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X8",
+      "slot": 1,
+      "kind": "pull",
+      "firing_slot": 0,
+      "piston_moves": [
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "T8",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G8",
+        "kind": "redstone_block",
+        "on": 0,
+        "off_by": 1,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X8",
+      "slot": 4,
+      "kind": "push",
+      "firing_slot": 4,
+      "piston_moves": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "X7",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "X8",
+        "kind": "redstone_block",
+        "on": 4,
+        "off_by": 0,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T8",
+      "slot": 2,
+      "kind": "push",
+      "firing_slot": 2,
+      "piston_moves": [
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "X8",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "T8",
+        "kind": "redstone_block",
+        "on": 2,
+        "off_by": 3,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T8",
+      "slot": 3,
+      "kind": "push",
+      "firing_slot": 3,
+      "piston_moves": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "T7",
+          "touch": "11100"
+        },
+        {
+          "body": "T8",
+          "touch": "00110"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "T8",
+        "kind": "redstone_block",
+        "on": 3,
+        "off_by": 4,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T8",
+      "slot": 4,
+      "kind": "pull",
+      "firing_slot": 3,
+      "piston_moves": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "G8",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H8",
+        "kind": "redstone_block",
+        "on": 3,
+        "off_by": 4,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G8",
+      "slot": 0,
+      "kind": "push",
+      "firing_slot": 0,
+      "piston_moves": [
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "T8",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G8",
+        "kind": "redstone_block",
+        "on": 0,
+        "off_by": 1,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G8",
+      "slot": 1,
+      "kind": "push",
+      "firing_slot": 1,
+      "piston_moves": [
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "T8",
+          "touch": "10011"
+        },
+        {
+          "body": "G8",
+          "touch": "11000"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G8",
+        "kind": "redstone_block",
+        "on": 1,
+        "off_by": 2,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G8",
+      "slot": 2,
+      "kind": "pull",
+      "firing_slot": 1,
+      "piston_moves": [
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "H8",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H8",
+        "kind": "observer",
+        "on": 1,
+        "off_by": 2,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H8",
+      "slot": 0,
+      "kind": "push",
+      "firing_slot": 0,
+      "piston_moves": [
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "G8",
+          "touch": "00110"
+        },
+        {
+          "body": "H8",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H8",
+        "kind": "redstone_block",
+        "on": 0,
+        "off_by": 1,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H8",
+      "slot": 3,
+      "kind": "push",
+      "firing_slot": 3,
+      "piston_moves": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "G8",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H8",
+        "kind": "redstone_block",
+        "on": 3,
+        "off_by": 4,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H8",
+      "slot": 4,
+      "kind": "push",
+      "firing_slot": 4,
+      "piston_moves": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "G8",
+          "touch": "01110"
+        },
+        {
+          "body": "H8",
+          "touch": "00011"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H8",
+        "kind": "redstone_block",
+        "on": 4,
+        "off_by": 0,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X9",
+      "slot": 2,
+      "kind": "push",
+      "firing_slot": 2,
+      "piston_moves": [
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "X8",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "X9",
+        "kind": "redstone_block",
+        "on": 2,
+        "off_by": 3,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X9",
+      "slot": 3,
+      "kind": "push",
+      "firing_slot": 3,
+      "piston_moves": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "X8",
+          "touch": "11100"
+        },
+        {
+          "body": "X9",
+          "touch": "00110"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "X9",
+        "kind": "redstone_block",
+        "on": 3,
+        "off_by": 4,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X9",
+      "slot": 4,
+      "kind": "pull",
+      "firing_slot": 3,
+      "piston_moves": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "T9",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G9",
+        "kind": "redstone_block",
+        "on": 3,
+        "off_by": 4,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T9",
+      "slot": 0,
+      "kind": "push",
+      "firing_slot": 0,
+      "piston_moves": [
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "X9",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "T9",
+        "kind": "redstone_block",
+        "on": 0,
+        "off_by": 1,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T9",
+      "slot": 1,
+      "kind": "push",
+      "firing_slot": 1,
+      "piston_moves": [
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "T8",
+          "touch": "10011"
+        },
+        {
+          "body": "T9",
+          "touch": "11000"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "T9",
+        "kind": "redstone_block",
+        "on": 1,
+        "off_by": 2,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T9",
+      "slot": 2,
+      "kind": "pull",
+      "firing_slot": 1,
+      "piston_moves": [
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "G9",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H9",
+        "kind": "redstone_block",
+        "on": 1,
+        "off_by": 2,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G9",
+      "slot": 0,
+      "kind": "pull",
+      "firing_slot": 4,
+      "piston_moves": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "H9",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H9",
+        "kind": "observer",
+        "on": 4,
+        "off_by": 0,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G9",
+      "slot": 3,
+      "kind": "push",
+      "firing_slot": 3,
+      "piston_moves": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "T9",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G9",
+        "kind": "redstone_block",
+        "on": 3,
+        "off_by": 4,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G9",
+      "slot": 4,
+      "kind": "push",
+      "firing_slot": 4,
+      "piston_moves": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "T9",
+          "touch": "01110"
+        },
+        {
+          "body": "G9",
+          "touch": "00011"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G9",
+        "kind": "redstone_block",
+        "on": 4,
+        "off_by": 0,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H9",
+      "slot": 1,
+      "kind": "push",
+      "firing_slot": 1,
+      "piston_moves": [
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "G9",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H9",
+        "kind": "redstone_block",
+        "on": 1,
+        "off_by": 2,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H9",
+      "slot": 2,
+      "kind": "push",
+      "firing_slot": 2,
+      "piston_moves": [
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "G9",
+          "touch": "11001"
+        },
+        {
+          "body": "H9",
+          "touch": "01100"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H9",
+        "kind": "redstone_block",
+        "on": 2,
+        "off_by": 3,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H9",
+      "slot": 3,
+      "kind": "push",
+      "firing_slot": 3,
+      "piston_moves": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "G9",
+          "touch": "11000"
+        },
+        {
+          "body": "H9",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H9",
+        "kind": "redstone_block",
+        "on": 3,
+        "off_by": 4,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X10",
+      "slot": 0,
+      "kind": "push",
+      "firing_slot": 0,
+      "piston_moves": [
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "X9",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "X10",
+        "kind": "redstone_block",
+        "on": 0,
+        "off_by": 1,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X10",
+      "slot": 1,
+      "kind": "push",
+      "firing_slot": 1,
+      "piston_moves": [
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "X10",
+          "touch": "11000"
+        },
+        {
+          "body": "X9",
+          "touch": "10011"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "X10",
+        "kind": "redstone_block",
+        "on": 1,
+        "off_by": 2,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X10",
+      "slot": 2,
+      "kind": "pull",
+      "firing_slot": 1,
+      "piston_moves": [
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "T10",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G10",
+        "kind": "redstone_block",
+        "on": 1,
+        "off_by": 2,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T10",
+      "slot": 0,
+      "kind": "pull",
+      "firing_slot": 4,
+      "piston_moves": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "G10",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H10",
+        "kind": "redstone_block",
+        "on": 4,
+        "off_by": 0,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T10",
+      "slot": 3,
+      "kind": "push",
+      "firing_slot": 3,
+      "piston_moves": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "X10",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "T10",
+        "kind": "redstone_block",
+        "on": 3,
+        "off_by": 4,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T10",
+      "slot": 4,
+      "kind": "push",
+      "firing_slot": 4,
+      "piston_moves": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "T10",
+          "touch": "00011"
+        },
+        {
+          "body": "T9",
+          "touch": "01110"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "T10",
+        "kind": "redstone_block",
+        "on": 4,
+        "off_by": 0,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G10",
+      "slot": 1,
+      "kind": "push",
+      "firing_slot": 1,
+      "piston_moves": [
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "T10",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G10",
+        "kind": "redstone_block",
+        "on": 1,
+        "off_by": 2,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G10",
+      "slot": 2,
+      "kind": "push",
+      "firing_slot": 2,
+      "piston_moves": [
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "T10",
+          "touch": "11001"
+        },
+        {
+          "body": "G10",
+          "touch": "01100"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G10",
+        "kind": "redstone_block",
+        "on": 2,
+        "off_by": 3,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G10",
+      "slot": 3,
+      "kind": "pull",
+      "firing_slot": 2,
+      "piston_moves": [
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "H10",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H10",
+        "kind": "observer",
+        "on": 2,
+        "off_by": 3,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H10",
+      "slot": 0,
+      "kind": "push",
+      "firing_slot": 0,
+      "piston_moves": [
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "G10",
+          "touch": "00111"
+        },
+        {
+          "body": "H10",
+          "touch": "10001"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H10",
+        "kind": "redstone_block",
+        "on": 0,
+        "off_by": 1,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H10",
+      "slot": 1,
+      "kind": "push",
+      "firing_slot": 1,
+      "piston_moves": [
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "G10",
+          "touch": "00011"
+        },
+        {
+          "body": "H10",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H10",
+        "kind": "redstone_block",
+        "on": 1,
+        "off_by": 2,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H10",
+      "slot": 4,
+      "kind": "push",
+      "firing_slot": 4,
+      "piston_moves": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "G10",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H10",
+        "kind": "redstone_block",
+        "on": 4,
+        "off_by": 0,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X11",
+      "slot": 0,
+      "kind": "pull",
+      "firing_slot": 4,
+      "piston_moves": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "T11",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G11",
+        "kind": "redstone_block",
+        "on": 4,
+        "off_by": 0,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X11",
+      "slot": 3,
+      "kind": "push",
+      "firing_slot": 3,
+      "piston_moves": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "X10",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "X11",
+        "kind": "redstone_block",
+        "on": 3,
+        "off_by": 4,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X11",
+      "slot": 4,
+      "kind": "push",
+      "firing_slot": 4,
+      "piston_moves": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "X10",
+          "touch": "01110"
+        },
+        {
+          "body": "X11",
+          "touch": "00011"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "X11",
+        "kind": "redstone_block",
+        "on": 4,
+        "off_by": 0,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T11",
+      "slot": 1,
+      "kind": "push",
+      "firing_slot": 1,
+      "piston_moves": [
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "X11",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "T11",
+        "kind": "redstone_block",
+        "on": 1,
+        "off_by": 2,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T11",
+      "slot": 2,
+      "kind": "push",
+      "firing_slot": 2,
+      "piston_moves": [
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "T10",
+          "touch": "11001"
+        },
+        {
+          "body": "T11",
+          "touch": "01100"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "T11",
+        "kind": "redstone_block",
+        "on": 2,
+        "off_by": 3,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T11",
+      "slot": 3,
+      "kind": "pull",
+      "firing_slot": 2,
+      "piston_moves": [
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "G11",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H11",
+        "kind": "redstone_block",
+        "on": 2,
+        "off_by": 3,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G11",
+      "slot": 0,
+      "kind": "push",
+      "firing_slot": 0,
+      "piston_moves": [
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "T11",
+          "touch": "00111"
+        },
+        {
+          "body": "G11",
+          "touch": "10001"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G11",
+        "kind": "redstone_block",
+        "on": 0,
+        "off_by": 1,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G11",
+      "slot": 1,
+      "kind": "pull",
+      "firing_slot": 0,
+      "piston_moves": [
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "H11",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H11",
+        "kind": "observer",
+        "on": 0,
+        "off_by": 1,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G11",
+      "slot": 4,
+      "kind": "push",
+      "firing_slot": 4,
+      "piston_moves": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "T11",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G11",
+        "kind": "redstone_block",
+        "on": 4,
+        "off_by": 0,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H11",
+      "slot": 2,
+      "kind": "push",
+      "firing_slot": 2,
+      "piston_moves": [
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "G11",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H11",
+        "kind": "redstone_block",
+        "on": 2,
+        "off_by": 3,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H11",
+      "slot": 3,
+      "kind": "push",
+      "firing_slot": 3,
+      "piston_moves": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "G11",
+          "touch": "11100"
+        },
+        {
+          "body": "H11",
+          "touch": "00110"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H11",
+        "kind": "redstone_block",
+        "on": 3,
+        "off_by": 4,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H11",
+      "slot": 4,
+      "kind": "push",
+      "firing_slot": 4,
+      "piston_moves": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "G11",
+          "touch": "01100"
+        },
+        {
+          "body": "H11",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H11",
+        "kind": "redstone_block",
+        "on": 4,
+        "off_by": 0,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X12",
+      "slot": 1,
+      "kind": "push",
+      "firing_slot": 1,
+      "piston_moves": [
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "X11",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "X12",
+        "kind": "redstone_block",
+        "on": 1,
+        "off_by": 2,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X12",
+      "slot": 2,
+      "kind": "push",
+      "firing_slot": 2,
+      "piston_moves": [
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "X11",
+          "touch": "11001"
+        },
+        {
+          "body": "X12",
+          "touch": "01100"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "X12",
+        "kind": "redstone_block",
+        "on": 2,
+        "off_by": 3,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X12",
+      "slot": 3,
+      "kind": "pull",
+      "firing_slot": 2,
+      "piston_moves": [
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "T12",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G12",
+        "kind": "redstone_block",
+        "on": 2,
+        "off_by": 3,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T12",
+      "slot": 0,
+      "kind": "push",
+      "firing_slot": 0,
+      "piston_moves": [
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "X12",
+          "touch": "00111"
+        },
+        {
+          "body": "T12",
+          "touch": "10001"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "T12",
+        "kind": "redstone_block",
+        "on": 0,
+        "off_by": 1,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T12",
+      "slot": 1,
+      "kind": "pull",
+      "firing_slot": 0,
+      "piston_moves": [
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "G12",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H12",
+        "kind": "redstone_block",
+        "on": 0,
+        "off_by": 1,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T12",
+      "slot": 4,
+      "kind": "push",
+      "firing_slot": 4,
+      "piston_moves": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "T11",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "T12",
+        "kind": "redstone_block",
+        "on": 4,
+        "off_by": 0,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G12",
+      "slot": 2,
+      "kind": "push",
+      "firing_slot": 2,
+      "piston_moves": [
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "T12",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G12",
+        "kind": "redstone_block",
+        "on": 2,
+        "off_by": 3,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G12",
+      "slot": 3,
+      "kind": "push",
+      "firing_slot": 3,
+      "piston_moves": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "T12",
+          "touch": "11100"
+        },
+        {
+          "body": "G12",
+          "touch": "00110"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G12",
+        "kind": "redstone_block",
+        "on": 3,
+        "off_by": 4,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G12",
+      "slot": 4,
+      "kind": "pull",
+      "firing_slot": 3,
+      "piston_moves": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "H12",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H12",
+        "kind": "observer",
+        "on": 3,
+        "off_by": 4,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H12",
+      "slot": 0,
+      "kind": "push",
+      "firing_slot": 0,
+      "piston_moves": [
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "G12",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H12",
+        "kind": "redstone_block",
+        "on": 0,
+        "off_by": 1,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H12",
+      "slot": 1,
+      "kind": "push",
+      "firing_slot": 1,
+      "piston_moves": [
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "G12",
+          "touch": "10011"
+        },
+        {
+          "body": "H12",
+          "touch": "11000"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H12",
+        "kind": "redstone_block",
+        "on": 1,
+        "off_by": 2,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H12",
+      "slot": 2,
+      "kind": "push",
+      "firing_slot": 2,
+      "piston_moves": [
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "G12",
+          "touch": "10001"
+        },
+        {
+          "body": "H12",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H12",
+        "kind": "redstone_block",
+        "on": 2,
+        "off_by": 3,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X13",
+      "slot": 0,
+      "kind": "push",
+      "firing_slot": 0,
+      "piston_moves": [
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "X12",
+          "touch": "00111"
+        },
+        {
+          "body": "X13",
+          "touch": "10001"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "X13",
+        "kind": "redstone_block",
+        "on": 0,
+        "off_by": 1,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X13",
+      "slot": 1,
+      "kind": "pull",
+      "firing_slot": 0,
+      "piston_moves": [
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "T13",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G13",
+        "kind": "redstone_block",
+        "on": 0,
+        "off_by": 1,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X13",
+      "slot": 4,
+      "kind": "push",
+      "firing_slot": 4,
+      "piston_moves": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "X12",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "X13",
+        "kind": "redstone_block",
+        "on": 4,
+        "off_by": 0,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T13",
+      "slot": 2,
+      "kind": "push",
+      "firing_slot": 2,
+      "piston_moves": [
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "X13",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "T13",
+        "kind": "redstone_block",
+        "on": 2,
+        "off_by": 3,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T13",
+      "slot": 3,
+      "kind": "push",
+      "firing_slot": 3,
+      "piston_moves": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "T12",
+          "touch": "11100"
+        },
+        {
+          "body": "T13",
+          "touch": "00110"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "T13",
+        "kind": "redstone_block",
+        "on": 3,
+        "off_by": 4,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T13",
+      "slot": 4,
+      "kind": "pull",
+      "firing_slot": 3,
+      "piston_moves": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "G13",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H13",
+        "kind": "redstone_block",
+        "on": 3,
+        "off_by": 4,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G13",
+      "slot": 0,
+      "kind": "push",
+      "firing_slot": 0,
+      "piston_moves": [
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "T13",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G13",
+        "kind": "redstone_block",
+        "on": 0,
+        "off_by": 1,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G13",
+      "slot": 1,
+      "kind": "push",
+      "firing_slot": 1,
+      "piston_moves": [
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "T13",
+          "touch": "10011"
+        },
+        {
+          "body": "G13",
+          "touch": "11000"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G13",
+        "kind": "redstone_block",
+        "on": 1,
+        "off_by": 2,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G13",
+      "slot": 2,
+      "kind": "pull",
+      "firing_slot": 1,
+      "piston_moves": [
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "H13",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H13",
+        "kind": "observer",
+        "on": 1,
+        "off_by": 2,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H13",
+      "slot": 0,
+      "kind": "push",
+      "firing_slot": 0,
+      "piston_moves": [
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "G13",
+          "touch": "00110"
+        },
+        {
+          "body": "H13",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H13",
+        "kind": "redstone_block",
+        "on": 0,
+        "off_by": 1,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H13",
+      "slot": 3,
+      "kind": "push",
+      "firing_slot": 3,
+      "piston_moves": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "G13",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H13",
+        "kind": "redstone_block",
+        "on": 3,
+        "off_by": 4,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H13",
+      "slot": 4,
+      "kind": "push",
+      "firing_slot": 4,
+      "piston_moves": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "G13",
+          "touch": "01110"
+        },
+        {
+          "body": "H13",
+          "touch": "00011"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H13",
+        "kind": "redstone_block",
+        "on": 4,
+        "off_by": 0,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X14",
+      "slot": 2,
+      "kind": "push",
+      "firing_slot": 2,
+      "piston_moves": [
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "X13",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "X14",
+        "kind": "redstone_block",
+        "on": 2,
+        "off_by": 3,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X14",
+      "slot": 3,
+      "kind": "push",
+      "firing_slot": 3,
+      "piston_moves": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "X13",
+          "touch": "11100"
+        },
+        {
+          "body": "X14",
+          "touch": "00110"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "X14",
+        "kind": "redstone_block",
+        "on": 3,
+        "off_by": 4,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X14",
+      "slot": 4,
+      "kind": "pull",
+      "firing_slot": 3,
+      "piston_moves": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "T14",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G14",
+        "kind": "redstone_block",
+        "on": 3,
+        "off_by": 4,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T14",
+      "slot": 0,
+      "kind": "push",
+      "firing_slot": 0,
+      "piston_moves": [
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "X14",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "T14",
+        "kind": "redstone_block",
+        "on": 0,
+        "off_by": 1,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T14",
+      "slot": 1,
+      "kind": "push",
+      "firing_slot": 1,
+      "piston_moves": [
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "T13",
+          "touch": "10011"
+        },
+        {
+          "body": "T14",
+          "touch": "11000"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "T14",
+        "kind": "redstone_block",
+        "on": 1,
+        "off_by": 2,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T14",
+      "slot": 2,
+      "kind": "pull",
+      "firing_slot": 1,
+      "piston_moves": [
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "G14",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H14",
+        "kind": "redstone_block",
+        "on": 1,
+        "off_by": 2,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G14",
+      "slot": 0,
+      "kind": "pull",
+      "firing_slot": 4,
+      "piston_moves": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "H14",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H14",
+        "kind": "observer",
+        "on": 4,
+        "off_by": 0,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G14",
+      "slot": 3,
+      "kind": "push",
+      "firing_slot": 3,
+      "piston_moves": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "T14",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G14",
+        "kind": "redstone_block",
+        "on": 3,
+        "off_by": 4,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G14",
+      "slot": 4,
+      "kind": "push",
+      "firing_slot": 4,
+      "piston_moves": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "T14",
+          "touch": "01110"
+        },
+        {
+          "body": "G14",
+          "touch": "00011"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G14",
+        "kind": "redstone_block",
+        "on": 4,
+        "off_by": 0,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H14",
+      "slot": 1,
+      "kind": "push",
+      "firing_slot": 1,
+      "piston_moves": [
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "G14",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H14",
+        "kind": "redstone_block",
+        "on": 1,
+        "off_by": 2,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H14",
+      "slot": 2,
+      "kind": "push",
+      "firing_slot": 2,
+      "piston_moves": [
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "G14",
+          "touch": "11001"
+        },
+        {
+          "body": "H14",
+          "touch": "01100"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H14",
+        "kind": "redstone_block",
+        "on": 2,
+        "off_by": 3,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H14",
+      "slot": 3,
+      "kind": "push",
+      "firing_slot": 3,
+      "piston_moves": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "G14",
+          "touch": "11000"
+        },
+        {
+          "body": "H14",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H14",
+        "kind": "redstone_block",
+        "on": 3,
+        "off_by": 4,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X15",
+      "slot": 0,
+      "kind": "push",
+      "firing_slot": 0,
+      "piston_moves": [
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "X14",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "X15",
+        "kind": "redstone_block",
+        "on": 0,
+        "off_by": 1,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X15",
+      "slot": 1,
+      "kind": "push",
+      "firing_slot": 1,
+      "piston_moves": [
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "X15",
+          "touch": "11000"
+        },
+        {
+          "body": "X14",
+          "touch": "10011"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "X15",
+        "kind": "redstone_block",
+        "on": 1,
+        "off_by": 2,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X15",
+      "slot": 2,
+      "kind": "pull",
+      "firing_slot": 1,
+      "piston_moves": [
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "T15",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G15",
+        "kind": "redstone_block",
+        "on": 1,
+        "off_by": 2,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T15",
+      "slot": 0,
+      "kind": "pull",
+      "firing_slot": 4,
+      "piston_moves": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "G15",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H15",
+        "kind": "redstone_block",
+        "on": 4,
+        "off_by": 0,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T15",
+      "slot": 3,
+      "kind": "push",
+      "firing_slot": 3,
+      "piston_moves": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "X15",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "T15",
+        "kind": "redstone_block",
+        "on": 3,
+        "off_by": 4,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T15",
+      "slot": 4,
+      "kind": "push",
+      "firing_slot": 4,
+      "piston_moves": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "T15",
+          "touch": "00011"
+        },
+        {
+          "body": "T14",
+          "touch": "01110"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "T15",
+        "kind": "redstone_block",
+        "on": 4,
+        "off_by": 0,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G15",
+      "slot": 1,
+      "kind": "push",
+      "firing_slot": 1,
+      "piston_moves": [
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "T15",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G15",
+        "kind": "redstone_block",
+        "on": 1,
+        "off_by": 2,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G15",
+      "slot": 2,
+      "kind": "push",
+      "firing_slot": 2,
+      "piston_moves": [
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "T15",
+          "touch": "11001"
+        },
+        {
+          "body": "G15",
+          "touch": "01100"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G15",
+        "kind": "redstone_block",
+        "on": 2,
+        "off_by": 3,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G15",
+      "slot": 3,
+      "kind": "pull",
+      "firing_slot": 2,
+      "piston_moves": [
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "H15",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H15",
+        "kind": "observer",
+        "on": 2,
+        "off_by": 3,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H15",
+      "slot": 0,
+      "kind": "push",
+      "firing_slot": 0,
+      "piston_moves": [
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "G15",
+          "touch": "00111"
+        },
+        {
+          "body": "H15",
+          "touch": "10001"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H15",
+        "kind": "redstone_block",
+        "on": 0,
+        "off_by": 1,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H15",
+      "slot": 1,
+      "kind": "push",
+      "firing_slot": 1,
+      "piston_moves": [
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "G15",
+          "touch": "00011"
+        },
+        {
+          "body": "H15",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H15",
+        "kind": "redstone_block",
+        "on": 1,
+        "off_by": 2,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H15",
+      "slot": 4,
+      "kind": "push",
+      "firing_slot": 4,
+      "piston_moves": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "G15",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H15",
+        "kind": "redstone_block",
+        "on": 4,
+        "off_by": 0,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X16",
+      "slot": 0,
+      "kind": "pull",
+      "firing_slot": 4,
+      "piston_moves": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "T16",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G16",
+        "kind": "redstone_block",
+        "on": 4,
+        "off_by": 0,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X16",
+      "slot": 3,
+      "kind": "push",
+      "firing_slot": 3,
+      "piston_moves": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "X15",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "X16",
+        "kind": "redstone_block",
+        "on": 3,
+        "off_by": 4,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X16",
+      "slot": 4,
+      "kind": "push",
+      "firing_slot": 4,
+      "piston_moves": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "X15",
+          "touch": "01110"
+        },
+        {
+          "body": "X16",
+          "touch": "00011"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "X16",
+        "kind": "redstone_block",
+        "on": 4,
+        "off_by": 0,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T16",
+      "slot": 1,
+      "kind": "push",
+      "firing_slot": 1,
+      "piston_moves": [
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "X16",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "T16",
+        "kind": "redstone_block",
+        "on": 1,
+        "off_by": 2,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T16",
+      "slot": 2,
+      "kind": "push",
+      "firing_slot": 2,
+      "piston_moves": [
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "T15",
+          "touch": "11001"
+        },
+        {
+          "body": "T16",
+          "touch": "01100"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "T16",
+        "kind": "redstone_block",
+        "on": 2,
+        "off_by": 3,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T16",
+      "slot": 3,
+      "kind": "pull",
+      "firing_slot": 2,
+      "piston_moves": [
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "G16",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H16",
+        "kind": "redstone_block",
+        "on": 2,
+        "off_by": 3,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G16",
+      "slot": 0,
+      "kind": "push",
+      "firing_slot": 0,
+      "piston_moves": [
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "T16",
+          "touch": "00111"
+        },
+        {
+          "body": "G16",
+          "touch": "10001"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G16",
+        "kind": "redstone_block",
+        "on": 0,
+        "off_by": 1,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G16",
+      "slot": 1,
+      "kind": "pull",
+      "firing_slot": 0,
+      "piston_moves": [
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "H16",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H16",
+        "kind": "observer",
+        "on": 0,
+        "off_by": 1,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G16",
+      "slot": 4,
+      "kind": "push",
+      "firing_slot": 4,
+      "piston_moves": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "T16",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G16",
+        "kind": "redstone_block",
+        "on": 4,
+        "off_by": 0,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H16",
+      "slot": 2,
+      "kind": "push",
+      "firing_slot": 2,
+      "piston_moves": [
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "G16",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H16",
+        "kind": "redstone_block",
+        "on": 2,
+        "off_by": 3,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H16",
+      "slot": 3,
+      "kind": "push",
+      "firing_slot": 3,
+      "piston_moves": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "G16",
+          "touch": "11100"
+        },
+        {
+          "body": "H16",
+          "touch": "00110"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H16",
+        "kind": "redstone_block",
+        "on": 3,
+        "off_by": 4,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H16",
+      "slot": 4,
+      "kind": "push",
+      "firing_slot": 4,
+      "piston_moves": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "G16",
+          "touch": "01100"
+        },
+        {
+          "body": "H16",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H16",
+        "kind": "redstone_block",
+        "on": 4,
+        "off_by": 0,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X17",
+      "slot": 1,
+      "kind": "push",
+      "firing_slot": 1,
+      "piston_moves": [
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "X16",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "X17",
+        "kind": "redstone_block",
+        "on": 1,
+        "off_by": 2,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X17",
+      "slot": 2,
+      "kind": "push",
+      "firing_slot": 2,
+      "piston_moves": [
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "X16",
+          "touch": "11001"
+        },
+        {
+          "body": "X17",
+          "touch": "01100"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "X17",
+        "kind": "redstone_block",
+        "on": 2,
+        "off_by": 3,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X17",
+      "slot": 3,
+      "kind": "pull",
+      "firing_slot": 2,
+      "piston_moves": [
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "T17",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G17",
+        "kind": "redstone_block",
+        "on": 2,
+        "off_by": 3,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T17",
+      "slot": 0,
+      "kind": "push",
+      "firing_slot": 0,
+      "piston_moves": [
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "X17",
+          "touch": "00111"
+        },
+        {
+          "body": "T17",
+          "touch": "10001"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "T17",
+        "kind": "redstone_block",
+        "on": 0,
+        "off_by": 1,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T17",
+      "slot": 1,
+      "kind": "pull",
+      "firing_slot": 0,
+      "piston_moves": [
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "G17",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H17",
+        "kind": "redstone_block",
+        "on": 0,
+        "off_by": 1,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T17",
+      "slot": 4,
+      "kind": "push",
+      "firing_slot": 4,
+      "piston_moves": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "T16",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "T17",
+        "kind": "redstone_block",
+        "on": 4,
+        "off_by": 0,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G17",
+      "slot": 2,
+      "kind": "push",
+      "firing_slot": 2,
+      "piston_moves": [
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "T17",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G17",
+        "kind": "redstone_block",
+        "on": 2,
+        "off_by": 3,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G17",
+      "slot": 3,
+      "kind": "push",
+      "firing_slot": 3,
+      "piston_moves": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "T17",
+          "touch": "11100"
+        },
+        {
+          "body": "G17",
+          "touch": "00110"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G17",
+        "kind": "redstone_block",
+        "on": 3,
+        "off_by": 4,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G17",
+      "slot": 4,
+      "kind": "pull",
+      "firing_slot": 3,
+      "piston_moves": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "H17",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H17",
+        "kind": "observer",
+        "on": 3,
+        "off_by": 4,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H17",
+      "slot": 0,
+      "kind": "push",
+      "firing_slot": 0,
+      "piston_moves": [
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "G17",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H17",
+        "kind": "redstone_block",
+        "on": 0,
+        "off_by": 1,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H17",
+      "slot": 1,
+      "kind": "push",
+      "firing_slot": 1,
+      "piston_moves": [
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "G17",
+          "touch": "10011"
+        },
+        {
+          "body": "H17",
+          "touch": "11000"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H17",
+        "kind": "redstone_block",
+        "on": 1,
+        "off_by": 2,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H17",
+      "slot": 2,
+      "kind": "push",
+      "firing_slot": 2,
+      "piston_moves": [
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "G17",
+          "touch": "10001"
+        },
+        {
+          "body": "H17",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H17",
+        "kind": "redstone_block",
+        "on": 2,
+        "off_by": 3,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X18",
+      "slot": 0,
+      "kind": "push",
+      "firing_slot": 0,
+      "piston_moves": [
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "X17",
+          "touch": "00111"
+        },
+        {
+          "body": "X18",
+          "touch": "10001"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "X18",
+        "kind": "redstone_block",
+        "on": 0,
+        "off_by": 1,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X18",
+      "slot": 1,
+      "kind": "pull",
+      "firing_slot": 0,
+      "piston_moves": [
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "T18",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G18",
+        "kind": "redstone_block",
+        "on": 0,
+        "off_by": 1,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X18",
+      "slot": 4,
+      "kind": "push",
+      "firing_slot": 4,
+      "piston_moves": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "X17",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "X18",
+        "kind": "redstone_block",
+        "on": 4,
+        "off_by": 0,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T18",
+      "slot": 2,
+      "kind": "push",
+      "firing_slot": 2,
+      "piston_moves": [
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "X18",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "T18",
+        "kind": "redstone_block",
+        "on": 2,
+        "off_by": 3,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T18",
+      "slot": 3,
+      "kind": "push",
+      "firing_slot": 3,
+      "piston_moves": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "T17",
+          "touch": "11100"
+        },
+        {
+          "body": "T18",
+          "touch": "00110"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "T18",
+        "kind": "redstone_block",
+        "on": 3,
+        "off_by": 4,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T18",
+      "slot": 4,
+      "kind": "pull",
+      "firing_slot": 3,
+      "piston_moves": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "G18",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H18",
+        "kind": "redstone_block",
+        "on": 3,
+        "off_by": 4,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G18",
+      "slot": 0,
+      "kind": "push",
+      "firing_slot": 0,
+      "piston_moves": [
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "T18",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G18",
+        "kind": "redstone_block",
+        "on": 0,
+        "off_by": 1,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G18",
+      "slot": 1,
+      "kind": "push",
+      "firing_slot": 1,
+      "piston_moves": [
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "T18",
+          "touch": "10011"
+        },
+        {
+          "body": "G18",
+          "touch": "11000"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G18",
+        "kind": "redstone_block",
+        "on": 1,
+        "off_by": 2,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G18",
+      "slot": 2,
+      "kind": "pull",
+      "firing_slot": 1,
+      "piston_moves": [
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "H18",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H18",
+        "kind": "observer",
+        "on": 1,
+        "off_by": 2,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H18",
+      "slot": 0,
+      "kind": "push",
+      "firing_slot": 0,
+      "piston_moves": [
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "G18",
+          "touch": "00110"
+        },
+        {
+          "body": "H18",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H18",
+        "kind": "redstone_block",
+        "on": 0,
+        "off_by": 1,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H18",
+      "slot": 3,
+      "kind": "push",
+      "firing_slot": 3,
+      "piston_moves": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "G18",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H18",
+        "kind": "redstone_block",
+        "on": 3,
+        "off_by": 4,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H18",
+      "slot": 4,
+      "kind": "push",
+      "firing_slot": 4,
+      "piston_moves": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "G18",
+          "touch": "01110"
+        },
+        {
+          "body": "H18",
+          "touch": "00011"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H18",
+        "kind": "redstone_block",
+        "on": 4,
+        "off_by": 0,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X19",
+      "slot": 2,
+      "kind": "push",
+      "firing_slot": 2,
+      "piston_moves": [
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "X18",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "X19",
+        "kind": "redstone_block",
+        "on": 2,
+        "off_by": 3,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X19",
+      "slot": 3,
+      "kind": "push",
+      "firing_slot": 3,
+      "piston_moves": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "X18",
+          "touch": "11100"
+        },
+        {
+          "body": "X19",
+          "touch": "00110"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "X19",
+        "kind": "redstone_block",
+        "on": 3,
+        "off_by": 4,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "X19",
+      "slot": 4,
+      "kind": "pull",
+      "firing_slot": 3,
+      "piston_moves": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "T19",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G19",
+        "kind": "redstone_block",
+        "on": 3,
+        "off_by": 4,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T19",
+      "slot": 0,
+      "kind": "push",
+      "firing_slot": 0,
+      "piston_moves": [
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "X19",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "T19",
+        "kind": "redstone_block",
+        "on": 0,
+        "off_by": 1,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T19",
+      "slot": 1,
+      "kind": "push",
+      "firing_slot": 1,
+      "piston_moves": [
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "T18",
+          "touch": "10011"
+        },
+        {
+          "body": "T19",
+          "touch": "11000"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "T19",
+        "kind": "redstone_block",
+        "on": 1,
+        "off_by": 2,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "T19",
+      "slot": 2,
+      "kind": "pull",
+      "firing_slot": 1,
+      "piston_moves": [
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "G19",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H19",
+        "kind": "redstone_block",
+        "on": 1,
+        "off_by": 2,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G19",
+      "slot": 0,
+      "kind": "pull",
+      "firing_slot": 4,
+      "piston_moves": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "H19",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H19",
+        "kind": "observer",
+        "on": 4,
+        "off_by": 0,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G19",
+      "slot": 3,
+      "kind": "push",
+      "firing_slot": 3,
+      "piston_moves": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "T19",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G19",
+        "kind": "redstone_block",
+        "on": 3,
+        "off_by": 4,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "G19",
+      "slot": 4,
+      "kind": "push",
+      "firing_slot": 4,
+      "piston_moves": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "T19",
+          "touch": "01110"
+        },
+        {
+          "body": "G19",
+          "touch": "00011"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "G19",
+        "kind": "redstone_block",
+        "on": 4,
+        "off_by": 0,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H19",
+      "slot": 1,
+      "kind": "push",
+      "firing_slot": 1,
+      "piston_moves": [
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "G19",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H19",
+        "kind": "redstone_block",
+        "on": 1,
+        "off_by": 2,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H19",
+      "slot": 2,
+      "kind": "push",
+      "firing_slot": 2,
+      "piston_moves": [
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "carriers": [
+        {
+          "body": "G19",
+          "touch": "11001"
+        },
+        {
+          "body": "H19",
+          "touch": "01100"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H19",
+        "kind": "redstone_block",
+        "on": 2,
+        "off_by": 3,
+        "spatial_and_order_verified": false
+      }
+    },
+    {
+      "target": "H19",
+      "slot": 3,
+      "kind": "push",
+      "firing_slot": 3,
+      "piston_moves": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "carriers": [
+        {
+          "body": "G19",
+          "touch": "11000"
+        },
+        {
+          "body": "H19",
+          "touch": "11111"
+        }
+      ],
+      "power_obligation": {
+        "source_body": "H19",
+        "kind": "redstone_block",
+        "on": 3,
+        "off_by": 4,
+        "spatial_and_order_verified": false
+      }
+    }
+  ],
+  "unresolved": [
+    "closed fourfold geometry and collision clearance",
+    "glue material compatibility and required contact distances",
+    "source placement and switch-off including normal-column identity races",
+    "all sticky power and recovery in actual natural simulation",
+    "complete independent80 and80x10000 verification"
+  ],
+  "source_sha256": {
+    "stacked_plan.json": "70a736be02232829c2d544d8c1c7de41b6b7d81ac3746f36880fca4a58e43a49",
+    "layered.py": "4933745207f1d2f78a5db6a199119f196b16e4ddb48d740c2f72578fb9f28651",
+    "plan_quarter_ring.py": "522a07a990dc7f3f44f7ad42f13b404e6daeac56d8c9109e3724cce0e3a22a40"
+  }
+}

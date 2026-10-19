@@ -1,0 +1,1327 @@
+{
+  "scope": "short strict local result only; independent and long checks pending; not a natural closed flyer",
+  "flyer_parameters": {
+    "phase_x": 0,
+    "phase_z": 0,
+    "rng_state": 0,
+    "push_limit": 11
+  },
+  "cells": [
+    [
+      14,
+      0,
+      16,
+      2
+    ],
+    [
+      14,
+      3,
+      15,
+      2
+    ],
+    [
+      14,
+      3,
+      16,
+      9
+    ],
+    [
+      15,
+      1,
+      16,
+      2057
+    ],
+    [
+      16,
+      1,
+      16,
+      10
+    ],
+    [
+      16,
+      2,
+      16,
+      6
+    ],
+    [
+      17,
+      0,
+      16,
+      9
+    ],
+    [
+      17,
+      1,
+      15,
+      9
+    ],
+    [
+      17,
+      1,
+      16,
+      1
+    ],
+    [
+      17,
+      2,
+      16,
+      1
+    ],
+    [
+      17,
+      3,
+      15,
+      297
+    ],
+    [
+      17,
+      3,
+      16,
+      1
+    ],
+    [
+      18,
+      0,
+      15,
+      6
+    ],
+    [
+      18,
+      1,
+      16,
+      1
+    ],
+    [
+      18,
+      2,
+      15,
+      6
+    ],
+    [
+      18,
+      2,
+      16,
+      10
+    ],
+    [
+      19,
+      0,
+      15,
+      2
+    ],
+    [
+      19,
+      0,
+      16,
+      2
+    ],
+    [
+      19,
+      1,
+      15,
+      2
+    ],
+    [
+      19,
+      1,
+      16,
+      1
+    ],
+    [
+      19,
+      2,
+      15,
+      2
+    ],
+    [
+      19,
+      2,
+      16,
+      2345
+    ],
+    [
+      20,
+      0,
+      15,
+      2
+    ],
+    [
+      20,
+      1,
+      16,
+      327
+    ],
+    [
+      21,
+      0,
+      15,
+      2
+    ],
+    [
+      21,
+      1,
+      15,
+      1
+    ],
+    [
+      21,
+      2,
+      15,
+      297
+    ],
+    [
+      22,
+      0,
+      15,
+      71
+    ]
+  ],
+  "piston_owners": [],
+  "content_hash": "db3446110b2e698ba1fa2f61be9ca05238b178faea6852516546a60dc11d3ba8",
+  "contracts": {
+    "before_natural": {
+      "version": 1,
+      "name": "joint_tip_layout",
+      "flyer": "problem.flyer",
+      "prescribed_script": "drive.txt",
+      "prescribed_order": "before_natural",
+      "period_ticks": 10,
+      "advance": 3,
+      "cycles": 3,
+      "recurrence": "bounded",
+      "ports": [
+        {
+          "name": "T0",
+          "at": [
+            17,
+            1,
+            16
+          ],
+          "word": "mwwmm",
+          "role": "output"
+        },
+        {
+          "name": "T1",
+          "at": [
+            17,
+            2,
+            16
+          ],
+          "word": "mwwmm",
+          "role": "output"
+        },
+        {
+          "name": "T2",
+          "at": [
+            17,
+            3,
+            16
+          ],
+          "word": "mwwmm",
+          "role": "output"
+        },
+        {
+          "name": "T3",
+          "at": [
+            18,
+            1,
+            16
+          ],
+          "word": "mwwmm",
+          "role": "output"
+        },
+        {
+          "name": "T4",
+          "at": [
+            19,
+            1,
+            16
+          ],
+          "word": "mwwmm",
+          "role": "output"
+        },
+        {
+          "name": "G0",
+          "at": [
+            19,
+            0,
+            15
+          ],
+          "word": "wmmmw",
+          "role": "output"
+        },
+        {
+          "name": "G1",
+          "at": [
+            19,
+            0,
+            16
+          ],
+          "word": "wmmmw",
+          "role": "output"
+        },
+        {
+          "name": "G2",
+          "at": [
+            19,
+            1,
+            15
+          ],
+          "word": "wmmmw",
+          "role": "output"
+        },
+        {
+          "name": "G3",
+          "at": [
+            19,
+            2,
+            15
+          ],
+          "word": "wmmmw",
+          "role": "output"
+        },
+        {
+          "name": "G4",
+          "at": [
+            20,
+            0,
+            15
+          ],
+          "word": "wmmmw",
+          "role": "output"
+        },
+        {
+          "name": "G5",
+          "at": [
+            21,
+            0,
+            15
+          ],
+          "word": "wmmmw",
+          "role": "output"
+        },
+        {
+          "name": "back",
+          "at": [
+            14,
+            3,
+            15
+          ],
+          "word": "mmmww",
+          "role": "input"
+        },
+        {
+          "name": "neighbor",
+          "at": [
+            14,
+            0,
+            16
+          ],
+          "word": "mmmww",
+          "role": "input"
+        },
+        {
+          "name": "tip",
+          "at": [
+            21,
+            1,
+            15
+          ],
+          "word": "mmwwm",
+          "role": "input"
+        }
+      ],
+      "required_cells": [
+        {
+          "at": [
+            14,
+            3,
+            15
+          ],
+          "cell": 2
+        },
+        {
+          "at": [
+            14,
+            0,
+            16
+          ],
+          "cell": 2
+        },
+        {
+          "at": [
+            15,
+            1,
+            16
+          ],
+          "cell": 2057
+        },
+        {
+          "at": [
+            14,
+            3,
+            16
+          ],
+          "cell": 9
+        },
+        {
+          "at": [
+            18,
+            0,
+            15
+          ],
+          "cell": 6
+        },
+        {
+          "at": [
+            19,
+            0,
+            15
+          ],
+          "cell": 2
+        },
+        {
+          "at": [
+            20,
+            0,
+            15
+          ],
+          "cell": 2
+        },
+        {
+          "at": [
+            21,
+            0,
+            15
+          ],
+          "cell": 2
+        },
+        {
+          "at": [
+            22,
+            0,
+            15
+          ],
+          "cell": 71
+        },
+        {
+          "at": [
+            17,
+            1,
+            15
+          ],
+          "cell": 9
+        },
+        {
+          "at": [
+            19,
+            1,
+            15
+          ],
+          "cell": 2
+        },
+        {
+          "at": [
+            21,
+            1,
+            15
+          ],
+          "cell": 1
+        },
+        {
+          "at": [
+            18,
+            2,
+            15
+          ],
+          "cell": 6
+        },
+        {
+          "at": [
+            19,
+            2,
+            15
+          ],
+          "cell": 2
+        },
+        {
+          "at": [
+            21,
+            2,
+            15
+          ],
+          "cell": 297
+        },
+        {
+          "at": [
+            17,
+            3,
+            15
+          ],
+          "cell": 297
+        },
+        {
+          "at": [
+            17,
+            0,
+            16
+          ],
+          "cell": 9
+        },
+        {
+          "at": [
+            19,
+            0,
+            16
+          ],
+          "cell": 2
+        },
+        {
+          "at": [
+            17,
+            1,
+            16
+          ],
+          "cell": 1
+        },
+        {
+          "at": [
+            18,
+            1,
+            16
+          ],
+          "cell": 1
+        },
+        {
+          "at": [
+            19,
+            1,
+            16
+          ],
+          "cell": 1
+        },
+        {
+          "at": [
+            20,
+            1,
+            16
+          ],
+          "cell": 327
+        },
+        {
+          "at": [
+            16,
+            2,
+            16
+          ],
+          "cell": 6
+        },
+        {
+          "at": [
+            17,
+            2,
+            16
+          ],
+          "cell": 1
+        },
+        {
+          "at": [
+            19,
+            2,
+            16
+          ],
+          "cell": 2345
+        },
+        {
+          "at": [
+            17,
+            3,
+            16
+          ],
+          "cell": 1
+        }
+      ],
+      "boundary_envelope": {
+        "min": [
+          9,
+          -5,
+          10
+        ],
+        "max": [
+          27,
+          8,
+          21
+        ]
+      }
+    },
+    "after_natural": {
+      "version": 1,
+      "name": "joint_tip_layout",
+      "flyer": "problem.flyer",
+      "prescribed_script": "drive.txt",
+      "prescribed_order": "after_natural",
+      "period_ticks": 10,
+      "advance": 3,
+      "cycles": 3,
+      "recurrence": "bounded",
+      "ports": [
+        {
+          "name": "T0",
+          "at": [
+            17,
+            1,
+            16
+          ],
+          "word": "mwwmm",
+          "role": "output"
+        },
+        {
+          "name": "T1",
+          "at": [
+            17,
+            2,
+            16
+          ],
+          "word": "mwwmm",
+          "role": "output"
+        },
+        {
+          "name": "T2",
+          "at": [
+            17,
+            3,
+            16
+          ],
+          "word": "mwwmm",
+          "role": "output"
+        },
+        {
+          "name": "T3",
+          "at": [
+            18,
+            1,
+            16
+          ],
+          "word": "mwwmm",
+          "role": "output"
+        },
+        {
+          "name": "T4",
+          "at": [
+            19,
+            1,
+            16
+          ],
+          "word": "mwwmm",
+          "role": "output"
+        },
+        {
+          "name": "G0",
+          "at": [
+            19,
+            0,
+            15
+          ],
+          "word": "wmmmw",
+          "role": "output"
+        },
+        {
+          "name": "G1",
+          "at": [
+            19,
+            0,
+            16
+          ],
+          "word": "wmmmw",
+          "role": "output"
+        },
+        {
+          "name": "G2",
+          "at": [
+            19,
+            1,
+            15
+          ],
+          "word": "wmmmw",
+          "role": "output"
+        },
+        {
+          "name": "G3",
+          "at": [
+            19,
+            2,
+            15
+          ],
+          "word": "wmmmw",
+          "role": "output"
+        },
+        {
+          "name": "G4",
+          "at": [
+            20,
+            0,
+            15
+          ],
+          "word": "wmmmw",
+          "role": "output"
+        },
+        {
+          "name": "G5",
+          "at": [
+            21,
+            0,
+            15
+          ],
+          "word": "wmmmw",
+          "role": "output"
+        },
+        {
+          "name": "back",
+          "at": [
+            14,
+            3,
+            15
+          ],
+          "word": "mmmww",
+          "role": "input"
+        },
+        {
+          "name": "neighbor",
+          "at": [
+            14,
+            0,
+            16
+          ],
+          "word": "mmmww",
+          "role": "input"
+        },
+        {
+          "name": "tip",
+          "at": [
+            21,
+            1,
+            15
+          ],
+          "word": "mmwwm",
+          "role": "input"
+        }
+      ],
+      "required_cells": [
+        {
+          "at": [
+            14,
+            3,
+            15
+          ],
+          "cell": 2
+        },
+        {
+          "at": [
+            14,
+            0,
+            16
+          ],
+          "cell": 2
+        },
+        {
+          "at": [
+            15,
+            1,
+            16
+          ],
+          "cell": 2057
+        },
+        {
+          "at": [
+            14,
+            3,
+            16
+          ],
+          "cell": 9
+        },
+        {
+          "at": [
+            18,
+            0,
+            15
+          ],
+          "cell": 6
+        },
+        {
+          "at": [
+            19,
+            0,
+            15
+          ],
+          "cell": 2
+        },
+        {
+          "at": [
+            20,
+            0,
+            15
+          ],
+          "cell": 2
+        },
+        {
+          "at": [
+            21,
+            0,
+            15
+          ],
+          "cell": 2
+        },
+        {
+          "at": [
+            22,
+            0,
+            15
+          ],
+          "cell": 71
+        },
+        {
+          "at": [
+            17,
+            1,
+            15
+          ],
+          "cell": 9
+        },
+        {
+          "at": [
+            19,
+            1,
+            15
+          ],
+          "cell": 2
+        },
+        {
+          "at": [
+            21,
+            1,
+            15
+          ],
+          "cell": 1
+        },
+        {
+          "at": [
+            18,
+            2,
+            15
+          ],
+          "cell": 6
+        },
+        {
+          "at": [
+            19,
+            2,
+            15
+          ],
+          "cell": 2
+        },
+        {
+          "at": [
+            21,
+            2,
+            15
+          ],
+          "cell": 297
+        },
+        {
+          "at": [
+            17,
+            3,
+            15
+          ],
+          "cell": 297
+        },
+        {
+          "at": [
+            17,
+            0,
+            16
+          ],
+          "cell": 9
+        },
+        {
+          "at": [
+            19,
+            0,
+            16
+          ],
+          "cell": 2
+        },
+        {
+          "at": [
+            17,
+            1,
+            16
+          ],
+          "cell": 1
+        },
+        {
+          "at": [
+            18,
+            1,
+            16
+          ],
+          "cell": 1
+        },
+        {
+          "at": [
+            19,
+            1,
+            16
+          ],
+          "cell": 1
+        },
+        {
+          "at": [
+            20,
+            1,
+            16
+          ],
+          "cell": 327
+        },
+        {
+          "at": [
+            16,
+            2,
+            16
+          ],
+          "cell": 6
+        },
+        {
+          "at": [
+            17,
+            2,
+            16
+          ],
+          "cell": 1
+        },
+        {
+          "at": [
+            19,
+            2,
+            16
+          ],
+          "cell": 2345
+        },
+        {
+          "at": [
+            17,
+            3,
+            16
+          ],
+          "cell": 1
+        }
+      ],
+      "boundary_envelope": {
+        "min": [
+          9,
+          -5,
+          10
+        ],
+        "max": [
+          27,
+          8,
+          21
+        ]
+      }
+    },
+    "interleaved": {
+      "version": 1,
+      "name": "joint_tip_layout",
+      "flyer": "problem.flyer",
+      "prescribed_script": "drive.txt",
+      "prescribed_order": "interleaved",
+      "period_ticks": 10,
+      "advance": 3,
+      "cycles": 3,
+      "recurrence": "bounded",
+      "ports": [
+        {
+          "name": "T0",
+          "at": [
+            17,
+            1,
+            16
+          ],
+          "word": "mwwmm",
+          "role": "output"
+        },
+        {
+          "name": "T1",
+          "at": [
+            17,
+            2,
+            16
+          ],
+          "word": "mwwmm",
+          "role": "output"
+        },
+        {
+          "name": "T2",
+          "at": [
+            17,
+            3,
+            16
+          ],
+          "word": "mwwmm",
+          "role": "output"
+        },
+        {
+          "name": "T3",
+          "at": [
+            18,
+            1,
+            16
+          ],
+          "word": "mwwmm",
+          "role": "output"
+        },
+        {
+          "name": "T4",
+          "at": [
+            19,
+            1,
+            16
+          ],
+          "word": "mwwmm",
+          "role": "output"
+        },
+        {
+          "name": "G0",
+          "at": [
+            19,
+            0,
+            15
+          ],
+          "word": "wmmmw",
+          "role": "output"
+        },
+        {
+          "name": "G1",
+          "at": [
+            19,
+            0,
+            16
+          ],
+          "word": "wmmmw",
+          "role": "output"
+        },
+        {
+          "name": "G2",
+          "at": [
+            19,
+            1,
+            15
+          ],
+          "word": "wmmmw",
+          "role": "output"
+        },
+        {
+          "name": "G3",
+          "at": [
+            19,
+            2,
+            15
+          ],
+          "word": "wmmmw",
+          "role": "output"
+        },
+        {
+          "name": "G4",
+          "at": [
+            20,
+            0,
+            15
+          ],
+          "word": "wmmmw",
+          "role": "output"
+        },
+        {
+          "name": "G5",
+          "at": [
+            21,
+            0,
+            15
+          ],
+          "word": "wmmmw",
+          "role": "output"
+        },
+        {
+          "name": "back",
+          "at": [
+            14,
+            3,
+            15
+          ],
+          "word": "mmmww",
+          "role": "input"
+        },
+        {
+          "name": "neighbor",
+          "at": [
+            14,
+            0,
+            16
+          ],
+          "word": "mmmww",
+          "role": "input"
+        },
+        {
+          "name": "tip",
+          "at": [
+            21,
+            1,
+            15
+          ],
+          "word": "mmwwm",
+          "role": "input"
+        }
+      ],
+      "required_cells": [
+        {
+          "at": [
+            14,
+            3,
+            15
+          ],
+          "cell": 2
+        },
+        {
+          "at": [
+            14,
+            0,
+            16
+          ],
+          "cell": 2
+        },
+        {
+          "at": [
+            15,
+            1,
+            16
+          ],
+          "cell": 2057
+        },
+        {
+          "at": [
+            14,
+            3,
+            16
+          ],
+          "cell": 9
+        },
+        {
+          "at": [
+            18,
+            0,
+            15
+          ],
+          "cell": 6
+        },
+        {
+          "at": [
+            19,
+            0,
+            15
+          ],
+          "cell": 2
+        },
+        {
+          "at": [
+            20,
+            0,
+            15
+          ],
+          "cell": 2
+        },
+        {
+          "at": [
+            21,
+            0,
+            15
+          ],
+          "cell": 2
+        },
+        {
+          "at": [
+            22,
+            0,
+            15
+          ],
+          "cell": 71
+        },
+        {
+          "at": [
+            17,
+            1,
+            15
+          ],
+          "cell": 9
+        },
+        {
+          "at": [
+            19,
+            1,
+            15
+          ],
+          "cell": 2
+        },
+        {
+          "at": [
+            21,
+            1,
+            15
+          ],
+          "cell": 1
+        },
+        {
+          "at": [
+            18,
+            2,
+            15
+          ],
+          "cell": 6
+        },
+        {
+          "at": [
+            19,
+            2,
+            15
+          ],
+          "cell": 2
+        },
+        {
+          "at": [
+            21,
+            2,
+            15
+          ],
+          "cell": 297
+        },
+        {
+          "at": [
+            17,
+            3,
+            15
+          ],
+          "cell": 297
+        },
+        {
+          "at": [
+            17,
+            0,
+            16
+          ],
+          "cell": 9
+        },
+        {
+          "at": [
+            19,
+            0,
+            16
+          ],
+          "cell": 2
+        },
+        {
+          "at": [
+            17,
+            1,
+            16
+          ],
+          "cell": 1
+        },
+        {
+          "at": [
+            18,
+            1,
+            16
+          ],
+          "cell": 1
+        },
+        {
+          "at": [
+            19,
+            1,
+            16
+          ],
+          "cell": 1
+        },
+        {
+          "at": [
+            20,
+            1,
+            16
+          ],
+          "cell": 327
+        },
+        {
+          "at": [
+            16,
+            2,
+            16
+          ],
+          "cell": 6
+        },
+        {
+          "at": [
+            17,
+            2,
+            16
+          ],
+          "cell": 1
+        },
+        {
+          "at": [
+            19,
+            2,
+            16
+          ],
+          "cell": 2345
+        },
+        {
+          "at": [
+            17,
+            3,
+            16
+          ],
+          "cell": 1
+        }
+      ],
+      "boundary_envelope": {
+        "min": [
+          9,
+          -5,
+          10
+        ],
+        "max": [
+          27,
+          8,
+          21
+        ]
+      }
+    }
+  },
+  "prescribed_drive": "0 14 0 16 11\n0 14 3 15 11\n0 21 1 15 11\n2 15 0 16 11\n2 15 3 15 11\n2 22 1 15 11\n4 16 0 16 11\n8 23 1 15 11\n10 17 0 16 11\n10 17 3 15 11\n10 24 1 15 11\n12 18 0 16 11\n12 18 3 15 11\n12 25 1 15 11\n14 19 0 16 11\n18 26 1 15 11\n20 20 0 16 11\n20 20 3 15 11\n20 27 1 15 11\n22 21 0 16 11\n22 21 3 15 11\n22 28 1 15 11\n24 22 0 16 11\n28 29 1 15 11\n",
+  "native_short": {
+    "verified": true,
+    "passed": 80,
+    "total": 80,
+    "orders_per_sample": 3,
+    "ticks_per_order": 30,
+    "encoded_limit": 11,
+    "max_action": 11,
+    "max_endogenous_action": 11,
+    "elapsed_seconds": 0.2936502,
+    "failure": null
+  },
+  "construction": {
+    "scope": "joint T/G all moves and rear slot2 natural; rear slots0/1, neighbor and tip supplied; every T/G glue identity checked",
+    "natural_flyer": false,
+    "source_case": "flyers\\WIP\\experiments\\contract_solver_20261014\\out\\joint_layout\\joint_tip_template\\case00000",
+    "reproduction": "joint_tip_layout.py OUT --cases 1; extend first-cycle supplied rows to1000 cycles"
+  }
+}

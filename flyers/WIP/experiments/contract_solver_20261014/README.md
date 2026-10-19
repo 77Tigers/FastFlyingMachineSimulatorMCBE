@@ -1,5 +1,7 @@
 # Contract solver (2026-10-14/15)
 
+**Validated N3 reconstruction (2026-10-17):** offline whole-column generation plus complete-selection repair rebuilt the20-body human_3bps_original geometry at PL12,3 bps,80/80 ×10000 ticks, with independent Python80/80 confirmation and no reference hardware input. [Findings, preserved artifact and reproduction](FINDINGS.md). This completes the known-geometry reconstruction milestone; new geometry/generalization remains open. The column pipeline is offline; a later shared-evaluator fix affects relaxed search feedback only, with strict acceptance unchanged (see FINDINGS.md).
+
 ## Chains / tentacles (2026-10-16)
 
 User: chains (tentacles) as in human_3bps_original are insanely useful. That flyer = 5 chains of 3 bodies

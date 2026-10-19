@@ -735,7 +735,17 @@ pub fn run_order(ctx: &Ctx, cells: &Cells, order: PrescribedOrder, sample: Sampl
                 if action != Some("settle prescribed move") {
                     if let Some((pos, reason)) = mv.failure {
                         let a = step.info.active_piston.map_or(String::new(), |p| format!(" actor ({},{},{})", p.x, p.y, p.z));
-                        return Err(format!("tick {tick}: movement failed ({}) at ({},{},{}) action {:?}{a}", reason, pos.x, pos.y, pos.z, action));
+                        let error = format!("tick {tick}: movement failed ({}) at ({},{},{}) action {:?}{a}", reason, pos.x, pos.y, pos.z, action);
+                        if ctx.soft && ctx.allow_ext_fail
+                            && matches!(action, Some("extend failed") | Some("retract"))
+                            && matches!(reason, "push limit exceeded" | "immovable obstruction" | "glazed terracotta cannot be pulled") {
+                            // Search only: retain the failure and score subsequent
+                            // port checks instead of returning a flat tick-zero score.
+                            prog.soft_penalty += 1;
+                            prog.soft_first.get_or_insert(error);
+                            continue;
+                        }
+                        return Err(error);
                     }
                     if mv.sources.len() != mv.destinations.len() {
                         return Err(format!("tick {tick}: unequal source/destination counts"));
@@ -1011,6 +1021,42 @@ impl std::fmt::Display for EvalFail {
 pub fn totals(ctx: &Ctx) -> (usize, usize) {
     let t = ctx.orders.len() * ctx.period * ctx.cycles;
     (t, t * ctx.ports.len())
+}
+
+#[cfg(test)]
+mod search_feedback_tests {
+    use super::*;
+
+    #[test]
+    fn relaxed_failed_push_keeps_failure_but_scores_later_ports() {
+        let stamp = std::time::SystemTime::now().duration_since(std::time::UNIX_EPOCH).unwrap().as_nanos();
+        let dir = std::env::temp_dir().join(format!("fastflyer-soft-{}-{stamp}", std::process::id()));
+        fs::create_dir_all(&dir).unwrap();
+        let mut flyer = Flyer::new(0, 0, 0, 1).unwrap();
+        flyer.set(Coord::new(0, 0, 0), Block::piston(0, false, false, 0, false).unwrap());
+        flyer.set(Coord::new(0, 1, 0), Block::plain(Kind::RedstoneBlock, false).unwrap());
+        for x in [1, 2] { flyer.set(Coord::new(x, 0, 0), Block::plain(Kind::Slime, false).unwrap()); }
+        flyer.save(dir.join("input.flyer")).unwrap();
+        fs::write(dir.join("problem.json"), r#"{"version":1,"name":"overloaded push","flyer":"input.flyer","period_ticks":6,"advance":1,"cycles":1,"recurrence":"advance","ports":[{"name":"body","role":"output","at":[1,0,0],"word":"mww"}],"required_cells":[{"at":[1,0,0],"cell":1},{"at":[2,0,0],"cell":1}]}"#).unwrap();
+        let mut ctx = load_ctx(&dir.join("problem.json"), None).unwrap();
+        ctx.orders = vec![PrescribedOrder::BeforeNatural];
+        let sample = Sample { rng: 0, px: 0, pz: 0 };
+        let strict = evaluate(&ctx, &ctx.base_cells, sample, false).err().expect("overloaded push must fail");
+        assert_eq!(strict.ticks, 0);
+        ctx.allow_ext_fail = true;
+        let scaffold = evaluate(&ctx, &ctx.base_cells, sample, false).err().unwrap();
+        assert_eq!(scaffold.ticks, 0, "strict scaffolds must retain their movement checks");
+        ctx.soft = true;
+        let soft = evaluate(&ctx, &ctx.base_cells, sample, false).err().expect("relaxed scoring must not accept an invalid flyer");
+        assert_eq!(soft.ticks, 6);
+        assert!(soft.checks > 0 && soft.penalty > 0);
+        assert!(soft.msg.contains("push limit exceeded"));
+        ctx.allow_ext_fail = false;
+        assert_eq!(evaluate(&ctx, &ctx.base_cells, sample, false).err().unwrap().ticks, 0);
+        fs::remove_file(dir.join("problem.json")).unwrap();
+        fs::remove_file(dir.join("input.flyer")).unwrap();
+        fs::remove_dir(dir).unwrap();
+    }
 }
 
 pub fn evaluate(ctx: &Ctx, cells: &Cells, sample: Sample, want_hot: bool) -> Result<Eval, EvalFail> {

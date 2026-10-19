@@ -1,0 +1,717 @@
+{
+  "radius": 5,
+  "open_quadrant_seams": false,
+  "local_modules": 3,
+  "checked_hint_sha256": "01afd8a2c2da08d086771960d372ff836914442c1d5fe491cc41cdbba1a39a82",
+  "reserved_redstone_sources": true,
+  "forbid_extra_moving_carriers": true,
+  "conservative_compatibility": true,
+  "active_body_names": [
+    "T0",
+    "T1",
+    "T2",
+    "X0",
+    "X1",
+    "X2"
+  ],
+  "status": "OPTIMAL",
+  "solve_seconds": 14.547000000020489,
+  "solver_statistics": "CpSolverResponse summary:\nstatus: OPTIMAL\nobjective: 0\nbest_bound: 0\nintegers: 9607\nbooleans: 14141\nconflicts: 1229\nbranches: 80434\npropagations: 1586593\ninteger_propagations: 8202505\nrestarts: 10\nlp_iterations: 0\nwalltime: 14.5349\nusertime: 14.5349\ndeterministic_time: 13.7627\ngap_integral: 0\nsolution_fingerprint: 0x6ca2c0f5d4b7b039\n",
+  "scope": "Bounded necessary contact geometry for closed20 X/T stacked-loop modules.\n\nFour quadrants share five templates under90-degree rotation. Real connected\nglue shapes, recorded piston contacts, base/arm clearance at slot boundaries.\nOptional sources enforce normal firing/retraction on/off using one RB per\nbody. Sticky/stray power, G/H and movement-order clearance are omitted.\nA feasible result is a contact scaffold, never a physical flyer.\n",
+  "recorded_contacts": 64,
+  "source_sha256": "e3f0191185db088995fb46d41683facac139e7c8dad32d7a5b17b910ab8e5cc2",
+  "role_plan_sha256": "b6d84d370d08d8831d475681d72de226e2e3b2440e099f0409d7fb184e1fd456",
+  "glue": {
+    "X0": [
+      [
+        -2,
+        0,
+        -5
+      ],
+      [
+        -2,
+        0,
+        -4
+      ],
+      [
+        -2,
+        0,
+        -6
+      ],
+      [
+        -2,
+        0,
+        -7
+      ],
+      [
+        -1,
+        0,
+        -4
+      ],
+      [
+        -1,
+        1,
+        -4
+      ],
+      [
+        -2,
+        1,
+        -5
+      ]
+    ],
+    "T0": [
+      [
+        1,
+        -1,
+        -4
+      ],
+      [
+        1,
+        -1,
+        -3
+      ],
+      [
+        1,
+        0,
+        -3
+      ],
+      [
+        1,
+        1,
+        -3
+      ],
+      [
+        1,
+        -2,
+        -3
+      ],
+      [
+        2,
+        1,
+        -3
+      ]
+    ],
+    "X1": [
+      [
+        1,
+        2,
+        -5
+      ],
+      [
+        1,
+        2,
+        -4
+      ],
+      [
+        0,
+        2,
+        -4
+      ],
+      [
+        1,
+        2,
+        -6
+      ],
+      [
+        2,
+        2,
+        -5
+      ],
+      [
+        2,
+        2,
+        -6
+      ],
+      [
+        1,
+        1,
+        -6
+      ]
+    ],
+    "T1": [
+      [
+        3,
+        0,
+        -4
+      ],
+      [
+        3,
+        0,
+        -3
+      ],
+      [
+        3,
+        0,
+        -2
+      ],
+      [
+        3,
+        1,
+        -2
+      ],
+      [
+        3,
+        0,
+        -5
+      ],
+      [
+        3,
+        0,
+        -6
+      ]
+    ],
+    "X2": [
+      [
+        1,
+        4,
+        -5
+      ],
+      [
+        1,
+        4,
+        -4
+      ],
+      [
+        2,
+        4,
+        -4
+      ],
+      [
+        2,
+        4,
+        -3
+      ],
+      [
+        2,
+        3,
+        -4
+      ],
+      [
+        2,
+        3,
+        -3
+      ],
+      [
+        2,
+        2,
+        -3
+      ]
+    ],
+    "T2": [
+      [
+        5,
+        3,
+        -2
+      ],
+      [
+        6,
+        3,
+        -2
+      ],
+      [
+        5,
+        2,
+        -2
+      ],
+      [
+        5,
+        2,
+        -3
+      ],
+      [
+        5,
+        3,
+        -3
+      ],
+      [
+        5,
+        4,
+        -3
+      ]
+    ]
+  },
+  "actors": [
+    {
+      "target": "X0",
+      "slot": 0,
+      "at": [
+        -3,
+        0,
+        -7
+      ],
+      "kind": "push",
+      "moves": [
+        0,
+        0,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "target": "X0",
+      "slot": 1,
+      "at": [
+        -3,
+        0,
+        -5
+      ],
+      "kind": "push",
+      "moves": [
+        1,
+        0,
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "target": "X0",
+      "slot": 2,
+      "at": [
+        2,
+        1,
+        -4
+      ],
+      "kind": "pull",
+      "moves": [
+        1,
+        0,
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "target": "T0",
+      "slot": 3,
+      "at": [
+        -2,
+        0,
+        -3
+      ],
+      "kind": "push",
+      "moves": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "target": "T0",
+      "slot": 4,
+      "at": [
+        -1,
+        -2,
+        -3
+      ],
+      "kind": "push",
+      "moves": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "target": "X1",
+      "slot": 0,
+      "at": [
+        3,
+        1,
+        -6
+      ],
+      "kind": "pull",
+      "moves": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "target": "X1",
+      "slot": 3,
+      "at": [
+        -2,
+        1,
+        -6
+      ],
+      "kind": "push",
+      "moves": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "target": "X1",
+      "slot": 4,
+      "at": [
+        -1,
+        2,
+        -5
+      ],
+      "kind": "push",
+      "moves": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "target": "T1",
+      "slot": 1,
+      "at": [
+        1,
+        0,
+        -6
+      ],
+      "kind": "push",
+      "moves": [
+        1,
+        0,
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "target": "T1",
+      "slot": 2,
+      "at": [
+        1,
+        0,
+        -4
+      ],
+      "kind": "push",
+      "moves": [
+        1,
+        1,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "target": "X2",
+      "slot": 1,
+      "at": [
+        0,
+        3,
+        -4
+      ],
+      "kind": "push",
+      "moves": [
+        1,
+        0,
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "target": "X2",
+      "slot": 2,
+      "at": [
+        0,
+        2,
+        -3
+      ],
+      "kind": "push",
+      "moves": [
+        1,
+        1,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "target": "X2",
+      "slot": 3,
+      "at": [
+        4,
+        4,
+        -3
+      ],
+      "kind": "pull",
+      "moves": [
+        1,
+        1,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "target": "T2",
+      "slot": 0,
+      "at": [
+        4,
+        3,
+        -3
+      ],
+      "kind": "push",
+      "moves": [
+        0,
+        0,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "target": "T2",
+      "slot": 4,
+      "at": [
+        3,
+        2,
+        -2
+      ],
+      "kind": "push",
+      "moves": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ]
+    }
+  ],
+  "redstone_sources": {
+    "X0": [
+      -3,
+      0,
+      -6
+    ],
+    "T0": [
+      0,
+      -1,
+      -3
+    ],
+    "X1": [
+      0,
+      2,
+      -6
+    ],
+    "T1": [
+      2,
+      0,
+      -5
+    ],
+    "X2": [
+      1,
+      3,
+      -3
+    ],
+    "T2": [
+      4,
+      2,
+      -3
+    ]
+  },
+  "materials": {
+    "X2": 0,
+    "T1": 0,
+    "X1": 1,
+    "T2": 0,
+    "X0": 0,
+    "T0": 1
+  },
+  "independent_geometry_check": {
+    "passed": true,
+    "contact_obligations_checked": 64,
+    "body_count": 6,
+    "normal_on_off_sources_checked": true,
+    "conservative_compatibility_checked": true,
+    "unplanned_moving_carrier_contacts": [],
+    "scope": "integer geometry and optional normal on/off sources; sticky/stray power, materials, action order and natural verification remain open"
+  },
+  "native_startup_probe": {
+    "scope": "Diagnose all-RB power and native startup of an OPEN contact scaffold.\n\nMissing boundary carriers and front pulls remain absent. This is a causal\nstartup probe, never a physical contract verification or complete flyer.\n",
+    "conservative_glue_two_colorable": true,
+    "colors": {
+      "X2": 0,
+      "T1": 0,
+      "X1": 1,
+      "T2": 0,
+      "X0": 0,
+      "T0": 1
+    },
+    "rigid_timing_power_alerts": [
+      {
+        "target": "X0",
+        "action_slot": 1,
+        "slot": 0,
+        "providers": [
+          "X0"
+        ]
+      },
+      {
+        "target": "T0",
+        "action_slot": 4,
+        "slot": 3,
+        "providers": [
+          "T0"
+        ]
+      },
+      {
+        "target": "X1",
+        "action_slot": 4,
+        "slot": 3,
+        "providers": [
+          "X1"
+        ]
+      },
+      {
+        "target": "T1",
+        "action_slot": 2,
+        "slot": 1,
+        "providers": [
+          "T1"
+        ]
+      },
+      {
+        "target": "X2",
+        "action_slot": 2,
+        "slot": 1,
+        "providers": [
+          "X2"
+        ]
+      },
+      {
+        "target": "T2",
+        "action_slot": 0,
+        "slot": 4,
+        "providers": [
+          "T2"
+        ]
+      }
+    ],
+    "retraction_power_conflicts": [],
+    "foreign_source_pickups": [],
+    "input_sha256": "eacdcc4383908019bb23847a5540a9873c381dd7310acabc9981ce385c2a93d6",
+    "normalization_delta": [
+      16,
+      2,
+      16
+    ],
+    "native_exit_code": 0,
+    "native_stderr": "",
+    "native_movement_failures": [],
+    "native_successful_actions": [
+      {
+        "tick": 0,
+        "actor": [
+          13,
+          2,
+          11
+        ],
+        "action": "extend",
+        "load": 11,
+        "target": "X0",
+        "planned_action_slot": 1
+      },
+      {
+        "tick": 0,
+        "actor": [
+          19,
+          3,
+          10
+        ],
+        "action": "retract",
+        "load": 11,
+        "target": "X1",
+        "planned_action_slot": 0
+      },
+      {
+        "tick": 0,
+        "actor": [
+          20,
+          5,
+          13
+        ],
+        "action": "extend",
+        "load": 8,
+        "target": "T2",
+        "planned_action_slot": 0
+      },
+      {
+        "tick": 2,
+        "actor": [
+          17,
+          5,
+          12
+        ],
+        "action": "extend",
+        "load": 9,
+        "target": "X2",
+        "planned_action_slot": 1
+      },
+      {
+        "tick": 2,
+        "actor": [
+          18,
+          2,
+          10
+        ],
+        "action": "extend",
+        "load": 9,
+        "target": "T1",
+        "planned_action_slot": 1
+      },
+      {
+        "tick": 2,
+        "actor": [
+          14,
+          2,
+          9
+        ],
+        "action": "extend",
+        "load": 12,
+        "target": "X0",
+        "planned_action_slot": 0
+      }
+    ],
+    "native_identity_timing_alerts": [
+      {
+        "tick": 0,
+        "actor": [
+          13,
+          2,
+          11
+        ],
+        "action": "extend",
+        "load": 11,
+        "target": "X0",
+        "planned_action_slot": 1,
+        "scope": "identity schedule alert; column roles may exchange"
+      },
+      {
+        "tick": 2,
+        "actor": [
+          14,
+          2,
+          9
+        ],
+        "action": "extend",
+        "load": 12,
+        "target": "X0",
+        "planned_action_slot": 0,
+        "scope": "identity schedule alert; column roles may exchange"
+      }
+    ],
+    "natural_contract_verified": false
+  },
+  "claim": "Open six-body X/T contact/source/material scaffold; native4-tick diagnostic only, no natural contract or closed flyer",
+  "checker_sha256": "397199a6732caa39aaf6a371bfa986cc9a3feaae0c8d56e1808d657f39402144"
+}

@@ -1,0 +1,385 @@
+{
+  "radius": 5,
+  "open_quadrant_seams": false,
+  "local_modules": 2,
+  "reserved_redstone_sources": true,
+  "forbid_extra_moving_carriers": true,
+  "active_body_names": [
+    "T0",
+    "T1",
+    "X0",
+    "X1"
+  ],
+  "status": "OPTIMAL",
+  "solve_seconds": 4.828000000037719,
+  "solver_statistics": "CpSolverResponse summary:\nstatus: OPTIMAL\nobjective: 0\nbest_bound: 0\nintegers: 2189\nbooleans: 1954\nconflicts: 8583\nbranches: 54834\npropagations: 1218540\ninteger_propagations: 4834675\nrestarts: 33\nlp_iterations: 0\nwalltime: 4.8337\nusertime: 4.8337\ndeterministic_time: 7.60999\ngap_integral: 0\nsolution_fingerprint: 0xfd173f4875845709\n",
+  "scope": "Bounded necessary contact geometry for closed20 X/T stacked-loop modules.\n\nFour quadrants share five templates under90-degree rotation. Real connected\nglue shapes, recorded piston contacts, base/arm clearance at slot boundaries.\nPower, G/H, unplanned adhesion and movement-order clearance are omitted.\nA feasible result is a contact scaffold, never a physical flyer.\n",
+  "recorded_contacts": 39,
+  "source_sha256": "6c90b46adb7fa13f8a183bcd5f1d7c8212b9ce51dd051bc16217a491559e0136",
+  "role_plan_sha256": "b6d84d370d08d8831d475681d72de226e2e3b2440e099f0409d7fb184e1fd456",
+  "glue": {
+    "X0": [
+      [
+        -2,
+        0,
+        -5
+      ],
+      [
+        -2,
+        -1,
+        -5
+      ],
+      [
+        -1,
+        0,
+        -5
+      ],
+      [
+        -1,
+        0,
+        -6
+      ],
+      [
+        -1,
+        0,
+        -4
+      ],
+      [
+        -1,
+        -1,
+        -4
+      ],
+      [
+        -2,
+        1,
+        -5
+      ]
+    ],
+    "T0": [
+      [
+        2,
+        1,
+        -3
+      ],
+      [
+        2,
+        1,
+        -2
+      ],
+      [
+        2,
+        0,
+        -2
+      ],
+      [
+        2,
+        -1,
+        -2
+      ],
+      [
+        2,
+        -1,
+        -3
+      ],
+      [
+        1,
+        0,
+        -2
+      ]
+    ],
+    "X1": [
+      [
+        2,
+        2,
+        -5
+      ],
+      [
+        2,
+        2,
+        -4
+      ],
+      [
+        1,
+        2,
+        -5
+      ],
+      [
+        2,
+        1,
+        -5
+      ],
+      [
+        2,
+        1,
+        -6
+      ],
+      [
+        2,
+        1,
+        -7
+      ],
+      [
+        2,
+        0,
+        -7
+      ]
+    ],
+    "T1": [
+      [
+        4,
+        0,
+        -2
+      ],
+      [
+        4,
+        0,
+        -3
+      ],
+      [
+        4,
+        0,
+        -4
+      ],
+      [
+        4,
+        1,
+        -4
+      ],
+      [
+        4,
+        1,
+        -5
+      ],
+      [
+        4,
+        0,
+        -5
+      ]
+    ]
+  },
+  "actors": [
+    {
+      "target": "X0",
+      "slot": 0,
+      "at": [
+        -3,
+        1,
+        -5
+      ],
+      "kind": "push",
+      "moves": [
+        0,
+        0,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "target": "X0",
+      "slot": 1,
+      "at": [
+        -3,
+        -1,
+        -5
+      ],
+      "kind": "push",
+      "moves": [
+        1,
+        0,
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "target": "X0",
+      "slot": 2,
+      "at": [
+        2,
+        -1,
+        -4
+      ],
+      "kind": "pull",
+      "moves": [
+        1,
+        0,
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "target": "T0",
+      "slot": 3,
+      "at": [
+        -1,
+        -1,
+        -3
+      ],
+      "kind": "push",
+      "moves": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "target": "T0",
+      "slot": 4,
+      "at": [
+        0,
+        1,
+        -3
+      ],
+      "kind": "push",
+      "moves": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "target": "X1",
+      "slot": 0,
+      "at": [
+        4,
+        2,
+        -5
+      ],
+      "kind": "pull",
+      "moves": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "target": "X1",
+      "slot": 3,
+      "at": [
+        -1,
+        0,
+        -7
+      ],
+      "kind": "push",
+      "moves": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "target": "X1",
+      "slot": 4,
+      "at": [
+        0,
+        1,
+        -6
+      ],
+      "kind": "push",
+      "moves": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "target": "T1",
+      "slot": 1,
+      "at": [
+        2,
+        0,
+        -5
+      ],
+      "kind": "push",
+      "moves": [
+        1,
+        0,
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "target": "T1",
+      "slot": 2,
+      "at": [
+        2,
+        0,
+        -3
+      ],
+      "kind": "push",
+      "moves": [
+        1,
+        1,
+        0,
+        0,
+        1
+      ]
+    }
+  ],
+  "redstone_sources": {
+    "X0": [
+      -3,
+      0,
+      -5
+    ],
+    "T0": [
+      1,
+      0,
+      -3
+    ],
+    "X1": [
+      1,
+      1,
+      -7
+    ],
+    "T1": [
+      3,
+      0,
+      -4
+    ]
+  },
+  "independent_geometry_check": {
+    "passed": true,
+    "contact_obligations_checked": 39,
+    "body_count": 4,
+    "normal_on_off_sources_checked": true,
+    "unplanned_moving_carrier_contacts": [],
+    "scope": "integer geometry and optional normal on/off sources; sticky/stray power, materials, action order and natural verification remain open"
+  },
+  "adhesion_diagnostic": {
+    "scope": "conservative no-glue-merge coloring; foreign RB pickups are not included in model v4",
+    "glue_edges": [
+      [
+        "T0",
+        "T1"
+      ],
+      [
+        "T1",
+        "X1"
+      ]
+    ],
+    "two_colorable": true,
+    "colors": {
+      "X0": 0,
+      "T0": 0,
+      "T1": 1,
+      "X1": 0
+    },
+    "foreign_source_pickups": []
+  },
+  "claim": "Four-body open contact scaffold with reserved normal RB on/off geometry, not a natural flyer or closed loop",
+  "checker_sha256": "a70c2f83539254f0b00a537fefa495193f142a5a8fc954591cc8f3a88e61e403"
+}

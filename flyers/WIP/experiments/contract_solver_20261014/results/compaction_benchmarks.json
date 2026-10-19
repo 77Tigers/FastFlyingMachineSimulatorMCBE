@@ -1,0 +1,47 @@
+{
+  "status": "selected_not_yet_audited",
+  "target_push_limit": 12,
+  "priority": "rear segment loads first; then complete-flyer maximum",
+  "catalogue_sha256": "2f63811d2c5f53033a5651bbb29ef33955011a45243a4b045440733bcdec1bdb",
+  "inputs": [
+    {
+      "path": "flyers/bank/pl13/exclusive_roles_3bps.flyer",
+      "sha256": "59b2fe708522e5b1d8899c94c86835f1a264a584cfd49cadc2a91639852371ad",
+      "catalogue_baseline": {
+        "sha256": "59b2fe708522e5b1d8899c94c86835f1a264a584cfd49cadc2a91639852371ad",
+        "ticks": 10000,
+        "distance": 3000,
+        "speed_bps": 3.0,
+        "extensions": 62999,
+        "extension_failures": 0,
+        "endpoint_conserved": true
+      }
+    },
+    {
+      "path": "flyers/bank/pl14/mmwmw_two_pulls.flyer",
+      "sha256": "a2abc950a39407a9cd349239301fb60096f1496ce04dc2b96678887cbf4dd224",
+      "catalogue_baseline": {
+        "sha256": "a2abc950a39407a9cd349239301fb60096f1496ce04dc2b96678887cbf4dd224",
+        "ticks": 10000,
+        "distance": 3000,
+        "speed_bps": 3.0,
+        "extensions": 42000,
+        "extension_failures": 0,
+        "endpoint_conserved": true
+      }
+    },
+    {
+      "path": "flyers/bank/pl18/n3_five_body.flyer",
+      "sha256": "6aefe4eac9bd5d078a0f54035612afb6fcdf1addbd116d1b7ef11d953b16c31e",
+      "catalogue_baseline": {
+        "sha256": "6aefe4eac9bd5d078a0f54035612afb6fcdf1addbd116d1b7ef11d953b16c31e",
+        "ticks": 10000,
+        "distance": 3000,
+        "speed_bps": 3.0,
+        "extensions": 15000,
+        "extension_failures": 0,
+        "endpoint_conserved": true
+      }
+    }
+  ]
+}
