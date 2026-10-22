@@ -37,7 +37,7 @@ x=1 over pushers + RBs, next body's cover = slab at x=-3 behind the pushers.
 | slab (racetrack, full plate + slab) | 1465 | baseline |
 | lat (racetrack, lateral covers on a 5-code) | 1444 | isolated cover cells cost routing |
 | slabP (racetrack) | 1252 | after offset racetrack layout |
-| sq (square ring; exact small-k modules, side-contact modules for most k) | **1202** | 1 seed, 1000 blocks; table `square_table.json` |
+| sq (square ring; exact small-k modules, side-contact modules for most k) | **1200** | 1 seed, 1000 blocks; table `square_table.json` |
 
 ## Current best per k (1 seed, 1000 blocks; min PL = largest body + k)
 
@@ -66,7 +66,7 @@ x=1 over pushers + RBs, next body's cover = slab at x=-3 behind the pushers.
 | 23 | 100 | 64 | 87 | latcp |
 | 24 | 52 | 66 | 90 | latcp |
 
-Sum = 1202 (joint modules: k=3 PL15, k=8 PL35). Flyers: `python nk_flyer.py K` (or `out/best/n{k}.flyer`).
+Sum = 1200 (joint modules: k=3 PL15, k=5 PL24, k=8 PL35). Flyers: `python nk_flyer.py K` (or `out/best/n{k}.flyer`).
 
 ## Bounds and negatives
 
