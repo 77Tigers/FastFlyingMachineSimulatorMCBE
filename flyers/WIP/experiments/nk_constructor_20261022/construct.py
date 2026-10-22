@@ -37,10 +37,10 @@ def cp_table_module(k):
                 CONT=[(-3,) + sh(tuple(c)) for c in r['W']], size=(a, b))
 
 
-def lat_table_module(k):
+def lat_table_module(k, fname='modules_lat.json'):
     """exact lateral/behind cover module from modules_lat.json (cp_module.py)."""
     import json, pathlib
-    tab = json.load(open(pathlib.Path(__file__).resolve().parent / 'modules_lat.json'))
+    tab = json.load(open(pathlib.Path(__file__).resolve().parent / fname))
     if str(k) not in tab: return cp_table_module(k)
     r = tab[str(k)]; T = lambda key: [tuple(c) for c in r[key]]
     cells = T('P') + T('R') + T('pl') + T('w2') + T('w3')
@@ -54,6 +54,7 @@ def lat_table_module(k):
 def grid_module(k, variant='slab'):
     if variant == 'cp': return cp_table_module(k)
     if variant == 'latcp': return lat_table_module(k)
+    if variant == 'latsym': return lat_table_module(k, 'modules_sym.json')
     """flat module from a rectangle of lanes. variants:
     slab   plate over the rectangle, next body's cover = slab at x=-3 over the rectangle (baseline)
     slabP  plate over P+R lanes, cover = slab at x=-3 behind P lanes only

@@ -29,7 +29,7 @@ def connect(m, cells, x, adj, name):
         m.Add(outflow - inflow == supply - x[u])
 
 
-def solve(k, a, b, secs=10, workers=8):
+def solve(k, a, b, secs=10, workers=8, sym=False):
     m = cp_model.CpModel()
     L = [(y, z) for y in range(a) for z in range(b)]
     nb = {c: [(c[0] + d[0], c[1] + d[1]) for d in N4 if (c[0] + d[0], c[1] + d[1]) in set(L)] for c in L}
@@ -43,6 +43,10 @@ def solve(k, a, b, secs=10, workers=8):
         m.AddImplication(w2[c], C[c])
         m.AddBoolOr([w3[c]] + [w2[v] for v in nb[c]] + [P[c].Not()])
     m.Add(sum(P.values()) == k)
+    if sym:   # mirror-symmetric under z -> b-1-z
+        for (y, z) in L:
+            mz = (y, b - 1 - z)
+            for d in (P, R, C, pl, w2, w3): m.Add(d[(y, z)] == d[mz])
     connect(m, L, pl, nb, 'pl')
     # next-body cells: nodes (c,2) and (c,3)
     W = {(c, 2): w2[c] for c in L}; W.update({(c, 3): w3[c] for c in L})

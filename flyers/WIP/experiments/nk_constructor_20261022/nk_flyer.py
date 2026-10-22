@@ -1,0 +1,21 @@
+"""The N_k constructor: python nk_flyer.py K [OUT.flyer]
+Builds the square-ring N_k flyer (cycle 2(k+2) ticks, +k) from square_table.json and saves it with its push limit
+set to the predicted minimum (largest body + k).  Prints the body count, predicted PL and build time."""
+import sys, json, time, pathlib
+HERE = pathlib.Path(__file__).resolve().parent
+sys.path.insert(0, str(HERE))
+import sqbuild
+
+
+def build(k):
+    table = json.load(open(HERE / 'square_table.json'))
+    ring = sqbuild.build_fast(k, table)
+    return ring, max(ring.size()) + k
+
+
+if __name__ == '__main__':
+    k = int(sys.argv[1])
+    out = pathlib.Path(sys.argv[2]) if len(sys.argv) > 2 else HERE / 'out' / f'n{k}.flyer'
+    t = time.time(); ring, pl = build(k); dt = time.time() - t
+    out.parent.mkdir(exist_ok=True); ring.flyer(pl).save(str(out))
+    print(f'N{k}: {ring.T.L} bodies, predicted PL {pl}, built in {dt:.2f}s -> {out}')

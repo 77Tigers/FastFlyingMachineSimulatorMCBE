@@ -6,6 +6,7 @@ during development 3 of the 80 sample seeds must pass; the full 80-case test run
 
 ## Program
 
+- **`nk_flyer.py K [OUT]`: the program.** Builds N_k from `square_table.json` with PL = predicted minimum.
 - `sqbuild.py` + `square_table.json`: current best family (square ring). `sqbuild.build_fast(k, table)` builds
   in < 1 s for every k (k=23, 100 bodies: 0.8 s). `sqbuild.build(k)` re-derives the layout parameters (slower).
 - `run_all.py FAMILY [KMIN KMAX] [TICKS]`: build every k, find the min PL over 3 seeds, print the sum.
@@ -53,3 +54,8 @@ x=1 over pushers + RBs, next body's cover = slab at x=-3 behind the pushers.
 - **Sequencing stacked pushers** (shared targets): other bodies' RBs only give timing windows near the rest
   (local slots 2, 3, k+1) and observers on a moving body pulse every slot, so at most ~2 targets per body saved.
 - Rigid pushes (on the body resting right after the victim) are limited to one per body per cycle.
+- Straight links cost ~3 more connector cells than corner links (k=8: corner bodies 26, straight 28). An all-turn
+  "zigzag square" (`zigzag.py`: sides of left/right turn pairs, any L = 4n) does not help: its turn links cost 28-30
+  at k=8 even with mirror-symmetric modules (`cp_module.solve(sym=True)` costs the same as unsymmetric ones).
+  Wider straight-link offsets (z shift up to +-b) also give no gain (k=8, 12, 16).
+- Exact straight-link module (`cp_square.py`: gap-lane side cover + riser beside an empty edge lane): -1 at k=8 only.
