@@ -67,3 +67,8 @@ push_limit,name,start_min_x,end_min_x,distance,end_blocks,extensions
 8,opus_cool,0,2500,2500,168,75000
 10,two_body_5slot_2bps,14,2014,2000,20,4000
 26,n6_screw_ring_3p75,13,3763,3750,107,15000
+15,nk_square_n3,14,3014,3000,312,60000
+21,nk_square_n4,13,3347,3334,252,40000
+24,nk_square_n5,13,3585,3572,692,100000
+33,nk_square_n7,13,3901,3888,1196,140000
+35,nk_square_n8,13,4013,4000,716,80000

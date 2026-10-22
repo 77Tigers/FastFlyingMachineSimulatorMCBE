@@ -273,6 +273,15 @@
       "extension_failures": 0,
       "endpoint_conserved": true
     },
+    "flyers/bank/pl15/nk_square_n3.flyer": {
+      "sha256": "4bc232664954920db704f6296137db597e43bd0974aac9b57e36850bb476bb84",
+      "ticks": 10000,
+      "distance": 3000,
+      "speed_bps": 3.0,
+      "extensions": 60000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
     "flyers/bank/pl16/crossfeed_compact.flyer": {
       "sha256": "decbd1e516cfa63b4d7ce79c73eb106029feee2c7114a4912e7f5447cc41b481",
       "ticks": 10000,
@@ -390,6 +399,15 @@
       "extension_failures": 0,
       "endpoint_conserved": true
     },
+    "flyers/bank/pl21/nk_square_n4.flyer": {
+      "sha256": "76bfb73889a4d28bdc3ebb79126bab1534d276bda4ce8d35abbfd95418d495b4",
+      "ticks": 10000,
+      "distance": 3334,
+      "speed_bps": 3.334,
+      "extensions": 40000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
     "flyers/bank/pl22/exclusive_roles_3p333.flyer": {
       "sha256": "afb929b6353979bbe86003e751e915e943313a8d985a97d5d1295b7148988837",
       "ticks": 10000,
@@ -423,6 +441,15 @@
       "distance": 3333,
       "speed_bps": 3.333,
       "extensions": 10000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl24/nk_square_n5.flyer": {
+      "sha256": "e5a9a04b816baffb4b272d642b1e78d8d8e3f060896ad21637a29bef29947050",
+      "ticks": 10000,
+      "distance": 3572,
+      "speed_bps": 3.572,
+      "extensions": 100000,
       "extension_failures": 0,
       "endpoint_conserved": true
     },
@@ -489,12 +516,30 @@
       "extension_failures": 0,
       "endpoint_conserved": true
     },
+    "flyers/bank/pl33/nk_square_n7.flyer": {
+      "sha256": "8b849d819d076df0cae67b033a2dd1d79742f31f57677f88b206c6795a4997e9",
+      "ticks": 10000,
+      "distance": 3888,
+      "speed_bps": 3.888,
+      "extensions": 140000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
     "flyers/bank/pl34/ab_push_pull_7body.flyer": {
       "sha256": "9316c2553eda59f15ab3869cff02bf62178f22ce9becbfd34e279a68b7649d1a",
       "ticks": 10000,
       "distance": 3000,
       "speed_bps": 3.0,
       "extensions": 21000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl35/nk_square_n8.flyer": {
+      "sha256": "c2e207d9639973b35c3cfb42f12b5f82c70aea7d72ea4ecd4d5ec789afefef84",
+      "ticks": 10000,
+      "distance": 4000,
+      "speed_bps": 4.0,
+      "extensions": 80000,
       "extension_failures": 0,
       "endpoint_conserved": true
     },
