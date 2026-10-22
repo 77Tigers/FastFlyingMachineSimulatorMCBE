@@ -106,22 +106,13 @@ fn trace(file: &str, start: usize, end: usize, diagnostic_limit: Option<u64>) ->
                 println!("INITIAL {p:?} {}", label(Some(b)));
             }
         }
-        let mut printed_power = false;
+        for link in power::power_links(&world) {
+            println!(
+                "POWER {} {:?} {} -> {:?}",
+                link.kind, link.from, label(world.get(&link.from)), link.to
+            );
+        }
         for step in tr.steps {
-            if let Some(power) = &step.info.power {
-                if !printed_power {
-                    for link in &power.links {
-                        println!(
-                            "POWER {} {:?} {} -> {:?}",
-                            link.kind,
-                            link.from,
-                            label(world.get(&link.from)),
-                            link.to
-                        );
-                    }
-                    printed_power = true;
-                }
-            }
             if let Some(m) = &step.info.movement {
                 println!(
                     "ACTION {} piston={:?} sources={} failure={:?}",

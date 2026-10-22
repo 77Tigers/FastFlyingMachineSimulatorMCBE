@@ -1,6 +1,41 @@
-# Contract solver (2026-10-14/15)
+# Contract solver
 
-**Validated N3 reconstruction (2026-10-17):** offline whole-column generation plus complete-selection repair rebuilt the20-body human_3bps_original geometry at PL12,3 bps,80/80 ×10000 ticks, with independent Python80/80 confirmation and no reference hardware input. [Findings, preserved artifact and reproduction](FINDINGS.md). This completes the known-geometry reconstruction milestone; new geometry/generalization remains open. The column pipeline is offline; a later shared-evaluator fix affects relaxed search feedback only, with strict acceptance unchanged (see FINDINGS.md).
+## Current status (2026-10-22)
+
+`contract-solve` searches for hardware for a supplied contract within its configured
+budget (5 seconds by default), then writes its best candidate and verification
+report. The latest recorded five-second benchmark is **e14: 139/170 extension
+contracts** and **f19: 180/263 natural problems** (2026-10-16). These are historical
+benchmark results, not a fresh run on every commit. Harder classes remain open;
+the solver does not guarantee a solution for an arbitrary contract.
+
+The **offline column pipeline** adds whole-body hardware generation, coupled
+selection and repair beyond the five-second solver. It rebuilt both the 20-body
+`human_3bps_original` and the held-out 13-body `tm_smol` geometry at PL12 and 3 bps,
+without reference hardware input. Both complete reconstructions passed independent
+80-case checking and native 80 × 10,000-tick verification at displacement 3000.
+This establishes reconstruction of known geometry; the offline pipeline's runtime
+is separate from the fast solver's budget.
+
+Current rear-first synthesis has also produced a **110-cell supplied component**
+with 20 natural and 13 supplied strokes at PL12. It passes independent 80-case
+checks in each of the three prescribed orders and native 80 × 3 × 10,000-tick
+verification. Its missing drives and closure remain unbuilt, so it is not a new
+complete flyer. PL11 also remains open. The [checkpoint](COLUMNS_CHECKPOINT.md)
+tracks ongoing research; [findings](FINDINGS.md) record its scope and limitations.
+The [preserved component artifact](results/quarter_H1_second_push_verified.json)
+contains encoded cells, piston ownership, contracts and completed proof results.
+
+Build all research binaries from the repository root with:
+
+```sh
+cargo build --release --manifest-path tools/Cargo.toml --target-dir target
+```
+
+Tool purposes and command lines are listed in the Tools section below.
+The dated sections below retain the development history and earlier benchmarks.
+Strict acceptance is unchanged by the relaxed search-feedback fix described in
+the findings.
 
 ## Chains / tentacles (2026-10-16)
 
@@ -87,8 +122,8 @@ timing: the front body is still then), the other moves are pushes by carried pus
 * Weakest classes: N4 four-push riders (lone pistons hopping between bodies), pull-twice mmwmmw (4 coupled
   riders), bare skeletons. `flyer-ledger` shows their mechanisms.
 * Storage: replay logs stripped (898 MB -> 23 MB). Bank entries could become contract + short solution diff.
-* Work is on local branch `contract-solver` (not pushed); generated problems/runs are gitignored and
-  regenerable (`gen_flyerprobs.py`, `contract-from-flyer --mode ext|bare`, `bench.py`).
+* Generated problems/runs are gitignored and regenerable (`gen_flyerprobs.py`,
+  `contract-from-flyer --mode ext|bare`, `bench.py`). Use Git to check the current branch and push status.
 
 User task: code that takes an extension contract and outputs the best solution it can in < 5 s, useful for
 wide classes of extensions (N2–N5, mv4, mmwmmw, mmwmw...), so the bank need not store every fixture.

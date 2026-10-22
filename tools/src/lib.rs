@@ -3,6 +3,7 @@ use fastflyer::{debug::TickTrace, Block, Coord, Flyer, Kind};
 use std::sync::mpsc;
 pub mod contract;
 pub mod columns;
+pub mod power;
 pub mod solve;
 use std::sync::atomic::{AtomicUsize, Ordering};
 

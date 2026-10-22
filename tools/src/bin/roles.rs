@@ -1,4 +1,4 @@
-// Body-level timing summary. Usage: bodytrack FILE TICKS W0 PERIOD [LIMIT]
+// Body-level timing summary. Usage: roles FILE TICKS W0 PERIOD [LIMIT]
 // Tracks block identities through successful moves (arms excluded). Blocks whose move-tick sets inside
 // [W0, TICKS) are identical AND that are face-connected at tick 0 form a "body". Prints per body: size,
 // materials, movement word (2-tick slots) and initial box; then one period of events:
@@ -7,6 +7,7 @@
 // "power" = bodies owning the source (redstone/rod/observer, or the hard-powered solid) powering it that tick.
 use fastflyer::{debug::TickTrace,Block,Coord,Flyer,Kind};
 use std::collections::{BTreeMap,BTreeSet};
+use fastflyer_tools::power::piston_power_sources;
 fn dv(d:u8)->(i64,i64,i64){match d{0=>(1,0,0),1=>(-1,0,0),2=>(0,1,0),3=>(0,-1,0),4=>(0,0,1),_=>(0,0,-1)}}
 fn add(c:Coord,d:u8)->Coord{let(x,y,z)=dv(d);Coord::new(c.x+x,c.y+y,c.z+z)}
 struct Ev{t:usize,actor:usize,pull:bool,moved:Vec<usize>,fail:Option<String>,carriers:Vec<usize>,power:Vec<usize>}
@@ -27,22 +28,10 @@ fn main()->Result<(),Box<dyn std::error::Error>>{
   let mut world:BTreeMap<Coord,Block>=f.blocks().into_iter().collect();
   let mut tr=TickTrace::new(&f);f.tick_traced(&mut tr,t)?;
   // power attribution at tick start: piston id -> source ids
-  let mut pw:BTreeMap<usize,Vec<usize>>=BTreeMap::new();
-  if let Some(step)=tr.steps.iter().find(|s|s.info.power.is_some()){
-   let power=step.info.power.as_ref().unwrap();
-   let mut hard_from:BTreeMap<Coord,Coord>=BTreeMap::new();
-   for l in &power.links{if l.kind=="hard"{hard_from.insert(l.to,l.from);}}
-   for l in &power.links{
-    if l.kind=="soft"||l.kind=="hard→piston"{
-     if let Some(&pid)=ids_start.get(&l.to){
-      let mut srcs=vec![];
-      if let Some(&sid)=ids_start.get(&l.from){srcs.push(sid);}
-      if l.kind=="hard→piston"{if let Some(o)=hard_from.get(&l.from){if let Some(&oid)=ids_start.get(o){srcs.push(oid);}}}
-      pw.entry(pid).or_default().extend(srcs);
-     }
-    }
-   }
-  }
+  let pw:BTreeMap<usize,Vec<usize>>=piston_power_sources(&world).into_iter()
+   .filter_map(|(pos,sources)|ids_start.get(&pos).map(|&id|{
+    (id,sources.iter().filter_map(|q|ids_start.get(q).copied()).collect())
+   })).collect();
   for step in tr.steps{
    if let Some(m)=&step.info.movement{
     let p=step.info.active_piston.unwrap();
