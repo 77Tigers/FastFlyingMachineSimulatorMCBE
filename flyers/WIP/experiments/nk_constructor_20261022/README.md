@@ -36,7 +36,7 @@ x=1 over pushers + RBs, next body's cover = slab at x=-3 behind the pushers.
 | slab (racetrack, full plate + slab) | 1465 | baseline |
 | lat (racetrack, lateral covers on a 5-code) | 1444 | isolated cover cells cost routing |
 | slabP (racetrack) | 1252 | after offset racetrack layout |
-| sq (square ring; exact small-k modules, side-contact modules for k=6,9-11) | **1226** | 1 seed, 1000 blocks; table `square_table.json` |
+| sq (square ring; exact small-k modules, side-contact modules for most k) | **1206** | 1 seed, 1000 blocks; table `square_table.json` |
 
 ## Bounds and negatives
 
