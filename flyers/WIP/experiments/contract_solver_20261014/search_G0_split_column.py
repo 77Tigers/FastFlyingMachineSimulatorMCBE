@@ -6,6 +6,7 @@ so T0 move0 delivers them to its source plane before G0 first1.
 Geometric exclusions are scoped separated-body hypotheses. Native tests
 decide firing, switch-off, recovery and loads; X0/G2 remain supplied.
 """
+import os as _research_os
 import argparse,itertools,json,subprocess,time
 from pathlib import Path
 from ortools.sat.python import cp_model
@@ -103,7 +104,7 @@ def main():
     (case/'drive.txt').write_text(''.join(' '.join(map(str,row))+'\n' for row in sorted(rows)),encoding='utf-8')
     for order in ['before_natural','after_natural','interleaved']:dump(case/f'{order}.json',{**cc,'prescribed_order':order})
     rec['shapes']=shapes;dump(case/'preparation.json',rec);(case/'generator_snapshot.py').write_bytes(Path(__file__).read_bytes())
-    native=subprocess.run([str(ROOT/'target/release/contract-verify.exe'),str(case/'before_natural.json'),str(case/'native.json'),'30','2'],cwd=ROOT,capture_output=True)
+    native=subprocess.run([str(ROOT/('target/release/contract-verify' + ('.exe' if _research_os.name == 'nt' else ''))),str(case/'before_natural.json'),str(case/'native.json'),'30','2'],cwd=ROOT,capture_output=True)
     assert (case/'native.json').exists(),native.stderr;rec['native']=json.loads((case/'native.json').read_text(encoding='utf-8'));print(json.dumps({'index':index,'kind':kind.name,'native':rec['native']}),flush=True)
     if rec['native']['verified']:passed=str(case)
    records.append(rec);dump(a.out/'report.json',{'scope':__doc__,'records':records,'passed':passed,'tests':tests,'choices':len(choices),'seconds':time.monotonic()-start})

@@ -732,7 +732,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\T0_first_H2_removed_causal\\case061\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/T0_first_H2_removed_causal/case061/drive.txt",
       "prescribed_order": "before_natural",
       "boundary_envelope": {
         "min": [
@@ -4599,7 +4599,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\T0_first_H2_removed_causal\\case061\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/T0_first_H2_removed_causal/case061/drive.txt",
       "prescribed_order": "after_natural",
       "boundary_envelope": {
         "min": [
@@ -8466,7 +8466,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\T0_first_H2_removed_causal\\case061\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/T0_first_H2_removed_causal/case061/drive.txt",
       "prescribed_order": "interleaved",
       "boundary_envelope": {
         "min": [

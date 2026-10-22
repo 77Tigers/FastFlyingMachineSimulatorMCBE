@@ -1,5 +1,15 @@
 /target/
+/target-*/
 /dist/
+# Local credentials and machine configuration (sanitized templates may be tracked).
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+id_rsa
+id_ed25519
+.venv/
 __pycache__/
 *.pyc
 *.pyo
@@ -22,6 +32,8 @@ __pycache__/
 *.a
 *.lib
 *.rlib
+*.rmeta
+*.exp
 *.o
 *.obj
 *.wasm

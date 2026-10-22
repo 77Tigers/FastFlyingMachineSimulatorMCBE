@@ -2,8 +2,8 @@
 
 Deleted 2026-10-08. Every tracked file is recoverable from commit `1222fbe`:
 `git show 1222fbe:flyers/WIP/experiments/PATH` or `git checkout 1222fbe -- flyers/WIP/experiments/PATH`.
-Untracked `.flyer` candidates (gitignored, never in git) are in
-`C:/Users/Ruben/OneDrive/Documents/FastFlyer_WIP_uncommitted_backup_20261008/` under the same relative paths.
+Untracked `.flyer` candidates (gitignored, never in Git) were preserved in an
+external experiment backup. That backup is not part of this repository.
 Before deletion, every audit-set `.flyer` with PL<=20 was screened; none beats the bank frontier
 (2.5@PL8, 3@PL12, 3.333@PL21). Kept on purpose: `../astra_ringgen_hexsmart.py` (run by sol_reference and speed_range scripts),
 `../astra_ringgen_safe.py` (generator of bank pl22/pl23 four_push_ring and pl15 four_segment_ring), BINARY_RELOCATION.csv, abstraction_*.

@@ -2,7 +2,7 @@
   "passed": true,
   "cases": [
     {
-      "contract": "flyers\\extension_bank\\n2\\n2_01\\after_natural.json",
+      "contract": "flyers/extension_bank/n2/n2_01/after_natural.json",
       "python": {
         "rng": null,
         "phase_x": null,
@@ -74,7 +74,7 @@
       "expected_pass": true
     },
     {
-      "contract": "flyers\\extension_bank\\n2\\n2_01\\before_natural.json",
+      "contract": "flyers/extension_bank/n2/n2_01/before_natural.json",
       "python": {
         "rng": null,
         "phase_x": null,
@@ -146,7 +146,7 @@
       "expected_pass": true
     },
     {
-      "contract": "flyers\\extension_bank\\n2\\n2_02\\after_natural.json",
+      "contract": "flyers/extension_bank/n2/n2_02/after_natural.json",
       "python": {
         "rng": null,
         "phase_x": null,
@@ -218,7 +218,7 @@
       "expected_pass": true
     },
     {
-      "contract": "flyers\\extension_bank\\n2\\n2_02\\before_natural.json",
+      "contract": "flyers/extension_bank/n2/n2_02/before_natural.json",
       "python": {
         "rng": null,
         "phase_x": null,
@@ -290,7 +290,7 @@
       "expected_pass": true
     },
     {
-      "contract": "flyers\\extension_bank\\n2\\n2_03\\after_natural.json",
+      "contract": "flyers/extension_bank/n2/n2_03/after_natural.json",
       "python": {
         "rng": null,
         "phase_x": null,
@@ -362,7 +362,7 @@
       "expected_pass": true
     },
     {
-      "contract": "flyers\\extension_bank\\n2\\n2_03\\before_natural.json",
+      "contract": "flyers/extension_bank/n2/n2_03/before_natural.json",
       "python": {
         "rng": null,
         "phase_x": null,
@@ -434,7 +434,7 @@
       "expected_pass": true
     },
     {
-      "contract": "flyers\\extension_bank\\n2\\n2_04\\before_natural.json",
+      "contract": "flyers/extension_bank/n2/n2_04/before_natural.json",
       "python": {
         "rng": null,
         "phase_x": null,
@@ -506,7 +506,7 @@
       "expected_pass": true
     },
     {
-      "contract": "flyers\\extension_bank\\n2\\n2_05\\after_natural.json",
+      "contract": "flyers/extension_bank/n2/n2_05/after_natural.json",
       "python": {
         "rng": null,
         "phase_x": null,
@@ -566,7 +566,7 @@
       "expected_pass": true
     },
     {
-      "contract": "flyers\\extension_bank\\n2\\n2_05\\before_natural.json",
+      "contract": "flyers/extension_bank/n2/n2_05/before_natural.json",
       "python": {
         "rng": null,
         "phase_x": null,
@@ -626,7 +626,7 @@
       "expected_pass": true
     },
     {
-      "contract": "flyers\\extension_bank\\n2\\n2_06\\after_natural.json",
+      "contract": "flyers/extension_bank/n2/n2_06/after_natural.json",
       "python": {
         "rng": null,
         "phase_x": null,
@@ -674,7 +674,7 @@
       "expected_pass": true
     },
     {
-      "contract": "flyers\\extension_bank\\n2\\n2_06\\before_natural.json",
+      "contract": "flyers/extension_bank/n2/n2_06/before_natural.json",
       "python": {
         "rng": null,
         "phase_x": null,
@@ -722,7 +722,7 @@
       "expected_pass": true
     },
     {
-      "contract": "flyers\\extension_bank\\n3\\n3_07\\after_natural.json",
+      "contract": "flyers/extension_bank/n3/n3_07/after_natural.json",
       "python": {
         "rng": null,
         "phase_x": null,
@@ -772,7 +772,7 @@
       "expected_pass": true
     },
     {
-      "contract": "flyers\\extension_bank\\n3\\n3_07\\before_natural.json",
+      "contract": "flyers/extension_bank/n3/n3_07/before_natural.json",
       "python": {
         "rng": null,
         "phase_x": null,
@@ -822,7 +822,7 @@
       "expected_pass": true
     },
     {
-      "contract": "flyers\\extension_bank\\n3\\n3_08\\before_natural.json",
+      "contract": "flyers/extension_bank/n3/n3_08/before_natural.json",
       "python": {
         "rng": null,
         "phase_x": null,
@@ -886,7 +886,7 @@
       "expected_pass": true
     },
     {
-      "contract": "flyers\\extension_bank\\n3\\n3_09\\before_natural.json",
+      "contract": "flyers/extension_bank/n3/n3_09/before_natural.json",
       "python": {
         "rng": null,
         "phase_x": null,
@@ -950,7 +950,7 @@
       "expected_pass": true
     },
     {
-      "contract": "flyers\\extension_bank\\n3\\n3_10\\after_natural.json",
+      "contract": "flyers/extension_bank/n3/n3_10/after_natural.json",
       "python": {
         "rng": null,
         "phase_x": null,
@@ -1000,7 +1000,7 @@
       "expected_pass": true
     },
     {
-      "contract": "flyers\\extension_bank\\n3\\n3_10\\before_natural.json",
+      "contract": "flyers/extension_bank/n3/n3_10/before_natural.json",
       "python": {
         "rng": null,
         "phase_x": null,
@@ -1050,7 +1050,7 @@
       "expected_pass": true
     },
     {
-      "contract": "flyers\\extension_bank\\n3\\n3_11\\after_natural.json",
+      "contract": "flyers/extension_bank/n3/n3_11/after_natural.json",
       "python": {
         "rng": null,
         "phase_x": null,
@@ -1114,7 +1114,7 @@
       "expected_pass": true
     },
     {
-      "contract": "flyers\\extension_bank\\n3\\n3_11\\before_natural.json",
+      "contract": "flyers/extension_bank/n3/n3_11/before_natural.json",
       "python": {
         "rng": null,
         "phase_x": null,
@@ -1178,7 +1178,7 @@
       "expected_pass": true
     },
     {
-      "contract": "flyers\\extension_bank\\n4\\n4_12\\after_natural.json",
+      "contract": "flyers/extension_bank/n4/n4_12/after_natural.json",
       "python": {
         "rng": null,
         "phase_x": null,
@@ -1230,7 +1230,7 @@
       "expected_pass": true
     },
     {
-      "contract": "flyers\\extension_bank\\n4\\n4_12\\before_natural.json",
+      "contract": "flyers/extension_bank/n4/n4_12/before_natural.json",
       "python": {
         "rng": null,
         "phase_x": null,
@@ -1282,7 +1282,7 @@
       "expected_pass": true
     },
     {
-      "contract": "flyers\\extension_bank\\n4\\n4_13\\after_natural.json",
+      "contract": "flyers/extension_bank/n4/n4_13/after_natural.json",
       "python": {
         "rng": null,
         "phase_x": null,
@@ -1382,7 +1382,7 @@
       "expected_pass": true
     },
     {
-      "contract": "flyers\\extension_bank\\n4\\n4_13\\before_natural.json",
+      "contract": "flyers/extension_bank/n4/n4_13/before_natural.json",
       "python": {
         "rng": null,
         "phase_x": null,
@@ -1482,7 +1482,7 @@
       "expected_pass": true
     },
     {
-      "contract": "flyers\\extension_bank\\n4\\n4_14\\after_natural.json",
+      "contract": "flyers/extension_bank/n4/n4_14/after_natural.json",
       "python": {
         "rng": null,
         "phase_x": null,
@@ -1566,7 +1566,7 @@
       "expected_pass": true
     },
     {
-      "contract": "flyers\\extension_bank\\n4\\n4_14\\before_natural.json",
+      "contract": "flyers/extension_bank/n4/n4_14/before_natural.json",
       "python": {
         "rng": null,
         "phase_x": null,

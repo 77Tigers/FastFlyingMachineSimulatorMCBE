@@ -59,19 +59,19 @@
   },
   "verified": [
     {
-      "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\validation\\case0000_pl45\\summary.json",
+      "path": "flyers/WIP/experiments/mv4_easy_20261004/validation/case0000_pl45/summary.json",
       "limit": 45,
-      "artifact": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\bank\\pl45\\mv4_symmetric_easy.flyer"
+      "artifact": "flyers/bank/pl45/mv4_symmetric_easy.flyer"
     },
     {
-      "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\validation\\case0006_pl43\\summary.json",
+      "path": "flyers/WIP/experiments/mv4_easy_20261004/validation/case0006_pl43/summary.json",
       "limit": 43,
-      "artifact": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\bank\\pl43\\mv4_symmetric_easy.flyer"
+      "artifact": "flyers/bank/pl43/mv4_symmetric_easy.flyer"
     },
     {
-      "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\validation\\compact43_reroute_best\\summary.json",
+      "path": "flyers/WIP/experiments/mv4_easy_20261004/validation/compact43_reroute_best/summary.json",
       "limit": 43,
-      "artifact": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\bank\\pl43\\mv4_symmetric_easy_compact.flyer"
+      "artifact": "flyers/bank/pl43/mv4_symmetric_easy_compact.flyer"
     }
   ],
   "best_short": [
@@ -85,7 +85,7 @@
         34,
         16
       ],
-      "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\ports\\case0095_pl43.flyer"
+      "path": "flyers/WIP/experiments/mv4_easy_20261004/ports/case0095_pl43.flyer"
     },
     {
       "category": "flat",
@@ -97,7 +97,7 @@
         39,
         15
       ],
-      "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\flat\\case0006_pl43.flyer"
+      "path": "flyers/WIP/experiments/mv4_easy_20261004/flat/case0006_pl43.flyer"
     },
     {
       "category": "bend",
@@ -109,7 +109,7 @@
         38,
         17
       ],
-      "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\bend\\case0044_pl43.flyer"
+      "path": "flyers/WIP/experiments/mv4_easy_20261004/bend/case0044_pl43.flyer"
     },
     {
       "category": "rail",
@@ -121,7 +121,7 @@
         32,
         15
       ],
-      "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\rail\\case0036_pl44.flyer"
+      "path": "flyers/WIP/experiments/mv4_easy_20261004/rail/case0036_pl44.flyer"
     },
     {
       "category": "bend",
@@ -133,7 +133,7 @@
         34,
         15
       ],
-      "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\bend\\case0056_pl44.flyer"
+      "path": "flyers/WIP/experiments/mv4_easy_20261004/bend/case0056_pl44.flyer"
     }
   ]
 }

@@ -462,7 +462,7 @@
       5,
       12
     ],
-    "base": "flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\split_relay_lower_five_glue\\case021",
+    "base": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/split_relay_lower_five_glue/case021",
     "base_sha256": "d0fbb957adbc20d65d24f0d299e918f89e426873f3a8716179933f119fbcd228"
   },
   "contracts": {
@@ -936,7 +936,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\G0_front_recovery_upper\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/G0_front_recovery_upper/drive.txt",
       "prescribed_order": "before_natural",
       "boundary_envelope": {
         "min": [
@@ -5923,7 +5923,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\G0_front_recovery_upper\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/G0_front_recovery_upper/drive.txt",
       "prescribed_order": "after_natural",
       "boundary_envelope": {
         "min": [
@@ -10910,7 +10910,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\G0_front_recovery_upper\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/G0_front_recovery_upper/drive.txt",
       "prescribed_order": "interleaved",
       "boundary_envelope": {
         "min": [

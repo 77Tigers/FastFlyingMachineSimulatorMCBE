@@ -1,10 +1,11 @@
 from __future__ import annotations
+import os as _research_os
 import copy, json, os, sys
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[6]
 sys.path.insert(0, str(ROOT / 'tools'))
 from extension_contract import load_contract, run_case
-DRIVER = ROOT / 'target/release/extension-prescribe.exe'
+DRIVER = ROOT / ('target/release/extension-prescribe' + ('.exe' if _research_os.name == 'nt' else ''))
 SAMPLES = [(0,0,0),(0,0,7),(0,7,0),(1,7,8),(2,8,8),(5,15,15),(42,7,8),(42,15,0)]
 BASE = ROOT / 'flyers/WIP/experiments/shared_design_20261013/bank_migration'
 OUT = Path(__file__).parent

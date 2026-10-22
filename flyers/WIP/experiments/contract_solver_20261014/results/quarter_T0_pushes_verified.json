@@ -530,7 +530,7 @@
   "content_hash": "940a5336166b1baf35497582463f942947c8b508e0d274f1259801ef0d9c33b6",
   "construction": {
     "scope": "Load an existing supplied interface with another scaffold's natural column.\n\nUse exact scaffold normals/initial arms, retain existing hardware, and change\nonly the added target's two pushes (or selected --slots) from supplied to\ninternal. Its third stroke remains supplied. No hardware or budget is relaxed.\n",
-    "base": "flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\T0_first_push",
+    "base": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/T0_first_push",
     "base_flyer_sha256": "ecda86182dec501622d4f94a783a7ef078ecf180d6ab35c21b6ad00ba62341ca",
     "scaffold_sha256": "6175e024718be2f1140ed79bdb837cc932a2c5f7828eea8ca168107e6c2f65ea",
     "added_target": "T0",
@@ -1136,7 +1136,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\T0_two_pushes_pickup\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/T0_two_pushes_pickup/drive.txt",
       "prescribed_order": "before_natural",
       "boundary_envelope": {
         "min": [
@@ -6683,7 +6683,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\T0_two_pushes_pickup\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/T0_two_pushes_pickup/drive.txt",
       "prescribed_order": "after_natural",
       "boundary_envelope": {
         "min": [
@@ -12230,7 +12230,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\T0_two_pushes_pickup\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/T0_two_pushes_pickup/drive.txt",
       "prescribed_order": "interleaved",
       "boundary_envelope": {
         "min": [

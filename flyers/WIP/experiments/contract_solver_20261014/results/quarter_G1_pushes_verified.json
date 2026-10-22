@@ -392,7 +392,7 @@
   "content_hash": "33e65bb90d3f4fc909793531999ba55a27cdda04b23695e5690c300218b4e2c3",
   "construction": {
     "scope": "Four bounded G1 constructions: two supported normal pairs, two glue materials.\n\nAdds a real three-glue G1 carrier and its two normal pushes to the relocated\nrear power interface. Only G1's third stroke stays supplied (cap12). No front\npuller or full flyer is claimed. Native verification is a screen only.\n",
-    "base": "flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\rear_X1_power\\case00",
+    "base": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/rear_X1_power/case00",
     "glue": [
       [
         22,
@@ -464,10 +464,10 @@
       14
     ],
     "sha256": {
-      "flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\rear_X1_power\\case00\\problem.flyer": "3e29c3a60222d5982beedf44b661d6fa4d704051a7e93c7e81d3f3f64794cbf7",
-      "flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\rear_X1_power\\case00\\before_natural.json": "a92e5bb15fa64e8cbd996da61e4a4a7f71e4108724ac76693f240d6f0c3b09c5",
-      "flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\rear_X1_power\\case00\\drive.txt": "7038b83d065ad9fcfa80867b4ff2566068adcdddcc8c4e1720c4da37366ff5c5",
-      "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\test_front_column.py": "1505a4bbb94d6c4b11f6c39bd04d124b18458722121752fe3b86eb18ea35578b"
+      "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/rear_X1_power/case00/problem.flyer": "3e29c3a60222d5982beedf44b661d6fa4d704051a7e93c7e81d3f3f64794cbf7",
+      "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/rear_X1_power/case00/before_natural.json": "a92e5bb15fa64e8cbd996da61e4a4a7f71e4108724ac76693f240d6f0c3b09c5",
+      "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/rear_X1_power/case00/drive.txt": "7038b83d065ad9fcfa80867b4ff2566068adcdddcc8c4e1720c4da37366ff5c5",
+      "flyers/WIP/experiments/contract_solver_20261014/test_front_column.py": "1505a4bbb94d6c4b11f6c39bd04d124b18458722121752fe3b86eb18ea35578b"
     }
   },
   "contracts": {
@@ -941,7 +941,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\front_G1_forward_handoff\\case00\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/front_G1_forward_handoff/case00/drive.txt",
       "prescribed_order": "before_natural",
       "boundary_envelope": {
         "min": [
@@ -5928,7 +5928,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\front_G1_forward_handoff\\case00\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/front_G1_forward_handoff/case00/drive.txt",
       "prescribed_order": "after_natural",
       "boundary_envelope": {
         "min": [
@@ -10915,7 +10915,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\front_G1_forward_handoff\\case00\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/front_G1_forward_handoff/case00/drive.txt",
       "prescribed_order": "interleaved",
       "boundary_envelope": {
         "min": [

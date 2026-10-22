@@ -6,6 +6,7 @@ Macro states/arms/owners come from a real validated phase snapshot. New
 G0/H0 moves and T0 pull0 are natural; only X0 pushes0/1 remain supplied.
 This constructor/screen does not itself imply complete-flyer verification.
 """
+import os as _research_os
 import argparse,hashlib,json,subprocess,time
 from pathlib import Path
 from assemble import Flyer
@@ -80,7 +81,7 @@ def main():
         prep={'scope':__doc__,'base':str(a.base),'macro_index':mi,'flip_materials':flip,'T0_glue':sorted(shape),
               'sha256':{str(p):hashlib.sha256(p.read_bytes()).hexdigest() for p in [a.base/'problem.flyer',a.macro,Path(__file__)]}}
         (out/'preparation.json').write_text(json.dumps(prep,indent=2)+'\n',encoding='utf-8')
-        run=subprocess.run([str(ROOT/'target/release/contract-verify.exe'),str(out/'before_natural.json'),str(out/'native.json'),'30','2'],cwd=ROOT,capture_output=True,text=True)
+        run=subprocess.run([str(ROOT/('target/release/contract-verify' + ('.exe' if _research_os.name == 'nt' else ''))),str(out/'before_natural.json'),str(out/'native.json'),'30','2'],cwd=ROOT,capture_output=True,text=True)
         assert (out/'native.json').exists(),run.stderr
         result=json.loads((out/'native.json').read_text(encoding='utf-8'))
         results.append({'case':str(out),'macro_index':mi,'flip':flip,'T0_glue':sorted(shape),**result})

@@ -17,7 +17,7 @@ Keep this active handoff below **5,500 words**. Prior evidence is preserved in [
 
 **Column reconstruction (2026-10-17):** generated hardware rebuilds both the original 20-body flyer and the held-out 13-body tm_smol at PL12 / 3 bps (independent 80/80 + 80x10000 ticks, distance 3000, max 12). **PL11 on the fixed tm_smol: local repair is exhausted.** Tip integration, alternate G9 controls, five/six-glue G shapes, connected trims, helper and paired-column regeneration, rider completion, 3D rear contacts, single-source normal/sticky repairs and pickup-path variants all fail (counts and witnesses in [findings](WIP/experiments/contract_solver_20261014/FINDINGS.md)). Recovery needs >= 3 new helper glue, which exhausts load 11 on G8; a calibrated joint G/H model excludes recovery at <= 7 glue. Best partials: a 30-cell interface at encoded 11 (max 10) using a neighbour-carried observer, and a 35-cell joint G/H normal-column scaffold (native 80x3x10000, max 10, G supplied). **User rule:** for PL11 change the architecture and establish full stroke/carrier/power budgets before more local repair.
 
-Tooling lesson: a column-search bug once evaluated completed candidates with zero simulation orders, so raw completion counts before the fix are overstated; accepted designs were protected by separate native/independent/long verification. A three-cell source/sticky fixture showed a power race (independent before 80/80, after 0/80 at 6), so co-carried observer recovery is rejected.
+Tooling lesson: a column-search bug once ran zero simulation orders, overstating raw completion counts before the fix; accepted designs had separate native/independent/long verification. A three-cell source/sticky fixture showed a power race (independent before 80/80, after 0/80 at 6), so co-carried observer recovery is rejected.
 
 Shared contracts enforce provenance, contacts and required cells in Python/Rust; three migrations pass 400 samples per evaluator. Interleaved scheduling shuffles supplied events among natural piston visits; n4_14 exposes load 17/cap 16 despite passing both batch modes. [Interface](docs/EXTENSION_DESIGN.md), [evidence](WIP/experiments/shared_design_20261013/README.md).
 
@@ -51,7 +51,7 @@ An extension challenge specifies driven input blocks/schedules, spare load **per
 
 ## N6: 3.75 bps four-body push ring (2026-10-20)
 
-Bodies A-D rest at {0,1},{2,3},{4,5},{6,7}; each is pushed 6 times by 6 hopping pushers powered by its 2 RBs; the next body carries spent pushers back during the victim's rest. Load = glue + RBs + 6. Best: **PL26** (3-RB ring module, 90-degree screw), 80/80 at 3750, banked `bank/pl26/n6_screw_ring_3p75.flyer`. [Findings, tools](WIP/experiments/n6_20261020/README.md).
+Bodies A-D rest at {0,1},{2,3},{4,5},{6,7}; each has 6 hopping pushers raced by its own RBs; the next body recovers spent pushers. **N_k counting:** k+2 slots, each body still 2, r resting per slot: 2B = r(k+2), so B=(k+2)/2 for even k (N8: 5); odd k: r=2, B=k+2 (N5: 7, N7: 9), or uneven rests. Riders per mover average k (load = glue + RBs + k). Best: **PL26** (3-RB module, 90-degree screw), 80/80 at 3750, banked `bank/pl26/n6_screw_ring_3p75.flyer`. [Findings, tools](WIP/experiments/n6_20261020/README.md).
 
 ## Low-PL records: 2.5 bps at PL8, 2 bps at PL10, PL7 status
 

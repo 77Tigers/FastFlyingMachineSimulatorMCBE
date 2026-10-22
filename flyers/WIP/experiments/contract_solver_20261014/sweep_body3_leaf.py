@@ -3,6 +3,7 @@
 Input is joint_compact_0_3's bare five-cell body3 core. Sequential bounded
 generation stops at the first pair of nonempty body0/body3 pools.
 """
+import os as _research_os
 import argparse
 import hashlib
 import json
@@ -25,7 +26,7 @@ def main():
     directions = ((1,0,0),(-1,0,0),(0,1,0),(0,-1,0),(0,0,1),(0,0,-1))
     sites = sorted({tuple(a+b for a,b in zip(p,d)) for p in bodies[3] for d in directions}
                    - set(base._cells) - {(3,5,5)})
-    binary = ROOT / "target/release/column-solve.exe"
+    binary = ROOT / ('target/release/column-solve' + ('.exe' if _research_os.name == 'nt' else ''))
     state = {"verified": False, "source_sha256": hashlib.sha256(args.problem.read_bytes()).hexdigest(),
              "binary_sha256": hashlib.sha256(binary.read_bytes()).hexdigest(), "cases": []}
     args.output.mkdir(parents=True, exist_ok=True)

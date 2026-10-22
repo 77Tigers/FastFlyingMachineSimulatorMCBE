@@ -2,7 +2,7 @@
   "passed": true,
   "cases": [
     {
-      "contract": "flyers\\WIP\\experiments\\shared_design_20261013\\integration\\rear_before\\contract.json",
+      "contract": "flyers/WIP/experiments/shared_design_20261013/integration/rear_before/contract.json",
       "python": {
         "rng": null,
         "phase_x": null,
@@ -62,7 +62,7 @@
       "expected_pass": true
     },
     {
-      "contract": "flyers\\WIP\\experiments\\shared_design_20261013\\integration\\parity\\negative_contracts\\0\\required_cell\\contract.json",
+      "contract": "flyers/WIP/experiments/shared_design_20261013/integration/parity/negative_contracts/0/required_cell/contract.json",
       "python": {
         "rng": null,
         "phase_x": null,
@@ -106,7 +106,7 @@
       "expected_pass": false
     },
     {
-      "contract": "flyers\\WIP\\experiments\\shared_design_20261013\\integration\\parity\\negative_contracts\\0\\contact\\contract.json",
+      "contract": "flyers/WIP/experiments/shared_design_20261013/integration/parity/negative_contracts/0/contact/contract.json",
       "python": {
         "rng": null,
         "phase_x": null,
@@ -156,7 +156,7 @@
       "expected_pass": false
     },
     {
-      "contract": "flyers\\WIP\\experiments\\shared_design_20261013\\integration\\parity\\negative_contracts\\0\\provenance\\contract.json",
+      "contract": "flyers/WIP/experiments/shared_design_20261013/integration/parity/negative_contracts/0/provenance/contract.json",
       "python": {
         "rng": null,
         "phase_x": null,
@@ -199,7 +199,7 @@
       "expected_pass": false
     },
     {
-      "contract": "flyers\\WIP\\experiments\\shared_design_20261013\\integration\\parity\\negative_contracts\\0\\malformed_provenance\\contract.json",
+      "contract": "flyers/WIP/experiments/shared_design_20261013/integration/parity/negative_contracts/0/malformed_provenance/contract.json",
       "python": {
         "passed": false,
         "diagnostic": "contract.ports[0].provenance: expected an array of 4 movement sources",

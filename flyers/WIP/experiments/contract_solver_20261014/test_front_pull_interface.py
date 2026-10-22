@@ -4,6 +4,7 @@ Three existing G1 glue lanes permit attached sticky bases two cells ahead of
 T1's target. Screen five direct H1 power positions per lane. H1 source motion
 remains supplied (wwmmm, cap1); H1 geometry and a complete flyer are not claimed.
 """
+import os as _research_os
 import argparse
 import hashlib
 import json
@@ -49,7 +50,7 @@ def main():
         (out/'preparation.json').write_text(json.dumps({'scope':__doc__,'base':str(a.base),'sticky_at':sticky,'source_at':rb,
             'source_word':'wwmmm','sticky_word':'mmwwm','fire_slot':2,'pull_slot':3,
             'sha256':{str(p):hashlib.sha256(p.read_bytes()).hexdigest() for p in [a.base/'problem.flyer',a.base/'before_natural.json',a.base/'drive.txt',Path(__file__)]}},indent=2)+'\n',encoding='utf-8')
-        run=subprocess.run([str(ROOT/'target/release/contract-verify.exe'),str(out/'before_natural.json'),str(out/'native.json'),str(max(1,deadline-time.monotonic())),'2'],cwd=ROOT,capture_output=True,text=True)
+        run=subprocess.run([str(ROOT/('target/release/contract-verify' + ('.exe' if _research_os.name == 'nt' else ''))),str(out/'before_natural.json'),str(out/'native.json'),str(max(1,deadline-time.monotonic())),'2'],cwd=ROOT,capture_output=True,text=True)
         assert (out/'native.json').exists(),run.stderr
         r=json.loads((out/'native.json').read_text(encoding='utf-8'));results.append({'case':i,'sticky_at':sticky,'source_at':rb,**r})
         print(json.dumps({'case':i,'verified':r['verified'],'failure':r['failure']}),flush=True)

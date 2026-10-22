@@ -1,4 +1,5 @@
 """Four coplanar drive ports per mmwmmw body; physically route recovery contacts."""
+import os as _research_os
 from pathlib import Path
 import sys,json,random,heapq,collections,subprocess,importlib.util
 HERE=Path(__file__).resolve().parent;ROOT=HERE.parents[3];sys.path.insert(0,str(ROOT))
@@ -74,5 +75,5 @@ def main():
     f,data=ans;file=f'{name}_s{seed:03}.flyer';f.save(out/file);data.update(file=file,seed=seed,centers=centers);manifest.append(data);stats['routed']+=1
    else:stats[reason]+=1
    (HERE/'mmw_planar_manifest.json').write_text(json.dumps(dict(stats=stats,candidates=manifest),indent=2));print(name,seed,dict(stats),flush=True)
- runner=ROOT/'target/release/fastflyer-research.exe';r=subprocess.run([str(runner),'screen',str(out),'240','--out',str(HERE/'mmw_planar_screen.csv')],capture_output=True,text=True);(HERE/'mmw_planar_screen.txt').write_text(r.stdout+r.stderr);print(r.stdout,flush=True)
+ runner=ROOT/('target/release/fastflyer-research' + ('.exe' if _research_os.name == 'nt' else ''));r=subprocess.run([str(runner),'screen',str(out),'240','--out',str(HERE/'mmw_planar_screen.csv')],capture_output=True,text=True);(HERE/'mmw_planar_screen.txt').write_text(r.stdout+r.stderr);print(r.stdout,flush=True)
 if __name__=='__main__':main()

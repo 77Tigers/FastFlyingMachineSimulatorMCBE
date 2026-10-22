@@ -1,9 +1,10 @@
 """Layer view of a flyer's bodies from bodytrack (tick-0 cells). usage: view.py FLYER [W0]"""
+import os as _research_os
 import sys, re, subprocess, os
-ROOT='C:/Users/Ruben/OneDrive/Documents/FastFlyerPlayground'
+ROOT=str(__import__("pathlib").Path(__file__).resolve().parents[5])
 f=sys.argv[1]; w0=sys.argv[2] if len(sys.argv)>2 else '300'
 env=dict(os.environ, BT_CELLS='1')
-out=subprocess.run([ROOT+'/target/release/bodytrack.exe',f,str(int(w0)+100),w0,'10'],capture_output=True,text=True,env=env,cwd=ROOT).stdout
+out=subprocess.run([ROOT+('/target/release/bodytrack' + ('.exe' if _research_os.name == 'nt' else '')),f,str(int(w0)+100),w0,'10'],capture_output=True,text=True,env=env,cwd=ROOT).stdout
 cells={}; cur=None; names={}
 for ln in out.splitlines():
     m=re.match(r'\s*(B\d+): n=1 .*word=(\w+) at\((-?\d+),(-?\d+),(-?\d+)\)',ln)

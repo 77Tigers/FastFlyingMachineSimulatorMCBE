@@ -7,7 +7,7 @@ env: LIM (push limit/budget, default 16), RAILMAX, NMAX, SEED, WORDS (comma list
 """
 import sys,os,re,json,itertools,subprocess,collections,random,functools
 from pathlib import Path
-ER=Path(r"C:/Users/Ruben/OneDrive/Documents/FastFlyerPlayground/flyers/WIP/experiments/exclusive_roles_20261001")
+ER=Path(__file__).resolve().parents[2]/"exclusive_roles_20261001"
 sys.path.insert(0,str(ER))
 from graft import sx,nb,offset
 from fastflyer import Flyer,Block,Kind

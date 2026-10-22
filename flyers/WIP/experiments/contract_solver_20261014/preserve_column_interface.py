@@ -6,6 +6,25 @@ from pathlib import Path
 from assemble import Flyer
 
 HERE=Path(__file__).resolve().parent
+ROOT=HERE.parents[3]
+
+
+def portable_metadata(value):
+    """Keep proof provenance relative to the checkout, including SHA-256 keys.
+
+    File bytes and digest values are unchanged. Embedded contracts already use
+    names relative to their original run directory, such as ``problem.flyer``.
+    """
+    if isinstance(value,dict):
+        return {portable_metadata(k):portable_metadata(v) for k,v in value.items()}
+    if isinstance(value,list):
+        return [portable_metadata(v) for v in value]
+    if isinstance(value,str):
+        for prefix in (str(ROOT)+'\\',str(ROOT)+'/',ROOT.as_posix()+'/'):
+            value=value.replace(prefix,'')
+        if value.startswith(('flyers\\','tools\\','target\\','scripts\\')):
+            value=value.replace('\\','/')
+    return value
 
 
 def preserve(run,artifact):
@@ -44,7 +63,7 @@ def preserve(run,artifact):
         'tool_sha256':{n:hashlib.sha256((HERE/n).read_bytes()).hexdigest() for n in ('build_column_interface.py','verify_column_interface.py',Path(__file__).name)},
     }
     artifact.parent.mkdir(parents=True,exist_ok=True)
-    artifact.write_text(json.dumps(data,indent=2)+'\n',encoding='utf-8')
+    artifact.write_text(json.dumps(portable_metadata(data),indent=2)+'\n',encoding='utf-8')
     print(f'Preserved {len(flyer._cells)} cells: independent240 and native240x10000, max{long["max_action"]}; supplied component only')
 
 

@@ -95,7 +95,7 @@ Use the current portable runner (`fastflyer-research`, see [RESEARCH_RUNNER.md](
 
 ```powershell
 & target/release/fastflyer-research samples flyers/WIP/experiments/speed_range_20260930/joint_n4_six_pl21.flyer --period 12 --advance 4 --out flyers/WIP/experiments/speed_range_20260930/joint_n4_six_pl21.samples.csv
-& C:/Users/Ruben/anaconda3/python.exe flyers/WIP/experiments/speed_range_20260930/retrofit_front_pull.py
+& python flyers/WIP/experiments/speed_range_20260930/retrofit_front_pull.py
 ```
 
 The first command exits unsuccessfully because it additionally requires exact

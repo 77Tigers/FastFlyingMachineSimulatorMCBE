@@ -3,6 +3,7 @@
 usage: python build.py NAME [PL] [--trace N]   -> writes runs/NAME_L<PL>.flyer, measures 10000 ticks
 """
 from __future__ import annotations
+import os as _research_os
 import subprocess, sys
 from pathlib import Path
 
@@ -11,7 +12,7 @@ sys.path.insert(0, str(ROOT))
 from fastflyer import Block, Flyer, Kind  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
-TOOL = ROOT / "target" / "release" / "fastflyer-research.exe"
+TOOL = ROOT / "target" / "release" / ('fastflyer-research' + ('.exe' if _research_os.name == 'nt' else ''))
 PX, NX, PY, NY, PZ, NZ = range(6)  # +x -x +y -y +z -z
 
 def piston(d, sticky=False): return Block.piston(direction=d, sticky=sticky)

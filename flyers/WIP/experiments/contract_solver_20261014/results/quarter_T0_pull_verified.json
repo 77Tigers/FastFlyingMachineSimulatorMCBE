@@ -806,7 +806,7 @@
   "content_hash": "0532446c8c247bbea5c4f00a6bd548c16b70e470da2fa605759f318f3293632f",
   "construction": {
     "scope": "Regenerate T0 source, own normals and glue around an actual G0/H0 macro.\n\nFree the source corner implicated by the rigid-placement screen. T0 first\nnormal follows mmmww, late wmmmw; X0 supplies their initial pickups. CP-SAT\nonly finds connected glue<=7 and required contacts. Strict native tests at\nPL12 reject wrong timing, power, passenger loads or foreign interactions.\nOnly X0 pushes0/1 remain supplied in a passing component, not a full flyer.\n",
-    "base": "flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\X1_recarrier_base\\case001",
+    "base": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/X1_recarrier_base/case001",
     "macro_index": 5,
     "flip": false,
     "T0_glue": [
@@ -867,9 +867,9 @@
       0
     ],
     "sha256": {
-      "flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\X1_recarrier_base\\case001\\problem.flyer": "cbd20bd9b6bf924e0dbf583c15f76836d46ebd83f6f78d4eff1f775d757fe5ec",
-      "flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\G0_H0_joint_rows.json": "d3eb5c0d8cdcba32dc5f633f0fea529fd50216053b9f65a6f150bbaef2eb11da",
-      "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\search_G0_free_T0.py": "218a2a93b3774d55f8baebc299dee485d2b1a97082652e4b0a1d4aacbf836fbe"
+      "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/X1_recarrier_base/case001/problem.flyer": "cbd20bd9b6bf924e0dbf583c15f76836d46ebd83f6f78d4eff1f775d757fe5ec",
+      "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/G0_H0_joint_rows.json": "d3eb5c0d8cdcba32dc5f633f0fea529fd50216053b9f65a6f150bbaef2eb11da",
+      "flyers/WIP/experiments/contract_solver_20261014/search_G0_free_T0.py": "218a2a93b3774d55f8baebc299dee485d2b1a97082652e4b0a1d4aacbf836fbe"
     }
   },
   "contracts": {
@@ -1598,7 +1598,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\G0_T0_X1_recarrier\\case009\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/G0_T0_X1_recarrier/case009/drive.txt",
       "prescribed_order": "before_natural",
       "boundary_envelope": {
         "min": [
@@ -9385,7 +9385,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\G0_T0_X1_recarrier\\case009\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/G0_T0_X1_recarrier/case009/drive.txt",
       "prescribed_order": "after_natural",
       "boundary_envelope": {
         "min": [
@@ -17172,7 +17172,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\G0_T0_X1_recarrier\\case009\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/G0_T0_X1_recarrier/case009/drive.txt",
       "prescribed_order": "interleaved",
       "boundary_envelope": {
         "min": [

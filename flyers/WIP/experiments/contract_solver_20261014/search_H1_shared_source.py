@@ -3,6 +3,7 @@
 Whole39 H1 permanent9 = at most7 glue, retained observer, one RB.
 Optimistic layout filters are not physical acceptance; native all-order tests decide.
 """
+import os as _research_os
 import argparse,hashlib,itertools,json,subprocess,time,collections
 from pathlib import Path
 from ortools.sat.python import cp_model
@@ -55,7 +56,7 @@ def main():
   (case/'drive.txt').write_text(''.join(' '.join(map(str,row))+'\n' for row in sorted(rows)),encoding='utf-8')
   for order in ['before_natural','after_natural','interleaved']:dump(case/f'{order}.json',{**cc,'prescribed_order':order})
   budget=json.loads((base/'whole39_source_budget.json').read_text(encoding='utf-8'));assert budget['permanent_masses']['H1_power']==9;budget['source_allocation']['H1_power']={'glue':len(shape),'observer':1,'RB':1,'future_glue_reserve':7-len(shape),'mass':9};budget['scope']=__doc__+' All whole39 carrier masks/masses/loads retained; native still required.';dump(case/'whole39_source_budget.json',budget);dump(case/'preparation.json',{'scope':__doc__,'source_record':rec,'H1_glue':shape,'normalization_delta':delta,'base_sha256':hashlib.sha256((base/'problem.flyer').read_bytes()).hexdigest()});(case/'generator_snapshot.py').write_bytes(Path(__file__).read_bytes())
-  subprocess.run([str(ROOT/'target/release/contract-verify.exe'),str(case/'before_natural.json'),str(case/'native.json'),'30','2'],cwd=ROOT,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL,timeout=40);native=json.loads((case/'native.json').read_text(encoding='utf-8'));records.append({**rec,'shape':shape,'case':str(case),'native':native});counts['native_pass' if native['verified'] else 'native_fail']+=1;dump(out/'progress.json',{'counts':dict(counts),'records':records})
+  subprocess.run([str(ROOT/('target/release/contract-verify' + ('.exe' if _research_os.name == 'nt' else ''))),str(case/'before_natural.json'),str(case/'native.json'),'30','2'],cwd=ROOT,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL,timeout=40);native=json.loads((case/'native.json').read_text(encoding='utf-8'));records.append({**rec,'shape':shape,'case':str(case),'native':native});counts['native_pass' if native['verified'] else 'native_fail']+=1;dump(out/'progress.json',{'counts':dict(counts),'records':records})
   if native['verified']:complete=False;break
  dump(out/'report.json',{'scope':__doc__,'complete':complete,'seconds':time.monotonic()-start,'candidate_count':len(candidates),'counts':dict(counts),'records':records});(out/'generator_snapshot.py').write_bytes(Path(__file__).read_bytes());print(json.dumps({'complete':complete,'candidates':len(candidates),'seconds':time.monotonic()-start,'counts':dict(counts)}))
 if __name__=='__main__':main()

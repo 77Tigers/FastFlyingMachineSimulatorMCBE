@@ -1321,7 +1321,7 @@
   "construction": {
     "scope": "joint T/G all moves and rear slot2 natural; rear slots0/1, neighbor and tip supplied; every T/G glue identity checked",
     "natural_flyer": false,
-    "source_case": "flyers\\WIP\\experiments\\contract_solver_20261014\\out\\joint_layout\\joint_tip_template\\case00000",
+    "source_case": "flyers/WIP/experiments/contract_solver_20261014/out/joint_layout/joint_tip_template/case00000",
     "reproduction": "joint_tip_layout.py OUT --cases 1; extend first-cycle supplied rows to1000 cycles"
   }
 }

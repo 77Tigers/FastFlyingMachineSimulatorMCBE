@@ -1,4 +1,5 @@
 """Ordinary own-RB three-push H0 (mmwwm) phase/startup calibration; neighbor supplied."""
+import os as _research_os
 import json,subprocess
 from pathlib import Path
 from assemble import Flyer
@@ -21,5 +22,5 @@ def main():
  (out/'drive.txt').write_text(''.join(' '.join(map(str,r))+'\n' for r in sorted(rows)),encoding='utf-8')
  for order in ['before_natural','after_natural','interleaved']:(out/f'{order}.json').write_text(json.dumps({**c,'prescribed_order':order},indent=2)+'\n',encoding='utf-8')
  (out/'preparation.json').write_text(json.dumps({'scope':__doc__+' Three natural H0 moves, three supplied neighbor moves; full39 actual carrier split G0/T1 still unbuilt.','normalization_delta':delta,'H0_glue':sorted(body),'RB':[4,2,2],'front_carrier':sorted(carrier),'extended_normal':[3,3,2],'head':[4,3,2],'budget_reference':'T1_self_RB_budget/full39.json','H0_glue_budget':6,'H0_RB_budget':1},indent=2)+'\n',encoding='utf-8');(out/'generator_snapshot.py').write_bytes(Path(__file__).read_bytes())
- subprocess.run([str(ROOT/'target/release/contract-verify.exe'),str(out/'before_natural.json'),str(out/'native.json'),'30','2'],cwd=ROOT,check=False);print((out/'native.json').read_text(encoding='utf-8'))
+ subprocess.run([str(ROOT/('target/release/contract-verify' + ('.exe' if _research_os.name == 'nt' else ''))),str(out/'before_natural.json'),str(out/'native.json'),'30','2'],cwd=ROOT,check=False);print((out/'native.json').read_text(encoding='utf-8'))
 if __name__=='__main__':main()

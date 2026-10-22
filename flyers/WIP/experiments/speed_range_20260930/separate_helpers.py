@@ -5,6 +5,7 @@ pulls helper0 and powers its sticky. Helper2 initially retains a three-normal
 drive, powered by its own redstone; its pulling sticky is powered by existing
 body4. No glue is added to any original body. Whole flyer cap24.
 """
+import os as _research_os
 from pathlib import Path
 import sys,itertools,random,heapq,functools,json,collections,subprocess
 HERE=Path(__file__).resolve().parent;sys.path.insert(0,str(HERE))
@@ -151,7 +152,7 @@ def main():
    if tries>=18000:break
   if tries>=18000:break
  (HERE/f'{prefix}.manifest.json').write_text(json.dumps(dict(attempts=tries,stats=stats,routed=rows),indent=2));print(tries,dict(stats),flush=True)
- runner=ROOT/'target/release/fastflyer-research.exe'
+ runner=ROOT/('target/release/fastflyer-research' + ('.exe' if _research_os.name == 'nt' else ''))
  p=subprocess.run([str(runner),'screen',str(out),'240','--out',str(HERE/f'{prefix}.screen.csv')],capture_output=True,text=True)
  (HERE/f'{prefix}.screen.txt').write_text(p.stdout+p.stderr);print(p.stdout,flush=True)
 if __name__=='__main__':main()

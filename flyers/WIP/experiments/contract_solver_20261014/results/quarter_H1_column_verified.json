@@ -660,9 +660,9 @@
       ]
     ],
     "sha256": {
-      "flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\front_G1_H1_glue_drive\\problem.flyer": "e029229074a5ac4473af96b6fd9f586de8cdbeefafc42905c95b78a44622541e",
-      "flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\H1_split_power_screen.json": "0b7634b9fd8e658ab331b19207acc1ad944ae6187492ccdc1998c1b4a91ebc88",
-      "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\build_joint_helper_lead.py": "97363628d17bf52ec2707e9229a54ea00c64ad606d002fbf401c913fa80d5cc3"
+      "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/front_G1_H1_glue_drive/problem.flyer": "e029229074a5ac4473af96b6fd9f586de8cdbeefafc42905c95b78a44622541e",
+      "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/H1_split_power_screen.json": "0b7634b9fd8e658ab331b19207acc1ad944ae6187492ccdc1998c1b4a91ebc88",
+      "flyers/WIP/experiments/contract_solver_20261014/build_joint_helper_lead.py": "97363628d17bf52ec2707e9229a54ea00c64ad606d002fbf401c913fa80d5cc3"
     }
   },
   "contracts": {
@@ -1187,7 +1187,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\H1_split_power_lead2\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/H1_split_power_lead2/drive.txt",
       "prescribed_order": "before_natural",
       "boundary_envelope": {
         "min": [
@@ -6734,7 +6734,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\H1_split_power_lead2\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/H1_split_power_lead2/drive.txt",
       "prescribed_order": "after_natural",
       "boundary_envelope": {
         "min": [
@@ -12281,7 +12281,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\H1_split_power_lead2\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/H1_split_power_lead2/drive.txt",
       "prescribed_order": "interleaved",
       "boundary_envelope": {
         "min": [

@@ -469,7 +469,7 @@
   "content_hash": "f6444a1fc10309a83f5ab5d3ef33684829a5cc809b6e203721a9ea72b22c114c",
   "construction": {
     "scope": "T1 sticky recovery transfer H0->G1; H0 remains a relocated supplied root. Twelve natural/eighteen supplied strokes. Not complete flyer.",
-    "base": "flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\joint_T1_self_RB_shifted_search\\case5167",
+    "base": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/joint_T1_self_RB_shifted_search/case5167",
     "removed_H0_glue": [
       17,
       1,
@@ -485,7 +485,7 @@
       3,
       14
     ],
-    "full39_budget": "flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\H0_free_root_budget\\full39.json"
+    "full39_budget": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/H0_free_root_budget/full39.json"
   },
   "contracts": {
     "before_natural": {
@@ -1111,7 +1111,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\T1_sticky_on_G1_transfer\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/T1_sticky_on_G1_transfer/drive.txt",
       "prescribed_order": "before_natural",
       "boundary_envelope": {
         "min": [
@@ -7778,7 +7778,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\T1_sticky_on_G1_transfer\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/T1_sticky_on_G1_transfer/drive.txt",
       "prescribed_order": "after_natural",
       "boundary_envelope": {
         "min": [
@@ -14445,7 +14445,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\T1_sticky_on_G1_transfer\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/T1_sticky_on_G1_transfer/drive.txt",
       "prescribed_order": "interleaved",
       "boundary_envelope": {
         "min": [

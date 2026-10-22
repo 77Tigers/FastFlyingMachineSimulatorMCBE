@@ -7,6 +7,7 @@ evaluate(dir, ...): Rust 80-sample evaluator.  canon(...): symmetry/rotation can
 Imports _n3lib from extension_bank_20261012 (read-only); nothing there is modified.
 """
 from __future__ import annotations
+import os as _research_os
 import hashlib, json, re, subprocess, sys
 from pathlib import Path
 
@@ -18,8 +19,8 @@ import _n3lib as L  # noqa: E402
 from _n3lib import Ref, identity_word, PERIOD, ADVANCE, Flyer, Kind  # noqa: E402
 from fastflyer import DIRECTIONS, Block  # noqa: E402
 
-CS = ROOT / "target/release/contract-search.exe"
-PRESC = ROOT / "target/release/extension-prescribe.exe"
+CS = ROOT / ('target/release/contract-search' + ('.exe' if _research_os.name == 'nt' else ''))
+PRESC = ROOT / ('target/release/extension-prescribe' + ('.exe' if _research_os.name == 'nt' else ''))
 GLUE_KINDS = {"sl", "ho"}
 POWER_KINDS = {"RB", "OB", "ob", "ro", "rod"}
 ORDERS = ("before_natural", "after_natural", "interleaved")

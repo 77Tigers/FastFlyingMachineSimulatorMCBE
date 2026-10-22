@@ -5,6 +5,7 @@ Retain G0's six glue cells and sticky, regenerate H0 RB/three own normals,
 initial-contact CP model proposes layouts; strict native checking decides
 physics. No negative result excludes changed G0/rear-root/carrier roles.
 """
+import os as _research_os
 import argparse,hashlib,itertools,json,subprocess,time
 from pathlib import Path
 from ortools.sat.python import cp_model
@@ -123,7 +124,7 @@ def main():
                 for p in c['ports']:p['at']=add(p['at'],delta)
                 c['boundary_envelope']={'min':[min(p[k] for p in loaded._cells) for k in range(3)],'max':[max(p[k] for p in loaded._cells) for k in range(3)]};dump(case/f'{order}.json',c)
             rec.update(rear=sorted(rear),front=sorted(front),normals=sorted(normals),rear_RB=source,case=str(case));dump(case/'preparation.json',rec)
-            subprocess.run([str(ROOT/'target/release/contract-verify.exe'),str(case/'before_natural.json'),str(case/'native.json'),'20','2'],cwd=ROOT,capture_output=True,check=True)
+            subprocess.run([str(ROOT/('target/release/contract-verify' + ('.exe' if _research_os.name == 'nt' else ''))),str(case/'before_natural.json'),str(case/'native.json'),'20','2'],cwd=ROOT,capture_output=True,check=True)
             rec['native']=json.loads((case/'native.json').read_text(encoding='utf-8'));tests+=1
         records.append(rec);dump(a.out/'report.json',{'scope':__doc__,'allocations':len(allocations),'records':records,'native_tests':tests,'elapsed_seconds':time.monotonic()-start})
         print(json.dumps({'index':index,'status':rec['status'],'native':rec.get('native',{}).get('verified')}),flush=True)

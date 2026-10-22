@@ -6,6 +6,7 @@ only finds connected glue<=7 and required contacts. Strict native tests at
 PL12 reject wrong timing, power, passenger loads or foreign interactions.
 Only X0 pushes0/1 remain supplied in a passing component, not a full flyer.
 """
+import os as _research_os
 import argparse,hashlib,itertools,json,subprocess,time
 from pathlib import Path
 from ortools.sat.python import cp_model
@@ -160,7 +161,7 @@ def main():
         prep={'scope':__doc__,'base':str(a.base),'macro_index':mi,'flip':flip,'T0_glue':sorted(shape),'first':first,'late':late,'RB':rb,'normalization_delta':delta,
               'sha256':{str(p):hashlib.sha256(p.read_bytes()).hexdigest() for p in [a.base/'problem.flyer',a.macro,Path(__file__)]}}
         (out/'preparation.json').write_text(json.dumps(prep,indent=2)+'\n',encoding='utf-8')
-        proc=subprocess.run([str(ROOT/'target/release/contract-verify.exe'),str(out/'before_natural.json'),str(out/'native.json'),str(max(1,min(30,remaining()))),'2'],cwd=ROOT,capture_output=True,text=True)
+        proc=subprocess.run([str(ROOT/('target/release/contract-verify' + ('.exe' if _research_os.name == 'nt' else ''))),str(out/'before_natural.json'),str(out/'native.json'),str(max(1,min(30,remaining()))),'2'],cwd=ROOT,capture_output=True,text=True)
         assert (out/'native.json').exists(),proc.stderr
         result=json.loads((out/'native.json').read_text(encoding='utf-8'));results.append({'case':str(out),'macro':mi,'T0_glue':sorted(shape),**result})
         print(json.dumps({'case':len(results)-1,'verified':result['verified'],'failure':result['failure']}),flush=True)

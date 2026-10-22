@@ -1,7 +1,7 @@
 human_3bps_original: 60 moving events, back loop ['B7', 'B16', 'B9', 'B15', 'B8'] loop=['B15', 'B16', 'B7', 'B8', 'B9'], requests 93 (1.0s)
 built 78 unique of 93 (2.0s)
 {('S', 'pass'): 42, ('S', 'dup'): 3, ('S', 'fail'): 1, ('C', 'pass'): 10, ('C', 'dup'): 10, ('L', 'pass'): 10, ('L', 'dup'): 10, ('K', 'pass'): 5, ('R', 'pass'): 1, ('F', 'pass'): 1}
-done in 67.8s -> C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\pl11_3bps_20261013\extract\work\human_3bps_original\results.json
+done in 67.8s -> flyers/WIP/experiments/pl11_3bps_20261013/extract/work/human_3bps_original/results.json
 copied 69 fixtures; confirming 165 contracts with the Python checker (8 workers)
 python confirmation: 120s wall
 published 69 entries (dropped orders: []); 136s

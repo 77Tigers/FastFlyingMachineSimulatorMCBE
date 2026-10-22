@@ -637,8 +637,8 @@
   "construction": {
     "scope": "PL14 mmwmw geometry, rear body5 all3 moves natural; every other glue body supplied cap12, reference hardware absent. Not an integrated rear load reduction or closed flyer.",
     "reproduction": "column-solve SOURCE OUT 90 --wide --rider-completion --strict-search --pool-only; certify_column_pool.py SOURCE POOL CERT --push-limit 12",
-    "source_contract": "flyers\\WIP\\experiments\\contract_solver_20261014\\out\\compaction\\mmwmw_pl14\\rear5_target12\\problem.json",
-    "source_pool": "flyers\\WIP\\experiments\\contract_solver_20261014\\out\\compaction\\mmwmw_pl14\\rear5_target12\\sol\\pool.json",
+    "source_contract": "flyers/WIP/experiments/contract_solver_20261014/out/compaction/mmwmw_pl14/rear5_target12/problem.json",
+    "source_pool": "flyers/WIP/experiments/contract_solver_20261014/out/compaction/mmwmw_pl14/rear5_target12/sol/pool.json",
     "candidate_index": 0,
     "body5_short_max_action": 9
   },
@@ -3507,7 +3507,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\compaction\\mmwmw_pl14\\rear5_target12\\cert12\\case0000\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/compaction/mmwmw_pl14/rear5_target12/cert12/case0000/drive.txt",
       "prescribed_order": "before_natural",
       "boundary_envelope": {
         "min": [
@@ -11854,7 +11854,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\compaction\\mmwmw_pl14\\rear5_target12\\cert12\\case0000\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/compaction/mmwmw_pl14/rear5_target12/cert12/case0000/drive.txt",
       "prescribed_order": "after_natural",
       "boundary_envelope": {
         "min": [
@@ -20201,7 +20201,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\compaction\\mmwmw_pl14\\rear5_target12\\cert12\\case0000\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/compaction/mmwmw_pl14/rear5_target12/cert12/case0000/drive.txt",
       "prescribed_order": "interleaved",
       "boundary_envelope": {
         "min": [

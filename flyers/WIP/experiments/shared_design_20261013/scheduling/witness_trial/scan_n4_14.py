@@ -1,4 +1,5 @@
 from __future__ import annotations
+import os as _research_os
 import json,subprocess
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[6]
@@ -6,7 +7,7 @@ folder=Path(__file__).parent/'n4_14_scan'
 folder.mkdir(parents=True,exist_ok=True)
 flyer=ROOT/'flyers/extension_bank/n4/n4_14/candidate.flyer'
 script=ROOT/'flyers/extension_bank/n4/n4_14/drive.txt'
-driver=ROOT/'target/release/extension-prescribe.exe'
+driver=ROOT/('target/release/extension-prescribe' + ('.exe' if _research_os.name == 'nt' else ''))
 samples=[(rng,px,pz) for rng in (0,1,2,5,42) for px in (0,7,8,15) for pz in (0,7,8,15)]
 failures=[]
 for sample in samples:

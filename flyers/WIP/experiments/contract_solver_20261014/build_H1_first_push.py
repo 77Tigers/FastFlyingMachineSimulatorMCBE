@@ -3,6 +3,7 @@
 H1 actual five glue/source cells plus observer and sticky passenger fits its
 permanent9 plus whole39 motor budget. Two later H1 pushes remain supplied.
 """
+import os as _research_os
 import json,hashlib,subprocess,sys
 from pathlib import Path
 from assemble import Flyer
@@ -41,5 +42,5 @@ def main():
  (out/'drive.txt').write_text(''.join(' '.join(map(str,row))+'\n' for row in sorted(rows)),encoding='utf-8')
  for order in ['before_natural','after_natural','interleaved']:dump(out/f'{order}.json',{**c,'prescribed_order':order})
  dump(out/'whole39_source_budget.json',budget);dump(out/'preparation.json',{'scope':__doc__,'source_record':{'motors':[[17,0,15]]},'added':[[*q,b.encode()] for q,b in added],'normalization_delta':delta,'base_sha256':hashlib.sha256((base/'problem.flyer').read_bytes()).hexdigest()});(out/'generator_snapshot.py').write_bytes(Path(__file__).read_bytes())
- subprocess.run([str(ROOT/'target/release/contract-verify.exe'),str(out/'before_natural.json'),str(out/'native.json'),'30','2'],cwd=ROOT,check=False);print((out/'native.json').read_text(encoding='utf-8'))
+ subprocess.run([str(ROOT/('target/release/contract-verify' + ('.exe' if _research_os.name == 'nt' else ''))),str(out/'before_natural.json'),str(out/'native.json'),'30','2'],cwd=ROOT,check=False);print((out/'native.json').read_text(encoding='utf-8'))
 if __name__=='__main__':main()

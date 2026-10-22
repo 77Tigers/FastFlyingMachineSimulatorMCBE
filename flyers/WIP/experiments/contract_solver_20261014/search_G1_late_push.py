@@ -1,4 +1,5 @@
 """Budgeted G1 push4 integration: preserve supplied push0/pull1; no complete-flyer claim."""
+import os as _research_os
 import argparse,collections,itertools,json,hashlib,subprocess,time
 from pathlib import Path
 from ortools.sat.python import cp_model
@@ -52,7 +53,7 @@ def main():
     (case/'drive.txt').write_text(''.join(' '.join(map(str,row))+'\n' for row in sorted(rows)),encoding='utf-8')
     for order in ['before_natural','after_natural','interleaved']:dump(case/f'{order}.json',{**cc,'prescribed_order':order})
     dump(case/'preparation.json',{'scope':__doc__+' Sixteen natural/fourteen supplied strokes attempted.','source_record':rec,'G1_shape':shape,'normalization_delta':delta,'base_sha256':hashlib.sha256((base/'problem.flyer').read_bytes()).hexdigest(),'budget':'G1 five glue+stone+RB+future observer=8; full39 mass unchanged.'})
-    subprocess.run([str(ROOT/'target/release/contract-verify.exe'),str(case/'before_natural.json'),str(case/'native.json'),'30','2'],cwd=ROOT,check=False,stdout=subprocess.DEVNULL,timeout=40);native=json.loads((case/'native.json').read_text(encoding='utf-8'));records.append({**rec,'case':str(case),'shape':shape,'native':native});counts['native_pass' if native['verified'] else 'native_fail']+=1;dump(out/'progress.json',{'counts':dict(counts),'records':records})
+    subprocess.run([str(ROOT/('target/release/contract-verify' + ('.exe' if _research_os.name == 'nt' else ''))),str(case/'before_natural.json'),str(case/'native.json'),'30','2'],cwd=ROOT,check=False,stdout=subprocess.DEVNULL,timeout=40);native=json.loads((case/'native.json').read_text(encoding='utf-8'));records.append({**rec,'case':str(case),'shape':shape,'native':native});counts['native_pass' if native['verified'] else 'native_fail']+=1;dump(out/'progress.json',{'counts':dict(counts),'records':records})
     if native['verified']:complete=False;break
    if not complete:break
   if not complete:break

@@ -1,10 +1,11 @@
 """Reduce connected adhesive geometry of the first exact pulling-only3bps lead."""
+import os as _research_os
 from pathlib import Path
 import sys,subprocess,json,random,re
 ROOT=Path(__file__).resolve().parents[4];sys.path.insert(0,str(ROOT))
 from fastflyer import Flyer,Kind
 from pull3_synthesis import conn
-HERE=Path(__file__).resolve().parent;RUNNER=ROOT/'target/release/fastflyer-research.exe'
+HERE=Path(__file__).resolve().parent;RUNNER=ROOT/('target/release/fastflyer-research' + ('.exe' if _research_os.name == 'nt' else ''))
 def main():
     m=next(m for m in json.loads((HERE/'pull3_10body_manifest.json').read_text())['candidates'] if m['spacing']==4 and m['seed']==3)
     f=Flyer.load(HERE/'pull3_10body_candidates/g4_s003.flyer');f.push_limit=1000

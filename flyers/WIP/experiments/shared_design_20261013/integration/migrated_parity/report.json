@@ -2,7 +2,7 @@
   "passed": true,
   "cases": [
     {
-      "contract": "flyers\\WIP\\experiments\\shared_design_20261013\\bank_migration\\n2_04\\before_natural\\contract.json",
+      "contract": "flyers/WIP/experiments/shared_design_20261013/bank_migration/n2_04/before_natural/contract.json",
       "python": {
         "rng": null,
         "phase_x": null,
@@ -74,7 +74,7 @@
       "expected_pass": true
     },
     {
-      "contract": "flyers\\WIP\\experiments\\shared_design_20261013\\integration\\migrated_parity\\negative_contracts\\0\\required_cell\\contract.json",
+      "contract": "flyers/WIP/experiments/shared_design_20261013/integration/migrated_parity/negative_contracts/0/required_cell/contract.json",
       "python": {
         "rng": null,
         "phase_x": null,
@@ -118,7 +118,7 @@
       "expected_pass": false
     },
     {
-      "contract": "flyers\\WIP\\experiments\\shared_design_20261013\\integration\\migrated_parity\\negative_contracts\\0\\contact\\contract.json",
+      "contract": "flyers/WIP/experiments/shared_design_20261013/integration/migrated_parity/negative_contracts/0/contact/contract.json",
       "python": {
         "rng": null,
         "phase_x": null,
@@ -174,7 +174,7 @@
       "expected_pass": false
     },
     {
-      "contract": "flyers\\WIP\\experiments\\shared_design_20261013\\integration\\migrated_parity\\negative_contracts\\0\\provenance\\contract.json",
+      "contract": "flyers/WIP/experiments/shared_design_20261013/integration/migrated_parity/negative_contracts/0/provenance/contract.json",
       "python": {
         "rng": null,
         "phase_x": null,
@@ -223,7 +223,7 @@
       "expected_pass": false
     },
     {
-      "contract": "flyers\\WIP\\experiments\\shared_design_20261013\\integration\\migrated_parity\\negative_contracts\\0\\malformed_provenance\\contract.json",
+      "contract": "flyers/WIP/experiments/shared_design_20261013/integration/migrated_parity/negative_contracts/0/malformed_provenance/contract.json",
       "python": {
         "passed": false,
         "diagnostic": "contract.ports[0].provenance: expected an array of 4 movement sources",
@@ -237,7 +237,7 @@
       "expected_pass": false
     },
     {
-      "contract": "flyers\\WIP\\experiments\\shared_design_20261013\\bank_migration\\n2_05\\after_natural\\contract.json",
+      "contract": "flyers/WIP/experiments/shared_design_20261013/bank_migration/n2_05/after_natural/contract.json",
       "python": {
         "rng": null,
         "phase_x": null,
@@ -297,7 +297,7 @@
       "expected_pass": true
     },
     {
-      "contract": "flyers\\WIP\\experiments\\shared_design_20261013\\integration\\migrated_parity\\negative_contracts\\1\\required_cell\\contract.json",
+      "contract": "flyers/WIP/experiments/shared_design_20261013/integration/migrated_parity/negative_contracts/1/required_cell/contract.json",
       "python": {
         "rng": null,
         "phase_x": null,
@@ -341,7 +341,7 @@
       "expected_pass": false
     },
     {
-      "contract": "flyers\\WIP\\experiments\\shared_design_20261013\\integration\\migrated_parity\\negative_contracts\\1\\contact\\contract.json",
+      "contract": "flyers/WIP/experiments/shared_design_20261013/integration/migrated_parity/negative_contracts/1/contact/contract.json",
       "python": {
         "rng": null,
         "phase_x": null,
@@ -391,7 +391,7 @@
       "expected_pass": false
     },
     {
-      "contract": "flyers\\WIP\\experiments\\shared_design_20261013\\integration\\migrated_parity\\negative_contracts\\1\\provenance\\contract.json",
+      "contract": "flyers/WIP/experiments/shared_design_20261013/integration/migrated_parity/negative_contracts/1/provenance/contract.json",
       "python": {
         "rng": null,
         "phase_x": null,
@@ -434,7 +434,7 @@
       "expected_pass": false
     },
     {
-      "contract": "flyers\\WIP\\experiments\\shared_design_20261013\\integration\\migrated_parity\\negative_contracts\\1\\malformed_provenance\\contract.json",
+      "contract": "flyers/WIP/experiments/shared_design_20261013/integration/migrated_parity/negative_contracts/1/malformed_provenance/contract.json",
       "python": {
         "passed": false,
         "diagnostic": "contract.ports[0].provenance: expected an array of 4 movement sources",
@@ -448,7 +448,7 @@
       "expected_pass": false
     },
     {
-      "contract": "flyers\\WIP\\experiments\\shared_design_20261013\\bank_migration\\n2_05\\before_natural\\contract.json",
+      "contract": "flyers/WIP/experiments/shared_design_20261013/bank_migration/n2_05/before_natural/contract.json",
       "python": {
         "rng": null,
         "phase_x": null,
@@ -508,7 +508,7 @@
       "expected_pass": true
     },
     {
-      "contract": "flyers\\WIP\\experiments\\shared_design_20261013\\integration\\migrated_parity\\negative_contracts\\2\\required_cell\\contract.json",
+      "contract": "flyers/WIP/experiments/shared_design_20261013/integration/migrated_parity/negative_contracts/2/required_cell/contract.json",
       "python": {
         "rng": null,
         "phase_x": null,
@@ -552,7 +552,7 @@
       "expected_pass": false
     },
     {
-      "contract": "flyers\\WIP\\experiments\\shared_design_20261013\\integration\\migrated_parity\\negative_contracts\\2\\contact\\contract.json",
+      "contract": "flyers/WIP/experiments/shared_design_20261013/integration/migrated_parity/negative_contracts/2/contact/contract.json",
       "python": {
         "rng": null,
         "phase_x": null,
@@ -602,7 +602,7 @@
       "expected_pass": false
     },
     {
-      "contract": "flyers\\WIP\\experiments\\shared_design_20261013\\integration\\migrated_parity\\negative_contracts\\2\\provenance\\contract.json",
+      "contract": "flyers/WIP/experiments/shared_design_20261013/integration/migrated_parity/negative_contracts/2/provenance/contract.json",
       "python": {
         "rng": null,
         "phase_x": null,
@@ -645,7 +645,7 @@
       "expected_pass": false
     },
     {
-      "contract": "flyers\\WIP\\experiments\\shared_design_20261013\\integration\\migrated_parity\\negative_contracts\\2\\malformed_provenance\\contract.json",
+      "contract": "flyers/WIP/experiments/shared_design_20261013/integration/migrated_parity/negative_contracts/2/malformed_provenance/contract.json",
       "python": {
         "passed": false,
         "diagnostic": "contract.ports[0].provenance: expected an array of 4 movement sources",
@@ -659,7 +659,7 @@
       "expected_pass": false
     },
     {
-      "contract": "flyers\\WIP\\experiments\\shared_design_20261013\\bank_migration\\n4_13\\after_natural\\contract.json",
+      "contract": "flyers/WIP/experiments/shared_design_20261013/bank_migration/n4_13/after_natural/contract.json",
       "python": {
         "rng": null,
         "phase_x": null,
@@ -759,7 +759,7 @@
       "expected_pass": true
     },
     {
-      "contract": "flyers\\WIP\\experiments\\shared_design_20261013\\integration\\migrated_parity\\negative_contracts\\3\\required_cell\\contract.json",
+      "contract": "flyers/WIP/experiments/shared_design_20261013/integration/migrated_parity/negative_contracts/3/required_cell/contract.json",
       "python": {
         "passed": false,
         "diagnostic": "contract.required_cells[0].cell: expected integer (minimum 1)",
@@ -773,7 +773,7 @@
       "expected_pass": false
     },
     {
-      "contract": "flyers\\WIP\\experiments\\shared_design_20261013\\integration\\migrated_parity\\negative_contracts\\3\\contact\\contract.json",
+      "contract": "flyers/WIP/experiments/shared_design_20261013/integration/migrated_parity/negative_contracts/3/contact/contract.json",
       "python": {
         "rng": null,
         "phase_x": null,
@@ -843,7 +843,7 @@
       "expected_pass": false
     },
     {
-      "contract": "flyers\\WIP\\experiments\\shared_design_20261013\\integration\\migrated_parity\\negative_contracts\\3\\provenance\\contract.json",
+      "contract": "flyers/WIP/experiments/shared_design_20261013/integration/migrated_parity/negative_contracts/3/provenance/contract.json",
       "python": {
         "rng": null,
         "phase_x": null,
@@ -906,7 +906,7 @@
       "expected_pass": false
     },
     {
-      "contract": "flyers\\WIP\\experiments\\shared_design_20261013\\integration\\migrated_parity\\negative_contracts\\3\\malformed_provenance\\contract.json",
+      "contract": "flyers/WIP/experiments/shared_design_20261013/integration/migrated_parity/negative_contracts/3/malformed_provenance/contract.json",
       "python": {
         "passed": false,
         "diagnostic": "contract.ports[0].provenance: expected an array of 6 movement sources",
@@ -920,7 +920,7 @@
       "expected_pass": false
     },
     {
-      "contract": "flyers\\WIP\\experiments\\shared_design_20261013\\bank_migration\\n4_13\\before_natural\\contract.json",
+      "contract": "flyers/WIP/experiments/shared_design_20261013/bank_migration/n4_13/before_natural/contract.json",
       "python": {
         "rng": null,
         "phase_x": null,
@@ -1020,7 +1020,7 @@
       "expected_pass": true
     },
     {
-      "contract": "flyers\\WIP\\experiments\\shared_design_20261013\\integration\\migrated_parity\\negative_contracts\\4\\required_cell\\contract.json",
+      "contract": "flyers/WIP/experiments/shared_design_20261013/integration/migrated_parity/negative_contracts/4/required_cell/contract.json",
       "python": {
         "passed": false,
         "diagnostic": "contract.required_cells[0].cell: expected integer (minimum 1)",
@@ -1034,7 +1034,7 @@
       "expected_pass": false
     },
     {
-      "contract": "flyers\\WIP\\experiments\\shared_design_20261013\\integration\\migrated_parity\\negative_contracts\\4\\contact\\contract.json",
+      "contract": "flyers/WIP/experiments/shared_design_20261013/integration/migrated_parity/negative_contracts/4/contact/contract.json",
       "python": {
         "rng": null,
         "phase_x": null,
@@ -1104,7 +1104,7 @@
       "expected_pass": false
     },
     {
-      "contract": "flyers\\WIP\\experiments\\shared_design_20261013\\integration\\migrated_parity\\negative_contracts\\4\\provenance\\contract.json",
+      "contract": "flyers/WIP/experiments/shared_design_20261013/integration/migrated_parity/negative_contracts/4/provenance/contract.json",
       "python": {
         "rng": null,
         "phase_x": null,
@@ -1167,7 +1167,7 @@
       "expected_pass": false
     },
     {
-      "contract": "flyers\\WIP\\experiments\\shared_design_20261013\\integration\\migrated_parity\\negative_contracts\\4\\malformed_provenance\\contract.json",
+      "contract": "flyers/WIP/experiments/shared_design_20261013/integration/migrated_parity/negative_contracts/4/malformed_provenance/contract.json",
       "python": {
         "passed": false,
         "diagnostic": "contract.ports[0].provenance: expected an array of 6 movement sources",
@@ -1181,7 +1181,7 @@
       "expected_pass": false
     },
     {
-      "contract": "flyers\\WIP\\experiments\\shared_design_20261013\\bank_migration\\n2_04\\known_negative_after_natural\\contract.json",
+      "contract": "flyers/WIP/experiments/shared_design_20261013/bank_migration/n2_04/known_negative_after_natural/contract.json",
       "python": {
         "rng": null,
         "phase_x": null,

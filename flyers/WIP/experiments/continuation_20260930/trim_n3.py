@@ -1,9 +1,10 @@
 """Connected-rail deletion search on the new 89-block PL18 seed39 lead."""
+import os as _research_os
 from pathlib import Path
 import sys,subprocess,re,json,random
 ROOT=Path(__file__).resolve().parents[4];sys.path.insert(0,str(ROOT))
 from fastflyer import Flyer,Kind
-HERE=Path(__file__).resolve().parent;RUNNER=ROOT/'target/release/fastflyer-research.exe'
+HERE=Path(__file__).resolve().parent;RUNNER=ROOT/('target/release/fastflyer-research' + ('.exe' if _research_os.name == 'nt' else ''))
 D=((1,0,0),(-1,0,0),(0,1,0),(0,-1,0),(0,0,1),(0,0,-1))
 def connected(s):
  if not s:return False

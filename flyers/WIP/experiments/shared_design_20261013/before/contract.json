@@ -1,7 +1,7 @@
 {
   "version": 1,
   "name": "pl7-rear-cap-mixed-natural-supplied",
-  "flyer": "..\\..\\extension_contract_20261011\\prescribed_fixture\\rear_cap\\candidate.flyer",
+  "flyer": "../../extension_contract_20261011/prescribed_fixture/rear_cap/candidate.flyer",
   "period_ticks": 8,
   "advance": 2,
   "cycles": 3,

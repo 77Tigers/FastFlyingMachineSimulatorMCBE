@@ -8,11 +8,12 @@ Key: rotate all words by the same shift so the first target's word is its smalle
 First target = largest moved count (ties: listing order). Multi-carrier/power joined with '/'.
 A second window (W0=150) is also run; keys seen only there are added (flagged window=150).
 """
+import os as _research_os
 import json, math, re, subprocess, os
 from collections import defaultdict
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), *(['..'] * 4)))
-BT = os.path.join(ROOT, 'target', 'release', 'bodytrack.exe')
+BT = os.path.join(ROOT, 'target', 'release', ('bodytrack' + ('.exe' if _research_os.name == 'nt' else '')))
 OUT = os.path.dirname(os.path.abspath(__file__))
 FAMILY, PERIOD = 'N3', 10
 FLYERS = """pl12/human_3bps_original pl12/human_tm_smol_3bps pl13/exclusive_roles_3bps pl13/human_tm_smol_back11

@@ -1,6 +1,7 @@
 """Add a real H2 three-normal drive to the accepted dual-relay component.
 G2 recovery carrier remains supplied; complete natural-flyer closure is unproved.
 """
+import os as _research_os
 import argparse,json,hashlib,subprocess
 from pathlib import Path
 from assemble import Flyer
@@ -37,7 +38,7 @@ def main():
  for order in ['before_natural','after_natural','interleaved']:(a.out/f'{order}.json').write_text(json.dumps({**c,'prescribed_order':order},indent=2)+'\n',encoding='utf-8')
  (a.out/'preparation.json').write_text(json.dumps({'scope':__doc__,'base':str(a.base),'added':[[*p,b.encode()] for p,b in add.items()],'four_recovery':a.four_recovery,'clear_observer_lane':a.clear_observer_lane,'budget':'H2 4 honey + RB + two observer pushers + two glazed outputs =9 permanent, G2 up to four recovery glue within existing six-glue allowance; source geometry for G2 remains supplied.','script_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest()},indent=2)+'\n',encoding='utf-8')
  (a.out/'generator_snapshot.py').write_bytes(Path(__file__).read_bytes())
- run=subprocess.run([str(ROOT/'target/release/contract-verify.exe'),str(a.out/'before_natural.json'),str(a.out/'native.json'),'30','2'],cwd=ROOT,capture_output=True)
+ run=subprocess.run([str(ROOT/('target/release/contract-verify' + ('.exe' if _research_os.name == 'nt' else ''))),str(a.out/'before_natural.json'),str(a.out/'native.json'),'30','2'],cwd=ROOT,capture_output=True)
  assert (a.out/'native.json').exists(),run.stderr
  print((a.out/'native.json').read_text(encoding='utf-8'))
 

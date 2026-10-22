@@ -1,11 +1,12 @@
 """Bounded route-seed search; sustained speed is distinct from exact recurrence."""
+import os as _research_os
 from pathlib import Path
 import sys, importlib.util, subprocess, csv, json
 
 ROOT = Path(__file__).resolve().parents[4]
 sys.path.insert(0, str(ROOT))
 HERE = Path(__file__).resolve().parent
-RUNNER = ROOT / 'target/release/fastflyer-research.exe'
+RUNNER = ROOT / ('target/release/fastflyer-research' + ('.exe' if _research_os.name == 'nt' else ''))
 spec = importlib.util.spec_from_file_location('derived', HERE.parent / 'sol_reference_20260928/derived_generator.py')
 module = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(module)

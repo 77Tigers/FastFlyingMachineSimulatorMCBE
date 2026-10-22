@@ -4,12 +4,13 @@ Runs target/release/bodytrack.exe on each banked flyer, parses bodies/events and
 emits primitive records + grouped canonical keys (see PLAN.md).
 Usage: python extract_primitives_n4.py   (run from anywhere)
 """
+import os as _research_os
 import json, re, subprocess, sys, os
 from collections import defaultdict
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..', '..'))
 OUT = os.path.dirname(os.path.abspath(__file__))
-EXE = os.path.join(ROOT, 'target', 'release', 'bodytrack.exe')
+EXE = os.path.join(ROOT, 'target', 'release', ('bodytrack' + ('.exe' if _research_os.name == 'nt' else '')))
 FAMILY, PERIOD, W0 = 'N4', 12, 120
 FLYERS = """pl21/n4_twelve_body pl22/four_push_ring pl22/pull_twice_mmwmmw pl22/exclusive_roles_3p333
 pl24/pull_twice_mmwmmw pl26/exclusive_roles_3p333 pl29/shared_source_mmwmmw pl36/planar_mmwmmw

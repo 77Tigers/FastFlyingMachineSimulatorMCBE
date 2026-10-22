@@ -50,8 +50,28 @@ Rust stores occupied chunk columns in a map. Each occupied subchunk is a dense
 4096-cell array; `columns()` and `Section::cells()` give the simulator direct
 access to one subchunk at a time.
 
-Run the Python tests with `python -m unittest discover -s tests` and the Rust
-tests with `cargo test`.
+For a fresh checkout, install Python 3.10 or later and a Rust toolchain. The
+viewer also needs Node.js 22 and npm. Run these commands from the repository root
+for the full test suite, in this order:
+
+```sh
+npm ci --prefix viewer
+cargo test --locked
+cargo build --release --locked --manifest-path tools/Cargo.toml --target-dir target
+cargo test --locked --manifest-path tools/Cargo.toml --lib
+python -m unittest discover -s tests -v
+npm test --prefix viewer
+```
+
+`cargo test` also compiles the viewer binary, which embeds Three.js files from
+`viewer/node_modules`, so install its npm dependencies first. To test just the
+Rust library without Node.js, use `cargo test --locked --lib`. Native Python
+integration tests need the research binaries built by the command above;
+their flyer fixtures are generated automatically in temporary directories from
+tracked bank files. They do not need saved local experiment outputs.
+On Windows, keep the checkout path short; the research archive has deeply nested
+paths that can exceed the Windows path-length limit in a nested checkout.
+
 The cross-language storage test runs the simulator for zero ticks to check that
 Rust can read and rewrite a flyer created by Python.
 
@@ -76,7 +96,7 @@ loopback-only local server:
 
 ```sh
 cargo build --release --target wasm32-unknown-unknown --lib
-cd viewer && npm ci && cd ..
+npm ci --prefix viewer
 python scripts/build_site.py
 cargo run --bin fastflyer-viewer
 ```
@@ -162,6 +182,21 @@ subcommands `measure`, `audit`, `trace`, `batch`, `screen`, `verify` and `sample
 default all cores). Syntax and interpretation are in
 [`flyers/WIP/experiments/RESEARCH_RUNNER.md`](flyers/WIP/experiments/RESEARCH_RUNNER.md).
 The Python wrappers in [`fastflyer/research.py`](fastflyer/research.py) call the same binary.
+
+The Python editor and native solver need no third-party Python packages. For the
+optional offline synthesis scripts that use OR-Tools, NumPy or SciPy, install the
+research extra from the repository root:
+
+```sh
+python -m pip install -e ".[research]"
+```
+
+Run research commands from the repository root unless their usage says otherwise.
+Shell scripts with a `.sh` suffix require Bash (for example, Git Bash or WSL on
+Windows); Python entry points and the compiled tools select the host executable
+suffix automatically. Historical experiment outputs may require regeneration
+from their constructors; the supported test suite builds its own fixtures.
+The test workflow checks fresh checkouts on Windows, Linux and macOS.
 
 The bank standard is speed: 80/80 RNG/phase cases clean and reaching the flyer's distance at 10,000 ticks
 (exact recurrence is optional extra evidence, `samples --distance D`). To bank a flyer:

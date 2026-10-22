@@ -4,6 +4,7 @@ T1<=7 glue/no RB, T0<=8, local H0<=2 glue/two observers. Full budget
 retains H0's four future source glue+RB:6glue+RB+2obs=9. Other drivers
 remain supplied. All construction is component-only until full proof.
 """
+import os as _research_os
 import argparse,copy,itertools,json,subprocess,time
 from pathlib import Path
 from ortools.sat.python import cp_model
@@ -75,7 +76,7 @@ def main():
        if v=='supplied':rows.append((10*cy+2*slot,p['at'][0]+3*cy+p['word'][:slot].count('m'),*p['at'][1:],12))
     (case/'drive.txt').write_text(''.join(' '.join(map(str,r))+'\n' for r in sorted(rows)),encoding='utf-8')
     for order in ['before_natural','after_natural','interleaved']:dump(case/f'{order}.json',{**cc,'prescribed_order':order})
-    rec['shapes']=shapes;dump(case/'preparation.json',rec);subprocess.run([str(ROOT/'target/release/contract-verify.exe'),str(case/'before_natural.json'),str(case/'native.json'),'30','2'],cwd=ROOT,capture_output=True,check=False);rec['native']=json.loads((case/'native.json').read_text(encoding='utf-8'))
+    rec['shapes']=shapes;dump(case/'preparation.json',rec);subprocess.run([str(ROOT/('target/release/contract-verify' + ('.exe' if _research_os.name == 'nt' else ''))),str(case/'before_natural.json'),str(case/'native.json'),'30','2'],cwd=ROOT,capture_output=True,check=False);rec['native']=json.loads((case/'native.json').read_text(encoding='utf-8'))
     if rec['native']['verified']:passed=str(case)
    records.append(rec);dump(a.out/'report.json',{'scope':__doc__,'choices':len(choices),'records':records,'tests':tests,'passed':passed,'seconds':time.monotonic()-start})
    if passed:break

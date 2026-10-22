@@ -1,10 +1,11 @@
+import os as _research_os
 from pathlib import Path
 import sys,subprocess,re,json
 sys.path.insert(0,'.')
 from fastflyer import Flyer
 out=Path('flyers/WIP/experiments/astra_pullonly_20260927'); rows=[]
 for p in sorted((out/'ring3').glob('*.flyer')):
- r=subprocess.run(['target/release/fastflyer-research.exe','audit',str(p),'12','6'],capture_output=True,text=True).stdout
+ r=subprocess.run([('target/release/fastflyer-research' + ('.exe' if _research_os.name == 'nt' else '')),'audit',str(p),'12','6'],capture_output=True,text=True).stdout
  if 'distance=2 ' not in r or 'conservation_mismatch_ticks=0 ' not in r:continue
  load=int(re.search(r'max_successful_action=(\d+)',r)[1]);rows.append((load,Flyer.load(p).occupied_count(),p.name))
 rows.sort();print(rows[:12]);(out/'ring3_rank.json').write_text(json.dumps(rows))

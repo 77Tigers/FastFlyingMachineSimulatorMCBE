@@ -1,7 +1,8 @@
 """Compact target ports into one moving plane, with separated front helpers."""
+import os as _research_os
 from pathlib import Path
 import json,collections,subprocess
-HERE=Path(__file__).resolve().parent;ROOT=HERE.parents[3];RUNNER=ROOT/'target/release/fastflyer-research.exe'
+HERE=Path(__file__).resolve().parent;ROOT=HERE.parents[3];RUNNER=ROOT/('target/release/fastflyer-research' + ('.exe' if _research_os.name == 'nt' else ''))
 def main():
     s=(HERE/'derived_mixed3.py').read_text()
     s=s.replace('rng=random.Random(seed);ss=[set() for _ in S];ps=[];sources=[]','rng=random.Random(seed);ss=[set() for _ in S];ps=[];sources=[];fronts=[rng.choice((-1,0,1)) for _ in S]')

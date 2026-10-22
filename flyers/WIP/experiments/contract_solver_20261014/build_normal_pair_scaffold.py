@@ -3,6 +3,7 @@
 G input capacity9 reserves two body cells for later power/hardware integration.
 This is an interface, not a closed natural flyer.
 """
+import os as _research_os
 import argparse
 import json
 import subprocess
@@ -61,7 +62,7 @@ def main():
     (a.output/'problem.json').write_text(json.dumps(c,indent=2)+'\n',encoding='utf-8')
     (a.output/'drive.txt').write_text('\n'.join(' '.join(map(str,(t,*norm((x,y,z)),cap))) for t,x,y,z,cap in sorted(rows))+'\n',encoding='utf-8')
     (a.output/'construction.json').write_text(json.dumps({'scope':'T all moves/back slot2/H all3 pushes natural; G all moves, rear0/1, neighbor supplied; not a natural flyer','model':str(a.model),'G_input_limit':9,'reserved_G_body_cells':2},indent=2)+'\n',encoding='utf-8')
-    subprocess.run([str(ROOT/'target/release/contract-verify.exe'),str(a.output/'problem.json'),str(a.output/'result.json'),'30','4'],capture_output=True)
+    subprocess.run([str(ROOT/('target/release/contract-verify' + ('.exe' if _research_os.name == 'nt' else ''))),str(a.output/'problem.json'),str(a.output/'result.json'),'30','4'],capture_output=True)
     print((a.output/'result.json').read_text())
 
 

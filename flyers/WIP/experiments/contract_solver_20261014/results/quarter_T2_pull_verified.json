@@ -614,7 +614,7 @@
   "content_hash": "79bc4bb72273eb040b97bd93897034aea9294eb2086d4d9ef4077473c17064a1",
   "construction": {
     "scope": "Close T2 pull1 with a G2 sticky and explicitly supplied H2 mmmww power.\n\nCorrect contact uses sticky=q+3: T2 has advanced once before pull1, while\nG2 has not advanced. This adds a boundary source, not a complete flyer.\nNo T2 observer/passenger is added to its full twelve-cell stroke.\n",
-    "base": "flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\G2_column_rewired_v2",
+    "base": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/G2_column_rewired_v2",
     "sticky": [
       25,
       5,
@@ -639,10 +639,10 @@
       "target_after_prefix": 23
     },
     "sha256": {
-      "flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\G2_column_rewired_v2\\problem.flyer": "ab3ce6fe7860d6a7d8785c002f53c1ba745f3b9faa78f5c6ac61516f1a4ef49b",
-      "flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\G2_column_rewired_v2\\drive.txt": "b8e3b59e912d4977e58c11355481bb68b22a4250eea321c4b96f438a5a0564ad",
-      "flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\G2_column_rewired_v2\\before_natural.json": "bed41ed192ecfeb7118572fdf21e3daafbd00dd0b4359e5fe049162ba8c64080",
-      "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\build_T2_H2_power.py": "d19f99101a0a392b42aaf9fe8a7a5e5157e161eef5468f4d97ade23e0e8e1170"
+      "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/G2_column_rewired_v2/problem.flyer": "ab3ce6fe7860d6a7d8785c002f53c1ba745f3b9faa78f5c6ac61516f1a4ef49b",
+      "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/G2_column_rewired_v2/drive.txt": "b8e3b59e912d4977e58c11355481bb68b22a4250eea321c4b96f438a5a0564ad",
+      "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/G2_column_rewired_v2/before_natural.json": "bed41ed192ecfeb7118572fdf21e3daafbd00dd0b4359e5fe049162ba8c64080",
+      "flyers/WIP/experiments/contract_solver_20261014/build_T2_H2_power.py": "d19f99101a0a392b42aaf9fe8a7a5e5157e161eef5468f4d97ade23e0e8e1170"
     }
   },
   "contracts": {
@@ -1269,7 +1269,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\T2_H2_power\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/T2_H2_power/drive.txt",
       "prescribed_order": "before_natural",
       "boundary_envelope": {
         "min": [
@@ -7936,7 +7936,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\T2_H2_power\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/T2_H2_power/drive.txt",
       "prescribed_order": "after_natural",
       "boundary_envelope": {
         "min": [
@@ -14603,7 +14603,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\T2_H2_power\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/T2_H2_power/drive.txt",
       "prescribed_order": "interleaved",
       "boundary_envelope": {
         "min": [

@@ -1,5 +1,6 @@
 """Shared helpers for N3 prescribed-fixture builds (bodytrack parsing, snapshots, contract writing)."""
 from __future__ import annotations
+import os as _research_os
 import json, re, subprocess, sys
 from pathlib import Path
 
@@ -8,8 +9,8 @@ ROOT = HERE.parents[4]
 sys.path.insert(0, str(ROOT))
 from fastflyer import Flyer, Kind  # noqa: E402
 
-BT = ROOT / "target" / "release" / "bodytrack.exe"
-SIM = ROOT / "target" / "release" / "fastflyer-sim.exe"
+BT = ROOT / "target" / "release" / ('bodytrack' + ('.exe' if _research_os.name == 'nt' else ''))
+SIM = ROOT / "target" / "release" / ('fastflyer-sim' + ('.exe' if _research_os.name == 'nt' else ''))
 PERIOD, ADVANCE = 10, 3
 
 BODY_RE = re.compile(r'^\s*(B\d+): n=(\d+)(.*?)\s+word=(\w+)\s+(at\(.*?\)|box .*?)(\s*\[.*\])?$')
@@ -62,7 +63,7 @@ def bodytrack(path: Path, ticks: int, w0: int, cells: bool = True):
 
 
 def trace_rows(path: Path, ticks: int):
-    p = subprocess.run([str(ROOT / "target" / "release" / "extension-trace.exe"), str(path), str(ticks)],
+    p = subprocess.run([str(ROOT / "target" / "release" / ('extension-trace' + ('.exe' if _research_os.name == 'nt' else ''))), str(path), str(ticks)],
                        capture_output=True, text=True, cwd=ROOT)
     if p.returncode:
         raise RuntimeError(p.stderr)
@@ -282,7 +283,7 @@ def boundary_diff(here: Path, order: str, cycles: int = 1, sample=None):
     sys.path.insert(0, str(ROOT / "tools"))
     import extension_contract as ec
     c = ec.load_contract(here / f"{order}_natural.json")
-    args = [str(ROOT / "target/release/extension-prescribe.exe"), str(c.flyer), str(PERIOD * c.cycles), str(c.prescribed_script),
+    args = [str(ROOT / ('target/release/extension-prescribe' + ('.exe' if _research_os.name == 'nt' else ''))), str(c.flyer), str(PERIOD * c.cycles), str(c.prescribed_script),
             "before" if order == "before" else "after"]
     if sample:
         args += list(map(str, sample))

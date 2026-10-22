@@ -9,6 +9,7 @@ sys.path.insert(0, str(ROOT / "tools"))
 from extension_contract import (CaseChecker, Contract, ContractError, DriveEvent, Port,
                                 PrescribedEvent,
                                 load_contract, run_case)
+from fixture_support import fixture_root
 
 
 def contract(*ports, advance=1, period=2, recurrence="exact", boundary_envelope=None):
@@ -257,10 +258,7 @@ class ExtensionContractTests(unittest.TestCase):
             driver = _prescribed_driver_path()
         except ContractError:
             self.skipTest("build target/release/extension-prescribe to run integration test")
-        path = ROOT / "flyers" / "WIP" / "experiments" / "extension_contract_20261011" / \
-            "prescribed_primitive" / "contracts" / "mmmww_before.json"
-        if not path.is_file():
-            self.skipTest("prescribed primitive calibration fixture is not present")
+        path = fixture_root() / "prescribed_primitive/contracts/mmmww_before.json"
         spec = load_contract(path)
         result = run_case(spec, driver, None)
         self.assertTrue(result["passed"], result["diagnostic"])
@@ -353,7 +351,7 @@ class ExtensionContractTests(unittest.TestCase):
             driver = _prescribed_driver_path()
         except ContractError:
             self.skipTest("build target/release/extension-prescribe to run integration test")
-        base = ROOT / "flyers/WIP/experiments/extension_contract_20261011/prescribed_fixture/rear_cap"
+        base = fixture_root() / "prescribed_fixture/rear_cap"
         for order in ("before_natural", "after_natural"):
             with self.subTest(order=order):
                 spec = load_contract(base / f"mixed_{order}_contract.json")
@@ -714,10 +712,7 @@ class ExtensionContractTests(unittest.TestCase):
             driver = _driver_path(external=True)
         except ContractError:
             self.skipTest("build target/release/extension-drive to run integration test")
-        spec_path = ROOT / "flyers" / "WIP" / "experiments" / "extension_contract_20261011" / \
-            "external_drive" / "contracts" / "mmmww.json"
-        if not spec_path.is_file():
-            self.skipTest("external_drive benchmark fixture is not present")
+        spec_path = fixture_root() / "external_drive/contracts/mmmww.json"
         spec = load_contract(spec_path)
         result = run_case(spec, driver, None)
         self.assertTrue(result["passed"], result["diagnostic"])

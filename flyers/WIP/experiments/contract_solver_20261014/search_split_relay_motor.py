@@ -4,6 +4,7 @@ H2 keeps a fixed four-honey lower-relay source star; the upper glazed-root
 relay moves on X0. Native verification decides every constructed candidate.
 G0/X0/G2 remain supplied: a positive result is still a component.
 """
+import os as _research_os
 import argparse, itertools, json, subprocess, time
 from pathlib import Path
 from ortools.sat.python import cp_model
@@ -112,7 +113,7 @@ def main():
    for order in ['before_natural','after_natural','interleaved']:dump(case/f'{order}.json',{**cc,'prescribed_order':order})
    rec['shapes']=shapes;dump(case/'preparation.json',rec)
    (case/'generator_snapshot.py').write_bytes(Path(__file__).read_bytes())
-   native_run=subprocess.run([str(ROOT/'target/release/contract-verify.exe'),str(case/'before_natural.json'),str(case/'native.json'),'30','2'],cwd=ROOT,capture_output=True)
+   native_run=subprocess.run([str(ROOT/('target/release/contract-verify' + ('.exe' if _research_os.name == 'nt' else ''))),str(case/'before_natural.json'),str(case/'native.json'),'30','2'],cwd=ROOT,capture_output=True)
    assert (case/'native.json').exists(),native_run.stderr
    rec['native']=json.loads((case/'native.json').read_text(encoding='utf-8'))
    (case/'generator_snapshot.py').write_bytes(Path(__file__).read_bytes())

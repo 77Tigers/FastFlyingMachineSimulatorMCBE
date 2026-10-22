@@ -1,7 +1,7 @@
 {
   "version": 1,
   "name": "n4_13-bank-migration-after_natural",
-  "flyer": "..\\..\\..\\..\\..\\bank_migration\\n4_13\\candidate.flyer",
+  "flyer": "../../../../../bank_migration/n4_13/candidate.flyer",
   "period_ticks": 12,
   "advance": 4,
   "cycles": 3,
@@ -108,7 +108,7 @@
       ]
     }
   ],
-  "prescribed_script": "..\\..\\..\\..\\..\\bank_migration\\n4_13\\after_natural\\prescribed.txt",
+  "prescribed_script": "../../../../../bank_migration/n4_13/after_natural/prescribed.txt",
   "prescribed_order": "after_natural",
   "recurrence": "exact",
   "required_cells": [

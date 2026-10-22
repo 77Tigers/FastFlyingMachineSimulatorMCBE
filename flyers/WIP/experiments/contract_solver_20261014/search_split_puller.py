@@ -4,6 +4,7 @@ Existing column hardware is pinned; carriers and new helper remain supplied.
 The hardware search uses an empty library. Successful leads need independent
 80-case checks in all three supplied-event orders at encoded11.
 """
+import os as _research_os
 import argparse
 import hashlib
 import json
@@ -34,7 +35,7 @@ def main():
     args.output.mkdir(parents=True, exist_ok=True)
     library = args.output / "empty_library.json"
     library.write_text("[]\n")
-    binary = ROOT / "target/release/contract-solve.exe"
+    binary = ROOT / ('target/release/contract-solve' + ('.exe' if _research_os.name == 'nt' else ''))
     state = {"natural_flyer":False,"purpose":"replace supplied front slot0 with a real actuator",
              "seed_sha256":hashlib.sha256(seed.read_bytes()).hexdigest(),
              "binary_sha256":hashlib.sha256(binary.read_bytes()).hexdigest(),

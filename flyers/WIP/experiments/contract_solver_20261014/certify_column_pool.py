@@ -1,4 +1,5 @@
 """Certify raw columns against their original coupled contract at an explicit cap."""
+import os as _research_os
 import argparse,json,subprocess,time
 from pathlib import Path
 from assemble import Flyer,ROOT
@@ -33,7 +34,7 @@ def main():
         (out/"problem.json").write_text(json.dumps(q,indent=2)+"\n")
         lines=[" ".join(map(str,(t,*sh((x,y,z)),min(l,a.push_limit)))) for t,x,y,z,l in drive]
         (out/"drive.txt").write_text("\n".join(lines)+"\n")
-        run=subprocess.run([str(ROOT/"target/release/contract-verify.exe"),str(out/"problem.json"),str(out/"result.json"),"10","4"],capture_output=True,text=True)
+        run=subprocess.run([str(ROOT/('target/release/contract-verify' + ('.exe' if _research_os.name == 'nt' else ''))),str(out/"problem.json"),str(out/"result.json"),"10","4"],capture_output=True,text=True)
         report=json.loads((out/"result.json").read_text());state["cases"].append({"index":i,"exit_code":run.returncode,**report});state["tested"]+=1;save()
         if report["verified"]:state["lead"]=str(out);break
     state["complete"]=state["tested"]==len(pool);state["elapsed_seconds"]=time.monotonic()-start;save()

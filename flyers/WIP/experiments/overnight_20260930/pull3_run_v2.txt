@@ -62,5 +62,5 @@ pull3 4 28 {'no_pickup': 61}
 pull3 4 29 {'no_pickup': 62}
 pull3 4 30 {'no_pickup': 63}
 pull3 4 31 {'no_pickup': 64}
-screen candidates=0 clean=0 ticks=200 out=C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\overnight_20260930\pull3_screen.csv
+screen candidates=0 clean=0 ticks=200 out=flyers/WIP/experiments/overnight_20260930/pull3_screen.csv
 

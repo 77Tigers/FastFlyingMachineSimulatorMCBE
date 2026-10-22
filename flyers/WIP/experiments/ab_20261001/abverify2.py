@@ -3,6 +3,7 @@ Every moving action must move exactly one body (plus non-glue riders). A body mo
 'B'; by a sticky retraction 'A'. A body may not be both. Every extension's piston must touch (at tick
 start) a body labelled A (or later labelled A) other than its victim; every retraction's piston a body
 labelled B. usage: abverify2.py FLYER TICKS"""
+import os as _research_os
 import subprocess, sys, re
 from pathlib import Path
 def _tb(n):
@@ -11,7 +12,7 @@ def _tb(n):
     from fastflyer.research import binary
     return binary(n)
 HERE = Path(__file__).resolve().parent
-RUN = HERE.parents[3] / 'target' / 'release' / 'fastflyer-research.exe'
+RUN = HERE.parents[3] / 'target' / 'release' / ('fastflyer-research' + ('.exe' if _research_os.name == 'nt' else ''))
 DIRS = [(1,0,0),(-1,0,0),(0,1,0),(0,-1,0),(0,0,1),(0,0,-1)]
 
 

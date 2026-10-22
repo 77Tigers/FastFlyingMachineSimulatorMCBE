@@ -265,7 +265,7 @@
   "content_hash": "bb0c8e052653dbcfed22777584feabaf6d0bc62745f28bfcbc5d948d92935284",
   "construction": {
     "scope": "Add a real H2 three-normal drive to the accepted dual-relay component.\nG2 recovery carrier remains supplied; complete natural-flyer closure is unproved.\n",
-    "base": "flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\G0_dual_output_clear",
+    "base": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/G0_dual_output_clear",
     "added": [
       [
         15,
@@ -702,7 +702,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\H2_dual_relay_clear\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/H2_dual_relay_clear/drive.txt",
       "prescribed_order": "before_natural",
       "boundary_envelope": {
         "min": [
@@ -4569,7 +4569,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\H2_dual_relay_clear\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/H2_dual_relay_clear/drive.txt",
       "prescribed_order": "after_natural",
       "boundary_envelope": {
         "min": [
@@ -8436,7 +8436,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\H2_dual_relay_clear\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/H2_dual_relay_clear/drive.txt",
       "prescribed_order": "interleaved",
       "boundary_envelope": {
         "min": [

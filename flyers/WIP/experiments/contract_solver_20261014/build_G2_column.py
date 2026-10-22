@@ -5,6 +5,7 @@ carries all three G2 normals at slot1. Its optimistic budget is7 glue+RB+
 X2 sticky+3 G2 normals=12. Native verification must check the actual loads.
 G2 uses4 honey glue+its retained RB; other boundary inputs remain supplied.
 """
+import os as _research_os
 import argparse
 import hashlib
 import json
@@ -68,7 +69,7 @@ def main():
                        [a.base / 'problem.flyer', a.base / 'drive.txt',
                         a.base / 'before_natural.json', Path(__file__)]}}
     (a.out / 'preparation.json').write_text(json.dumps(info, indent=2) + '\n', encoding='utf-8')
-    r = subprocess.run([str(ROOT / 'target/release/contract-verify.exe'),
+    r = subprocess.run([str(ROOT / ('target/release/contract-verify' + ('.exe' if _research_os.name == 'nt' else ''))),
                         str(a.out / 'before_natural.json'), str(a.out / 'native.json'), '90', '2'],
                        cwd=ROOT, capture_output=True, text=True)
     assert (a.out / 'native.json').exists(), r.stderr

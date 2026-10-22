@@ -1,7 +1,7 @@
 {
   "version": 1,
   "name": "n2_05-witness-interleaved",
-  "flyer": "..\\..\\..\\..\\bank_migration\\n2_05\\candidate.flyer",
+  "flyer": "../../../../bank_migration/n2_05/candidate.flyer",
   "period_ticks": 8,
   "advance": 2,
   "cycles": 3,
@@ -95,7 +95,7 @@
       ]
     }
   ],
-  "prescribed_script": "..\\..\\..\\..\\bank_migration\\n2_05\\before_natural\\prescribed.txt",
+  "prescribed_script": "../../../../bank_migration/n2_05/before_natural/prescribed.txt",
   "prescribed_order": "interleaved",
   "recurrence": "exact",
   "required_cells": [

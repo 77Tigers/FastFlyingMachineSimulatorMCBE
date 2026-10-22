@@ -1,0 +1,48 @@
+name: Tests
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: viewer/package-lock.json
+      - name: Check repository hygiene
+        run: python scripts/check_repo_hygiene.py
+      - name: Check Bash syntax
+        shell: bash
+        run: |
+          while IFS= read -r -d '' script; do
+            bash -n "$script"
+          done < <(git ls-files -z '*.sh')
+      - name: Install browser dependencies
+        run: npm ci --prefix viewer
+      - name: Test Rust package
+        run: cargo test --locked
+      - name: Build all native research tools
+        run: cargo build --release --locked --manifest-path tools/Cargo.toml --target-dir target
+      - name: Test research library
+        run: cargo test --locked --manifest-path tools/Cargo.toml --lib
+      - name: Test Python editing and native integrations
+        run: python -m unittest discover -s tests -v
+      - name: Test multiplayer sessions
+        run: npm test --prefix viewer

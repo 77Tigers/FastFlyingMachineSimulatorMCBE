@@ -158,11 +158,11 @@
     "schedule_seed": 1528992356348537142
   },
   "rust_command": [
-    "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\target\\release\\contract-search.exe",
-    "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\shared_design_20261013\\scheduling\\witness_trial\\n4_14_validation\\interleaved\\contract.json",
+    "target/release/contract-search.exe",
+    "flyers/WIP/experiments/shared_design_20261013/scheduling/witness_trial/n4_14_validation/interleaved/contract.json",
     "0",
     "1",
-    "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\shared_design_20261013\\scheduling\\witness_trial\\n4_14_validation\\interleaved\\eval",
+    "flyers/WIP/experiments/shared_design_20261013/scheduling/witness_trial/n4_14_validation/interleaved/eval",
     "--eval-only",
     "--order",
     "interleaved",

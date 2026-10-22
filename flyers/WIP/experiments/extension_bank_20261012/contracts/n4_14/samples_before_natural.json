@@ -6,7 +6,7 @@
   "cycles": 3,
   "recurrence": "exact",
   "drive_script": null,
-  "prescribed_script": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\extension_bank_20261012\\contracts\\n4_14\\drive.txt",
+  "prescribed_script": "flyers/WIP/experiments/extension_bank_20261012/contracts/n4_14/drive.txt",
   "prescribed_order": "before_natural",
   "boundary_envelope": null,
   "passed": true,

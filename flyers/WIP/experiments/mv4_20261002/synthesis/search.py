@@ -4,6 +4,7 @@ Nominal identity trajectories include all abstract reset/settle order branches.
 Core pulses may recruit a different eligible member: actual Rust screening is
 therefore essential and nominal identity closure is not claimed.
 """
+import os as _research_os
 from pathlib import Path
 import sys, random, heapq, json, collections, itertools, subprocess
 ROOT=Path(__file__).resolve().parents[5]
@@ -243,5 +244,5 @@ if __name__=='__main__':
   print(seed,dict(stats),flush=True)
  (OUT/f'manifest_{revision}.json').write_text(json.dumps(dict(stats=stats,layouts=records),indent=2))
  if stats['routed']:
-  result=subprocess.run([str(ROOT/'target/release/fastflyer-research.exe'),'screen',str(out),'120','--out',str(OUT/f'screen_{revision}.csv')],capture_output=True,text=True)
+  result=subprocess.run([str(ROOT/('target/release/fastflyer-research' + ('.exe' if _research_os.name == 'nt' else ''))),'screen',str(out),'120','--out',str(OUT/f'screen_{revision}.csv')],capture_output=True,text=True)
   (OUT/f'screen_{revision}.txt').write_text(result.stdout+result.stderr);print(result.stdout,result.stderr)

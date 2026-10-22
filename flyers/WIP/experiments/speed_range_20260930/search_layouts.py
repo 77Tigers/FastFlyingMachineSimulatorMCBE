@@ -3,11 +3,12 @@
 All candidates encoded PL24; static predicted loads above24 are discarded.
 This extends the smart temporal router, not the exhausted safe local grid.
 """
+import os as _research_os
 from pathlib import Path
 import sys, random, math, json, subprocess, csv, argparse, time
 ROOT=Path(__file__).resolve().parents[4];sys.path.insert(0,str(ROOT))
 HERE=Path(__file__).resolve().parent
-RUNNER=ROOT/'target/release/fastflyer-research.exe'
+RUNNER=ROOT/('target/release/fastflyer-research' + ('.exe' if _research_os.name == 'nt' else ''))
 
 def checkpoint(path, data):
     for attempt in range(30):

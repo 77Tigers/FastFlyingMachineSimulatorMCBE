@@ -15,7 +15,7 @@ def main():
     ap.add_argument("output", type=Path)
     ap.add_argument("--artifact", type=Path, default=HERE / "results/columns_reconstruction.json")
     a = ap.parse_args()
-    data = json.loads(a.artifact.read_text())
+    data = json.loads(a.artifact.read_text(encoding="utf-8"))
     flyer = Flyer(**data["flyer_parameters"])
     for x, y, z, value in data["cells"]:
         flyer.set((x, y, z), Block.decode(value))

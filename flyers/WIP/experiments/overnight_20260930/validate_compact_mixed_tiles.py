@@ -1,4 +1,5 @@
 """Full literal-copy validation and separate driver/extension load ledgers."""
+import os as _research_os
 from pathlib import Path
 import sys,json,csv,re,subprocess
 ROOT=Path(__file__).resolve().parents[4];sys.path.insert(0,str(ROOT))
@@ -8,7 +9,7 @@ def _tb(n):
     sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[4]))
     from fastflyer.research import binary
     return binary(n)
-HERE=Path(__file__).resolve().parent;RUNNER=ROOT/'target/release/fastflyer-research.exe';LEDGER=_tb('three-bps-loads')
+HERE=Path(__file__).resolve().parent;RUNNER=ROOT/('target/release/fastflyer-research' + ('.exe' if _research_os.name == 'nt' else ''));LEDGER=_tb('three-bps-loads')
 def main():
     manifest=json.loads((HERE/'compact_mixed_tile_bridged/manifest.json').read_text());certified=[]
     for m in manifest['assemblies']:

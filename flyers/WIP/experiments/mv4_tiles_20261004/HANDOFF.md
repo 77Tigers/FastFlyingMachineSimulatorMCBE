@@ -12,7 +12,7 @@
 
 **Status: unsolved. There is no verified all-sticky backwards tile.** Earlier work mistakenly prioritized a normal-piston loop. The user repeatedly corrected this: backwards tileability is the central objective. Do not present that loop, a separately copied independent flyer, or a short nonrepeating cascade as completion.
 
-Workspace: `C:/Users/Ruben/OneDrive/Documents/FastFlyerPlayground`. Read `SIMULATION.md`, `flyers/RESEARCH_LOG.md`, and this directory's `FINDINGS.md`. All code here is experiment code; simulator/library files were not changed. Another agent's completed research is under `rigid_sat_20261004`; coordination was authorized via `flyers/chat.txt`.
+Workspace: `.`. Read `SIMULATION.md`, `flyers/RESEARCH_LOG.md`, and this directory's `FINDINGS.md`. All code here is experiment code; simulator/library files were not changed. Another agent's completed research is under `rigid_sat_20261004`; coordination was authorized via `flyers/chat.txt`.
 
 An mv4 core starts a two-tick +X move every three ticks; layers contain phases 0/1/2. Moving power sources/targets do not participate in the power stage. A sticky extends, settles next tick, pulls two ticks after extension, and resets the following tick. Reset and movement completion can occur before a carrier acts in that same tick. Those races matter even though passenger identity recurrence is unnecessary.
 

@@ -1,4 +1,7 @@
-cd /c/Users/Ruben/OneDrive/Documents/FastFlyerPlayground/flyers/WIP/experiments/power_riders_20261007
+#!/usr/bin/env bash
+# Requires Bash (Git Bash on Windows). Paths are resolved from this script.
+REPO_ROOT="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/../../../../../.." && pwd -P)"
+cd "${REPO_ROOT}/flyers/WIP/experiments/power_riders_20261007"
 W="mwwm wmwm mwmw mmww wwmm wmmw"
 run() { echo "## $*"; python front_pr.py "$@" 2>&1 | grep -E "^\{|^built|Infeasible|Traceback|Error|FOUND|saved|max load" ; }
 for w in $W; do run 7 --w $w --k4 nb1 --k5 nb1 --tl 120 --tag t2_nb1_$w; done

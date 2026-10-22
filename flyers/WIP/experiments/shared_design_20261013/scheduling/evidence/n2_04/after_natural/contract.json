@@ -1,7 +1,7 @@
 {
   "version": 1,
   "name": "n2_04-scheduling-after_natural",
-  "flyer": "..\\..\\..\\..\\bank_migration\\n2_04\\candidate.flyer",
+  "flyer": "../../../../bank_migration/n2_04/candidate.flyer",
   "period_ticks": 8,
   "advance": 2,
   "cycles": 3,
@@ -107,7 +107,7 @@
       ]
     }
   ],
-  "prescribed_script": "..\\..\\..\\..\\bank_migration\\n2_04\\before_natural\\prescribed.txt",
+  "prescribed_script": "../../../../bank_migration/n2_04/before_natural/prescribed.txt",
   "prescribed_order": "after_natural",
   "recurrence": "exact",
   "required_cells": [

@@ -440,7 +440,7 @@
   "content_hash": "e029229074a5ac4473af96b6fd9f586de8cdbeefafc42905c95b78a44622541e",
   "construction": {
     "scope": "Construct G1's third pull with an H1 carrier and a G1-carried observer.\n\nH1 motion stays supplied, cap12. Observer moves mmwwm and faces -Y into H1\nglue, avoiding the earlier co-carried wwmmm pulse hazard. H1 RB still powers\nthe T1 pull. This is an unverified construction until checked independently.\n",
-    "base": "flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\front_T1_pull_H1_source\\case00",
+    "base": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/front_T1_pull_H1_source/case00",
     "added_cells": [
       [
         23,
@@ -483,10 +483,10 @@
     "H1_supplied_cells": 3,
     "pending": "H1 three natural pushes; X2/T2 third moves; neighboring closure and loaded budgets",
     "sha256": {
-      "flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\front_T1_pull_H1_source\\case00\\problem.flyer": "3573fef205a83d7328c9dc5f9efb05f2af96ee90cee2efe620efb4aa73eb0850",
-      "flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\front_T1_pull_H1_source\\case00\\before_natural.json": "8da7d6819dcec2d86025ffe561f6c44618a46e8d3a0b97b174d8db5b0d18b167",
-      "flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\front_T1_pull_H1_source\\case00\\drive.txt": "177f975e4155440095ce708902aceb70fced2ed36f642ac228319993cc050b8c",
-      "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\build_helper_pull_interface.py": "e65a7558aa8dca417698cf16267500545c7627d77dd3678a69fa9efa09f31bd0"
+      "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/front_T1_pull_H1_source/case00/problem.flyer": "3573fef205a83d7328c9dc5f9efb05f2af96ee90cee2efe620efb4aa73eb0850",
+      "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/front_T1_pull_H1_source/case00/before_natural.json": "8da7d6819dcec2d86025ffe561f6c44618a46e8d3a0b97b174d8db5b0d18b167",
+      "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/front_T1_pull_H1_source/case00/drive.txt": "177f975e4155440095ce708902aceb70fced2ed36f642ac228319993cc050b8c",
+      "flyers/WIP/experiments/contract_solver_20261014/build_helper_pull_interface.py": "e65a7558aa8dca417698cf16267500545c7627d77dd3678a69fa9efa09f31bd0"
     }
   },
   "contracts": {
@@ -1011,7 +1011,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\front_G1_H1_glue_drive\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/front_G1_H1_glue_drive/drive.txt",
       "prescribed_order": "before_natural",
       "boundary_envelope": {
         "min": [
@@ -6558,7 +6558,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\front_G1_H1_glue_drive\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/front_G1_H1_glue_drive/drive.txt",
       "prescribed_order": "after_natural",
       "boundary_envelope": {
         "min": [
@@ -12105,7 +12105,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\front_G1_H1_glue_drive\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/front_G1_H1_glue_drive/drive.txt",
       "prescribed_order": "interleaved",
       "boundary_envelope": {
         "min": [

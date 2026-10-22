@@ -1,6 +1,7 @@
 """Extract actual actions carrying the tagged K0 identity from a Rust trace."""
 
 from __future__ import annotations
+import os as _research_os
 
 import json
 import subprocess
@@ -12,7 +13,7 @@ sys.path.insert(0, str(ROOT))
 from fastflyer import Block, Flyer, Kind
 
 FLYER = ROOT / "flyers/bank/pl7/tm_7pl_2.5bps.flyer"
-TRACE = ROOT / "target/release/extension-trace.exe"
+TRACE = ROOT / ('target/release/extension-trace' + ('.exe' if _research_os.name == 'nt' else ''))
 PORT_ORIGIN = (0, 1, 15)
 
 

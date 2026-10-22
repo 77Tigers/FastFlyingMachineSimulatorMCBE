@@ -4,6 +4,7 @@ Five/six T glue cells, selectable G body budget; tip supplied.
 Optional neighbor-carried observer powers the rear pull independently of G sources.
 All glue identities get motion ports; no hardware library/reference input.
 """
+import os as _research_os
 import argparse,itertools,json,subprocess,time
 from pathlib import Path
 from assemble import Flyer,ROOT,port_pos
@@ -98,7 +99,7 @@ def main():
         drive=[(t,*port_pos(p,t,10,3),11) for p in ports if p['role']=='input' and not p['name'].startswith('neighbor_support') for t in range(30) if t%2==0 and p['word'][(t%10)//2]=='m' and not(p['name']=='back' and t%10==4)]
         c={"version":1,"name":"joint_tip_layout","flyer":"problem.flyer","prescribed_script":"drive.txt","prescribed_order":"before_natural","period_ticks":10,"advance":3,"cycles":3,"recurrence":"bounded","ports":ports,"required_cells":[{"at":list(p),"cell":b.encode()} for p,b in g._cells.items() if b.kind!=10],"boundary_envelope":{"min":[min(p[k] for p in g._cells)-5 for k in range(3)],"max":[max(p[k] for p in g._cells)+5 for k in range(3)]}}
         (out/'problem.json').write_text(json.dumps(c,indent=2)+'\n');(out/'drive.txt').write_text('\n'.join(' '.join(map(str,r)) for r in sorted(drive))+'\n')
-        subprocess.run([str(ROOT/'target/release/contract-verify.exe'),str(out/'problem.json'),str(out/'result.json'),'10','4'],capture_output=True,text=True)
+        subprocess.run([str(ROOT/('target/release/contract-verify' + ('.exe' if _research_os.name == 'nt' else ''))),str(out/'problem.json'),str(out/'result.json'),'10','4'],capture_output=True,text=True)
         report=json.loads((out/'result.json').read_text());state['cases'].append({"case":out.name,**report});state['tested']+=1;save()
         if report['verified']:
             state.setdefault('leads',[]).append(str(out));state['lead']=str(out)

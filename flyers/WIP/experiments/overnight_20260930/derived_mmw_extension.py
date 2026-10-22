@@ -4,11 +4,12 @@ The helper bodies are driver bodies with added contact patches/connecting
 rails. Record that driver growth separately; this is not a low-limit engine.
 First realize one interface, then freeze a tile and test repeated placement.
 """
+import os as _research_os
 from pathlib import Path
 import sys,json,random,heapq,collections,subprocess,importlib.util
 ROOT=Path(__file__).resolve().parents[4];sys.path.insert(0,str(ROOT))
 from fastflyer import Flyer,Block,Kind
-HERE=Path(__file__).resolve().parent;RUNNER=ROOT/'target/release/fastflyer-research.exe'
+HERE=Path(__file__).resolve().parent;RUNNER=ROOT/('target/release/fastflyer-research' + ('.exe' if _research_os.name == 'nt' else ''))
 spec=importlib.util.spec_from_file_location('model',HERE/'derived_mmw.py');model=importlib.util.module_from_spec(spec);spec.loader.exec_module(model)
 M=json.loads((HERE/'mmw_extension_core.json').read_text())
 def main():

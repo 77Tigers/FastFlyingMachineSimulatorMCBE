@@ -3,7 +3,7 @@
     "n": 3,
     "copies": 1,
     "seed": 0,
-    "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\sol_reference_20260928\\n3_copies1_s0.flyer",
+    "path": "flyers/WIP/experiments/sol_reference_20260928/n3_copies1_s0.flyer",
     "centers": [
       [
         0,
@@ -124,7 +124,7 @@
     "n": 3,
     "copies": 2,
     "seed": 0,
-    "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\sol_reference_20260928\\n3_copies2_s0.flyer",
+    "path": "flyers/WIP/experiments/sol_reference_20260928/n3_copies2_s0.flyer",
     "centers": [
       [
         6,
@@ -350,7 +350,7 @@
     "n": 3,
     "copies": 4,
     "seed": 0,
-    "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\sol_reference_20260928\\n3_copies4_s0.flyer",
+    "path": "flyers/WIP/experiments/sol_reference_20260928/n3_copies4_s0.flyer",
     "centers": [
       [
         13,
@@ -786,7 +786,7 @@
     "n": 4,
     "copies": 1,
     "seed": 0,
-    "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\sol_reference_20260928\\n4_copies1_s0.flyer",
+    "path": "flyers/WIP/experiments/sol_reference_20260928/n4_copies1_s0.flyer",
     "centers": [
       [
         0,
@@ -868,7 +868,7 @@
     "n": 4,
     "copies": 2,
     "seed": 0,
-    "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\sol_reference_20260928\\n4_copies2_s0.flyer",
+    "path": "flyers/WIP/experiments/sol_reference_20260928/n4_copies2_s0.flyer",
     "centers": [
       [
         0,
@@ -1016,7 +1016,7 @@
     "n": 4,
     "copies": 4,
     "seed": 0,
-    "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\sol_reference_20260928\\n4_copies4_s0.flyer",
+    "path": "flyers/WIP/experiments/sol_reference_20260928/n4_copies4_s0.flyer",
     "centers": [
       [
         8,

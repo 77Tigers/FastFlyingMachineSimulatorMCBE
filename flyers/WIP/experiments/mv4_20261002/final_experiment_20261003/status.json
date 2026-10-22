@@ -116,7 +116,7 @@
       ]
     ]
   },
-  "candidate": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\mv4_pl49.flyer",
+  "candidate": "flyers/WIP/mv4_pl49.flyer",
   "full80_pass": true,
   "validation": "exact core geometry, moving duration, conservation and no extension failures; normal +X actuators; full passenger-state recurrence not asserted",
   "max_successful_action": 49,

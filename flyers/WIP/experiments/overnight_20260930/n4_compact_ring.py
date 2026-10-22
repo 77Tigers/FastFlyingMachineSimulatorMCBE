@@ -1,9 +1,10 @@
 """Test closer twelve-body normal rings; full-copy modularity remains unproved."""
+import os as _research_os
 from pathlib import Path
 import sys,math,json,collections,csv,subprocess,importlib.util
 ROOT=Path(__file__).resolve().parents[4];sys.path.insert(0,str(ROOT))
 from fastflyer import Flyer,Kind
-HERE=Path(__file__).resolve().parent;RUNNER=ROOT/'target/release/fastflyer-research.exe'
+HERE=Path(__file__).resolve().parent;RUNNER=ROOT/('target/release/fastflyer-research' + ('.exe' if _research_os.name == 'nt' else ''))
 spec=importlib.util.spec_from_file_location('n4',HERE.parent/'sol_reference_20260928/derived_generator.py');mod=importlib.util.module_from_spec(spec);spec.loader.exec_module(mod)
 def main():
     out=HERE/'n4_compact_candidates';out.mkdir(exist_ok=True);stats=collections.Counter();manifest=[]

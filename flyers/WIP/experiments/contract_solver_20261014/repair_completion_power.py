@@ -3,6 +3,7 @@
 Uses exact rejected hardware witnesses, with no geometry or simulator change.
 Every proposal still needs strict all-sample certification and long validation.
 """
+import os as _research_os
 import argparse
 import hashlib
 import json
@@ -56,7 +57,7 @@ def main():
                   "actor": a.actor, "fire_position": a.fire_position, "proposals": len(pool),
                   "sha256": {str(p): hashlib.sha256(p.read_bytes()).hexdigest()
                              for p in [a.problem, a.witness_pool, Path(__file__),
-                                       Path("target/release/contract-verify.exe")]}}
+                                       Path(('target/release/contract-verify' + ('.exe' if _research_os.name == 'nt' else '')))]}}
     (a.output / "provenance.json").write_text(json.dumps(provenance, indent=2) + "\n", encoding="utf-8")
     subprocess.run(["python", str(Path(__file__).with_name("certify_column_pool.py")),
                     str(a.problem), str(a.output / "pool.json"), str(a.output / "cert"),

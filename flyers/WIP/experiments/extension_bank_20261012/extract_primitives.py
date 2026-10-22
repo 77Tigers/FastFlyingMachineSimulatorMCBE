@@ -5,12 +5,13 @@ usage: extract_primitives.py FAMILY [--bps 2.5] [--period 8] [--w0 80] [--out DI
 If no flyers are given, all catalogue entries with speed_bps == --bps are used.
 Writes primitives_<family>.json (records, grouped keys, notes).
 """
+import os as _research_os
 import argparse, json, re, subprocess, sys
 from collections import defaultdict
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[4]
-BT = REPO / "target/release/bodytrack.exe"
+BT = REPO / ('target/release/bodytrack' + ('.exe' if _research_os.name == 'nt' else ''))
 
 BODY_RE = re.compile(r"^\s*B(\d+): n=(\d+)(.*?)\bP=(\d+) S=(\d+) word=(\w+)")
 EV_RE = re.compile(r"^\s*s(\d+) B(\d+)\(([^|]*)\|([^)]*)\) (\w+) (\d+)\s*->\s*(.*)$")

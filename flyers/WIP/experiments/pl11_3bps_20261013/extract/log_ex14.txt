@@ -1,7 +1,7 @@
 exclusive_roles_3bps_pl14: 42 moving events, back loop ['B9', 'B10', 'B11', 'B17', 'B15'] loop=['B10', 'B11', 'B15', 'B17', 'B9'], requests 42 (0.8s)
 built 34 unique of 42 (1.6s)
 {('S', 'dup'): 6, ('S', 'pass'): 12, ('C', 'dup'): 4, ('C', 'pass'): 4, ('L', 'pass'): 4, ('L', 'dup'): 5, ('K', 'pass'): 4, ('K', 'dup'): 1, ('R', 'pass'): 1, ('F', 'pass'): 1}
-done in 31.9s -> C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\pl11_3bps_20261013\extract\work\exclusive_roles_3bps_pl14\results.json
+done in 31.9s -> flyers/WIP/experiments/pl11_3bps_20261013/extract/work/exclusive_roles_3bps_pl14/results.json
 copied 26 fixtures; confirming 62 contracts with the Python checker (8 workers)
 python confirmation: 61s wall
 published 26 entries (dropped orders: []); 69s

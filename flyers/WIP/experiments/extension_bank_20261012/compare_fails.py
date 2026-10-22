@@ -1,5 +1,6 @@
+import os as _research_os
 import json,glob,subprocess,os,sys
-exe=os.path.abspath('target/release/contract-search.exe')
+exe=os.path.abspath(('target/release/contract-search' + ('.exe' if _research_os.name == 'nt' else '')))
 ex='flyers/WIP/experiments/extension_bank_20261012'
 rc='flyers/WIP/experiments/extension_contract_20261011/prescribed_fixture/rear_cap'
 c=json.load(open(rc+'/mixed_before_natural_contract.json'))

@@ -15,6 +15,7 @@ for matching future X2 recovery on X1 (G0_T0_recovery_trade_budget).
 and six glue, keeping full39 T1 mass7 and reducing G1 mass to8.
 H0/X0/X1/G2/X2/G1 drives remain supplied.
 """
+import os as _research_os
 import argparse,copy,itertools,json,time,subprocess,collections,hashlib
 from pathlib import Path
 from ortools.sat.python import cp_model
@@ -285,7 +286,7 @@ def main():
       if v=='supplied':rows.append((10*cy+2*slot,p['at'][0]+3*cy+p['word'][:slot].count('m'),*p['at'][1:],12))
    (case/'drive.txt').write_text(''.join(' '.join(map(str,r))+'\n' for r in sorted(rows)),encoding='utf-8')
    for order in ['before_natural','after_natural','interleaved']:dump(case/f'{order}.json',{**cc,'prescribed_order':order})
-   rec['shapes']=selected;dump(case/'preparation.json',rec);subprocess.run([str(ROOT/'target/release/contract-verify.exe'),str(case/'before_natural.json'),str(case/'native.json'),'30','2'],cwd=ROOT,capture_output=True,check=False);rec['native']=json.loads((case/'native.json').read_text(encoding='utf-8'))
+   rec['shapes']=selected;dump(case/'preparation.json',rec);subprocess.run([str(ROOT/('target/release/contract-verify' + ('.exe' if _research_os.name == 'nt' else ''))),str(case/'before_natural.json'),str(case/'native.json'),'30','2'],cwd=ROOT,capture_output=True,check=False);rec['native']=json.loads((case/'native.json').read_text(encoding='utf-8'))
    if rec['native']['verified']:passed=str(case)
   records.append(rec);save()
   if passed:break

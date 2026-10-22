@@ -4,6 +4,7 @@ Three new bodies H0/J2/F4. H pulls original body0's last move; J pulls H;
 F powers J. J and F temporarily use three-normal drives (user-approved).
 No added original-body glue. All assemblies encoded24.
 """
+import os as _research_os
 from pathlib import Path
 import sys,csv,json,subprocess,itertools
 HERE=Path(__file__).resolve().parent;sys.path.insert(0,str(HERE))
@@ -50,7 +51,7 @@ def main():
    base._cells.update(new);name=Path(file).stem+'.flyer';base.save(out/name);record['file']=name
   records.append(record)
  (HERE/'compact_helper_cascade.manifest.json').write_text(json.dumps(records,indent=2));print(json.dumps(records,indent=2))
- runner=HERE.parents[3]/'target/release/fastflyer-research.exe'
+ runner=HERE.parents[3]/('target/release/fastflyer-research' + ('.exe' if _research_os.name == 'nt' else ''))
  p=subprocess.run([str(runner),'screen',str(out),'240','--out',str(HERE/'compact_helper_cascade.screen.csv')],capture_output=True,text=True)
  (HERE/'compact_helper_cascade.screen.txt').write_text(p.stdout+p.stderr);print(p.stdout)
 if __name__=='__main__':main()

@@ -1,8 +1,8 @@
 {
   "version": 1,
   "name": "n2_01-scheduling-witness-interleaved",
-  "flyer": "..\\..\\..\\..\\..\\..\\..\\extension_bank\\n2\\n2_01\\candidate.flyer",
-  "prescribed_script": "..\\..\\..\\..\\..\\..\\..\\extension_bank\\n2\\n2_01\\drive.txt",
+  "flyer": "../../../../../../../extension_bank/n2/n2_01/candidate.flyer",
+  "prescribed_script": "../../../../../../../extension_bank/n2/n2_01/drive.txt",
   "prescribed_order": "interleaved",
   "period_ticks": 8,
   "advance": 2,

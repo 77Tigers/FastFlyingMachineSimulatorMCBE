@@ -3,6 +3,7 @@
 Relative motion should suppress the early G0 observer pulses. All moves
 except T0 pull0 and push4 are supplied; this is a component experiment.
 """
+import os as _research_os
 import argparse,hashlib,json,subprocess
 from pathlib import Path
 from assemble import Flyer
@@ -72,7 +73,7 @@ def main():
     for order in ['before_natural','after_natural','interleaved']:(a.out/f'{order}.json').write_text(json.dumps({**c,'prescribed_order':order},indent=2)+'\n',encoding='utf-8')
     (a.out/'preparation.json').write_text(json.dumps({'scope':__doc__,'glazed_relay':True,'T0_glue':sorted(map(shift,t)),'G0_glue':sorted(map(shift,g)),'observer_carrier':'G0','insulated_pusher':a.insulated_pusher,'deep_G0_route':a.deep_G0_route,'front_insulated':a.front_insulated,'observer_pusher':a.observer_pusher,'T0_detour':a.T0_detour,'T0_glazed_bridge':a.T0_glazed_bridge,'dual_output':a.dual_output,'dual_clear_support':a.dual_clear_support,'script_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest()},indent=2)+'\n',encoding='utf-8')
     (a.out/'generator_snapshot.py').write_bytes(Path(__file__).read_bytes())
-    proc=subprocess.run([str(ROOT/'target/release/contract-verify.exe'),str(a.out/'before_natural.json'),str(a.out/'native.json'),'30','2'],cwd=ROOT,capture_output=True)
+    proc=subprocess.run([str(ROOT/('target/release/contract-verify' + ('.exe' if _research_os.name == 'nt' else ''))),str(a.out/'before_natural.json'),str(a.out/'native.json'),'30','2'],cwd=ROOT,capture_output=True)
     assert (a.out/'native.json').exists(),proc.stderr
     print((a.out/'native.json').read_text(encoding='utf-8'))
 

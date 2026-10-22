@@ -1,4 +1,5 @@
 """Fixed seven-cell G0 observer/G1 stone gate calibration, supplied drivers."""
+import os as _research_os
 import copy,json,subprocess
 from pathlib import Path
 from assemble import Flyer
@@ -17,5 +18,5 @@ def main():
     if v=='supplied':rows.append((cy*10+2*slot,p['at'][0]+3*cy+p['word'][:slot].count('m'),*p['at'][1:],12))
  (out/'drive.txt').write_text(''.join(' '.join(map(str,r))+'\n' for r in sorted(rows)),encoding='utf-8')
  for order in ['before_natural','after_natural','interleaved']:(out/f'{order}.json').write_text(json.dumps({**c,'prescribed_order':order},indent=2)+'\n',encoding='utf-8')
- (out/'generator_snapshot.py').write_bytes(Path(__file__).read_bytes());subprocess.run([str(ROOT/'target/release/contract-verify.exe'),str(out/'before_natural.json'),str(out/'native.json'),'30','2'],cwd=ROOT,check=True);r=json.loads((out/'native.json').read_text(encoding='utf-8'));print({k:r.get(k) for k in ['verified','passed','max_action','orders_per_sample']})
+ (out/'generator_snapshot.py').write_bytes(Path(__file__).read_bytes());subprocess.run([str(ROOT/('target/release/contract-verify' + ('.exe' if _research_os.name == 'nt' else ''))),str(out/'before_natural.json'),str(out/'native.json'),'30','2'],cwd=ROOT,check=True);r=json.loads((out/'native.json').read_text(encoding='utf-8'));print({k:r.get(k) for k in ['verified','passed','max_action','orders_per_sample']})
 if __name__=='__main__':main()

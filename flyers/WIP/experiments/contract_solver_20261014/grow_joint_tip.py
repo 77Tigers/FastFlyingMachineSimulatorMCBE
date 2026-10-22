@@ -4,6 +4,7 @@ Grow only connected slime at the existing tip's X plane. First certify each
 supplied-tip control; then synthesize its three natural pushes, retaining every
 existing natural action. Diagnostic search pools require strict PL11 acceptance.
 """
+import os as _research_os
 import argparse
 import copy
 import json
@@ -86,7 +87,7 @@ def main():
             control = copy.deepcopy(c)
             control["prescribed_script"] = "control_drive.txt"
             (out / "control_problem.json").write_text(json.dumps(control, indent=2) + "\n", encoding="utf-8")
-            subprocess.run([str(ROOT / "target/release/contract-verify.exe"), str(out / "control_problem.json"), str(out / "control.json"), "10", "4"], capture_output=True)
+            subprocess.run([str(ROOT / ('target/release/contract-verify' + ('.exe' if _research_os.name == 'nt' else ''))), str(out / "control_problem.json"), str(out / "control.json"), "10", "4"], capture_output=True)
             report = json.loads((out / "control.json").read_text())
             row["control"] = report
             save()
@@ -98,7 +99,7 @@ def main():
             write_drive(kept)
             (out / "problem.json").write_text(json.dumps(c, indent=2) + "\n", encoding="utf-8")
             with (out / "search.log").open("w") as log:
-                command = [str(ROOT / "target/release/column-solve.exe"), str(out / "problem.json"), str(out / "search"), str(a.budget), "--wide", "--pool-only", "--target-port", str(ti)]
+                command = [str(ROOT / ('target/release/column-solve' + ('.exe' if _research_os.name == 'nt' else ''))), str(out / "problem.json"), str(out / "search"), str(a.budget), "--wide", "--pool-only", "--target-port", str(ti)]
                 if a.rider_completion:
                     command.append("--rider-completion")
                 if a.strict_search:

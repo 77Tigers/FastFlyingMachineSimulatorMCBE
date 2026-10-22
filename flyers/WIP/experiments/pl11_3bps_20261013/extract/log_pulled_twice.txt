@@ -1,7 +1,7 @@
 mmwmw_two_bodies_pulled_twice: 45 moving events, back loop ['B9', 'B10', 'B11', 'B20', 'B12'] loop=['B10', 'B11', 'B12', 'B20', 'B9'], requests 23 (1.4s)
 built 17 unique of 23 (2.0s)
 {('S', 'pass'): 7, ('S', 'dup'): 2, ('S', 'fail'): 1, ('C', 'dup'): 3, ('C', 'pass'): 2, ('L', 'dup'): 3, ('L', 'pass'): 2, ('K', 'dup'): 1, ('R', 'pass'): 1, ('F', 'pass'): 1}
-done in 26.2s -> C:\Users\Ruben\OneDrive\Documents\FastFlyerPlayground\flyers\WIP\experiments\pl11_3bps_20261013\extract\work\mmwmw_two_bodies_pulled_twice\results.json
+done in 26.2s -> flyers/WIP/experiments/pl11_3bps_20261013/extract/work/mmwmw_two_bodies_pulled_twice/results.json
 copied 13 fixtures; confirming 33 contracts with the Python checker (8 workers)
 python confirmation: 48s wall
 published 13 entries (dropped orders: []); 52s

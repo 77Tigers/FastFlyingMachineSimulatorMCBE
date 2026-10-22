@@ -3,6 +3,7 @@
 Never use this output as a synthesized flyer. The production assembler has no
 reference input; this audit determines whether its partial checks are sound.
 """
+import os as _research_os
 import argparse
 import json
 import subprocess
@@ -67,7 +68,7 @@ def main():
             if len(results) % 20 == 0 or failed and any(not t["passed"] for t in cases):
                 print(f"pairs checked={len(results)}/190 failed={failed}; latest={i},{j}", flush=True)
         return
-    exe = ROOT / "target/release/column-assemble.exe"
+    exe = ROOT / ('target/release/column-assemble' + ('.exe' if _research_os.name == 'nt' else ''))
     r = subprocess.run([str(exe), str(a.problem), str(a.out), str(a.out / "pruning"), "30", "--static"],
                        cwd=ROOT, capture_output=True, text=True)
     print(r.stdout, r.stderr, flush=True)

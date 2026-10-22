@@ -6,9 +6,10 @@ import tempfile
 import unittest
 from unittest.mock import patch
 from pathlib import Path
+from fixture_support import fixture_root
 
 PROJECT = Path(__file__).resolve().parents[1]
-ROOT = PROJECT / "flyers/WIP/experiments/extension_contract_20261011/prescribed_fixture/rear_cap"
+ROOT = fixture_root() / "prescribed_fixture/rear_cap"
 sys.path.insert(0, str(PROJECT / "tools"))
 from extension_design import DesignError, compile_design, main
 

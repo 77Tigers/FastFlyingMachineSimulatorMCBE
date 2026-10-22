@@ -1,3 +1,4 @@
+import os as _research_os
 import time
 def retry_replace(source,target):
     for attempt in range(30):
@@ -16,7 +17,7 @@ from pathlib import Path
 import sys,json,math,random,heapq,collections,subprocess,importlib.util
 ROOT=Path(__file__).resolve().parents[4];sys.path.insert(0,str(ROOT))
 from fastflyer import Flyer,Block,Kind
-HERE=Path(__file__).resolve().parent;RUNNER=ROOT/'target/release/fastflyer-research.exe'
+HERE=Path(__file__).resolve().parent;RUNNER=ROOT/('target/release/fastflyer-research' + ('.exe' if _research_os.name == 'nt' else ''))
 spec=importlib.util.spec_from_file_location('model',HERE/'derived_mixed3_compact_v3.py');model=importlib.util.module_from_spec(spec);spec.loader.exec_module(model)
 cover=json.loads((HERE/'compact_mixed_tile_contact_cover.json').read_text());lead=next(m for m in json.loads((HERE/'mixed_extension_compact_manifest.json').read_text())['candidates'] if m['file']=='dy12_dz0_s000.flyer');origin=cover['delta']
 def local(p):return tuple(p[a]-origin[a] for a in range(3))

@@ -4,6 +4,7 @@ No high-limit driver is used. Ten bodies discharge every motion obligation.
 Layouts are optimized before routing; route budget20 adhesive/body and all
 simulations use24. Surrogate placement scores are not movement-load claims.
 """
+import os as _research_os
 from pathlib import Path
 import sys,json,random,math,heapq,functools,collections,subprocess,argparse,time
 ROOT=Path(__file__).resolve().parents[4];sys.path.insert(0,str(ROOT))
@@ -150,6 +151,6 @@ def main():
   else:stats[reason]+=1
   manifest.append(row);(HERE/'fold_mixed.manifest.json').write_text(json.dumps(dict(stats=stats,candidates=manifest),indent=2))
   print('fold',seed,'surrogate',costs,'penalty',penalty,'result',reason,dict(stats),flush=True)
- runner=ROOT/'target/release/fastflyer-research.exe';r=subprocess.run([str(runner),'screen',str(out),'240','--out',str(HERE/'fold_mixed.screen.csv')],capture_output=True,text=True);(HERE/'fold_mixed.screen.txt').write_text(r.stdout+r.stderr);print(r.stdout,flush=True)
+ runner=ROOT/('target/release/fastflyer-research' + ('.exe' if _research_os.name == 'nt' else ''));r=subprocess.run([str(runner),'screen',str(out),'240','--out',str(HERE/'fold_mixed.screen.csv')],capture_output=True,text=True);(HERE/'fold_mixed.screen.txt').write_text(r.stdout+r.stderr);print(r.stdout,flush=True)
 
 if __name__=='__main__':main()

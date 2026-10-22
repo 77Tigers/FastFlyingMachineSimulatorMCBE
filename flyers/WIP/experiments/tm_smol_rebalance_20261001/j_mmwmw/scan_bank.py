@@ -1,5 +1,6 @@
+from pathlib import Path
 import subprocess, glob, re, os, sys
-ROOT='C:/Users/Ruben/OneDrive/Documents/FastFlyerPlayground/flyers'
+ROOT=str(Path(__file__).resolve().parents[4])
 import os
 EXE=ROOT+'/../target/release/bodytrack'+('.exe' if os.name=='nt' else '')
 def rot(w): return {w[i:]+w[:i] for i in range(len(w))}

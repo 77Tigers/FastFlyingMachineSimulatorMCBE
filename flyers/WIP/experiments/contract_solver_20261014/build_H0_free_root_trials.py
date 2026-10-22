@@ -1,4 +1,5 @@
 """Construct bounded H0 dual-RB integrations from root-free support survivors; native decides."""
+import os as _research_os
 import argparse,itertools,json,subprocess,time,hashlib
 from pathlib import Path
 from ortools.sat.python import cp_model
@@ -73,7 +74,7 @@ def main():
   (case/'drive.txt').write_text(''.join(' '.join(map(str,row))+'\n' for row in sorted(rows)),encoding='utf-8')
   for order in ['before_natural','after_natural','interleaved']:dump(case/f'{order}.json',{**cc,'prescribed_order':order})
   prep={'scope':__doc__+' Fifteen natural/fifteen supplied strokes attempted; not complete flyer.','avoid_source_cross_power':a.avoid_source_cross_power,'observer_direction':a.observer_direction,'pulse_first_source':a.pulse_first_source,'pulse_observer':observer,'glue_cap':cap,'protect_RB_carriers':a.protect_RB_carriers,'preserve_parent_passengers':a.preserve_parent_passengers,'passenger_words':passengers,'source_record':r,'H0_shape':shape,'normalization_delta':delta,'base_sha256':hashlib.sha256((base/'problem.flyer').read_bytes()).hexdigest()};dump(case/'preparation.json',prep)
-  subprocess.run([str(ROOT/'target/release/contract-verify.exe'),str(case/'before_natural.json'),str(case/'native.json'),'30','2'],cwd=ROOT,check=False,stdout=subprocess.DEVNULL,timeout=40)
+  subprocess.run([str(ROOT/('target/release/contract-verify' + ('.exe' if _research_os.name == 'nt' else ''))),str(case/'before_natural.json'),str(case/'native.json'),'30','2'],cwd=ROOT,check=False,stdout=subprocess.DEVNULL,timeout=40)
   native=json.loads((case/'native.json').read_text(encoding='utf-8'));rec={'index':i,'case':str(case),'shape':shape,'native':native};recs.append(rec);dump(out/'progress.json',{'seconds':time.monotonic()-start,'records':recs})
   if native['verified']:break
  dump(out/'report.json',{'scope':__doc__,'seconds':time.monotonic()-start,'records':recs});(out/'generator_snapshot.py').write_bytes(Path(__file__).read_bytes());print(json.dumps({'seconds':time.monotonic()-start,'native_trials':tests,'passes':[r['case'] for r in recs if r.get('native',{}).get('verified')]}))

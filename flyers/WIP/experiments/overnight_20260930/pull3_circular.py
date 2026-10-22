@@ -1,4 +1,5 @@
 """Close the ten-body pure-pull placements around a bounded transverse circle."""
+import os as _research_os
 from pathlib import Path
 import math,json,collections,subprocess
 h=Path(__file__).resolve().parent
@@ -16,4 +17,4 @@ for radius in (10,12):
    f,m=ans;name=f'r{radius}_s{seed:03}.flyer';f.save(out/name);m.update(file=name,radius=radius);manifest.append(m);stats['routed']+=1
   else:stats[reason]+=1
   (h/'pull3_circular_manifest.json').write_text(json.dumps(dict(stats=stats,candidates=manifest),indent=2));print(radius,seed,dict(stats),flush=True)
-runner=h.parents[3]/'target/release/fastflyer-research.exe';r=subprocess.run([str(runner),'screen',str(out),'240','--out',str(h/'pull3_circular_screen.csv')],capture_output=True,text=True);(h/'pull3_circular_screen.txt').write_text(r.stdout+r.stderr);print(r.stdout,flush=True)
+runner=h.parents[3]/('target/release/fastflyer-research' + ('.exe' if _research_os.name == 'nt' else ''));r=subprocess.run([str(runner),'screen',str(out),'240','--out',str(h/'pull3_circular_screen.csv')],capture_output=True,text=True);(h/'pull3_circular_screen.txt').write_text(r.stdout+r.stderr);print(r.stdout,flush=True)

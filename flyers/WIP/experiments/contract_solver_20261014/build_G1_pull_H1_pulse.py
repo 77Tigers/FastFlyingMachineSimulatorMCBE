@@ -1,4 +1,5 @@
 """Calibrate G1 pull1 with a supplied H1/wwmmm observer carrier; complete flyer unbuilt."""
+import os as _research_os
 import json,hashlib,subprocess
 from pathlib import Path
 from assemble import Flyer
@@ -18,5 +19,5 @@ def main():
  (out/'drive.txt').write_text(''.join(' '.join(map(str,row))+'\n' for row in sorted(rows)),encoding='utf-8')
  for order in ['before_natural','after_natural','interleaved']:dump(out/f'{order}.json',{**c,'prescribed_order':order})
  budget=json.loads((base/'whole39_source_budget.json').read_text(encoding='utf-8'));budget['scope']='G1 pull1 via H1 own observer pulse and supplied H1 recovery. H1 actual glue+OBS2 within permanent9, future hardware7 reserved. Other masses/39 contacts/load sums unchanged. Native timing hypothesis; not full flyer.';dump(out/'whole39_source_budget.json',budget)
- dump(out/'preparation.json',{'scope':__doc__+' Eighteen natural/fifteen supplied strokes attempted (new H1 port).','sticky':[20,0,14],'H1_glue':[20,0,15],'H1_observer':[20,0,16],'observer_direction':5,'normalization_delta':delta,'base_sha256':hashlib.sha256((base/'problem.flyer').read_bytes()).hexdigest()});(out/'generator_snapshot.py').write_bytes(Path(__file__).read_bytes());subprocess.run([str(ROOT/'target/release/contract-verify.exe'),str(out/'before_natural.json'),str(out/'native.json'),'30','2'],cwd=ROOT,check=False);print((out/'native.json').read_text(encoding='utf-8'))
+ dump(out/'preparation.json',{'scope':__doc__+' Eighteen natural/fifteen supplied strokes attempted (new H1 port).','sticky':[20,0,14],'H1_glue':[20,0,15],'H1_observer':[20,0,16],'observer_direction':5,'normalization_delta':delta,'base_sha256':hashlib.sha256((base/'problem.flyer').read_bytes()).hexdigest()});(out/'generator_snapshot.py').write_bytes(Path(__file__).read_bytes());subprocess.run([str(ROOT/('target/release/contract-verify' + ('.exe' if _research_os.name == 'nt' else ''))),str(out/'before_natural.json'),str(out/'native.json'),'30','2'],cwd=ROOT,check=False);print((out/'native.json').read_text(encoding='utf-8'))
 if __name__=='__main__':main()

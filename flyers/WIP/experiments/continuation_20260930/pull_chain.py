@@ -5,12 +5,13 @@ requested 3/3.333 bps solution. Driver adhesive routing may be augmented; its
 original blocks and hardware are retained. A two-interface repeated tile is
 tested by literal duplication, with no wraparound at the terminal carrier.
 """
+import os as _research_os
 from pathlib import Path
 import sys, csv, json, random, heapq, itertools, subprocess, importlib.util
 ROOT=Path(__file__).resolve().parents[4]; sys.path.insert(0,str(ROOT))
 from fastflyer import Flyer, Block, Kind
 HERE=Path(__file__).resolve().parent
-RUNNER=ROOT/'target/release/fastflyer-research.exe'
+RUNNER=ROOT/('target/release/fastflyer-research' + ('.exe' if _research_os.name == 'nt' else ''))
 spec=importlib.util.spec_from_file_location('pull', HERE.parent/'astra_pullonly_20260927/pull_mwmw.py')
 pull=importlib.util.module_from_spec(spec);spec.loader.exec_module(pull)
 D=pull.D

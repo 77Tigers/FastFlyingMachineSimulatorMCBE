@@ -1,4 +1,5 @@
 """Existing six-core interfaces and verified physical keepouts, unchanged."""
+import os as _research_os
 import sys,json,collections,subprocess,copy,time,os
 from pathlib import Path
 HERE=Path(__file__).resolve().parent
@@ -13,7 +14,7 @@ def _tb(n):
     from fastflyer.research import binary
     return binary(n)
 AUDIT=_tb('mv4-audit-cores')
-RUNNER=six.ROOT/'target/release/fastflyer-research.exe'
+RUNNER=six.ROOT/('target/release/fastflyer-research' + ('.exe' if _research_os.name == 'nt' else ''))
 
 def write_json(path,data):
     # OneDrive can transiently lock a live status file. Replace a closed temporary

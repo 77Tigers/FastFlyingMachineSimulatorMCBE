@@ -4,6 +4,7 @@ These are explicitly NEW geometry contracts: remove the nominated G port/cell,
 retain all other natural obligations, permanent identities and the old envelope.
 No optional-hardware pruning or relaxed acceptance is involved.
 """
+import os as _research_os
 import argparse
 import copy
 import json
@@ -83,7 +84,7 @@ def main():
             drive = [list(map(int, s.split())) for s in (src / c["prescribed_script"]).read_text().splitlines()]
             assert all(r[-1] <= 11 for r in drive)
             (out / "drive.txt").write_text("\n".join(" ".join(map(str, (t, *sh((x, y, z)), cap))) for t, x, y, z, cap in drive) + "\n")
-            subprocess.run([str(ROOT / "target/release/contract-verify.exe"), str(out / "problem.json"), str(out / "result.json"), "10", "4"], capture_output=True)
+            subprocess.run([str(ROOT / ('target/release/contract-verify' + ('.exe' if _research_os.name == 'nt' else ''))), str(out / "problem.json"), str(out / "result.json"), "10", "4"], capture_output=True)
             report = json.loads((out / "result.json").read_text())
             row = {"case": out.name, "source": str(src), "removed_G_glue": list(removed), **report}
             state["cases"].append(row)

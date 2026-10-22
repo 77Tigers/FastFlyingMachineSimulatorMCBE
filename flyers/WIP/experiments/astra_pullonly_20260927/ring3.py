@@ -1,4 +1,5 @@
 """Three phased all-negative-X sticky carriers; temporal routing, Rust validation."""
+import os as _research_os
 from pathlib import Path
 import sys,random,heapq,json,subprocess
 ROOT=Path(__file__).resolve().parents[4];sys.path.insert(0,str(ROOT))
@@ -79,6 +80,6 @@ if __name__=='__main__':
   if f:f.save(dest/f'c{seed}.flyer');n+=1
   if seed%50==0:print(seed,n,flush=True)
  print('total',n,flush=True)
- p=subprocess.run([str(ROOT/'target/release/fastflyer-research.exe'),'batch',str(dest),'180'],capture_output=True,text=True)
+ p=subprocess.run([str(ROOT/('target/release/fastflyer-research' + ('.exe' if _research_os.name == 'nt' else ''))),'batch',str(dest),'180'],capture_output=True,text=True)
  (OUT/'ring3_screen.txt').write_text(p.stdout);print(p.stdout[:2000])
 

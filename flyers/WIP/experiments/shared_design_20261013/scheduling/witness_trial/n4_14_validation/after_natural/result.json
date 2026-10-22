@@ -38,11 +38,11 @@
     "whole_assembly_max_action": 18
   },
   "rust_command": [
-    "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\target\\release\\contract-search.exe",
-    "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\shared_design_20261013\\scheduling\\witness_trial\\n4_14_validation\\after_natural\\contract.json",
+    "target/release/contract-search.exe",
+    "flyers/WIP/experiments/shared_design_20261013/scheduling/witness_trial/n4_14_validation/after_natural/contract.json",
     "0",
     "1",
-    "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\shared_design_20261013\\scheduling\\witness_trial\\n4_14_validation\\after_natural\\eval",
+    "flyers/WIP/experiments/shared_design_20261013/scheduling/witness_trial/n4_14_validation/after_natural/eval",
     "--eval-only",
     "--order",
     "after",

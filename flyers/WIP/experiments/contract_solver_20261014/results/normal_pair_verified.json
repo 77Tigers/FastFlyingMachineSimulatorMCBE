@@ -223,7 +223,7 @@
   "construction": {
     "scope": "T all moves and rear slot2 natural; H all3 pushes natural; G all moves cap9, rear0/1 and neighbor supplied; all glue identities checked; not a closed natural flyer",
     "natural_flyer": false,
-    "source_case": "flyers\\WIP\\experiments\\contract_solver_20261014\\out\\joint_layout\\normal_pair_scaffold",
+    "source_case": "flyers/WIP/experiments/contract_solver_20261014/out/joint_layout/normal_pair_scaffold",
     "reproduction": "model_recovery_layout.py --free-puller --normal-column --supply-g; build_normal_pair_scaffold.py MODEL CASE; prepare_local_checks.py CASE OUT --reproduction CONSTRUCTOR"
   },
   "contracts": {
@@ -1717,7 +1717,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\joint_layout\\normal_pair_verified\\check\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/joint_layout/normal_pair_verified/check/drive.txt",
       "prescribed_order": "before_natural",
       "boundary_envelope": {
         "min": [
@@ -8384,7 +8384,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\joint_layout\\normal_pair_verified\\check\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/joint_layout/normal_pair_verified/check/drive.txt",
       "prescribed_order": "after_natural",
       "boundary_envelope": {
         "min": [
@@ -15051,7 +15051,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\joint_layout\\normal_pair_verified\\check\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/joint_layout/normal_pair_verified/check/drive.txt",
       "prescribed_order": "interleaved",
       "boundary_envelope": {
         "min": [

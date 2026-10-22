@@ -4,6 +4,7 @@ Keep the four natural columns and add the exact scaffold X1 sticky. Replace
 the supplied X1 third stroke by natural pulling. G1 is a one-cell supplied
 power interface, not constructed front hardware or a complete flyer.
 """
+import os as _research_os
 import argparse
 import json
 from pathlib import Path
@@ -44,7 +45,7 @@ def main():
             c['ports'].append({'name':'G1_power','at':rb,'role':'input','word':info['source_word'],'provenance':['supplied' if v=='m' else None for v in info['source_word']]})
             (out/f'{order}.json').write_text(json.dumps(c,indent=2)+'\n',encoding='utf-8')
         (out/'preparation.json').write_text(json.dumps({'scope':__doc__,'base':str(a.base),'source_at':rb,'sticky_at':q,'source_word':info['source_word']},indent=2)+'\n',encoding='utf-8')
-        p=subprocess.run([str(ROOT/'target/release/contract-verify.exe'),str(out/'before_natural.json'),str(out/'native.json'),str(max(1,deadline-time.monotonic())),'2'],capture_output=True,text=True,cwd=ROOT)
+        p=subprocess.run([str(ROOT/('target/release/contract-verify' + ('.exe' if _research_os.name == 'nt' else ''))),str(out/'before_natural.json'),str(out/'native.json'),str(max(1,deadline-time.monotonic())),'2'],capture_output=True,text=True,cwd=ROOT)
         r=json.loads((out/'native.json').read_text(encoding='utf-8'));results.append({'case':i,'source_at':rb,**r})
         print(json.dumps({'case':i,'verified':r['verified'],'failure':r['failure']}),flush=True)
         if r['verified']:break

@@ -2,6 +2,7 @@
 
 Component calibration only: X2/H1 own drives and wider closure remain unbuilt.
 """
+import os as _research_os
 import json, hashlib, subprocess, importlib.util, sys
 from pathlib import Path
 from assemble import Flyer
@@ -56,5 +57,5 @@ def main():
  (out/'drive.txt').write_text(''.join(' '.join(map(str,row))+'\n' for row in sorted(rows)),encoding='utf-8')
  for order in ['before_natural','after_natural','interleaved']:dump(out/f'{order}.json',{**c,'prescribed_order':order})
  dump(out/'whole39_source_budget.json',budget);dump(out/'preparation.json',{'scope':__doc__,'X2_glue':x2,'H1_glue':h1,'sticky':[20,0,14],'observer':[20,-1,13],'observer_direction':2,'normalization_delta':delta,'base_sha256':hashlib.sha256((base/'problem.flyer').read_bytes()).hexdigest()});(out/'generator_snapshot.py').write_bytes(Path(__file__).read_bytes())
- subprocess.run([str(ROOT/'target/release/contract-verify.exe'),str(out/'before_natural.json'),str(out/'native.json'),'30','2'],cwd=ROOT,check=False);print((out/'native.json').read_text(encoding='utf-8'))
+ subprocess.run([str(ROOT/('target/release/contract-verify' + ('.exe' if _research_os.name == 'nt' else ''))),str(out/'before_natural.json'),str(out/'native.json'),'30','2'],cwd=ROOT,check=False);print((out/'native.json').read_text(encoding='utf-8'))
 if __name__=='__main__':main()

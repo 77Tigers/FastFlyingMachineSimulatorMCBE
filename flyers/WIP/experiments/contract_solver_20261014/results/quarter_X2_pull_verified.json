@@ -548,7 +548,7 @@
   "content_hash": "d4a94593ecea70efa4ce3ea69e20d73c0d39405d477a0c843a663c7cb3257e0b",
   "construction": {
     "scope": "Test one changed X2 contact with a T2-carried sticky and supplied G2 power.\n\nThe G2 source follows wwmmm; its three moves remain explicit inputs. This is\na loaded component test, not a complete flyer or a net reduction of inputs.\n",
-    "base": "flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\T0_two_pushes_pickup",
+    "base": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/T0_two_pushes_pickup",
     "added_X2_glue": [
       19,
       6,
@@ -569,10 +569,10 @@
     "sticky_word": "mmwwm",
     "source_word": "wwmmm",
     "sha256": {
-      "flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\T0_two_pushes_pickup\\problem.flyer": "940a5336166b1baf35497582463f942947c8b508e0d274f1259801ef0d9c33b6",
-      "flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\T0_two_pushes_pickup\\before_natural.json": "38d1bcc945f2c713fae5711a5263377b9a0cfe24a9b678f789bf30696530a2cb",
-      "flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\T0_two_pushes_pickup\\drive.txt": "54ca4455c85b811c1595421ba878f112721f7243931a7eecf2fa2fd275df68e7",
-      "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\build_X2_rear_pull.py": "4fa7456a6b6f2496cffce424b6d30d0939d37977b8347e8d03a36e4270bc684b"
+      "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/T0_two_pushes_pickup/problem.flyer": "940a5336166b1baf35497582463f942947c8b508e0d274f1259801ef0d9c33b6",
+      "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/T0_two_pushes_pickup/before_natural.json": "38d1bcc945f2c713fae5711a5263377b9a0cfe24a9b678f789bf30696530a2cb",
+      "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/T0_two_pushes_pickup/drive.txt": "54ca4455c85b811c1595421ba878f112721f7243931a7eecf2fa2fd275df68e7",
+      "flyers/WIP/experiments/contract_solver_20261014/build_X2_rear_pull.py": "4fa7456a6b6f2496cffce424b6d30d0939d37977b8347e8d03a36e4270bc684b"
     }
   },
   "contracts": {
@@ -1148,7 +1148,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\X2_rear_pull_extended\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/X2_rear_pull_extended/drive.txt",
       "prescribed_order": "before_natural",
       "boundary_envelope": {
         "min": [
@@ -7255,7 +7255,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\X2_rear_pull_extended\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/X2_rear_pull_extended/drive.txt",
       "prescribed_order": "after_natural",
       "boundary_envelope": {
         "min": [
@@ -13362,7 +13362,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\X2_rear_pull_extended\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/X2_rear_pull_extended/drive.txt",
       "prescribed_order": "interleaved",
       "boundary_envelope": {
         "min": [

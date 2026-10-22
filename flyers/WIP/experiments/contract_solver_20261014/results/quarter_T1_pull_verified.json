@@ -404,7 +404,7 @@
   "content_hash": "3573fef205a83d7328c9dc5f9efb05f2af96ee90cee2efe620efb4aa73eb0850",
   "construction": {
     "scope": "Replace T1's supplied third stroke with a G1-carried sticky and H1 RB input.\n\nThree existing G1 glue lanes permit attached sticky bases two cells ahead of\nT1's target. Screen five direct H1 power positions per lane. H1 source motion\nremains supplied (wwmmm, cap1); H1 geometry and a complete flyer are not claimed.\n",
-    "base": "flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\front_G1_forward_handoff\\case00",
+    "base": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/front_G1_forward_handoff/case00",
     "sticky_at": [
       22,
       2,
@@ -420,10 +420,10 @@
     "fire_slot": 2,
     "pull_slot": 3,
     "sha256": {
-      "flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\front_G1_forward_handoff\\case00\\problem.flyer": "33e65bb90d3f4fc909793531999ba55a27cdda04b23695e5690c300218b4e2c3",
-      "flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\front_G1_forward_handoff\\case00\\before_natural.json": "c42cb9e5fffcbb781a40061beb035ecfe73387135c6a286c378371ee32b14f6a",
-      "flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\front_G1_forward_handoff\\case00\\drive.txt": "c1938256159f4c1ca306aac660daa68754a5b74b09d536622f01ab2d005f9b73",
-      "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\test_front_pull_interface.py": "b48e21dfc60997bdb02779f9098744900eea261eed63386993bb08e44af20ece"
+      "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/front_G1_forward_handoff/case00/problem.flyer": "33e65bb90d3f4fc909793531999ba55a27cdda04b23695e5690c300218b4e2c3",
+      "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/front_G1_forward_handoff/case00/before_natural.json": "c42cb9e5fffcbb781a40061beb035ecfe73387135c6a286c378371ee32b14f6a",
+      "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/front_G1_forward_handoff/case00/drive.txt": "c1938256159f4c1ca306aac660daa68754a5b74b09d536622f01ab2d005f9b73",
+      "flyers/WIP/experiments/contract_solver_20261014/test_front_pull_interface.py": "b48e21dfc60997bdb02779f9098744900eea261eed63386993bb08e44af20ece"
     }
   },
   "contracts": {
@@ -948,7 +948,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\front_T1_pull_H1_source\\case00\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/front_T1_pull_H1_source/case00/drive.txt",
       "prescribed_order": "before_natural",
       "boundary_envelope": {
         "min": [
@@ -6495,7 +6495,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\front_T1_pull_H1_source\\case00\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/front_T1_pull_H1_source/case00/drive.txt",
       "prescribed_order": "after_natural",
       "boundary_envelope": {
         "min": [
@@ -12042,7 +12042,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\front_T1_pull_H1_source\\case00\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/front_T1_pull_H1_source/case00/drive.txt",
       "prescribed_order": "interleaved",
       "boundary_envelope": {
         "min": [

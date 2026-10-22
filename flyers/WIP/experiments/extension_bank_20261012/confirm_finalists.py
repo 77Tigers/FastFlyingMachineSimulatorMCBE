@@ -5,6 +5,7 @@
 usage: python confirm_finalists.py SEARCH_DIR BASE_CONTRACT.json [--samples]
 Run from the repository root. Writes contracts into SEARCH_DIR/confirm/.
 """
+import os as _research_os
 import glob, json, os, subprocess, sys
 
 sys.path.insert(0, '.')
@@ -12,7 +13,7 @@ from fastflyer import Flyer
 
 search_dir, base_contract = sys.argv[1], sys.argv[2]
 do_samples = '--samples' in sys.argv
-exe = os.path.abspath('target/release/contract-search.exe')
+exe = os.path.abspath(('target/release/contract-search' + ('.exe' if _research_os.name == 'nt' else '')))
 base = json.load(open(base_contract))
 base_dir = os.path.dirname(os.path.abspath(base_contract))
 out = os.path.join(search_dir, 'confirm')

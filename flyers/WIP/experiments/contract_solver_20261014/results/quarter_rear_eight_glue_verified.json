@@ -872,7 +872,7 @@
   "content_hash": "a1b1b07ac09329e8c4500b126a2fb660d9d6c980fddf06bb20a2eef953e7000a",
   "construction": {
     "scope": "Bounded integration of the checked recovery-observer pull timing fixture.\n\nPlace a supported X0 sticky (default replaces leaf14,5,11); regenerate <=9\nhoney for rear_pickup, including its old root, pull target and observer\nsupport. The selected baseline trace excludes occupied cells, foreign honey\ncontact and observer pickup by foreign glue. Each source gets one bounded\nminimum-glue solve; FEASIBLE does not imply optimal. Strict native checking\ndecides physics; rear pushes2/3 remain supplied.\n",
-    "base": "flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\X1_rerow_X0_six_glue",
+    "base": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/X1_rerow_X0_six_glue",
     "sticky": [
       14,
       4,
@@ -1709,7 +1709,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\rear_source_budget8_14412_exact\\case02\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/rear_source_budget8_14412_exact/case02/drive.txt",
       "prescribed_order": "before_natural",
       "boundary_envelope": {
         "min": [
@@ -10056,7 +10056,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\rear_source_budget8_14412_exact\\case02\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/rear_source_budget8_14412_exact/case02/drive.txt",
       "prescribed_order": "after_natural",
       "boundary_envelope": {
         "min": [
@@ -18403,7 +18403,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\rear_source_budget8_14412_exact\\case02\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/rear_source_budget8_14412_exact/case02/drive.txt",
       "prescribed_order": "interleaved",
       "boundary_envelope": {
         "min": [

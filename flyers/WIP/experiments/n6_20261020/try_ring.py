@@ -1,9 +1,10 @@
 """helpers: build a Ring, route, check, save, simulate with fastflyer-research (scratch copy)."""
+import os as _research_os
 import subprocess, re, sys, pathlib
 from ring_designer import Ring, ORDER
 import os
 ROOT = pathlib.Path(__file__).resolve().parents[4]
-BIN = os.environ.get("N6_RUNNER", str(ROOT / "target/release/fastflyer-research.exe"))
+BIN = os.environ.get("N6_RUNNER", str(ROOT / ('target/release/fastflyer-research' + ('.exe' if _research_os.name == 'nt' else ''))))
 OUT = pathlib.Path(os.environ.get("N6_OUT", str(pathlib.Path(__file__).resolve().parent / "out")))
 OUT.mkdir(exist_ok=True)
 

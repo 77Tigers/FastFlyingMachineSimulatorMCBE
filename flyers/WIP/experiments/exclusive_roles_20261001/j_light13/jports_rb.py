@@ -1,5 +1,6 @@
 """Ports of 3 types: D (cached donor port), E (existing RB powers it), R (RB placed on the rail itself).
 Rail = exact 3-terminal Steiner over rail-legal cells; candidates simulated."""
+import os as _research_os
 import sys,os,re,json,itertools,subprocess,collections,random
 exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)),'bound.py')).read().split("res={}")[0])
 BIN=EXC.parent/'bin'
@@ -137,7 +138,7 @@ def rail_ok_port(c,tw,kind,p):
      if q==r or (mv and sx(q,1)==r) or (kind==kd and r in nb(q)):return False
   return True
 def measure(path,ticks):
-  out=subprocess.run([str(BIN.parents[3]/'target/release/fastflyer-research.exe'),'measure',str(path),str(ticks),'10'],capture_output=True,text=True).stdout
+  out=subprocess.run([str(BIN.parents[3]/('target/release/fastflyer-research' + ('.exe' if _research_os.name == 'nt' else ''))),'measure',str(path),str(ticks),'10'],capture_output=True,text=True).stdout
   d={}
   for k in ('distance','extension_failures','movement_failures','conservation_mismatch_ticks'):
     m=re.search(k+r'=(-?\d+)',out);d[k]=int(m[1]) if m else None

@@ -8,12 +8,13 @@ Recurrence for search: `advance` if the seed passes it, otherwise the contract's
 Confirmation: Rust own-mode and advance, 80 samples, every applicable order; Python checker in the contract's own mode
 (--samples), plus a tight-envelope bounded variant (finalist permanent bbox) for bounded contracts.
 """
+import os as _research_os
 import glob, hashlib, json, os, subprocess, sys, time
 
 ROOT = os.getcwd()
 EX = 'flyers/WIP/experiments/extension_bank_20261012'
 CON = f'{EX}/contracts'
-EXE = os.path.abspath('target/release/contract-search.exe')
+EXE = os.path.abspath(('target/release/contract-search' + ('.exe' if _research_os.name == 'nt' else '')))
 BEFORE_ONLY = {'n2_04', 'n3_08', 'n3_09'}
 DEFAULT_IDS = ['n2_01', 'n2_02', 'n2_03', 'n2_04', 'n2_05', 'n2_06', 'n3_07', 'n3_08', 'n3_09', 'n3_10', 'n3_11']
 

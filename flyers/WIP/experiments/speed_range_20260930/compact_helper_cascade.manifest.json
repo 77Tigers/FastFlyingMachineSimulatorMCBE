@@ -1,6 +1,6 @@
 [
   {
-    "base": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\speed_range_20260930\\two_normal_fixture\\c004.flyer",
+    "base": "flyers/WIP/experiments/speed_range_20260930/two_normal_fixture/c004.flyer",
     "anchor": [
       19,
       1,
@@ -45,7 +45,7 @@
     ]
   },
   {
-    "base": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\speed_range_20260930\\two_normal_fixture\\c005.flyer",
+    "base": "flyers/WIP/experiments/speed_range_20260930/two_normal_fixture/c005.flyer",
     "anchor": [
       19,
       1,
@@ -90,7 +90,7 @@
     ]
   },
   {
-    "base": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\speed_range_20260930\\two_normal_fixture\\c006.flyer",
+    "base": "flyers/WIP/experiments/speed_range_20260930/two_normal_fixture/c006.flyer",
     "anchor": [
       19,
       1,
@@ -135,7 +135,7 @@
     ]
   },
   {
-    "base": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\speed_range_20260930\\two_normal_fixture\\c007.flyer",
+    "base": "flyers/WIP/experiments/speed_range_20260930/two_normal_fixture/c007.flyer",
     "anchor": [
       19,
       2,

@@ -2,6 +2,7 @@
 
 This one-sample diagnostic never substitutes for independent or long proofs.
 """
+import os as _research_os
 import argparse,json,subprocess
 from pathlib import Path
 
@@ -17,7 +18,7 @@ def main():
     ap.add_argument('--order',choices=('before','after','interleaved'),default='before')
     a=ap.parse_args();p=a.run
     sample=f'{a.rng}_{a.phase_x}_{a.phase_z}'+('' if a.order=='before' else f'_{a.order}')
-    r=subprocess.run([str(ROOT/'target/release/extension-prescribe.exe'),str(p/'problem.flyer'),'30',str(p/'drive.txt'),a.order,str(a.rng),str(a.phase_x),str(a.phase_z)],cwd=ROOT,capture_output=True,text=True,encoding='utf-8')
+    r=subprocess.run([str(ROOT/('target/release/extension-prescribe' + ('.exe' if _research_os.name == 'nt' else ''))),str(p/'problem.flyer'),'30',str(p/'drive.txt'),a.order,str(a.rng),str(a.phase_x),str(a.phase_z)],cwd=ROOT,capture_output=True,text=True,encoding='utf-8')
     (p/f'trace_failure_{sample}.jsonl').write_text(r.stdout,encoding='utf-8')
     rows=[json.loads(s) for s in r.stdout.splitlines()]
     state={tuple(c[:3]):c[3] for c in rows[0]['trace']['initial']}

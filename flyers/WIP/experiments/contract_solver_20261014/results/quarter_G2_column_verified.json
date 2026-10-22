@@ -602,7 +602,7 @@
   "content_hash": "ab3ce6fe7860d6a7d8785c002f53c1ba745f3b9faa78f5c6ac61516f1a4ef49b",
   "construction": {
     "scope": "Close the supplied G2 source with three normals and a changed T2 route.\n\nT2 loses two redundant upper-branch cells, gains three pickup cells, and\ncarries all three G2 normals at slot1. Its optimistic budget is7 glue+RB+\nX2 sticky+3 G2 normals=12. Native verification must check the actual loads.\nG2 uses4 honey glue+its retained RB; other boundary inputs remain supplied.\n",
-    "base": "flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\X2_rear_pull_extended",
+    "base": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/X2_rear_pull_extended",
     "removed_T2_glue": [
       [
         21,
@@ -723,10 +723,10 @@
       ]
     ],
     "sha256": {
-      "flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\X2_rear_pull_extended\\problem.flyer": "d4a94593ecea70efa4ce3ea69e20d73c0d39405d477a0c843a663c7cb3257e0b",
-      "flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\X2_rear_pull_extended\\drive.txt": "47f92c71dc2808cb75686638a1239e3c74f10206938ba797aa3e558e7bb59652",
-      "flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\X2_rear_pull_extended\\before_natural.json": "61b5e47b227d9d6af8e4b71b1fe253ecb843f12c8a181f73d07263dd3e6c1c7c",
-      "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\build_G2_column.py": "183a344d1fe908ac596ae05663466d86e553aaa6579ff2d9ce3e4bd8bf5783f4"
+      "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/X2_rear_pull_extended/problem.flyer": "d4a94593ecea70efa4ce3ea69e20d73c0d39405d477a0c843a663c7cb3257e0b",
+      "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/X2_rear_pull_extended/drive.txt": "47f92c71dc2808cb75686638a1239e3c74f10206938ba797aa3e558e7bb59652",
+      "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/X2_rear_pull_extended/before_natural.json": "61b5e47b227d9d6af8e4b71b1fe253ecb843f12c8a181f73d07263dd3e6c1c7c",
+      "flyers/WIP/experiments/contract_solver_20261014/build_G2_column.py": "183a344d1fe908ac596ae05663466d86e553aaa6579ff2d9ce3e4bd8bf5783f4"
     }
   },
   "contracts": {
@@ -1302,7 +1302,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\G2_column_rewired_v2\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/G2_column_rewired_v2/drive.txt",
       "prescribed_order": "before_natural",
       "boundary_envelope": {
         "min": [
@@ -7409,7 +7409,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\G2_column_rewired_v2\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/G2_column_rewired_v2/drive.txt",
       "prescribed_order": "after_natural",
       "boundary_envelope": {
         "min": [
@@ -13516,7 +13516,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\G2_column_rewired_v2\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/G2_column_rewired_v2/drive.txt",
       "prescribed_order": "interleaved",
       "boundary_envelope": {
         "min": [

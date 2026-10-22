@@ -5,6 +5,7 @@ Coordinates are source locations at the start of the power stage. Movement
 starts at t and settles during t+1, so a body is moving at stage start iff
 it started at t-1. All words advance four cells per 12 ticks.
 """
+import os as _research_os
 import json
 import sys
 import itertools
@@ -114,7 +115,7 @@ def reset_sim():
     root = pathlib.Path(__file__).resolve().parents[4]
     sys.path.insert(0, str(root))
     from fastflyer import Flyer, Block, Kind
-    exe = root / 'target/release/fastflyer-sim.exe'
+    exe = root / ('target/release/fastflyer-sim' + ('.exe' if _research_os.name == 'nt' else ''))
     results = {}
     with tempfile.TemporaryDirectory(prefix='mv4_reset_') as tmp:
         a, b = pathlib.Path(tmp)/'in.flyer', pathlib.Path(tmp)/'out.flyer'

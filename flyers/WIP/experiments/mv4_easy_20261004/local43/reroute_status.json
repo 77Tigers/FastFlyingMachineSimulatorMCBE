@@ -15,7 +15,7 @@
   ],
   "history": [
     {
-      "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\local43\\reroute_0001.flyer",
+      "path": "flyers/WIP/experiments/mv4_easy_20261004/local43/reroute_0001.flyer",
       "limit": 43,
       "score": [
         33,
@@ -28,7 +28,7 @@
       "seed": 0
     },
     {
-      "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\local43\\reroute_0002.flyer",
+      "path": "flyers/WIP/experiments/mv4_easy_20261004/local43/reroute_0002.flyer",
       "limit": 43,
       "score": [
         33,
@@ -41,7 +41,7 @@
       "seed": 0
     },
     {
-      "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\local43\\reroute_0003.flyer",
+      "path": "flyers/WIP/experiments/mv4_easy_20261004/local43/reroute_0003.flyer",
       "limit": 43,
       "score": [
         33,

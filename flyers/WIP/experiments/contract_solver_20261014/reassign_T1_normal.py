@@ -3,6 +3,7 @@
 Keep the selected joint T0/G0/H0 design and all other hardware fixed. Each
 encoded12 candidate must pass native80x3 before independent/long verification.
 """
+import os as _research_os
 import argparse,hashlib,json,shutil,subprocess
 from pathlib import Path
 from assemble import Flyer
@@ -35,7 +36,7 @@ def main():
             assert all(tuple(p['at']) in f._cells for p in c['ports'])
             (out/f'{order}.json').write_text(json.dumps(c,indent=2)+'\n',encoding='utf-8')
         (out/'preparation.json').write_text(json.dumps({'scope':__doc__,'base':str(a.base),'add_original':[17,3,12],'remove_original':removed,'normalization_delta':delta,'sha256':{str(p):hashlib.sha256(p.read_bytes()).hexdigest() for p in [a.base/'problem.flyer',Path(__file__)]}},indent=2)+'\n',encoding='utf-8')
-        r=subprocess.run([str(ROOT/'target/release/contract-verify.exe'),str(out/'before_natural.json'),str(out/'native.json'),'30','2'],cwd=ROOT,capture_output=True,text=True)
+        r=subprocess.run([str(ROOT/('target/release/contract-verify' + ('.exe' if _research_os.name == 'nt' else ''))),str(out/'before_natural.json'),str(out/'native.json'),'30','2'],cwd=ROOT,capture_output=True,text=True)
         assert (out/'native.json').exists(),r.stderr
         d=json.loads((out/'native.json').read_text(encoding='utf-8'));results.append({'case':str(out),'remove_original':removed,**d})
         print(json.dumps({'case':out.name,'removed':removed,'verified':d['verified'],'failure':d['failure']}),flush=True)

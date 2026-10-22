@@ -3,6 +3,7 @@
 New geometry contracts retain every other natural/input obligation. No supplied
 tip motion, relaxed capacity or reference hardware is used.
 """
+import os as _research_os
 import argparse
 import copy
 import hashlib
@@ -78,7 +79,7 @@ def main():
              "options": len(options), "cases": [], "complete": False,
              "sha256": {str(p): hashlib.sha256(p.read_bytes()).hexdigest() for p in
                         [a.source / "problem.json", a.source / c["flyer"], Path(__file__),
-                         ROOT / "target/release/contract-verify.exe"]}}
+                         ROOT / ('target/release/contract-verify' + ('.exe' if _research_os.name == 'nt' else ''))]}}
     save = lambda: (a.output / "summary.json").write_text(json.dumps(state, indent=2) + "\n", encoding="utf-8")
     drive = [list(map(int, s.split())) for s in (a.source / c["prescribed_script"]).read_text().splitlines()]
     start = time.monotonic()
@@ -113,7 +114,7 @@ def main():
         (out / "problem.json").write_text(json.dumps(q, indent=2) + "\n", encoding="utf-8")
         (out / "drive.txt").write_text("\n".join(" ".join(map(str, (t, *sh((x,y,z)), cap)))
                                                    for t,x,y,z,cap in drive) + "\n", encoding="utf-8")
-        subprocess.run([str(ROOT / "target/release/contract-verify.exe"), str(out / "problem.json"),
+        subprocess.run([str(ROOT / ('target/release/contract-verify' + ('.exe' if _research_os.name == 'nt' else ''))), str(out / "problem.json"),
                         str(out / "result.json"), "10", "4"], capture_output=True, check=False)
         report = json.loads((out / "result.json").read_text())
         state["cases"].append({"case": out.name, "added": sorted(path), "removed": removed, **report})

@@ -87,5 +87,5 @@
     16
   ],
   "identity_basis": "Unique piston YZ coordinates; all simulator movements in this bank are along X",
-  "source": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\bank\\pl43\\mv4_symmetric_easy_compact.flyer"
+  "source": "flyers/bank/pl43/mv4_symmetric_easy_compact.flyer"
 }

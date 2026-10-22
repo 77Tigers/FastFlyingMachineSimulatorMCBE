@@ -1,4 +1,5 @@
 """Fixed self-RB T1 push1/push2/pull3 calibration; four neighboring drives supplied."""
+import os as _research_os
 import argparse,json,subprocess,hashlib
 from pathlib import Path
 from assemble import Flyer
@@ -26,5 +27,5 @@ def main():
  (out/'drive.txt').write_text(''.join(' '.join(map(str,r))+'\n' for r in sorted(rows)),encoding='utf-8')
  for order in ['before_natural','after_natural','interleaved']:(out/f'{order}.json').write_text(json.dumps({**c,'prescribed_order':order},indent=2)+'\n',encoding='utf-8')
  prep={'scope':__doc__+' All three T1 moves natural, other twelve moves supplied; no complete-flyer claim.','clear_delivery_lane':a.clear_delivery_lane,'normalization_delta':delta,'T1_glue':sorted(t1),'RB':[2,1,-1],'normals':sorted(motors),'X1_glue':sorted(x1),'budget':'T1_self_RB_budget/full39.json'};(out/'preparation.json').write_text(json.dumps(prep,indent=2)+'\n',encoding='utf-8');(out/'generator_snapshot.py').write_bytes(Path(__file__).read_bytes())
- subprocess.run([str(ROOT/'target/release/contract-verify.exe'),str(out/'before_natural.json'),str(out/'native.json'),'30','2'],cwd=ROOT,check=False);print((out/'native.json').read_text(encoding='utf-8'))
+ subprocess.run([str(ROOT/('target/release/contract-verify' + ('.exe' if _research_os.name == 'nt' else ''))),str(out/'before_natural.json'),str(out/'native.json'),'30','2'],cwd=ROOT,check=False);print((out/'native.json').read_text(encoding='utf-8'))
 if __name__=='__main__':main()

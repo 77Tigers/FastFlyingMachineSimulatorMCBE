@@ -2,11 +2,11 @@
   {
     "fixture": "n2_01",
     "command": [
-      "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\target\\release\\contract-search.exe",
-      "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\shared_design_20261013\\scheduling\\witness_trial\\bank_probe\\n2_01\\contract.json",
+      "target/release/contract-search.exe",
+      "flyers/WIP/experiments/shared_design_20261013/scheduling/witness_trial/bank_probe/n2_01/contract.json",
       "0",
       "1",
-      "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\shared_design_20261013\\scheduling\\witness_trial\\bank_probe\\n2_01\\eval",
+      "flyers/WIP/experiments/shared_design_20261013/scheduling/witness_trial/bank_probe/n2_01/eval",
       "--eval-only",
       "--samples",
       "--order",
@@ -23,11 +23,11 @@
   {
     "fixture": "n2_02",
     "command": [
-      "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\target\\release\\contract-search.exe",
-      "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\shared_design_20261013\\scheduling\\witness_trial\\bank_probe\\n2_02\\contract.json",
+      "target/release/contract-search.exe",
+      "flyers/WIP/experiments/shared_design_20261013/scheduling/witness_trial/bank_probe/n2_02/contract.json",
       "0",
       "1",
-      "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\shared_design_20261013\\scheduling\\witness_trial\\bank_probe\\n2_02\\eval",
+      "flyers/WIP/experiments/shared_design_20261013/scheduling/witness_trial/bank_probe/n2_02/eval",
       "--eval-only",
       "--samples",
       "--order",
@@ -44,11 +44,11 @@
   {
     "fixture": "n2_03",
     "command": [
-      "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\target\\release\\contract-search.exe",
-      "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\shared_design_20261013\\scheduling\\witness_trial\\bank_probe\\n2_03\\contract.json",
+      "target/release/contract-search.exe",
+      "flyers/WIP/experiments/shared_design_20261013/scheduling/witness_trial/bank_probe/n2_03/contract.json",
       "0",
       "1",
-      "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\shared_design_20261013\\scheduling\\witness_trial\\bank_probe\\n2_03\\eval",
+      "flyers/WIP/experiments/shared_design_20261013/scheduling/witness_trial/bank_probe/n2_03/eval",
       "--eval-only",
       "--samples",
       "--order",
@@ -65,11 +65,11 @@
   {
     "fixture": "n2_06",
     "command": [
-      "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\target\\release\\contract-search.exe",
-      "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\shared_design_20261013\\scheduling\\witness_trial\\bank_probe\\n2_06\\contract.json",
+      "target/release/contract-search.exe",
+      "flyers/WIP/experiments/shared_design_20261013/scheduling/witness_trial/bank_probe/n2_06/contract.json",
       "0",
       "1",
-      "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\shared_design_20261013\\scheduling\\witness_trial\\bank_probe\\n2_06\\eval",
+      "flyers/WIP/experiments/shared_design_20261013/scheduling/witness_trial/bank_probe/n2_06/eval",
       "--eval-only",
       "--samples",
       "--order",
@@ -86,11 +86,11 @@
   {
     "fixture": "n3_07",
     "command": [
-      "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\target\\release\\contract-search.exe",
-      "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\shared_design_20261013\\scheduling\\witness_trial\\bank_probe\\n3_07\\contract.json",
+      "target/release/contract-search.exe",
+      "flyers/WIP/experiments/shared_design_20261013/scheduling/witness_trial/bank_probe/n3_07/contract.json",
       "0",
       "1",
-      "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\shared_design_20261013\\scheduling\\witness_trial\\bank_probe\\n3_07\\eval",
+      "flyers/WIP/experiments/shared_design_20261013/scheduling/witness_trial/bank_probe/n3_07/eval",
       "--eval-only",
       "--samples",
       "--order",
@@ -107,11 +107,11 @@
   {
     "fixture": "n3_10",
     "command": [
-      "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\target\\release\\contract-search.exe",
-      "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\shared_design_20261013\\scheduling\\witness_trial\\bank_probe\\n3_10\\contract.json",
+      "target/release/contract-search.exe",
+      "flyers/WIP/experiments/shared_design_20261013/scheduling/witness_trial/bank_probe/n3_10/contract.json",
       "0",
       "1",
-      "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\shared_design_20261013\\scheduling\\witness_trial\\bank_probe\\n3_10\\eval",
+      "flyers/WIP/experiments/shared_design_20261013/scheduling/witness_trial/bank_probe/n3_10/eval",
       "--eval-only",
       "--samples",
       "--order",
@@ -128,11 +128,11 @@
   {
     "fixture": "n3_11",
     "command": [
-      "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\target\\release\\contract-search.exe",
-      "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\shared_design_20261013\\scheduling\\witness_trial\\bank_probe\\n3_11\\contract.json",
+      "target/release/contract-search.exe",
+      "flyers/WIP/experiments/shared_design_20261013/scheduling/witness_trial/bank_probe/n3_11/contract.json",
       "0",
       "1",
-      "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\shared_design_20261013\\scheduling\\witness_trial\\bank_probe\\n3_11\\eval",
+      "flyers/WIP/experiments/shared_design_20261013/scheduling/witness_trial/bank_probe/n3_11/eval",
       "--eval-only",
       "--samples",
       "--order",
@@ -149,11 +149,11 @@
   {
     "fixture": "n4_12",
     "command": [
-      "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\target\\release\\contract-search.exe",
-      "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\shared_design_20261013\\scheduling\\witness_trial\\bank_probe\\n4_12\\contract.json",
+      "target/release/contract-search.exe",
+      "flyers/WIP/experiments/shared_design_20261013/scheduling/witness_trial/bank_probe/n4_12/contract.json",
       "0",
       "1",
-      "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\shared_design_20261013\\scheduling\\witness_trial\\bank_probe\\n4_12\\eval",
+      "flyers/WIP/experiments/shared_design_20261013/scheduling/witness_trial/bank_probe/n4_12/eval",
       "--eval-only",
       "--samples",
       "--order",
@@ -170,11 +170,11 @@
   {
     "fixture": "n4_14",
     "command": [
-      "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\target\\release\\contract-search.exe",
-      "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\shared_design_20261013\\scheduling\\witness_trial\\bank_probe\\n4_14\\contract.json",
+      "target/release/contract-search.exe",
+      "flyers/WIP/experiments/shared_design_20261013/scheduling/witness_trial/bank_probe/n4_14/contract.json",
       "0",
       "1",
-      "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\shared_design_20261013\\scheduling\\witness_trial\\bank_probe\\n4_14\\eval",
+      "flyers/WIP/experiments/shared_design_20261013/scheduling/witness_trial/bank_probe/n4_14/eval",
       "--eval-only",
       "--samples",
       "--order",

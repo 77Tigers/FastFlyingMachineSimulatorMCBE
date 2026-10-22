@@ -10,7 +10,7 @@ The diagnostic rebuilds a TEMP copy of the current simulator and changes only ch
 
 A chunk-separated version flies at exactly 5 bps in the tested runs. A large-reserve candidate is saved. There is a **conditional reliability argument**, with an executable finite tagged-piston abstraction and exact rational probability calculation, giving an expected-distance lower bound about 2^138.996 under independent fair chunk orders and unbounded coordinates. This is **not yet an independently audited proof of the full simulator**, nor a proof for its deterministic 64-bit RNG. No deterministic forever guarantee has been found. Do not mark the original task fully solved without resolving those qualifications.
 
-The user's requested target is a flyer based on the two-body piston-handoff concept that never drops below 5 bps, or otherwise has expected travel above 2^128 blocks before its first slowdown. No size or push-limit cap was imposed. They asked to wrap up due to session limits and leave a handoff. No simulator, library, viewer, bank, or original private flyer was edited. Generated research candidates are authorized; the user's original `C:/Users/Ruben/Downloads/5bps_bug.flyer` must not be banked or copied/saved.
+The user's requested target is a flyer based on the two-body piston-handoff concept that never drops below 5 bps, or otherwise has expected travel above 2^128 blocks before its first slowdown. No size or push-limit cap was imposed. They asked to wrap up due to session limits and leave a handoff. No simulator, library, viewer, bank, or original private flyer was edited. Generated research candidates are authorized; the user's original `[untracked original flyer]` must not be banked or copied/saved.
 
 ## Files and evidence
 

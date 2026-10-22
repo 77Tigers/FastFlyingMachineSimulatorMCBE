@@ -288,7 +288,7 @@ Temporary Rust tools still available in `%TEMP%` on this machine:
 - `min_limit.exe FILE...` finds the smallest limit matching an 80-tick reference score. This is ONLY a screen; verify any resulting limit for full10k.
 - `flyer_failure_links.exe`, `fail_t7.exe`, `astra_expected.exe` are ad hoc diagnostics. They are not portable dependencies. Use Rust public `Flyer::load`, `tick`, `blocks`, `tick_traced` and `debug::TickTrace::new(&flyer)` to reproduce them.
 
-Temporary diagnostic programs were compiled against `target/release/deps/libfastflyer-60489f4c006e8143.rlib` with `rustc --edition=2021 --extern fastflyer=... -L dependency=target/release/deps`; find current hash if rebuilding. No project simulator/library code was changed. The repository ALREADY had many dirty source files before this work; do not revert them. Git may require a command-local `-c safe.directory=C:/Users/Ruben/OneDrive/Documents/FastFlyerPlayground` because sandbox ownership differs.
+Temporary diagnostic programs were compiled against `target/release/deps/libfastflyer-60489f4c006e8143.rlib` with `rustc --edition=2021 --extern fastflyer=... -L dependency=target/release/deps`; find current hash if rebuilding. No project simulator/library code was changed. The repository ALREADY had many dirty source files before this work; do not revert them. Git may require a command-local `-c safe.directory=.` because sandbox ownership differs.
 
 All active agents were interrupted when the user said finish immediately. No more design search is required for this handoff. The saved WIP and CSV are the authoritative completed artifacts; do not infer success from an unfinished candidate or generator.
 

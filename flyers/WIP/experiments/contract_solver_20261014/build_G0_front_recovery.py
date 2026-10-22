@@ -4,6 +4,7 @@ X1 has four recovery glue (within seven reserved in the whole budget), T1
 one glue (within six reserved). Their own drives remain supplied. G0's
 six-glue upper column retains both existing pulse observers.
 """
+import os as _research_os
 import argparse,json,subprocess,hashlib
 from pathlib import Path
 from assemble import Flyer
@@ -35,6 +36,6 @@ def main():
  for order in ['before_natural','after_natural','interleaved']:dump(a.out/f'{order}.json',{**c,'prescribed_order':order})
  dump(a.out/'preparation.json',{'scope':__doc__,'G0':sorted(g0),'X1':sorted(x1),'T1':sorted(t1),'motors':sorted(motors),'RB':rb,'base':str(a.base),'base_sha256':hashlib.sha256((a.base/'problem.flyer').read_bytes()).hexdigest()})
  (a.out/'generator_snapshot.py').write_bytes(Path(__file__).read_bytes())
- subprocess.run([str(ROOT/'target/release/contract-verify.exe'),str(a.out/'before_natural.json'),str(a.out/'native.json'),'30','2'],cwd=ROOT,capture_output=True)
+ subprocess.run([str(ROOT/('target/release/contract-verify' + ('.exe' if _research_os.name == 'nt' else ''))),str(a.out/'before_natural.json'),str(a.out/'native.json'),'30','2'],cwd=ROOT,capture_output=True)
  print((a.out/'native.json').read_text(encoding='utf-8'))
 if __name__=='__main__':main()

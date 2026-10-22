@@ -1,6 +1,7 @@
 """T1 two-push column with mixed T0/X1 recovery, retaining upper pull3.
 Full budget reduces X1 reserved glue7->6; physical X1 still uses four.
 """
+import os as _research_os
 import argparse,json,subprocess
 from pathlib import Path
 from assemble import Flyer
@@ -24,5 +25,5 @@ def main():
  (a.out/'drive.txt').write_text(''.join(' '.join(map(str,r))+'\n' for r in sorted(rows)),encoding='utf-8')
  for order in ['before_natural','after_natural','interleaved']:dump(a.out/f'{order}.json',{**c,'prescribed_order':order})
  dump(a.out/'preparation.json',{'scope':__doc__,'T1_shape':sorted(shape),'RB':rb,'motors':sorted(motors),'T0_remove':[16,3,10],'T0_add':[15,4,10]});(a.out/'generator_snapshot.py').write_bytes(Path(__file__).read_bytes())
- subprocess.run([str(ROOT/'target/release/contract-verify.exe'),str(a.out/'before_natural.json'),str(a.out/'native.json'),'30','2'],cwd=ROOT,capture_output=True);print((a.out/'native.json').read_text(encoding='utf-8'))
+ subprocess.run([str(ROOT/('target/release/contract-verify' + ('.exe' if _research_os.name == 'nt' else ''))),str(a.out/'before_natural.json'),str(a.out/'native.json'),'30','2'],cwd=ROOT,capture_output=True);print((a.out/'native.json').read_text(encoding='utf-8'))
 if __name__=='__main__':main()

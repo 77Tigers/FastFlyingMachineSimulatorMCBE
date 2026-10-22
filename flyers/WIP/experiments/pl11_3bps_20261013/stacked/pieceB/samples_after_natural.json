@@ -6,7 +6,7 @@
   "cycles": 3,
   "recurrence": "bounded",
   "drive_script": null,
-  "prescribed_script": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\pl11_3bps_20261013\\stacked\\pieceB\\drive.txt",
+  "prescribed_script": "flyers/WIP/experiments/pl11_3bps_20261013/stacked/pieceB/drive.txt",
   "prescribed_order": "after_natural",
   "boundary_envelope": {
     "min": [

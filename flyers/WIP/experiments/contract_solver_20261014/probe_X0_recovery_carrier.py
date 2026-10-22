@@ -3,6 +3,7 @@
 This adds no realized driver for the pickup body. It is a causal diagnostic,
 not a complete flyer or an accepted component. Encoded push limit stays12.
 """
+import os as _research_os
 import argparse,json,hashlib,subprocess
 from pathlib import Path
 from assemble import Flyer
@@ -27,7 +28,7 @@ def main():
         c['ports'].append({'name':'rear_pickup','at':at,'role':'input','word':'wwmmm','provenance':[None,None,'supplied','supplied','supplied']})
         (a.out/f'{order}.json').write_text(json.dumps(c,indent=2)+'\n',encoding='utf-8')
     (a.out/'preparation.json').write_text(json.dumps({'scope':__doc__,'base':str(a.base),'rear_pickup_original':[13,1,11],'rear_pickup_saved':at,'word':'wwmmm','input_sha256':hashlib.sha256((a.base/'problem.flyer').read_bytes()).hexdigest()},indent=2)+'\n',encoding='utf-8')
-    proc=subprocess.run([str(ROOT/'target/release/contract-verify.exe'),str(a.out/'before_natural.json'),str(a.out/'native.json'),'30','2'],cwd=ROOT,capture_output=True,text=True)
+    proc=subprocess.run([str(ROOT/('target/release/contract-verify' + ('.exe' if _research_os.name == 'nt' else ''))),str(a.out/'before_natural.json'),str(a.out/'native.json'),'30','2'],cwd=ROOT,capture_output=True,text=True)
     assert (a.out/'native.json').exists(),proc.stderr
     print((a.out/'native.json').read_text(encoding='utf-8'))
 

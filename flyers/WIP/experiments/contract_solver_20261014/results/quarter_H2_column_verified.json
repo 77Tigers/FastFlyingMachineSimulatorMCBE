@@ -668,7 +668,7 @@
   "content_hash": "6b4ea473fa0027d3c66ca1d1eac8c0452261c63368d252e55e18e76c7c4ce99b",
   "construction": {
     "scope": "Load the exact budgeted H2 mmmww ordinary-column hypothesis.\n\nH2's provided source is retained, with real glue and three normal pistons.\nG2 gains two carrier cells. Remaining left-boundary moves stay supplied.\nNative verification, not nominal piston roles, decides whether it works.\n",
-    "base": "flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\T2_H2_power",
+    "base": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/T2_H2_power",
     "added_cells": [
       [
         25,
@@ -727,7 +727,7 @@
     ],
     "hypothesis": {
       "scope": "Next bounded hardware hypothesis, not constructed or verified. Replaces all three supplied H2 moves using a real ordinary column; current T2_H2_power long proof must pass first.",
-      "base": "flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\T2_H2_power",
+      "base": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/T2_H2_power",
       "G2_added_HONEY": [
         [
           25,
@@ -807,11 +807,11 @@
       "contract_change": "Remove nine supplied H2 drive events, set H2 slots0/1/2 internal. Preserve all other hardware/ports; G2 still all three ordinary natural pushes."
     },
     "sha256": {
-      "flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\T2_H2_power\\problem.flyer": "79bc4bb72273eb040b97bd93897034aea9294eb2086d4d9ef4077473c17064a1",
-      "flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\T2_H2_power\\drive.txt": "6ecabc30de83110c5f31046f5674290ba4f7db966772e9f64e77007c8e3614d3",
-      "flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\T2_H2_power\\before_natural.json": "6b4eb39ac137a11422e63dacc0d03fd3788ff6d796c988a5066df7b682144107",
-      "flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\T2_H2_power\\H2_natural_column_hypothesis.json": "e387eff29e454f201b5781f1fa375b2e36c3c15c3bb52df72fa1d92c897c0e1f",
-      "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\build_H2_column.py": "34f5b77869f7e2bd3890e83e28506895ea933af9ca50d2a18280268e2733786e"
+      "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/T2_H2_power/problem.flyer": "79bc4bb72273eb040b97bd93897034aea9294eb2086d4d9ef4077473c17064a1",
+      "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/T2_H2_power/drive.txt": "6ecabc30de83110c5f31046f5674290ba4f7db966772e9f64e77007c8e3614d3",
+      "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/T2_H2_power/before_natural.json": "6b4eb39ac137a11422e63dacc0d03fd3788ff6d796c988a5066df7b682144107",
+      "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/T2_H2_power/H2_natural_column_hypothesis.json": "e387eff29e454f201b5781f1fa375b2e36c3c15c3bb52df72fa1d92c897c0e1f",
+      "flyers/WIP/experiments/contract_solver_20261014/build_H2_column.py": "34f5b77869f7e2bd3890e83e28506895ea933af9ca50d2a18280268e2733786e"
     }
   },
   "contracts": {
@@ -1438,7 +1438,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\H2_natural_column_v2\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/H2_natural_column_v2/drive.txt",
       "prescribed_order": "before_natural",
       "boundary_envelope": {
         "min": [
@@ -8105,7 +8105,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\H2_natural_column_v2\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/H2_natural_column_v2/drive.txt",
       "prescribed_order": "after_natural",
       "boundary_envelope": {
         "min": [
@@ -14772,7 +14772,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\H2_natural_column_v2\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/H2_natural_column_v2/drive.txt",
       "prescribed_order": "interleaved",
       "boundary_envelope": {
         "min": [

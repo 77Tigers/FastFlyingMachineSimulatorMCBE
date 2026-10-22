@@ -4,6 +4,7 @@ Existing N3 body trajectories remain the contract. Whole assemblies capped24.
 This tests the helper-helper tip against the compact PL18 host, without adding
 power hardware or importing any high-limit flyer.
 """
+import os as _research_os
 from pathlib import Path
 import sys,random,heapq,functools,json,collections,itertools,subprocess
 HERE=Path(__file__).resolve().parent;sys.path.insert(0,str(HERE))
@@ -141,7 +142,7 @@ def main():
   if len(rows)%32==0:
    (HERE/f'{prefix}.manifest.json').write_text(json.dumps(dict(stats=stats,attempts=rows),indent=2));print(len(rows),dict(stats),flush=True)
  (HERE/f'{prefix}.manifest.json').write_text(json.dumps(dict(stats=stats,attempts=rows),indent=2));print(dict(stats),flush=True)
- runner=ROOT/'target/release/fastflyer-research.exe'
+ runner=ROOT/('target/release/fastflyer-research' + ('.exe' if _research_os.name == 'nt' else ''))
  p=subprocess.run([str(runner),'screen',str(out),'240','--out',str(HERE/f'{prefix}.screen.csv')],capture_output=True,text=True)
  (HERE/f'{prefix}.screen.txt').write_text(p.stdout+p.stderr);print(p.stdout,flush=True)
 if __name__=='__main__':main()

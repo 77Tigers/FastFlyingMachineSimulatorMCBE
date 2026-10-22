@@ -4,6 +4,7 @@ Keeps accepted59 G0/T0/X0/H2/G2 hardware; regenerates only X1 glue.
 All three G0 normals remain on X1; ordinary T1 source connector bound<=6
 is necessary only. New gate has supplied H0 drive/T1 pushes, not closure.
 """
+import os as _research_os
 import argparse,copy,itertools,json,subprocess,time
 from pathlib import Path
 from ortools.sat.python import cp_model
@@ -92,7 +93,7 @@ def main():
    (case/'drive.txt').write_text(''.join(' '.join(map(str,r))+'\n' for r in sorted(rows)),encoding='utf-8')
    for order in ['before_natural','after_natural','interleaved']:dump(case/f'{order}.json',{**cc,'prescribed_order':order})
    rec['X1_shape']=shape;rec['X1_anchor']=root;dump(case/'preparation.json',rec);dump(case/'T1_push_connector_bound.json',bounds[q]);tests+=1
-   subprocess.run([str(ROOT/'target/release/contract-verify.exe'),str(case/'before_natural.json'),str(case/'native.json'),'30','2'],cwd=ROOT,capture_output=True,check=False);rec['native']=json.loads((case/'native.json').read_text(encoding='utf-8'))
+   subprocess.run([str(ROOT/('target/release/contract-verify' + ('.exe' if _research_os.name == 'nt' else ''))),str(case/'before_natural.json'),str(case/'native.json'),'30','2'],cwd=ROOT,capture_output=True,check=False);rec['native']=json.loads((case/'native.json').read_text(encoding='utf-8'))
    if rec['native']['verified']:passed=str(case)
   records.append(rec);dump(a.out/'report.json',{'scope':__doc__,'choices':len(choices),'records':records,'tests':tests,'passed':passed,'seconds':time.monotonic()-start})
   if passed:break

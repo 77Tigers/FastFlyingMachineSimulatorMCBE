@@ -1,4 +1,5 @@
 """Close two alternating pull interfaces; Rust is the validator."""
+import os as _research_os
 from pathlib import Path
 import sys,os,itertools,heapq,random,subprocess,json,functools
 ROOT=Path(__file__).resolve().parents[4];sys.path.insert(0,str(ROOT))
@@ -108,6 +109,6 @@ if __name__=='__main__':
   if n:print('offset',dx,dy,dz,'candidates',n,flush=True)
   if n>=500:break
  (out.parent/'mwmw_metadata.json').write_text(json.dumps(meta,indent=2))
- p=subprocess.run([str(ROOT/'target/release/fastflyer-research.exe'),'batch',str(out),'160'],capture_output=True,text=True)
+ p=subprocess.run([str(ROOT/('target/release/fastflyer-research' + ('.exe' if _research_os.name == 'nt' else ''))),'batch',str(out),'160'],capture_output=True,text=True)
  (out.parent/'mwmw_screen.txt').write_text(p.stdout)
  print('TESTED',n,flush=True)

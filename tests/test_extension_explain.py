@@ -7,8 +7,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "tools"))
 from extension_explain import (_geometric_reach, _hard_powered, _power_facts, _trace_executable)
+from fixture_support import fixture_root
 
-EXP = ROOT / "flyers" / "WIP" / "experiments" / "extension_contract_20261011"
+EXP = fixture_root()
 CANDIDATE = EXP / "blind_repair" / "out" / "candidate.flyer"
 REFERENCE = EXP / "out" / "reference.flyer"
 CONTRACT = EXP / "benchmarks" / "missing_source.json"

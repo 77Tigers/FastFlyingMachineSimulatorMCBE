@@ -4,6 +4,7 @@ Every successful action: normal/sticky extension moving blocks must move slime g
 acting piston must touch honey at tick start (anchor A, not the victim); sticky retraction moving
 blocks must move honey only and the piston must touch slime (anchor B). Sticky extensions must be empty.
 usage: abverify.py FLYER TICKS"""
+import os as _research_os
 import subprocess, sys, re
 from pathlib import Path
 def _tb(n):
@@ -12,7 +13,7 @@ def _tb(n):
     from fastflyer.research import binary
     return binary(n)
 HERE = Path(__file__).resolve().parent
-RUN = HERE.parents[3] / 'target' / 'release' / 'fastflyer-research.exe'
+RUN = HERE.parents[3] / 'target' / 'release' / ('fastflyer-research' + ('.exe' if _research_os.name == 'nt' else ''))
 DIRS = [(1,0,0),(-1,0,0),(0,1,0),(0,-1,0),(0,0,1),(0,0,-1)]
 
 

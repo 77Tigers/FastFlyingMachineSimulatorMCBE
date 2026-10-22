@@ -1,3 +1,4 @@
+import os as _research_os
 from pathlib import Path
 import json, subprocess, sys
 repo=Path(__file__).resolve().parents[5]; sys.path.insert(0,str(repo))
@@ -8,7 +9,7 @@ f=Flyer.load(src); f.set((13,4,9),Block(Kind.REDSTONE_BLOCK)); f.save(out/'candi
 c=dict(base); c['name']='missing_source_blind_assisted_2'; c['flyer']='candidate2.flyer'
 (out/'candidate2.json').write_text(json.dumps(c,indent=2)+'\n')
 # Print only the two candidate actuator histories from trace.
-ds=[json.loads(x) for x in subprocess.check_output(['target/release/extension-trace.exe',str(out/'candidate2.flyer'),'4','0','0','0'],text=True).splitlines()]
+ds=[json.loads(x) for x in subprocess.check_output([('target/release/extension-trace' + ('.exe' if _research_os.name == 'nt' else '')),str(out/'candidate2.flyer'),'4','0','0','0'],text=True).splitlines()]
 for ti,d in enumerate(ds):
  for s in d['steps']:
   if s['stage']=='piston' and s.get('active_piston') in ([12,4,7],[13,4,8]):

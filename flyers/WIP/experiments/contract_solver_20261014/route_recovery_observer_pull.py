@@ -7,6 +7,7 @@ contact and observer pickup by foreign glue. Each source gets one bounded
 minimum-glue solve; FEASIBLE does not imply optimal. Strict native checking
 decides physics; rear pushes2/3 remain supplied.
 """
+import os as _research_os
 import argparse,hashlib,json,subprocess
 from collections import deque
 from pathlib import Path
@@ -135,7 +136,7 @@ def main():
             prep={'scope':__doc__,'base':str(a.base),'sticky':sticky,'replaces_glue':replacing,'observer':observer,'direction':direction,'glue':shape,
                   'sample_budget_before_unplanned_pickups':{'X0_mass_delta':0 if replacing else 1,'rear_upper_bound':len(shape)+1+2}}
             (case/'preparation.json').write_text(json.dumps(prep,indent=2)+'\n',encoding='utf-8')
-            subprocess.run([str(ROOT/'target/release/contract-verify.exe'),str(case/'before_natural.json'),str(case/'native.json'),'30','2'],cwd=ROOT,capture_output=True)
+            subprocess.run([str(ROOT/('target/release/contract-verify' + ('.exe' if _research_os.name == 'nt' else ''))),str(case/'before_natural.json'),str(case/'native.json'),'30','2'],cwd=ROOT,capture_output=True)
             rec['native']=json.loads((case/'native.json').read_text())
         records.append(rec)
     report={'scope':__doc__,'glue_cap':a.glue_cap,'cp_seconds':a.cp_seconds,'records':records,'script_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),

@@ -1,8 +1,9 @@
 """Shorten the ten-body lead's helper routes by rearranging distinct bodies."""
+import os as _research_os
 from pathlib import Path
 import json,subprocess,collections,random
 HERE=Path(__file__).resolve().parent;ROOT=HERE.parents[3]
-RUNNER=ROOT/'target/release/fastflyer-research.exe'
+RUNNER=ROOT/('target/release/fastflyer-research' + ('.exe' if _research_os.name == 'nt' else ''))
 def main():
     s=(HERE/'pull3_synthesis.py').read_text()
     s=s.replace('p=(base,target*spacing,j*spacing)','p=(base,*place(target,j,spacing))')

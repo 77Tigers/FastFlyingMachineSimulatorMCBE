@@ -146,7 +146,7 @@
   "candidates": [
     {
       "attempt": 0,
-      "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_elegant_20261004\\ranked_a0_pl48.flyer",
+      "path": "flyers/WIP/experiments/mv4_elegant_20261004/ranked_a0_pl48.flyer",
       "counts": [
         36,
         32,
@@ -159,7 +159,7 @@
     },
     {
       "attempt": 1,
-      "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_elegant_20261004\\ranked_a1_pl48.flyer",
+      "path": "flyers/WIP/experiments/mv4_elegant_20261004/ranked_a1_pl48.flyer",
       "counts": [
         36,
         30,
@@ -172,7 +172,7 @@
     },
     {
       "attempt": 4,
-      "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_elegant_20261004\\ranked_a4_pl48.flyer",
+      "path": "flyers/WIP/experiments/mv4_elegant_20261004/ranked_a4_pl48.flyer",
       "counts": [
         35,
         35,
@@ -185,7 +185,7 @@
     },
     {
       "attempt": 6,
-      "path": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_elegant_20261004\\ranked_a6_pl48.flyer",
+      "path": "flyers/WIP/experiments/mv4_elegant_20261004/ranked_a6_pl48.flyer",
       "counts": [
         36,
         34,

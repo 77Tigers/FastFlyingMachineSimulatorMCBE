@@ -3,6 +3,7 @@
 All existing natural actions stay natural. Certify each supplied-tip control
 before using it as a new hardware-synthesis scaffold.
 """
+import os as _research_os
 import argparse
 import copy
 import json
@@ -50,7 +51,7 @@ def main():
         c.update(flyer="problem.flyer",prescribed_script="drive.txt",name="tip_rear_contact")
         (out / "problem.json").write_text(json.dumps(c,indent=2)+"\n",encoding="utf-8")
         (out / "drive.txt").write_text("\n".join(" ".join(map(str,r)) for r in sorted(rows))+"\n")
-        subprocess.run([str(ROOT / "target/release/contract-verify.exe"),str(out / "problem.json"),str(out / "result.json"),"10","4"],capture_output=True)
+        subprocess.run([str(ROOT / ('target/release/contract-verify' + ('.exe' if _research_os.name == 'nt' else ''))),str(out / "problem.json"),str(out / "result.json"),"10","4"],capture_output=True)
         report = json.loads((out / "result.json").read_text())
         state["cases"].append({"case":out.name,"rear_contact":at,**report})
         if report["verified"]:

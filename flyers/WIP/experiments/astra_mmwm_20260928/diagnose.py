@@ -1,3 +1,4 @@
+import os as _research_os
 from search import *
 def expected(m,slot):
  c,t=divmod(slot,6);f=Flyer(push_limit=512)
@@ -18,7 +19,7 @@ if __name__=='__main__':
  lines=[]
  for slot in range(1,31):
   actual=OUT/'diagnostic_end.flyer'
-  subprocess.run([str(ROOT/'target/release/fastflyer-sim.exe'),str(path),str(actual),str(slot*2)],capture_output=True,check=True)
+  subprocess.run([str(ROOT/('target/release/fastflyer-sim' + ('.exe' if _research_os.name == 'nt' else ''))),str(path),str(actual),str(slot*2)],capture_output=True,check=True)
   a=norm(Flyer.load(actual));b=norm(expected(m,slot));different={p:(b.get(p),a.get(p)) for p in a.keys()|b.keys() if a.get(p)!=b.get(p)}
   lines.append(f'slot={slot} differences={len(different)} {different}')
   if different:break

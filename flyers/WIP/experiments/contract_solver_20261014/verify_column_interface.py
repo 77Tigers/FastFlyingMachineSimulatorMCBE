@@ -1,4 +1,5 @@
 """Independent240 then strict native240x10000 proof of a supplied column interface."""
+import os as _research_os
 import argparse
 import hashlib
 import json
@@ -43,7 +44,7 @@ def main():
                 rows.append((cycle*10+slot*2,p['at'][0]+cycle*3+prefix,p['at'][1],p['at'][2],12))
     (run/'long_drive.txt').write_text(''.join(' '.join(map(str,row))+'\n' for row in sorted(rows)),encoding='utf-8')
     (run/'long_contract.json').write_text(json.dumps(contract,indent=2)+'\n',encoding='utf-8')
-    subprocess.run([str(ROOT/'target/release/contract-verify.exe'),str(run/'long_contract.json'),
+    subprocess.run([str(ROOT/('target/release/contract-verify' + ('.exe' if _research_os.name == 'nt' else ''))),str(run/'long_contract.json'),
                     str(run/'long_result.json'),str(a.long_seconds),'4'],check=True,cwd=ROOT)
     result=json.loads((run/'long_result.json').read_text(encoding='utf-8'))
     assert result['verified'] and result['passed']==80 and result['orders_per_sample']==3

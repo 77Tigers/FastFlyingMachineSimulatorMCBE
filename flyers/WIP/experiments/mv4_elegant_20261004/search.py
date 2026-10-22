@@ -3,6 +3,7 @@
 Usage: python search.py [seconds=1380]. Search and validation share one deadline.
 Outputs rejected counts, best routings, candidate geometry and real-run evidence.
 """
+import os as _research_os
 import sys, time, json, random, collections, subprocess, itertools, traceback
 from pathlib import Path
 HERE=Path(__file__).resolve().parent
@@ -18,7 +19,7 @@ def _tb(n):
     return binary(n)
 
 ROOT=six.ROOT
-RUNNER=ROOT/'target/release/fastflyer-research.exe'
+RUNNER=ROOT/('target/release/fastflyer-research' + ('.exe' if _research_os.name == 'nt' else ''))
 AUDIT=_tb('mv4-audit-fast')
 SECONDS=min(1800,int(sys.argv[1]) if len(sys.argv)>1 else 1380)
 START=time.monotonic(); DEADLINE=START+SECONDS; SEARCH_END=DEADLINE-210

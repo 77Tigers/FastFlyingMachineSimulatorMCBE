@@ -1,10 +1,11 @@
 """Trim the new hexagonal mmw lead with exact cycle checks, not speed alone."""
+import os as _research_os
 from pathlib import Path
 import sys,subprocess,json,random,re
 ROOT=Path(__file__).resolve().parents[4];sys.path.insert(0,str(ROOT))
 from fastflyer import Flyer
 from derived_mmw import build,conn
-HERE=Path(__file__).resolve().parent;RUNNER=ROOT/'target/release/fastflyer-research.exe'
+HERE=Path(__file__).resolve().parent;RUNNER=ROOT/('target/release/fastflyer-research' + ('.exe' if _research_os.name == 'nt' else ''))
 def main():
  centers=[(0,0),(4,0),(6,3),(4,6),(0,6),(-2,3)]
  ans,reason=build(14,spacing=4,cap=65,centers=centers);assert ans is not None,reason

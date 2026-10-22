@@ -1,4 +1,5 @@
 """Bounded tm_smol body0 fork orientations; sequential column probes only."""
+import os as _research_os
 import argparse
 import hashlib
 import itertools
@@ -17,7 +18,7 @@ def main():
     parser.add_argument("output", type=Path)
     args = parser.parse_args()
     args.output.mkdir(parents=True, exist_ok=True)
-    binary = ROOT / "target/release/column-solve.exe"
+    binary = ROOT / ('target/release/column-solve' + ('.exe' if _research_os.name == 'nt' else ''))
     state = {"verified": False, "scope": "four lateral stems, two forward-fork leaves, eight glue cells",
              "binary_sha256": hashlib.sha256(binary.read_bytes()).hexdigest(), "cases": []}
     save = lambda: (args.output / "summary.json").write_text(json.dumps(state, indent=2) + "\n")

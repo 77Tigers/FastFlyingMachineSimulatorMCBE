@@ -4,6 +4,7 @@ Everything is derived from a banked flyer: snapshot at a settled period boundary
 identity-tracked event list (extension-trace), reference body decomposition (bodytrack).
 """
 from __future__ import annotations
+import os as _research_os
 import json, os, re, subprocess, sys
 from pathlib import Path
 
@@ -14,8 +15,8 @@ from fastflyer import Flyer, Kind                      # noqa: E402
 from fastflyer.research import simulate                # noqa: E402
 
 PERIOD, ADVANCE = 12, 4
-TRACE = ROOT / "target/release/extension-trace.exe"
-BODYTRACK = ROOT / "target/release/bodytrack.exe"
+TRACE = ROOT / ('target/release/extension-trace' + ('.exe' if _research_os.name == 'nt' else ''))
+BODYTRACK = ROOT / ('target/release/bodytrack' + ('.exe' if _research_os.name == 'nt' else ''))
 ARM = 10
 
 
@@ -224,7 +225,7 @@ def stroke_table(bodies, evs, idb):
 
 
 def run_prescribed(cdir: Path, ticks: int, order="before", sample=None):
-    args = [str(ROOT / "target/release/extension-prescribe.exe"), str(cdir / "candidate.flyer"), str(ticks),
+    args = [str(ROOT / ('target/release/extension-prescribe' + ('.exe' if _research_os.name == 'nt' else ''))), str(cdir / "candidate.flyer"), str(ticks),
             str(cdir / "drive.txt"), order] + ([str(v) for v in sample] if sample else [])
     out = subprocess.run(args, capture_output=True, text=True, cwd=ROOT)
     return [json.loads(l) for l in out.stdout.splitlines() if l.strip()], out.stderr

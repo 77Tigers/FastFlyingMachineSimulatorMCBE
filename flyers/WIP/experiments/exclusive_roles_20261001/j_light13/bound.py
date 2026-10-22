@@ -1,6 +1,6 @@
 import sys,os,re,json,itertools,subprocess,collections
 from pathlib import Path
-EXC=Path(r"C:/Users/Ruben/OneDrive/Documents/FastFlyerPlayground/flyers/WIP/experiments/exclusive_roles_20261001")
+EXC=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(EXC))
 from graft import HERE,sx,nb,offset
 from fastflyer import Flyer,Block,Kind

@@ -1,4 +1,5 @@
 """Isolate late-RB cross-power: retain its mass as stone and supply only H0 move4."""
+import os as _research_os
 import json,subprocess,hashlib
 from pathlib import Path
 from assemble import Flyer
@@ -15,5 +16,5 @@ def main():
  (out/'drive.txt').write_text(''.join(' '.join(map(str,row))+'\n' for row in sorted(rows)),encoding='utf-8')
  for order in ['before_natural','after_natural','interleaved']:(out/f'{order}.json').write_text(json.dumps({**c,'prescribed_order':order},indent=2)+'\n',encoding='utf-8')
  prep.update(scope=__doc__+' Fourteen natural/sixteen supplied strokes attempted; late H0 driver explicitly unbuilt. Not complete flyer.',base_sha256=hashlib.sha256((base/'problem.flyer').read_bytes()).hexdigest(),late_RB_replaced_by_stone=q,H0_natural_slots=[0,1],H0_supplied_slots=[4]);(out/'preparation.json').write_text(json.dumps(prep,indent=2)+'\n',encoding='utf-8');(out/'generator_snapshot.py').write_bytes(Path(__file__).read_bytes())
- subprocess.run([str(ROOT/'target/release/contract-verify.exe'),str(out/'before_natural.json'),str(out/'native.json'),'30','2'],cwd=ROOT,check=False);print((out/'native.json').read_text(encoding='utf-8'))
+ subprocess.run([str(ROOT/('target/release/contract-verify' + ('.exe' if _research_os.name == 'nt' else ''))),str(out/'before_natural.json'),str(out/'native.json'),'30','2'],cwd=ROOT,check=False);print((out/'native.json').read_text(encoding='utf-8'))
 if __name__=='__main__':main()

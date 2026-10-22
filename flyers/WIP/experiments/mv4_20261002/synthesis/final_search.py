@@ -2,6 +2,7 @@
 Run: python final_search.py [search_seconds=2700]
 No candidates above encoded PL49, no simulator/editor changes, no subagents.
 """
+import os as _research_os
 import json,random,time,subprocess,collections,sys,math,traceback
 from pathlib import Path
 import six,search,final_router
@@ -18,7 +19,7 @@ prior=json.loads((search.OUT/'quick_six/results.json').read_text())['records']
 parents=[(baseline['centers'],[r for r,m in baseline['orientations']],[-1 if m else 1 for r,m in baseline['orientations']])]
 parents += [(r['centers'],parents[0][1],parents[0][2]) for r in prior if r['failure'][0]=='route']
 stats=collections.Counter();bestscore=None;bestmeta=None;winner=None;last_progress=0
-runner=search.ROOT/'target/release/fastflyer-research.exe'
+runner=search.ROOT/('target/release/fastflyer-research' + ('.exe' if _research_os.name == 'nt' else ''))
 audit=_tb('mv4-audit-fast')
 def checkpoint(status,**extra):
  record=dict(status=status,search_limit_seconds=LIMIT,elapsed_seconds=round(time.monotonic()-started,1),statistics=stats,best=bestmeta,**extra)

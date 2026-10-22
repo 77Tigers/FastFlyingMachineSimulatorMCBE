@@ -818,7 +818,7 @@
   "content_hash": "cdc3a82c93597b0daa13a0869a7d6abbf7c6e3c29eb4720eb6900897fefb0e86",
   "construction": {
     "scope": "Targeted X1 column/source relocation to free the rear observer corridor.\n\nKeep seven X1 honey, its rear pull target and foreign-normal pickup. Move\nboth own normal rows and source together; replace X0 leaf by the planned\nsticky. Rear motion stays entirely supplied: this is not pull integration.\n",
-    "base": "flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\X0_rear_pickup_wwmmm",
+    "base": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/X0_rear_pickup_wwmmm",
     "old_X1_glue": [
       [
         16,
@@ -921,8 +921,8 @@
     ],
     "carriage": "first on X0 at0/1/2; late on X0 at1/2 and X1 at3; source on X1 at0/3/4",
     "sha256": {
-      "flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\X0_rear_pickup_wwmmm\\problem.flyer": "5021b5d8cc3d86d93fc833c47ca9b3fa928ce5eca40653ed5707a1e3f086a1cd",
-      "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\rerow_X1_for_observer.py": "ec34f26876c6fb5a5a336b06d1cf89f71e77a5767fc1299fb0adc4d1fbeee825"
+      "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/X0_rear_pickup_wwmmm/problem.flyer": "5021b5d8cc3d86d93fc833c47ca9b3fa928ce5eca40653ed5707a1e3f086a1cd",
+      "flyers/WIP/experiments/contract_solver_20261014/rerow_X1_for_observer.py": "ec34f26876c6fb5a5a336b06d1cf89f71e77a5767fc1299fb0adc4d1fbeee825"
     }
   },
   "contracts": {
@@ -1702,7 +1702,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\X1_rerow_X0_six_glue\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/X1_rerow_X0_six_glue/drive.txt",
       "prescribed_order": "before_natural",
       "boundary_envelope": {
         "min": [
@@ -10049,7 +10049,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\X1_rerow_X0_six_glue\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/X1_rerow_X0_six_glue/drive.txt",
       "prescribed_order": "after_natural",
       "boundary_envelope": {
         "min": [
@@ -18396,7 +18396,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\X1_rerow_X0_six_glue\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/X1_rerow_X0_six_glue/drive.txt",
       "prescribed_order": "interleaved",
       "boundary_envelope": {
         "min": [

@@ -1,5 +1,6 @@
 """Shared helpers for the N2 extension-bank fixtures (reference trace analysis + fixture writers)."""
 from __future__ import annotations
+import os as _research_os
 import json, subprocess, sys
 from pathlib import Path
 
@@ -8,7 +9,7 @@ ROOT = HERE.parents[4]
 sys.path.insert(0, str(ROOT))
 from fastflyer import Flyer, Kind  # noqa: E402
 
-TRACE = ROOT / "target/release/extension-trace.exe"
+TRACE = ROOT / ('target/release/extension-trace' + ('.exe' if _research_os.name == 'nt' else ''))
 PERIOD, ADVANCE, CYCLES = 8, 2, 3
 
 
@@ -250,7 +251,7 @@ def show(ref_path, tick, box):
 
 def prescribed_states(dirpath, order="before", ticks=24, sample=None):
     d = Path(dirpath)
-    args = [str(ROOT / "target/release/extension-prescribe.exe"), str(d / "candidate.flyer"), str(ticks), str(d / "drive.txt"), order]
+    args = [str(ROOT / ('target/release/extension-prescribe' + ('.exe' if _research_os.name == 'nt' else ''))), str(d / "candidate.flyer"), str(ticks), str(d / "drive.txt"), order]
     if sample:
         args += list(map(str, sample))
     out = subprocess.run(args, capture_output=True, text=True).stdout

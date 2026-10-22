@@ -1,4 +1,5 @@
 """Combine G1 shared source and relocated H0 late motor with a seven-glue reroute."""
+import os as _research_os
 import argparse,json,hashlib,subprocess
 from pathlib import Path
 from assemble import Flyer,body_of
@@ -27,5 +28,5 @@ def main():
  for order in ['before_natural','after_natural','interleaved']:dump(out/f'{order}.json',{**c,'prescribed_order':order})
  budget=json.loads((base/'whole39_source_budget.json').read_text(encoding='utf-8'));budget['scope']='Joint H0 relocation/G1 shared-RB hypothesis; unchanged39 roles/masses/loads/peak12. H0 permanent10, G1 actual6 plus2future reserve within8. G1 pull1 still supplied; not complete flyer.';budget['source_allocation']['G1_power']={'glue':4,'shared_RB':1,'stone':1,'future_observer_or_glue_reserve':2,'mass':8};dump(out/'whole39_source_budget.json',budget)
  dump(out/'preparation.json',{'scope':__doc__+' Seventeen natural/thirteen supplied strokes attempted; not complete flyer.','lower_source':a.lower_source,'base_sha256':hashlib.sha256((base/'problem.flyer').read_bytes()).hexdigest(),'H0_glue':sorted(H0),'G1_glue':sorted(G1),'removed':sorted(remove),'added_hardware':[[*q,b.encode()] for q,b in new_hardware],'normalization_delta':delta,'H0_port_before_normalization':[20,4,14]});(out/'generator_snapshot.py').write_bytes(Path(__file__).read_bytes())
- subprocess.run([str(ROOT/'target/release/contract-verify.exe'),str(out/'before_natural.json'),str(out/'native.json'),'30','2'],cwd=ROOT,check=False);print((out/'native.json').read_text(encoding='utf-8'))
+ subprocess.run([str(ROOT/('target/release/contract-verify' + ('.exe' if _research_os.name == 'nt' else ''))),str(out/'before_natural.json'),str(out/'native.json'),'30','2'],cwd=ROOT,check=False);print((out/'native.json').read_text(encoding='utf-8'))
 if __name__=='__main__':main()

@@ -1,7 +1,8 @@
 """Shorten pulling target rails by putting all three target ports in one plane."""
+import os as _research_os
 from pathlib import Path
 import collections,json,subprocess
-HERE=Path(__file__).resolve().parent;ROOT=HERE.parents[3];RUNNER=ROOT/'target/release/fastflyer-research.exe'
+HERE=Path(__file__).resolve().parent;ROOT=HERE.parents[3];RUNNER=ROOT/('target/release/fastflyer-research' + ('.exe' if _research_os.name == 'nt' else ''))
 def main():
     s=(HERE/'derived_pull3_compact.py').read_text()
     s=s.replace('rng=random.Random(seed);ss=[set() for _ in S];ps=[];sources=[]','rng=random.Random(seed);ss=[set() for _ in S];ps=[];sources=[];fronts=[rng.choice((-1,0,1)) for _ in S]')

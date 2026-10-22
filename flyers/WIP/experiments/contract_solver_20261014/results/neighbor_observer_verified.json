@@ -193,7 +193,7 @@
   "construction": {
     "scope": "T/G all moves and rear slot2 natural; rear slots0/1, neighbor and tip supplied; all glue identities checked",
     "natural_flyer": false,
-    "source_case": "flyers\\WIP\\experiments\\contract_solver_20261014\\out\\joint_layout\\neighbor_observer_eight\\case00000",
+    "source_case": "flyers/WIP/experiments/contract_solver_20261014/out/joint_layout/neighbor_observer_eight/case00000",
     "reproduction": "joint_tip_layout.py OUT --neighbor-front-power --helper-body 8 --cases 1; prepare_local_checks.py CASE OUT --reproduction CONSTRUCTOR"
   },
   "contracts": {
@@ -1441,7 +1441,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\joint_layout\\neighbor_observer_verified\\check\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/joint_layout/neighbor_observer_verified/check/drive.txt",
       "prescribed_order": "before_natural",
       "boundary_envelope": {
         "min": [
@@ -5868,7 +5868,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\joint_layout\\neighbor_observer_verified\\check\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/joint_layout/neighbor_observer_verified/check/drive.txt",
       "prescribed_order": "after_natural",
       "boundary_envelope": {
         "min": [
@@ -10295,7 +10295,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\joint_layout\\neighbor_observer_verified\\check\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/joint_layout/neighbor_observer_verified/check/drive.txt",
       "prescribed_order": "interleaved",
       "boundary_envelope": {
         "min": [

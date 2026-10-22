@@ -3,6 +3,7 @@
 Adds one H0 glue/observer/sticky and one X1 stone, plus a one-glue T1
 whose pushes remain supplied. Natural pull3 is component evidence only.
 """
+import os as _research_os
 import argparse, copy, hashlib, importlib.util, itertools, json, subprocess, time
 from pathlib import Path
 from assemble import Flyer, body_of
@@ -94,7 +95,7 @@ def main():
         for order in ['before_natural','after_natural','interleaved']:dump(case/f'{order}.json',{**cc,'prescribed_order':order})
         dump(case/'preparation.json',rec)
         dump(case/'T1_push_connector_bound.json',push_connector_bound(q))
-        subprocess.run([str(ROOT/'target/release/contract-verify.exe'),str(case/'before_natural.json'),str(case/'native.json'),'30','2'],cwd=ROOT,capture_output=True,check=False)
+        subprocess.run([str(ROOT/('target/release/contract-verify' + ('.exe' if _research_os.name == 'nt' else ''))),str(case/'before_natural.json'),str(case/'native.json'),'30','2'],cwd=ROOT,capture_output=True,check=False)
         native=json.loads((case/'native.json').read_text(encoding='utf-8'));rec['verified']=native['verified'];records.append(rec)
         if native['verified']:passed=str(case);break
        if passed or time.monotonic()-start>a.seconds:break

@@ -1,4 +1,5 @@
 """Bounded continuation using the saved placement, hard candidate limit49."""
+import os as _research_os
 import six,search,json,subprocess
 from pathlib import Path
 out=search.OUT/'resume_candidates';out.mkdir(exist_ok=True)
@@ -12,7 +13,7 @@ for kind,seeds in [('six',range(8)),('three',range(30))]:
   if ans:
    f,m=ans;f.push_limit=49;p=out/f'{kind}_{seed}_pl49.flyer';f.save(p)
    rec['metadata']=m
-   run=subprocess.run([str(search.ROOT/'target/release/fastflyer-research.exe'),'audit',str(p),'120','12'],capture_output=True,text=True)
+   run=subprocess.run([str(search.ROOT/('target/release/fastflyer-research' + ('.exe' if _research_os.name == 'nt' else ''))),'audit',str(p),'120','12'],capture_output=True,text=True)
    rec['audit']=run.stdout+run.stderr
    print(kind,seed,m['counts'],rec['audit'],flush=True)
    records.append(rec);(search.OUT/'resume.json').write_text(json.dumps(records,indent=2))

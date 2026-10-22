@@ -4,6 +4,7 @@ The rear carrier's first2 moves and all3 X0 moves remain supplied. No claim
 of complete-flyer integration or long verification. Glue detours avoid the
 observer's trailing support joining its sticky at pull4.
 """
+import os as _research_os
 import argparse
 import hashlib
 import json
@@ -39,7 +40,7 @@ def main():
     prep={'scope':__doc__,'sticky':sticky,'observer':observer,'glue':glue,'fire':3,'pull':4,
           'budget':{'X0_fixture':2,'rear_fixture':7},'script_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest()}
     (a.out/'preparation.json').write_text(json.dumps(prep,indent=2)+'\n',encoding='utf-8')
-    p=subprocess.run([str(ROOT/'target/release/contract-verify.exe'),str(a.out/'before_natural.json'),str(a.out/'native.json'),'45','2'],cwd=ROOT,capture_output=True,text=True)
+    p=subprocess.run([str(ROOT/('target/release/contract-verify' + ('.exe' if _research_os.name == 'nt' else ''))),str(a.out/'before_natural.json'),str(a.out/'native.json'),'45','2'],cwd=ROOT,capture_output=True,text=True)
     assert (a.out/'native.json').exists(),p.stderr
     print((a.out/'native.json').read_text(encoding='utf-8'))
 

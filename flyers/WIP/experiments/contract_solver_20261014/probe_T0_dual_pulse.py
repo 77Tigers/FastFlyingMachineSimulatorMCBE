@@ -4,6 +4,7 @@ Isolated timing fixture: T0 pull0/push4 natural; T0 push3 and G0 1/2/3
 supplied. Optional reversed slot3 injection tests a same-stroke obstruction
 before calling the supplied interface evidence for natural integration.
 """
+import os as _research_os
 import argparse,hashlib,json,subprocess
 from pathlib import Path
 from assemble import Flyer
@@ -57,7 +58,7 @@ def main():
     for order in ['before_natural','after_natural','interleaved']:(a.out/f'{order}.json').write_text(json.dumps({**c,'prescribed_order':order},indent=2)+'\n',encoding='utf-8')
     (a.out/'preparation.json').write_text(json.dumps({'scope':__doc__,'reverse_slot3':a.reverse_slot3,'compact_route':a.compact_route,'solid_bridge':a.solid_bridge,'nonsticky_relay':a.nonsticky_relay,'base':str(a.base),'base_sha256':hashlib.sha256((a.base/'problem.flyer').read_bytes()).hexdigest(),'source_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest()},indent=2)+'\n',encoding='utf-8')
     (a.out/'generator_snapshot.py').write_bytes(Path(__file__).read_bytes())
-    proc=subprocess.run([str(ROOT/'target/release/contract-verify.exe'),str(a.out/'before_natural.json'),str(a.out/'native.json'),'30','2'],cwd=ROOT,capture_output=True)
+    proc=subprocess.run([str(ROOT/('target/release/contract-verify' + ('.exe' if _research_os.name == 'nt' else ''))),str(a.out/'before_natural.json'),str(a.out/'native.json'),'30','2'],cwd=ROOT,capture_output=True)
     assert (a.out/'native.json').exists(),proc.stderr
     print((a.out/'native.json').read_text(encoding='utf-8'))
 

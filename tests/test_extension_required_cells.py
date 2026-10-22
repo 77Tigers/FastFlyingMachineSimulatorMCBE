@@ -38,7 +38,10 @@ class RequiredCellsTests(unittest.TestCase):
 
     def test_run_case_preserves_initial_failure(self):
         from fastflyer import Block, Flyer, Kind
-        driver = _driver_path()
+        try:
+            driver = _driver_path()
+        except ContractError:
+            self.skipTest("build target/release/extension-trace to run integration test")
         with tempfile.TemporaryDirectory(dir=ROOT / "target") as temp:
             path = Path(temp) / "fixture.flyer"
             flyer = Flyer()

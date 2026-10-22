@@ -4,11 +4,12 @@ Reference-derived contacts with explicit alternative transverse embeddings;
 no simulator edits. Copies the old generator into this experiment so its
 diagnostic writes cannot overwrite prior evidence. Every result needs Rust.
 """
+import os as _research_os
 from pathlib import Path
 import sys,subprocess,json,csv,collections,hashlib,time
 ROOT=Path(__file__).resolve().parents[4];sys.path.insert(0,str(ROOT))
 HERE=Path(__file__).resolve().parent
-RUNNER=ROOT/'target/release/fastflyer-research.exe'
+RUNNER=ROOT/('target/release/fastflyer-research' + ('.exe' if _research_os.name == 'nt' else ''))
 ORIGINAL=ROOT/'flyers/WIP/experiments/astra_mmwm_20260928/search.py'
 
 def checkpoint(data):

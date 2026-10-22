@@ -4,6 +4,7 @@ Regenerate T0<=8,X0<=6,G0<=6,X1<=6; preserve original hardware counts,
 lower relay and H2/G2 sources. X0/G2/X1/T1 drives remain supplied.
 Native simulation decides candidate physics; full closure is not claimed.
 """
+import os as _research_os
 import argparse,itertools,json,subprocess,time
 from pathlib import Path
 from ortools.sat.python import cp_model
@@ -113,7 +114,7 @@ def main():
       if v=='supplied':rows.append((10*cy+2*slot,p['at'][0]+3*cy+p['word'][:slot].count('m'),*p['at'][1:],12))
    (case/'drive.txt').write_text(''.join(' '.join(map(str,r))+'\n' for r in sorted(rows)),encoding='utf-8')
    for order in ['before_natural','after_natural','interleaved']:dump(case/f'{order}.json',{**cc,'prescribed_order':order})
-   rec['shapes']=selected;dump(case/'preparation.json',rec);(case/'generator_snapshot.py').write_bytes(Path(__file__).read_bytes());subprocess.run([str(ROOT/'target/release/contract-verify.exe'),str(case/'before_natural.json'),str(case/'native.json'),'30','2'],cwd=ROOT,capture_output=True);rec['native']=json.loads((case/'native.json').read_text(encoding='utf-8'));print(json.dumps({'index':i,'native':rec['native']}),flush=True)
+   rec['shapes']=selected;dump(case/'preparation.json',rec);(case/'generator_snapshot.py').write_bytes(Path(__file__).read_bytes());subprocess.run([str(ROOT/('target/release/contract-verify' + ('.exe' if _research_os.name == 'nt' else ''))),str(case/'before_natural.json'),str(case/'native.json'),'30','2'],cwd=ROOT,capture_output=True);rec['native']=json.loads((case/'native.json').read_text(encoding='utf-8'));print(json.dumps({'index':i,'native':rec['native']}),flush=True)
    if rec['native']['verified']:passed=str(case)
   records.append(rec);dump(a.out/'report.json',{'scope':__doc__,'records':records,'choices':len(choices),'passed':passed,'seconds':time.monotonic()-start})
   if passed:break

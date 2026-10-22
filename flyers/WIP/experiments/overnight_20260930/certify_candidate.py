@@ -1,9 +1,10 @@
 """Certify a selected three-move/five-slot candidate at its measured load."""
+import os as _research_os
 from pathlib import Path
 import sys,subprocess,re
 ROOT=Path(__file__).resolve().parents[4];sys.path.insert(0,str(ROOT))
 from fastflyer import Flyer
-HERE=Path(__file__).resolve().parent;RUNNER=ROOT/'target/release/fastflyer-research.exe'
+HERE=Path(__file__).resolve().parent;RUNNER=ROOT/('target/release/fastflyer-research' + ('.exe' if _research_os.name == 'nt' else ''))
 def main():
     source=Path(sys.argv[1]);prefix=sys.argv[2];f=Flyer.load(source);f.push_limit=1000
     diagnostic=HERE/(prefix+'_diagnostic.flyer');f.save(diagnostic)

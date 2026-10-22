@@ -878,7 +878,7 @@
   "content_hash": "2a76696c729c216ae41b27f9c34c8e890895c38134058c46ac507f90dff1bfde",
   "construction": {
     "scope": "Bounded integration of the checked recovery-observer pull timing fixture.\n\nReplace X0 leaf14,5,11 with a sticky; regenerate <=9 honey for rear_pickup,\nincluding its old root, a pull target and observer support. Existing bodies\nstay fixed. Baseline traces exclude occupied cells and foreign honey contact.\nEach source gets one minimum-glue layout, then strict native verification.\n",
-    "base": "flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\X1_rerow_X0_six_glue",
+    "base": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/X1_rerow_X0_six_glue",
     "sticky": [
       14,
       3,
@@ -1720,7 +1720,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\rear11_observer_pull_1439\\case01\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/rear11_observer_pull_1439/case01/drive.txt",
       "prescribed_order": "before_natural",
       "boundary_envelope": {
         "min": [
@@ -10067,7 +10067,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\rear11_observer_pull_1439\\case01\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/rear11_observer_pull_1439/case01/drive.txt",
       "prescribed_order": "after_natural",
       "boundary_envelope": {
         "min": [
@@ -18414,7 +18414,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\rear11_observer_pull_1439\\case01\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/rear11_observer_pull_1439/case01/drive.txt",
       "prescribed_order": "interleaved",
       "boundary_envelope": {
         "min": [

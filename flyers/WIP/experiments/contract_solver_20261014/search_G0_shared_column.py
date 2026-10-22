@@ -2,6 +2,7 @@
 Regenerate <=6 G0 and <=8 T0 slime, retain relay/H2 drive and X0 carrier.
 Only native success is physical evidence; CP negatives apply to this domain.
 """
+import os as _research_os
 import argparse,hashlib,itertools,json,subprocess,time
 from pathlib import Path
 from ortools.sat.python import cp_model
@@ -102,7 +103,7 @@ def main():
    (case/'drive.txt').write_text(''.join(' '.join(map(str,r))+'\n' for r in sorted(rows)),encoding='utf-8')
    for order in ['before_natural','after_natural','interleaved']:dump(case/f'{order}.json',{**cc,'prescribed_order':order})
    rec.update(X0_glue=sorted(p for p,v in xg.items() if solver.Value(v)) if a.free_X0 else [x0],G0_glue=sorted(g),T0_glue=sorted(t),delta=delta,case=str(case));dump(case/'preparation.json',rec)
-   proc=subprocess.run([str(ROOT/'target/release/contract-verify.exe'),str(case/'before_natural.json'),str(case/'native.json'),'30','2'],cwd=ROOT,capture_output=True)
+   proc=subprocess.run([str(ROOT/('target/release/contract-verify' + ('.exe' if _research_os.name == 'nt' else ''))),str(case/'before_natural.json'),str(case/'native.json'),'30','2'],cwd=ROOT,capture_output=True)
    assert (case/'native.json').exists(),proc.stderr
    rec['native']=json.loads((case/'native.json').read_text(encoding='utf-8'))
    (case/'generator_snapshot.py').write_bytes(Path(__file__).read_bytes())

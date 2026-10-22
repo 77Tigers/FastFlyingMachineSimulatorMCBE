@@ -3,6 +3,7 @@
 Keeps both column rows, observer and helper geometry fixed. No reference input.
 Every accepted candidate must pass strict80x3 at encoded11. This is local only.
 """
+import os as _research_os
 import argparse
 import itertools
 import json
@@ -79,7 +80,7 @@ def main():
                     c["ports"][0]["at"] = list(min(kept))
                 c["required_cells"] = [{"at":list(p),"cell":b.encode()} for p,b in f._cells.items() if b.kind != 10]
                 (folder/"before_natural.json").write_text(json.dumps(c,indent=2)+"\n")
-                run = subprocess.run([str(ROOT/"target/release/contract-verify.exe"),str(folder/"before_natural.json"),str(folder/"result.json"),"5","4"],capture_output=True,text=True)
+                run = subprocess.run([str(ROOT/('target/release/contract-verify' + ('.exe' if _research_os.name == 'nt' else ''))),str(folder/"before_natural.json"),str(folder/"result.json"),"5","4"],capture_output=True,text=True)
                 report = json.loads((folder/"result.json").read_text())
                 results.append({"case":folder.name,"deleted":deleted,"power_at":power_at,"remaining_glue":len(kept),"exit_code":run.returncode,**report})
             if not complete:

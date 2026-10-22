@@ -824,7 +824,7 @@
   "content_hash": "5021b5d8cc3d86d93fc833c47ca9b3fa928ce5eca40653ed5707a1e3f086a1cd",
   "construction": {
     "scope": "Test an explicitly supplied wwmmm rear pickup against natural X0 startup.\n\nThis adds no realized driver for the pickup body. It is a causal diagnostic,\nnot a complete flyer or an accepted component. Encoded push limit stays12.\n",
-    "base": "flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\X0_natural_completion_132\\lower_row\\startup_witness",
+    "base": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/X0_natural_completion_132/lower_row/startup_witness",
     "rear_pickup_original": [
       13,
       1,
@@ -1615,7 +1615,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\X0_rear_pickup_wwmmm\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/X0_rear_pickup_wwmmm/drive.txt",
       "prescribed_order": "before_natural",
       "boundary_envelope": {
         "min": [
@@ -9962,7 +9962,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\X0_rear_pickup_wwmmm\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/X0_rear_pickup_wwmmm/drive.txt",
       "prescribed_order": "after_natural",
       "boundary_envelope": {
         "min": [
@@ -18309,7 +18309,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\X0_rear_pickup_wwmmm\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/X0_rear_pickup_wwmmm/drive.txt",
       "prescribed_order": "interleaved",
       "boundary_envelope": {
         "min": [

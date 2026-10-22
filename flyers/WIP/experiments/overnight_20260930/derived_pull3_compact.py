@@ -4,12 +4,13 @@ Each of15 sticky pistons extends in f-1, pulls in f, and must be carried
 in the other three slots. Separate power/helper bodies discharge those
 transport obligations; the old single-support burst is not reused.
 """
+import os as _research_os
 from pathlib import Path
 import sys,random,heapq,functools,collections,json,subprocess,csv
 ROOT=Path(__file__).resolve().parents[4];sys.path.insert(0,str(ROOT))
 from fastflyer import Flyer,Block,Kind
 HERE=Path(__file__).resolve().parent
-RUNNER=ROOT/'target/release/fastflyer-research.exe'
+RUNNER=ROOT/('target/release/fastflyer-research' + ('.exe' if _research_os.name == 'nt' else ''))
 D=((1,0,0),(-1,0,0),(0,1,0),(0,-1,0),(0,0,1),(0,0,-1))
 N=10
 S=[[(t+p%5)%5<3 for t in range(5)] for p in range(N)]

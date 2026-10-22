@@ -1,4 +1,5 @@
 """Fixed-parent passenger destination witnesses; immovable adjacency alone is not a collision."""
+import os as _research_os
 import json,subprocess,hashlib
 from pathlib import Path
 HERE=Path(__file__).resolve().parent;ROOT=HERE.parents[3]
@@ -6,7 +7,7 @@ def main():
  base=HERE/'out/quarter_ring_contacts/T1_sticky_on_G1_transfer';out=HERE/'out/quarter_ring_contacts/H0_passenger_sweeps';out.mkdir(exist_ok=True);assert not (out/'report.json').exists()
  ports={tuple(p['at']):p['name'] for p in json.loads((base/'before_natural.json').read_text(encoding='utf-8'))['ports']};records=[]
  for order in ['before','after','interleaved']:
-  p=subprocess.run([str(ROOT/'target/release/extension-prescribe.exe'),str(base/'problem.flyer'),'30',str(base/'drive.txt'),order,'0','0','7'],cwd=ROOT,capture_output=True,text=True,encoding='utf-8',check=True)
+  p=subprocess.run([str(ROOT/('target/release/extension-prescribe' + ('.exe' if _research_os.name == 'nt' else ''))),str(base/'problem.flyer'),'30',str(base/'drive.txt'),order,'0','0','7'],cwd=ROOT,capture_output=True,text=True,encoding='utf-8',check=True)
   (out/f'{order}.jsonl').write_text(p.stdout,encoding='utf-8');rows=[json.loads(line) for line in p.stdout.splitlines()];origins={tuple(c[:3]):tuple(c[:3]) for c in rows[0]['trace']['initial'] if c[3]&15!=10}
   for row in rows:
    if row['tick']>=10:break

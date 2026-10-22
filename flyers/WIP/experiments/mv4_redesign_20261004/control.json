@@ -1,6 +1,6 @@
 {
-  "control": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_redesign_20261004\\control_pl43.flyer",
-  "source": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\bank\\pl43\\mv4_symmetric_easy_compact.flyer",
+  "control": "flyers/WIP/experiments/mv4_redesign_20261004/control_pl43.flyer",
+  "source": "flyers/bank/pl43/mv4_symmetric_easy_compact.flyer",
   "same_content_hash": true,
   "short80_pass": true,
   "counts": [

@@ -4,6 +4,7 @@ Keep seven X1 honey, its rear pull target and foreign-normal pickup. Move
 both own normal rows and source together; replace X0 leaf by the planned
 sticky. Rear motion stays entirely supplied: this is not pull integration.
 """
+import os as _research_os
 import argparse,hashlib,json,subprocess
 from pathlib import Path
 from assemble import Flyer,body_of
@@ -44,7 +45,7 @@ def main():
           'sha256':{str(p):hashlib.sha256(p.read_bytes()).hexdigest() for p in [a.base/'problem.flyer',Path(__file__)]}}
     (a.out/'preparation.json').write_text(json.dumps(prep,indent=2)+'\n',encoding='utf-8')
     (a.out/'generator_snapshot.py').write_bytes(Path(__file__).read_bytes())
-    subprocess.run([str(ROOT/'target/release/contract-verify.exe'),str(a.out/'before_natural.json'),str(a.out/'native.json'),'45','2'],cwd=ROOT,capture_output=True)
+    subprocess.run([str(ROOT/('target/release/contract-verify' + ('.exe' if _research_os.name == 'nt' else ''))),str(a.out/'before_natural.json'),str(a.out/'native.json'),'45','2'],cwd=ROOT,capture_output=True)
     print((a.out/'native.json').read_text())
 
 

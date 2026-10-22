@@ -3,6 +3,7 @@
 The G2 source follows wwmmm; its three moves remain explicit inputs. This is
 a loaded component test, not a complete flyer or a net reduction of inputs.
 """
+import os as _research_os
 import argparse
 import hashlib
 import json
@@ -61,7 +62,7 @@ def main():
                        [a.base / 'problem.flyer', a.base / 'before_natural.json',
                         a.base / 'drive.txt', Path(__file__)]}}
     (a.out / 'preparation.json').write_text(json.dumps(prep, indent=2) + '\n', encoding='utf-8')
-    r = subprocess.run([str(ROOT / 'target/release/contract-verify.exe'),
+    r = subprocess.run([str(ROOT / ('target/release/contract-verify' + ('.exe' if _research_os.name == 'nt' else ''))),
                         str(a.out / 'before_natural.json'), str(a.out / 'native.json'), '90', '2'],
                        cwd=ROOT, capture_output=True, text=True)
     assert (a.out / 'native.json').exists(), r.stderr

@@ -3,6 +3,7 @@
 Preserve geometry and every natural/supplied obligation; move its arm with it,
 or test a retracted start. Every variant gets strict encoded11 standard checks.
 """
+import os as _research_os
 import argparse
 import copy
 import itertools
@@ -70,7 +71,7 @@ def main():
         c.update(flyer="problem.flyer", prescribed_script="drive.txt")
         (out / "problem.json").write_text(json.dumps(c, indent=2)+"\n", encoding="utf-8")
         (out / "drive.txt").write_text("\n".join(" ".join(map(str,(t,*sh((x,y,z)),cap))) for t,x,y,z,cap in drive)+"\n")
-        subprocess.run([str(ROOT / "target/release/contract-verify.exe"),str(out / "problem.json"),str(out / "result.json"),"10","4"], capture_output=True)
+        subprocess.run([str(ROOT / ('target/release/contract-verify' + ('.exe' if _research_os.name == 'nt' else ''))),str(out / "problem.json"),str(out / "result.json"),"10","4"], capture_output=True)
         report = json.loads((out / "result.json").read_text())
         state["cases"].append({"case":out.name,"delta":delta,"extended":extended,"sticky":sticky,**report})
         save()

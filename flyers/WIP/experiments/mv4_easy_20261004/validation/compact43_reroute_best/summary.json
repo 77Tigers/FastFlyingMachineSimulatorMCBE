@@ -1,6 +1,6 @@
 {
   "status": "verified",
-  "source": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\WIP\\experiments\\mv4_easy_20261004\\compact43\\reroute_best.flyer",
+  "source": "flyers/WIP/experiments/mv4_easy_20261004/compact43/reroute_best.flyer",
   "fields": {
     "limit": "43",
     "start_min_x": "12",
@@ -21,6 +21,6 @@
     "extension_failures": "9",
     "movement_failures": "9"
   },
-  "artifact": "C:\\Users\\Ruben\\OneDrive\\Documents\\FastFlyerPlayground\\flyers\\bank\\pl43\\mv4_symmetric_easy_compact.flyer",
+  "artifact": "flyers/bank/pl43/mv4_symmetric_easy_compact.flyer",
   "sha256": "bbcdbe089b3f63630af21cb4bd04aa8fb80d6abe7870a5ce40c1bfb4bae41c47"
 }

@@ -3,6 +3,7 @@
 This is a causal audit, not acceptance. Failed discovery sets are partial lower
 bounds, never successful loads. Independent80x3 and long proofs remain separate.
 """
+import os as _research_os
 import argparse
 from collections import Counter
 import json
@@ -14,7 +15,7 @@ ROOT=Path(__file__).resolve().parents[4]
 def main():
     ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('run',type=Path)
     a=ap.parse_args();p=a.run
-    r=subprocess.run([str(ROOT/'target/release/extension-prescribe.exe'),str(p/'problem.flyer'),'30',str(p/'drive.txt'),'before','0','0','0'],cwd=ROOT,capture_output=True,text=True)
+    r=subprocess.run([str(ROOT/('target/release/extension-prescribe' + ('.exe' if _research_os.name == 'nt' else ''))),str(p/'problem.flyer'),'30',str(p/'drive.txt'),'before','0','0','0'],cwd=ROOT,capture_output=True,text=True)
     (p/'trace_before.jsonl').write_text(r.stdout,encoding='utf-8')
     rows=[json.loads(s) for s in r.stdout.splitlines()]
     origins={tuple(c[:3]):tuple(c[:3]) for c in rows[0]['trace']['initial'] if c[3]&15!=10}

@@ -3,6 +3,7 @@
 Missing boundary carriers and front pulls remain absent. This is a causal
 startup probe, never a physical contract verification or complete flyer.
 """
+import os as _research_os
 import argparse
 import hashlib
 import json
@@ -89,7 +90,7 @@ def probe(source,out,ticks):
         delta=tuple(min(p[k] for p in g._cells)-min(p[k] for p in f._cells) for k in range(3))
         report['normalization_delta']=delta
         with (out/'trace.jsonl').open('w',encoding='utf-8') as handle:
-            process=subprocess.run([str(ROOT/'target/release/extension-trace.exe'),str(out/'probe.flyer'),str(ticks),'0','0','0'],stdout=handle,stderr=subprocess.PIPE,text=True)
+            process=subprocess.run([str(ROOT/('target/release/extension-trace' + ('.exe' if _research_os.name == 'nt' else ''))),str(out/'probe.flyer'),str(ticks),'0','0','0'],stdout=handle,stderr=subprocess.PIPE,text=True)
         traces=[json.loads(line) for line in (out/'trace.jsonl').read_text(encoding='utf-8').splitlines()]
         failures=[]; moves=[]; timing_alerts=[]
         origins={tuple(x+d for x,d in zip(a['at'],delta)):a for a in actors}

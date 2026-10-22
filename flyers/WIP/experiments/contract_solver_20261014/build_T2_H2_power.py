@@ -4,6 +4,7 @@ Correct contact uses sticky=q+3: T2 has advanced once before pull1, while
 G2 has not advanced. This adds a boundary source, not a complete flyer.
 No T2 observer/passenger is added to its full twelve-cell stroke.
 """
+import os as _research_os
 import argparse,hashlib,json,subprocess
 from pathlib import Path
 from assemble import Flyer
@@ -40,7 +41,7 @@ def main():
           'sha256':{str(p):hashlib.sha256(p.read_bytes()).hexdigest() for p in
                     [a.base/'problem.flyer',a.base/'drive.txt',a.base/'before_natural.json',Path(__file__)]}}
     (a.out/'preparation.json').write_text(json.dumps(prep,indent=2)+'\n',encoding='utf-8')
-    run=subprocess.run([str(ROOT/'target/release/contract-verify.exe'),str(a.out/'before_natural.json'),str(a.out/'native.json'),'90','2'],cwd=ROOT,capture_output=True,text=True)
+    run=subprocess.run([str(ROOT/('target/release/contract-verify' + ('.exe' if _research_os.name == 'nt' else ''))),str(a.out/'before_natural.json'),str(a.out/'native.json'),'90','2'],cwd=ROOT,capture_output=True,text=True)
     assert (a.out/'native.json').exists(),run.stderr
     print((a.out/'native.json').read_text(encoding='utf-8'))
 

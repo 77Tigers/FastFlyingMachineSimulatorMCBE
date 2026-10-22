@@ -1,7 +1,7 @@
 """New-source variant of the pull-only passenger graft, bounded at PL24."""
 import sys,os,re,json,itertools,subprocess,collections,random,functools
 from pathlib import Path
-sys.path.insert(0,r"C:/Users/Ruben/OneDrive/Documents/FastFlyerPlayground/flyers/WIP/experiments/exclusive_roles_20261001")
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from graft import HERE,sx,nb,offset
 from fastflyer import Flyer,Block,Kind
 def _tb(n):

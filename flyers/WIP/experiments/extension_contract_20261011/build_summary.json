@@ -219,7 +219,7 @@
       }
     }
   },
-  "trace_executable": "target\\release\\extension-trace.exe",
+  "trace_executable": "target/release/extension-trace.exe",
   "elapsed_seconds": 0.293,
   "sha256": {
     "source": "a870e1f32cc23aee9d52773aa178e04b4527ae916fbebafebe3a3a12add04659",

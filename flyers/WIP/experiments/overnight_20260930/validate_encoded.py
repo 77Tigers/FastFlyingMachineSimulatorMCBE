@@ -1,7 +1,8 @@
 """Validate an already encoded lead without repeating its diagnostic run."""
+import os as _research_os
 from pathlib import Path
 import sys,subprocess
-ROOT=Path(__file__).resolve().parents[4];RUNNER=ROOT/'target/release/fastflyer-research.exe'
+ROOT=Path(__file__).resolve().parents[4];RUNNER=ROOT/('target/release/fastflyer-research' + ('.exe' if _research_os.name == 'nt' else ''))
 def main():
     path=Path(sys.argv[1]);period=int(sys.argv[2]);advance=int(sys.argv[3])
     commands=[('verify',[str(path),'10000','--period',str(period),'--advance',str(advance)]),('audit',[str(path),'10000',str(period)])]

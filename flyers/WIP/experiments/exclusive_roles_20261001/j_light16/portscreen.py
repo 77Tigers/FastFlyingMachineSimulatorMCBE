@@ -1,5 +1,5 @@
 import sys,os,json,subprocess,re
-sys.path.insert(0,'C:/Users/Ruben/OneDrive/Documents/FastFlyerPlayground')
+sys.path.insert(0,str(__import__("pathlib").Path(__file__).resolve().parents[5]))
 from fastflyer import Flyer,Block,Kind
 from pathlib import Path
 def _tb(n):

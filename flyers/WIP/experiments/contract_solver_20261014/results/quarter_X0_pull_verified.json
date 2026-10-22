@@ -674,7 +674,7 @@
   "content_hash": "5492e9f3e84769fa7c958656c4f211c5a0a79c9d473fdb2bbca94d3eb0706ec8",
   "construction": {
     "scope": "Test X0 pull2 using an existing T1 source and a T0-carried sticky.\n\nAdd T0 honey17,3,12 and sticky17,3,11. At fire1 the sticky is18,3,11\nnext to the natural T1 RB18,2,11. At pull2 it reaches X0 glue16,3,11.\nOnly X0 slot2 is removed from supplied inputs. Other loaded hardware stays.\n",
-    "base": "flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\H2_natural_column_v2",
+    "base": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/H2_natural_column_v2",
     "added_cells": [
       [
         14,
@@ -708,10 +708,10 @@
     ],
     "lower_variant": true,
     "sha256": {
-      "flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\H2_natural_column_v2\\problem.flyer": "6b4ea473fa0027d3c66ca1d1eac8c0452261c63368d252e55e18e76c7c4ce99b",
-      "flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\H2_natural_column_v2\\drive.txt": "06f7a805bd0f3490e4d5c3901daff6b690140487f4ed0b2cc1f4abae2c0c4b4c",
-      "flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\H2_natural_column_v2\\before_natural.json": "a1dc21f6c4b5564a59ff9a20714b790898ec9257c70b5a8464b6c731d8aa4858",
-      "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\build_X0_pull.py": "96da58409f997f07de6ba75ea1f209c6134a35bbbb0da429e983a19cd062a27a"
+      "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/H2_natural_column_v2/problem.flyer": "6b4ea473fa0027d3c66ca1d1eac8c0452261c63368d252e55e18e76c7c4ce99b",
+      "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/H2_natural_column_v2/drive.txt": "06f7a805bd0f3490e4d5c3901daff6b690140487f4ed0b2cc1f4abae2c0c4b4c",
+      "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/H2_natural_column_v2/before_natural.json": "a1dc21f6c4b5564a59ff9a20714b790898ec9257c70b5a8464b6c731d8aa4858",
+      "flyers/WIP/experiments/contract_solver_20261014/build_X0_pull.py": "96da58409f997f07de6ba75ea1f209c6134a35bbbb0da429e983a19cd062a27a"
     }
   },
   "contracts": {
@@ -1338,7 +1338,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\X0_pull_lower\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/X0_pull_lower/drive.txt",
       "prescribed_order": "before_natural",
       "boundary_envelope": {
         "min": [
@@ -8005,7 +8005,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\X0_pull_lower\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/X0_pull_lower/drive.txt",
       "prescribed_order": "after_natural",
       "boundary_envelope": {
         "min": [
@@ -14672,7 +14672,7 @@
       "cycles": 3,
       "recurrence": "bounded",
       "drive_script": null,
-      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\X0_pull_lower\\drive.txt",
+      "prescribed_script": "flyers/WIP/experiments/contract_solver_20261014/out/quarter_ring_contacts/X0_pull_lower/drive.txt",
       "prescribed_order": "interleaved",
       "boundary_envelope": {
         "min": [

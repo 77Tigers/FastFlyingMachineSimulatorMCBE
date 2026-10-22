@@ -5,6 +5,7 @@ Rear wwmmm carries its source and the unfired normal at2. Rear pushes2/3
 are natural; front moves and rear4 stay supplied. Nominal normal firing
 identities may exchange. This is an isolated interface, not a complete flyer.
 """
+import os as _research_os
 import argparse,hashlib,json,subprocess
 from pathlib import Path
 from assemble import Flyer
@@ -37,7 +38,7 @@ def main():
     (a.out/'preparation.json').write_text(json.dumps({'scope':__doc__,'front_glue':sorted(fg),'rear_glue':sorted(rg),'source':[14,2,11],
         'normal_origins':[[12,1,11],[12,3,11]],'script_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest()},indent=2)+'\n',encoding='utf-8')
     (a.out/'generator_snapshot.py').write_bytes(Path(__file__).read_bytes())
-    subprocess.run([str(ROOT/'target/release/contract-verify.exe'),str(a.out/'before_natural.json'),str(a.out/'native.json'),'30','2'],cwd=ROOT,capture_output=True)
+    subprocess.run([str(ROOT/('target/release/contract-verify' + ('.exe' if _research_os.name == 'nt' else ''))),str(a.out/'before_natural.json'),str(a.out/'native.json'),'30','2'],cwd=ROOT,capture_output=True)
     print((a.out/'native.json').read_text(encoding='utf-8'))
 
 

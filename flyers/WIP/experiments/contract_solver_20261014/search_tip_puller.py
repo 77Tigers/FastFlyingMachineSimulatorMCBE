@@ -3,6 +3,7 @@
 All verified mechanism cells pinned; no external hardware library. Search cap64
 results are leads only and need independent encoded11 checking before acceptance.
 """
+import os as _research_os
 import argparse
 import hashlib
 import json
@@ -62,7 +63,7 @@ def main():
         supplied += [(t,*port_pos(tip,t,10,3),11) for t in range(c["cycles"]*10) if t%10 in (0,2,8)]
         (folder/"drive.txt").write_text("\n".join(" ".join(map(str,r)) for r in sorted(supplied))+"\n")
         (folder/"problem.json").write_text(json.dumps(c,indent=2)+"\n")
-        cmd=[str(ROOT/"target/release/contract-solve.exe"),str(folder/"problem.json"),str(folder/"solve"),"--budget",str(a.budget),"--threads","4","--library",str(empty),"--holdout","--quiet","--seed","1"]
+        cmd=[str(ROOT/('target/release/contract-solve' + ('.exe' if _research_os.name == 'nt' else ''))),str(folder/"problem.json"),str(folder/"solve"),"--budget",str(a.budget),"--threads","4","--library",str(empty),"--holdout","--quiet","--seed","1"]
         row["command"]=cmd; save()
         with (folder/"solve.log").open("w") as log:
             subprocess.run(cmd,stdout=log,stderr=subprocess.STDOUT,check=True)

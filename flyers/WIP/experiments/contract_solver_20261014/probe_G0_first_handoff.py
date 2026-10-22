@@ -3,6 +3,7 @@
 All X0 moves and G0 moves2/3 supplied. Only G0 push1 natural. A proposed
 passenger transfer, not loaded integration or a complete flyer.
 """
+import os as _research_os
 import argparse,hashlib,json,subprocess
 from pathlib import Path
 from assemble import Flyer
@@ -30,7 +31,7 @@ def main():
     for order in ['before_natural','after_natural','interleaved']:(a.out/f'{order}.json').write_text(json.dumps({**c,'prescribed_order':order},indent=2)+'\n',encoding='utf-8')
     (a.out/'preparation.json').write_text(json.dumps({'scope':__doc__,'honey':sorted(honey),'normal':normal,'source':source,'script_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest()},indent=2)+'\n',encoding='utf-8')
     (a.out/'generator_snapshot.py').write_bytes(Path(__file__).read_bytes())
-    proc=subprocess.run([str(ROOT/'target/release/contract-verify.exe'),str(a.out/'before_natural.json'),str(a.out/'native.json'),'30','2'],cwd=ROOT,capture_output=True)
+    proc=subprocess.run([str(ROOT/('target/release/contract-verify' + ('.exe' if _research_os.name == 'nt' else ''))),str(a.out/'before_natural.json'),str(a.out/'native.json'),'30','2'],cwd=ROOT,capture_output=True)
     assert (a.out/'native.json').exists(),proc.stderr
     print((a.out/'native.json').read_text(encoding='utf-8'))
 if __name__=='__main__':main()
