@@ -59,3 +59,8 @@ x=1 over pushers + RBs, next body's cover = slab at x=-3 behind the pushers.
   at k=8 even with mirror-symmetric modules (`cp_module.solve(sym=True)` costs the same as unsymmetric ones).
   Wider straight-link offsets (z shift up to +-b) also give no gain (k=8, 12, 16).
 - Exact straight-link module (`cp_square.py`: gap-lane side cover + riser beside an empty edge lane): -1 at k=8 only.
+- Human N3 (`bank/pl12/human_3bps_original`, PL12; studied with `flyer-ledger --period 10`, not reused): 20 bodies of
+  3-7 glue cells, 60 pistons (10 sticky), (glue+RB+glass)/piston = 2.2. Many pushes are rigid (a resting body pushes
+  several bodies that rested the slot before), which covers 2 of 3 moves at k=3; for large k rigid moves stay at
+  ~2 per body per cycle, so hoppers (with their carrier glue) dominate. A rigid pusher on the next body W is
+  equivalent to a hopper that W carries all the time (same cost).
