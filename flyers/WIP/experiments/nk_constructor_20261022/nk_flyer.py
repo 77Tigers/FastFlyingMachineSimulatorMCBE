@@ -8,8 +8,16 @@ import sqbuild
 
 
 def build(k):
+    """joint-CP square ring if joint_table.json has k (and it is better), else the square_table.json ring."""
     table = json.load(open(HERE / 'square_table.json'))
     ring = sqbuild.build_fast(k, table)
+    jt = HERE / 'joint_table.json'
+    if jt.exists():
+        jtab = json.load(open(jt))
+        if str(k) in jtab and jtab[str(k)][0] < max(ring.size()):
+            import joint_build
+            res = json.load(open(HERE / 'modules_joint.json'))[str(k)]
+            ring = joint_build.build(k, res, jtab[str(k)][1])
     return ring, max(ring.size()) + k
 
 

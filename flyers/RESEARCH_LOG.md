@@ -51,7 +51,7 @@ An extension challenge specifies driven input blocks/schedules, spare load **per
 
 ## N6: 3.75 bps four-body push ring (2026-10-20)
 
-Each body's 6 hopping pushers race on its RBs; the next body recovers spent ones. **N_k counting:** k+2 slots, each body still 2, r resting per slot: 2B = r(k+2), so B=(k+2)/2 for even k (N8: 5); odd k: r=2, B=k+2 (N5: 7, N7: 9), or uneven rests. Riders per mover average k (load = glue + RBs + k). Best: **PL26** (3-RB module, 90-degree screw), 80/80, banked `bank/pl26/n6_screw_ring_3p75.flyer`. [Findings, tools](WIP/experiments/n6_20261020/README.md). **N_k constructor:** square rings, k=3..24 sum 1206; [README](WIP/experiments/nk_constructor_20261022/README.md).
+Each body's 6 hopping pushers race on its RBs; the next body recovers spent ones. **N_k counting:** k+2 slots, each body still 2, r resting per slot: 2B = r(k+2), so B=(k+2)/2 for even k (N8: 5); odd k: r=2, B=k+2 (N5: 7, N7: 9), or uneven rests. Riders per mover average k (load = glue + RBs + k). Best: **PL26** (3-RB module, 90-degree screw), 80/80, banked `bank/pl26/n6_screw_ring_3p75.flyer`. [Findings, tools](WIP/experiments/n6_20261020/README.md). **N_k constructor:** square rings, k=3..24 sum 1202; [README](WIP/experiments/nk_constructor_20261022/README.md).
 
 ## Low-PL records: 2.5 bps at PL8, 2 bps at PL10, PL7 status
 
