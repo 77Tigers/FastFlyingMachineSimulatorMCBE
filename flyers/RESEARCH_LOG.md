@@ -49,6 +49,10 @@ An extension challenge specifies driven input blocks/schedules, spare load **per
 
 **Standing user rule (restated 2026-10-03): ANY VALID START STATE IS ALLOWED** (mid-cycle snapshots, pre-extended pistons, etc.; no ballast/debris). Do not ask again.
 
+## N6: 3.75 bps four-body push ring (2026-10-20)
+
+Bodies A-D rest at {0,1},{2,3},{4,5},{6,7}; each is pushed 6 times by 6 hopping pushers powered by its 2 RBs; the next body carries spent pushers back during the victim's rest. Load = glue + RBs + 6. Best: **PL26** (3-RB ring module, 90-degree screw), 80/80 at 3750, banked `bank/pl26/n6_screw_ring_3p75.flyer`. [Findings, tools](WIP/experiments/n6_20261020/README.md).
+
 ## Low-PL records: 2.5 bps at PL8, 2 bps at PL10, PL7 status
 
 **Record: `bank/pl8/hop_pair_rod_observer.flyer`, 2.5 bps at PL8**, 18 blocks: two 6-cell bodies (A mwmw, B wmwm) and four hand-off pistons (X1/X2 push A at s0/s2, Y1/Y2 pull B at s1/s3; each rides one move of each body), powered by a rod on A hard-powering A's own slime (relay timed by the rider's position) and an observer on B. Exact 10000-tick recurrence, 80/80, fails at PL7. Found by `rigid_chain_20261003/hop4.py` (exact minimum-glue bodies + power repair + slot checker `rigid.py`). Mechanism entry `bank/pl9/rigid_chain_capped.flyer`: a 5-block rigid chain with rear and front caps; middle segments load 5, only the caps cost 9. [Rigid findings](WIP/experiments/rigid_chain_20261003/FINDINGS.md); earlier negatives: [pl8_25 findings](WIP/experiments/pl8_25_20261003/FINDINGS.md).

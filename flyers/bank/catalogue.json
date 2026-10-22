@@ -1,6 +1,6 @@
 {
   "format_version": 1,
-  "engine_sha256": "563b8b315fb7dafe69b0d6325431a8251af1f59167bcdf986f33e20103273071",
+  "engine_sha256": "6b3c62324431c50fee29c0ffcc0be7d83a475661b49dc8b2c74fa82eaccabaf8",
   "ticks_per_second": 10,
   "entries": {
     "flyers/bank/pl10/human_observer_hop.flyer": {
@@ -441,6 +441,15 @@
       "distance": 3333,
       "speed_bps": 3.333,
       "extensions": 43334,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl26/n6_screw_ring_3p75.flyer": {
+      "sha256": "7214d1020099940963e7ae3b5819382599c7fb7132f0fbdf603267dbd77aee75",
+      "ticks": 10000,
+      "distance": 3750,
+      "speed_bps": 3.75,
+      "extensions": 15000,
       "extension_failures": 0,
       "endpoint_conserved": true
     },
