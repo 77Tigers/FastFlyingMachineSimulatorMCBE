@@ -8,6 +8,7 @@ minimum-glue solve; FEASIBLE does not imply optimal. Strict native checking
 decides physics; rear pushes2/3 remain supplied.
 """
 import argparse,hashlib,json,subprocess
+from collections import deque
 from pathlib import Path
 from ortools.sat.python import cp_model
 from assemble import Flyer
@@ -19,10 +20,47 @@ D=[(1,0,0),(-1,0,0),(0,1,0),(0,-1,0),(0,0,1),(0,0,-1)]
 def adj(p):return [tuple(a+b for a,b in zip(p,d)) for d in D]
 
 
+def three_terminal_tree(nodes,root,target,support):
+    """Exact unweighted Steiner tree for root, target and any support cell.
+
+    An optimal three-terminal tree has a branch vertex v. Minimizing the
+    sum of the three graph distances at v therefore gives its exact edge
+    count. Multi-source BFS handles the choice of observer support.
+    """
+    def bfs(starts):
+        dist={p:0 for p in starts if p in nodes};parent={p:None for p in dist};q=deque(dist)
+        while q:
+            p=q.popleft()
+            for n in adj(p):
+                if n in nodes and n not in dist:
+                    dist[n]=dist[p]+1;parent[n]=p;q.append(n)
+        return dist,parent
+    maps=[bfs([root]),bfs([target]),bfs(support)]
+    common=set.intersection(*(set(d) for d,p in maps))
+    if not common:return None,None
+    branch=min(common,key=lambda v:(sum(d[v] for d,p in maps),v))
+    cost=sum(d[branch] for d,p in maps)+1;shape=set()
+    for dist,parent in maps:
+        p=branch
+        while p is not None:shape.add(p);p=parent[p]
+    assert len(shape)==cost and root in shape and target in shape and shape&set(support)
+    # Independently check the witness as a connected set.
+    seen={root};pending=[root]
+    while pending:
+        for n in adj(pending.pop()):
+            if n in shape and n not in seen:seen.add(n);pending.append(n)
+    assert seen==shape
+    return shape,cost
+
+
 def main():
     ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('base',type=Path);ap.add_argument('out',type=Path)
     ap.add_argument('--sticky',default='14,5,11',help='X0-carried -X sticky initial site')
     ap.add_argument('--phase-z',type=int,default=0,help='Existing baseline trace sample')
+    ap.add_argument('--glue-cap',type=int,default=9,help='Rear honey budget;8 reserves a new RB for the push pair')
+    ap.add_argument('--cp-seconds',type=float,default=6,help='Bound per observer orientation')
+    ap.add_argument('--observer-index',type=int,action='append',choices=range(5),help='Test only selected canonical orientations')
+    ap.add_argument('--exact-steiner',action='store_true',help='Solve the three-contact routing graph exactly by BFS')
     a=ap.parse_args();a.out.mkdir(parents=True,exist_ok=False)
     root=(13,3,11);sticky=tuple(map(int,a.sticky.split(',')));target=(sticky[0]-1,*sticky[1:])
     assert len(sticky)==3 and sticky[0]==14
@@ -56,6 +94,7 @@ def main():
     y,z=sticky[1:]
     options=[((16,y+1,z),3),((16,y-1,z),2),((16,y,z+1),5),((16,y,z-1),4),((17,y,z),1)]
     for index,(observer,direction) in enumerate(options):
+        if a.observer_index is not None and index not in a.observer_index:continue
         rec={'observer':observer,'direction':direction}
         if observer in forbidden:rec['status']='baseline observer occupancy';records.append(rec);continue
         if observer in foreign_glue_contact:rec['status']='baseline foreign observer pickup';records.append(rec);continue
@@ -63,17 +102,24 @@ def main():
         cells={ (x,gy,gz):model.NewBoolVar(f'g{x}_{gy}_{gz}') for x in range(11,19) for gy in range(0,9) for gz in range(7,15)
                if (x,gy,gz) not in forbidden|same_honey|{observer}}
         if not {root,target}<=cells.keys():rec['status']='mandatory glue excluded';records.append(rec);continue
-        model.Add(cells[target]==1);model.Add(sum(cells.values())<=9)
+        model.Add(cells[target]==1);model.Add(sum(cells.values())<=a.glue_cap)
         model.Add(sum(cells[q] for q in adj(observer) if q in cells)>=1)
         # No lateral/back adhesion to the frozen sticky before pull4.
+        sticky_forbidden=set()
         for shift in [1,2]:
             for q in adj((17-shift,y,z)):
-                if q in cells and q!=(16-shift,y,z):model.Add(cells[q]==0)
-        connectivity(model,cells,root,9);model.Minimize(sum(cells.values()))
-        solver=cp_model.CpSolver();solver.parameters.max_time_in_seconds=6;solver.parameters.num_search_workers=2
-        status=solver.Solve(model);rec['status']=solver.StatusName(status);rec['seconds']=solver.WallTime()
+                if q in cells and q!=(16-shift,y,z):
+                    model.Add(cells[q]==0);sticky_forbidden.add(q)
+        connectivity(model,cells,root,a.glue_cap);model.Minimize(sum(cells.values()))
+        if a.exact_steiner:
+            shape,minimum=three_terminal_tree(set(cells)-sticky_forbidden,root,target,adj(observer))
+            rec.update(status='exact graph route' if minimum is not None and minimum<=a.glue_cap else 'exact graph over budget',minimum_glue=minimum)
+            status=cp_model.OPTIMAL if minimum is not None and minimum<=a.glue_cap else cp_model.INFEASIBLE
+        else:
+            solver=cp_model.CpSolver();solver.parameters.max_time_in_seconds=a.cp_seconds;solver.parameters.num_search_workers=2
+            status=solver.Solve(model);rec['status']=solver.StatusName(status);rec['seconds']=solver.WallTime();rec['best_bound']=solver.BestObjectiveBound()
         if status in [cp_model.OPTIMAL,cp_model.FEASIBLE]:
-            shape=[p for p,v in cells.items() if solver.Value(v)];rec['glue']=shape
+            shape=sorted(shape) if a.exact_steiner else [p for p,v in cells.items() if solver.Value(v)];rec['glue']=shape
             case=a.out/f'case{index:02}';case.mkdir()
             g=Flyer.load(a.base/'problem.flyer');g.set(sticky,Block.piston(1,sticky=True))
             for p in shape:g.set(p,Block(Kind.HONEY))
@@ -92,7 +138,7 @@ def main():
             subprocess.run([str(ROOT/'target/release/contract-verify.exe'),str(case/'before_natural.json'),str(case/'native.json'),'30','2'],cwd=ROOT,capture_output=True)
             rec['native']=json.loads((case/'native.json').read_text())
         records.append(rec)
-    report={'scope':__doc__,'records':records,'script_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+    report={'scope':__doc__,'glue_cap':a.glue_cap,'cp_seconds':a.cp_seconds,'records':records,'script_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
             'remaining_supplied':[2,3],'caveat':'Static trace exclusions are conservative, including foreign honey contact. No universal bound; no complete flyer claim.'}
     (a.out/'report.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
     (a.out/'generator_snapshot.py').write_bytes(Path(__file__).read_bytes())

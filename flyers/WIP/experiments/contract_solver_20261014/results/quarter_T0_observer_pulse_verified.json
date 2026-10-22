@@ -1,0 +1,7094 @@
+{
+  "version": 1,
+  "name": "T0_observer_G0_pull_phase_fixture",
+  "claim": "Verified phase+1 pulse component: G0 wmmmw sticky fire4/T0 mwwmm pull0, actual before-oldslot4 snapshot including arm/observer state. Independent240 + native240x10000/max7. Ten saved cells include an initially extended arm; only T0 pull0 natural, five supplied moves. Not loaded integration or a complete flyer.",
+  "flyer_parameters": {
+    "phase_x": 0,
+    "phase_z": 0,
+    "rng_state": 0,
+    "push_limit": 12
+  },
+  "cells": [
+    [
+      15,
+      1,
+      11,
+      2
+    ],
+    [
+      15,
+      2,
+      11,
+      2
+    ],
+    [
+      15,
+      3,
+      11,
+      2
+    ],
+    [
+      16,
+      1,
+      11,
+      10
+    ],
+    [
+      16,
+      3,
+      11,
+      2
+    ],
+    [
+      17,
+      0,
+      11,
+      1
+    ],
+    [
+      17,
+      1,
+      11,
+      2345
+    ],
+    [
+      17,
+      3,
+      11,
+      2
+    ],
+    [
+      18,
+      2,
+      11,
+      359
+    ],
+    [
+      18,
+      3,
+      11,
+      2
+    ]
+  ],
+  "piston_owners": [
+    {
+      "at": [
+        17,
+        1,
+        11
+      ],
+      "blocks": [
+        [
+          16,
+          1,
+          11
+        ]
+      ]
+    }
+  ],
+  "content_hash": "a70feaf28168f5d00891089b9bcea6642efb152a98162e373bf399a19c080689",
+  "construction": {
+    "scope": "Snapshot-based phase+1 observer/pull calibration: G0 wmmmw, T0 mwwmm.\n\nExtract the accepted fixture before oldslot4, including extended arm and\nobserver bits. Only T0 pull0 is natural; all other moves are supplied. This\ntiming component does not establish a loaded power replacement or flyer.\n",
+    "phase_snapshot": "before oldtick8/slot4",
+    "state": [
+      [
+        15,
+        1,
+        11,
+        2
+      ],
+      [
+        15,
+        2,
+        11,
+        2
+      ],
+      [
+        15,
+        3,
+        11,
+        2
+      ],
+      [
+        16,
+        1,
+        11,
+        10
+      ],
+      [
+        16,
+        3,
+        11,
+        2
+      ],
+      [
+        17,
+        0,
+        11,
+        1
+      ],
+      [
+        17,
+        1,
+        11,
+        2345
+      ],
+      [
+        17,
+        3,
+        11,
+        2
+      ],
+      [
+        18,
+        2,
+        11,
+        359
+      ],
+      [
+        18,
+        3,
+        11,
+        2
+      ]
+    ],
+    "ports": {
+      "G0_carrier": [
+        17,
+        0,
+        11
+      ],
+      "T0_target": [
+        15,
+        1,
+        11
+      ]
+    },
+    "source_trace_sha256": "d76671b43f273c52a95e5c4b53c820f16ce44af8f9e15dde290c6e0f145b1d4c",
+    "script_sha256": "5e8ba188366e6bd216eb716959a39f43d17364b2be035c7943598bcef0310bd8"
+  },
+  "contracts": {
+    "before_natural": {
+      "version": 1,
+      "name": "T0_observer_G0_pull_phase_fixture",
+      "flyer": "problem.flyer",
+      "period_ticks": 10,
+      "advance": 3,
+      "cycles": 3,
+      "recurrence": "bounded",
+      "ports": [
+        {
+          "name": "G0_carrier",
+          "at": [
+            17,
+            0,
+            11
+          ],
+          "role": "input",
+          "word": "wmmmw",
+          "provenance": [
+            null,
+            "supplied",
+            "supplied",
+            "supplied",
+            null
+          ]
+        },
+        {
+          "name": "T0_target",
+          "at": [
+            15,
+            1,
+            11
+          ],
+          "role": "input",
+          "word": "mwwmm",
+          "provenance": [
+            "internal",
+            null,
+            null,
+            "supplied",
+            "supplied"
+          ]
+        }
+      ],
+      "required_cells": [],
+      "boundary_envelope": {
+        "min": [
+          10,
+          0,
+          9
+        ],
+        "max": [
+          24,
+          5,
+          13
+        ]
+      },
+      "prescribed_script": "drive.txt",
+      "prescribed_order": "before_natural"
+    },
+    "after_natural": {
+      "version": 1,
+      "name": "T0_observer_G0_pull_phase_fixture",
+      "flyer": "problem.flyer",
+      "period_ticks": 10,
+      "advance": 3,
+      "cycles": 3,
+      "recurrence": "bounded",
+      "ports": [
+        {
+          "name": "G0_carrier",
+          "at": [
+            17,
+            0,
+            11
+          ],
+          "role": "input",
+          "word": "wmmmw",
+          "provenance": [
+            null,
+            "supplied",
+            "supplied",
+            "supplied",
+            null
+          ]
+        },
+        {
+          "name": "T0_target",
+          "at": [
+            15,
+            1,
+            11
+          ],
+          "role": "input",
+          "word": "mwwmm",
+          "provenance": [
+            "internal",
+            null,
+            null,
+            "supplied",
+            "supplied"
+          ]
+        }
+      ],
+      "required_cells": [],
+      "boundary_envelope": {
+        "min": [
+          10,
+          0,
+          9
+        ],
+        "max": [
+          24,
+          5,
+          13
+        ]
+      },
+      "prescribed_script": "drive.txt",
+      "prescribed_order": "after_natural"
+    },
+    "interleaved": {
+      "version": 1,
+      "name": "T0_observer_G0_pull_phase_fixture",
+      "flyer": "problem.flyer",
+      "period_ticks": 10,
+      "advance": 3,
+      "cycles": 3,
+      "recurrence": "bounded",
+      "ports": [
+        {
+          "name": "G0_carrier",
+          "at": [
+            17,
+            0,
+            11
+          ],
+          "role": "input",
+          "word": "wmmmw",
+          "provenance": [
+            null,
+            "supplied",
+            "supplied",
+            "supplied",
+            null
+          ]
+        },
+        {
+          "name": "T0_target",
+          "at": [
+            15,
+            1,
+            11
+          ],
+          "role": "input",
+          "word": "mwwmm",
+          "provenance": [
+            "internal",
+            null,
+            null,
+            "supplied",
+            "supplied"
+          ]
+        }
+      ],
+      "required_cells": [],
+      "boundary_envelope": {
+        "min": [
+          10,
+          0,
+          9
+        ],
+        "max": [
+          24,
+          5,
+          13
+        ]
+      },
+      "prescribed_script": "drive.txt",
+      "prescribed_order": "interleaved"
+    }
+  },
+  "prescribed_drive": "2 17 0 11 12\n4 18 0 11 12\n6 16 1 11 12\n6 19 0 11 12\n8 17 1 11 12\n12 20 0 11 12\n14 21 0 11 12\n16 19 1 11 12\n16 22 0 11 12\n18 20 1 11 12\n22 23 0 11 12\n24 24 0 11 12\n26 22 1 11 12\n26 25 0 11 12\n28 23 1 11 12\n",
+  "native_short": {
+    "verified": true,
+    "passed": 80,
+    "total": 80,
+    "orders_per_sample": 3,
+    "ticks_per_order": 30,
+    "encoded_limit": 12,
+    "max_action": 7,
+    "max_endogenous_action": 7,
+    "elapsed_seconds": 0.1712185,
+    "failure": null
+  },
+  "native_longrun": {
+    "verified": true,
+    "passed": 80,
+    "total": 80,
+    "orders_per_sample": 3,
+    "ticks_per_order": 10000,
+    "encoded_limit": 12,
+    "max_action": 7,
+    "max_endogenous_action": 7,
+    "elapsed_seconds": 76.0754971,
+    "failure": null
+  },
+  "independent_cases": {
+    "before_natural": {
+      "version": 1,
+      "name": "T0_observer_G0_pull_phase_fixture",
+      "period_ticks": 10,
+      "advance": 3,
+      "cycles": 3,
+      "recurrence": "bounded",
+      "drive_script": null,
+      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\T0_observer_G0_pull_phase_fixture\\drive.txt",
+      "prescribed_order": "before_natural",
+      "boundary_envelope": {
+        "min": [
+          10,
+          0,
+          9
+        ],
+        "max": [
+          24,
+          5,
+          13
+        ]
+      },
+      "passed": true,
+      "cases": [
+        {
+          "rng": 0,
+          "phase_x": 0,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.085627,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 0,
+          "phase_x": 0,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.112045,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 0,
+          "phase_x": 0,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.10736,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 0,
+          "phase_x": 0,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.115767,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 0,
+          "phase_x": 7,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.11129,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 0,
+          "phase_x": 7,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.11448,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 0,
+          "phase_x": 7,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.111514,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 0,
+          "phase_x": 7,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.115291,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 0,
+          "phase_x": 8,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.119924,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 0,
+          "phase_x": 8,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.116618,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 0,
+          "phase_x": 8,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.112604,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 0,
+          "phase_x": 8,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.11732,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 0,
+          "phase_x": 15,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.109372,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 0,
+          "phase_x": 15,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.117306,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 0,
+          "phase_x": 15,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.118111,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 0,
+          "phase_x": 15,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.109172,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 1,
+          "phase_x": 0,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.113057,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 1,
+          "phase_x": 0,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.116034,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 1,
+          "phase_x": 0,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.115913,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 1,
+          "phase_x": 0,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.110415,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 1,
+          "phase_x": 7,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.109356,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 1,
+          "phase_x": 7,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.115055,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 1,
+          "phase_x": 7,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.112736,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 1,
+          "phase_x": 7,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.117456,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 1,
+          "phase_x": 8,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.112876,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 1,
+          "phase_x": 8,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.107052,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 1,
+          "phase_x": 8,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.116138,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 1,
+          "phase_x": 8,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.117847,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 1,
+          "phase_x": 15,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.118625,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 1,
+          "phase_x": 15,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.119753,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 1,
+          "phase_x": 15,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.114542,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 1,
+          "phase_x": 15,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.121992,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 2,
+          "phase_x": 0,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.117132,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 2,
+          "phase_x": 0,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.109307,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 2,
+          "phase_x": 0,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.116574,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 2,
+          "phase_x": 0,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.119519,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 2,
+          "phase_x": 7,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.106092,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 2,
+          "phase_x": 7,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.111797,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 2,
+          "phase_x": 7,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.082455,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 2,
+          "phase_x": 7,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.106274,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 2,
+          "phase_x": 8,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.113708,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 2,
+          "phase_x": 8,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.114902,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 2,
+          "phase_x": 8,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.114964,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 2,
+          "phase_x": 8,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.108985,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 2,
+          "phase_x": 15,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.082057,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 2,
+          "phase_x": 15,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.110391,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 2,
+          "phase_x": 15,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.112475,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 2,
+          "phase_x": 15,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.108524,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 5,
+          "phase_x": 0,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.110199,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 5,
+          "phase_x": 0,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.112054,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 5,
+          "phase_x": 0,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.112656,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 5,
+          "phase_x": 0,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.109372,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 5,
+          "phase_x": 7,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.086537,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 5,
+          "phase_x": 7,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.112302,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 5,
+          "phase_x": 7,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.1198,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 5,
+          "phase_x": 7,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.114056,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 5,
+          "phase_x": 8,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.114869,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 5,
+          "phase_x": 8,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.119282,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 5,
+          "phase_x": 8,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.112011,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 5,
+          "phase_x": 8,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.112072,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 5,
+          "phase_x": 15,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.112895,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 5,
+          "phase_x": 15,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.113862,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 5,
+          "phase_x": 15,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.086749,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 5,
+          "phase_x": 15,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.115369,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 42,
+          "phase_x": 0,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.117305,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 42,
+          "phase_x": 0,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.115763,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 42,
+          "phase_x": 0,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.109247,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 42,
+          "phase_x": 0,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.112158,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 42,
+          "phase_x": 7,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.119349,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 42,
+          "phase_x": 7,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.119563,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 42,
+          "phase_x": 7,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.11726,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 42,
+          "phase_x": 7,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.119277,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 42,
+          "phase_x": 8,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.120549,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 42,
+          "phase_x": 8,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.121793,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 42,
+          "phase_x": 8,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.119219,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 42,
+          "phase_x": 8,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.1162,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 42,
+          "phase_x": 15,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.123522,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 42,
+          "phase_x": 15,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.114806,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 42,
+          "phase_x": 15,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.115886,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 42,
+          "phase_x": 15,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.107882,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        }
+      ],
+      "claim": "prescribed input injection (before_natural); validated start/settlement ledger + sampled ports + bounded hardware; no exact-state recurrence claim; does not establish natural driver realization"
+    },
+    "after_natural": {
+      "version": 1,
+      "name": "T0_observer_G0_pull_phase_fixture",
+      "period_ticks": 10,
+      "advance": 3,
+      "cycles": 3,
+      "recurrence": "bounded",
+      "drive_script": null,
+      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\T0_observer_G0_pull_phase_fixture\\drive.txt",
+      "prescribed_order": "after_natural",
+      "boundary_envelope": {
+        "min": [
+          10,
+          0,
+          9
+        ],
+        "max": [
+          24,
+          5,
+          13
+        ]
+      },
+      "passed": true,
+      "cases": [
+        {
+          "rng": 0,
+          "phase_x": 0,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.076854,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 0,
+          "phase_x": 0,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.070775,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 0,
+          "phase_x": 0,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.073183,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 0,
+          "phase_x": 0,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.069737,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 0,
+          "phase_x": 7,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.068589,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 0,
+          "phase_x": 7,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.072925,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 0,
+          "phase_x": 7,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.071714,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 0,
+          "phase_x": 7,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.071288,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 0,
+          "phase_x": 8,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.047738,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 0,
+          "phase_x": 8,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.068453,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 0,
+          "phase_x": 8,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.074677,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 0,
+          "phase_x": 8,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.073408,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 0,
+          "phase_x": 15,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.064989,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 0,
+          "phase_x": 15,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.068567,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 0,
+          "phase_x": 15,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.064084,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 0,
+          "phase_x": 15,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.066335,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 1,
+          "phase_x": 0,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.069202,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 1,
+          "phase_x": 0,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.066117,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 1,
+          "phase_x": 0,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.064682,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 1,
+          "phase_x": 0,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.060021,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 1,
+          "phase_x": 7,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.062247,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 1,
+          "phase_x": 7,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.066846,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 1,
+          "phase_x": 7,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.065347,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 1,
+          "phase_x": 7,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.073934,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 1,
+          "phase_x": 8,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.075229,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 1,
+          "phase_x": 8,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.071546,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 1,
+          "phase_x": 8,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.070043,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 1,
+          "phase_x": 8,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.0724,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 1,
+          "phase_x": 15,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.068847,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 1,
+          "phase_x": 15,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.074185,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 1,
+          "phase_x": 15,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.073688,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 1,
+          "phase_x": 15,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.069643,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 2,
+          "phase_x": 0,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.076147,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 2,
+          "phase_x": 0,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.072257,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 2,
+          "phase_x": 0,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.073467,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 2,
+          "phase_x": 0,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.076925,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 2,
+          "phase_x": 7,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.04532,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 2,
+          "phase_x": 7,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.072732,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 2,
+          "phase_x": 7,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.075281,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 2,
+          "phase_x": 7,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.07574,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 2,
+          "phase_x": 8,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.078251,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 2,
+          "phase_x": 8,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.075741,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 2,
+          "phase_x": 8,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.078312,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 2,
+          "phase_x": 8,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.077022,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 2,
+          "phase_x": 15,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.077731,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 2,
+          "phase_x": 15,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.077711,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 2,
+          "phase_x": 15,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.081928,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 2,
+          "phase_x": 15,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.072086,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 5,
+          "phase_x": 0,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.073469,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 5,
+          "phase_x": 0,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.070772,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 5,
+          "phase_x": 0,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.076298,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 5,
+          "phase_x": 0,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.082268,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 5,
+          "phase_x": 7,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.08116,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 5,
+          "phase_x": 7,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.080601,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 5,
+          "phase_x": 7,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.073364,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 5,
+          "phase_x": 7,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.075892,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 5,
+          "phase_x": 8,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.07735,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 5,
+          "phase_x": 8,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.049343,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 5,
+          "phase_x": 8,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.078416,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 5,
+          "phase_x": 8,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.048863,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 5,
+          "phase_x": 15,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.080182,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 5,
+          "phase_x": 15,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.082149,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 5,
+          "phase_x": 15,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.080415,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 5,
+          "phase_x": 15,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.083356,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 42,
+          "phase_x": 0,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.050727,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 42,
+          "phase_x": 0,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.078191,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 42,
+          "phase_x": 0,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.081234,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 42,
+          "phase_x": 0,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.078342,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 42,
+          "phase_x": 7,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.079151,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 42,
+          "phase_x": 7,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.077856,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 42,
+          "phase_x": 7,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.073802,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 42,
+          "phase_x": 7,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.078072,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 42,
+          "phase_x": 8,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.079611,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 42,
+          "phase_x": 8,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.075505,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 42,
+          "phase_x": 8,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.078244,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 42,
+          "phase_x": 8,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.078719,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 42,
+          "phase_x": 15,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.08227,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 42,
+          "phase_x": 15,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.079166,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 42,
+          "phase_x": 15,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.080708,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        },
+        {
+          "rng": 42,
+          "phase_x": 15,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.078143,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7
+        }
+      ],
+      "claim": "prescribed input injection (after_natural); validated start/settlement ledger + sampled ports + bounded hardware; no exact-state recurrence claim; does not establish natural driver realization"
+    },
+    "interleaved": {
+      "version": 1,
+      "name": "T0_observer_G0_pull_phase_fixture",
+      "period_ticks": 10,
+      "advance": 3,
+      "cycles": 3,
+      "recurrence": "bounded",
+      "drive_script": null,
+      "prescribed_script": "C:\\Users\\Ruben\\source\\repos\\FastFlyerPlayground\\flyers\\WIP\\experiments\\contract_solver_20261014\\out\\quarter_ring_contacts\\T0_observer_G0_pull_phase_fixture\\drive.txt",
+      "prescribed_order": "interleaved",
+      "boundary_envelope": {
+        "min": [
+          10,
+          0,
+          9
+        ],
+        "max": [
+          24,
+          5,
+          13
+        ]
+      },
+      "passed": true,
+      "cases": [
+        {
+          "rng": 0,
+          "phase_x": 0,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.090611,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 5630625564981222493
+        },
+        {
+          "rng": 0,
+          "phase_x": 0,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.079691,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 5630625564981222493
+        },
+        {
+          "rng": 0,
+          "phase_x": 0,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.10845,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 5630625564981222493
+        },
+        {
+          "rng": 0,
+          "phase_x": 0,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.107524,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 5630625564981222493
+        },
+        {
+          "rng": 0,
+          "phase_x": 7,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.103224,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 5630625564981222493
+        },
+        {
+          "rng": 0,
+          "phase_x": 7,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.106461,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 5630625564981222493
+        },
+        {
+          "rng": 0,
+          "phase_x": 7,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.111745,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 5630625564981222493
+        },
+        {
+          "rng": 0,
+          "phase_x": 7,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.112097,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 5630625564981222493
+        },
+        {
+          "rng": 0,
+          "phase_x": 8,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.109902,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 5630625564981222493
+        },
+        {
+          "rng": 0,
+          "phase_x": 8,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.120796,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 5630625564981222493
+        },
+        {
+          "rng": 0,
+          "phase_x": 8,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.1171,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 5630625564981222493
+        },
+        {
+          "rng": 0,
+          "phase_x": 8,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.119008,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 5630625564981222493
+        },
+        {
+          "rng": 0,
+          "phase_x": 15,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.111612,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 5630625564981222493
+        },
+        {
+          "rng": 0,
+          "phase_x": 15,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.116027,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 5630625564981222493
+        },
+        {
+          "rng": 0,
+          "phase_x": 15,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.114037,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 5630625564981222493
+        },
+        {
+          "rng": 0,
+          "phase_x": 15,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.117811,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 5630625564981222493
+        },
+        {
+          "rng": 1,
+          "phase_x": 0,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.113329,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 6852924526350832549
+        },
+        {
+          "rng": 1,
+          "phase_x": 0,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.110232,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 6852924526350832549
+        },
+        {
+          "rng": 1,
+          "phase_x": 0,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.107334,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 6852924526350832549
+        },
+        {
+          "rng": 1,
+          "phase_x": 0,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.104033,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 6852924526350832549
+        },
+        {
+          "rng": 1,
+          "phase_x": 7,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.105755,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 6852924526350832549
+        },
+        {
+          "rng": 1,
+          "phase_x": 7,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.109962,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 6852924526350832549
+        },
+        {
+          "rng": 1,
+          "phase_x": 7,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.105842,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 6852924526350832549
+        },
+        {
+          "rng": 1,
+          "phase_x": 7,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.078774,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 6852924526350832549
+        },
+        {
+          "rng": 1,
+          "phase_x": 8,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.114105,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 6852924526350832549
+        },
+        {
+          "rng": 1,
+          "phase_x": 8,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.10696,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 6852924526350832549
+        },
+        {
+          "rng": 1,
+          "phase_x": 8,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.117885,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 6852924526350832549
+        },
+        {
+          "rng": 1,
+          "phase_x": 8,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.112938,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 6852924526350832549
+        },
+        {
+          "rng": 1,
+          "phase_x": 15,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.113433,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 6852924526350832549
+        },
+        {
+          "rng": 1,
+          "phase_x": 15,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.116551,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 6852924526350832549
+        },
+        {
+          "rng": 1,
+          "phase_x": 15,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.119145,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 6852924526350832549
+        },
+        {
+          "rng": 1,
+          "phase_x": 15,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.116523,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 6852924526350832549
+        },
+        {
+          "rng": 2,
+          "phase_x": 0,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.115293,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 17109403001579112877
+        },
+        {
+          "rng": 2,
+          "phase_x": 0,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.122169,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 17109403001579112877
+        },
+        {
+          "rng": 2,
+          "phase_x": 0,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.114781,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 17109403001579112877
+        },
+        {
+          "rng": 2,
+          "phase_x": 0,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.115212,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 17109403001579112877
+        },
+        {
+          "rng": 2,
+          "phase_x": 7,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.116997,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 17109403001579112877
+        },
+        {
+          "rng": 2,
+          "phase_x": 7,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.117169,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 17109403001579112877
+        },
+        {
+          "rng": 2,
+          "phase_x": 7,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.117943,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 17109403001579112877
+        },
+        {
+          "rng": 2,
+          "phase_x": 7,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.106992,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 17109403001579112877
+        },
+        {
+          "rng": 2,
+          "phase_x": 8,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.101565,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 17109403001579112877
+        },
+        {
+          "rng": 2,
+          "phase_x": 8,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.111347,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 17109403001579112877
+        },
+        {
+          "rng": 2,
+          "phase_x": 8,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.116094,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 17109403001579112877
+        },
+        {
+          "rng": 2,
+          "phase_x": 8,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.114099,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 17109403001579112877
+        },
+        {
+          "rng": 2,
+          "phase_x": 15,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.122172,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 17109403001579112877
+        },
+        {
+          "rng": 2,
+          "phase_x": 15,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.114229,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 17109403001579112877
+        },
+        {
+          "rng": 2,
+          "phase_x": 15,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.116683,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 17109403001579112877
+        },
+        {
+          "rng": 2,
+          "phase_x": 15,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.12578,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 17109403001579112877
+        },
+        {
+          "rng": 5,
+          "phase_x": 0,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.089123,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 8671637158521026457
+        },
+        {
+          "rng": 5,
+          "phase_x": 0,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.114672,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 8671637158521026457
+        },
+        {
+          "rng": 5,
+          "phase_x": 0,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.110456,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 8671637158521026457
+        },
+        {
+          "rng": 5,
+          "phase_x": 0,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.106878,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 8671637158521026457
+        },
+        {
+          "rng": 5,
+          "phase_x": 7,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.116824,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 8671637158521026457
+        },
+        {
+          "rng": 5,
+          "phase_x": 7,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.080686,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 8671637158521026457
+        },
+        {
+          "rng": 5,
+          "phase_x": 7,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.080064,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 8671637158521026457
+        },
+        {
+          "rng": 5,
+          "phase_x": 7,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.111702,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 8671637158521026457
+        },
+        {
+          "rng": 5,
+          "phase_x": 8,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.109979,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 8671637158521026457
+        },
+        {
+          "rng": 5,
+          "phase_x": 8,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.107868,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 8671637158521026457
+        },
+        {
+          "rng": 5,
+          "phase_x": 8,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.106695,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 8671637158521026457
+        },
+        {
+          "rng": 5,
+          "phase_x": 8,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.103943,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 8671637158521026457
+        },
+        {
+          "rng": 5,
+          "phase_x": 15,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.110528,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 8671637158521026457
+        },
+        {
+          "rng": 5,
+          "phase_x": 15,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.078023,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 8671637158521026457
+        },
+        {
+          "rng": 5,
+          "phase_x": 15,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.11741,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 8671637158521026457
+        },
+        {
+          "rng": 5,
+          "phase_x": 15,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.106662,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 8671637158521026457
+        },
+        {
+          "rng": 42,
+          "phase_x": 0,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.110367,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 1280010201812253292
+        },
+        {
+          "rng": 42,
+          "phase_x": 0,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.107051,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 1280010201812253292
+        },
+        {
+          "rng": 42,
+          "phase_x": 0,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.107426,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 1280010201812253292
+        },
+        {
+          "rng": 42,
+          "phase_x": 0,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.076011,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 1280010201812253292
+        },
+        {
+          "rng": 42,
+          "phase_x": 7,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.114597,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 1280010201812253292
+        },
+        {
+          "rng": 42,
+          "phase_x": 7,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.115296,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 1280010201812253292
+        },
+        {
+          "rng": 42,
+          "phase_x": 7,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.106135,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 1280010201812253292
+        },
+        {
+          "rng": 42,
+          "phase_x": 7,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.106027,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 1280010201812253292
+        },
+        {
+          "rng": 42,
+          "phase_x": 8,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.113404,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 1280010201812253292
+        },
+        {
+          "rng": 42,
+          "phase_x": 8,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.110083,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 1280010201812253292
+        },
+        {
+          "rng": 42,
+          "phase_x": 8,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.106105,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 1280010201812253292
+        },
+        {
+          "rng": 42,
+          "phase_x": 8,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.11038,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 1280010201812253292
+        },
+        {
+          "rng": 42,
+          "phase_x": 15,
+          "phase_z": 0,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.10908,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 1280010201812253292
+        },
+        {
+          "rng": 42,
+          "phase_x": 15,
+          "phase_z": 7,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.11762,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 1280010201812253292
+        },
+        {
+          "rng": 42,
+          "phase_x": 15,
+          "phase_z": 8,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.086616,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 1280010201812253292
+        },
+        {
+          "rng": 42,
+          "phase_x": 15,
+          "phase_z": 15,
+          "passed": true,
+          "ticks": 30,
+          "elapsed_seconds": 0.111518,
+          "diagnostic": null,
+          "first_failure": null,
+          "input_max_action_loads": {
+            "G0_carrier": [
+              null,
+              2,
+              2,
+              2,
+              null
+            ],
+            "T0_target": [
+              7,
+              null,
+              null,
+              7,
+              7
+            ]
+          },
+          "whole_assembly_max_action": 7,
+          "schedule_seed": 1280010201812253292
+        }
+      ],
+      "claim": "prescribed input injection (interleaved); validated start/settlement ledger + sampled ports + bounded hardware; no exact-state recurrence claim; does not establish natural driver realization"
+    }
+  },
+  "longrun_contract": {
+    "version": 1,
+    "name": "T0_observer_G0_pull_phase_fixture",
+    "flyer": "problem.flyer",
+    "period_ticks": 10,
+    "advance": 3,
+    "cycles": 1000,
+    "recurrence": "bounded",
+    "ports": [
+      {
+        "name": "G0_carrier",
+        "at": [
+          17,
+          0,
+          11
+        ],
+        "role": "input",
+        "word": "wmmmw",
+        "provenance": [
+          null,
+          "supplied",
+          "supplied",
+          "supplied",
+          null
+        ]
+      },
+      {
+        "name": "T0_target",
+        "at": [
+          15,
+          1,
+          11
+        ],
+        "role": "input",
+        "word": "mwwmm",
+        "provenance": [
+          "internal",
+          null,
+          null,
+          "supplied",
+          "supplied"
+        ]
+      }
+    ],
+    "required_cells": [],
+    "boundary_envelope": {
+      "min": [
+        10,
+        0,
+        9
+      ],
+      "max": [
+        24,
+        5,
+        13
+      ]
+    },
+    "prescribed_script": "long_drive.txt",
+    "prescribed_order": "before_natural"
+  },
+  "longrun_drive_generation": "verify_column_interface.py: repeat supplied provenance at10*cycle+2*slot, X+3*cycle, cap12",
+  "sha256": {
+    "problem.flyer": "a70feaf28168f5d00891089b9bcea6642efb152a98162e373bf399a19c080689",
+    "drive.txt": "52539f953f64c8c97a954398a676d38d778fe612d335482199260f5b183da6c9",
+    "long_drive.txt": "29ec102cbe8ab8503bd44eb670d6a701f56d696aab4c60db9cc06ac8c70ae460",
+    "preparation.json": "5ec036ae8d5800e07ca52c50b7e5b28946503862e007a05e562468e4ba5cdcc8",
+    "native.json": "22f03a2ef6825a0181ece75c43b93ad028d2b0c8016caa98bb55d7a2b08d1f68",
+    "long_result.json": "d0a7c5207280fad71ea03d6abd4452dfa3c5fa12987fb8b5bcf3ac9c44bfd19f"
+  },
+  "tool_sha256": {
+    "build_column_interface.py": "bd72f4f9e6c63f97671e5a0319115b08c61ef2a9cb4bf47e877239e9917f2356",
+    "verify_column_interface.py": "bf70aa16f84a61dbe4379a6310b1ae6300e863b68ed0ac6d3cfe6f2c902c9892",
+    "preserve_column_interface.py": "923d0b65c897300b6a51864c6cc5de4dbef7fc294088aa9c59022313be86ec02"
+  }
+}

@@ -12,9 +12,13 @@ def main():
     ap=argparse.ArgumentParser(description=__doc__)
     ap.add_argument('run',type=Path)
     ap.add_argument('--phase-z',type=int,default=7)
+    ap.add_argument('--phase-x',type=int,default=0)
+    ap.add_argument('--rng',type=int,default=0)
+    ap.add_argument('--order',choices=('before','after','interleaved'),default='before')
     a=ap.parse_args();p=a.run
-    r=subprocess.run([str(ROOT/'target/release/extension-prescribe.exe'),str(p/'problem.flyer'),'30',str(p/'drive.txt'),'before','0','0',str(a.phase_z)],cwd=ROOT,capture_output=True,text=True)
-    (p/f'trace_failure_0_0_{a.phase_z}.jsonl').write_text(r.stdout,encoding='utf-8')
+    sample=f'{a.rng}_{a.phase_x}_{a.phase_z}'+('' if a.order=='before' else f'_{a.order}')
+    r=subprocess.run([str(ROOT/'target/release/extension-prescribe.exe'),str(p/'problem.flyer'),'30',str(p/'drive.txt'),a.order,str(a.rng),str(a.phase_x),str(a.phase_z)],cwd=ROOT,capture_output=True,text=True,encoding='utf-8')
+    (p/f'trace_failure_{sample}.jsonl').write_text(r.stdout,encoding='utf-8')
     rows=[json.loads(s) for s in r.stdout.splitlines()]
     state={tuple(c[:3]):c[3] for c in rows[0]['trace']['initial']}
     origins={q:q for q,b in state.items() if b&15!=10}
@@ -37,9 +41,9 @@ def main():
         for x,y,z,b in s['changes']:
             if b is None:state.pop((x,y,z),None)
             else:state[x,y,z]=b
-    result={'scope':__doc__,'sample':{'rng':0,'phase_x':0,'phase_z':a.phase_z,'order':'before'},
+    result={'scope':__doc__,'sample':{'rng':a.rng,'phase_x':a.phase_x,'phase_z':a.phase_z,'order':a.order},
             'actions':actions,'failed_partial_discoveries':failures,'stderr':r.stderr}
-    (p/f'failure_audit_0_0_{a.phase_z}.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
+    (p/f'failure_audit_{sample}.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
     print(json.dumps({'actions':[{k:v for k,v in x.items() if k!='identities'} for x in actions if x['tick']<=2],
                       'first_failures':[{k:v for k,v in x.items() if k not in ['links','identities']} for x in failures[:2]]}))
 

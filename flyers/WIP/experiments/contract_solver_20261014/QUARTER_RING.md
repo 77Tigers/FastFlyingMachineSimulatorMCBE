@@ -97,3 +97,16 @@ New134-cell loaded rerow/trim passes native240 short and independent240 at12/max
 ## Complete two-push recovery budget
 
 144-cell loaded rear-pull component accepted: independent240 plus native240x10000/max12,664.598s; exact artifact/rebuild preserved. Only rear pushes2/3 supplied. 13-cell push-pair fixture fully verified and preserved. A complete per-stroke closure budget fits12 if rear glue9->8 and front connector costs fit; geometry unbuilt. Front mmwwm carries both normals0/1 and the first at4; R carries late actor2. Actual roles can exchange firing order. Geometry must retain all old power/recovery obligations.
+
+
+## Eight-glue rear route
+
+New143-cell eight-glue rear component passes native240 short and independent240/max12; sampled rear10/11/11 reserves the push-pair source/passenger budget. Long1200s proof active exec24337. Exact three-contact routing settles both old sticky-site minima at9 and finds new site14,4,12 at8. Complete flyer still unbuilt. New sticky14,4,12/observer16,4,13(-Z) keeps the proved pull timing. Reserved source and push-pair contacts remain unbuilt; full budgets and active proof are in checkpoint.
+
+### Current rear closure:2026-10-20 00:30 UTC
+
+Eight-glue143-cell rear recovery component is fully accepted (independent240/native240x10000,max12), preserved as results/quarter_rear_eight_glue_verified.json.37 strokes internal; two rear pushes supplied. Source/passenger budgets would fill rear12/12/12 and H0 eight-glue12/11/12, but contact geometry is unbuilt.
+
+New screen_rear_motor_contacts.py gives a necessary conflict for retaining H0's four old glue cells. Even if all8 rear glue are reshaped, d(rear_root-3X,old_front)=14 exceeds7 rear edges+1 normal-contact edge+4 new front glue. At least6 front additions required. This is specific to the checked mmwwm front/rear wwmmm actor allocation and retained root, not a flyer impossibility. Report/snapshot and next five-position H0 source domain are in out/quarter_ring_contacts/rear_motor_contact_bound/. Next regenerate H0 own source/normal/glue contacts, including G0 transport and T0 pull0 obligations. No active computation.
+
+Joint follow-up00:50: search_H0_rear_joint.py regenerates H0 own source/normal rows and both<=8-glue bodies while retaining G0 carrier geometry. All18 allocations fail CP even without foreign obstacles. Independent geometry checks pass for a deliberate19-front-glue positive control, which exceeds the load budget;12-glue probes remain UNKNOWN. Next change G0/T0 power coupling or rear recovery roles; no native candidate/search active. Exact reports and scopes in checkpoint.
