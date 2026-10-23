@@ -561,6 +561,15 @@
       "extension_failures": 0,
       "endpoint_conserved": true
     },
+    "flyers/bank/pl39/nk_square_n9.flyer": {
+      "sha256": "ef14b9893a8f54876635df530dec3982a84316aa644e83cd6654b7c1dd73b35a",
+      "ticks": 10000,
+      "distance": 4090,
+      "speed_bps": 4.09,
+      "extensions": 180000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
     "flyers/bank/pl43/mv4_symmetric_easy.flyer": {
       "sha256": "e0801f3b6d30b98ee21c7ab19767fd4981748f568b260a78fd5dce704ec06b5d",
       "ticks": 10000,
@@ -576,6 +585,15 @@
       "distance": 3333,
       "speed_bps": 3.333,
       "extensions": 20000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl43/nk_square_n10.flyer": {
+      "sha256": "f0445fbdaa2b689f73ba4502834acf8fb5136fd7ad02b7c685bec746fd82b7fa",
+      "ticks": 10000,
+      "distance": 4166,
+      "speed_bps": 4.166,
+      "extensions": 50000,
       "extension_failures": 0,
       "endpoint_conserved": true
     },
@@ -597,6 +615,15 @@
       "extension_failures": 0,
       "endpoint_conserved": true
     },
+    "flyers/bank/pl46/nk_square_n11.flyer": {
+      "sha256": "a0093133f340e03f002324a115ff9dd052303e50c87a38d21afafbf9665ee3a3",
+      "ticks": 10000,
+      "distance": 4230,
+      "speed_bps": 4.23,
+      "extensions": 220000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
     "flyers/bank/pl49/mv4.flyer": {
       "sha256": "e6dc209fffffa2ba87bd035990981034c204d334473fa2555e678df088dac397",
       "ticks": 10000,
@@ -606,12 +633,66 @@
       "extension_failures": 0,
       "endpoint_conserved": true
     },
+    "flyers/bank/pl50/nk_square_n12.flyer": {
+      "sha256": "01302771e64a874e43e585a21928078bec6754fff025ec0ce269a36ec4d46d6a",
+      "ticks": 10000,
+      "distance": 4286,
+      "speed_bps": 4.286,
+      "extensions": 120000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl52/nk_square_n13.flyer": {
+      "sha256": "35a7407d9a699b0c1a276673b6059a71df34bca28dfa68da49f22ec798f3b545",
+      "ticks": 10000,
+      "distance": 4332,
+      "speed_bps": 4.332,
+      "extensions": 260000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl57/nk_square_n14.flyer": {
+      "sha256": "c33ccfd6ce801b39cb205aefc3de4aecf17ed583c5fa36c297d5e74b6b09715c",
+      "ticks": 10000,
+      "distance": 4374,
+      "speed_bps": 4.374,
+      "extensions": 35000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
     "flyers/bank/pl57/three_segment_mmwmmw.flyer": {
       "sha256": "f8e949eaf914de75a2e1564737b41756deb5f2b5ad21514aa8785b910f7c6496",
       "ticks": 10000,
       "distance": 3333,
       "speed_bps": 3.333,
       "extensions": 10000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl60/nk_square_n15.flyer": {
+      "sha256": "c5f90b2adabd6e87b95f06aec8797a723976a2018d356d73468302570d0b7331",
+      "ticks": 10000,
+      "distance": 4412,
+      "speed_bps": 4.412,
+      "extensions": 300000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl64/nk_square_n16.flyer": {
+      "sha256": "851965a84b2b31f982b875ca89ce36a2bd6d92a5167d077e2c87d0fd4b19f450",
+      "ticks": 10000,
+      "distance": 4444,
+      "speed_bps": 4.444,
+      "extensions": 160000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl68/nk_square_n17.flyer": {
+      "sha256": "790a7e774c40e8fa7c63c57edfbd1ea781cca8ad75c63cc9d4822855a563c65f",
+      "ticks": 10000,
+      "distance": 4473,
+      "speed_bps": 4.473,
+      "extensions": 340000,
       "extension_failures": 0,
       "endpoint_conserved": true
     },
@@ -630,6 +711,42 @@
       "distance": 3334,
       "speed_bps": 3.334,
       "extensions": 30000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl71/nk_square_n18.flyer": {
+      "sha256": "197d327ea127cdc6005a0779b69bdbe37c5c46a77f0b40e5890902560ba21183",
+      "ticks": 10000,
+      "distance": 4500,
+      "speed_bps": 4.5,
+      "extensions": 90000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl75/nk_square_n19.flyer": {
+      "sha256": "6b0cb1d06d8f6eef6a96f2f583bd58d9ab80420fed13cc4ccacffa84d1d9e170",
+      "ticks": 10000,
+      "distance": 4524,
+      "speed_bps": 4.524,
+      "extensions": 380000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl78/nk_square_n20.flyer": {
+      "sha256": "626e639c36ec414c3fe47debcc36915253b4677848c02300fbff5a62747ac81c",
+      "ticks": 10000,
+      "distance": 4544,
+      "speed_bps": 4.544,
+      "extensions": 200000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl79/nk_square_n21.flyer": {
+      "sha256": "1482c9a55484aa37634d4b811eafe5d9105a3686af5de407e2b540842b0aacbe",
+      "ticks": 10000,
+      "distance": 4564,
+      "speed_bps": 4.564,
+      "extensions": 420000,
       "extension_failures": 0,
       "endpoint_conserved": true
     },
@@ -669,6 +786,24 @@
       "extension_failures": 0,
       "endpoint_conserved": true
     },
+    "flyers/bank/pl85/nk_square_n22.flyer": {
+      "sha256": "b5aa240b60ddfed717c5559c9950f632daabaed74677fe13c7c53dda2e41d01f",
+      "ticks": 10000,
+      "distance": 4582,
+      "speed_bps": 4.582,
+      "extensions": 55000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl87/nk_square_n23.flyer": {
+      "sha256": "6ccfcbfde48b0598f4ff604721e45ee0c6642482f62f9f473604d5dc399c9eee",
+      "ticks": 10000,
+      "distance": 4600,
+      "speed_bps": 4.6,
+      "extensions": 460000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
     "flyers/bank/pl9/human_observer_hop.flyer": {
       "sha256": "a1d6caa4ba5340b38244cde1bfe883fc5dc6cde49859b024ae0b3c8ff0710724",
       "ticks": 10000,
@@ -693,6 +828,15 @@
       "distance": 2500,
       "speed_bps": 2.5,
       "extensions": 20000,
+      "extension_failures": 0,
+      "endpoint_conserved": true
+    },
+    "flyers/bank/pl90/nk_square_n24.flyer": {
+      "sha256": "cf2a3f52c7996dc670b00cb96b5243350161bfca8472fce54ddb699002924913",
+      "ticks": 10000,
+      "distance": 4614,
+      "speed_bps": 4.614,
+      "extensions": 240000,
       "extension_failures": 0,
       "endpoint_conserved": true
     }
