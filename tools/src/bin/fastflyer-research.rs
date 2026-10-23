@@ -18,38 +18,35 @@ const USAGE: &str = "usage: fastflyer-research
            add --period/--advance to --distance for the exact columns as extra information; --exact makes pass = exact";
 
 fn run(file: &str, ticks: usize, period: usize, audit: bool) -> Result<()> {
-    let mut f = Flyer::load(file)?;
-    let x0 = min_x(&f);
-    let initial = kind_counts(&f);
+    let loaded = Flyer::load(file)?;
+    let x0 = min_x(&loaded);
+    let initial = kind_counts(&loaded);
     let (mut ext, mut fail, mut movement_failures, mut max_action, mut bad_counts) = (0, 0, 0, 0, 0);
     let mut seen: BTreeMap<Shape, (usize, i64)> = BTreeMap::new();
-    seen.insert(signature(&f), (0, x0));
+    seen.insert(signature(&loaded), (0, x0));
     let (mut repeats, mut first_repeat) = (0, None);
+    // Fast simulator: identical ticks and trace diagnostics (see fastsim/).
+    let mut fast = fastsim::FastFlyer::from_flyer(&loaded);
+    drop(loaded);
+    let mut diag = fastsim::Diagnostics::default();
     for t in 0..ticks {
         let report = if audit {
-            let mut tr = TickTrace::new(&f);
-            let r = f.tick_traced(&mut tr, t)?;
-            for step in tr.steps {
-                if let Some(m) = step.info.movement {
-                    if m.failure.is_some() {
-                        movement_failures += 1;
-                    } else {
-                        max_action = max_action.max(m.sources.len());
-                    }
-                }
-            }
+            diag.failures.clear();
+            let r = fast.tick_diagnosed(&mut diag)?;
+            movement_failures += diag.failures.len();
+            max_action = max_action.max(diag.max_successful_action);
             r
         } else {
-            f.tick()?
+            fast.tick()?
         };
         ext += report.extensions_started;
         fail += report.extension_failures;
-        if kind_counts(&f) != initial {
+        if fast_kind_counts(&fast) != initial {
             bad_counts += 1;
         }
         if period > 0 && (t + 1) % period == 0 {
-            let sig = signature(&f);
-            let x = min_x(&f);
+            let sig = signature(&fast.to_flyer());
+            let x = fast.minimum_x();
             if let Some(&(old_t, old_x)) = seen.get(&sig) {
                 if x > old_x {
                     repeats += 1;
@@ -61,6 +58,7 @@ fn run(file: &str, ticks: usize, period: usize, audit: bool) -> Result<()> {
             seen.insert(sig, (t + 1, x));
         }
     }
+    let f = fast.to_flyer();
     println!(
         "file={file} limit={} rng_final={} phase_x={} phase_z={} ticks={ticks} start_min_x={x0} end_min_x={} distance={} extensions={ext} extension_failures={fail} end_blocks={} initial_kinds={initial:?} final_kinds={:?} conservation_mismatch_ticks={bad_counts} period={period} translated_repeat_pairs={repeats} first_repeat={first_repeat:?} traced={audit} max_successful_action={max_action} movement_failures={movement_failures}",
         f.push_limit,

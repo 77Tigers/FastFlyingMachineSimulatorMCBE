@@ -11,3 +11,4 @@ publish = false
 
 [dependencies]
 fastflyer = { path = ".." }
+fastsim = { path = "../fastsim" }

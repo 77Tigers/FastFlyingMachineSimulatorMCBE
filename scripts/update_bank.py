@@ -12,9 +12,13 @@ ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_TICKS = 10_000
 
 def engine_fingerprint(root: Path) -> str:
+    """Hash of everything that decides measurements: the reference engine (src/) and
+    the fast simulator that runs them (fastsim/, identical behaviour)."""
     digest = sha256()
     paths = sorted((root / "src").rglob("*.rs"))
     paths += [path for path in (root / "Cargo.toml", root / "Cargo.lock") if path.exists()]
+    paths += sorted((root / "fastsim" / "src").rglob("*.rs"))
+    paths += [path for path in (root / "fastsim" / "Cargo.toml", root / "fastsim" / "Cargo.lock") if path.exists()]
     for path in paths:
         digest.update(path.relative_to(root).as_posix().encode())
         digest.update(b"\0")
@@ -30,8 +34,10 @@ def main() -> None:
     if args.ticks <= 0:
         parser.error("--ticks must be positive")
     paths = sorted((ROOT / "flyers/bank").rglob("*.flyer"))
-    subprocess.run(["cargo", "build", "--release", "--bin", "fastflyer-bank-stats"], cwd=ROOT, check=True)
-    binary = ROOT / "target/release" / ("fastflyer-bank-stats.exe" if os.name == "nt" else "fastflyer-bank-stats")
+    # The fast simulator (fastsim/) gives results identical to the reference engine.
+    subprocess.run(["cargo", "build", "--release", "--manifest-path", "fastsim/Cargo.toml", "--target-dir", "target",
+                    "--bin", "fastsim-bank-stats"], cwd=ROOT, check=True)
+    binary = ROOT / "target/release" / ("fastsim-bank-stats.exe" if os.name == "nt" else "fastsim-bank-stats")
     output = subprocess.check_output([str(binary), str(args.ticks), *map(str, paths)], cwd=ROOT, text=True)
     entries = {}
     for line in output.splitlines():
