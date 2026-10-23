@@ -7,8 +7,16 @@ name = "fastflyer"
 version = "0.1.0"
 
 [[package]]
+name = "fastsim"
+version = "0.1.0"
+dependencies = [
+ "fastflyer",
+]
+
+[[package]]
 name = "nkcheck"
 version = "0.1.0"
 dependencies = [
  "fastflyer",
+ "fastsim",
 ]
