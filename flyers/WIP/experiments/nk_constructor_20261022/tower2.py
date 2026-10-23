@@ -37,7 +37,7 @@ def level_layouts(n, below, a, b):
                 if done: break
 
 
-def build(k, word, h, choice):
+def build(k, word, h, choice, power_top=True):
     """choice: tuple of layout indices, one per level 1..h."""
     fam, (a, b), sz, cy, cz = F.unpack(word, k)
     vmod = F.lat_module(k - 1, a, b)
@@ -50,7 +50,7 @@ def build(k, word, h, choice):
     below = [tuple(c[1:]) for c in vmod['PLATE']]
     lays = []
     for j in range(1, h + 1):
-        n = k if j == h else k - 1
+        n = k if (j >= h - 1 if power_top else j == h) else k - 1
         g = list(itertools.islice(level_layouts(n, below, a, b), choice[j - 1] + 1))
         if len(g) <= choice[j - 1]: return None
         s, H, R, s2 = g[choice[j - 1]]
@@ -69,14 +69,15 @@ def build(k, word, h, choice):
             X, Y = j * L + i, (j - 1) * L + i
             D = T.shift(X, T.rest[X]) - T.shift(Y, T.rest[X])
             x0 = places[Y][0] + 4 - D
+            top_only = power_top and j == h
             mods.append(dict(P=[tuple(c) for c in H], R=[(0,) + tuple(c) for c in R],
-                             PLATE=[(1,) + tuple(c) for c in H + R] + [(0,) + tuple(s2), (1,) + tuple(s2)],
+                             PLATE=[(1,) + tuple(c) for c in H + R] + ([] if top_only else [(0,) + tuple(s2), (1,) + tuple(s2)]),
                              CONT=[(-3,) + tuple(c) for c in H], size=(a, b),
-                             RIG=[dict(pos=(0,) + tuple(s), dir=-1, victim=Y)]))
+                             RIG=[] if top_only else [dict(pos=(0,) + tuple(s), dir=-1, victim=Y)]))
             places.append((x0,) + place[i][1:])
             mats.append('honey' if (i + j) % 2 else 'slime')
     r = Ring2(T, mods, places, mat=mats)
-    r.lays, r.h, r.L0 = lays, h, L
+    r.lays, r.h, r.L0, r.power_top = lays, h, L, power_top
     return r
 
 
@@ -84,6 +85,7 @@ def add_power(r, choices):
     """choices[j-1] picks the block cell / attach cell for the stickies of level j."""
     T = r.T; L = r.L0; h = r.h
     for j in range(1, h + 1):
+        if r.power_top and j == h: continue
         for i in range(L):
             tgt = j * L + i
             src = (j + 1) * L + i if j < h else j * L + (i - 1) % L
@@ -113,7 +115,8 @@ def scan(k, word, h, nlay=6, npow=12, keep=4, verbose=False):
     for lc in itertools.product(range(nlay), repeat=h):
         base = build(k, word, h, lc)
         if base is None or collisions(base): continue
-        for pc in itertools.product(range(npow), repeat=h):
+        for pc in itertools.product(range(npow), repeat=h - 1):
+            pc = pc + (0,)
             r = build(k, word, h, lc)
             if add_power(r, pc) is None or collisions(r): continue
             if power_problems(r): continue
@@ -143,6 +146,6 @@ if __name__ == '__main__':
     k, h = int(sys.argv[1]), int(sys.argv[2])
     nlay, npow = int(sys.argv[3]), int(sys.argv[4])
     words = [1 | (v << 2) | (l << 6) for v in range(16) for l in range(16)]
-    with ProcessPoolExecutor(14) as ex:
+    with ProcessPoolExecutor(10) as ex:
         for word, res in ex.map(_job, [(k, h, w, nlay, npow) for w in words]):
             if res: print(word, F.unpack(word, k), res, flush=True)

@@ -149,3 +149,9 @@ carrier still rests (each of F's 3 pistons does slot 1 about 1/3 of the time ove
   pulls it; the front sticky is powered by the previous segment's lowered RB. **k=3 flies at PL16** (back bodies load
   16 = 10 glue + RB + 5 riders: the base carries all of the segment's hoppers).
 - `tower2.py` (height h): segments pull the level below, powered by the level above; top level powered laterally.
+- Human N3 original (`tools/flyer_graph.py ... 5`): back loop A-E (6-7 glue, x 0..3, one compact cluster) and 5 towers
+  of height 3 (level 1 pulls the back body and is pulled by level 2; level 3 is power-only and powers level 2's
+  sticky). `tower2.build(..., power_top=True)` with h=3 reproduces this graph on the square ring: k=3 flies at PL16
+  (max body 12; back bodies 11 glue+RB = the limit). The human's back bodies are 7 because the 5-body loop is a
+  compact 3D cluster, not 20 separate square-ring modules with connectors.
+- `modsearch.py` (single-edit local search on the routed ring module): no gain at k=3.
