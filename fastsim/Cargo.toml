@@ -1,0 +1,28 @@
+# Fast simulator. Kept outside the root package so that it does not alter the
+# engine fingerprint used by flyers/bank/catalogue.json. The reference
+# simulator in src/sim.rs is unchanged and remains the definition of behaviour.
+#
+# Build (from the repository root):
+#   cargo build --release --manifest-path fastsim/Cargo.toml --target-dir target
+[package]
+name = "fastsim"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+fastflyer = { path = ".." }
+
+[features]
+profile = []
+
+[profile.release]
+codegen-units = 1
+lto = "fat"
+debug = 1
+
+[profile.test]
+opt-level = 2
+
+[profile.dev]
+opt-level = 2

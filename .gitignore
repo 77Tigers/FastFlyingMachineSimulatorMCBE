@@ -21,6 +21,8 @@ __pycache__/
 !/flyers/bank/**/*.flyer
 # Extension-bank contracts reference their candidate.flyer by relative path.
 !/flyers/extension_bank/**/*.flyer
+# Fast-simulator regression cases (fastsim/tests/equivalence.rs).
+!/fastsim/regressions/*.flyer
 /viewer/node_modules/
 /viewer/.npm-cache/
 # Keep compiled artifacts local, including archived research executables.
