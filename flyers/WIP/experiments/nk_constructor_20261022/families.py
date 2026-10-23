@@ -62,7 +62,7 @@ def build(k, word):
         res = joint_mod(k, a, b, sz if sz is not None else 0)
         if res is None: return None
         return joint_build.build(k, res, (cy, cz))
-    mod = construct.grid_module(k, 'slabP') if fam == 'slab' else lat_module(k, a, b)
+    mod = (construct.grid_module(k, 'slabP', box=(a, b)) if m > 1 else construct.grid_module(k, 'slabP')) if fam == 'slab' else lat_module(k, a, b)
     if mod is None: return None
     a, b = mod['size']
     step = (a + 2, 0) if m == 1 else (a + 1, sz)

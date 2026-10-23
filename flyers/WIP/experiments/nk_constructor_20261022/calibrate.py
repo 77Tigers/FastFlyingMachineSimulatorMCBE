@@ -18,7 +18,7 @@ def one(k):
     best = None   # (pl, word)
     fams = [0, 1] + ([2] if k <= 10 else [])
     for f in fams:
-        boxes = [5] if f == 0 or m == 1 else range(16)
+        boxes = [5] if m == 1 else range(16)
         for bv in boxes:
             lays = range(256) if m == 1 else range(16)
             for lv in lays:

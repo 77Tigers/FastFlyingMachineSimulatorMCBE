@@ -51,7 +51,7 @@ def lat_table_module(k, fname='modules_lat.json'):
                 CONT=[(-2,) + sh(c) for c in T('w2')] + [(-3,) + sh(c) for c in T('w3')], size=(a, b))
 
 
-def grid_module(k, variant='slab'):
+def grid_module(k, variant='slab', box=None):
     if variant == 'cp': return cp_table_module(k)
     if variant == 'latcp': return lat_table_module(k)
     if variant == 'latsym': return lat_table_module(k, 'modules_sym.json')
@@ -60,9 +60,9 @@ def grid_module(k, variant='slab'):
     slabP  plate over P+R lanes, cover = slab at x=-3 behind P lanes only
     lat    R and C lanes on two perfect codes ((y+2z)%5 == 0 / 1); cover = C cells at x=-2 (router connects)"""
     best = None
-    for a in range(1, 14):
-        for b in range(a, 14):
-            if a * b > 3 * k + 12: break
+    shapes = [box] if box else [(a, b) for a in range(1, 14) for b in range(a, 14) if a * b <= 3 * k + 12]
+    for a, b in shapes:
+        if True:
             for off in range(5):
                 cells = [(y, z) for y in range(a) for z in range(b)]
                 code = lambda c, t: (c[0] + 2 * c[1] + off) % 5 == t
@@ -87,6 +87,7 @@ def grid_module(k, variant='slab'):
                 cost = len(plate) + len(cover) + len(R) + (len(C) if variant == 'lat' else 0)
                 if best is None or cost < best[0]:
                     best = (cost, a, b, P, R, plate, cover)
+    if best is None: return None
     _, a, b, P, R, plate, cover = best
     return dict(R=[(0,) + r for r in R], P=P, PLATE=[(1,) + c for c in plate], CONT=cover, size=(a, b))
 
