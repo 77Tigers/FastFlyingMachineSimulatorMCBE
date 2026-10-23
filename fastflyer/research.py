@@ -20,6 +20,7 @@ EXPERIMENTS_DIR = REPO_ROOT / "flyers" / "WIP" / "experiments"
 
 _ROOT_TOOLS = {"fastflyer-sim", "fastflyer-bank-stats", "fastflyer-viewer"}
 _TOOLS_BIN_DIR = REPO_ROOT / "tools" / "src" / "bin"
+_FASTSIM_BIN_DIR = REPO_ROOT / "fastsim" / "src" / "bin"
 _built: set[str] = set()
 _KEY = re.compile(r"(?:^|\s)([A-Za-z_][A-Za-z0-9_]*)=")
 
@@ -28,6 +29,8 @@ def binary(name: str, build: bool = True) -> Path:
     """Path of ``target/release/<name>[.exe]``; with ``build``, run ``cargo build`` once per process."""
     if name in _ROOT_TOOLS:
         cmd = ["cargo", "build", "--release", "--bin", name]
+    elif (_FASTSIM_BIN_DIR / f"{name}.rs").is_file():
+        cmd = ["cargo", "build", "--release", "--manifest-path", "fastsim/Cargo.toml", "--target-dir", "target"]
     elif (_TOOLS_BIN_DIR / f"{name}.rs").is_file():
         cmd = ["cargo", "build", "--release", "--manifest-path", "tools/Cargo.toml", "--target-dir", "target"]
     else:
@@ -145,11 +148,12 @@ def screen(directory: str | Path, ticks: int = 160, out: str | Path | None = Non
 
 
 def bank_stats(paths: Iterable[str | Path], ticks: int = 10000) -> list[dict[str, Any]]:
-    """Run ``fastflyer-bank-stats``; one dict per path, in input order (catalogue.json field names)."""
+    """Run ``fastsim-bank-stats`` (same output as ``fastflyer-bank-stats``, fast simulator); one dict
+    per path, in input order (catalogue.json field names)."""
     resolved = [Path(p).resolve() for p in paths]
     if not resolved:
         return []
-    proc = _run("fastflyer-bank-stats", [ticks, *resolved])
+    proc = _run("fastsim-bank-stats", [ticks, *resolved])
     if proc.returncode:
         raise _tool_error(proc, "bank-stats")
     out: list[dict[str, Any]] = [{}] * len(resolved)

@@ -1,5 +1,5 @@
 //! Shared helpers for the research tools. Uses only the public simulator API.
-use fastflyer::{debug::TickTrace, Block, Coord, Flyer, Kind};
+use fastflyer::{Block, Coord, Flyer, Kind};
 use std::sync::mpsc;
 pub mod contract;
 pub mod columns;
@@ -148,6 +148,9 @@ pub fn checked_run(
     let x0 = min_x(&f);
     let initial_counts = kind_counts(&f);
     let initial_sig = period.map(|_| signature(&f));
+    // The fast simulator reproduces the reference tick and its trace
+    // diagnostics exactly (see fastsim/); the reference stays in src/sim.rs.
+    let mut fast = fastsim::FastFlyer::from_flyer(&f);
     let mut previous_sig = initial_sig.clone();
     let mut c = Check {
         file: file.into(),
@@ -158,49 +161,54 @@ pub fn checked_run(
         ticks,
         ..Default::default()
     };
+    let mut diag = fastsim::Diagnostics::default();
     for t in 0..ticks {
-        let mut tr = TickTrace::new(&f);
-        let report = f.tick_traced(&mut tr, t)?;
+        diag.failures.clear();
+        let report = fast.tick_diagnosed(&mut diag)?;
         c.extensions += report.extensions_started;
         c.extension_failures += report.extension_failures;
-        for step in tr.steps {
-            if let Some(m) = step.info.movement {
-                if let Some(failure) = m.failure {
-                    c.movement_failures += 1;
-                    if c.first_failure_tick.is_none() {
-                        c.first_failure_tick = Some(t);
-                        c.first_failure_kind = format!("{failure:?}");
-                    }
-                } else {
-                    c.max_successful_action = c.max_successful_action.max(m.sources.len());
-                }
+        for failure in &diag.failures {
+            c.movement_failures += 1;
+            if c.first_failure_tick.is_none() {
+                c.first_failure_tick = Some(t);
+                c.first_failure_kind = format!("{failure:?}");
             }
         }
+        c.max_successful_action = c.max_successful_action.max(diag.max_successful_action);
         if report.extension_failures > 0 && c.first_failure_tick.is_none() {
             c.first_failure_tick = Some(t);
             c.first_failure_kind = "extension failure".into();
         }
-        if kind_counts(&f) != initial_counts {
+        if fast_kind_counts(&fast) != initial_counts {
             c.conservation_mismatch_ticks += 1;
         }
         if let Some(p) = period {
             if (t + 1) % p == 0 {
                 c.boundaries += 1;
-                let sig = signature(&f);
+                let sig = signature(&fast.to_flyer());
                 c.initial_matches += usize::from(Some(&sig) == initial_sig.as_ref());
                 c.consecutive_matches += usize::from(Some(&sig) == previous_sig.as_ref());
                 previous_sig = Some(sig);
                 if let Some(dx) = advance {
-                    if min_x(&f) != x0 + dx * c.boundaries as i64 {
+                    if fast.minimum_x() != x0 + dx * c.boundaries as i64 {
                         c.displacement_mismatches += 1;
                     }
                 }
             }
         }
     }
-    c.distance = min_x(&f) - x0;
-    c.end_blocks = f.occupied_count();
+    c.distance = fast.minimum_x() - x0;
+    c.end_blocks = fast.occupied_count();
     Ok(c)
+}
+
+/// `kind_counts` of a fast-simulator flyer.
+pub fn fast_kind_counts(f: &fastsim::FastFlyer) -> [usize; 11] {
+    let all = f.kind_counts();
+    let mut c = [0; 11];
+    c.copy_from_slice(&all[..11]);
+    c[Kind::PistonArm as usize] = 0;
+    c
 }
 
 pub fn default_jobs() -> usize {

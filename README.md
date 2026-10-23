@@ -59,6 +59,7 @@ npm ci --prefix viewer
 cargo test --locked
 cargo build --release --locked --manifest-path tools/Cargo.toml --target-dir target
 cargo test --locked --manifest-path tools/Cargo.toml --lib
+cargo test --release --locked --manifest-path fastsim/Cargo.toml --target-dir target
 python -m unittest discover -s tests -v
 npm test --prefix viewer
 ```
@@ -153,8 +154,10 @@ python scripts/update_bank.py
 python scripts/build_site.py
 ```
 
-The updater builds the Rust `fastflyer-bank-stats` utility and simulates every
-bank flyer for **10,000 ticks** with its saved RNG/phase. It writes
+The updater builds the Rust `fastsim-bank-stats` utility and simulates every
+bank flyer for **10,000 ticks** with its saved RNG/phase. It runs on the fast
+simulator in [`fastsim/`](fastsim/README.md), whose behaviour is identical to the
+reference engine in `src/sim.rs` (checked tick by tick by its tests). It writes
 `flyers/bank/catalogue.json`; commit this cache together with changed flyers.
 GitHub Pages uses the cache without running benchmarks at deployment or in the
 browser. Speed is minimum occupied X displacement divided by 1,000 simulated
@@ -169,8 +172,9 @@ the updater, but only standard 10,000-tick measurements appear in the chart.
 
 Research diagnostics live in the separate cargo crate [`tools/`](tools/), outside the
 root package: `scripts/update_bank.py` fingerprints `src/**/*.rs` and the root
-`Cargo.toml` for `flyers/bank/catalogue.json`, so research tools must not be added
-to `src/`. Build from the repository root:
+`Cargo.toml` (plus `fastsim/`, which runs the measurements) for
+`flyers/bank/catalogue.json`, so research tools must not be added to `src/`.
+The research tools simulate with `fastsim` too. Build from the repository root:
 
 ```sh
 cargo build --release --manifest-path tools/Cargo.toml --target-dir target

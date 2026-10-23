@@ -11,4 +11,12 @@ name = "fastflyer-tools"
 version = "0.1.0"
 dependencies = [
  "fastflyer",
+ "fastsim",
+]
+
+[[package]]
+name = "fastsim"
+version = "0.1.0"
+dependencies = [
+ "fastflyer",
 ]
