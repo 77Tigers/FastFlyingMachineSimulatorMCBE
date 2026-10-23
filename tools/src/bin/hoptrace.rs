@@ -1,7 +1,7 @@
 // hoptrace FILE TICKS W0 PERIOD [LIMIT]
 // Glue bodies = same-material face-connected glue components at tick 0 (labelled A,B,C,... by mean x).
 // Prints, for every non-glue block, one cell per slot from W0: Fx = fired (extend) pushing body x,
-// R = retract action, rx = moved together with body x, .. = still. Pistons get a second line with
+// R = retract action (Rx = sticky pull of body x), rx = moved together with body x, .. = still. Pistons get a second line with
 // power at the slot's even tick (P) / odd tick (p) / both (B).
 // HOP_REL=X additionally prints positions (dx to body X reference block : y : z) at each slot start.
 use fastflyer::{debug::TickTrace,Block,Coord,Flyer,Kind};
@@ -63,7 +63,7 @@ fn main()->Result<(),Box<dyn std::error::Error>>{
     let bs:BTreeSet<usize>=moved.iter().filter(|(i,_)|body[*i]!=usize::MAX).map(|(i,_)|body[*i]).collect();
     let bl:String=bs.iter().map(|b|lab[*b]).collect();
     if t>=w0{let s=(t-w0)/2;
-     if actor!=usize::MAX{row[actor][s]=if retract{"R ".to_string()}else{format!("F{}",if bl.is_empty(){"-".to_string()}else{bl.clone()})};}
+     if actor!=usize::MAX{row[actor][s]=if retract{if bl.is_empty(){"R ".to_string()}else{format!("R{}",bl)}}else{format!("F{}",if bl.is_empty(){"-".to_string()}else{bl.clone()})};}
      for (id,_) in &moved{if body[*id]==usize::MAX{row[*id][s]=format!("r{}",if bl.is_empty(){"?".to_string()}else{bl.clone()});}else{gw[body[*id]][s]='m';}}}
     for (id,q) in moved{ids.insert(q,id);}
    }

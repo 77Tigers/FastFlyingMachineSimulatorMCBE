@@ -2,7 +2,7 @@
 Needs target/release/hoptrace and flyer-ledger (cargo build --release --manifest-path tools/Cargo.toml --target-dir target).
 Bodies = same-material glue components (hoptrace labels A, B, ... by mean x), with their words (m = moves).
 Edges (from hoptrace's per-slot roles over one period, after a warm-up):
-  X =rigid=> Y   a piston that only rides X pushes Y            X =pull=> Y   a sticky on X pulls Y (ledger)
+  X =rigid=> Y   a piston that only rides X pushes Y            X =pull=> Y   a sticky riding X pulls Y
   Y <=hop[Z]     a hopper of Y (fires on Y) carried by Z between firings (Z = '-' if never carried)"""
 import sys, re, subprocess, collections, pathlib
 ROOT = pathlib.Path(__file__).resolve().parents[1]
@@ -28,14 +28,17 @@ def graph(fl, P, warm=30):
         fires = [c[1] for c in cells if c[0] == 'F' and c[1] != '-']
         rides = [c[1] for c in cells if c[0] == 'r']
         if kind == 'RB': powers[('RB', ''.join(sorted(set(rides))))] += 1; continue
-        if kind.startswith('S'): continue    # stickies: victims from the ledger
+        if kind.startswith('S'):
+            pulls = [c[1:] for c in cells if c[0] == 'R' and len(c) > 1]
+            host = sorted(set(rides))
+            for y in pulls: E[(''.join(host) or '-', 'pull', y)] += 1
+            continue
         for y in fires:
             car = sorted(set(rides) - {y})
             if set(rides) <= {y} | set(car) and y not in rides and len(set(rides)) == 1 and rides:
                 E[(rides[0], 'rigid', y)] += 1
             else:
                 E[(''.join(car) or '-', 'hop', y)] += 1
-    # pulls from the ledger (body names differ: map by size+material is unreliable, so match by moved glue cells)
     return words, sizes, E, powers
 
 
@@ -45,5 +48,5 @@ if __name__ == '__main__':
     for b in sorted(words): print(f'{b}: {sizes[b][0]:2d} {sizes[b][1]:5s} word {words[b]}')
     print('edges:')
     for (a, k, b), c in sorted(E.items(), key=lambda e: (e[0][2], e[0][1])):
-        print(f'  {b} <= {k}[{a}] x{c}' if k == 'hop' else f'  {a} =rigid=> {b} x{c}')
+        print(f'  {b} <= {k}[{a}] x{c}' if k == 'hop' else f'  {a} ={k}=> {b} x{c}')
     print('redstone blocks by carrier body:', dict(powers))
