@@ -68,6 +68,21 @@ x=1 over pushers + RBs, next body's cover = slab at x=-3 behind the pushers.
 
 Sum = 1200 (joint modules: k=3 PL15, k=5 PL24, k=8 PL35). Flyers: `python nk_flyer.py K` (or `out/best/n{k}.flyer`).
 
+## Table-free program (rules of 2026-10-23) — `families.py`
+
+User rules: each family may spend 66 s in total over k=3..24 (3 s/k average, freely distributed); at most 15
+distinct families; at most 10 precomputed bits per k shared by all families (used for real choices, not seeds);
+no other precomputed data (the earlier `square_table.json` / `modules_*.json` tables are NOT allowed in the program).
+- `families.py`: families `slab` (rectangle module, no CP) and `lat` (side-contact module by CP-SAT, 1 worker,
+  deterministic time 1.0 for k<=12, 4.0 above); `joint` exists but is never chosen (1 deterministic worker is far
+  too weak; several workers are not reproducible). `bits.json` = one 10-bit word per k: family (2 bits), box shape
+  (4 bits), layout offsets (4 bits; the 4-body k=6 square uses 8 bits for its corner offset).
+- `calibrate.py K,...` chooses each word offline by building + simulating every option (fastsim, 1 seed, 1000 blocks).
+- **Honest result: sum 1209** (slab 1.4 s, lat 32.9 s of 66 s). With the (disallowed) offline tables it was 1200.
+  `python families.py` rebuilds all 22 flyers into `out/fam_n{k}.flyer` and prints times + sum.
+- Banked (2026-10-23, from the table version, 80/80 at 10000 ticks): `bank/pl*/nk_square_n{k}.flyer` for k=3..24 except
+  k=6 (bank/pl26/n6_screw_ring_3p75 is better). Verification uses `nkcheck` on `fastsim`.
+
 ## Bounds and negatives
 
 - **Counting bound:** every block moves +k per cycle and a piston fires at most once per cycle (extend + retract
