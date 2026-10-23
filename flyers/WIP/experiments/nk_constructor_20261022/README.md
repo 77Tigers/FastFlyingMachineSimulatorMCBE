@@ -108,3 +108,25 @@ no other precomputed data (the earlier `square_table.json` / `modules_*.json` ta
   several bodies that rested the slot before), which covers 2 of 3 moves at k=3; for large k rigid moves stay at
   ~2 per body per cycle, so hoppers (with their carrier glue) dominate. A rigid pusher on the next body W is
   equivalent to a hopper that W carries all the time (same cost).
+
+## 2026-10-23 (later): scoring k = 2..30, k <= 6 triple; mirror bit; terraces
+
+User rules: sum over k = 2..30 with k = 2..6 counted three times; each family may spend 84 s (3 s per k).
+k = 2 is a diagnostic only (do not tune for it).
+- **Mirror bit** (layout bit 1: module reflected in y) and a wider corner choice (cy = a-1 or a, cz = b+1 or b+2):
+  the side-contact solver often returns a module that faces the wrong way for the next body. k=3 15 (was 16; the
+  table version's 15 now comes from the general family), k=4 18, k=7 30, k=8 34, k=16 63, k=17 68.
+  The 4-body ring (k=6) now also chooses its box: the side-contact 4x4 pinwheel + corner (5,4) gives PL26 (= bank).
+- **Terrace family** (`terrace.py`, family 3): each body's hoppers are split into g floors in g neighbouring lane
+  strips, each floor ~4 higher. Strip d holds a diagonal: body d floor g, body d+1 floor g-1 under it, ...,
+  then body d+g's slab. A floor's spent hoppers are carried by the NEXT body's *plate* of the floor below (same
+  lanes, 3 lower), so only floor 1 needs real cover cells (k/g instead of k). Cost: one connector rise (~5-6 cells)
+  per extra floor. The per-link frame offsets D (sum 2 per base ring) are absorbed by the diagonal levels
+  (`terrace.levels`). Wins for k >= 22 (g = 2): 22:83 23:86 24:88 25:96 26:98 27:100 28:103 29:106 30:108
+  (-36 in total). Lateral-cover strips (`terrace2.py`) and mirrored strips gave nothing.
+- Lightning rods in the module CP (`cp_module.solve(rods=True)`): no cheaper module for k = 3..16.
+- Bigger square rings for even k (L = 4 x base ring, `exp_ring.py`): k=10 42 (vs 44) before the mirror bit; not yet
+  in the word (no free bit).
+- Program: `python families.py` builds k = 2..30: **sum 1806, weighted (k <= 6 triple) 1990**;
+  time slab 0.8 s, lat 66.4 s, terrace 10.6 s (of 84 s each). All 29 flyers fly at their predicted PL (1 seed, 1000 blocks).
+- Offline word choice: `calib_sl.py` (slab/lat, -> out/bits_sl.json) and `calibrate_fam.py 3 K,...` (terrace).

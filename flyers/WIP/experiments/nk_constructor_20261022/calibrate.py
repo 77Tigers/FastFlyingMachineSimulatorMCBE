@@ -13,16 +13,14 @@ def flies(r, k, tag):
     return f'minpl={pl}' in out
 
 
-def one(k):
+def one(k, fams=None):
     m = square.ring_size(k) // 4; L = square.ring_size(k)
     best = None   # (pl, word)
-    fams = [0, 1] + ([2] if k <= 10 else [])
+    if fams is None: fams = [0, 1] + ([2] if k <= 10 else []) + ([3] if k >= 12 else [])
     for f in fams:
-        boxes = [5] if m == 1 else range(16)
-        for bv in boxes:
-            lays = range(256) if m == 1 else range(16)
-            for lv in lays:
-                word = f | ((lv << 2) if m == 1 else ((bv << 2) | (lv << 6)))
+        for bv in range(16):
+            for lv in range(16):
+                word = f | (bv << 2) | (lv << 6)
                 try: r = F.build(k, word)
                 except Exception: continue
                 if r is None: continue
