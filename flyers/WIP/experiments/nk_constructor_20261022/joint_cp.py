@@ -15,7 +15,7 @@ def add(l, s, sign=1): return (l[0] + sign * s[0], l[1] + sign * s[1])
 def nbs(l): return [(l[0] + a, l[1] + b) for a, b in N4]
 
 
-def solve(k, a, b, step, secs=60, workers=4, xlo=-4, margin=2, hint=None, extra_cons=None, fix=None):
+def solve(k, a, b, step, secs=60, workers=4, xlo=-4, margin=2, hint=None, extra_cons=None, fix=None, det=None):
     m = cp_model.CpModel()
     B = lambda: m.NewBoolVar('')
     box = [(y, z) for y in range(a) for z in range(b)]
@@ -110,7 +110,9 @@ def solve(k, a, b, step, secs=60, workers=4, xlo=-4, margin=2, hint=None, extra_
         if 'E' in hint:
             he = {(e[0], tuple(e[1])) for e in hint['E']}
             for e in E: m.AddHint(E[e], e in he)
-    s = cp_model.CpSolver(); s.parameters.max_time_in_seconds = secs; s.parameters.num_workers = workers
+    s = cp_model.CpSolver(); s.parameters.num_workers = workers
+    if det: s.parameters.max_deterministic_time = det
+    else: s.parameters.max_time_in_seconds = secs
     st = s.Solve(m)
     if st not in (cp_model.OPTIMAL, cp_model.FEASIBLE): return None
     gl = lambda d: sorted(l for l in d if s.Value(d[l]))

@@ -29,7 +29,7 @@ def connect(m, cells, x, adj, name):
         m.Add(outflow - inflow == supply - x[u])
 
 
-def solve(k, a, b, secs=10, workers=8, sym=False, hint=None):
+def solve(k, a, b, secs=10, workers=8, sym=False, hint=None, det=None):
     m = cp_model.CpModel()
     L = [(y, z) for y in range(a) for z in range(b)]
     nb = {c: [(c[0] + d[0], c[1] + d[1]) for d in N4 if (c[0] + d[0], c[1] + d[1]) in set(L)] for c in L}
@@ -57,7 +57,9 @@ def solve(k, a, b, secs=10, workers=8, sym=False, hint=None):
         for name, d in (('P', P), ('R', R), ('C', C), ('pl', pl), ('w2', w2), ('w3', w3)):
             hs = set(map(tuple, hint.get(name, [])))
             for c in L: m.AddHint(d[c], c in hs)
-    s = cp_model.CpSolver(); s.parameters.max_time_in_seconds = secs; s.parameters.num_workers = workers
+    s = cp_model.CpSolver(); s.parameters.num_workers = workers
+    if det: s.parameters.max_deterministic_time = det
+    else: s.parameters.max_time_in_seconds = secs
     st = s.Solve(m)
     if st not in (cp_model.OPTIMAL, cp_model.FEASIBLE): return None
     g = lambda d: sorted(c for c in L if s.Value(d[c]))
