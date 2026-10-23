@@ -115,7 +115,7 @@ class Ring2(Ring):
             X, kind, info = lst[0]
             if kind == 'g': fl.set(c, Block(mats[self.mat[X]]))
             elif kind == 'RB': fl.set(c, Block(Kind.REDSTONE_BLOCK))
-            elif kind == 'arm': fl.set(c, Block(Kind.PISTON_ARM, direction=(1 if (isinstance(info, tuple) and self.mods[X]['RIG'][info[1]]['dir'] < 0) else 0)))
+            elif kind == 'arm': fl.set(c, Block(Kind.PISTON_ARM))
             elif kind == 'RIG':
                 i, st, d, victim = info
                 fl.set(c, Block.piston(0 if d > 0 else 1, state=st, sticky=d < 0))
@@ -128,3 +128,36 @@ class Ring2(Ring):
     def load_riders(self, X):
         """rigid pistons hosted by X (they ride X in every move)"""
         return len(self.mods[X].get('RIG', []))
+
+
+def power_problems(r, bodies=None):
+    """redstone blocks next to pistons at slot starts (face-adjacent, not in front of the piston):
+    - a hopper may only be powered by its own body's blocks;
+    - a sticky (rigid, dir -1) must be powered exactly at its host's local slot 0 and never by its own host."""
+    T = r.T; out = []
+    for s in range(T.S):
+        occ = r.world(s, canon=False)
+        rbs = [(c, e[0]) for c, lst in occ.items() for e in lst if e[1] == 'RB']
+        for c, X in rbs:
+            for d in D6:
+                n = add(c, d)
+                for Q, kind, info in occ.get(n, []):
+                    if kind == 'P':
+                        if Q != X and info[1] == 0 and n[0] - c[0] != 1:   # RB not directly in front
+                            out.append((s, 'foreign RB powers hopper', X, Q, n))
+                    elif kind == 'RIG':
+                        i, st, dr, victim = info
+                        front = (n[0] + dr, n[1], n[2])
+                        if front == c: continue
+                        m = T.local(Q, s)
+                        if Q == X: out.append((s, 'own RB powers rigid piston', X, Q, n))
+                        elif m != 0: out.append((s, f'rigid piston powered at local {m}', X, Q, n))
+        # stickies that need power at local 0 but get none
+        for c, lst in occ.items():
+            for Q, kind, info in lst:
+                if kind == 'RIG' and T.local(Q, s) == 0:
+                    i, st, dr, victim = info
+                    front = (c[0] + dr, c[1], c[2])
+                    if not any(e[1] == 'RB' and e[0] != Q for d in D6 if add(c, d) != front for e in occ.get(add(c, d), [])):
+                        out.append((s, 'rigid piston unpowered at local 0', None, Q, c))
+    return out
