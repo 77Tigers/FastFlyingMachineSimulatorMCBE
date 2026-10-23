@@ -41,10 +41,28 @@ def levels(T, g, smooth=True):
     return h, s, D
 
 
-def build(k, g, gap=1, cv=None, box=None, mirror=False):
+import functools
+
+
+@functools.lru_cache(maxsize=None)
+def cp_pattern(p, a, b, g, det=2.0):
+    import strip_cp
+    r = strip_cp.solve(p, a, b, g, det)
+    if r is None: return None
+    return [tuple(c) for c in r['P']], [tuple(c) for c in r['R']], (a, b), [tuple(c) for c in r['PL']], [tuple(c) for c in r['S']]
+
+
+def build(k, g, gap=1, cv=None, box=None, mirror=False, pattern='slab'):
     L = square.ring_size(k); T = Timing(k, L)
     sizes = floor_sizes(k, g); p = max(sizes)
-    P, R, (a, b) = strip_pattern(p, box)
+    PLx = Sx = None
+    if pattern == 'cp':
+        if box is None: box = construct.grid_module(p, 'slabP')['size']
+        res = cp_pattern(p, box[0], box[1], g)
+        if res is None: return None
+        P, R, (a, b), PLx, Sx = res
+    else:
+        P, R, (a, b) = strip_pattern(p, box)
     if mirror: P = [(a - 1 - y, z) for y, z in P]; R = [(a - 1 - y, z) for y, z in R]
     if cv is None: cv = (a - 1, b + 1)
     place = square.square_layout(L, a, b, (a + gap, 0), cv)
@@ -63,6 +81,12 @@ def build(k, g, gap=1, cv=None, box=None, mirror=False):
                 wy, wz = world(d, c); mP.append((wy, wz, hh)); mPL.append((hh + 1, wy, wz)); mC.append((hh - 3, wy, wz))
             for c in rl:
                 wy, wz = world(d, c); mR.append((hh, wy, wz)); mPL.append((hh + 1, wy, wz))
+            if PLx is not None:     # cp strip: extra plate lanes (connectivity); floor 1 also gets the extra slab lanes
+                for c in PLx:
+                    if c not in ls and c not in rl: wy, wz = world(d, c); mPL.append((hh + 1, wy, wz))
+                if f == 0:
+                    for c in Sx:
+                        if c not in ls: wy, wz = world(d, c); mC.append((hh - 3, wy, wz))
         mods.append(dict(P=mP, R=mR, PLATE=mPL, CONT=mC, size=(a, b)))
     r = Ring(T, mods, [(0, (0, 0), 0)] * L)
     r.h, r.steps, r.D, r.sizes = h, s, D, sizes

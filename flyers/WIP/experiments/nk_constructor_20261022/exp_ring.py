@@ -10,4 +10,4 @@ square.ring_size = big
 import sqbuild; sqbuild.square.ring_size = big
 if __name__ == '__main__':
     for k in [int(x) for x in sys.argv[1].split(',')]:
-        print(k, square.ring_size(k), C.one(k), flush=True)
+        print(k, square.ring_size(k), C.one(k, [0, 1]), flush=True)

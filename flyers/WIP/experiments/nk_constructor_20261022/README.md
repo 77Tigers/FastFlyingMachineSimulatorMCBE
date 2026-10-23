@@ -130,3 +130,8 @@ k = 2 is a diagnostic only (do not tune for it).
 - Program: `python families.py` builds k = 2..30: **sum 1806, weighted (k <= 6 triple) 1990**;
   time slab 0.8 s, lat 66.4 s, terrace 10.6 s (of 84 s each). All 29 flyers fly at their predicted PL (1 seed, 1000 blocks).
 - Offline word choice: `calib_sl.py` (slab/lat, -> out/bits_sl.json) and `calibrate_fam.py 3 K,...` (terrace).
+- Update: family 2 is now **latbig** (side-contact module on a ring of 4 x the base ring; the joint family was never
+  chosen and is gone from the word): k=10 42. Terrace bit 6 now picks a CP strip pattern (`strip_cp.py`, plate + RBs
+  + slab minimised for g = 2) instead of g = 3: 16:62 18:70 20:76 25:93 26:94 27:99 28:100 30:107.
+  `joint_cp.solve(rbcol=True)` (RB hanging on the own connector, the user's rod-on-stretch idea): k=3 still 12 glue+RB.
+  **Sum 1787, weighted 1971**; time slab 0.3 s, lat 52.5 s, latbig 3.5 s, terrace 29.1 s. All 29 fly at predicted PL.

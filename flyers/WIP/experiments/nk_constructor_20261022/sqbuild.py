@@ -25,9 +25,9 @@ def candidates(a, b, m):
     return [((a + 1, sz), (a - 1, cz)) for sz in (-1, 0) for cz in (b, b + 1, b + 2)]
 
 
-def assemble(k, mod, step, cv):
-    L = square.ring_size(k); m = L // 4; L0 = bodies_for(k)
-    r = square.make(k, mod, step, cv)
+def assemble(k, mod, step, cv, L=None):
+    L = L or square.ring_size(k); m = L // 4; L0 = bodies_for(k)
+    r = square.make(k, mod, step, cv, L)
     if not square.hard_ok(r): return None
     if m % L0 == 0:
         for X in range(m): r.route(X)

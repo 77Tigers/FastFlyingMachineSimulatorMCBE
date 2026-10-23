@@ -16,7 +16,7 @@ def flies(r, k, tag):
 def one(k, fams=None):
     m = square.ring_size(k) // 4; L = square.ring_size(k)
     best = None   # (pl, word)
-    if fams is None: fams = [0, 1] + ([2] if k <= 10 else []) + ([3] if k >= 12 else [])
+    if fams is None: fams = [0, 1] + ([2] if F.big_ring(k) else []) + ([3] if k >= 12 else [])
     for f in fams:
         for bv in range(16):
             for lv in range(16):
@@ -26,6 +26,7 @@ def one(k, fams=None):
                 if r is None: continue
                 pl = max(r.size()) + k
                 if best and pl >= best[0]: continue
+                L, m = r.T.L, r.T.L // 4
                 sub = sorted({(X + d) % L for X in (0, 1, m) for d in range(-2, 3)})
                 if r.check(sub): continue
                 if flies(r, k, f'{k}_{word}'): best = (pl, word)
