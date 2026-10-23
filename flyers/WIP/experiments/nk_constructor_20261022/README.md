@@ -135,3 +135,17 @@ k = 2 is a diagnostic only (do not tune for it).
   + slab minimised for g = 2) instead of g = 3: 16:62 18:70 20:76 25:93 26:94 27:99 28:100 30:107.
   `joint_cp.solve(rbcol=True)` (RB hanging on the own connector, the user's rod-on-stretch idea): k=3 still 12 glue+RB.
   **Sum 1787, weighted 1971**; time slab 0.3 s, lat 52.5 s, latbig 3.5 s, terrace 29.1 s. All 29 fly at predicted PL.
+
+## Towers / front segments (2026-10-23/24, user's front-pull idea; tm_smol analysis)
+
+`python tools/flyer_graph.py flyers/bank/pl12/human_tm_smol_3bps.flyer 5` (shared tool): back loop of 5 bodies
+(B=>A, D=>B, E=>D, C=>E, each also a hopper carried by the pusher; C has 3 hoppers carried by A), two towers
+B=>F=>H=>J=>L and E=>G=>I=>K=>M (each segment rests 2 slots before its base, which carries its hoppers and gives it its
+first move), pulls F->B, G->E, H->A, I->D, J->H, K->I. The "rigid" pushes on F are just F's hoppers firing while the
+carrier still rests (each of F's 3 pistons does slot 1 about 1/3 of the time over 200 cycles).
+- `nk2.py`: ring model for any body graph (per-body rest + carrier), rigid pistons (`RIG`, stickies), power checker
+  (`power_problems`: foreign RB next to a hopper, rigid piston powered at the wrong slot).
+- `tower.py` (height 1): every back body (k-1 hoppers) carries a front segment (k hoppers, on the back plate cells) that
+  pulls it; the front sticky is powered by the previous segment's lowered RB. **k=3 flies at PL16** (back bodies load
+  16 = 10 glue + RB + 5 riders: the base carries all of the segment's hoppers).
+- `tower2.py` (height h): segments pull the level below, powered by the level above; top level powered laterally.

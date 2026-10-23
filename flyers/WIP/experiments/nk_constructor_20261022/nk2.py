@@ -9,6 +9,16 @@ from collections import defaultdict
 from nk import Timing, Ring, D6, add
 
 
+class _View:
+    """read-only view of a slot world without rigid pistons and their arms (for the base checker)"""
+    __slots__ = ('occ',)
+    def __init__(self, occ): self.occ = occ
+    def get(self, c, default=None):
+        lst = self.occ.get(c)
+        if not lst: return default if default is not None else []
+        return [e for e in lst if e[1] != 'RIG' and not (e[1] == 'arm' and isinstance(e[2], tuple))]
+
+
 class Timing2(Timing):
     def __init__(self, k, rests, nxt):
         self.k, self.S = k, k + 2
@@ -91,8 +101,7 @@ class Ring2(Ring):
                 dst = add(w, (1, 0, 0))
                 for Q, kind, info in occ.get(dst, []):
                     if Q != X and kind == 'RIG': return bad(f's{s} moves into {Q} rigid piston')
-        hidden = [{c: [e for e in lst if e[1] != 'RIG' and not (e[1] == 'arm' and isinstance(e[2], tuple))]
-                   for c, lst in occ.items()} for occ in worlds]
+        hidden = [_View(occ) for occ in worlds]
         # a sticky's arm in front of the glue it pulls is removed before the pull; other arms stay obstacles
         for s in range(T.S):
             occ = worlds[s]
