@@ -170,6 +170,7 @@ gives 4 bodies of 7 -> PL9 (was 10). Stored as bank entry `link0_n2_lat0_k2`; k=
 - Power reuse (the victim's own RB powering the puller's sticky, `HL_REUSE=1`): never triggers on these rings.
 - Terrace at odd k 17/19/21 (`terr_odd_probe.py`): best 69/75/82 vs lat 68/73/82; rotating where the extra
   floor steps fall (`TERR_PH`, `terr_phase_test.py`) gives 68 at k=17 (tie), nothing at 19/21 or even k 16..24.
+- Terrace on a 4x larger ring (`TERR_RING=4`): no change k=22/26/30.
 - Earlier: x0 offsets for lat, lateral-cover terrace, rods in the module CP, RB-on-connector joint CP, single-edit
   module search (`modsearch.py`), hopper reseating (`reseat.py`), joint CP back bodies (`back_cp.py`, optimum 9).
 

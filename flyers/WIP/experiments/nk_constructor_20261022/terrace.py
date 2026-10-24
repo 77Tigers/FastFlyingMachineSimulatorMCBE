@@ -69,7 +69,7 @@ def cp2_pattern(p, a, b, g, det=8.0):
 
 
 def build(k, g, gap=1, cv=None, box=None, mirror=False, pattern='slab', sz=0):
-    L = square.ring_size(k); T = Timing(k, L)
+    L = square.ring_size(k) * int(os.environ.get('TERR_RING', 1)); T = Timing(k, L)
     sizes = floor_sizes(k, g); p = max(sizes)
     PLx = Sx = None; SDx = []
     if isinstance(pattern, dict):   # an explicit strip pattern (strip_cp.solve_many entry)

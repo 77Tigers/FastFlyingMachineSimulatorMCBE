@@ -25,8 +25,9 @@ if __name__ == '__main__':
     GAPS = tuple(int(x) for x in os.environ.get('TG', '1,2').split(','))
     bits = json.load(open('bits.json'))
     jobs = []
-    for k in [int(x) for x in sys.argv[1].split(',')]:
-        w = bits[str(k)]; g, gap0, cv0, box, pat = F.terrace_params(k, w)
+    for kk in sys.argv[1].split(','):
+        k = int(kk.split(':')[0]); w = int(kk.split(':')[1]) if ':' in kk else bits[str(k)]
+        g, gap0, cv0, box, pat = F.terrace_params(k, w)
         a, b = box
         for gap, sz in itertools.product(GAPS, (-1, 0, 1)):
             for cy, cz in itertools.product(range(a - 2, a + 1), range(b - 1, b + 4)):
@@ -37,6 +38,5 @@ if __name__ == '__main__':
             if out: res.setdefault(args[0], []).append((out, args[2:5]))
     for k in sorted(res):
         res[k].sort()
-        w = bits[str(k)]; g, gap0, cv0, box, pat = F.terrace_params(k, w)
         print(k, 'current', (gap0, 0, cv0), 'best', res[k][:3], flush=True)
         json.dump(res[k], open(f'out/terr_offset_{k}.json', 'w'))
