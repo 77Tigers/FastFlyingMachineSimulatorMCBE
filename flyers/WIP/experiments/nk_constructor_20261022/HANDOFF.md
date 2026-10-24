@@ -55,6 +55,45 @@ limits** (PL). N_k: cycle 2(k+2) ticks, advance +k (k=2: 2.5 bps, k=3: 3 bps, ..
 
 Family time (serial `python families.py`, s; budget 84 each): slab 0.1, lat 35.8, latbig 1.9, terrace 26.7, link 0.6.
 
+Where the largest body's cells go (`out/breakdown_final.json`; plate includes RB-front cells, cover = cells holding
+PREV's spent hoppers, connector = routed cells; PL = largest load = body + carried hoppers + own rigid pistons):
+
+| k | PL | family | bodies | largest body | plate | cover | connector | RBs |
+|---|---|---|---|---|---|---|---|---|
+| 2 | 9 | link | 4 | 7 | 3 | 1 | 2 | 1 |
+| 3 | 13 | link | 80 | 9 | 3 | 1 | 4 | 1 |
+| 4 | 18 | lat | 12 | 14 | 6 | 2 | 4 | 2 |
+| 5 | 23 | lat | 28 | 18 | 8 | 2 | 5 | 3 |
+| 6 | 26 | lat | 4 | 20 | 9 | 3 | 5 | 3 |
+| 7 | 30 | lat | 36 | 23 | 11 | 4 | 4 | 4 |
+| 8 | 34 | lat | 20 | 26 | 11 | 8 | 4 | 3 |
+| 9 | 37 | lat | 44 | 28 | 12 | 9 | 4 | 3 |
+| 10 | 42 | latbig | 24 | 32 | 14 | 10 | 4 | 4 |
+| 11 | 44 | lat | 52 | 33 | 15 | 10 | 4 | 4 |
+| 12 | 48 | lat | 28 | 36 | 16 | 12 | 4 | 4 |
+| 13 | 54 | lat | 60 | 41 | 18 | 12 | 6 | 5 |
+| 14 | 57 | terrace | 8 | 43 | 18 | 9 | 12 | 4 |
+| 15 | 61 | slab | 68 | 46 | 20 | 15 | 6 | 5 |
+| 16 | 62 | terrace | 36 | 46 | 20 | 10 | 12 | 4 |
+| 17 | 68 | lat | 76 | 51 | 23 | 17 | 5 | 6 |
+| 18 | 70 | terrace | 20 | 52 | 24 | 10 | 12 | 6 |
+| 19 | 73 | lat | 84 | 54 | 25 | 19 | 4 | 6 |
+| 20 | 76 | terrace | 44 | 56 | 26 | 12 | 12 | 6 |
+| 21 | 82 | lat | 92 | 61 | 28 | 22 | 4 | 7 |
+| 22 | 83 | terrace | 12 | 61 | 30 | 11 | 12 | 8 |
+| 23 | 86 | terrace | 100 | 63 | 31 | 12 | 12 | 8 |
+| 24 | 88 | terrace | 52 | 64 | 32 | 12 | 12 | 8 |
+| 25 | 93 | terrace | 108 | 68 | 34 | 14 | 12 | 8 |
+| 26 | 94 | terrace | 28 | 68 | 34 | 14 | 12 | 8 |
+| 27 | 99 | terrace | 116 | 72 | 36 | 16 | 12 | 8 |
+| 28 | 100 | terrace | 60 | 72 | 36 | 16 | 12 | 8 |
+| 29 | 106 | terrace | 124 | 77 | 39 | 15 | 13 | 10 |
+| 30 | 107 | terrace | 16 | 77 | 40 | 15 | 12 | 10 |
+
+Observations: lat bodies pay ~k cover cells (one per hopper); terrace bodies pay ~k/2 cover but ~12 connector (two
+4-level rises across strip boundaries); plate ~ k + k/3 everywhere (one RB per ~3 hoppers). Odd k uses rings of
+4 x (k+2) bodies (k=21: 92), even k (k+2)/2 x ... (k=22: 12).
+
 ## 3. Program architecture
 
 - `families.py`: `build(k, word)` dispatches on `fam_of(word)`; `predicted_pl(r)` = max over bodies of glue + RBs +
