@@ -185,6 +185,11 @@ gives 4 bodies of 7 -> PL9 (was 10). Stored as bank entry `link0_n2_lat0_k2`; k=
    the strip pattern CP (`strip_cp.py`) align top-edge plate lanes with the next strip's bottom-edge slab lanes (in the
    step's frame), per rise; a global sz shift moves every rise at once and did not help. `steiner.py` gives exact
    per-body connectors to score candidates.
+   Update: the k=30 pattern already has aligned endpoint lanes for both rises (z=1, 2 on the facing edges); the jog
+   comes from the two rises of neighbouring bodies stacking in the same gap lanes and from pistons around them. The
+   exact connector is **proven optimal (12) within a 1-cell margin** of the body (`steiner.py`, 605 candidates); with
+   a 2-cell margin the bound is 10 after 300 s. So routing is done: only a different layout (strip arrangement, where
+   the two rises of a boundary go, gap width per boundary) can save cells.
 2. k=3 PL12: back 8 everywhere and level 2 <= 8. Done so far: 0-lane links give back 8 (one in 5 is 9) but towers
    fail on power; 1-lane links with 4-lane steps (`link0_screen.py 2 3 1 4`, bank `link0_n2_lat1_*`) give towers at
    PL15 only (levels 11). Next: towers that drift sideways level by level (as in the human flyer: B y4-6, F y6-7,

@@ -18,7 +18,7 @@ def comps(cells):
     return out
 
 
-def exact_connector(r, X, margin=2, secs=20.0, workers=8, hint=None):
+def exact_connector(r, X, margin=2, secs=20.0, workers=16, hint=None):
     """minimum set of extra cells joining X's plates, contacts and extras (other bodies fixed)"""
     old = r.glue[X]
     term = set(r.plates[X]) | set(r.contacts[X]) | set(r.extra[X])
