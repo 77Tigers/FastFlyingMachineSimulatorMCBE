@@ -53,7 +53,7 @@ limits** (PL). N_k: cycle 2(k+2) ticks, advance +k (k=2: 2.5 bps, k=3: 3 bps, ..
 | 10 | 42 | latbig | 20 | 76 | terrace | 30 | 107 | terrace |
 | 11 | 44 | lat | 21 | 82 | lat | | | |
 
-Family time (s): slab 0.2, lat ~36, latbig 1.8, terrace ~25, link ~1.5.
+Family time (serial `python families.py`, s; budget 84 each): slab 0.1, lat 35.8, latbig 1.9, terrace 26.7, link 0.6.
 
 ## 3. Program architecture
 
@@ -125,6 +125,10 @@ gives 4 bodies of 7 -> PL9 (was 10). Stored as bank entry `link0_n2_lat0_k2`; k=
 - Balanced per-link x offsets on lat rings (`lat_xoff_test.py`): worse by 1-3 (k=4..11). Plain link rings for
   k=3 (12-13) and k=4 (17 vs 14). Wider lat straight steps (`lat_step_scan.py`): no gain k=7..13. Calibration
   (`calibrate_fam.py`): terrace k=10..13,15 / lat 15,16,18 / latbig 4,6,8,12 no gain (terrace won k=14).
+- Terrace strip-pattern box symmetries (`terr_sym_test.py`, 8 variants): no gain k=25..30. CP enumeration of
+  tied strip patterns (`strip_cp.solve_many`) is too slow (flow variables duplicate solutions).
+- k=2 links with a 1-lane offset: bodies 7 again (plate 3 + RB 1 + cover 1 + connector 2 looks like the floor).
+- Power reuse (the victim's own RB powering the puller's sticky, `HL_REUSE=1`): never triggers on these rings.
 - Earlier: x0 offsets for lat, lateral-cover terrace, rods in the module CP, RB-on-connector joint CP, single-edit
   module search (`modsearch.py`), hopper reseating (`reseat.py`), joint CP back bodies (`back_cp.py`, optimum 9).
 

@@ -67,7 +67,10 @@ def build(k, g, gap=1, cv=None, box=None, mirror=False, pattern='slab', sz=0):
     L = square.ring_size(k); T = Timing(k, L)
     sizes = floor_sizes(k, g); p = max(sizes)
     PLx = Sx = None; SDx = []
-    if pattern == 'cp2':
+    if isinstance(pattern, dict):   # an explicit strip pattern (strip_cp.solve_many entry)
+        P, R, (a, b), PLx, Sx = ([tuple(c) for c in pattern['P']], [tuple(c) for c in pattern['R']], tuple(pattern['size']),
+                                 [tuple(c) for c in pattern['PL']], [tuple(c) for c in pattern['S']])
+    elif pattern == 'cp2':
         if box is None: box = construct.grid_module(p, 'slabP')['size']
         res = cp2_pattern(p, box[0], box[1], g)
         if res is None: return None

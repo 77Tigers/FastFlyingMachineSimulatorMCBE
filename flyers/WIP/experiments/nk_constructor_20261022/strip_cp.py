@@ -94,3 +94,34 @@ def solve2(p, a, b, g=2, det=2.0, margin=1, hint=None, workers=1):
     gl = lambda d: sorted(c for c in d if s.Value(d[c]))
     return dict(cost=int(s.ObjectiveValue()), opt=st == cp_model.OPTIMAL, P=gl(P), R=gl(R), PL=gl(PL), S=gl(Sb),
                 SD=gl(Sd), size=(a, b))
+
+
+def solve_many(p, a, b, g=2, slack=0, limit=40, det=10.0):
+    """distinct strip patterns within `slack` of the optimum (CP solution enumeration with the objective as a bound)"""
+    best = solve(p, a, b, g, det)
+    if best is None: return []
+    m = cp_model.CpModel(); B = m.NewBoolVar
+    L = [(y, z) for y in range(a) for z in range(b)]; Ls = set(L)
+    nb = {c: [(c[0] + d[0], c[1] + d[1]) for d in N4 if (c[0] + d[0], c[1] + d[1]) in Ls] for c in L}
+    P = {c: B('') for c in L}; R = {c: B('') for c in L}; PL = {c: B('') for c in L}; S = {c: B('') for c in L}
+    for c in L:
+        m.Add(P[c] + R[c] <= 1)
+        m.AddImplication(P[c], PL[c]); m.AddImplication(R[c], PL[c]); m.AddImplication(P[c], S[c])
+        m.AddBoolOr([R[v] for v in nb[c]] + [P[c].Not()])
+    m.Add(sum(P.values()) == p)
+    connect(m, L, PL, nb); connect(m, L, S, nb)
+    m.Add(g * (sum(PL.values()) + sum(R.values())) + sum(S.values()) <= best['cost'] + slack)
+    out = []
+
+    class CB(cp_model.CpSolverSolutionCallback):
+        def __init__(s): super().__init__(); s.seen = set()
+        def on_solution_callback(s):
+            key = (tuple(c for c in L if s.Value(P[c])), tuple(c for c in L if s.Value(R[c])),
+                   tuple(c for c in L if s.Value(PL[c])), tuple(c for c in L if s.Value(S[c])))
+            if key in s.seen: return
+            s.seen.add(key); out.append(dict(P=list(key[0]), R=list(key[1]), PL=list(key[2]), S=list(key[3]), size=(a, b)))
+            if len(out) >= limit: s.StopSearch()
+    sv = cp_model.CpSolver(); sv.parameters.enumerate_all_solutions = True; sv.parameters.num_workers = 1
+    sv.parameters.max_time_in_seconds = 60
+    sv.Solve(m, CB())
+    return out
