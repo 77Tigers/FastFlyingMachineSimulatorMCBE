@@ -145,7 +145,7 @@ def power_problems(r, bodies=None):
     - a sticky (rigid, dir -1) must be powered exactly at its host's local slot 0 and never by its own host."""
     T = r.T; out = []
     for s in range(T.S):
-        occ = r.world(s, canon=False)
+        occ = r.world(s, canon=False, bodies=bodies)
         rbs = [(c, e[0]) for c, lst in occ.items() for e in lst if e[1] == 'RB']
         for c, X in rbs:
             for d in D6:

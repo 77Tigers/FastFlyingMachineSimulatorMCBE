@@ -155,3 +155,28 @@ carrier still rests (each of F's 3 pistons does slot 1 about 1/3 of the time ove
   (max body 12; back bodies 11 glue+RB = the limit). The human's back bodies are 7 because the 5-body loop is a
   compact 3D cluster, not 20 separate square-ring modules with connectors.
 - `modsearch.py` (single-edit local search on the routed ring module): no gain at k=3.
+
+## Human link on the square ring (2026-10-24)
+
+`HOP_POS=1 hoptrace ...` (shared tool) gives every block's position. Human N3 back body A (7 glue + RB): two hoppers
+side by side, one RB touching both; the targets + the cell in front of the RB form a 3-cell front cluster; a 3-cell
+column along x runs from the cluster down to one cover cell that holds two of PREV's spent hoppers (beside both).
+The hoppers stand beside the column. The 5 back bodies all differ in shape (hand placed); the shared rule is the link.
+- `human_link.py`: that link as a rule (column lane c, hoppers c+(1,0) and c+(2,1), RB c+(1,1), next body's cover
+  in c+(2,0) = its column lane - (1,0), so the straight step is (3,0)); the router supplies the column.
+  **Back bodies 8-9 glue+RB** (straight links 8 = human; links with an awkward frame offset 9), vs 11 for the
+  tower2 back body. Step (4,0) costs one cell (max 10, mean 8.8) but gives each tower a spare lane.
+- The same link with 3 hoppers (plain k=3 ring) is worse than the lat module (14 vs 12).
+- Joint CP for a 2-hopper back body (`back_cp.py`, small diagonal steps): optimum 9 within its rules.
+- Towers on it (tower2 with `back=`, `mg=` lane margins, greedy per-sticky power `add_power_greedy`): with step 3
+  neighbouring towers' power blocks hit each other (towers are confined to their base lanes: each level's hoppers
+  stand on the level below and its RBs must touch them); with step 4 the straight sides pass and only the corner
+  towers fail. Human towers drift sideways level by level (B y4-6, F y6-7, L y5-8, P y6-8) and are thin x-layers.
+- `nk.Ring.route` now joins a split plate (grows from its largest piece) instead of leaving the body disconnected.
+- `reseat.py` (move hoppers onto routed connector cells): no gain at k=3.
+- `add_power_greedy` also rejects a power block that someone's glue would drag (checker on the nearby bodies).
+- Human sticky (`tower2.build(hs=True)`, `HL_HS=1`): the sticky stands in its level's plate layer between plate
+  cells that hold it sideways, pulls one extra cell (2, s) of the level below, and its power block may sit behind it;
+  RB lanes may then lie over the lower plate and beside the sticky (`level_layouts(relax=True)`).
+  k=3, step (4,0): **flies at PL15** (max body 11 = the back bodies 8/11/10/10/11 per 5 links; tower levels 7/11/10-11).
+  Same PL as the plain lat ring; the 4-lane step costs the back bodies a sideways connector cell.

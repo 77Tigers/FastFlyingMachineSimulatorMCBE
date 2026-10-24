@@ -249,6 +249,17 @@ class Ring:
         T = self.T
         tree = set(self.plates[X])
         rest = set(self.contacts[X]) | set(self.extra[X])
+        pcs, seen = [], set()        # a disconnected plate: grow from its largest piece, connect the others
+        for c in sorted(tree):
+            if c in seen: continue
+            comp, st = set(), [c]
+            while st:
+                u = st.pop()
+                if u in comp: continue
+                comp.add(u); st += [add(u, d) for d in D6 if add(u, d) in tree and add(u, d) not in comp]
+            seen |= comp; pcs.append(comp)
+        if len(pcs) > 1:
+            main = max(pcs, key=len); rest |= tree - main; tree = set(main)
         comps, seen = [], set()
         for c in sorted(rest):
             if c in seen: continue

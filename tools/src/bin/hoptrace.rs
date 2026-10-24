@@ -3,6 +3,7 @@
 // Prints, for every non-glue block, one cell per slot from W0: Fx = fired (extend) pushing body x,
 // R = retract action (Rx = sticky pull of body x), rx = moved together with body x, .. = still. Pistons get a second line with
 // power at the slot's even tick (P) / odd tick (p) / both (B).
+// HOP_POS=1 prints each block's position at the start of slot W0.
 // HOP_REL=X additionally prints positions (dx to body X reference block : y : z) at each slot start.
 use fastflyer::{debug::TickTrace,Block,Coord,Flyer,Kind};
 use std::collections::{BTreeMap,BTreeSet};
@@ -77,6 +78,7 @@ fn main()->Result<(),Box<dyn std::error::Error>>{
  for i in 0..n{ if body[i]!=usize::MAX{continue}
   let b=kinds[i];let k=if b.kind()==Kind::Piston{format!("{}{}",if b.sticky(){"S"}else{"P"},["+x","-x","+y","-y","+z","-z"][b.direction() as usize])}else{names[b.kind() as usize].to_string()};
   println!("{:>3} {:<4} {}",i,k,row[i].chunks(period/2).map(|c|c.join(" ")).collect::<Vec<_>>().join(" | "));
+  if std::env::var("HOP_POS").is_ok(){let c=posh[0][&i];println!("    at   {} {} {}",c.x,c.y,c.z);}
   if b.kind()==Kind::Piston{println!("    pow  {}",pwr[i][..slots].chunks(period/2).map(|c|c.iter().map(|x|format!("{} ",x)).collect::<Vec<_>>().join(" ")).collect::<Vec<_>>().join(" | "));}}
  if let Ok(rl)=std::env::var("HOP_REL"){ let rb=lab.iter().position(|&c|c.to_string()==rl).unwrap();
   let refid=(0..n).filter(|&i|body[i]==rb).min_by_key(|&i|(init[i].x,init[i].y,init[i].z)).unwrap();
