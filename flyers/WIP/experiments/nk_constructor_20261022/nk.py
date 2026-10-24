@@ -179,8 +179,10 @@ class Ring:
                 for q in occ.get(n, []):
                     Q, kind, info = q
                     if Q == X:
-                        if strict and kind == 'P' and mX and info[1] == 0 and info[2] == 'spent' and T.moves(self.carrier(X, info[0]), s):
-                            return bad(f's{s} own spent pusher leaf')
+                        if strict and kind == 'P' and mX and info[1] == 0 and info[2] == 'spent':
+                            C = self.carrier(X, info[0])   # (None: carrier not built yet, a partial stack)
+                            if C is not None and T.moves(C, s):
+                                return bad(f's{s} own spent pusher leaf')
                         continue
                     mQ = T.moves(Q, s)
                     if kind == 'g':
@@ -241,7 +243,7 @@ class Ring:
                         w = self.mw(X, (h + dx, py, pz), s)
                         if role == 'ready': need = [X] if T.moves(X, s) else []
                         else:
-                            C = self.carrier(X, j); need = [C] if T.moves(C, s) else []
+                            C = self.carrier(X, j); need = [C] if C is not None and T.moves(C, s) else []
                             if m == 0 and dx == -1: need = []
                         for Y in need:
                             if not any(o[0] == Y and o[1] == 'g' for d in D6 for o in occ.get(add(w, d), [])):

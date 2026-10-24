@@ -1,5 +1,6 @@
 """Lane maps of a flyer, one per x layer (x = the flight axis): python tools/flyer_slices.py FILE [--bodies]
-Glue bodies (same-material face-connected slime / honey components) are labelled A, B, ... by mean x (then y, z),
+Glue bodies (same-material face-connected slime / honey components) are labelled A..Z, a..z, 0..9 by mean x (then y, z;
+bodies past the 62nd show as * in the maps and #i in --bodies),
 the same order hoptrace uses; other blocks: p = piston, s = sticky piston (upper case P / S when extended),
 r = redstone block, a = piston arm, o = observer, | = rod, # = other. Rows are y, columns z.
 --bodies also lists every body's cells per x layer as (y, z) lanes."""
@@ -7,6 +8,7 @@ import sys, pathlib, collections
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
 from fastflyer import Flyer, Kind
 
+NAMES = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
 D6 = ((1, 0, 0), (-1, 0, 0), (0, 1, 0), (0, -1, 0), (0, 0, 1), (0, 0, -1))
 
 
@@ -28,7 +30,7 @@ def bodies(fl):
     comps.sort(key=key)
     lab = {}
     for i, cs in enumerate(comps):
-        name = chr(ord('A') + i) if i < 26 else chr(ord('a') + i - 26)
+        name = NAMES[i] if i < len(NAMES) else '*'   # (more than 62 bodies: '*' in the maps)
         for c in cs: lab[c] = name
     return lab, comps
 
@@ -58,7 +60,7 @@ def main():
         for i, cs in enumerate(comps):
             byx = collections.defaultdict(list)
             for c in cs: byx[c[0]].append((c[1], c[2]))
-            print(lab[cs[0]], len(cs), {x: sorted(v) for x, v in sorted(byx.items())})
+            print(lab[cs[0]] if i < len(NAMES) else f'#{i}', len(cs), {x: sorted(v) for x, v in sorted(byx.items())})
 
 
 if __name__ == '__main__':
