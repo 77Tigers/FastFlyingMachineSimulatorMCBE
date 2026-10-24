@@ -21,6 +21,12 @@ from stack import Ring3, level_opts, N4
 
 GAP = 4
 DEBUG = False
+WHY = None   # a collections.Counter: partial-check failure reasons are counted there
+FREEZE = False   # True: the back keeps its routing from the plain ring; False: it is routed with the towers present
+                 # (first, before every segment; same plates and covers, so no cells are added for the towers)
+POWER_LANE = True   # sticky layouts must leave a lane beside the sticky for its power block
+COPY = True   # a class with the previous class's numbers and lower lanes copies its layout (if valid)
+RANK = "est"   # candidate order: "est" (routed loads first) or "cost" (layout cost first)
 PERIODIC = True   # level_opts also assumes the neighbours are copies (a heuristic filter; real neighbours are checked)
 
 
@@ -31,8 +37,8 @@ class Plan:
     """bodies and timing: back bodies 0..L-1, then segments; idx[(i, j)] = body of segment j over back body i.
     chosen: only the (class, level) pairs placed so far (a partial stack)."""
 
-    def __init__(self, k, towers, sym, chosen=None):
-        self.k = k; L = square.ring_size(k); self.L = L
+    def __init__(self, k, towers, sym, chosen=None, gap=GAP):
+        self.k = k; L = square.ring_size(k); self.L = L; self.gap = gap
         n = len(towers); self.n, self.sym, self.towers = n, sym, towers
         self.cls = [i % n for i in range(L)] if sym else list(range(L))
         T0 = stack_topo.Timing(k, L); S = T0.S
@@ -114,21 +120,30 @@ def assemble(plan, br, vmod, lays, Qs, pw=None):
         c = plan.cls[i]; Y = plan.idx[(i, j - 1)]
         lay = lays[(c, j)]; g = plan.seg(i, j)
         D = T.shift(X, T.rest[X]) - T.shift(Y, T.rest[X])
-        x0 = places[Y][0] + GAP - D
+        x0 = places[Y][0] + plan.gap - D
+        side = plan.gap == 3
         H = lay['Hm'] + lay['Hs']; R = lay['R']
         plate = [(1,) + tuple(h) for h in H + R]
         rig = []
-        if g[2] and j == 1:      # attach-lane sticky on the hopper layer, pulls the back's existing plate cell
+        if side:   # levels 3 apart: hoppers beside the lower plate, side contact with a lower plate cell
+            lowpl = {tuple(cc[1:]) for cc in mods[Y]['PLATE'] if cc[0] == 1}
+            cont = [(-2,) + next(v for v in _nb(h) if v in lowpl) for h in lay['Hm']]
+        else:
+            cont = [(-3,) + tuple(h) for h in lay['Hm']]
+        if g[2] and side:        # human sticky in the plate layer, pulls the lower plate cell directly
+            rig = [dict(pos=(1,) + tuple(lay['st']), dir=-1, victim=Y)]
+        elif g[2] and j == 1:    # attach-lane sticky on the hopper layer, pulls the back's existing plate cell
             plate += [(0,) + tuple(lay['s2']), (1,) + tuple(lay['s2'])]
             rig = [dict(pos=(0,) + tuple(lay['st']), dir=-1, victim=Y)]
         elif g[2]:               # human sticky in the plate layer, pulls an extra cell of the segment below
             rig = [dict(pos=(1,) + tuple(lay['st']), dir=-1, victim=Y)]
         mods[X] = dict(P=[tuple(h) for h in H], PC=['B'] * len(lay['Hm']) + ['L'] * len(lay['Hs']),
-                       R=[(0,) + tuple(h) for h in R], PLATE=plate, CONT=[(-3,) + tuple(h) for h in lay['Hm']],
+                       R=[(0,) + tuple(h) for h in R], PLATE=plate, CONT=cont,
                        CONTL=[(-2,) + tuple(q) for q in Qs.get((c, j), lay['Q'])], size=(a, b), RIG=rig)
         places[X] = (x0,) + tuple(br.place[i][1:])
         mats[X] = 'honey' if (i + j) % 2 else 'slime'
-    for X in range(L, nbod):     # the pulled cells of human stickies
+    for X in range(L, nbod):     # the pulled cells of human stickies (levels 4 apart)
+        if plan.gap == 3: break
         i, j = plan.where[X]
         up = plan.idx.get((i, j + 1))
         if up is not None and plan.seg(i, j + 1)[2]:
@@ -140,9 +155,12 @@ def assemble(plan, br, vmod, lays, Qs, pw=None):
         if W is not None and mods[X]['CONTL']: loop[X] = W
         elif mods[X]['CONTL']: mods[X] = dict(mods[X], CONTL=[])   # neighbour not placed yet
     r = Ring3(T, mods, places, mats, loop)
-    for X in range(L):   # the frozen back
-        r.extra[X] = set(br.glue[X]); r.glue[X] = r.glue[X] | r.extra[X]
+    if FREEZE:
+        for X in range(L):   # the frozen back (routed alone)
+            r.extra[X] = set(br.glue[X]); r.glue[X] = r.glue[X] | r.extra[X]
     r.plan = plan
+    if plan.gap == 3:    # levels 3 apart: glue above a body's plate layer would push the segment above's hoppers
+        r.xcap = {X: 1 for X in range(nbod) if plan.idx.get((plan.where[X][0], plan.where[X][1] + 1)) is not None}
     for X in range(L, nbod):
         i, j = plan.where[X]
         key = (plan.cls[i], j)
@@ -165,12 +183,15 @@ def near_bodies(plan, Xs, d=1):
                    if any(min((i2 - i) % plan.L, (i - i2) % plan.L) <= d for i in ii)})
 
 
-def partial_ok(r, Xs):
+def partial_ok(r, Xs, why=None):
     """no collisions near Xs; every unrouted glue cell of Xs, the segments below them and the neighbouring towers'
     segments at these levels passes the cell rules"""
     plan = r.plan
     near = near_bodies(plan, Xs, 2)
-    if collisions(r, near): return False
+    col = collisions(r, near)
+    if col:
+        if why is not None: why['collide ' + ' '.join(str(plan.where[e[0]]) + e[1] for e in col[0][2][:2])] += 1
+        return False
     ws = r.worlds(near)
     chk = set()
     for X in Xs:   # Xs, the segments below them, and the neighbouring towers' segments at these levels
@@ -179,7 +200,14 @@ def partial_ok(r, Xs):
         chk |= {Y for Y in near_bodies(plan, [X], 1) if plan.where[Y][1] in (j - 1, j)}
     for Y in chk:
         for g in r.glue[Y]:
-            if not r.cell_ok(Y, g, ws): return False
+            if why is None:
+                if not r.cell_ok(Y, g, ws): return False
+            else:
+                ok, w = r.cell_ok(Y, g, ws, why=True)
+                if not ok:
+                    w = ' '.join(str(plan.where[int(t)]) if t.isdigit() and int(t) in plan.where else t
+                                 for t in w.split())
+                    why[f'{plan.where[Y]} {w[:50]}'] += 1; return False
     return True
 
 
@@ -281,21 +309,22 @@ def corner_q(br, plan, lays, c, j, lay):
 
 
 def construct(k, back, cv, towers, links_in, nlay=4, max_leaves=6, max_nodes=400, deadline=None, stats=None,
-              verbose=False, mg=(0, 1)):
+              verbose=False, mg=(0, 1), gap=GAP, max_disc=12):
     """layouts class by class, level by level (cheapest first), depth-first with partial checks against the real
     neighbours; leaves are powered, routed and checked; returns (predicted PL, lays, ring) of the best leaf"""
     vmod, step = back
     n, sym = stack_topo.positions(k)
     assert len(towers) == n and len(links_in) == n
-    full = Plan(k, towers, sym)
+    full = Plan(k, towers, sym, gap=gap)
+    side = gap == 3
     br = back_ring(k, back, cv, links_in)
     if br is None: return None
     a, b = vmod['size']
     order = [(c, j) for j in range(1, 9) for c in range(n) if j <= len(towers[c])]
     best = [None]; nodes = [0]; leaves = [0]
 
-    def tally(w):
-        if stats is not None: stats[w] = stats.get(w, 0) + 1
+    def tally(w, v=1):
+        if stats is not None: stats[w] = round(stats.get(w, 0) + v, 1)
 
     def lower_lanes(lays, c, j):
         if j == 1: return [tuple(x[1:]) for x in vmod['PLATE']]
@@ -312,11 +341,11 @@ def construct(k, back, cv, towers, links_in, nlay=4, max_leaves=6, max_nodes=400
             forbid = frozenset(below) | {l for l in (ll['st'], ll.get('s2')) if l is not None}
             lowR = frozenset(ll['R'])
             gl = towers[c][j - 2]
-            low = (ll['st'], 's2' if j == 2 else 'hs') if gl[2] and gl[3] == 'a' else None
-        mode = 's2' if g[2] and j == 1 else 'hs' if g[2] else 'top'
+            low = (ll['st'], 's2' if j == 2 and not side else 'hs') if gl[2] and gl[3] == 'a' else None
+        mode = 's2' if g[2] and j == 1 and not side else 'hs' if g[2] else 'top'
         ll = lays.get((c, j - 1))
         gl = towers[c][j - 2] if j > 1 else None
-        free = ll['st'] if mode == 'top' and gl and gl[2] and gl[3] == 'a' else None
+        free = ll['st'] if mode == 'top' and gl and gl[2] and gl[3] == 'a' and not side else None
         m, s = g[0], g[1]
         if m + s > stack.CP_ABOVE:
             import stack_cp
@@ -324,7 +353,7 @@ def construct(k, back, cv, towers, links_in, nlay=4, max_leaves=6, max_nodes=400
                                      periodic=PERIODIC, lowR=lowR)
         else:
             opts = level_opts(m, s, below, a, b, step, mode, mg, free, forbid=forbid, low=low,
-                              periodic=PERIODIC, lowR=lowR)
+                              periodic=PERIODIC, lowR=lowR, side=side)
         # the straight neighbours already placed at this level (their lanes shifted by -step / +step)
         nbrs = []
         if sym:
@@ -332,9 +361,37 @@ def construct(k, back, cv, towers, links_in, nlay=4, max_leaves=6, max_nodes=400
                 nbrs.append((lays[(c - 1, j)], lower_lanes(lays, c - 1, j), (-step[0], -step[1])))
             if c + 1 < n and (c + 1, j) in lays:
                 nbrs.append((lays[(c + 1, j)], lower_lanes(lays, c + 1, j), step))
-        return [lay for lay in opts if all(compatible(lay, below, o, ob, sh) for o, ob, sh in nbrs)]
+        out = [lay for lay in opts if all(compatible(lay, below, o, ob, sh) for o, ob, sh in nbrs)]
+        if side and j > 1 and lays[(c, j - 1)]['st'] is not None:
+            # levels 3 apart: nothing of this level over the lower sticky's lane (it rises into this level's
+            # hopper layer: collision, or an RB powering it at the wrong time)
+            lst = lays[(c, j - 1)]['st']
+            out = [L_ for L_ in out if lst not in set(L_['Hm']) | set(L_['Hs']) | set(L_['R'])]
+        if FREEZE and j == 1:
+            # the back keeps its plain-ring routing: no level-1 hardware over the lanes where it has cells near
+            # its top (other than its plate)
+            colw = set(forbid) - set(below)
+            colw |= {(l[0] + sg * step[0], l[1] + sg * step[1]) for l in colw for sg in (1, -1)}   # neighbours
+            near_c = colw | {v for l in colw for v in _nb(l)}
+            out = [L_ for L_ in out if not (set(L_['Hm']) | set(L_['Hs'])) & colw and not set(L_['R']) & near_c]
+        if POWER_LANE and g[2]:
+            # the sticky's power block (owned by its power source) needs a lane beside the sticky that this
+            # segment leaves free: not one of its hopper / RB / attach lanes
+            def has_lane(L_):
+                own = set(L_['Hm']) | set(L_['Hs']) | set(L_['R']) | ({L_['s2']} if L_.get('s2') else set())
+                return any(v not in own for v in _nb(L_['st']))
+            out = [L_ for L_ in out if has_lane(L_)]
+        # the previous class's layout (same numbers, same lower lanes): only that one when COPY (the class is part
+        # of a uniform run; non-uniform layouts come from the improvement pass), else first
+        if c > 0 and (c - 1, j) in lays and towers[c - 1][j - 1] == g and lower_lanes(lays, c - 1, j) == below:
+            key = lambda L_: (L_['st'], L_.get('s2'), tuple(L_['Hm']), tuple(L_['Hs']), tuple(L_['R']), tuple(L_['Q']))
+            kp = key(lays[(c - 1, j)])
+            same = [L_ for L_ in out if key(L_) == kp]
+            out = [(L_, True) for L_ in same] + [(L_, False) for L_ in out if key(L_) != kp]
+            return out
+        return [(L_, False) for L_ in out]
 
-    def rec(lays, Qs, pw, pos):
+    def rec(lays, Qs, pw, pos, disc=0):
         if (deadline and time.time() > deadline) or nodes[0] >= max_nodes or leaves[0] >= max_leaves: return
         if pos == len(order):
             leaves[0] += 1
@@ -347,10 +404,13 @@ def construct(k, back, cv, towers, links_in, nlay=4, max_leaves=6, max_nodes=400
                 if best[0] is None or p < best[0][0]: best[0] = (p, dict(lays), rr)
             return
         c, j = order[pos]
-        sub = Plan(k, towers, sym, set(lays) | {(c, j)})
+        sub = Plan(k, towers, sym, set(lays) | {(c, j)}, gap=gap)
         cands = []
-        for lay in opts_for(lays, c, j):
+        t0 = time.time(); opts = opts_for(lays, c, j)
+        tally(f'opts{j}', len(opts)); tally(f'optsec{j}', round(time.time() - t0, 1))
+        for lay, is_copy in opts:
             if len(cands) >= 2 * nlay: break
+            if COPY and cands and cands[0][-1]: break   # the copy of the previous class works: take only it
             nodes[0] += 1
             if nodes[0] >= max_nodes: break
             lays2 = dict(lays); lays2[(c, j)] = lay
@@ -358,7 +418,7 @@ def construct(k, back, cv, towers, links_in, nlay=4, max_leaves=6, max_nodes=400
             if stack_topo.corner_link(k, c) and lay['Hs']: Qs2[(c, j)] = corner_q(br, sub, lays2, c, j, lay)
             try: r = assemble(sub, br, vmod, lays2, Qs2, pw)
             except (AssertionError, RuntimeError, KeyError): tally('err'); continue
-            if not partial_ok(r, [sub.idx[(c, j)]]): tally(f'prune{j}'); continue
+            if not partial_ok(r, [sub.idx[(c, j)]], WHY): tally(f'prune{j}'); continue
             # the stickies whose power source and host are now both placed: power them now (prune if impossible)
             jobs = []
             if j > 1 and towers[c][j - 2][2] and towers[c][j - 2][3] == 'a': jobs.append((c, j - 1))
@@ -382,14 +442,35 @@ def construct(k, back, cv, towers, links_in, nlay=4, max_leaves=6, max_nodes=400
             ld = stack.loads(r)
             est = max(sum(ld[B]) for B in (Y, X))
             if best[0] is not None and est >= best[0][0]: tally(f'bound{j}'); continue
-            cands.append((est, lay['cost'], len(cands), lays2, Qs2, pw2))
-        cands.sort(key=lambda t: t[:3])
-        for est, _, _, lays2, Qs2, pw2 in cands[:nlay]:
+            cands.append((est, lay['cost'], len(cands), lays2, Qs2, pw2, is_copy))
+        if not (COPY and cands and cands[0][-1]):
+            cands.sort(key=lambda t: (t[:3] if RANK == "est" else (t[1], t[0], t[2])))
+        # limited discrepancy: the indices of the non-first choices along a path add up to at most max_disc
+        for ci, (est, _, _, lays2, Qs2, pw2, _) in enumerate(cands[:nlay]):
             if best[0] is not None and est >= best[0][0]: break
-            rec(lays2, Qs2, pw2, pos + 1)
+            if disc + ci > dlim[0]: break
+            rec(lays2, Qs2, pw2, pos + 1, disc + ci)
 
-    rec({}, {}, {}, 0)
+    # iterative limited discrepancy: paths with total discrepancy 0, then <= 1, ... (the cheapest paths first)
+    dlim = [0]
+    for D in range(max_disc + 1):
+        dlim[0] = D
+        rec({}, {}, {}, 0)
+        if nodes[0] >= max_nodes or leaves[0] >= max_leaves or (deadline and time.time() > deadline): break
     return best[0]
+
+
+def breakdown(r, X):
+    """where body X's load goes: plate cells (hopper / RB fronts, attach lanes, pulled cells), cover cells (contacts
+    for hoppers it carries), power attach cells, routed cells; hopper RBs, power RBs; riders; rigid pistons"""
+    m = r.mods[X]
+    plate = set(r.plates[X]); cont = set(r.contacts[X]) - plate
+    nR = len([c for c in m['R'] if c[0] == 0 and len(m['P']) and any(abs(c[1] - p[0]) + abs(c[2] - p[1]) == 1
+                                                                       for p in m['P'])])
+    rid = sum(1 for U in range(r.T.L) for j in range(len(r.mods[U]['P'])) if r.carrier(U, j) == X)
+    routed = len(r.glue[X]) - len(plate) - len(cont)
+    return dict(plate=len(plate), cover=len(cont), routed=routed, rb=len(m['R']), riders=rid,
+                rig=len(m.get('RIG', [])), load=len(r.glue[X]) + len(m['R']) + rid + len(m.get('RIG', [])))
 
 
 def parse_towers(s):
@@ -404,22 +485,32 @@ def parse_towers(s):
 
 
 if __name__ == '__main__':
-    import stack_scan
+    import stack_scan, os
     k = int(sys.argv[1]); bi = sys.argv[2]; cv = tuple(map(int, sys.argv[3].split(',')))
     towers = parse_towers(sys.argv[4]); links_in = [int(v) for v in sys.argv[5].split(',')]
     e = stack_scan.back_entry(k, bi)
     st = {}; t = time.time()
+    FREEZE = bool(int(os.environ.get('FREEZE', 0)))
+    RANK = os.environ.get('RANK', 'est'); COPY = bool(int(os.environ.get('COPY', 1)))
+    if os.environ.get('WHY'):
+        import collections; WHY = collections.Counter()
     import os
     res = construct(k, (e['mod'], e['step']), cv, towers, links_in, stats=st, verbose=bool(os.environ.get('V')),
                     nlay=int(os.environ.get('NLAY', 4)), max_leaves=int(os.environ.get('LEAVES', 6)),
                     max_nodes=int(os.environ.get('NODES', 400)),
-                    mg=tuple(map(int, os.environ.get('MG', '0,1').split(','))))
+                    mg=tuple(map(int, os.environ.get('MG', '0,1').split(','))), gap=int(os.environ.get('GAP', 4)),
+                    max_disc=int(os.environ.get('DISC', 12)))
     print('time', round(time.time() - t, 1), st)
+    if WHY:
+        for w, c in WHY.most_common(8): print('  why', c, w)
     if res:
         p, lays, r = res
         ld = stack.loads(r)
         print('predicted', p, 'loads', {r.plan.where[X]: sum(ld[X]) for X in rep_bodies(r.plan)
                                         if r.plan.where[X][0] < r.plan.n})
+        for X in rep_bodies(r.plan):
+            i, j = r.plan.where[X]
+            if i < r.plan.n: print('  ', (i, j), r.plan.seg(i, j) if j else 'back', breakdown(r, X))
         sim = stack.sim_pl(r, k)
         print('sim', sim)
         name = f'out/stack/nu_n{k:02d}_pl{sim or p}.flyer'

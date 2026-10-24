@@ -13,7 +13,8 @@ Load = size (glue + RBs) + riders (hoppers it carries) + its sticky.
   back size: f_p(t) measured from plain back rings, t = frame offset of the link into p ("reach"; the offsets sum
   to a fixed total over the ring) [+ DK when not pulled: k hoppers instead of k-1]
   segment size (estimate EST, calibrated on the uniform gap-4 stacks k = 3, 4): plate = hoppers + RB lanes
-  (rb = ceil(hoppers / 3)), + rb blocks, + POWER per sticky it powers (block + attach cell), + DN_BACK (attach lane
+  (rb = ceil(hoppers / 3)), + rb blocks, + POWER per sticky of its own tower it powers (block + attach cell) or
+  NPOWER per sticky of the next tower (block + a route across the step), + DN_BACK (attach lane
   of a sticky that pulls the back) + ROUTE when it has a sticky, + PULLED when the segment above pulls it (the
   pulled cell), + cover cells when it carries the previous tower's hoppers (COVER + COVER_H per hopper beyond the
   first, + CORNER across a corner link).
@@ -28,7 +29,15 @@ from nk import bodies_for
 from tower2 import Timing
 
 VRANGE = range(-3, 2)
-EST = dict(POWER=2, DN_BACK=1, ROUTE=2, PULLED=1, COVER=3, COVER_H=1, CORNER=2, DK=2, NUDGE=1)
+EST = dict(POWER=2, NPOWER=10, DN_BACK=1, ROUTE=2, PULLED=1, COVER=4, COVER_H=1, CORNER=2, DK=2, NUDGE=1)
+
+
+def est_for(step, base=EST):
+    """the estimate for a back link with this straight step: the neighbour features cost routing across the step
+    (measured 2026-10-25, gap-4 builds: powering the previous tower's sticky ~ 9-12 cells at step (4, 0); carrying
+    the previous tower's hoppers ~ cover 1 + 3-4 routed at step (-2, -2))"""
+    d = abs(step[0]) + abs(step[1])
+    return dict(base, NPOWER=2 * d + 2, COVER=d)
 
 
 def link_D(k, L):
@@ -86,35 +95,64 @@ def probe_vectors(n, tot, vals=VRANGE):
     return out
 
 
-def measure_reach(k, back, cv, verbose=False):
-    """f[p][v] = size of back body p (glue + RBs, plain back ring, routed) when the link into it has offset v"""
+def near_balanced(n, tot, vals=VRANGE, limit=4000):
+    """offset vectors (sum tot) in order of distance from the balanced one (sum of squared deviations)"""
+    mean = tot / n; lo, hi = min(vals), max(vals)
+    out = []
+    def rec(pre, left):
+        if len(out) >= limit * 4: return
+        if len(pre) == n:
+            if left == 0: out.append(tuple(pre))
+            return
+        rem = n - len(pre) - 1
+        for v in vals:
+            if lo * rem <= left - v <= hi * rem: rec(pre + [v], left - v)
+    rec([], tot)
+    out.sort(key=lambda t: sum((v - mean) ** 2 for v in t))
+    return out[:limit]
+
+
+def measure_reach(k, back, cv, verbose=False, budget=40):
+    """f[p][v] = size of back body p (glue + RBs, plain back ring, routed) when the link into it has offset v.
+    Probes: the spread probe vectors first, then near-balanced vectors that still cover a missing (p, v) (rings
+    that fail the checks give nothing), at most `budget` ring builds."""
     from terrace import collisions
     from tower import route_all
     from nk2 import power_problems
     vmod, step = back
     n, sym = positions(k); tot = offset_total(k)
     f = [dict() for _ in range(n)]
-    for t in probe_vectors(n, tot):
+    tried = set(); builds = 0
+    def probe(t):
         try:
-            r = tower2.build(k, 1, 0, (), back=(vmod, step), cv=cv, xoff=xoff_for(k, t))
-            if r is None or collisions(r): continue
+            r = tower2.build(k, 1, 0, (), back=(vmod, step), cv=cv, xoff=xoff_for(k, list(t)))
+            if r is None or collisions(r): return None
             route_all(r)
-            if r.check() or power_problems(r): continue
+            if r.check() or power_problems(r): return None
         except (AssertionError, RuntimeError):
-            continue
-        sz = r.size()
+            return None
+        return r.size()
+    cands = [tuple(t) for t in probe_vectors(n, tot)] + near_balanced(n, tot)
+    for t in cands:
+        if builds >= budget: break
+        if t in tried: continue
+        tried.add(t)
+        if all(t[(p - 1) % n] in f[p] for p in range(n)): continue
+        builds += 1
+        sz = probe(t)
+        if verbose: print('probe', t, sz[:n] if sz else None, flush=True)
+        if sz is None: continue
         for p in range(n):
             v = t[(p - 1) % n]
             f[p][v] = max(f[p].get(v, 0), sz[p])
-        if verbose: print('probe', t, sz[:n], flush=True)
     return f
 
 
 def rbs(h): return (h + 2) // 3
 
 
-def seg_size(h, j, dn, up, powers, carried_s, corner, est=EST):
-    return h + 2 * rbs(h) + est['POWER'] * powers + (est['DN_BACK'] if dn and j == 1 else 0) + \
+def seg_size(h, j, dn, up, powers, carried_s, corner, est=EST, npowers=0):
+    return h + 2 * rbs(h) + est['POWER'] * powers + est['NPOWER'] * npowers + (est['DN_BACK'] if dn and j == 1 else 0) + \
         (est['ROUTE'] if dn else 0) + (est['PULLED'] if up else 0) + \
         ((est['COVER'] + est['COVER_H'] * (carried_s - 1) + (est['CORNER'] if corner else 0)) if carried_s else 0)
 
@@ -147,11 +185,12 @@ def evaluate(k, f, towers, links=None, est=EST):
         for j in range(1, len(towers[p]) + 1):
             m, s, dn = seg(p, j)[:3]
             prev = seg(p - 1, j)
-            powers = sum(1 for q, jj in ((p, j - 1), ((p + 1) % n, j))
-                         if seg(q, jj) and seg(q, jj)[2] and src(q, jj) == (p, j))
+            powers = sum(1 for q, jj in ((p, j - 1),) if seg(q, jj) and seg(q, jj)[2] and src(q, jj) == (p, j))
+            npowers = sum(1 for q, jj in (((p + 1) % n, j),)
+                          if seg(q, jj) and seg(q, jj)[2] and src(q, jj) == (p, j))
             riders = (seg(p, j + 1)[0] if seg(p, j + 1) else 0) + (prev[1] if prev else 0)
             segs[(p, j)] = seg_size(m + s, j, dn, up(p, j), powers, prev[1] if prev else 0,
-                                    corner_link(k, (p - 1) % n), est) + riders + (1 if dn else 0)
+                                    corner_link(k, (p - 1) % n), est, npowers) + riders + (1 if dn else 0)
     return max(back + list(segs.values())), back, segs, links
 
 
@@ -228,9 +267,9 @@ def solve(k, f, plate0, hmax=4, nsug=6, slack=1, est=EST, secs=20.0, workers=4, 
                 cov = M.NewBoolVar('')
                 M.Add(ss[(prv(p), j)] >= 1).OnlyEnforceIf(cov); M.Add(ss[(prv(p), j)] == 0).OnlyEnforceIf(cov.Not())
                 cc = est['COVER'] - est['COVER_H'] + (est['CORNER'] if corner_link(k, prv(p)) else 0)
-                powers = (pa[(p, j - 1)] if j > 1 else 0) + pp[(nxt(p), j)]
+                powers = est['POWER'] * (pa[(p, j - 1)] if j > 1 else 0) + est['NPOWER'] * pp[(nxt(p), j)]
                 riders = (mm[(p, j + 1)] if j < hmax else 0) + ss[(prv(p), j)]
-                ld = h + 2 * rb[(p, j)] + est['POWER'] * powers + (est['DN_BACK'] if j == 1 else 0) * dn[(p, j)] + \
+                ld = h + 2 * rb[(p, j)] + powers + (est['DN_BACK'] if j == 1 else 0) * dn[(p, j)] + \
                     est['ROUTE'] * dn[(p, j)] + est['PULLED'] * UP(p, j) + cc * cov + \
                     est['COVER_H'] * ss[(prv(p), j)] + riders + dn[(p, j)]
                 M.Add(P >= ld).OnlyEnforceIf(e[(p, j)]); loads.append(ld)
@@ -271,9 +310,9 @@ def solve(k, f, plate0, hmax=4, nsug=6, slack=1, est=EST, secs=20.0, workers=4, 
     return out
 
 
-def show(k, f, sug):
+def show(k, f, sug, est=EST):
     for P, towers, links in sug:
-        ev = evaluate(k, f, towers, links)
+        ev = evaluate(k, f, towers, links, est=est)
         print(f'P {P} (re-evaluated {ev[0]})  links-in {links}  back loads {ev[1]}')
         for p, tw in enumerate(towers):
             print(f'   p{p}: ' + ('-' if not tw else ' | '.join(
@@ -289,9 +328,11 @@ if __name__ == '__main__':
     n, sym = positions(k)
     print('k', k, 'positions', n, 'sym', sym, 'offset total', offset_total(k), 'raw D', link_D(k, square.ring_size(k))[:n])
     f = measure_reach(k, (e['mod'], e['step']), cv)
+    est = est_for(e['step'])
     print('f', [dict(sorted(d.items())) for d in f])
     std = [[(k - 1, 0, 1), (k, 0, 1), (k, 0, 0)]] * n
-    ev = evaluate(k, f, std)
+    ev = evaluate(k, f, std, est=est)
     print('uniform human topology:', ev[0], 'back', ev[1], 'segments', sorted(set(ev[2].values())), 'links', ev[3])
     import os
-    show(k, f, solve(k, f, len(e['mod']['PLATE']), hmax, nsug, all_pulled=bool(int(os.environ.get('ALLP', 0)))))
+    show(k, f, solve(k, f, len(e['mod']['PLATE']), hmax, nsug, all_pulled=bool(int(os.environ.get('ALLP', 0))),
+                     est=est), est)
