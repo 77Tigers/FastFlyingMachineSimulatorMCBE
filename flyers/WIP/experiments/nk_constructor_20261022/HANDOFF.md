@@ -10,6 +10,101 @@ Working style the user expects: keep working while background jobs run (do not e
 questions in chat without pausing, report concrete numbers. The older table-based version (disallowed now) is
 banked as `flyers/bank/pl*/nk_square_n{k}.flyer` (k = 3..24, sum 1200).
 
+## 0. CURRENT PRIORITY (2026-10-24 evening): the stack family = N3-like towers for every k
+
+Sections 1-9 below describe the older families (still the scored program, sum 1783 / weighted 1961). The user's
+priority now is a **general N3-like family** ("stack"), even if far from optimal at large k. Code: `stack.py`
+(+ `stack_cp.py`, drivers `stack_scan.py`, `stack_one.py`, `stack_all.py`, `stack_links.py`). Not yet in
+`families.py`.
+
+### 0.1 User rules / decisions for the stack family (all from chat, 2026-10-24)
+- Bodies: back ring + towers of "levels". A body's k moves per cycle = hoppers carried by bodies resting 2 slots
+  later (the level below, or its loop neighbour = the same level of the next tower) + at most ONE pull (one sticky
+  pulls once per cycle; two stickies on one segment CANNOT work - do not attempt; side-by-side segments maybe later).
+- "Pull only the level below" vs "pull a neighbour" and "push from below" vs "push from the loop" are partly
+  arbitrary labels (user); think of it as a graph.
+- The back is sacred (never add cells to the back for a front segment). Back connectors 0-1 lanes sideways.
+- **No brute force + storing per-k results** ("the search should teach us new things"); runtime search inside the
+  per-k budget is fine; offline screens (e.g. back links) only where necessary, "don't abuse".
+- Debug k=2 too (edge case, cheap to learn from).
+- User asked once for fewer threads (2 workers) for 45 min: obey such limits.
+- Terminology the user asked to be CLEAR about: (m, s) = a level's hoppers carried by the level below (m) and by
+  its loop neighbour (s); "frame offset" = how far forward/back (flight axis) the next body sits at link time.
+
+### 0.2 Results (all verified 1 seed x 1000 blocks: fly at PL, fail at PL-1; files in out/best/)
+| k | stack | current best | file / note |
+|---|---|---|---|
+| 2 | 12 | 9 | `n02_pl12_stack.flyer` (1-hopper back, (1,0);(2,0);(2,0)) |
+| 3 | **13** | 13 | `n03_pl13_stack.flyer` = human N3 topology (2,0);(3,0);(3,0), levels 4 apart |
+| 3 | 15 | | `n03_pl15_stack_spacing3.flyer`: levels 3 apart (human-style), back link0_n2_lat1_2 step (-3,1) |
+| 4 | 19 | 18 | `n04_pl19_stack.flyer`: compact link (link0_n3_k4.txt:3, step (-2,-2)); all bodies <= 18 except the 4 corner/remainder back bodies (13 + 6 riders) |
+| 5..26 | 26 29 35 40 45 49 57 62 63 68 72 77 80 91 94 100 103 108 112 130 118 124 | 23 26 30 34 37 42 44 48 54 57 ... | `stack_all.py` human topology on CP lat backs (`out/stack/all_h.txt`; k=27-30 were still running) |
+
+### 0.3 What the work taught (rules now in the code)
+1. Per-hopper carriers: `nk.Ring.carrier(X, j)` hook (default NEXT); `stack.Ring3` carries 'B' (below) / 'L' (loop).
+2. A body rises up to 2 relative to the level above (both carriers rest 2 later): loop covers must avoid the lower
+   level's top lanes (`back_top_lanes`), its RB lanes (+-step), beside-hopper lanes of the lower level, own RB lanes.
+3. **Glue touching another body's redstone block while moving is rejected** (`Ring3.cell_ok`): the block is taken
+   along and pushes its owner's plate in front of it -> bodies merge (base checker allowed it as a "+1 leaf race").
+4. Neighbouring towers are copies at +-step: no shared lanes, no RB beside their hoppers, no own glue beside their
+   hardware, their hoppers not on/beside our lower plate (`level_opts` / `stack_cp`; off when every link is a
+   corner, i.e. k=2 ring of 4).
+5. Level-1 sticky (attach-lane 's2' mode) needs a free side lane for its power block, not beside the lower plate.
+6. **nkcheck fix**: arm cells were counted as blocks; even-k stacks (all stickies extend in the same slot) failed
+   'kinds' at t0 although flying. Arms excluded now. All earlier k=4 "sim failures" were this.
+7. k=4 +1: the balanced frame offsets give one link per base ring an extra offset (here the corner links); no
+   offset pattern x corner (scanned all, `offscan`) nor cover-cell choice fixes it - the user agreed: "how far back
+   you need to go at each stage changes each time... interesting challenge". Ideas: a back link whose column length
+   is offset-insensitive; or a lighter tower over that body (non-uniform, see 0.5).
+8. **Human 3 bps flyer study** (`tools/flyer_slices.py` new shared viewer, `HOP_REL` hoptrace): levels are single
+   x-layers of 3-5 glue; levels sit **3 apart** (our frame: lower plate ranges x = -2..0 below the upper plate at 1);
+   the sticky stands in the plate layer held sideways and pulls the lower plate cell directly (no extra cell); the
+   upper body's hopper stands right behind its own plate cell and, spent, rides the lower body by SIDE contact with a
+   lower plate cell in the next lane. User confirmed this reading. Implemented as `build(..., gap=3)` ("side" mode):
+   Hm lanes beside (not on) the lower plate, no RB over the lower plate, level 1 uses the human sticky too, no
+   attach lane / pulled extra cell. Needed rules found by simulation (`scratchpad track.py`-style divergence finder):
+   glue must not go above the plate layer (`Ring3.xcap`), plate must be one piece, own spent hopper must not be
+   carried into own glue, every hopper needs its own RB beside it (`unpowered_hoppers`; the front's "free" lane
+   trick does not hold in side mode), prefer the lower sticky's power-block lane next to the plate, avoid RBs over
+   the lower column lane (cost). Result k=3: 18 -> 16 -> 15; level 1 now 6 (= human F size), level 2 9-11, back 10.
+   User: "spacing is still the issue... ideally each lane 1-wide; this is possible" (towers 1 lane apart).
+9. Fan-out (human towers drift ~1 lane per level): useful mainly to make room to place/power stickies. Chosen:
+   **zigzag** (offset alternates, net drift <= 1 lane, corners need nothing special); fallback: split loops into 4
+   edges with special endpoints. The generator already allows lanes within +-1 of the back box (mg); zigzag as a
+   ranking preference is not implemented yet.
+10. Loops (s > 0) work but are expensive at today's tower spacing, worst across corners.
+
+### 0.4 human tm_smol topology (user's test of understanding, confirmed direction)
+Back loop A->B->D->E->C (carrier order): A, B, D, E: s=2 + one pull; C: s=3, no tower. Only two towers:
+on B: F (m=3 from B, pulls B) -> H (m=2 from F, pulls A, pulled by J) -> J (m=3 from H, pulls H) -> L (front, m=3);
+on E: G (m=3 from E, pulls E) -> I (m=2 from G, pulls D, pulled by K) -> K (m=3 from I, pulls I) -> M (front).
+A pull target only needs to rest 2 slots after the puller and be adjacent.
+
+### 0.5 NEXT (agreed with the user just before the handoff)
+**Non-uniform stacks, two stages:**
+1. **Topology stage** (an algorithm, run at build time, returns its top few suggestions): over one base ring (+ its
+   corner), assign every body its carriers (which bodies carry how many of its hoppers; carriers rest 2 later) and
+   at most one pull target (rests 2 later, reachable), how many towers and how tall; back bodies may have no tower
+   (like C). Constraint: k moves per body. Objective: min max estimated load (class cost model: cells per hopper
+   front / RB / sticky / cover + riders). (m, s) NOT uniform across classes - computed by this algorithm.
+   First milestone: it rediscovers the human N3 and tm_smol topologies for k=3; then k=4.
+2. **Geometry stage per tower class** = (position in the base ring, corner or not); the four sides stay identical
+   (user: yes; user would even like more granularity later). Layouts checked against the real neighbours' layouts
+   (not shifted self-copies). Improvement loop: find the bottleneck body, change only its class, re-check that
+   tower + neighbours, repeat.
+Open questions sent before the handoff (assume yes unless the user says otherwise): back bodies without towers allowed
+for every k; topology search runs at build time (no stored per-k results).
+
+### 0.6 Tools / how to run
+- `python stack_scan.py K M [NLAY] [BACK] [CV|scan]` (PFIX env fixes leading params), `python stack_one.py K
+  "m,s;..." "BACK+BACK" NCV NLAY` (MG env), `python stack_all.py K1,K2 h NBOX NCV`. BACK = bank index (n = k-1),
+  `out/stack/link0_n3_k4.txt:i` (screen output), or `lat:A,B,SZ[,G,M]` (CP lat module).
+- `stack.construct(k, (mod, step), params, cv, xoff, nlay, mg=, gap=)`, `stack.from_recipe`, `stack.loads(r)`,
+  `stack.sim_pl(r, k)`; `stack.CP_ABOVE` = 5 (bigger levels use `stack_cp.level_cp`).
+- Debug helpers: `stack_track.first_div(r, flyer, ticks)` (divergence tracker, in this folder); prune / powdiag / merges were scratch-only
+  (track every block's body from the model and apply the trace's moves; first slot where a body's move differs).
+  Re-create in `tools/` if needed again (the divergence tracker is worth making a shared tool).
+
 ## 1. The task and the user's rules
 
 One program that **explicitly constructs a working N_k flyer for every k** and minimises the **sum of minimum push

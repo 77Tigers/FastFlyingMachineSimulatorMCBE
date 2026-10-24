@@ -45,8 +45,19 @@ class Ring3(Ring2):
         takes it along, and the block then pushes its owner's plate in front of it (the bodies merge; seen in
         simulation when the owner's move in that slot is a pull)."""
         T = self.T
+        cap = getattr(self, 'xcap', {}).get(X)
+        if cap is not None and g[0] - self.place[X][0] > cap:
+            return (False, 'above the plate layer') if why else False
         for s in range(T.S):
-            if not T.moves(X, s): continue
+            if not T.moves(X, s):
+                # resting: an own spent hopper right behind this cell must not be carried forward into it
+                w = (g[0] + T.shift(X, s), g[1], g[2])
+                for Q, kind, info in worlds[s].get((w[0] - 1, w[1], w[2]), []):
+                    if Q == X and kind == 'P' and info[1] == 0 and info[2] == 'spent':
+                        C = self.carrier(X, info[0])
+                        if C is not None and T.moves(C, s):
+                            return (False, f's{s} own spent hopper carried into it') if why else False
+                continue
             w = (g[0] + T.shift(X, s), g[1], g[2])
             for d in ((1, 0, 0), (-1, 0, 0), (0, 1, 0), (0, -1, 0), (0, 0, 1), (0, 0, -1)):
                 for Q, kind, info in worlds[s].get((w[0] + d[0], w[1] + d[1], w[2] + d[2]), []):
@@ -55,9 +66,26 @@ class Ring3(Ring2):
         return Ring2.cell_ok(self, X, g, worlds, why, strict)
 
 
+def pieces(cells):
+    """number of 4-connected components of a lane set"""
+    cells = set(cells); seen = set(); n = 0
+    for c in cells:
+        if c in seen: continue
+        n += 1; st = [c]
+        while st:
+            u = st.pop()
+            if u in seen: continue
+            seen.add(u); st += [v for v in nb(u) if v in cells and v not in seen]
+    return n
+
+
 def level_opts(m, s, below, a, b, step, mode, mg=(0, 1), free=None, cap=4000, forbid=frozenset(), low=None,
-               periodic=True):
+               periodic=True, lowR=frozenset(), side=False):
     """layouts for one level over the lower level's plate lanes `below`, cheapest first.
+    side (levels 3 apart instead of 4, as in the human 3 bps flyer): the hoppers carried by the lower level stand
+    beside its plate lanes (their spent position touches the lower plate cell sideways, x = -2) instead of on them;
+    no RB over the lower plate; loop hoppers and covers not beside it; stickies are human stickies that pull the
+    lower plate cell directly (no extra cell, no attach lane).
     mode 's2' (level 1: sticky on the hopper layer held by an attach lane s2), 'hs' (human sticky), 'top' (front).
     Returns dicts st (sticky lane), s2, Hm (hoppers on `below`), Hs (loop hoppers off `below`), R (RB lanes),
     Q (loop cover lanes at x = -2, owned by the loop neighbour), cost.
@@ -73,12 +101,17 @@ def level_opts(m, s, below, a, b, step, mode, mg=(0, 1), free=None, cap=4000, fo
     lanes = [(y, z) for y in range(-1 - my, a + 1 + my) for z in range(-1 - mz, b + 1 + mz) if inb((y, z))]
     bl = set(below); out = []
     qbad = set(forbid) | {(l[0] + sg * step[0], l[1] + sg * step[1]) for l in forbid for sg in (1, -1)}
+    # (nor beside the lower level's redstone blocks, own tower or the neighbours': the cover would touch them)
+    qbad |= {v for l in lowR for sg in (0, 1, -1) for v in nb((l[0] + sg * step[0], l[1] + sg * step[1]))}
+    nbl = {v for l in bl for v in nb(l)}
+    colw = set(forbid) - bl - set(lowR)   # the lower level's column / connector lanes near its top
+    hmc = sorted(l for l in lanes if l not in bl and l in nbl and l not in forbid) if side else None
     for st in ([None] if mode == 'top' else sorted(bl)):
-        for Hm in itertools.combinations(sorted(bl - {st}), m):
+        for Hm in itertools.combinations(hmc if side else sorted(bl - {st}), m):
             s2opts = [None] if mode != 's2' else [l for l in nb(st) if l not in bl and l not in Hm and inb(l)]
             for s2 in s2opts:
                 offl = [l for l in lanes if l not in bl and l != st and l != s2 and l not in Hm and l not in forbid
-                        and not (low is not None and low[1] == 'hs' and l == low[0])]
+                        and not (low is not None and low[1] == 'hs' and l == low[0]) and not (side and l in nbl)]
                 for Hs in itertools.combinations(offl, s):
                     H = list(Hm) + list(Hs); Hset = set(H)
                     # loop covers: lanes beside the loop hoppers, not over the lower plate, free of this level
@@ -86,7 +119,7 @@ def level_opts(m, s, below, a, b, step, mode, mg=(0, 1), free=None, cap=4000, fo
                     # sticky: the lower level's pulled cell sits at x = -2 there)
                     nbHm = {v for h in Hm for v in nb(h)} | (set(nb(st)) if mode == 'hs' else set())
                     qc = sorted({v for h in Hs for v in nb(h) if v not in Hset and v not in bl and v != st and v != s2
-                                 and inb(v) and v not in qbad and v not in nbHm})
+                                 and inb(v) and v not in qbad and v not in nbHm and not (side and v in nbl)})
                     Qs = [()] if not Hs else []
                     for nq in range(1, len(Hs) + 1):
                         Qs = [Q for Q in itertools.combinations(qc, nq) if all(any(q in nb(h) for q in Q) for h in Hs)]
@@ -100,7 +133,7 @@ def level_opts(m, s, below, a, b, step, mode, mg=(0, 1), free=None, cap=4000, fo
                         Qcs = [Q for Q in itertools.combinations(qcc, nq) if all(any(q in nb(h) for q in Q) for h in Hs)]
                         if Qcs: break
                     cand = [l for l in lanes if l not in Hset and l != st and l != s2 and l != free
-                            and any(h in nb(l) for h in H)]
+                            and any(h in nb(l) for h in H) and not (side and l in bl)]
                     fr = [free] if free is not None and free not in Hset else []
                     found = []
                     for nr in range(0, len(H) + 1):
@@ -122,8 +155,9 @@ def level_opts(m, s, below, a, b, step, mode, mg=(0, 1), free=None, cap=4000, fo
                         if low is not None and low[1] == 's2':
                             used = own | bl
                             nbl = sh(bl) | nAll
+                            # (the block rises up to 2 into the lower plate layer: no lower plate lane beside it)
                             if not any(p not in used and p not in nbl and not any(h in nb(p) for h in Hset | nH)
-                                       for p in nb(low[0])): continue
+                                       and not any(v in bl for v in nb(p)) for p in nb(low[0])): continue
                         for Q in Qs:
                             if set(Q) & set(R): continue   # the loop neighbour rises up to 2 relative to this level
                             # prefer a straight loop column: the loop neighbour's column lane q - step beside its cluster
@@ -131,7 +165,17 @@ def level_opts(m, s, below, a, b, step, mode, mg=(0, 1), free=None, cap=4000, fo
                             clus = set(H) | set(R)
                             far = sum(min(abs(q[0] - step[0] - c[0]) + abs(q[1] - step[1] - c[1]) for c in clus) - 1
                                       for q in Q)
-                            cost = len(R) + 2 * len(Q) + far
+                            # the plate (fronts of hoppers, RBs, attach lane) in one piece: every extra piece costs
+                            # a routed join (2-3 cells, more when the sticky or neighbours are in the way)
+                            pl = set(H) | set(R) | ({s2} if s2 is not None else set())
+                            if side and pieces(pl) > 1: continue   # glue stays in the plate layer: one piece
+                            cost = len(R) + 2 * len(Q) + far + (3 * (pieces(pl) - 1) if side else 0)
+                            if side and low is not None and low[0] is not None:
+                                # the lower sticky's power block hangs in its lane just below this level's plate:
+                                # keep that lane on (or beside) the plate so its attach cell is short
+                                dl = min(abs(low[0][0] - c[0]) + abs(low[0][1] - c[1]) for c in pl)
+                                cost += 2 * dl
+                            if side: cost += 2 * len(set(R) & colw)   # an RB over the lower column makes it detour
                             out.append(dict(st=st, s2=s2, Hm=list(Hm), Hs=list(Hs), R=list(R), Q=list(Q), cost=cost,
                                             Qc=[list(q) for q in Qcs if not set(q) & set(R)]))
                             if len(out) >= cap: break
@@ -161,7 +205,7 @@ def back_top_lanes(k, vmod, step, cv, xoff):
     return _BTL[key]
 
 
-def corner_cover(lay, place, L):
+def corner_cover(lay, place, L, lowtop=frozenset(), lowR=frozenset()):
     """{tower i: cover lanes} for the corner links (tower i's loop neighbour i+1 is on the next side, rotated):
     among the layout's valid cover choices, the one nearest to the neighbour's cluster (in tower i's frame)"""
     import sqbuild
@@ -173,12 +217,18 @@ def corner_cover(lay, place, L):
         W = (i + 1) % L
         wl = [sqbuild.to_local(place[i], sqbuild.to_world(place[W], (0,) + tuple(c)))[1:] for c in clus]
         far = lambda Q: sum(min(abs(q[0] - c[0]) + abs(q[1] - c[1]) for c in wl) for q in Q)
-        best = min([lay['Q']] + lay['Qc'], key=far)
-        if far(best) < far(lay['Q']): out[i] = best
+        # the cover belongs to W: in W's frame it must avoid W's lower level near its top and its RBs' sides
+        bad = {v for l in lowR for v in nb(l)} | set(lowtop)
+        okq = lambda Q: all(sqbuild.to_local(place[W], sqbuild.to_world(place[i], (0,) + tuple(q)))[1:] not in bad
+                            for q in Q)
+        cands = [Q for Q in [lay['Q']] + lay['Qc'] if okq(Q)]
+        if not cands: return None
+        best = min(cands, key=far)
+        if best != lay['Q']: out[i] = best
     return out
 
 
-def build(k, back, params, choice, cv, xoff=None, mg=(0, 1), opts_cache=None, upto=None):
+def build(k, back, params, choice, cv, xoff=None, mg=(0, 1), opts_cache=None, upto=None, gap=4):
     """back = (module, step) with k-1 hoppers; params = [(m, s), ...] for levels 1..M+1 (last = front);
     choice = layout index per level. Returns a Ring3 (unrouted, unpowered) or None.
     upto: build only levels 1..upto (a partial stack, for pruning: higher levels only add cells)."""
@@ -194,22 +244,28 @@ def build(k, back, params, choice, cv, xoff=None, mg=(0, 1), opts_cache=None, up
     if xoff: place = [(p[0] + xoff[i],) + tuple(p[1:]) for i, p in enumerate(place)]
     below = [tuple(c[1:]) for c in vmod['PLATE']]
     forbid = back_top_lanes(k, vmod, step, cv, xoff)
+    lowR = frozenset(tuple(c[1:]) for c in vmod['R'])
+    tops, lowRs = [], []
     hb = h if upto is None else upto
     lays = []
     for j in range(1, hb + 1):
         m, s = params[j - 1]
-        mode = 'top' if j == h else 's2' if j == 1 else 'hs'
-        free = lays[-1]['st'] if mode == 'top' and lays else None
-        low = (lays[-1]['st'], 's2' if j == 2 else 'hs') if lays else None
+        side = gap == 3
+        mode = 'top' if j == h else 's2' if j == 1 and not side else 'hs'
+        free = lays[-1]['st'] if mode == 'top' and lays and not side else None
+        low = (lays[-1]['st'], 's2' if j == 2 and not side else 'hs') if lays else None
         per = L // 4 > 1
-        key = (m, s, tuple(sorted(below)), a, b, step, mode, mg, free, forbid, low, per)
+        key = (m, s, tuple(sorted(below)), a, b, step, mode, mg, free, forbid, low, per, lowR, side)
+        tops.append(forbid); lowRs.append(lowR)
         if opts_cache is not None and key in opts_cache: g = opts_cache[key]
-        elif m + s > CP_ABOVE:   # enumeration explodes: CP-SAT layouts (best first)
+        elif m + s > CP_ABOVE and not side:   # enumeration explodes: CP-SAT layouts (best first)
             import stack_cp
-            g = stack_cp.level_cp(m, s, below, a, b, step, mode, mg, free, forbid=forbid, low=low, periodic=per)
+            g = stack_cp.level_cp(m, s, below, a, b, step, mode, mg, free, forbid=forbid, low=low, periodic=per,
+                                  lowR=lowR)
             if opts_cache is not None: opts_cache[key] = g
         else:
-            g = level_opts(m, s, below, a, b, step, mode, mg, free, forbid=forbid, low=low, periodic=per)
+            g = level_opts(m, s, below, a, b, step, mode, mg, free, forbid=forbid, low=low, periodic=per, lowR=lowR,
+                           side=side)
             if opts_cache is not None: opts_cache[key] = g
         if len(g) <= choice[j - 1]: return None
         lay = g[choice[j - 1]]
@@ -217,6 +273,7 @@ def build(k, back, params, choice, cv, xoff=None, mg=(0, 1), opts_cache=None, up
         H = lay['Hm'] + lay['Hs']
         below = H + lay['R'] + ([lay['s2']] if mode == 's2' else [])
         forbid = frozenset(below) | {l for l in (lay['st'], lay['s2']) if l is not None}
+        lowR = frozenset(lay['R'])
     S = T0.S
     rests, nxt, loop = list(T0.rest), [T0.nxt(i) for i in range(L)], [None] * L
     for j in range(1, hb + 1):
@@ -228,13 +285,16 @@ def build(k, back, params, choice, cv, xoff=None, mg=(0, 1), opts_cache=None, up
     for j in range(1, hb + 1):
         lay = lays[j - 1]; st, s2 = lay['st'], lay['s2']
         H = lay['Hm'] + lay['Hs']; R = lay['R']
-        mode = 'top' if j == h else 's2' if j == 1 else 'hs'
-        qcorner = corner_cover(lay, place, L)
+        side = gap == 3
+        mode = 'top' if j == h else 's2' if j == 1 and not side else 'hs'
+        lowpl = {tuple(c[1:]) for c in mods[(j - 1) * L]['PLATE'] if c[0] == 1}   # the lower plate lanes (x = 1)
+        qcorner = corner_cover(lay, place, L, tops[j - 1], lowRs[j - 1])
+        if qcorner is None: return None
         for i in range(L):
             X, Y = j * L + i, (j - 1) * L + i
             Q = qcorner.get(i, lay['Q'])
             D = T.shift(X, T.rest[X]) - T.shift(Y, T.rest[X])
-            x0 = places[Y][0] + 4 - D
+            x0 = places[Y][0] + gap - D
             plate = [(1,) + tuple(c) for c in H + R]
             rig = []
             if mode == 's2':
@@ -242,14 +302,17 @@ def build(k, back, params, choice, cv, xoff=None, mg=(0, 1), opts_cache=None, up
                 rig = [dict(pos=(0,) + tuple(st), dir=-1, victim=Y)]
             elif mode == 'hs':
                 rig = [dict(pos=(1,) + tuple(st), dir=-1, victim=Y)]
-                mods[Y] = dict(mods[Y], PLATE=list(mods[Y]['PLATE']) + [(2,) + tuple(st)])
+                if not side: mods[Y] = dict(mods[Y], PLATE=list(mods[Y]['PLATE']) + [(2,) + tuple(st)])
             mods.append(dict(P=[tuple(c) for c in H], PC=['B'] * len(lay['Hm']) + ['L'] * len(lay['Hs']),
                              R=[(0,) + tuple(c) for c in R], PLATE=plate,
-                             CONT=[(-3,) + tuple(c) for c in lay['Hm']], CONTL=[(-2,) + tuple(q) for q in Q],
+                             CONT=([(-2,) + next(n for n in nb(c) if n in lowpl) for c in lay['Hm']] if side else
+                                   [(-3,) + tuple(c) for c in lay['Hm']]), CONTL=[(-2,) + tuple(q) for q in Q],
                              size=(a, b), RIG=rig))
             places.append((x0,) + place[i][1:])
             mats.append('honey' if (i + j) % 2 else 'slime')
     r = Ring3(T, mods, places, mats, loop)
+    if gap == 3:   # levels 3 apart: glue above a body's plate layer would push the hoppers of the level above
+        r.xcap = {X: 1 for X in range(T.L) if X < hb * L}
     r.lays, r.h, r.L0, r.power_top, r.params = lays, hb, L, hb == h, params
     return r
 
@@ -304,13 +367,24 @@ def add_power(r):
     return r
 
 
+def unpowered_hoppers(r):
+    """hoppers with no redstone block of their own body beside them (same x, side lane) - they never fire"""
+    out = []
+    for X in range(r.T.L):
+        R = {tuple(c) for c in r.mods[X]['R']}
+        for j in range(len(r.mods[X]['P'])):
+            h, py, pz = r.lev(X, j)
+            if not any((h, py + d[0], pz + d[1]) in R for d in N4): out.append((X, j))
+    return out
+
+
 def finish(r, bound=None):
     """power, route and check a built stack; returns (ring or None, reason). bound: give up ('worse') as soon as
     the predicted PL before routing (routing only adds cells) reaches it."""
     if r is None: return None, 'layout'
     if collisions(r): return None, 'collide'
     if add_power(r) is None: return None, 'power'
-    if collisions(r) or power_problems(r): return None, 'power2'
+    if collisions(r) or power_problems(r) or unpowered_hoppers(r): return None, 'power2'
     if bound is not None and predicted(r) >= bound: return None, 'worse'
     try: route_all(r)
     except RuntimeError: return None, 'route'
@@ -366,7 +440,8 @@ def sim_pl(r, k, slack=2):
     return None
 
 
-def construct(k, back, params, cv, xoff=None, nlay=8, mg=(0, 1), deadline=None, stats=None, max_leaves=40, sim=True):
+def construct(k, back, params, cv, xoff=None, nlay=8, mg=(0, 1), deadline=None, stats=None, max_leaves=40, sim=True,
+              gap=4):
     """depth-first over the level layouts (cheapest first per level), pruning partial stacks that already fail;
     every surviving leaf is powered, routed and checked; returns the best (predicted PL, choice, ring) or None"""
     cache = {}; h = len(params)
@@ -378,13 +453,13 @@ def construct(k, back, params, cv, xoff=None, nlay=8, mg=(0, 1), deadline=None, 
         for c in range(nlay):
             if (deadline and time.time() > deadline) or leaves[0] >= max_leaves: return
             ch = prefix + (c,)
-            try: r = build(k, back, params, ch, cv, xoff, mg, cache, upto=j)
+            try: r = build(k, back, params, ch, cv, xoff, mg, cache, upto=j, gap=gap)
             except (AssertionError, RuntimeError): tally('err'); continue
             if r is None: return
             if not partial_ok(r, j): tally(f'prune{j}'); continue
             if j < h: rec(ch); continue
             leaves[0] += 1
-            try: rr, why = finish(build(k, back, params, ch, cv, xoff, mg, cache), best[0] and best[0][0])
+            try: rr, why = finish(build(k, back, params, ch, cv, xoff, mg, cache, gap=gap), best[0] and best[0][0])
             except (AssertionError, RuntimeError) as e: rr, why = None, 'err'
             p = predicted(rr) if rr is not None else None
             if rr is not None and sim:

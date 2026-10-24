@@ -26,11 +26,13 @@ def boxes(k, n):
 
 
 def corners_job(args):
+    """the lat family's corner offsets for the box (no scan: a full corner scan routes whole rings ~120 times)"""
     k, spec, ncv = args
     try:
         e = stack_scan.back_entry(k, spec)
         if e['mod'] is None: return k, spec, []
-        return k, spec, stack.back_corners(k, e['mod'], e['step'], span=8, keep=ncv)
+        a, b = e['mod']['size']
+        return k, spec, [(a - 1, b + 1), (a - 1, b + 2), (a, b + 1), (a, b + 2)][:ncv]
     except Exception as ex:
         return k, spec, []
 

@@ -14,7 +14,7 @@ def nb(c): return [(c[0] + d[0], c[1] + d[1]) for d in N4]
 
 
 def level_cp(m, s, below, a, b, step, mode, mg=(0, 1), free=None, forbid=frozenset(), low=None, nsol=8, secs=2.0,
-             periodic=True):
+             periodic=True, lowR=frozenset()):
     my, mz = mg
     inb = lambda l: -my <= l[0] < a + my and -mz <= l[1] < b + mz
     U = [(y, z) for y in range(-1 - my, a + 1 + my) for z in range(-1 - mz, b + 1 + mz) if inb((y, z))]
@@ -29,6 +29,7 @@ def level_cp(m, s, below, a, b, step, mode, mg=(0, 1), free=None, forbid=frozens
     st = {l: B() for l in U if l in bl} if mode != 'top' else {}
     s2 = {l: B() for l in U if l not in bl} if mode == 's2' else {}
     qbad = set(forbid) | {sh(l, sg) for l in forbid for sg in (1, -1)}
+    qbad |= {v for l in lowR for sg in (0, 1, -1) for v in nb(sh(l, sg))}
     q = {l: B() for l in U if l not in bl and l not in qbad}
     g = lambda d, l: d.get(l, z0)
     H = lambda l: [x for x in (hm.get(l), hs.get(l)) if x is not None]
@@ -82,7 +83,8 @@ def level_cp(m, s, below, a, b, step, mode, mg=(0, 1), free=None, forbid=frozens
                 for x in H(l): md.Add(x == 0)
     # room for the power block of an attach-lane sticky below
     if low is not None and low[1] == 's2':
-        ps = [p for p in nb(low[0]) if p not in bl and not (periodic and any(sh(p, sg) in bl for sg in (1, -1)))]
+        ps = [p for p in nb(low[0]) if p not in bl and not (periodic and any(sh(p, sg) in bl for sg in (1, -1)))
+              and not any(v in bl for v in nb(p))]
         pv = {p: B() for p in ps}
         if not pv: return []
         md.Add(sum(pv.values()) >= 1)
