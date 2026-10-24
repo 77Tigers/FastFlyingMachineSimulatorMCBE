@@ -196,7 +196,9 @@ gives 4 bodies of 7 -> PL9 (was 10). Stored as bank entry `link0_n2_lat0_k2`; k=
    L y5-8, P y6-8) so a compact 0-1-lane back ring leaves room; also fix the remainder / corner link (+1).
 3. Extension bank: links are stored (`flyers/extension_bank/nk_links/`, `bank_links.py N K [LAT MINSTEP]` adds);
    still open: N3/N4 bank front segments (`lookup.py`, `contract-solve`) as tower levels (our level 2 is 9 vs the
-   human's 5).
+   human's 5). Bank survey (2026-10-24): 69 N3 pull contracts, endogenous loads 8..15; the cheapest are `n3_233`
+   (17 cells, `N3|C:mwwmm|S:-|pull@2|T:mmmww`), `n3_234` (19), `n3_232` (21), all load 8. Note `lookup.py` reads
+   `index.json['entries']`; a `--max-load 6` query returns nothing for pulls.
 4. High-k ideas not yet tried: fewer riders per mover (pull more, push less), observers / rods instead of RBs.
 
 ## 8. Tools
