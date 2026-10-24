@@ -46,6 +46,11 @@ target/release/contract-solve flyers/extension_bank/n3/n3_102/problem.json OUT -
 Originals are in git history. Per-sample dumps (`samples_*.json`) are no longer tracked; verdicts are in
 `index.json` (`orders_80_samples`) and `extension_contract.py --samples` regenerates them.
 
+## N_k back links (2026-10-24)
+
+[`nk_links/`](nk_links/README.md): abstract back-body link modules for the N_k constructor (looked up by hopper
+count; rederived by `bank_links.py` in `flyers/WIP/experiments/nk_constructor_20261022`). Not simulator contracts.
+
 ## Scoring "best"
 
 Prescribed input strokes are hard-capped and excluded from ranking. Rank by

@@ -29,17 +29,36 @@ def connect(m, cells, x, adj, name):
         m.Add(outflow - inflow == supply - x[u])
 
 
-def solve(k, a, b, secs=10, workers=8, sym=False, hint=None):
+def solve(k, a, b, secs=10, workers=8, sym=False, hint=None, det=None, rods=False):
     m = cp_model.CpModel()
     L = [(y, z) for y in range(a) for z in range(b)]
     nb = {c: [(c[0] + d[0], c[1] + d[1]) for d in N4 if (c[0] + d[0], c[1] + d[1]) in set(L)] for c in L}
     B = lambda: m.NewBoolVar('')
     P = {c: B() for c in L}; R = {c: B() for c in L}; C = {c: B() for c in L}
     pl = {c: B() for c in L}; w2 = {c: B() for c in L}; w3 = {c: B() for c in L}
+    # rods (optional): rod D[c, d] at x=0 in lane c faces lane c+d, where V glue g0 sits at x=0 and is hard-powered;
+    # the rod soft-powers its lateral neighbours like a redstone block, g0 powers its other neighbours.
+    D, g0, PG = {}, {}, {}
+    if rods:
+        for c in L:
+            g0[c] = B()
+            for d in N4:
+                v = (c[0] + d[0], c[1] + d[1])
+                if v in nb[c]: D[c, d] = B()
+        for (c, d), x in D.items():
+            v = (c[0] + d[0], c[1] + d[1]); m.AddImplication(x, g0[v])
+        for c in L:
+            m.AddAtMostOne([x for (cc, d), x in D.items() if cc == c])
+            PG[c] = B()
+            src = [x for (cc, d), x in D.items() if (cc[0] + d[0], cc[1] + d[1]) == c]
+            m.AddBoolOr(src).OnlyEnforceIf(PG[c]); m.AddImplication(PG[c], g0[c])
+            m.AddImplication(g0[c], pl[c])
+    DL = {c: sum(x for (cc, d), x in D.items() if cc == c) for c in L} if rods else {}
     for c in L:
-        m.Add(P[c] + R[c] + C[c] <= 1)
+        m.Add(P[c] + R[c] + C[c] + (DL[c] if rods else 0) + (g0[c] if rods else 0) <= 1)
         m.AddImplication(P[c], pl[c]); m.AddImplication(R[c], pl[c])
-        m.AddBoolOr([R[v] for v in nb[c]] + [P[c].Not()])
+        m.AddBoolOr([R[v] for v in nb[c]] + ([DL[v] >= 1 for v in []] if False else []) + [P[c].Not()]
+                    + ([x for (cc, d), x in D.items() if cc in nb[c]] + [PG[v] for v in nb[c]] if rods else []))
         m.AddImplication(w2[c], C[c])
         m.AddBoolOr([w3[c]] + [w2[v] for v in nb[c]] + [P[c].Not()])
     m.Add(sum(P.values()) == k)
@@ -52,17 +71,22 @@ def solve(k, a, b, secs=10, workers=8, sym=False, hint=None):
     W = {(c, 2): w2[c] for c in L}; W.update({(c, 3): w3[c] for c in L})
     wadj = {(c, h): [(v, h) for v in nb[c]] + [(c, 5 - h)] for c in L for h in (2, 3)}
     connect(m, list(W), W, wadj, 'w')
-    m.Minimize(sum(pl.values()) + sum(R.values()) + sum(w2.values()) + sum(w3.values()))
+    m.Minimize(sum(pl.values()) + sum(R.values()) + sum(w2.values()) + sum(w3.values()) + sum(D.values()) + sum(g0.values()))
     if hint:
         for name, d in (('P', P), ('R', R), ('C', C), ('pl', pl), ('w2', w2), ('w3', w3)):
             hs = set(map(tuple, hint.get(name, [])))
             for c in L: m.AddHint(d[c], c in hs)
-    s = cp_model.CpSolver(); s.parameters.max_time_in_seconds = secs; s.parameters.num_workers = workers
+    s = cp_model.CpSolver(); s.parameters.num_workers = workers
+    if det: s.parameters.max_deterministic_time = det
+    else: s.parameters.max_time_in_seconds = secs
     st = s.Solve(m)
     if st not in (cp_model.OPTIMAL, cp_model.FEASIBLE): return None
     g = lambda d: sorted(c for c in L if s.Value(d[c]))
-    return dict(cost=int(s.ObjectiveValue()), bound=int(s.BestObjectiveBound()), opt=st == cp_model.OPTIMAL,
+    out = dict(cost=int(s.ObjectiveValue()), bound=int(s.BestObjectiveBound()), opt=st == cp_model.OPTIMAL,
                 P=g(P), R=g(R), C=g(C), pl=g(pl), w2=g(w2), w3=g(w3), a=a, b=b)
+    if rods:
+        out['D'] = sorted((c, d) for (c, d), x in D.items() if s.Value(x)); out['g0'] = g(g0)
+    return out
 
 
 def show(r):

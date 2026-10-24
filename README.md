@@ -187,6 +187,13 @@ default all cores). Syntax and interpretation are in
 [`flyers/WIP/experiments/RESEARCH_RUNNER.md`](flyers/WIP/experiments/RESEARCH_RUNNER.md).
 The Python wrappers in [`fastflyer/research.py`](fastflyer/research.py) call the same binary.
 
+Other shared diagnostics in the same crate include `hoptrace FILE TICKS W0 PERIOD_TICKS` (per-slot role of every
+piston and redstone block: fires on / rides which body; `HOP_POS=1` also prints each block's position at slot W0,
+`HOP_REL=X` positions relative to body X per slot) and `flyer-ledger FILE --period P` (every piston action with
+its load). [`tools/flyer_graph.py`](tools/flyer_graph.py) `FILE PERIOD_SLOTS` turns them into the body graph of a
+flyer: each body's word, rigid pushes (X =rigid=> Y) and hoppers with their carriers (Y <= hop[Z]). [`tools/flyer_slices.py`](tools/flyer_slices.py) `FILE [--bodies]` prints a flyer as lane maps, one per
+x layer (glue bodies lettered by mean x, p/s pistons, r redstone blocks), and with `--bodies` each body's cells per layer.
+
 The Python editor and native solver need no third-party Python packages. For the
 optional offline synthesis scripts that use OR-Tools, NumPy or SciPy, install the
 research extra from the repository root:

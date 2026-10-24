@@ -6,6 +6,7 @@ publish = false
 
 [dependencies]
 fastflyer = { path = "../../../../.." }
+fastsim = { path = "../../../../../fastsim" }
 
 [profile.release]
 opt-level = 3

@@ -25,9 +25,15 @@ def candidates(a, b, m):
     return [((a + 1, sz), (a - 1, cz)) for sz in (-1, 0) for cz in (b, b + 1, b + 2)]
 
 
-def assemble(k, mod, step, cv):
-    L = square.ring_size(k); m = L // 4; L0 = bodies_for(k)
-    r = square.make(k, mod, step, cv)
+def assemble(k, mod, step, cv, L=None, xoff=None):
+    """xoff: optional per-body x shift (e.g. tower2.balanced_xoff; periodic with the base ring, so copying side 0
+    to the other sides stays valid)"""
+    L = L or square.ring_size(k); m = L // 4; L0 = bodies_for(k)
+    r = square.make(k, mod, step, cv, L)
+    if xoff:
+        r.place = [(p[0] + xoff[i],) + tuple(p[1:]) for i, p in enumerate(r.place)]
+        r.__init__(r.T, r.mods, r.place, mat=r.mat)
+        if m > 4: r.active = sorted({Y for X in (0, 1, m // 2, m - 1) for Y in r.near(X, margin=6)} | set(range(m)))
     if not square.hard_ok(r): return None
     if m % L0 == 0:
         for X in range(m): r.route(X)

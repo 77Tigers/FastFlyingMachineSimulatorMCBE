@@ -113,3 +113,4 @@ Bodies A, B, C, D rest at slots {0,1}, {2,3}, {4,5}, {6,7}. Every move is a push
   5-cell plate) needs pull timing and power worked out.
 - Paper note: pushers mounted rigidly on one body can only push the body whose rests come just before their own.
   This is why the rigid `satflyer5` model rejects the 4-body ring. Hopping pushers avoid the restriction.
+Shared copy: tools/src/bin/hoptrace.rs (built into target/release).

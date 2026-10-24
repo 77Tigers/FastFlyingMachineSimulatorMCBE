@@ -1,0 +1,678 @@
+{
+ "2": [
+  {
+   "name": "human_n3_A",
+   "mod": {
+    "P": [
+     [
+      1,
+      0
+     ],
+     [
+      2,
+      1
+     ]
+    ],
+    "R": [
+     [
+      0,
+      1,
+      1
+     ]
+    ],
+    "PLATE": [
+     [
+      1,
+      1,
+      0
+     ],
+     [
+      1,
+      1,
+      1
+     ],
+     [
+      1,
+      2,
+      1
+     ]
+    ],
+    "CONT": [
+     [
+      -2,
+      2,
+      0
+     ]
+    ],
+    "size": [
+     4,
+     2
+    ]
+   },
+   "step": [
+    4,
+    0
+   ],
+   "back_max": 9,
+   "back_sum": 180,
+   "k": 3,
+   "lateral": 2,
+   "source": "bank/pl12/human_3bps_original body A (HOP_POS trace); k=3 towers PL13 (human_link.construct)"
+  },
+  {
+   "name": "link0_n2_lat1_2",
+   "mod": {
+    "P": [
+     [
+      0,
+      0
+     ],
+     [
+      1,
+      1
+     ]
+    ],
+    "R": [
+     [
+      0,
+      1,
+      0
+     ]
+    ],
+    "PLATE": [
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      1,
+      1,
+      1
+     ],
+     [
+      1,
+      1,
+      0
+     ]
+    ],
+    "CONT": [
+     [
+      -2,
+      0,
+      1
+     ]
+    ],
+    "size": [
+     3,
+     2
+    ]
+   },
+   "step": [
+    -3,
+    1
+   ],
+   "back_max": 9,
+   "back_sum": 164,
+   "k": 3,
+   "lateral": 1,
+   "source": "link0.links(2, lat=1, minstep=4) screen"
+  },
+  {
+   "name": "link0_n2_lat1_3",
+   "mod": {
+    "P": [
+     [
+      0,
+      0
+     ],
+     [
+      1,
+      1
+     ]
+    ],
+    "R": [
+     [
+      0,
+      1,
+      0
+     ]
+    ],
+    "PLATE": [
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      1,
+      1,
+      1
+     ],
+     [
+      1,
+      1,
+      0
+     ]
+    ],
+    "CONT": [
+     [
+      -2,
+      0,
+      1
+     ]
+    ],
+    "size": [
+     3,
+     2
+    ]
+   },
+   "step": [
+    -2,
+    2
+   ],
+   "back_max": 9,
+   "back_sum": 164,
+   "k": 3,
+   "lateral": 1,
+   "source": "link0.links(2, lat=1, minstep=4) screen"
+  },
+  {
+   "name": "link0_n2_lat1_4",
+   "mod": {
+    "P": [
+     [
+      1,
+      1
+     ],
+     [
+      2,
+      0
+     ]
+    ],
+    "R": [
+     [
+      0,
+      1,
+      0
+     ]
+    ],
+    "PLATE": [
+     [
+      1,
+      1,
+      1
+     ],
+     [
+      1,
+      2,
+      0
+     ],
+     [
+      1,
+      1,
+      0
+     ]
+    ],
+    "CONT": [
+     [
+      -2,
+      2,
+      1
+     ]
+    ],
+    "size": [
+     3,
+     2
+    ]
+   },
+   "step": [
+    3,
+    1
+   ],
+   "back_max": 9,
+   "back_sum": 164,
+   "k": 3,
+   "lateral": 1,
+   "source": "link0.links(2, lat=1, minstep=4) screen"
+  },
+  {
+   "name": "link0_n2_lat1_5",
+   "mod": {
+    "P": [
+     [
+      1,
+      1
+     ],
+     [
+      2,
+      0
+     ]
+    ],
+    "R": [
+     [
+      0,
+      1,
+      0
+     ]
+    ],
+    "PLATE": [
+     [
+      1,
+      1,
+      1
+     ],
+     [
+      1,
+      2,
+      0
+     ],
+     [
+      1,
+      1,
+      0
+     ]
+    ],
+    "CONT": [
+     [
+      -2,
+      2,
+      1
+     ]
+    ],
+    "size": [
+     3,
+     2
+    ]
+   },
+   "step": [
+    2,
+    2
+   ],
+   "back_max": 9,
+   "back_sum": 164,
+   "k": 3,
+   "lateral": 1,
+   "source": "link0.links(2, lat=1, minstep=4) screen"
+  },
+  {
+   "name": "link0_n2_lat1_6",
+   "mod": {
+    "P": [
+     [
+      0,
+      1
+     ],
+     [
+      1,
+      0
+     ]
+    ],
+    "R": [
+     [
+      0,
+      1,
+      1
+     ]
+    ],
+    "PLATE": [
+     [
+      1,
+      0,
+      1
+     ],
+     [
+      1,
+      1,
+      0
+     ],
+     [
+      1,
+      1,
+      1
+     ]
+    ],
+    "CONT": [
+     [
+      -2,
+      0,
+      0
+     ]
+    ],
+    "size": [
+     2,
+     3
+    ]
+   },
+   "step": [
+    -2,
+    -2
+   ],
+   "back_max": 9,
+   "back_sum": 164,
+   "k": 3,
+   "lateral": 1,
+   "source": "link0.links(2, lat=1, minstep=4) screen"
+  },
+  {
+   "name": "link0_n2_lat0_best",
+   "mod": {
+    "P": [
+     [
+      0,
+      0
+     ],
+     [
+      1,
+      1
+     ]
+    ],
+    "R": [
+     [
+      0,
+      1,
+      0
+     ]
+    ],
+    "PLATE": [
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      1,
+      1,
+      1
+     ],
+     [
+      1,
+      1,
+      0
+     ]
+    ],
+    "CONT": [
+     [
+      -2,
+      0,
+      1
+     ]
+    ],
+    "size": [
+     2,
+     2
+    ]
+   },
+   "step": [
+    -2,
+    1
+   ],
+   "back_max": 9,
+   "back_sum": 164,
+   "k": 3,
+   "lateral": 0,
+   "source": "link0.links(2) (0 lanes sideways; too compact for towers)"
+  },
+  {
+   "name": "link0_n2_lat0_k2",
+   "mod": {
+    "P": [
+     [
+      0,
+      0
+     ],
+     [
+      1,
+      1
+     ]
+    ],
+    "R": [
+     [
+      0,
+      0,
+      1
+     ]
+    ],
+    "PLATE": [
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      1,
+      1,
+      1
+     ],
+     [
+      1,
+      0,
+      1
+     ]
+    ],
+    "CONT": [
+     [
+      -2,
+      1,
+      0
+     ]
+    ],
+    "size": [
+     2,
+     3
+    ]
+   },
+   "step": [
+    1,
+    -2
+   ],
+   "back_max": 7,
+   "back_sum": 28,
+   "k": 2,
+   "lateral": 0,
+   "source": "link0.links(2) screen on the plain k=2 ring (link0_screen.py 2 2 0 2); plain k=2 ring flies at PL9"
+  }
+ ],
+ "1": [
+  {
+   "name": "link0_n1_lat0_0",
+   "mod": {
+    "P": [
+     [
+      1,
+      0
+     ]
+    ],
+    "R": [
+     [
+      0,
+      1,
+      1
+     ]
+    ],
+    "PLATE": [
+     [
+      1,
+      1,
+      0
+     ],
+     [
+      1,
+      1,
+      1
+     ]
+    ],
+    "CONT": [
+     [
+      -2,
+      0,
+      0
+     ]
+    ],
+    "size": [
+     2,
+     3
+    ]
+   },
+   "step": [
+    -1,
+    -2
+   ],
+   "back_max": 6,
+   "back_sum": 24,
+   "k": 2,
+   "lateral": 0,
+   "source": "link0.links(1) (k=2 back, 1 hopper)"
+  },
+  {
+   "name": "link0_n1_lat0_1",
+   "mod": {
+    "P": [
+     [
+      1,
+      0
+     ]
+    ],
+    "R": [
+     [
+      0,
+      1,
+      1
+     ]
+    ],
+    "PLATE": [
+     [
+      1,
+      1,
+      0
+     ],
+     [
+      1,
+      1,
+      1
+     ]
+    ],
+    "CONT": [
+     [
+      -2,
+      0,
+      0
+     ]
+    ],
+    "size": [
+     3,
+     2
+    ]
+   },
+   "step": [
+    -2,
+    0
+   ],
+   "back_max": 6,
+   "back_sum": 24,
+   "k": 2,
+   "lateral": 0,
+   "source": "link0.links(1) (k=2 back, 1 hopper)"
+  },
+  {
+   "name": "link0_n1_lat0_2",
+   "mod": {
+    "P": [
+     [
+      1,
+      0
+     ]
+    ],
+    "R": [
+     [
+      0,
+      1,
+      1
+     ]
+    ],
+    "PLATE": [
+     [
+      1,
+      1,
+      0
+     ],
+     [
+      1,
+      1,
+      1
+     ]
+    ],
+    "CONT": [
+     [
+      -2,
+      0,
+      0
+     ]
+    ],
+    "size": [
+     3,
+     2
+    ]
+   },
+   "step": [
+    -2,
+    -1
+   ],
+   "back_max": 6,
+   "back_sum": 24,
+   "k": 2,
+   "lateral": 0,
+   "source": "link0.links(1) (k=2 back, 1 hopper)"
+  },
+  {
+   "name": "link0_n1_lat0_3",
+   "mod": {
+    "P": [
+     [
+      1,
+      1
+     ]
+    ],
+    "R": [
+     [
+      0,
+      1,
+      2
+     ]
+    ],
+    "PLATE": [
+     [
+      1,
+      1,
+      1
+     ],
+     [
+      1,
+      1,
+      2
+     ]
+    ],
+    "CONT": [
+     [
+      -2,
+      1,
+      0
+     ]
+    ],
+    "size": [
+     2,
+     3
+    ]
+   },
+   "step": [
+    1,
+    -2
+   ],
+   "back_max": 6,
+   "back_sum": 24,
+   "k": 2,
+   "lateral": 0,
+   "source": "link0.links(1) (k=2 back, 1 hopper)"
+  }
+ ]
+}
