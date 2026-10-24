@@ -4,9 +4,9 @@
 - everything else (modules by CP-SAT with a deterministic budget, connectors) is computed at run time.
 
 10-bit word per k:  bits 0-1 family (0 slab, 1 lat, 2 latbig = lat on a 4 x base ring, 3 terrace (see terrace_params)),  bits 2-5 box shape,  bits 6-9 layout.
-  Family code 2 with bit 9 set is the tower family (human_link.construct; latbig keeps bit 9 = 0): bit 2 straight
-  z step (4, -bit), bits 3-4 corner cy = 4 + v, bits 5-6 corner cz = -2 + v, bits 7-8 the balanced-offset phase
-  (L0 - 1 - v); the level layouts are chosen at run time (first that passes every check).
+  Family code 2 with bit 9 set is the tower family (human_link.construct; latbig keeps bit 9 = 0): bits 2-4 the
+  back link (index into the extension bank flyers/extension_bank/nk_links, n = k-1 hoppers), bits 5-6 corner
+  cy = a - 1 + v (a = the link's lane box); bits 7-8 corner cz = -2 + v; level layouts chosen at run time.
   box (4 bits): a = a0 - 1 + (v & 3), b = b0 - 1 + (v >> 2), (a0, b0) = the slab rectangle for k.
   layout (4 bits): straight z shift sz = -(v & 1); bit 1: module mirrored in y; corner cz = b + 1 + ((v >> 2) & 1);
   corner cy = a - 1 + (v >> 3).
@@ -95,6 +95,16 @@ def terrace_params(k, word):
     return g, gap, (a - 1, b + (l >> 2)), (a, b), ('cp' if l & 1 else 'slab')
 
 
+def tower_params(k, word):
+    """tower word: bits 2-4 bank link index, corner cy = a - 1 + v (bits 5-6, a = the link's lane box), cz = -2 + v
+    (bits 7-8)."""
+    import bank_links
+    lk = bank_links.links(k - 1)
+    i = (word >> 2) & 7
+    a = lk[i % len(lk)]['mod']['size'][0] if lk else 0
+    return i, (a - 1 + ((word >> 5) & 3), -2 + ((word >> 7) & 3))
+
+
 def big_ring(k):
     """latbig: the square ring with 4 x the base ring (only when that is larger than the default ring)"""
     from nk import bodies_for
@@ -105,9 +115,7 @@ def big_ring(k):
 def build(k, word):
     if fam_of(word) == 'tower':
         import human_link
-        from nk import bodies_for
-        st = (4, -((word >> 2) & 1)); cv = (4 + ((word >> 3) & 3), -2 + ((word >> 5) & 3))
-        return human_link.construct(k, st, cv, (bodies_for(k) - 1 - ((word >> 7) & 3)) % bodies_for(k))
+        return human_link.construct(k, *tower_params(k, word))
     if FAMS[word & 3] == 'terrace':
         import terrace
         g, gap, cv, box, pat = terrace_params(k, word)

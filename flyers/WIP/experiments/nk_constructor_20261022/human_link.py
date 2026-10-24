@@ -68,16 +68,20 @@ def tower_ring(k, h, step, cv, lc, mod=None, mg=None, hs=None, xo=False, kb=True
     return r, 'ok'
 
 
-def construct(k, step=(4, 0), cv=(5, -2), phase=None, h=3, nlay=4):
-    """tower family: human-link back ring (4-lane step, balanced frame offsets), height-h human-sticky towers."""
-    if k != 3: return None   # the link rule is written for back bodies with 2 hoppers
-    import square
+def construct(k, link=0, cv=(5, -2), phase=None, h=3, nlay=4, mg=(0, 1)):
+    """tower family for any k: back ring from the extension-bank link `link` for n = k-1 hoppers
+    (bank_links.links(n), sorted by back-ring size; entry 'human_n3_A' is the human N3 link), balanced frame offsets,
+    height-h human-sticky towers, back untouched. Level layouts are tried in order; the first ring passing every
+    check is returned."""
+    import square, bank_links
     from nk import bodies_for
+    lk = bank_links.links(k - 1)
+    if not lk: return None
+    e = lk[link % len(lk)] if isinstance(link, int) else next(x for x in lk if x['name'] == link)
     L, L0 = square.ring_size(k), bodies_for(k)
-    mod = dict(MOD, size=(4, 2))
     xo = tower2.balanced_xoff(k, L, L0 - 1 if phase is None else phase)
     for lc in itertools.product(range(nlay), repeat=h):
-        try: r, _ = tower_ring(k, h, step, cv, lc, mod=mod, mg=(0, 1), hs=True, xo=xo, kb='s2')
+        try: r, _ = tower_ring(k, h, e['step'], cv, lc, mod=e['mod'], mg=mg, hs=True, xo=xo, kb='s2')
         except (AssertionError, RuntimeError): continue
         if r is None: continue
         try: r.flyer(1)

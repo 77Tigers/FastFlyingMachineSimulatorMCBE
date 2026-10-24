@@ -63,7 +63,7 @@ def cp2_pattern(p, a, b, g, det=8.0):
             [tuple(c) for c in r['S']], [tuple(c) for c in r['SD']])
 
 
-def build(k, g, gap=1, cv=None, box=None, mirror=False, pattern='slab'):
+def build(k, g, gap=1, cv=None, box=None, mirror=False, pattern='slab', sz=0):
     L = square.ring_size(k); T = Timing(k, L)
     sizes = floor_sizes(k, g); p = max(sizes)
     PLx = Sx = None; SDx = []
@@ -81,7 +81,7 @@ def build(k, g, gap=1, cv=None, box=None, mirror=False, pattern='slab'):
         P, R, (a, b) = strip_pattern(p, box)
     if mirror: P = [(a - 1 - y, z) for y, z in P]; R = [(a - 1 - y, z) for y, z in R]
     if cv is None: cv = (a - 1, b + 1)
-    place = square.square_layout(L, a, b, (a + gap, 0), cv)
+    place = square.square_layout(L, a, b, (a + gap, sz), cv)
     def world(d, c):
         _, (oy, oz), si = place[d % L]; y, z = SYMS[si](c[0], c[1]); return (y + oy, z + oz)
     h, s, D = levels(T, g)

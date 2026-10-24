@@ -1,54 +1,146 @@
-# Handoff prompt: N_k constructor (k = 3..24)
+# Handoff: N_k constructor (state 2026-10-24)
 
-You are continuing research in this repository (Windows; Bash = Git Bash) on branch
-**`nk-constructor`** (check `git branch --show-current` first; never commit N_k work to another branch; never push).
-Read root `SIMULATION.md`, then `flyers/WIP/experiments/nk_constructor_20261022/README.md` (results, rules, bounds,
-negatives) and `flyers/WIP/experiments/n6_20261020/README.md` (the mechanism).
+Read this first, then root `SIMULATION.md` (mechanics), `README.md` here (chronological detail),
+`flyers/WIP/experiments/n6_20261020/README.md` (the hopping-pusher mechanism) and `flyers/RESEARCH_LOG.md`
+(section "N_k constructor"). Branch **`nk-constructor`** (check `git branch --show-current`; never commit N_k work
+elsewhere; never push; commit with the attribution line). Experiment scripts run from this folder
+(`flyers/WIP/experiments/nk_constructor_20261022`); the fast checker: `out/target/release/nkcheck.exe` (build:
+`cargo build --release --manifest-path nkcheck/Cargo.toml --target-dir out/target`), wrapped by `simk.py`.
+Working style the user expects: keep working while background jobs run (do not end the turn to wait), ask
+questions in chat without pausing, report concrete numbers. The older table-based version (disallowed now) is
+banked as `flyers/bank/pl*/nk_square_n{k}.flyer` (k = 3..24, sum 1200).
 
-## Goal and rules (user)
-- One program that explicitly constructs a working N_k flyer (cycle 2(k+2) ticks, advance +k) for every k = 3..24;
-  minimise the **sum of minimum push limits (PL)**.
-- Time: each *family* may spend 66 s in total over all k (3 s per k on average, distribute freely); at most 15
-  genuinely distinct families (no near-duplicates); the best flyer per k wins. Optimise code speed.
-- Precomputation: at most **10 bits per k**, shared by all families, used for meaningful choices (family, box shape,
-  layout offsets), not RNG seeds. No other precomputed tables (offline CP modules / layout tables were called cheating).
-- Verification during work: 1 seed (rng 0) over 1000 blocks of travel. The full 80-case test only when the user asks.
-  Verification time does not count.
-- Working style: keep working without ending turns while background jobs run; when idle, set a 50-minute timer and
-  resume after it; ask questions in chat while continuing. Simple, symmetric layouts are preferred (square rings,
-  multiple-of-4 body counts); avoid glue directly behind pistons; rods for hard-to-power spots.
+## 1. The task and the user's rules
 
-## Current state (2026-10-23)
-- **Program:** `families.py` + `bits.json`, honest sum **1209** (slab family 1.4 s, lat family 32.9 s of 66 s).
-  `calibrate.py K,...` re-derives a k's 10-bit word by building and simulating every option.
-- Per k (PL): 3:16 4:20 5:23 6:30 7:31 8:36 9:37 10:44 11:44 12:48 13:54 14:58 15:61 16:64 17:69 18:72 19:73
-  20:78 21:82 22:86 23:89 24:94 (see `out/calibrate3.txt`).
-- The disallowed table version (`nk_flyer.py`, `square_table.json`, `modules_*.json`, `joint_table.json`) reached
-  1200; its flyers are banked as `flyers/bank/pl*/nk_square_n{k}.flyer` (k=6 skipped: `bank/pl26/n6_screw_ring_3p75`).
-- Verification: `out/target/release/nkcheck.exe FILE TICKS DIST 1 [at PL]` (build:
-  `cargo build --release --manifest-path nkcheck/Cargo.toml --target-dir out/target`), on `fastsim` (~15x faster).
-  In every simulation so far, min PL = largest body + k exactly.
+One program that **explicitly constructs a working N_k flyer for every k** and minimises the **sum of minimum push
+limits** (PL). N_k: cycle 2(k+2) ticks, advance +k (k=2: 2.5 bps, k=3: 3 bps, ...).
 
-## Mechanism
-Square ring of identical bodies (count = multiple of 4 and of the base ring: (k+2)/2 bodies for even k, k+2 for
-odd k); each side rotated 90 degrees, so only straight and corner links exist. Each body has k hopping +X pushers
-raced by its own redstone blocks; the next body (rests 2 slots later) carries spent pushers +2 during the victim's
-rest. Load per push = body glue + RBs + k riders. Module = lanes in a box: pushers (targets at x=1), RBs (plate
-cell above), next body's cover (slab at x=-3 behind pushers, or side contacts at x=-2 in free lanes). Side 0 is
-routed (A* with the safety checker `nk.Ring.cell_ok`) and copied to sides 1-3 when the side length is a multiple of
-the base ring.
+- k = 2..30. **k <= 6 count triple** in the score. k=2 is a "funsies" edge case: use it to find limits of the general
+  algorithms, do not optimise it directly (but do apply general ideas to it).
+- **No precomputed tables** except at most **10 meaningful bits per k** (`bits.json`: one int < 1024 per k = family +
+  that family's few discrete choices; no RNG seeds). **Storing interfaces in the extension bank
+  (`flyers/extension_bank/`) is allowed precomputation** (user 2026-10-24), with code to look them up / rederive.
+- Each family may spend **84 s in total** over all k (3 s per k on average). At most **15 genuinely distinct families**.
+- Verification during work: **1 seed over 1000 blocks** (`simk.py`). The 80-case test only when the user asks.
+- No unreliable flyers that merely pass the tests. Anything else goes.
+- **General algorithms, not per-k tuning.** "Don't hardcode for N=3." Currently: **focus slightly more on higher k.**
+- No cluster builder (compact 5-body loops); make the square design smarter instead.
+- **The back is sacred:** never add cells to a back body to help a front segment (e.g. a cell for a sticky to pull);
+  shift that burden onto the front segment.
+- Back connectors should go **0-1 lanes sideways** (preferably 0).
+- **Put thought into the offset between segments** (it is the most flexible choice); do not pick an offset and let
+  the router fill gaps (user on `n30_pl107_terrace`: a jog cell at (8,27,12) should not exist).
+- Put shared analysis tools in `tools/` (Rust bins in `tools/src/bin`, Python in `tools/`), documented in the root
+  README. Keep `flyers/RESEARCH_LOG.md` (< 5,500 words) and `flyers/WIP/experiments/INDEX.md` current, including the
+  important tools (contract solver, extension bank).
+- Show candidates as files in **`out/best/`** (named `nKK_plPL_family.flyer`) so the user can give explicit advice.
+- Ask the user questions, but do not pause work for them; report concrete numbers early, do not polish dead ends.
 
-## What is known (don't repeat without a new idea)
-- Bound: PL >= k * blocks / pistons; each ready pusher needs its own target; cover ~1 per pusher, RB+plate ~0.5.
-  Hopper family floor ~3.5-3.75k at large k; modules and links are within ~1 point of their optimum.
-- Negative: free cover from level offsets (ring can't close), sequenced stacked pushers, rigid pushes (one per body,
-  equals a hopper carried by the next body), sticky double moves, observer chains, zigzag all-turn rings, flip links,
-  wider offsets, greedy side-contact upgrade, CP warm starts, joint CP with one worker.
-- The human N3 (bank/pl12/human_3bps_original, PL12) uses many tiny bodies and rigid pushes; only helps small k.
+## 2. Current results (`python families.py`, all fly at the predicted PL, 1 seed x 1000 blocks)
 
-## Most promising next steps
-1. A faster/stronger deterministic module search for large k (k >= 13 now uses the slab family; the offline
-   side-contact modules were 2-4 better per k): e.g. a deterministic local search or a better CP formulation
-   (connectivity is the weak part) within the remaining ~33 s of the lat budget.
-2. A small-k family with rigid pushes/pulls (like the human N3) for k = 3..5.
-3. Anything that lets one glue cell be both a target and another body's carrier (changes the slope).
+**Sum 1785, weighted (k <= 6 triple) 1965.** (Start of 2026-10-24: 1787 / 1971.)
+
+| k | PL | family | k | PL | family | k | PL | family |
+|---|---|---|---|---|---|---|---|---|
+| 2 | 10 | lat | 12 | 48 | lat | 22 | 83 | terrace |
+| 3 | **13** | tower | 13 | 54 | lat | 23 | 86 | terrace |
+| 4 | 18 | lat | 14 | 58 | slab | 24 | 88 | terrace |
+| 5 | 23 | lat | 15 | 61 | slab | 25 | 93 | terrace |
+| 6 | 26 | lat | 16 | 62 | terrace | 26 | 94 | terrace |
+| 7 | 30 | lat | 17 | 68 | lat | 27 | 99 | terrace |
+| 8 | 34 | lat | 18 | 70 | terrace | 28 | 100 | terrace |
+| 9 | 37 | lat | 19 | 73 | lat | 29 | 106 | terrace |
+| 10 | 42 | latbig | 20 | 76 | terrace | 30 | 107 | terrace |
+| 11 | 44 | lat | 21 | 82 | lat | | | |
+
+Family time (s): slab 0.2, lat ~36, latbig 1.8, terrace ~25, tower 0.7.
+
+## 3. Program architecture
+
+- `families.py`: `build(k, word)` dispatches on `fam_of(word)`; `predicted_pl(r)` = max over bodies of glue + RBs +
+  hoppers it carries + its own rigid pistons (= max body + k on plain rings). Word layout in the docstring:
+  bits 0-1 family (0 slab, 1 lat, 2 latbig, 3 terrace), bits 2-5 box, 6-9 layout; **family code 2 with bit 9 set =
+  tower** (bits 2-8: step, corner, phase). `python families.py` builds all k and prints per-family time.
+- `nk.py`: the ring model. Timing (S = k+2 slots, each body rests 2, NEXT rests 2 later and carries the spent
+  hoppers), modules (`P` hopper lanes [+level], `R` redstone blocks, `PLATE` cells, `CONT` = NEXT's cells covering
+  the spent hoppers, given in V's frame at V-local 0), `Ring.check` (all race/drag/push rules), `Ring.route` (greedy
+  BFS Steiner; joins split plates), `flyer(pl)` export.
+- `nk2.py`: generalised bodies (`Timing2`: any rest / carrier per body), rigid pistons `RIG` (stickies),
+  `power_problems` (foreign RB powering a hopper; **own RB powering its own spent hopper**; sticky powered only at
+  host-local 0 and never by its host).
+- `sqbuild.py` / `square.py`: square ring (L a multiple of 4 and of the base ring; side h rotated h x 90 degrees;
+  side 0 routed and copied when m % L0 == 0).
+- Families: `lat` = side-contact module (`cp_module` CP-SAT), `slab` = rectangle module, `latbig` = lat on a
+  4 x base ring, `terrace.py` (k >= 16: each body's hoppers on 2 floors in neighbouring lane strips; NEXT's
+  floor-1 plate covers the upper floor; CP strip patterns `strip_cp.py`), `human_link.py` + `tower2.py` (towers).
+- Calibration (offline word choice): `calib_sl.py` (slab/lat), `calibrate_fam.py FAM K,..` (keeps a word only if it
+  beats the current one).
+
+## 4. The k=3 tower family (PL13), what it is
+
+- Back ring = the **human N3 back link as a rule** (`human_link.MOD`): two hoppers side by side, one RB touching both,
+  a 3-cell front cluster (targets + the cell in front of the RB), a short x column, one cover cell beside two of
+  PREV's spent hoppers. Step (4,0) (4 lanes, so neighbouring towers do not collide), **balanced per-link x offsets**
+  (`tower2.balanced_xoff`: every link the same frame offset D, the remainder on one link per base ring).
+- Towers (user's front-pull idea, human N3 topology): level j rests 2 slots before level j-1 (which carries its
+  hoppers on its plate), level j's sticky pulls level j-1 on its last move, powered by a block of level j+1; the top
+  level is power-only. Level 1 holds its sticky with its own attach lane (back untouched); levels >= 2 use the
+  **human sticky** (sticky in the plate layer, held sideways, power block behind it); `tower2.hs_layouts` sorts
+  layouts by RB count and lets the top level use the lower sticky's power block for its own hoppers.
+- Limits at PL13: back bodies 9 + 4 riders, level 2 9 + 3 hoppers + its sticky. For PL12 both must reach 8.
+- `human_link.construct(k)` tries the level layouts in order and returns the first ring passing every check
+  (0.7 s). It returns None for k != 3 (the link rule is written for 2-hopper back bodies).
+
+## 5. Key findings (keep)
+
+- Load = glue + RBs + carried hoppers (+ own rigid pistons). Every hopper ring pays a ~3-4 cell connector per body
+  (from the cover level up to the plate level: covers sit at -3 / -2, targets at +1).
+- Terrace body ~ k + 4k/3 (plate incl. RB fronts) + k/2 (floor-1 cover slab) + k/3 (RBs) + ~12 (two 4-level rises
+  across strip boundaries). Lower bound for the rises with gap 1 is ~10; the router gets 11-12; an exact CP Steiner
+  (`steiner.py`) found 12 with bound 9 at k=30.
+- Straight-column back links (`link0.py`, any hopper count n): for n=2 the 0-sideways link gives back bodies 8 (one
+  in 5 is 9: the balanced-offset remainder link) but is too compact for towers (every layout fails on power).
+- Model bugs found the hard way: own RB powering its own spent hopper (hops again, becomes immovable, blocks a pull);
+  router laying glue through its own sticky; a split plate left disconnected.
+
+## 6. Negative results (bounded; do not repeat unchanged)
+
+- Beside-cover terrace strips (`strip_cp.solve2`, `terrace.build(pattern='cp2')`): no gain k=22..30.
+- Longer strip CP solves: patterns already optimal (1 RB per 3 hoppers is the best within the strip model).
+- Terrace straight-step z shift (`sz`) and corner scan (`terr_offset_scan.py`): no PL change k=22..30; gap 0 fails
+  for k >= 22 (ties at k=20).
+- Riser hoppers (targets on the terrace rises): each needs its own cover + RB (~2 cells to save 1) - skipped.
+- k=2 towers on 1-hopper straight-column links (`tower_scan0.py 2`): best predicted PL11 (> 10).
+- Towers for k >= 4: back riders 2(k-1) vs k; a 3-hopper human-style link measured 14 (> 11 needed). Not promising.
+- Earlier: x0 offsets for lat, lateral-cover terrace, rods in the module CP, RB-on-connector joint CP, single-edit
+  module search (`modsearch.py`), hopper reseating (`reseat.py`), joint CP back bodies (`back_cp.py`, optimum 9).
+
+## 7. Open leads (ranked)
+
+1. **Offsets as a first-class choice (user).** For terrace and lat, choose the step and per-link x offsets so the
+   connector columns land where both ends already are (no jogs), instead of fixing the step and routing.
+   `steiner.py` gives exact per-body connectors for a fixed layout; an offset search scored by it is the natural next step.
+2. k=3 PL12: back 8 everywhere and level 2 <= 8. Links with a 1-lane offset and longer steps
+   (`link0_screen.py 2 3 1 4`) leave room for towers; then towers via `tower_scan0.py`.
+3. Extension bank: store the straight-column link modules (`link0.py`) as reusable interfaces
+   (`flyers/extension_bank/nk_links/`, not done yet); N3/N4 bank front segments (`lookup.py`, `contract-solve`) as
+   tower levels (level 2 is 9 vs the human's 5).
+4. High-k ideas not yet tried: fewer riders per mover (pull more, push less), observers / rods instead of RBs.
+
+## 8. Tools
+
+- `tools/flyer_graph.py FILE PERIOD_SLOTS`: body graph (pushes, pulls, hopper carriers).
+- `target/release/hoptrace FILE TICKS W0 PERIOD` (+ `HOP_POS=1` positions, `HOP_REL=X` relative to body X).
+- `target/release/fastflyer-research trace FILE START END` (first failing action), `flyer-ledger`.
+- `simk.py FILE K PL` (1 seed, 1000 blocks; `pass=true` + `pass_below=true` means a lower PL also flies),
+  `tower.min_pl(path, k, hi)`.
+- Contract solver `target/release/contract-solve PROBLEM.json OUT --budget 5`; extension bank
+  `python flyers/extension_bank/lookup.py --family N3 --action pull --max-load 6`.
+
+## 9. Pitfalls
+
+- Windows: `sleep` chains are blocked; use `until ...; do sleep N; done` or `run_in_background`. ProcessPool workers
+  re-import modules (do not edit a module while a scan uses it); kill orphaned workers by parent PID
+  (they once exhausted the paging file). `timeout N` kills the pipeline: write to a file, not through `| tail`.
+- `*.flyer` is gitignored; `out/` holds generated files (`out/best/` for the user).
+- Flyer export coordinates are shifted (normalised) relative to the model's world coordinates.
