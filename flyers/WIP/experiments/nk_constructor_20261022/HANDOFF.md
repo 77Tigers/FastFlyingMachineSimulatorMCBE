@@ -163,7 +163,8 @@ gives 4 bodies of 7 -> PL9 (was 10). Stored as bank entry `link0_n2_lat0_k2`; k=
 - Towers for k >= 4: back riders 2(k-1) vs k; a 3-hopper human-style link measured 14 (> 11 needed). Not promising.
 - Balanced per-link x offsets on lat rings (`lat_xoff_test.py`): worse by 1-3 (k=4..11). Plain link rings for
   k=3 (12-13) and k=4 (17 vs 14). Wider lat straight steps (`lat_step_scan.py`): no gain k=7..13. Calibration
-  (`calibrate_fam.py`): terrace k=10..13,15 / lat 15,16,18 / latbig 4,6,8,12 no gain (terrace won k=14).
+  (`calibrate_fam.py`): terrace k=10..13,15,17,19,21 / lat 15,16,18,20,22,24 / latbig 4,6,8,12 / slab
+  12,13,16,17,18,20 no gain (terrace won k=14). More CP time for the k=13 lat module: no change (already optimal).
 - Terrace strip-pattern box symmetries (`terr_sym_test.py`, 8 variants): no gain k=25..30. CP enumeration of
   tied strip patterns (`strip_cp.solve_many`) is too slow (flow variables duplicate solutions).
 - k=2 links with a 1-lane offset: bodies 7 again (plate 3 + RB 1 + cover 1 + connector 2 looks like the floor).

@@ -33,12 +33,14 @@ if __name__ == '__main__':
     import os
     cvs = CVS.get(k)
     for li, (mod, step) in enumerate(LINKS[k]):
-        cvl = ([(cvs[li][0] + a, cvs[li][1] + b) for a in (-1, 0, 1) for b in (-1, 0, 1)] if cvs else
+        if os.environ.get('TS_TOP') and li >= int(os.environ['TS_TOP']): continue
+        R = int(os.environ.get('TS_CVR', 1))
+        cvl = ([(cvs[li][0] + a, cvs[li][1] + b) for a in range(-R, R + 1) for b in range(-R, R + 1)] if cvs else
                list(itertools.product(range(-3, 5), repeat=2)))
-        phl = [bodies_for(k) - 1] if cvs else range(bodies_for(k))
+        phl = range(bodies_for(k)) if os.environ.get('TS_ALLPH') else ([bodies_for(k) - 1] if cvs else range(bodies_for(k)))
         for cv in cvl:
             for ph in phl:
-                for mg in (((0, 1), (1, 1)) if cvs else ((0, 1), (1, 0), (1, 1))):
+                for mg in (((1, 1),) if os.environ.get('TS_MG11') else ((0, 1), (1, 1)) if cvs else ((0, 1), (1, 0), (1, 1))):
                     jobs.append((k, mod, step, cv, ph, mg, 4))
     print(len(jobs), 'jobs', flush=True)
     res = []
