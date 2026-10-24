@@ -67,12 +67,14 @@ def hs_layouts(n, below, a, b, mg=0, top=False, free=None):
     return [t[1:] for t in out]
 
 
-def build(k, word, h, choice, power_top=True, box=None, back=None, cv=None, mg=0, hs=False, xoff=None):
+def build(k, word, h, choice, power_top=True, box=None, back=None, cv=None, mg=0, hs=False, xoff=None, keep_back=True):
     """choice: tuple of layout indices, one per level 1..h; box overrides the word's (a, b).
     back = (module, step): a given back-body module (e.g. back_cp) and its straight step; cv its corner offset.
     hs (human sticky): the sticky stands in the plate layer (x = 1) between plate cells that hold it sideways, pulls
     an extra lower-level cell at (2, s), and leaves the cell behind it free for its power block.
-    xoff: per back body x shift (see balanced_xoff)."""
+    xoff: per back body x shift (see balanced_xoff).
+    keep_back (with hs; user rule: the back is sacred): level 1's sticky stays on the hopper layer, held by the level-1
+    cell behind it, and pulls the back body's existing plate cell, so the back body gets no extra cell."""
     fam, (a, b), sz, cy, cz = F.unpack(word, k)
     if box:
         a, b = box; l = (word >> 6) & 15
@@ -93,7 +95,10 @@ def build(k, word, h, choice, power_top=True, box=None, back=None, cv=None, mg=0
     lays = []
     for j in range(1, h + 1):
         n = k if (j >= h - 1 if power_top else j == h) else k - 1
-        if hs:
+        if hs and keep_back == 's2' and j == 1:   # level 1: tower2 attach lane (cells on level 1, none on the back)
+            g = sorted(level_layouts(n, below, a, b, mg, relax=True), key=lambda t: (len(t[2]), t[3] is None))
+            g = [t for t in g if t[3] is not None]
+        elif hs:
             top = power_top and j == h
             g = hs_layouts(n, below, a, b, mg, top=top, free=lays[-1][0] if top and lays else None)
         else:
@@ -101,7 +106,8 @@ def build(k, word, h, choice, power_top=True, box=None, back=None, cv=None, mg=0
         if len(g) <= choice[j - 1]: return None
         s, H, R, s2 = g[choice[j - 1]]
         lays.append((s, H, R, s2))
-        below = H + R + ([] if hs else [s if s2 is None else s2])
+        below = H + R + ([s2] if hs and keep_back == 's2' and j == 1 else [s] if hs and keep_back and j == 1 else
+                         [] if hs else [s if s2 is None else s2])
     S = T0.S
     rests, nxt = list(T0.rest), [T0.nxt(i) for i in range(L)]
     for j in range(1, h + 1):
@@ -116,7 +122,13 @@ def build(k, word, h, choice, power_top=True, box=None, back=None, cv=None, mg=0
             D = T.shift(X, T.rest[X]) - T.shift(Y, T.rest[X])
             x0 = places[Y][0] + 4 - D
             top_only = power_top and j == h
-            if hs:
+            if hs and keep_back == 's2' and j == 1 and not top_only:
+                plate = [(1,) + tuple(c) for c in H + R] + [(0,) + tuple(s2), (1,) + tuple(s2)]
+                rig = [dict(pos=(0,) + tuple(s), dir=-1, victim=Y)]
+            elif hs and keep_back and j == 1 and not top_only:
+                plate = [(1,) + tuple(c) for c in H + R] + [(1,) + tuple(s)]
+                rig = [dict(pos=(0,) + tuple(s), dir=-1, victim=Y)]
+            elif hs:
                 plate = [(1,) + tuple(c) for c in H + R]
                 rig = [] if top_only else [dict(pos=(1,) + tuple(s), dir=-1, victim=Y)]
                 if not top_only:

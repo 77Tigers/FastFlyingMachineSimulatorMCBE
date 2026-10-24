@@ -52,11 +52,27 @@ def cp_pattern(p, a, b, g, det=2.0):
     return [tuple(c) for c in r['P']], [tuple(c) for c in r['R']], (a, b), [tuple(c) for c in r['PL']], [tuple(c) for c in r['S']]
 
 
+@functools.lru_cache(maxsize=None)
+def cp2_pattern(p, a, b, g, det=8.0):
+    """strip pattern whose floor-1 cover may sit beside the hoppers (strip_cp.solve2, hinted with solve)"""
+    import strip_cp
+    h = strip_cp.solve(p, a, b, g, 2.0)
+    r = strip_cp.solve2(p, a, b, g, det, hint=h)
+    if r is None: return None
+    return ([tuple(c) for c in r['P']], [tuple(c) for c in r['R']], (a, b), [tuple(c) for c in r['PL']],
+            [tuple(c) for c in r['S']], [tuple(c) for c in r['SD']])
+
+
 def build(k, g, gap=1, cv=None, box=None, mirror=False, pattern='slab'):
     L = square.ring_size(k); T = Timing(k, L)
     sizes = floor_sizes(k, g); p = max(sizes)
-    PLx = Sx = None
-    if pattern == 'cp':
+    PLx = Sx = None; SDx = []
+    if pattern == 'cp2':
+        if box is None: box = construct.grid_module(p, 'slabP')['size']
+        res = cp2_pattern(p, box[0], box[1], g)
+        if res is None: return None
+        P, R, (a, b), PLx, Sx, SDx = res
+    elif pattern == 'cp':
         if box is None: box = construct.grid_module(p, 'slabP')['size']
         res = cp_pattern(p, box[0], box[1], g)
         if res is None: return None
@@ -78,7 +94,8 @@ def build(k, g, gap=1, cv=None, box=None, mirror=False, pattern='slab'):
             rl = [r for r in R if any((r[0] + dy, r[1] + dz) in ls for dy, dz in ((1, 0), (-1, 0), (0, 1), (0, -1)))]
             hh = h[i][f]
             for c in lanes:
-                wy, wz = world(d, c); mP.append((wy, wz, hh)); mPL.append((hh + 1, wy, wz)); mC.append((hh - 3, wy, wz))
+                wy, wz = world(d, c); mP.append((wy, wz, hh)); mPL.append((hh + 1, wy, wz))
+                if not (f == 0 and SDx) or c in Sx: mC.append((hh - 3, wy, wz))
             for c in rl:
                 wy, wz = world(d, c); mR.append((hh, wy, wz)); mPL.append((hh + 1, wy, wz))
             if PLx is not None:     # cp strip: extra plate lanes (connectivity); floor 1 also gets the extra slab lanes
@@ -87,6 +104,8 @@ def build(k, g, gap=1, cv=None, box=None, mirror=False, pattern='slab'):
                 if f == 0:
                     for c in Sx:
                         if c not in ls: wy, wz = world(d, c); mC.append((hh - 3, wy, wz))
+                    for c in SDx:   # beside covers (cp2): -2, in a lane free of hoppers / RBs
+                        wy, wz = world(d, c); mC.append((hh - 2, wy, wz))
         mods.append(dict(P=mP, R=mR, PLATE=mPL, CONT=mC, size=(a, b)))
     r = Ring(T, mods, [(0, (0, 0), 0)] * L)
     r.h, r.steps, r.D, r.sizes = h, s, D, sizes

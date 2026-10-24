@@ -6,7 +6,8 @@
   body's cover lane c' = c + (-1, 0), so the straight step is (3, 0) (or (2, -1) with c' = c + (0, 1)).
 Towers (tower2, power-only top, human sticky) stand on the front cluster.
 construct(k, step, cv, phase): the family builder (k = 3: back bodies with k-1 = 2 hoppers); the level layouts are
-tried in order and the first ring passing every check is returned (k = 3: largest body 10, PL14 in 0.8 s).
+tried in order and the first ring passing every check is returned (k = 3: largest body 9, PL13). User rule: the back
+is sacred, so level 1 holds its sticky with its own attach lane and pulls the back body's existing plate cell.
 python human_link.py K H [NLAY NPOW]   (scan; settings from HL_* environment variables)"""
 import sys, os, itertools
 from concurrent.futures import ProcessPoolExecutor
@@ -52,11 +53,11 @@ def corners(k, step, h=3, nlay=4, keep=int(os.environ.get('HL_KEEP', 4)), span=i
     return [cv for _, _, cv in sorted(out)[:keep]]
 
 
-def tower_ring(k, h, step, cv, lc, mod=None, mg=None, hs=None, xo=False):
+def tower_ring(k, h, step, cv, lc, mod=None, mg=None, hs=None, xo=False, kb=True):
     """back ring + towers with greedy power; None unless it passes collisions, power and the checker."""
     from nk2 import power_problems
     mod = mod or MOD; mg = MG if mg is None else mg; hs = HS if hs is None else hs
-    r = tower2.build(k, 1, h, lc, back=(mod, step), cv=cv, mg=mg, hs=hs, xoff=xoff(k) if xo is False else xo)
+    r = tower2.build(k, 1, h, lc, back=(mod, step), cv=cv, mg=mg, hs=hs, xoff=xoff(k) if xo is False else xo, keep_back=kb)
     if r is None or collisions(r): return None, 'layout'
     if tower2.add_power_greedy(r) is None: return None, 'power'
     if collisions(r) or power_problems(r): return None, 'power2'
@@ -76,7 +77,7 @@ def construct(k, step=(4, 0), cv=(5, -2), phase=None, h=3, nlay=4):
     mod = dict(MOD, size=(4, 2))
     xo = tower2.balanced_xoff(k, L, L0 - 1 if phase is None else phase)
     for lc in itertools.product(range(nlay), repeat=h):
-        try: r, _ = tower_ring(k, h, step, cv, lc, mod=mod, mg=(0, 1), hs=True, xo=xo)
+        try: r, _ = tower_ring(k, h, step, cv, lc, mod=mod, mg=(0, 1), hs=True, xo=xo, kb='s2')
         except (AssertionError, RuntimeError): continue
         if r is None: continue
         try: r.flyer(1)
