@@ -217,3 +217,35 @@ The hoppers stand beside the column. The 5 back bodies all differ in shape (hand
   68/73/82; extra-step phase `TERR_PH` ties k=17), terrace on 4x rings (`TERR_RING`), power reuse (`HL_REUSE`),
   human link with a 3-lane step (towers fail on power), k=2 1-lane links (bodies 7). Final: **sum 1783, weighted
   1961**, all 29 verified (`out/verify_all_final.txt`); k=2, 3, 14 also pass on 3 seeds.
+
+## 2026-10-24 (evening): stack family (user's spec: N3-like towers for every k)
+
+User spec: levels = back (1) + middle (M >= 1, each pulls the level below once per cycle with one sticky) + front
+(1, no pull, powers the last middle level's sticky). Every middle / front level has m = pushes from the level below
+(hoppers standing on that level's plate, which is their cover) and s = pushes from its own loop (the same link as the
+back ring: the next tower's body at that level covers them at x = -2); m + s + (pulled by the next level) = k; back
+s0 = k-1. Uniform per level for now. Not now: 2 stickies per segment (cannot work), side-by-side segments, lateral
+front power, contract-solved levels.
+- `nk.Ring.carrier(X, j)` (new hook, default NEXT(X)): the carrier of hopper j; used by the checker and by
+  `families.predicted_pl` (identical behaviour for every existing family).
+- `stack.py`: `Ring3` (per-hopper carrier: tag 'B' = the body below / NEXT, 'L' = the loop neighbour; `CONTL` =
+  loop covers), `level_opts` (layouts per level, cheapest first: sticky lane, attach lane, Hm on the lower plate
+  lanes, Hs off them, RB lanes, loop cover lanes Q), `build` (+ `upto` for partial stacks), `construct` (depth-first
+  over level layouts; partial stacks pruned by collisions + cell checks on the representative towers; leaves powered
+  (`add_power`, side 0 solved and copied when the ring's sides are exact copies), routed, checked, simulated at
+  predicted PL..+2 (`sim_pl`, a safety net for model gaps)). `stack_scan.py K M` scans every uniform parameter list,
+  `stack_one.py` one list over backs x corners, `stack_links.py K W` screens link0 back links with steps >= W.
+- Model rules learned (all in the stack checker / layout rules): a loop cover must not lie in lanes where the lower
+  level (own tower or the neighbours, +-step) has cells near its top (it rises up to 2 relative to the level above),
+  not beside a hopper the lower level carries (it would drag it), not in the own RB lanes, not beside a human sticky;
+  **glue touching another body's redstone block while moving is rejected** (`Ring3.cell_ok`): the block is taken
+  along and pushes its owner's plate, merging the bodies (seen in simulation when the owner's move in that slot is
+  a pull; the base checker allows it as a "+1 leaf race").
+- k=3 (human N3 back link, 4-lane step): params (2,0);(3,0);(3,0) = the human topology reproduces **PL13**;
+  M=1 (2,1);(3,0) flies at 20 (level-1 loop link: bodies 14-15 + 4 riders); (1,1);(3,0);(3,0) at 31. Loops are
+  expensive while towers stand 4 lanes apart (compaction later).
+- k=2: no stack flies yet (model-passing candidates fall out of rhythm in simulation: the level-1 stickies never
+  pull and bodies merge; not diagnosed further).
+- k=4: compact 3-hopper back links (`link0_screen.py 3 4`: straight 12, corners 13) put towers 3 lanes apart and
+  neighbouring levels collide; wide-step links (`stack_links.py 4 4`: steps 4, back 14) leave room but the back
+  alone is 14 + 3 riders.

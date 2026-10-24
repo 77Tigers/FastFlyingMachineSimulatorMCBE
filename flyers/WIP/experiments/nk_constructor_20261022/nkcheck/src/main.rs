@@ -11,11 +11,15 @@ struct Run { pass: bool, max_action: usize, fail: String }
 #[allow(dead_code)]
 fn _unused(_: Kind) {}
 
+/// block kinds without piston arms: arms are transient (with stickies that all extend in the same slot, as in
+/// even-k stacks, their number changes from slot to slot); every other kind must be conserved
+fn kinds(f: &FastFlyer) -> [usize; 16] { let mut k = f.kind_counts(); k[Kind::PistonArm as usize] = 0; k }
+
 fn run(file: &str, ticks: usize, dist: i64, case: (u64, u8, u8), limit: u64) -> Run {
     let mut f0 = Flyer::load(file).expect("load");
     f0.rng_state = case.0; f0.phase_x = case.1; f0.phase_z = case.2; f0.push_limit = limit;
     let mut f = FastFlyer::from_flyer(&f0);
-    let (x0, k0) = (f.minimum_x(), f.kind_counts());
+    let (x0, k0) = (f.minimum_x(), kinds(&f));
     let mut m = 0;
     for t in 0..ticks {
         let mut d = Diagnostics::default();
@@ -23,10 +27,10 @@ fn run(file: &str, ticks: usize, dist: i64, case: (u64, u8, u8), limit: u64) -> 
         m = m.max(d.max_successful_action);
         if let Some((c, why)) = d.failures.first() { return Run { pass: false, max_action: m, fail: format!("{case:?} t{t} ({c:?}, {why:?})") }; }
         if rep.extension_failures > 0 { return Run { pass: false, max_action: m, fail: format!("{case:?} t{t} extfail") }; }
-        if t % 64 == 0 && f.kind_counts() != k0 { return Run { pass: false, max_action: m, fail: format!("{case:?} t{t} kinds") }; }
+        if t % 64 == 0 && kinds(&f) != k0 { return Run { pass: false, max_action: m, fail: format!("{case:?} t{t} kinds") }; }
     }
     let d = f.minimum_x() - x0;
-    if f.kind_counts() != k0 { return Run { pass: false, max_action: m, fail: format!("{case:?} kinds") }; }
+    if kinds(&f) != k0 { return Run { pass: false, max_action: m, fail: format!("{case:?} kinds") }; }
     if d < dist { return Run { pass: false, max_action: m, fail: format!("{case:?} dist {d}") }; }
     Run { pass: true, max_action: m, fail: String::new() }
 }
@@ -35,12 +39,12 @@ fn run_plain(file: &str, ticks: usize, dist: i64, case: (u64, u8, u8), limit: u6
     let mut f0 = Flyer::load(file).expect("load");
     f0.rng_state = case.0; f0.phase_x = case.1; f0.phase_z = case.2; f0.push_limit = limit;
     let mut f = FastFlyer::from_flyer(&f0);
-    let (x0, k0) = (f.minimum_x(), f.kind_counts());
+    let (x0, k0) = (f.minimum_x(), kinds(&f));
     for t in 0..ticks {
         match f.tick() { Ok(r) => if r.extension_failures > 0 { return false; }, Err(_) => return false }
-        if t % 64 == 0 && f.kind_counts() != k0 { return false; }
+        if t % 64 == 0 && kinds(&f) != k0 { return false; }
     }
-    f.kind_counts() == k0 && f.minimum_x() - x0 >= dist
+    kinds(&f) == k0 && f.minimum_x() - x0 >= dist
 }
 
 fn all(file: &str, ticks: usize, dist: i64, cases: &[(u64, u8, u8)], limit: u64) -> Vec<Run> {

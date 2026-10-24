@@ -91,9 +91,13 @@ class Ring:
         if body is not None: w = (w[0] - self.T.shift(body, s), w[1], w[2])
         return w
 
-    def cw(self, V, c, verify=False):
-        """contact cell c (V frame, at V-local slot 0) of NEXT(V) -> NEXT(V)'s body frame (rigid by construction)."""
-        T = self.T; W = T.nxt(V); out = set()
+    def carrier(self, X, j):
+        """the body that carries X's hopper j once it is spent (NEXT(X) unless a subclass says otherwise)"""
+        return self.T.nxt(X)
+
+    def cw(self, V, c, verify=False, W=None):
+        """contact cell c (V frame, at V-local slot 0) of NEXT(V) (or carrier W) -> W's body frame (rigid by construction)."""
+        T = self.T; W = T.nxt(V) if W is None else W; out = set()
         for s in (range(T.S) if verify else [T.rest[V]]):
             m = T.local(V, s)
             w = self.mw(V, (c[0] + T.delta(m), c[1], c[2]), s)
@@ -175,7 +179,7 @@ class Ring:
                 for q in occ.get(n, []):
                     Q, kind, info = q
                     if Q == X:
-                        if strict and kind == 'P' and mX and info[1] == 0 and info[2] == 'spent' and T.moves(T.nxt(X), s):
+                        if strict and kind == 'P' and mX and info[1] == 0 and info[2] == 'spent' and T.moves(self.carrier(X, info[0]), s):
                             return bad(f's{s} own spent pusher leaf')
                         continue
                     mQ = T.moves(Q, s)
@@ -191,13 +195,13 @@ class Ring:
                         return bad(f's{s} drags {Q} RB')
                     j, st, role, m = info
                     if st == 2: continue
-                    if role == 'spent' and T.nxt(Q) == X: continue
+                    if role == 'spent' and self.carrier(Q, j) == X: continue
                     return bad(f's{s} drags {Q} pusher {role}@{n}')
             if mX:
                 dst = add(w, (1, 0, 0))
                 for q in occ.get(dst, []):
                     if q[0] == X: continue
-                    if q[1] == 'P' and q[2][2] == 'spent' and T.nxt(q[0]) == X: continue
+                    if q[1] == 'P' and q[2][2] == 'spent' and self.carrier(q[0], q[2][0]) == X: continue
                     return bad(f's{s} moves into {q}')
             back = add(w, (-1, 0, 0))
             for q in occ.get(back, []):
@@ -237,7 +241,7 @@ class Ring:
                         w = self.mw(X, (h + dx, py, pz), s)
                         if role == 'ready': need = [X] if T.moves(X, s) else []
                         else:
-                            need = [T.nxt(X)] if T.moves(T.nxt(X), s) else []
+                            C = self.carrier(X, j); need = [C] if T.moves(C, s) else []
                             if m == 0 and dx == -1: need = []
                         for Y in need:
                             if not any(o[0] == Y and o[1] == 'g' for d in D6 for o in occ.get(add(w, d), [])):

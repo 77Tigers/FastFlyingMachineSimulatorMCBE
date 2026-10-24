@@ -36,8 +36,9 @@ def predicted_pl(r):
     (= max body + k on the plain rings)"""
     T = r.T; car = [0] * T.L
     for U in range(T.L):
-        W = T.nxt(U)
-        if W is not None: car[W] += len(r.mods[U]['P'])
+        for j in range(len(r.mods[U]['P'])):
+            W = r.carrier(U, j)
+            if W is not None: car[W] += 1
     sz = r.size()
     return max(sz[X] + car[X] + len(r.mods[X].get('RIG', [])) for X in range(T.L))
 def DET_LAT(k): return 1.0 if k <= 12 else 4.0
