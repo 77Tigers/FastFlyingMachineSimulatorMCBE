@@ -85,8 +85,11 @@ def level_cp(m, s, below, a, b, step, mode, mg=(0, 1), free=None, forbid=frozens
                 for x in H(l): md.Add(x == 0)
     # room for the power block of an attach-lane sticky below
     if low is not None and low[1] == 's2':
+        import stack
+        clear = stack.POWER_CLEAR and periodic
         ps = [p for p in nb(low[0]) if p not in bl and not (periodic and any(sh(p, sg) in bl for sg in (1, -1)))
-              and not any(v in bl for v in nb(p))]
+              and not any(v in bl for v in nb(p))
+              and not (clear and any(sh(v, sg) in bl for v in nb(p) for sg in (1, -1)))]
         pv = {p: B() for p in ps}
         if not pv: return []
         md.Add(sum(pv.values()) >= 1)
@@ -118,7 +121,18 @@ def level_cp(m, s, below, a, b, step, mode, mg=(0, 1), free=None, forbid=frozens
         if res not in (cp_model.OPTIMAL, cp_model.FEASIBLE): break
         val = lambda d: [l for l, v in d.items() if solver.Value(v)]
         Q = val(q)
-        out.append(dict(st=(val(st) or [None])[0], s2=(val(s2) or [None])[0], Hm=val(hm), Hs=val(hs), R=val(r), Q=Q,
-                        cost=solver.ObjectiveValue(), Qc=[Q]))
+        # alternative cover sets for corner links (stack.corner_cover picks the one nearest the rotated
+        # neighbour): one free lane beside each loop hopper, not on own lanes / the lower plate / forbid
+        Hs_, ownl = val(hs), set(val(hm)) | set(val(hs)) | set(val(r)) | set(val(st)) | set(val(s2))
+        opts_q = [[v for v in nb(h) if v in Us and v not in ownl and v not in bl and v not in forbid] for h in Hs_]
+        Qc = [Q]
+        if Hs_ and all(opts_q):
+            import itertools
+            for combo in itertools.islice(itertools.product(*opts_q), 200):
+                cs = sorted(set(combo))
+                if cs not in Qc: Qc.append(cs)
+                if len(Qc) >= 24: break
+        out.append(dict(st=(val(st) or [None])[0], s2=(val(s2) or [None])[0], Hm=val(hm), Hs=Hs_, R=val(r), Q=Q,
+                        cost=solver.ObjectiveValue(), Qc=Qc))
         md.AddBoolOr([v.Not() if solver.Value(v) else v for v in keyvars])
     return out

@@ -159,8 +159,11 @@ def level_opts(m, s, below, a, b, step, mode, mg=(0, 1), free=None, cap=4000, fo
                             used = own | bl
                             nbl = sh(bl) | nAll
                             # (the block rises up to 2 into the lower plate layer: no lower plate lane beside it)
+                            # (POWER_CLEAR: nor beside the neighbours' lower plate - needed when the neighbouring
+                            # towers sit at other heights, i.e. uneven link offsets)
+                            nbl2 = sh(bl) if POWER_CLEAR else set()
                             if not any(p not in used and p not in nbl and not any(h in nb(p) for h in Hset | nH)
-                                       and not any(v in bl for v in nb(p)) for p in nb(low[0])): continue
+                                       and not any(v in bl or v in nbl2 for v in nb(p)) for p in nb(low[0])): continue
                         for Q in Qs:
                             if set(Q) & set(R): continue   # the loop neighbour rises up to 2 relative to this level
                             # prefer a straight loop column: the loop neighbour's column lane q - step beside its cluster
@@ -188,6 +191,7 @@ def level_opts(m, s, below, a, b, step, mode, mg=(0, 1), free=None, cap=4000, fo
 
 _BTL = {}
 CP_ABOVE = 5   # levels with more hoppers use stack_cp.level_cp
+POWER_CLEAR = False   # the level-1 sticky's power lane must not touch the neighbouring towers' lower plates
 
 
 def back_top_lanes(k, vmod, step, cv, xoff):
@@ -356,8 +360,9 @@ def add_power(r):
                                                   if p[2] == src or (p[3] == tgt and 'unpowered' in p[1])]
                     if not bad:
                         r.invalidate()
-                        bad = [b for b in r.check([tgt, src]) if f'drags {src} RB' in b[2] or f"({src}, 'RB'" in b[2]
-                               or f'touches {src} RB' in b[2]]
+                        # (every nearby body's glue against the new block: a neighbouring tower may touch it)
+                        bad = [b for b in r.check(sorted(set(near) | {tgt, src}))
+                               if f'drags {src} RB' in b[2] or f"({src}, 'RB'" in b[2] or f'touches {src} RB' in b[2]]
                     if not bad: done = (loc, att); break
                     r.mods[src], r.extra[src], r.glue[src] = old
                     r.__dict__.pop('_hw', None)

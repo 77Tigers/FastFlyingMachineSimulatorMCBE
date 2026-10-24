@@ -26,6 +26,7 @@ FREEZE = False   # True: the back keeps its routing from the plain ring; False: 
                  # (first, before every segment; same plates and covers, so no cells are added for the towers)
 POWER_LANE = True   # sticky layouts must leave a lane beside the sticky for its power block
 NSOL = 16   # CP layouts per segment (big segments)
+NBR_MAP = True   # neighbour rules from the real neighbours' lanes mapped into this frame (incl. corners)
 COPY = True   # a class with the previous class's numbers and lower lanes copies its layout (if valid)
 RANK = "est"   # candidate order: "est" (routed loads first) or "cost" (layout cost first)
 PERIODIC = True   # level_opts also assumes the neighbours are copies (a heuristic filter; real neighbours are checked)
@@ -348,16 +349,29 @@ def construct(k, back, cv, towers, links_in, nlay=4, max_leaves=6, max_nodes=400
         gl = towers[c][j - 2] if j > 1 else None
         free = ll['st'] if mode == 'top' and gl and gl[2] and gl[3] == 'a' and not side else None
         m, s = g[0], g[1]
+        # real neighbours (straight AND across the corner, rotated): ring bodies within 2 of ring c, their lanes
+        # carried into c's frame. Their hardware lanes take nothing of ours; a same-material segment's plate lanes
+        # take no glue of ours beside them (the bodies would merge); at level 1 their backs' top lanes take no
+        # hopper of ours and no RB on or beside them.
+        Lr = full.L
+        tl = lambda q, l: sqbuild.to_local(br.place[c], sqbuild.to_world(br.place[q], (0,) + tuple(l)))[1:]
         avoid_h, avoid_r = set(), set()
-        if j == 1 and sym:
-            # the neighbouring back bodies' cells near their top (x >= -1, their frames shifted by +-step): no
-            # hopper of ours over them, no RB of ours on or beside them (the moving back would touch it)
-            nt = set()
-            for cc, sg in (((c - 1) % n, -1), ((c + 1) % n, 1)):
-                if (sg < 0 and c == 0) or (sg > 0 and c == n - 1): continue   # across the corner: rotated
-                nt |= {(l[0] + sg * step[0], l[1] + sg * step[1]) for l in lanes_of(br, cc, -1)}
-            nt -= set(below)
-            avoid_h, avoid_r = frozenset(nt), frozenset(nt | {v for l in nt for v in _nb(l)})
+        my_mat = (c + j) % 2
+        for dq in (-2, -1, 1, 2):
+            q = (c + dq) % Lr; cq = full.cls[q]
+            if j == 1:
+                nt = {tl(q, l) for l in lanes_of(br, q, -1)} - set(below)
+                avoid_h |= nt; avoid_r |= nt | {v for l in nt for v in _nb(l)}
+            ol = lays.get((cq, j))
+            if ol is None: continue
+            hw = {tl(q, l) for l in ol['Hm'] + ol['Hs'] + ol['R'] + [x for x in (ol['st'], ol.get('s2')) if x]}
+            avoid_h |= hw; avoid_r |= hw
+            if (q + j) % 2 == my_mat:   # same material: no glue of ours beside theirs
+                pl = {tl(q, l) for l in ol['Hm'] + ol['Hs'] + ol['R'] + ([ol['s2']] if ol.get('s2') else [])}
+                adj = pl | {v for l in pl for v in _nb(l)}
+                avoid_h |= adj; avoid_r |= adj
+        avoid_h = frozenset(avoid_h - set(below)) if j == 1 else frozenset(avoid_h)
+        avoid_r = frozenset(avoid_r)
         if m + s > stack.CP_ABOVE:
             import stack_cp
             opts = stack_cp.level_cp(m, s, below, a, b, step, mode, mg, free, forbid=forbid, low=low,
@@ -367,7 +381,7 @@ def construct(k, back, cv, towers, links_in, nlay=4, max_leaves=6, max_nodes=400
                               periodic=PERIODIC, lowR=lowR, side=side, avoid_h=avoid_h, avoid_r=avoid_r)
         # the straight neighbours already placed at this level (their lanes shifted by -step / +step)
         nbrs = []
-        if sym:
+        if sym and not NBR_MAP:
             if c > 0 and (c - 1, j) in lays:
                 nbrs.append((lays[(c - 1, j)], lower_lanes(lays, c - 1, j), (-step[0], -step[1])))
             if c + 1 < n and (c + 1, j) in lays:

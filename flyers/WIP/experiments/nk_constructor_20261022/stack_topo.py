@@ -29,7 +29,7 @@ from nk import bodies_for
 from tower2 import Timing
 
 VRANGE = range(-3, 2)
-EST = dict(POWER=2, NPOWER=10, DN_BACK=1, ROUTE=2, PULLED=1, COVER=4, COVER_H=1, CORNER=2, DK=2, NUDGE=1, COL=2)
+EST = dict(MAXT_LOOP=-2, POWER=2, NPOWER=10, DN_BACK=1, ROUTE=2, PULLED=1, COVER=4, COVER_H=1, CORNER=2, DK=2, NUDGE=1, COL=2)
 
 
 def est_for(step, base=EST):
@@ -263,6 +263,12 @@ def solve(k, f, plate0, hmax=4, nsug=6, slack=1, est=EST, secs=20.0, workers=4, 
         tv = {(p, v): M.NewBoolVar('') for p in range(n) for v in f[p]}
         for p in range(n): M.AddExactlyOne(tv[(p, v)] for v in f[p])
         M.Add(sum(v * tv[(p, v)] for p in range(n) for v in f[p]) == tot)
+        if est.get('MAXT_LOOP') is not None:
+            # loop hoppers only across links whose carrier sits far enough back (cover near its plate layer):
+            # builds with t >= -1 could not route the covers (2026-10-25)
+            for p in range(n):
+                okt = [tv[(nxt(p), v)] for v in f[nxt(p)] if v <= est['MAXT_LOOP']]
+                for j in J: M.Add(ss[(p, j)] <= k * sum(okt))
         P = M.NewIntVar(0, 1000, 'P')
         loads = []
         for p in range(n):

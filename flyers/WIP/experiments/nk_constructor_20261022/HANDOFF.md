@@ -93,6 +93,40 @@ cell + RB; tm_smol uses two (F->H, C->E). Not modelled yet.
    neighbour, leaning away from the corner).
 3. Calibrate the estimate from builds (`breakdown`), side contact in stack_cp (big segments).
 
+### 00.6 Later 2026-10-25 (23:25-00:10 session)
+- `stack_all2.py K1,K2,..` (new driver): uniform human-topology stacks on the families' module for k-1 hoppers
+  (bits.json, lat only) and stack_all's near-square box, offsets from stack_topo (measure_reach budget 16 +
+  evaluate), margins (1,1) then (0,1), simulated; appends to `out/stack/all2.txt`, flyers `out/stack/all2_nKK_plP`.
+  Predictions == built PL whenever a build succeeds (the uniform estimate is exact).
+  Built (old stack_all in brackets): 5: 26 (26), 6: 32 (29), 7: 35 (35), 8: **37** (40), 9: 46 (45), 12: **55**
+  (62), 13: 63 (63), 14: 69 (68), 15: 77 (72), 16: 77 (77), 19: 95 (94); failed: 10, 11, 17, 18, 20 (rerun with
+  the current code: still fail). Best per k = min of both tables.
+- **k=5 PL23** (`out/best/n05_pl23_stack.flyer`, = families' 23, old stack 25): `stack_nu.py 5 lat:2,4,0,1,1 2,5
+  "4,0,1,a;5,0,1,a;5,0,0,-" x7 -3,-1,0,0,0,0,0` (MG 1,1, NLAY 6, DISC 10, 408 s) - the per-class builder finds
+  the layouts the uniform builder cannot (the PL22 prediction's power problem, below): backs 21-22, level 1 20-22,
+  level 2 20-22, front 10-14. Fails at 22 in simulation.
+- **k=5 lat:2,4 (mirror) predicts 22 (< families 23) but does not build**: the level-1 sticky's power block (owned
+  by level 2) has no place - every side lane beside the sticky touches the neighbouring tower's level-1 glue
+  (towers only 3 lanes apart, step (3,0)) once the link offsets differ (-3 / -1: the neighbours sit at different
+  heights). `stack.POWER_CLEAR` (new, default False) forbids such lanes in the generators -> then no level-2
+  layout at all. Needs a different power arrangement (block above the sticky, or powered by the previous tower).
+- `stack.add_power` now checks every nearby body against a new block (was: only host and owner) - a neighbouring
+  tower's glue touching the block was only caught by the final check. k=8 still 37.
+- Two-ring k=8 ((4,4);(2,6), uniform builder): layouts exist for every (m, s) split at level 1 (level_cp), but
+  the corner tower's loop covers land on the rotated neighbour's back top lanes (`corner_cover` -> None) even with
+  24 alternative cover sets (stack_cp now returns them in Qc). In the per-class builder (corner tower free to
+  differ) the covers of class 0's loop hoppers cannot be ROUTED into class 1's level-1 segment (636 failures:
+  cover depth -2 - t = -2 at t = 0 -> a 3-cell column through the carrier's hopper layer).
+- So the topology estimate now has `MAXT_LOOP = -2`: loop hoppers only across links whose carrier sits >= 2 back.
+  With it the large-k optimum returns to the uniform stacks (k=8 37, k=12 55): **with today's geometry the
+  uniform stack on a good back is what the stack family can do at large k**. Gains need geometry: loop hoppers
+  standing over the carrier's own plate region (tower leaning / fan-out), covers in the plate layer (t = -3
+  chains), or compaction.
+- `stack_nu`: neighbour rules now come from the real neighbours' lanes mapped into the frame (`NBR_MAP`, corners
+  included; same-material plates kept apart).
+- Lesson (again): editing stack.py / stack_cp.py while worker processes run gives mixed versions (k=15/17/20
+  AttributeError). Do not edit shared modules during a run.
+
 ### 00.5 Results of the last runs (2026-10-25, all simulated 1 seed x 1000 blocks)
 | k | stack before | stack now | how | families |
 |---|---|---|---|---|
