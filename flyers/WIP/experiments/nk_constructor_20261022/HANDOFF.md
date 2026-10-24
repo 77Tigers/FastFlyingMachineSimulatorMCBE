@@ -105,6 +105,13 @@ cell + RB; tm_smol uses two (F->H, C->E). Not modelled yet.
   "4,0,1,a;5,0,1,a;5,0,0,-" x7 -3,-1,0,0,0,0,0` (MG 1,1, NLAY 6, DISC 10, 408 s) - the per-class builder finds
   the layouts the uniform builder cannot (the PL22 prediction's power problem, below): backs 21-22, level 1 20-22,
   level 2 20-22, front 10-14. Fails at 22 in simulation.
+- Same per-class builder on other uniform failures: k=9 lat:3,5 mirror (pred 45): 1222 level-2 power failures
+  (the level-1 sticky's power block again), no leaf in 634 s; k=6 lat:3,3 (4-body ring, every link a corner):
+  no level-1 layout at all once the rotated neighbours' lanes are mapped (NBR_MAP too strict for all-corner
+  rings - switch it off there, as stack.build does with periodic=False).
+- **Recurring blocker = the level-1 sticky's power block** on compact backs / uneven offsets. Next: let the
+  generator place it explicitly (a lane facing away from the higher neighbour, or above the sticky), or power the
+  level-1 sticky from the previous tower when the step is short.
 - **k=5 lat:2,4 (mirror) predicts 22 (< families 23) but does not build**: the level-1 sticky's power block (owned
   by level 2) has no place - every side lane beside the sticky touches the neighbouring tower's level-1 glue
   (towers only 3 lanes apart, step (3,0)) once the link offsets differ (-3 / -1: the neighbours sit at different
