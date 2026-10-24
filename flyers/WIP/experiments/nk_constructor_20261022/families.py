@@ -4,6 +4,9 @@
 - everything else (modules by CP-SAT with a deterministic budget, connectors) is computed at run time.
 
 10-bit word per k:  bits 0-1 family (0 slab, 1 lat, 2 latbig = lat on a 4 x base ring, 3 terrace (see terrace_params)),  bits 2-5 box shape,  bits 6-9 layout.
+  Family code 2 with bit 9 set is the tower family (human_link.construct; latbig keeps bit 9 = 0): bit 2 straight
+  z step (4, -bit), bits 3-4 corner cy = 4 + v, bits 5-6 corner cz = -2 + v, bits 7-8 the balanced-offset phase
+  (L0 - 1 - v); the level layouts are chosen at run time (first that passes every check).
   box (4 bits): a = a0 - 1 + (v & 3), b = b0 - 1 + (v >> 2), (a0, b0) = the slab rectangle for k.
   layout (4 bits): straight z shift sz = -(v & 1); bit 1: module mirrored in y; corner cz = b + 1 + ((v >> 2) & 1);
   corner cy = a - 1 + (v >> 3).
@@ -20,14 +23,30 @@ sys.path.insert(0, str(HERE))
 import construct, square, sqbuild
 
 KS = list(range(2, 31))
-FAMS = ['slab', 'lat', 'latbig', 'terrace']
+FAMS = ['slab', 'lat', 'latbig', 'terrace', 'tower']
+
+
+def fam_of(word):
+    return 'tower' if word & 3 == 2 and (word >> 9) & 1 else FAMS[word & 3]
+
+
+def predicted_pl(r):
+    """largest load: glue + redstone blocks + the hoppers a body carries + its own rigid pistons
+    (= max body + k on the plain rings)"""
+    T = r.T; car = [0] * T.L
+    for U in range(T.L):
+        W = T.nxt(U)
+        if W is not None: car[W] += len(r.mods[U]['P'])
+    sz = r.size()
+    return max(sz[X] + car[X] + len(r.mods[X].get('RIG', [])) for X in range(T.L))
 def DET_LAT(k): return 1.0 if k <= 12 else 4.0
 DET_JOINT = 6.0
 
 
 def unpack(word, k):
     a0, b0 = construct.grid_module(k, 'slabP')['size']
-    fam = FAMS[word & 3]
+    fam = fam_of(word)
+    if fam == 'latbig': word &= 511
     m = ((big_ring(k) or 4) if fam == 'latbig' else square.ring_size(k)) // 4
     v = (word >> 2) & 15; a, b = a0 - 1 + (v & 3), b0 - 1 + (v >> 2)
     l = (word >> 6) & 15
@@ -84,6 +103,11 @@ def big_ring(k):
 
 
 def build(k, word):
+    if fam_of(word) == 'tower':
+        import human_link
+        from nk import bodies_for
+        st = (4, -((word >> 2) & 1)); cv = (4 + ((word >> 3) & 3), -2 + ((word >> 5) & 3))
+        return human_link.construct(k, st, cv, (bodies_for(k) - 1 - ((word >> 7) & 3)) % bodies_for(k))
     if FAMS[word & 3] == 'terrace':
         import terrace
         g, gap, cv, box, pat = terrace_params(k, word)
@@ -107,8 +131,8 @@ if __name__ == '__main__':
     spent = {f: 0.0 for f in FAMS}; total = 0
     for k in KS:
         t = time.time(); r = build(k, bits[k]); dt = time.time() - t
-        fam = FAMS[bits[k] & 3]; spent[fam] += dt
-        pl = max(r.size()) + k if r else None; total += pl or 0
+        fam = fam_of(bits[k]); spent[fam] += dt
+        pl = predicted_pl(r) if r else None; total += pl or 0
         print(f'k={k:2d} family={fam:5s} PL={pl} time={dt:.2f}s', flush=True)
         if r: r.flyer(pl).save(str(HERE / 'out' / f'fam_n{k}.flyer'))
     print('time per family', {f: round(v, 1) for f, v in spent.items()}, 'sum', total)

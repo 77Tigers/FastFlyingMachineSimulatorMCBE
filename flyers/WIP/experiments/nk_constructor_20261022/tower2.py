@@ -42,11 +42,37 @@ def level_layouts(n, below, a, b, mg=0, relax=False):
                 if done: break
 
 
-def build(k, word, h, choice, power_top=True, box=None, back=None, cv=None, mg=0, hs=False):
+def hs_layouts(n, below, a, b, mg=0, top=False, free=None):
+    """human-sticky level layouts, cheapest (fewest redstone blocks) first: hoppers H on the lower plate lanes, the
+    sticky lane s (not for a power-only top) beside a hopper / RB lane so its side neighbours hold it, RB lanes R
+    touching every hopper. `free`: a lane whose block is placed anyway (the top level's power block behind the lower
+    sticky), usable at no cost."""
+    my, mz = mg if isinstance(mg, tuple) else (mg, mg)
+    inb = lambda l: -my <= l[0] < a + my and -mz <= l[1] < b + mz
+    lanes = [(y, z) for y in range(-1 - my, a + 1 + my) for z in range(-1 - mz, b + 1 + mz)]
+    bl = set(below); out = []
+    for s in ([None] if top else sorted(bl)):
+        for H in itertools.combinations(sorted(bl - {s}), n):
+            Hs = set(H)
+            cand = [l for l in lanes if l not in Hs and l != s and l != free and inb(l) and any(h in nb(l) for h in H)]
+            fr = [free] if free is not None and free not in Hs else []
+            for nr in range(0, n + 1):
+                found = [R for R in itertools.combinations(cand, nr)
+                         if all(any(r in nb(h) for r in list(R) + fr) for h in H)
+                         and (top or any(l in nb(s) for l in H + R))]
+                if found:
+                    out += [(len(R), s, list(H), list(R), None) for R in found]
+                    break
+    out.sort(key=lambda t: t[0])
+    return [t[1:] for t in out]
+
+
+def build(k, word, h, choice, power_top=True, box=None, back=None, cv=None, mg=0, hs=False, xoff=None):
     """choice: tuple of layout indices, one per level 1..h; box overrides the word's (a, b).
     back = (module, step): a given back-body module (e.g. back_cp) and its straight step; cv its corner offset.
     hs (human sticky): the sticky stands in the plate layer (x = 1) between plate cells that hold it sideways, pulls
-    an extra lower-level cell at (2, s), and leaves the cell behind it free for its power block."""
+    an extra lower-level cell at (2, s), and leaves the cell behind it free for its power block.
+    xoff: per back body x shift (see balanced_xoff)."""
     fam, (a, b), sz, cy, cz = F.unpack(word, k)
     if box:
         a, b = box; l = (word >> 6) & 15
@@ -62,12 +88,16 @@ def build(k, word, h, choice, power_top=True, box=None, back=None, cv=None, mg=0
     L = square.ring_size(k)
     T0 = Timing(k, L)
     place = square.square_layout(L, a, b, step, cv or (cy, cz))
+    if xoff: place = [(p[0] + xoff[i],) + tuple(p[1:]) for i, p in enumerate(place)]
     below = [tuple(c[1:]) for c in vmod['PLATE']]
     lays = []
     for j in range(1, h + 1):
         n = k if (j >= h - 1 if power_top else j == h) else k - 1
-        g = list(itertools.islice(level_layouts(n, below, a, b, mg, relax=hs), (choice[j - 1] + 1) * (8 if hs else 1)))
-        if hs and not (power_top and j == h): g = [t for t in g if t[3] is None]
+        if hs:
+            top = power_top and j == h
+            g = hs_layouts(n, below, a, b, mg, top=top, free=lays[-1][0] if top and lays else None)
+        else:
+            g = list(itertools.islice(level_layouts(n, below, a, b, mg), choice[j - 1] + 1))
         if len(g) <= choice[j - 1]: return None
         s, H, R, s2 = g[choice[j - 1]]
         lays.append((s, H, R, s2))
@@ -102,6 +132,19 @@ def build(k, word, h, choice, power_top=True, box=None, back=None, cv=None, mg=0
     r = Ring2(T, mods, places, mat=mats)
     r.lays, r.h, r.L0, r.power_top = lays, h, L, power_top
     return r
+
+
+def balanced_xoff(k, L, phase):
+    """x shifts making every link's frame offset D the same (rounded): over each base ring of L0 links the offsets
+    sum to a fixed total; all links get its floor except `phase`-indexed ones, which take the remainder."""
+    from nk import bodies_for
+    T = Timing(k, L); L0 = bodies_for(k)
+    D = [T.shift(T.nxt(U), T.rest[U]) - T.shift(U, T.rest[U]) for U in range(L)]
+    tot = sum(D[:L0]); lo = tot // L0; extra = tot - lo * L0
+    tg = [lo + (1 if (U - phase) % L0 < extra else 0) for U in range(L)]
+    e = [0]
+    for U in range(L - 1): e.append(e[-1] + tg[U] - D[U])
+    return e
 
 
 def add_power(r, choices):

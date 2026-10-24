@@ -90,6 +90,8 @@ class Ring2(Ring):
             occ = worlds[s]
             w = (g[0] + T.shift(X, s), g[1], g[2])
             mX = T.moves(X, s)
+            for Q, kind, info in occ.get(w, []):
+                if kind == 'RIG' or (kind == 'arm' and isinstance(info, tuple)): return bad(f's{s} overlaps {Q} rigid piston')
             for d in D6:
                 n = add(w, d)
                 for Q, kind, info in occ.get(n, []):
@@ -141,7 +143,7 @@ class Ring2(Ring):
 
 def power_problems(r, bodies=None):
     """redstone blocks next to pistons at slot starts (face-adjacent, not in front of the piston):
-    - a hopper may only be powered by its own body's blocks;
+    - a hopper may only be powered by its own body's blocks, and never while it is spent;
     - a sticky (rigid, dir -1) must be powered exactly at its host's local slot 0 and never by its own host."""
     T = r.T; out = []
     for s in range(T.S):
@@ -154,6 +156,8 @@ def power_problems(r, bodies=None):
                     if kind == 'P':
                         if Q != X and info[1] == 0 and n[0] - c[0] != 1:   # RB not directly in front
                             out.append((s, 'foreign RB powers hopper', X, Q, n))
+                        elif Q == X and info[1] == 0 and info[2] == 'spent' and n[0] - c[0] != 1:
+                            out.append((s, 'own RB powers spent hopper', X, Q, n))   # it would hop again
                     elif kind == 'RIG':
                         i, st, dr, victim = info
                         front = (n[0] + dr, n[1], n[2])

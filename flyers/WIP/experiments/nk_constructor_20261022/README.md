@@ -180,3 +180,12 @@ The hoppers stand beside the column. The 5 back bodies all differ in shape (hand
   RB lanes may then lie over the lower plate and beside the sticky (`level_layouts(relax=True)`).
   k=3, step (4,0): **flies at PL15** (max body 11 = the back bodies 8/11/10/10/11 per 5 links; tower levels 7/11/10-11).
   Same PL as the plain lat ring; the 4-lane step costs the back bodies a sideways connector cell.
+- **Tower family (family code 2 + bit 9, `human_link.construct`): k=3 flies at PL14** (was 15). Human-link back ring
+  with a 4-lane step and balanced frame offsets (`tower2.balanced_xoff`: every link the same frame offset D, the
+  remainder on one link per base ring; back bodies all 9 alone), height-3 human-sticky towers with cost-sorted
+  layouts (`tower2.hs_layouts`: the top level may use the lower sticky's power block for its hoppers). Level layouts
+  are tried in order at run time (first passing ring = best here, 0.8 s). Limits at PL14: back bodies (10 glue+RB +
+  PREV's 2 hoppers + level 1's 2) and level 2 (10 + 3 hoppers + its sticky) both load 14.
+  New power rule (`nk2.power_problems`): a body's own RB must not power its spent hopper (it hops again, becomes
+  immovable and blocks the pull); `families.predicted_pl` = largest glue + RB + carried hoppers + own rigid pistons.
+  **Sum 1786, weighted 1968**; time slab 0.2 s, lat 35.8 s, latbig 1.8 s, terrace 25.3 s, tower 0.8 s.
