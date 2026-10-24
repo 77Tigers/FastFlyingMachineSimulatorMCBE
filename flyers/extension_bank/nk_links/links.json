@@ -412,6 +412,65 @@
    "k": 3,
    "lateral": 0,
    "source": "link0.links(2) (0 lanes sideways; too compact for towers)"
+  },
+  {
+   "name": "link0_n2_lat0_k2",
+   "mod": {
+    "P": [
+     [
+      0,
+      0
+     ],
+     [
+      1,
+      1
+     ]
+    ],
+    "R": [
+     [
+      0,
+      0,
+      1
+     ]
+    ],
+    "PLATE": [
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      1,
+      1,
+      1
+     ],
+     [
+      1,
+      0,
+      1
+     ]
+    ],
+    "CONT": [
+     [
+      -2,
+      1,
+      0
+     ]
+    ],
+    "size": [
+     2,
+     3
+    ]
+   },
+   "step": [
+    1,
+    -2
+   ],
+   "back_max": 7,
+   "back_sum": 28,
+   "k": 2,
+   "lateral": 0,
+   "source": "link0.links(2) screen on the plain k=2 ring (link0_screen.py 2 2 0 2); plain k=2 ring flies at PL9"
   }
  ],
  "1": [

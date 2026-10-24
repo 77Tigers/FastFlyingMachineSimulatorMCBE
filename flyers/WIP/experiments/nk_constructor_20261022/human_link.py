@@ -68,6 +68,25 @@ def tower_ring(k, h, step, cv, lc, mod=None, mg=None, hs=None, xo=False, kb=True
     return r, 'ok'
 
 
+def plain(k, link, cv, phase=None):
+    """plain hopper ring (no towers) from the bank link `link` for n = k hoppers, balanced frame offsets"""
+    import square, bank_links
+    from nk import bodies_for
+    from nk2 import power_problems
+    lk = bank_links.links(k)
+    if not lk: return None
+    e = lk[link % len(lk)] if isinstance(link, int) else next(x for x in lk if x['name'] == link)
+    L, L0 = square.ring_size(k), bodies_for(k)
+    xo = tower2.balanced_xoff(k, L, L0 - 1 if phase is None else phase)
+    try:
+        r = tower2.build(k, 1, 0, (), back=(e['mod'], e['step']), cv=cv, xoff=xo)
+        if r is None or collisions(r): return None
+        route_all(r)
+    except (AssertionError, RuntimeError): return None
+    if r.check() or power_problems(r): return None
+    return r
+
+
 def construct(k, link=0, cv=(5, -2), phase=None, h=3, nlay=4, mg=(0, 1)):
     """tower family for any k: back ring from the extension-bank link `link` for n = k-1 hoppers
     (bank_links.links(n), sorted by back-ring size; entry 'human_n3_A' is the human N3 link), balanced frame offsets,

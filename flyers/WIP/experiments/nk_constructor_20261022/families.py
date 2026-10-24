@@ -4,9 +4,10 @@
 - everything else (modules by CP-SAT with a deterministic budget, connectors) is computed at run time.
 
 10-bit word per k:  bits 0-1 family (0 slab, 1 lat, 2 latbig = lat on a 4 x base ring, 3 terrace (see terrace_params)),  bits 2-5 box shape,  bits 6-9 layout.
-  Family code 2 with bit 9 set is the tower family (human_link.construct; latbig keeps bit 9 = 0): bits 2-4 the
-  back link (index into the extension bank flyers/extension_bank/nk_links, n = k-1 hoppers), bits 5-6 corner
-  cy = a - 1 + v (a = the link's lane box); bits 7-8 corner cz = -2 + v; level layouts chosen at run time.
+  Family code 2 with bit 9 set is the bank-link family (latbig keeps bit 9 = 0): a ring of back bodies built from an
+  extension-bank link (flyers/extension_bank/nk_links), with height-3 towers (human_link.construct, n = k-1
+  hoppers) or plain (bit 8; human_link.plain, n = k hoppers); see tower_params. Tower level layouts are chosen at
+  run time.
   box (4 bits): a = a0 - 1 + (v & 3), b = b0 - 1 + (v >> 2), (a0, b0) = the slab rectangle for k.
   layout (4 bits): straight z shift sz = -(v & 1); bit 1: module mirrored in y; corner cz = b + 1 + ((v >> 2) & 1);
   corner cy = a - 1 + (v >> 3).
@@ -23,11 +24,11 @@ sys.path.insert(0, str(HERE))
 import construct, square, sqbuild
 
 KS = list(range(2, 31))
-FAMS = ['slab', 'lat', 'latbig', 'terrace', 'tower']
+FAMS = ['slab', 'lat', 'latbig', 'terrace', 'link']
 
 
 def fam_of(word):
-    return 'tower' if word & 3 == 2 and (word >> 9) & 1 else FAMS[word & 3]
+    return 'link' if word & 3 == 2 and (word >> 9) & 1 else FAMS[word & 3]
 
 
 def predicted_pl(r):
@@ -96,13 +97,14 @@ def terrace_params(k, word):
 
 
 def tower_params(k, word):
-    """tower word: bits 2-4 bank link index, corner cy = a - 1 + v (bits 5-6, a = the link's lane box), cz = -2 + v
-    (bits 7-8)."""
+    """bank-link word: bits 2-4 link index (flyers/extension_bank/nk_links, n = k-1 hoppers with towers, n = k
+    without), corner cy = a - 1 + v (bits 5-6, a = the link's lane box), cz = -2 + bit 7, bit 8 = no towers."""
     import bank_links
-    lk = bank_links.links(k - 1)
+    towers = not (word >> 8) & 1
+    lk = bank_links.links(k - 1 if towers else k)
     i = (word >> 2) & 7
     a = lk[i % len(lk)]['mod']['size'][0] if lk else 0
-    return i, (a - 1 + ((word >> 5) & 3), -2 + ((word >> 7) & 3))
+    return i, (a - 1 + ((word >> 5) & 3), -2 + ((word >> 7) & 1)), towers
 
 
 def big_ring(k):
@@ -113,9 +115,10 @@ def big_ring(k):
 
 
 def build(k, word):
-    if fam_of(word) == 'tower':
+    if fam_of(word) == 'link':
         import human_link
-        return human_link.construct(k, *tower_params(k, word))
+        i, cv, towers = tower_params(k, word)
+        return human_link.construct(k, i, cv) if towers else human_link.plain(k, i, cv)
     if FAMS[word & 3] == 'terrace':
         import terrace
         g, gap, cv, box, pat = terrace_params(k, word)
