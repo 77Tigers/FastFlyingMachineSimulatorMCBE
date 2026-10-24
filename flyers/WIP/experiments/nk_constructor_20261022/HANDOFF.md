@@ -132,7 +132,13 @@ gives 4 bodies of 7 -> PL9 (was 10). Stored as bank entry `link0_n2_lat0_k2`; k=
 
 1. **Offsets as a first-class choice (user).** For terrace and lat, choose the step and per-link x offsets so the
    connector columns land where both ends already are (no jogs), instead of fixing the step and routing.
-   `steiner.py` gives exact per-body connectors for a fixed layout; an offset search scored by it is the natural next step.
+   Concrete case (user's cell (8,27,12) in `n30_pl107_terrace`, model (-8,20,12), body 6): rise 1 joins a slab cell
+   (-8,20,11) to a floor-1 plate cell (-4,19,13) (Manhattan 7, the router's 6 cells are minimal for those ends). The
+   column must climb in the gap lane (the own strip below -4 holds NEXT's slab and the own spent hoppers), and the
+   y jog exists because the plate's edge lane and the neighbouring strip's slab edge lane are not aligned. Fix: make
+   the strip pattern CP (`strip_cp.py`) align top-edge plate lanes with the next strip's bottom-edge slab lanes (in the
+   step's frame), per rise; a global sz shift moves every rise at once and did not help. `steiner.py` gives exact
+   per-body connectors to score candidates.
 2. k=3 PL12: back 8 everywhere and level 2 <= 8. Done so far: 0-lane links give back 8 (one in 5 is 9) but towers
    fail on power; 1-lane links with 4-lane steps (`link0_screen.py 2 3 1 4`, bank `link0_n2_lat1_*`) give towers at
    PL15 only (levels 11). Next: towers that drift sideways level by level (as in the human flyer: B y4-6, F y6-7,
