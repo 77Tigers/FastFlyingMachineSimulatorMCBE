@@ -25,11 +25,11 @@ def quick(a):
 if __name__ == '__main__':
     n, k, lat, minstep = map(int, sys.argv[1:5])
     L = list(link0.links(n, lat=lat, minstep=minstep)); print(len(L), 'links', flush=True)
-    with ProcessPoolExecutor(14) as ex:
+    with ProcessPoolExecutor(int(__import__("os").environ.get("L0W", 14))) as ex:
         q = list(ex.map(quick, [(k, mod, step) for mod, step, c in L], chunksize=8))
     cand = sorted([(qq, i) for i, qq in enumerate(q) if qq], key=lambda t: t[0])[:30]
     print('screen', [c[0] for c in cand[:10]], flush=True)
-    with ProcessPoolExecutor(14) as ex:
+    with ProcessPoolExecutor(int(__import__("os").environ.get("L0W", 14))) as ex:
         full = list(ex.map(link0._ev, [(k, L[i][0], L[i][1]) for _, i in cand]))
     res = sorted([(f, L[i][1], L[i][0]) for (_, i), f in zip(cand, full) if f], key=lambda t: t[0][:2])
     for f, step, mod in res[:12]: print(f, step, mod, flush=True)

@@ -189,3 +189,19 @@ The hoppers stand beside the column. The 5 back bodies all differ in shape (hand
   New power rule (`nk2.power_problems`): a body's own RB must not power its spent hopper (it hops again, becomes
   immovable and blocks the pull); `families.predicted_pl` = largest glue + RB + carried hoppers + own rigid pistons.
   **Sum 1786, weighted 1968**; time slab 0.2 s, lat 35.8 s, latbig 1.8 s, terrace 25.3 s, tower 0.8 s.
+
+## 2026-10-24 (later): k=3 PL13, bank links, offsets
+
+- **k=3 towers PL14 -> PL13** (user: "the back is sacred"): level 1 now holds its sticky with its own attach lane and
+  pulls the back body's existing plate cell (`tower2.build(keep_back='s2')`); back bodies 9, tower levels 8/9/7.
+- Back links are extension-bank interfaces now (`flyers/extension_bank/nk_links/links.json`, `bank_links.py`), looked
+  up by hopper count; `human_link.construct(k, link, cv)` works for any k (word: bank index + corner, `tower_params`).
+- `link0.py` enumerates straight-column links for any hopper count (user: back connectors 0-1 lanes sideways): for
+  n=2, 0 lanes gives back bodies 8 (one in 5 is 9) but is too compact for towers (power fails); 1 lane with 4-lane
+  steps gives back 8/9 but towers only reach PL15 (levels 11). The human link (2 lanes sideways, step 4) stays best
+  for towers. Towers that drift sideways level by level (as the human ones do) are the open fix.
+- k=2 towers on 1-hopper links: best predicted PL11 (> 10). Towers for k >= 4: riders 2(k-1) on the back, not promising.
+- Terrace (high k): beside covers (`cp2`) no gain; longer strip CP solves: patterns already optimal (1 RB per 3
+  hoppers); straight-step z shift / corner scan (`terr_offset_scan.py`): no PL change; gap 0 fails for k >= 22;
+  exact connector CP (`steiner.py`): 12 = the router's, bound 9. Rises cost ~5-6 per strip boundary (lower bound ~5).
+- `verify_all.py`: builds every k, writes `out/best/nKK_plPL_family.flyer`, simulates at PL and PL-1.
