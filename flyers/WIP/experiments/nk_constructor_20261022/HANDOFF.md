@@ -160,7 +160,9 @@ gives 4 bodies of 7 -> PL9 (was 10). Stored as bank entry `link0_n2_lat0_k2`; k=
 - Riser hoppers (targets on the terrace rises): each needs its own cover + RB (~2 cells to save 1) - skipped.
 - k=2 towers on 1-hopper straight-column links (`tower_scan0.py 2`): best predicted PL11 (the plain link ring gives 9).
 - Plain k=3 rings from 3-hopper straight-column links: 12-13 (lat gives 12).
-- Towers for k >= 4: back riders 2(k-1) vs k; a 3-hopper human-style link measured 14 (> 11 needed). Not promising.
+- Towers for k >= 4: back riders 2(k-1) vs k; a 3-hopper human-style link measured 14 (> 11 needed). Measured:
+  k=4 towers on the lat back (tower2 default, step a+1): power fails for all 27 layouts.
+- k=3 towers on the 1-lane-offset links, wide scan (top 4 links, corners +-2, all phases; `tower_scan0.py`): best PL16.
 - Balanced per-link x offsets on lat rings (`lat_xoff_test.py`): worse by 1-3 (k=4..11). Plain link rings for
   k=3 (12-13) and k=4 (17 vs 14). Wider lat straight steps (`lat_step_scan.py`): no gain k=7..13. Calibration
   (`calibrate_fam.py`): terrace k=10..13,15,17,19,21 / lat 15,16,18,20,22,24 / latbig 4,6,8,12 / slab
