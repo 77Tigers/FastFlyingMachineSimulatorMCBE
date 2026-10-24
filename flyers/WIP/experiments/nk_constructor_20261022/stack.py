@@ -55,7 +55,8 @@ class Ring3(Ring2):
         return Ring2.cell_ok(self, X, g, worlds, why, strict)
 
 
-def level_opts(m, s, below, a, b, step, mode, mg=(0, 1), free=None, cap=4000, forbid=frozenset(), low=None):
+def level_opts(m, s, below, a, b, step, mode, mg=(0, 1), free=None, cap=4000, forbid=frozenset(), low=None,
+               periodic=True):
     """layouts for one level over the lower level's plate lanes `below`, cheapest first.
     mode 's2' (level 1: sticky on the hopper layer held by an attach lane s2), 'hs' (human sticky), 'top' (front).
     Returns dicts st (sticky lane), s2, Hm (hoppers on `below`), Hs (loop hoppers off `below`), R (RB lanes),
@@ -110,7 +111,8 @@ def level_opts(m, s, below, a, b, step, mode, mg=(0, 1), free=None, cap=4000, fo
                     for R in found:
                         # the neighbouring towers (same layout, +-step): no shared lanes, no RB beside their hoppers
                         own = Hset | set(R) | {l for l in (st, s2) if l is not None}
-                        sh = lambda S: {(l[0] + sg * step[0], l[1] + sg * step[1]) for l in S for sg in (1, -1)}
+                        # (periodic=False: every link is a corner, the straight-step copies do not exist)
+                        sh = lambda S: {(l[0] + sg * step[0], l[1] + sg * step[1]) for l in S for sg in (1, -1)} if periodic else set()
                         nH, nAll = sh(Hset), sh(own)
                         if own & nAll or any(r in nb(h) for r in R for h in nH): continue
                         glue = Hset | set(R) | ({s2} if s2 is not None else set())
@@ -138,6 +140,7 @@ def level_opts(m, s, below, a, b, step, mode, mg=(0, 1), free=None, cap=4000, fo
 
 
 _BTL = {}
+CP_ABOVE = 5   # levels with more hoppers use stack_cp.level_cp
 
 
 def back_top_lanes(k, vmod, step, cv, xoff):
@@ -198,10 +201,15 @@ def build(k, back, params, choice, cv, xoff=None, mg=(0, 1), opts_cache=None, up
         mode = 'top' if j == h else 's2' if j == 1 else 'hs'
         free = lays[-1]['st'] if mode == 'top' and lays else None
         low = (lays[-1]['st'], 's2' if j == 2 else 'hs') if lays else None
-        key = (m, s, tuple(sorted(below)), a, b, step, mode, mg, free, forbid, low)
+        per = L // 4 > 1
+        key = (m, s, tuple(sorted(below)), a, b, step, mode, mg, free, forbid, low, per)
         if opts_cache is not None and key in opts_cache: g = opts_cache[key]
+        elif m + s > CP_ABOVE:   # enumeration explodes: CP-SAT layouts (best first)
+            import stack_cp
+            g = stack_cp.level_cp(m, s, below, a, b, step, mode, mg, free, forbid=forbid, low=low, periodic=per)
+            if opts_cache is not None: opts_cache[key] = g
         else:
-            g = level_opts(m, s, below, a, b, step, mode, mg, free, forbid=forbid, low=low)
+            g = level_opts(m, s, below, a, b, step, mode, mg, free, forbid=forbid, low=low, periodic=per)
             if opts_cache is not None: opts_cache[key] = g
         if len(g) <= choice[j - 1]: return None
         lay = g[choice[j - 1]]
@@ -446,3 +454,20 @@ def loads(r):
             if W is not None: car[W] += 1
     sz = r.size()
     return [(sz[X], car[X], len(r.mods[X].get('RIG', []))) for X in range(T.L)]
+
+
+def recipe(k, back_spec, cv, params, choice, mg=(0, 1), phase=None):
+    """everything needed to rebuild a stack without searching (JSON-friendly)"""
+    return dict(k=k, back=back_spec, cv=list(cv), params=[list(p) for p in params], choice=list(choice), mg=list(mg),
+                phase=phase)
+
+
+def from_recipe(rec):
+    """rebuild a stack from a recipe: build (layout choices replayed), power, route, check (~1 s)"""
+    import stack_scan
+    k = rec['k']; e = stack_scan.back_entry(k, rec['back'])
+    L = square.ring_size(k)
+    xo = tower2.balanced_xoff(k, L, bodies_for(k) - 1 if rec.get('phase') is None else rec['phase'])
+    r, why = finish(build(k, (e['mod'], e['step']), [tuple(p) for p in rec['params']], tuple(rec['choice']),
+                          tuple(rec['cv']), xo, tuple(rec.get('mg', (0, 1)))))
+    return r

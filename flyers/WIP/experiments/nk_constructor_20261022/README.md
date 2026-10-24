@@ -244,8 +244,24 @@ front power, contract-solved levels.
 - k=3 (human N3 back link, 4-lane step): params (2,0);(3,0);(3,0) = the human topology reproduces **PL13**;
   M=1 (2,1);(3,0) flies at 20 (level-1 loop link: bodies 14-15 + 4 riders); (1,1);(3,0);(3,0) at 31. Loops are
   expensive while towers stand 4 lanes apart (compaction later).
-- k=2: no stack flies yet (model-passing candidates fall out of rhythm in simulation: the level-1 stickies never
-  pull and bodies merge; not diagnosed further).
+- k=2 (ring of 4: every link a corner, so the straight-step neighbour rules are switched off, `periodic=False`):
+  stacks fly, best **PL12** with (1,0);(2,0);(2,0) on a 1-hopper back (plain ring 9).
+- **nkcheck fix**: the fast engine counts piston-arm cells as blocks; with stickies that all extend in the same slot
+  (every even-k stack) the arm count changes from slot to slot and nkcheck reported 'kinds' at t0 although the
+  flyer flies (reference `measure`: conservation exact, distance ok). Arms are now excluded from the conservation
+  check (all other kinds still checked); every earlier "sim failure" at k=4 was this artefact.
+- Neighbour-tower rules (towers 3 lanes apart on compact backs): every tower uses the same layout, so the level
+  layout is checked against its own copies at +-step: no shared lanes, no RB beside their hoppers, no own glue
+  beside their hardware, their hoppers not on / beside our lower plate, and below the level-1 sticky a side lane
+  that is free (also of the copies) and has no hopper beside it, for the sticky's power block.
+- **k=4 PL19** (`out/best/n04_pl19_stack.flyer`): compact 0-sideways back link (`link0_screen.py 3 4`, entry 3,
+  step (-2,-2)), (3,0);(4,0);(4,0), 1-lane margins. Straight towers load 18 (back 12 + 6 riders, level 1 13 + 4 + 1,
+  level 2 12 + 4 + 1); the 19 is the balanced-offset **remainder link** (one link per base ring takes the leftover
+  frame offset and costs +1; moving the phase moves the 13 onto straight bodies; natural offsets are worse).
+- k=5 (lat CP back, 4 hoppers): 25 (back 17-18 + 8 riders); k=6: 28; k=8: 39; k=10: 52 (vs 23, 26, 34, 42).
+- `stack_cp.py`: CP-SAT level layouts (same roles and rules, solutions enumerated best first) for levels with more
+  than `stack.CP_ABOVE` = 5 hoppers. `stack.recipe` / `from_recipe`: rebuild a chosen stack without search (~0.6 s).
+  `stack_all.py`: human-topology stacks over many k (lat backs, a few boxes and corners).
 - k=4: compact 3-hopper back links (`link0_screen.py 3 4`: straight 12, corners 13) put towers 3 lanes apart and
   neighbouring levels collide; wide-step links (`stack_links.py 4 4`: steps 4, back 14) leave room but the back
   alone is 14 + 3 riders.
