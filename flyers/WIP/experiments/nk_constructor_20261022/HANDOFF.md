@@ -38,13 +38,13 @@ limits** (PL). N_k: cycle 2(k+2) ticks, advance +k (k=2: 2.5 bps, k=3: 3 bps, ..
 
 ## 2. Current results (`python families.py`, all fly at the predicted PL, 1 seed x 1000 blocks)
 
-**Sum 1784, weighted (k <= 6 triple) 1962.** (Start of 2026-10-24: 1787 / 1971.) Verify: `python verify_all.py`.
+**Sum 1783, weighted (k <= 6 triple) 1961.** (Start of 2026-10-24: 1787 / 1971.) Verify: `python verify_all.py`.
 
 | k | PL | family | k | PL | family | k | PL | family |
 |---|---|---|---|---|---|---|---|---|
 | 2 | **9** | link | 12 | 48 | lat | 22 | 83 | terrace |
 | 3 | **13** | link (towers) | 13 | 54 | lat | 23 | 86 | terrace |
-| 4 | 18 | lat | 14 | 58 | slab | 24 | 88 | terrace |
+| 4 | 18 | lat | 14 | **57** | terrace | 24 | 88 | terrace |
 | 5 | 23 | lat | 15 | 61 | slab | 25 | 93 | terrace |
 | 6 | 26 | lat | 16 | 62 | terrace | 26 | 94 | terrace |
 | 7 | 30 | lat | 17 | 68 | lat | 27 | 99 | terrace |
@@ -73,14 +73,14 @@ Family time (s): slab 0.2, lat ~36, latbig 1.8, terrace ~25, link ~1.5.
 - `sqbuild.py` / `square.py`: square ring (L a multiple of 4 and of the base ring; side h rotated h x 90 degrees;
   side 0 routed and copied when m % L0 == 0).
 - Families: `lat` = side-contact module (`cp_module` CP-SAT), `slab` = rectangle module, `latbig` = lat on a
-  4 x base ring, `terrace.py` (k >= 16: each body's hoppers on 2 floors in neighbouring lane strips; NEXT's
+  4 x base ring, `terrace.py` (k = 14 and k >= 16: each body's hoppers on 2 floors in neighbouring lane strips; NEXT's
   floor-1 plate covers the upper floor; CP strip patterns `strip_cp.py`), `human_link.py` + `tower2.py` (towers).
 - Calibration (offline word choice): `calib_sl.py` (slab/lat), `calibrate_fam.py FAM K,..` (keeps a word only if it
   beats the current one).
 
 ## 4. The k=3 tower family (PL13), what it is
 
-- Back ring = the **human N3 back link as a rule** (`human_link.MOD`): two hoppers side by side, one RB touching both,
+- Back ring = the **human N3 back link as a rule** (bank entry `human_n3_A`, also `human_link.MOD`): two hoppers side by side, one RB touching both,
   a 3-cell front cluster (targets + the cell in front of the RB), a short x column, one cover cell beside two of
   PREV's spent hoppers. Step (4,0) (4 lanes, so neighbouring towers do not collide), **balanced per-link x offsets**
   (`tower2.balanced_xoff`: every link the same frame offset D, the remainder on one link per base ring).
@@ -122,6 +122,9 @@ gives 4 bodies of 7 -> PL9 (was 10). Stored as bank entry `link0_n2_lat0_k2`; k=
 - k=2 towers on 1-hopper straight-column links (`tower_scan0.py 2`): best predicted PL11 (the plain link ring gives 9).
 - Plain k=3 rings from 3-hopper straight-column links: 12-13 (lat gives 12).
 - Towers for k >= 4: back riders 2(k-1) vs k; a 3-hopper human-style link measured 14 (> 11 needed). Not promising.
+- Balanced per-link x offsets on lat rings (`lat_xoff_test.py`): worse by 1-3 (k=4..11). Plain link rings for
+  k=3 (12-13) and k=4 (17 vs 14). Wider lat straight steps (`lat_step_scan.py`): no gain k=7..13. Calibration
+  (`calibrate_fam.py`): terrace k=10..13,15 / lat 15,16,18 / latbig 4,6,8,12 no gain (terrace won k=14).
 - Earlier: x0 offsets for lat, lateral-cover terrace, rods in the module CP, RB-on-connector joint CP, single-edit
   module search (`modsearch.py`), hopper reseating (`reseat.py`), joint CP back bodies (`back_cp.py`, optimum 9).
 
@@ -130,11 +133,13 @@ gives 4 bodies of 7 -> PL9 (was 10). Stored as bank entry `link0_n2_lat0_k2`; k=
 1. **Offsets as a first-class choice (user).** For terrace and lat, choose the step and per-link x offsets so the
    connector columns land where both ends already are (no jogs), instead of fixing the step and routing.
    `steiner.py` gives exact per-body connectors for a fixed layout; an offset search scored by it is the natural next step.
-2. k=3 PL12: back 8 everywhere and level 2 <= 8. Links with a 1-lane offset and longer steps
-   (`link0_screen.py 2 3 1 4`) leave room for towers; then towers via `tower_scan0.py`.
-3. Extension bank: store the straight-column link modules (`link0.py`) as reusable interfaces
-   (`flyers/extension_bank/nk_links/`, not done yet); N3/N4 bank front segments (`lookup.py`, `contract-solve`) as
-   tower levels (level 2 is 9 vs the human's 5).
+2. k=3 PL12: back 8 everywhere and level 2 <= 8. Done so far: 0-lane links give back 8 (one in 5 is 9) but towers
+   fail on power; 1-lane links with 4-lane steps (`link0_screen.py 2 3 1 4`, bank `link0_n2_lat1_*`) give towers at
+   PL15 only (levels 11). Next: towers that drift sideways level by level (as in the human flyer: B y4-6, F y6-7,
+   L y5-8, P y6-8) so a compact 0-1-lane back ring leaves room; also fix the remainder / corner link (+1).
+3. Extension bank: links are stored (`flyers/extension_bank/nk_links/`, `bank_links.py N K [LAT MINSTEP]` adds);
+   still open: N3/N4 bank front segments (`lookup.py`, `contract-solve`) as tower levels (our level 2 is 9 vs the
+   human's 5).
 4. High-k ideas not yet tried: fewer riders per mover (pull more, push less), observers / rods instead of RBs.
 
 ## 8. Tools

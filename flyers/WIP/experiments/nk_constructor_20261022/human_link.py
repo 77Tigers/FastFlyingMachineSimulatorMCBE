@@ -19,6 +19,7 @@ MOD = dict(P=[(1, 0), (2, 1)], R=[(0, 1, 1)], PLATE=[(1, 1, 0), (1, 1, 1), (1, 2
            size=(int(os.environ.get('HL_A', 3)), 2))
 STEPS = [tuple(map(int, t.split(','))) for t in os.environ.get('HL_STEPS', '3,0;2,-1').split(';')]
 HS = os.environ.get('HL_HS', '0') == '1'
+REUSE_POWER = os.environ.get('HL_REUSE', '0') == '1'
 PHASE = os.environ.get('HL_PHASE')
 MG = tuple(int(x) for x in os.environ.get('HL_MG', '0,1').split(','))   # tower lanes may leave the box only across the side (z), never towards the neighbours (y)
 
@@ -59,6 +60,7 @@ def tower_ring(k, h, step, cv, lc, mod=None, mg=None, hs=None, xo=False, kb=True
     mod = mod or MOD; mg = MG if mg is None else mg; hs = HS if hs is None else hs
     r = tower2.build(k, 1, h, lc, back=(mod, step), cv=cv, mg=mg, hs=hs, xoff=xoff(k) if xo is False else xo, keep_back=kb)
     if r is None or collisions(r): return None, 'layout'
+    r.reuse_power = REUSE_POWER
     if tower2.add_power_greedy(r) is None: return None, 'power'
     if collisions(r) or power_problems(r): return None, 'power2'
     try: route_all(r)

@@ -203,6 +203,9 @@ def add_power_greedy(r):
             occ = r.world(st)
             near = r.near(tgt, margin=3)
             done = False
+            if getattr(r, 'reuse_power', False):   # user's power trick: the victim's own RB may already power it
+                r.__dict__.pop('_hw', None)
+                if not [p for p in power_problems(r, near) if p[3] == tgt]: continue
             for d in ((1, 0, 0), (0, 1, 0), (0, -1, 0), (0, 0, 1), (0, 0, -1)):
                 w = add(sp, d)
                 if occ.get(w): continue

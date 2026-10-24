@@ -209,3 +209,7 @@ The hoppers stand beside the column. The 5 back bodies all differ in shape (hand
   `link0_n2_lat0_k2`; 4 bodies of 7). Family `link` (code 2 + bit 9) = ring from a bank link, towers or plain (bit 8).
   Plain link rings for k=3 (12-13) and k=4 (17 vs lat 14) do not win; wider lat straight steps (`lat_step_scan.py`):
   no gain for k = 7..13. **Sum 1784, weighted 1962.**
+- **k=14 PL58 -> PL57**: terrace word 335 (`calibrate_fam.py 3 13,14,15`). Calibrations with no gain: terrace for
+  k=10..13, 15; lat for 15, 16, 18; latbig for 4, 6, 8, 12. Balanced per-link x offsets on lat rings
+  (`lat_xoff_test.py`, `sqbuild.assemble(xoff=)`): worse by 1-3 for k = 4..11 (the lat modules use the natural
+  offset variation). **Sum 1783, weighted 1961.**
