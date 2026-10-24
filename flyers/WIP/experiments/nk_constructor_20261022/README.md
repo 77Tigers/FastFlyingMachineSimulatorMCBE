@@ -213,3 +213,7 @@ The hoppers stand beside the column. The 5 back bodies all differ in shape (hand
   k=10..13, 15; lat for 15, 16, 18; latbig for 4, 6, 8, 12. Balanced per-link x offsets on lat rings
   (`lat_xoff_test.py`, `sqbuild.assemble(xoff=)`): worse by 1-3 for k = 4..11 (the lat modules use the natural
   offset variation). **Sum 1783, weighted 1961.**
+- Also no gain (see HANDOFF.md section 6): terrace strip symmetries, odd-k terrace (best 69/75/82 vs lat
+  68/73/82; extra-step phase `TERR_PH` ties k=17), terrace on 4x rings (`TERR_RING`), power reuse (`HL_REUSE`),
+  human link with a 3-lane step (towers fail on power), k=2 1-lane links (bodies 7). Final: **sum 1783, weighted
+  1961**, all 29 verified (`out/verify_all_final.txt`); k=2, 3, 14 also pass on 3 seeds.
