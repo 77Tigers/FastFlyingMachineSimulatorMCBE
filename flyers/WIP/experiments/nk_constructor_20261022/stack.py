@@ -80,7 +80,7 @@ def pieces(cells):
 
 
 def level_opts(m, s, below, a, b, step, mode, mg=(0, 1), free=None, cap=4000, forbid=frozenset(), low=None,
-               periodic=True, lowR=frozenset(), side=False):
+               periodic=True, lowR=frozenset(), side=False, avoid_h=frozenset(), avoid_r=frozenset()):
     """layouts for one level over the lower level's plate lanes `below`, cheapest first.
     side (levels 3 apart instead of 4, as in the human 3 bps flyer): the hoppers carried by the lower level stand
     beside its plate lanes (their spent position touches the lower plate cell sideways, x = -2) instead of on them;
@@ -89,6 +89,7 @@ def level_opts(m, s, below, a, b, step, mode, mg=(0, 1), free=None, cap=4000, fo
     mode 's2' (level 1: sticky on the hopper layer held by an attach lane s2), 'hs' (human sticky), 'top' (front).
     Returns dicts st (sticky lane), s2, Hm (hoppers on `below`), Hs (loop hoppers off `below`), R (RB lanes),
     Q (loop cover lanes at x = -2, owned by the loop neighbour), cost.
+    avoid_h / avoid_r: lanes that take no hopper or sticky / no RB (e.g. over the neighbouring backs' columns).
     forbid: lanes where the lower level has cells near its top (x >= -1); the lower level rises by up to 2 relative
     to this one, so no loop hopper may stand there and no loop cover may lie there or in the neighbouring towers'
     copies of those lanes (+-step).
@@ -108,9 +109,11 @@ def level_opts(m, s, below, a, b, step, mode, mg=(0, 1), free=None, cap=4000, fo
     hmc = sorted(l for l in lanes if l not in bl and l in nbl and l not in forbid) if side else None
     for st in ([None] if mode == 'top' else sorted(bl)):
         for Hm in itertools.combinations(hmc if side else sorted(bl - {st}), m):
+            if avoid_h and (set(Hm) & avoid_h or st in avoid_h): continue
             s2opts = [None] if mode != 's2' else [l for l in nb(st) if l not in bl and l not in Hm and inb(l)]
             for s2 in s2opts:
                 offl = [l for l in lanes if l not in bl and l != st and l != s2 and l not in Hm and l not in forbid
+                        and l not in avoid_h
                         and not (low is not None and low[1] == 'hs' and l == low[0]) and not (side and l in nbl)]
                 for Hs in itertools.combinations(offl, s):
                     H = list(Hm) + list(Hs); Hset = set(H)
@@ -132,7 +135,7 @@ def level_opts(m, s, below, a, b, step, mode, mg=(0, 1), free=None, cap=4000, fo
                     for nq in range(1, len(Hs) + 1):
                         Qcs = [Q for Q in itertools.combinations(qcc, nq) if all(any(q in nb(h) for q in Q) for h in Hs)]
                         if Qcs: break
-                    cand = [l for l in lanes if l not in Hset and l != st and l != s2 and l != free
+                    cand = [l for l in lanes if l not in Hset and l != st and l != s2 and l != free and l not in avoid_r
                             and any(h in nb(l) for h in H) and not (side and l in bl)]
                     fr = [free] if free is not None and free not in Hset else []
                     found = []

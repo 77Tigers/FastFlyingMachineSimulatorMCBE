@@ -14,7 +14,8 @@ def nb(c): return [(c[0] + d[0], c[1] + d[1]) for d in N4]
 
 
 def level_cp(m, s, below, a, b, step, mode, mg=(0, 1), free=None, forbid=frozenset(), low=None, nsol=8, secs=2.0,
-             periodic=True, lowR=frozenset()):
+             periodic=True, lowR=frozenset(), avoid_h=frozenset(), avoid_r=frozenset()):
+    """avoid_h: lanes that take no hopper / sticky / attach lane; avoid_r: lanes that take no RB"""
     my, mz = mg
     inb = lambda l: -my <= l[0] < a + my and -mz <= l[1] < b + mz
     U = [(y, z) for y in range(-1 - my, a + 1 + my) for z in range(-1 - mz, b + 1 + mz) if inb((y, z))]
@@ -23,11 +24,12 @@ def level_cp(m, s, below, a, b, step, mode, mg=(0, 1), free=None, forbid=frozens
     md = cp_model.CpModel()
     B = lambda: md.NewBoolVar('')
     z0 = md.NewConstant(0)
-    hm = {l: B() for l in U if l in bl}
-    hs = {l: B() for l in U if l not in bl and l not in forbid and not (low and low[1] == 'hs' and l == low[0])}
-    r = {l: B() for l in U if l != free}
-    st = {l: B() for l in U if l in bl} if mode != 'top' else {}
-    s2 = {l: B() for l in U if l not in bl} if mode == 's2' else {}
+    hm = {l: B() for l in U if l in bl and l not in avoid_h}
+    hs = {l: B() for l in U if l not in bl and l not in forbid and not (low and low[1] == 'hs' and l == low[0])
+          and l not in avoid_h}
+    r = {l: B() for l in U if l != free and l not in avoid_r}
+    st = {l: B() for l in U if l in bl and l not in avoid_h} if mode != 'top' else {}
+    s2 = {l: B() for l in U if l not in bl and l not in avoid_h} if mode == 's2' else {}
     qbad = set(forbid) | {sh(l, sg) for l in forbid for sg in (1, -1)}
     qbad |= {v for l in lowR for sg in (0, 1, -1) for v in nb(sh(l, sg))}
     q = {l: B() for l in U if l not in bl and l not in qbad}

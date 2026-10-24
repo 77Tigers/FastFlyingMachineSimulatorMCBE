@@ -25,6 +25,7 @@ WHY = None   # a collections.Counter: partial-check failure reasons are counted 
 FREEZE = False   # True: the back keeps its routing from the plain ring; False: it is routed with the towers present
                  # (first, before every segment; same plates and covers, so no cells are added for the towers)
 POWER_LANE = True   # sticky layouts must leave a lane beside the sticky for its power block
+NSOL = 16   # CP layouts per segment (big segments)
 COPY = True   # a class with the previous class's numbers and lower lanes copies its layout (if valid)
 RANK = "est"   # candidate order: "est" (routed loads first) or "cost" (layout cost first)
 PERIODIC = True   # level_opts also assumes the neighbours are copies (a heuristic filter; real neighbours are checked)
@@ -347,13 +348,23 @@ def construct(k, back, cv, towers, links_in, nlay=4, max_leaves=6, max_nodes=400
         gl = towers[c][j - 2] if j > 1 else None
         free = ll['st'] if mode == 'top' and gl and gl[2] and gl[3] == 'a' and not side else None
         m, s = g[0], g[1]
+        avoid_h, avoid_r = set(), set()
+        if j == 1 and sym:
+            # the neighbouring back bodies' cells near their top (x >= -1, their frames shifted by +-step): no
+            # hopper of ours over them, no RB of ours on or beside them (the moving back would touch it)
+            nt = set()
+            for cc, sg in (((c - 1) % n, -1), ((c + 1) % n, 1)):
+                if (sg < 0 and c == 0) or (sg > 0 and c == n - 1): continue   # across the corner: rotated
+                nt |= {(l[0] + sg * step[0], l[1] + sg * step[1]) for l in lanes_of(br, cc, -1)}
+            nt -= set(below)
+            avoid_h, avoid_r = frozenset(nt), frozenset(nt | {v for l in nt for v in _nb(l)})
         if m + s > stack.CP_ABOVE:
             import stack_cp
             opts = stack_cp.level_cp(m, s, below, a, b, step, mode, mg, free, forbid=forbid, low=low,
-                                     periodic=PERIODIC, lowR=lowR)
+                                     periodic=PERIODIC, lowR=lowR, avoid_h=avoid_h, avoid_r=avoid_r, nsol=NSOL)
         else:
             opts = level_opts(m, s, below, a, b, step, mode, mg, free, forbid=forbid, low=low,
-                              periodic=PERIODIC, lowR=lowR, side=side)
+                              periodic=PERIODIC, lowR=lowR, side=side, avoid_h=avoid_h, avoid_r=avoid_r)
         # the straight neighbours already placed at this level (their lanes shifted by -step / +step)
         nbrs = []
         if sym:
@@ -438,7 +449,10 @@ def construct(k, back, cv, towers, links_in, nlay=4, max_leaves=6, max_nodes=400
             X = sub.idx[(c, j)]; Y = sub.idx[(c, j - 1)]
             try:
                 for B in ((Y, X) if j > 1 else (X,)): r.route(B)
-            except RuntimeError: tally(f'route{j}'); continue
+            except RuntimeError as ex:
+                tally(f'route{j}')
+                if WHY is not None: WHY['route ' + str(ex)[:60]] += 1
+                continue
             ld = stack.loads(r)
             est = max(sum(ld[B]) for B in (Y, X))
             if best[0] is not None and est >= best[0][0]: tally(f'bound{j}'); continue

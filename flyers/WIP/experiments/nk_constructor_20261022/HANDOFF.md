@@ -10,6 +10,103 @@ Working style the user expects: keep working while background jobs run (do not e
 questions in chat without pausing, report concrete numbers. The older table-based version (disallowed now) is
 banked as `flyers/bank/pl*/nk_square_n{k}.flyer` (k = 3..24, sum 1200).
 
+## 00. LATEST (2026-10-25): topology + offset stage, non-uniform builder, large-k focus
+
+**User direction now: optimise the stack family for LARGER k** (small k parked; lessons should transfer back);
+corner layouts matter. The user agreed: per-segment numbers (below), offsets kept, a gentle nudge for empty
+neighbouring columns, side vs front contact chosen per level, the estimate improved from measurements.
+
+**Banked 2026-10-25** (commit b244327, all 80/80 at 10000 ticks via `scripts/bank_add.py`): the families.py flyers
+that beat or add to the bank (k = 2, 4, 5, 7-12, 16, 18-20, 22-30, names `nk_<family>_n<k>`) plus stack towers
+`nk_stack_n4` (PL19) and `nk_stack_spacing3_n3` (PL15). Bank still better at k = 13 (52), 15 (60), 21 (79) - old
+table program. (out/best/n03_pl13_stack == n03_pl13_link, banked once as nk_link_n3; out/best stack files may
+encode PL + 2/+10 - set the push limit before banking.)
+
+### 00.1 The model (user's framing, 2026-10-25)
+Over each back position p stands a list of segments (levels j = 1.., possibly none; the top one is the front).
+Segment numbers: **m** hoppers carried by the segment below, **s** hoppers carried by the next tower's segment at
+the same level (it must exist), **up** = pulled by the segment above, **dn** = its sticky pulls the one below,
+**pw** = who powers that sticky ('a' the segment above, 'p' the previous tower's same level - both rest 2 earlier).
+m + s + up = k; back: k - up hoppers. NOT "pull 2 layers back": tm_smol in these numbers is, per side
+(A B D E C): A: H (m0, s=1 hopper on F + 1 rigid push from F, pulled by J, pulls A) | J (m3, pulls H) | L (m3);
+B: F (m3, pulls B, powered by H = previous tower's level 1); D like A (I | K | M); E like B (G); C empty.
+**Rigid push** (explained to the user): a piston fixed on one segment pushing another (fires while its host
+rests, retracts, host catches up); costs the host 1 load like a rider, saves the pushed segment a hopper's plate
+cell + RB; tm_smol uses two (F->H, C->E). Not modelled yet.
+
+### 00.2 Code
+- `stack_topo.py` (topology + offset stage, ~2 s): `measure_reach` builds a few plain back rings (spread probe
+  vectors, then near-balanced ones; budget 40) -> f[p][t] = back body size when the link into it has frame offset
+  t; `solve` = CP-SAT over towers (heights 0..4, m, s, dn, pw per segment) + one-hot link offsets (sum fixed),
+  minimise max estimated load, then cells, then a nudge for segments with an empty neighbouring column; several
+  suggestions by excluding found structures; `evaluate` = loads of a given structure; `ALLP=1` env = every back
+  body pulled (one back module). Estimate `EST` / `est_for(step)` / `cover_cost(t)` (see 00.3).
+  `python stack_topo.py K BACK CV [NSUG] [HMAX]`.
+- `stack_nu.py` (geometry for any per-segment structure): `Plan` (bodies, rests, carriers), `assemble`
+  (Ring3 incl. loop carriers, side/front contact, power blocks), per-class layouts (side position when sides are
+  copies) checked against the REAL neighbouring layouts (`compatible`, `partial_ok`), sticky power placed as soon as
+  its source exists (`power_options`, ranked by attach distance), candidates ranked by routed loads (`RANK=est`)
+  or layout cost (`RANK=cost`), copy-first (a class with the previous class's numbers copies its layout, falls back
+  to alternatives), **iterative limited-discrepancy search** (`DISC`), failure tallies (`WHY=1`), per-body
+  `breakdown`. Env: GAP (3 side / 4 front), MG, NLAY, LEAVES, NODES, FREEZE (1 = back keeps its plain-ring
+  routing; default 0 = back routed first with the towers present - same plate/covers, no added cells).
+  `python stack_nu.py K BACK CV "m,s,dn,pw;..../...." LINKS_IN` (positions '/', segments ';').
+- Generator rules added: `stack.level_opts` / `stack_cp.level_cp` take `avoid_h` / `avoid_r` (lanes taking no
+  hopper/sticky, no RB); stack_nu passes the neighbouring backs' top lanes (+-step) at level 1; side mode: nothing
+  over the lower sticky's lane; `POWER_LANE`: a free lane beside every sticky (weak). nk.py: carrier None guards
+  (partial stacks).
+
+### 00.3 What we learnt (numbers measured 2026-10-25)
+1. **Reach curves**: a back body's size depends (almost) only on the offset t of the link into it, ~linearly
+   (k=3 human link 10 + t, spacing-3 link 9 + t, k=4 12-13 + t); offsets sum to a fixed total (-2 even k, -4 odd k
+   per base ring), so offsets only pay when riders differ between bodies.
+2. **Cover depth = -2 - t** (carrier frame, plate layer = 1): the carrier's column is ~3 + t cells; t = -3 puts the
+   carried hoppers' covers in the carrier's plate layer. Same for back links and tower chains (a tower inherits the
+   back link offset at every level). Estimate: `cover_cost(t) = COL * max(0, 3 + t) + 1`, COL = 2.
+3. **Neighbour features cost ~ the step length**: powering the next tower's sticky 9-12 routed cells at step (4,0)
+   (`NPOWER = 2|step| + 2`); a k=4 chain carrier paid cover 1 + 7 routed (vs 3 normally).
+4. **Uniform calibration**: the topology estimate reproduces the uniform stacks exactly (k=3 13, k=4 19, k=5 26,
+   k=6 29); segment estimate = plate (h + ceil(h/3)) + RBs + power blocks + sticky attach / route / pulled cells.
+5. **Large k**: under this estimate the best stacks are **two coupled rings** (level 1 sends most hoppers to the
+   next tower's level 1: e.g. k=12 (4, 8) | (2, 10)); predicted k = 6 27, 8 35->34, 10 42, 12 52->48, 16 65, 20 82
+   (families 26, 34, 42, 48, 62, 76; uniform stacks built 29, 40, 49, 62, 77, 100). Riders spread over all bodies,
+   so per body ~ glue + k; a segment carrying the neighbour's hoppers needs a connector like a ring link. A real win
+   needs neighbour carrying cheaper than a ring link (point 2: t = -3 links; compaction; corners).
+6. **The back module matters most**: stack_all used near-square lat boxes; the families' best lat modules for k-1
+   hoppers (bits.json word for k-1: k=8 lat 5x3 cv (5,4); k=10 lat 4x4 (3,5); k=12 lat 3x6 (2,7)) predict uniform
+   stacks 37 / 47 / 55 (vs 40 / 49 / 62) and loop stacks 34 / 42 / 48 (= families).
+7. k=3: the new builder in side mode gives **PL14** (`out/best/n03_pl14_stack_spacing3.flyer`, back 13-14, L1 10,
+   L2 13, front 9): the back routed among the towers needs 5 connector cells instead of 3 (+2); with the back's
+   plain routing frozen the corner towers collide with the next side.
+8. Non-uniform builds so far fly but lose: k=4 chains PL24 (`out/best/n04_pl24_nu_chains.flyer`: backs exactly the
+   predicted 18, chain carriers 21-24), k=3 neighbour-powered tops PL22 (`out/best/n03_pl22_nu_neighbourpower.flyer`,
+   tops 17-20). k=4 1-hopper chains and the k=8 two-ring suggestion did not build (corners; loop covers cannot be
+   routed to the carrier's plate).
+9. Search: plain DFS over per-class layouts explodes (12 options x classes x levels); copy-first + iterative LDS
+   + rules moved into the generators made it usable. Remaining brute-force part = backtracking at corners.
+
+### 00.4 Next (agreed direction)
+1. Large k: build uniform stacks on the families' best back modules (k = 8 built 39 with balanced offsets; k=10/12
+   need the topology's offsets / corners - RESULTS BELOW in 00.5), then the two-ring suggestions.
+2. Make neighbour carrying cheap: choose t = -3 for chain links (cover in the plate layer, point 2) and let the
+   CP pay it elsewhere; then corner layouts (generate the corner tower in its own frame against the rotated
+   neighbour, leaning away from the corner).
+3. Calibrate the estimate from builds (`breakdown`), side contact in stack_cp (big segments).
+
+### 00.5 Results of the last runs (2026-10-25, all simulated 1 seed x 1000 blocks)
+| k | stack before | stack now | how | families |
+|---|---|---|---|---|
+| 3 | 15 (spacing 3) | **14** | stack_nu side mode, bank link 1 (link0_n2_lat1_2, step (-3,1)), cv (-2,1), MG 2,2, links-in 0,-1,-1,-1,-1 | 13 |
+| 8 | 40 | **37** | uniform human topology on the families' k=7 lat module (lat:5,3,0,1,0, cv (5,4)), topology offsets links-in -2,0,0,0,0 (balanced offsets: 39) - exactly the predicted 37 | 34 |
+| 12 | 62 | **55** | uniform on lat:3,6,0,1,0 (families' k=11 module), cv (2,7), links-in -2,0,0,0,0,0,0 - predicted 55 | 48 |
+| 10 | 49 | - | lat:4,4 (families' k=9) fails: level 1 pruned (MG 1,1) / leaves fail the full check (MG 0,1, NL 6) | 42 |
+Files: `out/best/n08_pl37_stack.flyer`, `out/best/n12_pl55_stack.flyer`, `out/best/n03_pl14_stack_spacing3.flyer`.
+Driver used for k=8/12: a scratch copy of `stack.construct` with `stack_topo.xoff_for` offsets (to move into
+stack_all: `python stack_all.py` uses balanced offsets and near-square boxes - both worse).
+Two-ring (loop) uniform params at k=8 ((4,4);(2,6) on lat 5x3): no level-1 layout at all, MG 1..3 (the 4 loop
+hoppers + covers find no lanes off the back plate / its top lanes). k=20 topology on the families' k=19 module
+(lat:4,7, cv (3,8)) was still running.
+
 ## 0. CURRENT PRIORITY (2026-10-24 evening): the stack family = N3-like towers for every k
 
 Sections 1-9 below describe the older families (still the scored program, sum 1783 / weighted 1961). The user's

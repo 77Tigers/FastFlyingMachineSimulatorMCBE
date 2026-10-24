@@ -29,7 +29,7 @@ from nk import bodies_for
 from tower2 import Timing
 
 VRANGE = range(-3, 2)
-EST = dict(POWER=2, NPOWER=10, DN_BACK=1, ROUTE=2, PULLED=1, COVER=4, COVER_H=1, CORNER=2, DK=2, NUDGE=1)
+EST = dict(POWER=2, NPOWER=10, DN_BACK=1, ROUTE=2, PULLED=1, COVER=4, COVER_H=1, CORNER=2, DK=2, NUDGE=1, COL=2)
 
 
 def est_for(step, base=EST):
@@ -151,10 +151,18 @@ def measure_reach(k, back, cv, verbose=False, budget=40):
 def rbs(h): return (h + 2) // 3
 
 
-def seg_size(h, j, dn, up, powers, carried_s, corner, est=EST, npowers=0):
+def cover_cost(t, est=EST):
+    """cells a carrier pays for the previous tower's hoppers when the link into it has frame offset t: the spent
+    hoppers' cover cells lie at x = -2 - t in the carrier's frame (plate layer: x = 1), so a column of 3 + t cells
+    (2 per layer, measured) joins them to the plate; t = -3 puts them in the plate layer itself"""
+    return est['COL'] * max(0, 3 + t) + 1
+
+
+def seg_size(h, j, dn, up, powers, carried_s, corner, est=EST, npowers=0, t=None):
     return h + 2 * rbs(h) + est['POWER'] * powers + est['NPOWER'] * npowers + (est['DN_BACK'] if dn and j == 1 else 0) + \
         (est['ROUTE'] if dn else 0) + (est['PULLED'] if up else 0) + \
-        ((est['COVER'] + est['COVER_H'] * (carried_s - 1) + (est['CORNER'] if corner else 0)) if carried_s else 0)
+        (((cover_cost(t, est) if t is not None else est['COVER']) + est['COVER_H'] * (carried_s - 1) +
+          (est['CORNER'] if corner else 0)) if carried_s else 0)
 
 
 def evaluate(k, f, towers, links=None, est=EST):
@@ -190,7 +198,7 @@ def evaluate(k, f, towers, links=None, est=EST):
                           if seg(q, jj) and seg(q, jj)[2] and src(q, jj) == (p, j))
             riders = (seg(p, j + 1)[0] if seg(p, j + 1) else 0) + (prev[1] if prev else 0)
             segs[(p, j)] = seg_size(m + s, j, dn, up(p, j), powers, prev[1] if prev else 0,
-                                    corner_link(k, (p - 1) % n), est, npowers) + riders + (1 if dn else 0)
+                                    corner_link(k, (p - 1) % n), est, npowers, links[p]) + riders + (1 if dn else 0)
     return max(back + list(segs.values())), back, segs, links
 
 
@@ -266,11 +274,17 @@ def solve(k, f, plate0, hmax=4, nsug=6, slack=1, est=EST, secs=20.0, workers=4, 
                 h = mm[(p, j)] + ss[(p, j)]
                 cov = M.NewBoolVar('')
                 M.Add(ss[(prv(p), j)] >= 1).OnlyEnforceIf(cov); M.Add(ss[(prv(p), j)] == 0).OnlyEnforceIf(cov.Not())
-                cc = est['COVER'] - est['COVER_H'] + (est['CORNER'] if corner_link(k, prv(p)) else 0)
+                cc0 = - est['COVER_H'] + (est['CORNER'] if corner_link(k, prv(p)) else 0)
+                # cover cost by the offset of the link into p (the carrier): cov AND tv[(p, v)]
+                ccv = []
+                for v in f[p]:
+                    b2 = M.NewBoolVar(''); M.AddBoolAnd([cov, tv[(p, v)]]).OnlyEnforceIf(b2)
+                    M.AddBoolOr([cov.Not(), tv[(p, v)].Not()]).OnlyEnforceIf(b2.Not())
+                    ccv.append(cover_cost(v, est) * b2)
                 powers = est['POWER'] * (pa[(p, j - 1)] if j > 1 else 0) + est['NPOWER'] * pp[(nxt(p), j)]
                 riders = (mm[(p, j + 1)] if j < hmax else 0) + ss[(prv(p), j)]
                 ld = h + 2 * rb[(p, j)] + powers + (est['DN_BACK'] if j == 1 else 0) * dn[(p, j)] + \
-                    est['ROUTE'] * dn[(p, j)] + est['PULLED'] * UP(p, j) + cc * cov + \
+                    est['ROUTE'] * dn[(p, j)] + est['PULLED'] * UP(p, j) + cc0 * cov + sum(ccv) + \
                     est['COVER_H'] * ss[(prv(p), j)] + riders + dn[(p, j)]
                 M.Add(P >= ld).OnlyEnforceIf(e[(p, j)]); loads.append(ld)
         emp = []   # gentle nudge: segments with an empty neighbouring column at their level
