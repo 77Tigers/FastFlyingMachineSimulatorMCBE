@@ -38,12 +38,12 @@ limits** (PL). N_k: cycle 2(k+2) ticks, advance +k (k=2: 2.5 bps, k=3: 3 bps, ..
 
 ## 2. Current results (`python families.py`, all fly at the predicted PL, 1 seed x 1000 blocks)
 
-**Sum 1785, weighted (k <= 6 triple) 1965.** (Start of 2026-10-24: 1787 / 1971.)
+**Sum 1784, weighted (k <= 6 triple) 1962.** (Start of 2026-10-24: 1787 / 1971.) Verify: `python verify_all.py`.
 
 | k | PL | family | k | PL | family | k | PL | family |
 |---|---|---|---|---|---|---|---|---|
-| 2 | 10 | lat | 12 | 48 | lat | 22 | 83 | terrace |
-| 3 | **13** | tower | 13 | 54 | lat | 23 | 86 | terrace |
+| 2 | **9** | link | 12 | 48 | lat | 22 | 83 | terrace |
+| 3 | **13** | link (towers) | 13 | 54 | lat | 23 | 86 | terrace |
 | 4 | 18 | lat | 14 | 58 | slab | 24 | 88 | terrace |
 | 5 | 23 | lat | 15 | 61 | slab | 25 | 93 | terrace |
 | 6 | 26 | lat | 16 | 62 | terrace | 26 | 94 | terrace |
@@ -53,14 +53,16 @@ limits** (PL). N_k: cycle 2(k+2) ticks, advance +k (k=2: 2.5 bps, k=3: 3 bps, ..
 | 10 | 42 | latbig | 20 | 76 | terrace | 30 | 107 | terrace |
 | 11 | 44 | lat | 21 | 82 | lat | | | |
 
-Family time (s): slab 0.2, lat ~36, latbig 1.8, terrace ~25, tower 0.7.
+Family time (s): slab 0.2, lat ~36, latbig 1.8, terrace ~25, link ~1.5.
 
 ## 3. Program architecture
 
 - `families.py`: `build(k, word)` dispatches on `fam_of(word)`; `predicted_pl(r)` = max over bodies of glue + RBs +
   hoppers it carries + its own rigid pistons (= max body + k on plain rings). Word layout in the docstring:
   bits 0-1 family (0 slab, 1 lat, 2 latbig, 3 terrace), bits 2-5 box, 6-9 layout; **family code 2 with bit 9 set =
-  tower** (bits 2-8: step, corner, phase). `python families.py` builds all k and prints per-family time.
+  link**: a ring of back bodies from an extension-bank link (`flyers/extension_bank/nk_links`, `bank_links.py`):
+  bits 2-4 link index, 5-6 corner cy, 7 corner cz, bit 8 = plain ring (n = k hoppers, `human_link.plain`) instead of
+  height-3 towers (n = k-1, `human_link.construct`); see `families.tower_params`. `python families.py` builds all k and prints per-family time.
 - `nk.py`: the ring model. Timing (S = k+2 slots, each body rests 2, NEXT rests 2 later and carries the spent
   hoppers), modules (`P` hopper lanes [+level], `R` redstone blocks, `PLATE` cells, `CONT` = NEXT's cells covering
   the spent hoppers, given in V's frame at V-local 0), `Ring.check` (all race/drag/push rules), `Ring.route` (greedy
@@ -88,8 +90,15 @@ Family time (s): slab 0.2, lat ~36, latbig 1.8, terrace ~25, tower 0.7.
   **human sticky** (sticky in the plate layer, held sideways, power block behind it); `tower2.hs_layouts` sorts
   layouts by RB count and lets the top level use the lower sticky's power block for its own hoppers.
 - Limits at PL13: back bodies 9 + 4 riders, level 2 9 + 3 hoppers + its sticky. For PL12 both must reach 8.
-- `human_link.construct(k)` tries the level layouts in order and returns the first ring passing every check
-  (0.7 s). It returns None for k != 3 (the link rule is written for 2-hopper back bodies).
+- `human_link.construct(k, link, cv)` takes the back link from the bank (any k with a bank entry for n = k-1), tries
+  the level layouts in order and returns the first ring passing every check (~1 s).
+
+## 4b. k=2 (PL9): plain ring from a straight-column link
+
+`link0.links(n)` builds back links by rule (hopper lanes, minimal RB lanes, a cover lane beside the hoppers, a column
+lane beside the front cluster, step = cover lane - column lane, so the next body's connector runs straight down: 0
+lanes sideways). `link0_screen.py N K LAT MINSTEP` evaluates them as rings; the best n=2 link on the plain k=2 ring
+gives 4 bodies of 7 -> PL9 (was 10). Stored as bank entry `link0_n2_lat0_k2`; k=2 word 830.
 
 ## 5. Key findings (keep)
 
@@ -110,7 +119,8 @@ Family time (s): slab 0.2, lat ~36, latbig 1.8, terrace ~25, tower 0.7.
 - Terrace straight-step z shift (`sz`) and corner scan (`terr_offset_scan.py`): no PL change k=22..30; gap 0 fails
   for k >= 22 (ties at k=20).
 - Riser hoppers (targets on the terrace rises): each needs its own cover + RB (~2 cells to save 1) - skipped.
-- k=2 towers on 1-hopper straight-column links (`tower_scan0.py 2`): best predicted PL11 (> 10).
+- k=2 towers on 1-hopper straight-column links (`tower_scan0.py 2`): best predicted PL11 (the plain link ring gives 9).
+- Plain k=3 rings from 3-hopper straight-column links: 12-13 (lat gives 12).
 - Towers for k >= 4: back riders 2(k-1) vs k; a 3-hopper human-style link measured 14 (> 11 needed). Not promising.
 - Earlier: x0 offsets for lat, lateral-cover terrace, rods in the module CP, RB-on-connector joint CP, single-edit
   module search (`modsearch.py`), hopper reseating (`reseat.py`), joint CP back bodies (`back_cp.py`, optimum 9).

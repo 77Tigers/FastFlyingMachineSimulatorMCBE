@@ -205,3 +205,7 @@ The hoppers stand beside the column. The 5 back bodies all differ in shape (hand
   hoppers); straight-step z shift / corner scan (`terr_offset_scan.py`): no PL change; gap 0 fails for k >= 22;
   exact connector CP (`steiner.py`): 12 = the router's, bound 9. Rises cost ~5-6 per strip boundary (lower bound ~5).
 - `verify_all.py`: builds every k, writes `out/best/nKK_plPL_family.flyer`, simulates at PL and PL-1.
+- **k=2 PL10 -> PL9**: plain ring from the best 2-hopper straight-column link (`link0_screen.py 2 2 0 2`, bank entry
+  `link0_n2_lat0_k2`; 4 bodies of 7). Family `link` (code 2 + bit 9) = ring from a bank link, towers or plain (bit 8).
+  Plain link rings for k=3 (12-13) and k=4 (17 vs lat 14) do not win; wider lat straight steps (`lat_step_scan.py`):
+  no gain for k = 7..13. **Sum 1784, weighted 1962.**
