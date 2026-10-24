@@ -21,6 +21,10 @@ def floor_sizes(k, g):
     return [q + (1 if f >= g - r else 0) for f in range(g)]   # floors 1..g, larger ones on top
 
 
+import os
+PHASE = int(os.environ.get('TERR_PH', 0))
+
+
 def levels(T, g, smooth=True):
     """h[i][f] (f = 0..g-1 for floors 1..g) pusher level of body i, from the diagonal rule
     h(i+1, f-1) = h(i, f) - 4 + D_i.  Step s_d = 4 + T_{d+1} - T_d - D_d is kept as even as the ring allows."""
@@ -28,7 +32,8 @@ def levels(T, g, smooth=True):
     D = [T.shift(V, T.rest[V]) - T.shift(T.nxt(V), T.rest[V]) for V in range(L)]
     tot = 4 * L - sum(D)            # sum of all steps s_d
     base, extra = divmod(tot, L)
-    s = [base + (1 if (d * extra) % L < extra else 0) for d in range(L)]
+    ph = PHASE                       # where the extra steps fall (rotation)
+    s = [base + (1 if ((d + ph) * extra) % L < extra else 0) for d in range(L)]
     assert sum(s) == tot
     Td = [0] * L
     for d in range(L - 1): Td[d + 1] = Td[d] + s[d] - 4 + D[d]

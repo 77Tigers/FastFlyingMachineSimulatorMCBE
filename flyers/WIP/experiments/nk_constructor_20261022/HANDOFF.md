@@ -91,8 +91,8 @@ PREV's spent hoppers, connector = routed cells; PL = largest load = body + carri
 | 30 | 107 | terrace | 16 | 77 | 40 | 15 | 12 | 10 |
 
 Observations: lat bodies pay ~k cover cells (one per hopper); terrace bodies pay ~k/2 cover but ~12 connector (two
-4-level rises across strip boundaries); plate ~ k + k/3 everywhere (one RB per ~3 hoppers). Odd k uses rings of
-4 x (k+2) bodies (k=21: 92), even k (k+2)/2 x ... (k=22: 12).
+4-level rises across strip boundaries); plate ~ k + k/3 everywhere (one RB per ~3 hoppers). Rings: the smallest multiple of 4 of
+the base ring ((k+2)/2 bodies for even k, k+2 for odd k), e.g. k=21: 92, k=22: 12.
 
 ## 3. Program architecture
 
@@ -168,6 +168,8 @@ gives 4 bodies of 7 -> PL9 (was 10). Stored as bank entry `link0_n2_lat0_k2`; k=
   tied strip patterns (`strip_cp.solve_many`) is too slow (flow variables duplicate solutions).
 - k=2 links with a 1-lane offset: bodies 7 again (plate 3 + RB 1 + cover 1 + connector 2 looks like the floor).
 - Power reuse (the victim's own RB powering the puller's sticky, `HL_REUSE=1`): never triggers on these rings.
+- Terrace at odd k 17/19/21 (`terr_odd_probe.py`): best 69/75/82 vs lat 68/73/82; rotating where the extra
+  floor steps fall (`TERR_PH`, `terr_phase_test.py`) gives 68 at k=17 (tie), nothing at 19/21 or even k 16..24.
 - Earlier: x0 offsets for lat, lateral-cover terrace, rods in the module CP, RB-on-connector joint CP, single-edit
   module search (`modsearch.py`), hopper reseating (`reseat.py`), joint CP back bodies (`back_cp.py`, optimum 9).
 
