@@ -1,0 +1,20 @@
+name = "formal"
+version = "0.1.0"
+defaultTargets = ["Formal", "replay"]
+
+[leanOptions]
+pp.unicode.fun = true # pretty-prints `fun a ↦ b`
+relaxedAutoImplicit = false
+maxSynthPendingDepth = 3
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "v4.36.0"
+
+[[lean_lib]]
+name = "Formal"
+
+[[lean_exe]]
+name = "replay"
+root = "Main"
