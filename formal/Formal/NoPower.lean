@@ -39,6 +39,36 @@ theorem pistonPowered_noPow {s : St} (h : NoPow s) (p : Pos) : pistonPowered s p
     · simp
   · rfl
 
+/-- Power is local: a piston with no end rod, redstone block or observer next to it, and no end
+rod or observer two steps away, is not powered. -/
+theorem pistonPowered_local {s : St} {p : Pos}
+    (h1 : ∀ e b, s.get (p.add e) = some b →
+      b.kind ≠ .rod ∧ b.kind ≠ .redstone ∧ b.kind ≠ .observer)
+    (h2 : ∀ e f b, s.get ((p.add e).add f) = some b → b.kind ≠ .rod ∧ b.kind ≠ .observer) :
+    pistonPowered s p = false := by
+  unfold pistonPowered
+  split
+  · rw [List.any_eq_false]
+    intro e _
+    have hhp : hardPowered s (p.add e) = false := by
+      unfold hardPowered
+      split
+      · rw [Bool.and_eq_false_iff]; right
+        rw [List.any_eq_false]
+        intro d _
+        split
+        · rename_i e' hg; have := (h2 _ _ _ hg).1; simp [Block.kind] at this
+        · rename_i e' hg; have := (h2 _ _ _ hg).2; simp [Block.kind] at this
+        · simp
+      · rfl
+    rw [hhp]
+    split
+    · rename_i nb hg
+      obtain ⟨k1, k2, k3⟩ := h1 _ _ hg
+      simp [k1, k2, k3]
+    · simp
+  · rfl
+
 theorem pw_noPow {s : St} (h : NoPow s) (q : Pos) : (powerStage s).2.contains q = false := by
   cases hc : (powerStage s).2.contains q
   · rfl
