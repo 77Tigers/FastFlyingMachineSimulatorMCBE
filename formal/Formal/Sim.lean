@@ -169,22 +169,33 @@ def adheres (sticky neighbor : Kind) : Bool :=
   neighbor != .glazed &&
     !((sticky == .slime && neighbor == .honey) || (sticky == .honey && neighbor == .slime))
 
-/-- One closure step: add occupied destinations and adhering movable neighbours. -/
+/-- Slime or honey. -/
+def isGlue (b : Block) : Bool := b.kind == .slime || b.kind == .honey
+
+/-- Adhesion of glue block `b` at `p` to its neighbour in direction `e`. -/
+def adhStep (s : St) (owner : Option Pos) (p : Pos) (b : Block) (acc : ExtTreeSet Pos) (e : Dir) :
+    ExtTreeSet Pos :=
+  match s.get (p.add e) with
+  | some nb =>
+    if !immovable owner (p.add e) nb && adheres b.kind nb.kind then acc.insert (p.add e) else acc
+  | none => acc
+
+/-- For a slime or honey block at `p`: add its movable, adhering neighbours. -/
+def adhesion (s : St) (owner : Option Pos) (acc : ExtTreeSet Pos) (p : Pos) : ExtTreeSet Pos :=
+  match s.get p with
+  | some b => if isGlue b then Dir.all.foldl (adhStep s owner p b) acc else acc
+  | none => acc
+
+/-- What one block `p` of the moved set adds: its adhering neighbours and its occupied
+destination. -/
+def expandStep (s : St) (dir : Dir) (owner : Option Pos) (acc : ExtTreeSet Pos) (p : Pos) :
+    ExtTreeSet Pos :=
+  let acc := adhesion s owner acc p
+  if (s.get (p.add dir)).isSome then acc.insert (p.add dir) else acc
+
+/-- One closure step: add what every block of `S` adds. -/
 def expand (s : St) (dir : Dir) (owner : Option Pos) (S : ExtTreeSet Pos) : ExtTreeSet Pos :=
-  S.foldl (init := S) fun acc p =>
-    let acc :=
-      match s.get p with
-      | some b =>
-        if b.kind == .slime || b.kind == .honey then
-          Dir.all.foldl (init := acc) fun acc e =>
-            match s.get (p.add e) with
-            | some nb =>
-              if !immovable owner (p.add e) nb && adheres b.kind nb.kind then acc.insert (p.add e)
-              else acc
-            | none => acc
-        else acc
-      | none => acc
-    if (s.get (p.add dir)).isSome then acc.insert (p.add dir) else acc
+  S.foldl (expandStep s dir owner) S
 
 /-- Iterate `expand` to its fixed point; `none` once the set exceeds the push limit. -/
 def closure (c : Config) (s : St) (dir : Dir) (owner : Option Pos) :
@@ -194,7 +205,7 @@ def closure (c : Config) (s : St) (dir : Dir) (owner : Option Pos) :
     if S.size > c.pushLimit then none
     else
       let S' := expand s dir owner S
-      if S'.size == S.size then some S else closure c s dir owner n S'
+      if S'.toList.all S.contains then some S else closure c s dir owner n S'
 
 /-- Rust `discover_move`: the sorted list of blocks that move, or `none` if the move fails.
 An empty first cell moves nothing and succeeds. -/

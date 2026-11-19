@@ -17,9 +17,9 @@ least `d` (and the run has not hit a Rust error). -/
 def AdvancedBy (c : Config) (o : Oracle) (s : St) (t : Nat) (d : ℚ) : Prop :=
   ∃ s' x x', run c o s t = .ok s' ∧ s.minX? = some x ∧ s'.minX? = some x' ∧ d ≤ (x' - x : ℚ)
 
-/-- The flyer `s` *can go faster than* `v` blocks per second: some run is, by a fixed
-margin, ahead of speed `v` at arbitrarily late times. (User's reading: there is a run that
-violates the bound.) -/
+/-- One possible reading of "`s` can go faster than `v` blocks per second": some run is,
+by a fixed margin, ahead of speed `v` at arbitrarily late times. Not final: the exact
+statement of speed claims is still to be agreed. -/
 def CanBeFasterThan (c : Config) (s : St) (v : ℚ) : Prop :=
   ∃ o : Oracle, ∃ ε : ℚ, 0 < ε ∧ ∀ T : Nat, ∃ t ≥ T, AdvancedBy c o s t ((v / 10 + ε) * t)
 
