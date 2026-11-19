@@ -10,6 +10,7 @@ a redstone block or a rod: a power source), some block of the row has no possibl
 every update order.
 -/
 import Formal.PL1.Turn
+import Formal.NoPower
 
 namespace FF
 
@@ -169,5 +170,57 @@ theorem pl1_xonly_no_flyer {c : Config} {s : St} (hW : Wf s) (hL : ListsOK c s)
   have hd' : d ≤ (x' : ℚ) - m0 := by exact_mod_cast hd
   simp only [zero_div, zero_mul, zero_add]
   linarith
+
+theorem tyOfSig_piston {g : Kind × Dir × Bool} (h : tyOfSig g ≠ .O) : g.1 = .piston := by
+  obtain ⟨k, d, st⟩ := g
+  cases k <;> cases d <;> cases st <;> simp_all [tyOfSig]
+
+/-- **No flyer at push limit 1 with only X-facing pistons**, in full: under every update order
+the rearmost X stays within a constant of its start (speed 0). Either some block is not an
+X-facing piston and has no forward mover (`pl1_xonly_no_flyer`), or every block is a piston, so
+there is no power source and only finitely many moves (`noPow_bounded`). -/
+theorem pl1_xonly_speed0 {c : Config} {s : St} (hW : Wf s) (hL : ListsOK c s)
+    (hPL : c.pushLimit = 1) (hx : XOnly s) (hN : 0 < s.N) : AlwaysAtMost c s 0 := by
+  by_cases hO : ∃ q ∈ s.body, s.tyAt q = .O
+  · exact pl1_xonly_no_flyer hW hL hPL hx hO
+  · push_neg at hO
+    have hNP : ∀ o t, NoPow (stateAt c o s t) := by
+      intro o t q b hq
+      by_cases harm : b.kind = .arm
+      · simp [harm]
+      · have hqB : q ∈ (stateAt c o s t).body := St.mem_body.mpr ⟨b, hq, by simp [isNonArm, harm]⟩
+        obtain ⟨⟨σ, hσ, -⟩, -⟩ := stateAt_rel (o := o) hPL hW hL hx t
+        obtain ⟨r, hr, rfl⟩ := (hσ.body _).mp hqB
+        have hs := hσ.sig r hr
+        have hty := hO r hr
+        rw [hq] at hs
+        cases hb : s.get r with
+        | none => rw [hb] at hs; cases hs
+        | some b0 =>
+          rw [hb] at hs
+          have hk0 : b0.kind = .piston := by
+            have : s.tyAt r = tyOfSig b0.sig := by simp [St.tyAt, hb]
+            rw [this] at hty
+            exact tyOfSig_piston hty
+          simp only [Option.map_some, Option.some.injEq, Block.sig, Prod.mk.injEq] at hs
+          rw [hs.1, hk0]
+          simp
+    obtain ⟨m0, hm0⟩ := minX_some_of_body hN
+    have hN' : (0 : ℚ) < s.N := by exact_mod_cast hN
+    refine ⟨((s.phi + 4 * c.pushLimit * (s.cls isPK).card : Int) : ℚ) / s.N - m0, ?_⟩
+    rintro o t d ⟨s', x, x', hrun, hxs, hx', hd⟩
+    rw [hm0] at hxs; cases hxs
+    have hs' : s' = stateAt c o s t := by
+      have := (stateAt_spec (o := o) hW hL t).1
+      rw [hrun] at this; cases this; rfl
+    subst hs'
+    have hb := noPow_bounded hW hL (hNP o) t hx'
+    have hb' : (s.N : ℚ) * x' ≤ ((s.phi + 4 * c.pushLimit * (s.cls isPK).card : Int) : ℚ) := by
+      exact_mod_cast hb
+    have hx'le : (x' : ℚ) ≤ ((s.phi + 4 * c.pushLimit * (s.cls isPK).card : Int) : ℚ) / s.N := by
+      rw [le_div_iff₀ hN']; linarith
+    have hd' : d ≤ (x' : ℚ) - m0 := by exact_mod_cast hd
+    simp only [zero_div, zero_mul, zero_add]
+    linarith
 
 end FF

@@ -26,6 +26,7 @@ import Formal.SpeedRest
 import Formal.Lemmas.Fwd
 import Formal.Counting3
 import Formal.SpeedFwd
+import Formal.NoPower
 import Formal.PL1.Chain
 import Formal.PL1.Lane
 import Formal.PL1.Turn

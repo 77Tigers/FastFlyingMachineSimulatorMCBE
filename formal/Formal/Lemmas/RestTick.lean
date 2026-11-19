@@ -381,6 +381,57 @@ theorem ts_fAngry : (tickStart s).fAngry ⊆ s.fAngry := by
 
 end
 
+theorem ts_angry_pw {s : St} {q : Pos} {d : Dir} {st : Bool} {k : Fin 4}
+    (h : (tickStart s).get q = some (.piston d st true k false)) :
+    (powerStage s).2.contains q = true := by
+  rw [tickStart_get] at h
+  cases hq : s.get q with
+  | none => rw [hq] at h; cases h
+  | some b =>
+    rw [hq] at h
+    simp only [Option.map_some, Option.some.injEq, Function.comp_apply] at h
+    cases b with
+    | piston d' st' an' k' mv' =>
+      simp only [unpulse] at h
+      cases mv'
+      · simp only [calmAt] at h
+        split at h
+        · assumption
+        · simp at h
+      · simp [calmAt] at h
+    | observer d' p' m' =>
+      cases p' <;> simp [unpulse, calmAt] at h
+    | plain kk m' => simp [unpulse, calmAt] at h
+    | rod d' m' => simp [unpulse, calmAt] at h
+
+theorem powerStage_pw_powered {s : St} {q : Pos} (h : (powerStage s).2.contains q = true) :
+    pistonPowered s q = true := by
+  have key : ∀ (L : List (Pos × Block)) (acc : ExtTreeSet Pos),
+      (L.foldl (fun acc e => if pistonPowered s e.1 then acc.insert e.1 else acc) acc).contains q
+        = true → acc.contains q = true ∨ pistonPowered s q = true := by
+    intro L
+    induction L with
+    | nil => intro acc h; exact Or.inl h
+    | cons e L ih =>
+      intro acc h
+      simp only [List.foldl_cons] at h
+      rcases ih _ h with h' | h'
+      · split at h'
+        · rename_i hp
+          rw [ExtTreeSet.contains_insert] at h'
+          rcases Bool.or_eq_true_iff.mp h' with h'' | h''
+          · have : e.1 = q := by simpa using h''
+            subst this; exact Or.inr hp
+          · exact Or.inl h''
+        · exact Or.inl h'
+      · exact Or.inr h'
+  have hpw : (powerStage s).2 = s.world.foldl
+      (fun acc p _ => if pistonPowered s p then acc.insert p else acc) ∅ := rfl
+  rw [hpw, ExtTreeMap.foldl_eq_foldl_toList] at h
+  rcases key _ _ h with h' | h'
+  · simp at h'
+  · exact h'
+
 /-! ### One tick -/
 
 structure TickResult2 (s s' : St) : Prop where
@@ -394,6 +445,7 @@ structure TickResult2 (s s' : St) : Prop where
     (k.val = 2 ∨ k.val = 3) →
     ∃ (st' an' : Bool) (k' : Fin 4), s.get q = some (.piston d st' an' k' false)
   phiF : s'.phi ≤ s.phi + s'.fwdTotal
+  restU : (∀ q, (powerStage s).2.contains q = false) → s'.nState 1 + s'.tokens ≤ s.tokens
 
 theorem tick_spec2 {c : Config} {s : St} (hW : Wf s) (hL : ListsOK c s) (o : TickOracle) :
     ∃ s', tick c o s = .ok s' ∧ TickResult2 s s' := by
@@ -446,7 +498,7 @@ theorem tick_spec2 {c : Config} {s : St} (hW : Wf s) (hL : ListsOK c s) (o : Tic
         · obtain ⟨d, st, an, hf⟩ := h3
           have := (hT.base.frozen q hqV d st an 3).mp ⟨by decide, hf⟩
           exact absurd (hvis q ⟨d, st, an, 3, this⟩) hqV
-  refine ⟨cx'.st, htick, ?_, ?_, ?_, ?_, ?_, hhiSub, ?_, ?_⟩
+  refine ⟨cx'.st, htick, ?_, ?_, ?_, ?_, ?_, hhiSub, ?_, ?_, ?_⟩
   · rw [hT.kc, ts_cls hW]
   · have h1 := hT.psi
     have h2 := sum_lcount_le hWe hT.base.nodup
@@ -556,6 +608,71 @@ theorem tick_spec2 {c : Config} {s : St} (hW : Wf s) (hL : ListsOK c s) (o : Tic
   · have := hT.base.phiF
     have := sum_fwd_le_fwdTotal (s := cx'.st) hT.base.nodup
     have h3 : s0.phi = s.phi := (tickStart_count hW).2
+    omega
+
+  · -- with no power: new extensions use up angry tokens
+    intro hU
+    have hn1 : cx'.st.stateCells 1 ⊆ cx'.st.newExt s0 := by
+      intro q hq
+      obtain ⟨d, st, an, h⟩ := St.mem_stateCells.mp hq
+      refine St.mem_newExt.mpr ⟨_, h, ?_⟩
+      simp only [newExtB, show (1 : Fin 4).val = 1 from rfl, beq_self_eq_true, Bool.true_and,
+        Bool.not_eq_true']
+      unfold isState1
+      split
+      · rename_i d' st' an' k' hg
+        by_contra hk
+        have hk1 : k' = 1 := Fin.ext (by simpa using hk)
+        subst hk1
+        have hqV := hvis q ⟨d', st', an', 1, by decide, hg⟩
+        obtain ⟨d2, st2, an2, h2⟩ := hT.base.one_two q hqV ⟨d', st', an', hg⟩
+        rw [h] at h2; cases h2
+      · rfl
+    have hG : cx'.st.angryMov ⊆ cx'.elig V := by
+      intro q hq
+      unfold St.angryMov at hq
+      obtain ⟨b, hb, hk⟩ := St.mem_cellsWith.mp hq
+      refine Ctx.mem_elig.mpr ⟨b, hb, ?_⟩
+      cases b with
+      | piston d st an k mv =>
+        cases an <;> cases mv <;> simp at hk
+        have := hWe.moving_piston _ _ _ _ _ hb
+        simp [eligB, this]
+      | _ => simp at hk
+    have hpot := hT.pot
+    have hstart : (Ctx.elig ⟨s0, pw⟩ []) ⊆ s0.angryMov := by
+      intro q hq
+      obtain ⟨b, hb, hk⟩ := Ctx.mem_elig.mp hq
+      cases b with
+      | piston d st an k mv =>
+        simp only [eligB, Bool.and_eq_true, beq_iff_eq, Bool.or_eq_true] at hk
+        rcases hk.2 with h | h
+        · subst h
+          cases mv
+          · exact absurd (ts_angry_pw hb) (by rw [hU q]; simp)
+          · exact St.mem_cellsWith.mpr ⟨_, hb, rfl⟩
+        · simp only [Bool.not_eq_true', Bool.and_eq_true] at h
+          have := h.1.2; rw [hU q] at this; cases this
+      | _ => simp [eligB] at hk
+    have hne0 : (s0.newExt s0).card = 0 := by
+      rw [Finset.card_eq_zero, Finset.eq_empty_iff_forall_notMem]
+      intro q hq
+      obtain ⟨b, hb, hk⟩ := St.mem_newExt.mp hq
+      cases b with
+      | piston d st an k mv =>
+        cases mv
+        · simp only [newExtB, isState1, hb, Bool.and_eq_true, beq_iff_eq] at hk
+          simp [hk.1] at hk
+        · simp [newExtB] at hk
+      | _ => simp [newExtB] at hk
+    have c1 := Finset.card_le_card hn1
+    have c2 := Finset.card_le_card hG
+    have c3 := Finset.card_le_card hstart
+    have c4 : s0.fAngry.card ≤ s.fAngry.card := Finset.card_le_card (ts_fAngry hW)
+    rw [ts_angryMov hW] at c3
+    unfold pot at hpot
+    unfold St.nState St.tokens
+    dsimp only at hpot
     omega
 
 end FF
