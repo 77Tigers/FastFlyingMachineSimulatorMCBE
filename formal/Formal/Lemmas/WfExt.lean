@@ -17,6 +17,7 @@ structure ExtResult (cx cx' : Ctx) (pos : Pos) (d : Dir) (st : Bool) (S : List P
     else if q = pos.add d then some (.plain .arm false) else moveWorld cx.st S d q
   lists_ne : ∀ q, q ≠ pos → cx'.st.lists[q]? = cx.st.lists[q]?
   lists_pos : ∀ L, cx'.st.lists[pos]? = some L → L.Perm (S.map (·.add d))
+  lists_some : S ≠ [] → ∃ L, cx'.st.lists[pos]? = some L
 
 theorem ext_result (hW : Wf cx.st) (hb : cx.st.get pos = some (.piston d st an 0 false))
     (hfire : (cx.powered.contains pos || an) = true)
@@ -24,7 +25,7 @@ theorem ext_result (hW : Wf cx.st) (hb : cx.st.get pos = some (.piston d st an 0
     ∃ cx', pistonTurn c cx pos = .ok cx' ∧ ExtResult cx cx' pos d st S ∧
       (∀ q, cx'.powered.contains q = true → cx.powered.contains q = true) := by
   obtain ⟨cx', h1, h2, h3, h4, h5, h6⟩ := ext_spec hW hb hfire hS
-  refine ⟨cx', h1, ⟨h2, h3, ?_⟩, h6⟩
+  refine ⟨cx', h1, ⟨h2, h3, ?_, fun h => (h5 h).imp fun _ h' => h'.1⟩, h6⟩
   intro L hL
   by_cases hS0 : S = []
   · rw [h4 hS0] at hL; cases hL

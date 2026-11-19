@@ -4,7 +4,7 @@ duplicate-free lists, changes no other list and no other frozen piston (a nonmov
 piston in state 1, 2 or 3), and at its own cell only performs the state changes of the
 piston cycle.
 -/
-import Formal.Lemmas.WfOther
+import Formal.Lemmas.Count
 
 namespace FF
 
@@ -30,6 +30,10 @@ structure TurnEffect (c : Config) (cx cx' : Ctx) (pos : Pos) : Prop where
   /-- a piston in state 3 after its turn was in state 2 before -/
   three_two : ∀ d st an, cx'.st.get pos = some (.piston d st an 3 false) →
     cx.st.get pos = some (.piston d st an 2 false)
+  /-- the number of blocks other than arms is kept -/
+  count : cx'.st.N = cx.st.N
+  /-- the X sum rises by at most the number of blocks moved (the new list's length) -/
+  phi : cx'.st.phi ≤ cx.st.phi + (cx'.st.list pos).length
 
 section
 variable {c : Config} {cx : Ctx} {pos : Pos}
@@ -59,6 +63,8 @@ theorem turnEffect_refl (hW : Wf cx.st) (hL : ListsOK c cx.st)
   frozen_ne _ _ _ _ _ _ := Iff.rfl
   one_two d st an h := absurd rfl (h13 d st an 1 h).1
   three_two d st an h := absurd rfl (h13 d st an 3 h).2
+  count := rfl
+  phi := by omega
 
 /-- Frozen pistons are immovable for every owner. -/
 theorem Frozen.immov {s : St} {q : Pos} {d : Dir} {st an : Bool} {k : Fin 4}
@@ -99,6 +105,8 @@ theorem ext_effect {cx cx' : Ctx} {d : Dir} {st an : Bool} {S : List Pos}
       exact ⟨hf.1, ext_keep hW hb hS hR hf.2 (hf.immov _) hq⟩
   one_two d' st' an' h := by rw [hb] at h; cases h
   three_two d' st' an' h := by rw [hR.get] at h; simp at h
+  count := (count_ext hW hb hS hR).1
+  phi := (count_ext hW hb hS hR).2
 
 /-! ### Failed extension -/
 
@@ -113,6 +121,8 @@ theorem fail_effect {d : Dir} {st an : Bool} (hW : Wf cx.st) (hL : ListsOK c cx.
   frozen_ne q hq _ _ _ _ := by simp only [Frozen]; rw [St.get_set_ne (Ne.symm hq)]
   one_two d' st' an' h := by rw [hb] at h; cases h
   three_two d' st' an' h := by simp at h
+  count := (count_fail hb).1
+  phi := (count_fail hb).2
 
 /-! ### Finishing -/
 
@@ -133,7 +143,8 @@ theorem finish_effect {cx' : Ctx} {d : Dir} {st an : Bool} {k next : Fin 4}
     | some L' =>
       have : cx.st.list pos = L' := by simp [St.list, ExtTreeMap.getD_eq_getD_getElem?, hl']
       exact hW.list_moving pos L' q hl' (this ▸ hq)
-  refine ⟨finish_wf hW hb hk hnext hget hl hlp, ?_, hl, fun q h => hpw ▸ h, ?_, ?_, ?_⟩
+  refine ⟨finish_wf hW hb hk hnext hget hl hlp, ?_, hl, fun q h => hpw ▸ h, ?_, ?_, ?_,
+    (count_finish hb hget).1, (count_finish hb hget).2⟩
   · exact ListsOK.of_lists hL hl (fun L h => by rw [hlp] at h; cases h)
   · intro q hq d' st' an' k'
     constructor
@@ -178,12 +189,14 @@ theorem retract_effect {cx' : Ctx} {d : Dir} {st an : Bool}
     (hl : ∀ q, q ≠ pos → cx'.st.lists[q]? = cx.st.lists[q]?)
     (hlp : ∀ L, cx'.st.lists[pos]? = some L →
       L.Perm ((pulled c cx.st pos d st).map (·.add d.opp)))
+    (hls : pulled c cx.st pos d st ≠ [] → ∃ L, cx'.st.lists[pos]? = some L)
     (hpw : ∀ q, cx'.powered.contains q = true → cx.powered.contains q = true) :
     TurnEffect c cx cx' pos := by
   have hM := pulled_moveOK (c := c) (cx := cx) (pos := pos) (d := d) (st := st)
   have harm := hW.arm_front pos d st an 2 false hb (Or.inr rfl)
   have hlen := pulled_length (c := c) (cx := cx) (pos := pos) (d := d) (st := st)
-  refine ⟨retract_wf hW hb hget hl hlp, ?_, hl, hpw, ?_, ?_, ?_⟩
+  refine ⟨retract_wf hW hb hget hl hlp, ?_, hl, hpw, ?_, ?_, ?_,
+    (count_retract hW hb hget hlp hls).1, (count_retract hW hb hget hlp hls).2⟩
   · exact ListsOK.of_lists hL hl (fun L h => perm_map_ok hlen.1 hlen.2 (hlp L h))
   · intro q hq d' st' an' k
     have hqf : ∀ b, cx.st.get q = some b → b.isPiston = true → q ≠ pos.add d := by
@@ -251,7 +264,8 @@ theorem turn_effect (hW : Wf cx.st) (hL : ListsOK c cx.st) :
             · intro d' st' an' k' h; rw [hg] at h; cases h; simp
           · obtain ⟨cx', h1, h2, h3, h4, h5, h6⟩ := retract_spec (c := c) hW hg
               (Bool.eq_false_iff.mpr hpw)
-            refine ⟨cx', h1, retract_effect hW hL hg h2 h3 ?_ h6⟩
+            refine ⟨cx', h1, retract_effect hW hL hg h2 h3 ?_
+              (fun h => (h5 h).imp fun _ h' => h'.1) h6⟩
             intro L hL'
             by_cases hS0 : pulled c cx.st pos d st = []
             · rw [h4 hS0] at hL'; cases hL'
