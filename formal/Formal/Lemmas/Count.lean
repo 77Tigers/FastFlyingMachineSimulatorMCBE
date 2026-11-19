@@ -299,6 +299,176 @@ theorem count_retract_fw (hW : Wf cx.st) (hb : cx.st.get pos = some (.piston d s
             rw [Pos.add_opp_add] at this; exact hrS this
           rw [if_neg hsrc, if_neg hrS, h1]
 
+theorem body_shift_mem {s s' : St} {S : List Pos} {d : Dir} (_hnd : S.Nodup)
+    (_hsub : ∀ r ∈ S, r ∈ s.body)
+    (_hinj : ∀ a ∈ s.body, ∀ b ∈ s.body, a ∈ S → b ∉ S → a.add d ≠ b)
+    (hmem : ∀ q, q ∈ s'.body ↔ ∃ r ∈ s.body, (if r ∈ S then r.add d else r) = q) :
+    ∀ q, q ∈ s'.body ↔ ∃ r ∈ s.body, (if r ∈ S then r.add d else r) = q := hmem
+
+theorem ext_body (hW : Wf cx.st) (hb : cx.st.get pos = some (.piston d st an 0 false))
+    (hS : discover c cx.st (pos.add d) d (some pos) false = some S)
+    (hR : ExtResult cx cx' pos d st S) :
+    ∀ q, q ∈ cx'.st.body ↔ ∃ r ∈ cx.st.body, (if r ∈ S then r.add d else r) = q := by
+  have hM := discover_moveOK hS
+  have hposI : immovable (some pos) pos (.piston d st an 0 false) = true := by simp [immovable]
+  have hposS : pos ∉ S := mw_not_mem_of_immovable hM hb hposI
+  have hdest_ne_pos : ∀ r ∈ S, r.add d ≠ pos := by
+    intro r hr he
+    exact mw_src_not_mem_of_immovable hM hb hposI (by rw [← he, Pos.add_add_opp]; exact hr)
+  have hdest_ne_front : ∀ r ∈ S, r.add d ≠ pos.add d := by
+    intro r hr he; rw [Pos.add_inj] at he; subst he; exact hposS hr
+  have hlen : (cx'.st.list pos).length = S.length := by
+    apply St.list_length_of
+    · intro L hL; rw [(hR.lists_pos L hL).length_eq]; simp
+    · by_cases h0 : S = []
+      · left; simp [h0]
+      · right; exact hR.lists_some h0
+  refine body_shift_mem (d := d) (discover_nodup hS) ?_ ?_ ?_
+  · intro r hr
+    obtain ⟨b, hb', hi⟩ := discover_mem hS hr
+    exact St.mem_body.mpr ⟨b, hb', immovable_arm hi⟩
+  · intro a _ b hb' haS hbS he
+    obtain ⟨bb, hbb, -⟩ := St.mem_body.mp hb'
+    exact hbS (he ▸ discover_dest_mem hS haS (by rw [he, hbb]; rfl))
+  · intro q
+    constructor
+    · intro hq
+      obtain ⟨b', hb', hk⟩ := St.mem_body.mp hq
+      rcases ext_cases hW hb hS hR hb' with ⟨rfl, -⟩ | ⟨-, h⟩ | ⟨-, -, h⟩ | ⟨b, hS', hb'', hi, h⟩
+      · exact ⟨q, St.mem_body.mpr ⟨_, hb, by simp [Block.kind]⟩, by simp [hposS]⟩
+      · subst h; exact absurd rfl hk
+      · refine ⟨q, St.mem_body.mpr ⟨b', h, hk⟩, ?_⟩
+        have : q ∉ S := by
+          intro hqS
+          obtain ⟨b0, hb0, hi0⟩ := discover_mem hS hqS
+          rw [h] at hb0; cases hb0
+          have hq1 : q ≠ pos := by rintro rfl; exact hposS hqS
+          have hq2 : q ≠ pos.add d := by
+            rintro rfl
+            rw [hR.get, if_neg (Pos.add_ne_self pos d), if_pos rfl] at hb'
+            cases hb'; exact hk rfl
+          rw [hR.get, if_neg hq1, if_neg hq2] at hb'
+          unfold moveWorld at hb'
+          split at hb'
+          · cases hsrc : cx.st.get (q.add d.opp) with
+            | none => rw [hsrc] at hb'; cases hb'
+            | some x =>
+              rw [hsrc] at hb'
+              simp only [Option.map_some, Option.some.injEq] at hb'
+              have hm : b'.moving = true := by rw [← hb']; simp
+              simp [immovable, hm] at hi0
+          · simp [hqS] at hb'
+        simp [this]
+      · refine ⟨q.add d.opp, St.mem_body.mpr ⟨b, hb'', ?_⟩, by simp [hS']⟩
+        rw [h, Block.startMoving_kind] at hk; exact hk
+    · rintro ⟨r, hr, rfl⟩
+      obtain ⟨b, hb', hk⟩ := St.mem_body.mp hr
+      by_cases hrS : r ∈ S
+      · simp only [hrS, ite_true]
+        refine St.mem_body.mpr ⟨b.startMoving, ?_, by simpa using hk⟩
+        rw [hR.get, if_neg (hdest_ne_pos r hrS), if_neg (hdest_ne_front r hrS), mw_dest hrS, hb']
+        rfl
+      · simp only [hrS, ite_false]
+        by_cases hrp : r = pos
+        · subst hrp
+          exact St.mem_body.mpr ⟨.piston d st false 1 false, by rw [hR.get]; simp,
+            by simp [Block.kind]⟩
+        · have hrf : r ≠ pos.add d := by
+            rintro rfl; exact hrS (discover_first_mem hS (by rw [hb']; rfl))
+          refine St.mem_body.mpr ⟨b, ?_, hk⟩
+          rw [hR.get, if_neg hrp, if_neg hrf]
+          unfold moveWorld
+          have hsrc : r.add d.opp ∉ S := by
+            intro h
+            have := discover_dest_mem hS h (by rw [Pos.add_opp_add, hb']; rfl)
+            rw [Pos.add_opp_add] at this; exact hrS this
+          rw [if_neg hsrc, if_neg hrS, hb']
+
+theorem retract_body (hW : Wf cx.st) (hb : cx.st.get pos = some (.piston d st an 2 false))
+    (hget : ∀ q, cx'.st.get q =
+      if q = pos then some (.piston d st an 3 false)
+      else moveWorld (cx.st.remove (pos.add d)) (pulled c cx.st pos d st) d.opp q)
+    (hlp : ∀ L, cx'.st.lists[pos]? = some L →
+      L.Perm ((pulled c cx.st pos d st).map (·.add d.opp)))
+    (hls : pulled c cx.st pos d st ≠ [] → ∃ L, cx'.st.lists[pos]? = some L) :
+    ∀ q, q ∈ cx'.st.body ↔ ∃ r ∈ cx.st.body,
+      (if r ∈ pulled c cx.st pos d st then r.add d.opp else r) = q := by
+  set S := pulled c cx.st pos d st with hS
+  set W1 := cx.st.remove (pos.add d) with hW1
+  have hM : MoveOK W1 S d.opp (some pos) := pulled_moveOK
+  have harm := hW.arm_front pos d st an 2 false hb (Or.inr rfl)
+  have hfront : pos.add d ≠ pos := Pos.add_ne_self pos d
+  have hW1get : ∀ q, q ≠ pos.add d → W1.get q = cx.st.get q := fun q hq =>
+    St.get_remove_ne (Ne.symm hq)
+  have hpos1 : W1.get pos = some (.piston d st an 2 false) := by
+    rw [hW1get pos (Ne.symm hfront), hb]
+  have hposI : immovable (some pos) pos (.piston d st an 2 false) = true := by simp [immovable]
+  have hposS : pos ∉ S := mw_not_mem_of_immovable hM hpos1 hposI
+  have hfrontS : pos.add d ∉ S := by
+    intro h; obtain ⟨b, hb', -⟩ := hM.1 _ h; simp [hW1] at hb'
+  have hdest_ne_pos : ∀ r ∈ S, r.add d.opp ≠ pos := by
+    intro r hr he
+    have : r = pos.add d := by rw [← he]; simp
+    exact hfrontS (this ▸ hr)
+  have hnf : ∀ q, q ∈ cx.st.body → q ≠ pos.add d := by
+    intro q hq e
+    obtain ⟨b, hb', hk⟩ := St.mem_body.mp hq
+    rw [e, harm] at hb'; cases hb'; exact hk rfl
+  have hlen : (cx'.st.list pos).length = S.length := by
+    apply St.list_length_of
+    · intro L hL; rw [(hlp L hL).length_eq]; simp
+    · by_cases h0 : S = []
+      · left; simp [h0]
+      · right; exact hls h0
+  refine body_shift_mem (d := d.opp) (pulled_length (c := c) (cx := cx) (pos := pos) (d := d)
+    (st := st)).2 ?_ ?_ ?_
+  · intro r hr
+    obtain ⟨b, hb', hi⟩ := hM.1 r hr
+    have hrf : r ≠ pos.add d := by rintro rfl; exact hfrontS hr
+    exact St.mem_body.mpr ⟨b, by rw [← hW1get r hrf]; exact hb', immovable_arm hi⟩
+  · intro a _ b hb' haS hbS he
+    obtain ⟨bb, hbb, -⟩ := St.mem_body.mp hb'
+    have h1 : W1.get b = some bb := by rw [hW1get b (hnf b hb'), hbb]
+    exact hbS (he ▸ hM.2 a haS (by rw [he, h1]; rfl))
+  · intro q
+    constructor
+    · intro hq
+      obtain ⟨b', hb', hk⟩ := St.mem_body.mp hq
+      rw [hget] at hb'
+      split at hb'
+      · rename_i e; subst e
+        exact ⟨q, St.mem_body.mpr ⟨_, hb, by simp [Block.kind]⟩, by simp [hposS]⟩
+      · rcases mw_cases hM hb' with ⟨h1, hqS, -⟩ | ⟨b, hS', hb'', hi, h⟩
+        · have hqf : q ≠ pos.add d := by rintro rfl; simp [hW1] at h1
+          refine ⟨q, St.mem_body.mpr ⟨b', by rw [← hW1get q hqf]; exact h1, hk⟩, by simp [hqS]⟩
+        · have hrf : q.add d.opp.opp ≠ pos.add d := by
+            rintro e; rw [e] at hS'; exact hfrontS hS'
+          refine ⟨q.add d.opp.opp, St.mem_body.mpr ⟨b, by rw [← hW1get _ hrf]; exact hb'', ?_⟩,
+            by rw [if_pos hS']; exact Pos.add_opp_add q d.opp⟩
+          rw [h, Block.startMoving_kind] at hk; exact hk
+    · rintro ⟨r, hr, rfl⟩
+      obtain ⟨b, hb', hk⟩ := St.mem_body.mp hr
+      have hrf := hnf r hr
+      by_cases hrS : r ∈ S
+      · simp only [hrS, ite_true]
+        refine St.mem_body.mpr ⟨b.startMoving, ?_, by simpa using hk⟩
+        rw [hget, if_neg (hdest_ne_pos r hrS), mw_dest hrS, hW1get r hrf, hb']
+        rfl
+      · simp only [hrS, ite_false]
+        by_cases hrp : r = pos
+        · subst hrp
+          exact St.mem_body.mpr ⟨.piston d st an 3 false, by rw [hget]; simp,
+            by simp [Block.kind]⟩
+        · refine St.mem_body.mpr ⟨b, ?_, hk⟩
+          rw [hget, if_neg hrp]
+          unfold moveWorld
+          have h1 : W1.get r = some b := by rw [hW1get r hrf, hb']
+          have hsrc : r.add d.opp.opp ∉ S := by
+            intro h
+            have := hM.2 _ h (by rw [Pos.add_opp_add, h1]; rfl)
+            rw [Pos.add_opp_add] at this; exact hrS this
+          rw [if_neg hsrc, if_neg hrS, h1]
+
 theorem fw_mul_le (n : Nat) (d : Dir) : (n : Int) * d.fw ≤ n := by
   have h1 := Dir.fw_le_one d
   have h0 : (0 : Int) ≤ n := by omega

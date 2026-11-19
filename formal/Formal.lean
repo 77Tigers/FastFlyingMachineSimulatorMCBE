@@ -32,6 +32,7 @@ import Formal.PL1.Lane
 import Formal.PL1.Turn
 import Formal.PL1.NoFlyer
 import Formal.PL1.Needs
+import Formal.PL2.Needs
 import Formal.Shift.Map
 import Formal.Shift.Sim
 import Formal.Verify

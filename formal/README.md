@@ -117,6 +117,15 @@ pulled forward), a piston facing sideways (above) and a power source (end rod, r
 observer). Open: whether such a machine can fly. With sideways pistons blocks change rows, so the
 row-order argument no longer applies.
 
+`FF.pl2_flyer_needs` (`PL2/Needs.lean`): at push limit 2 (or 1) a machine has speed 0 under every
+order unless it has a `+X` piston, a sticky `-X` piston and a power source. The key fact
+(`push_ahead`, `pull_behind`): at push limit at most 2, slime and honey cannot drag a block from
+the pusher's own layer, so a push along `+X` moves only blocks ahead of the pusher and a pull by
+a `-X` piston only blocks at least two cells behind it. Hence the rearmost layer advances only
+by pulls of sticky `-X` pistons and the frontmost only by pushes of `+X` pistons. Reusable:
+`mem_expand` (what one closure step can add), `closure_inv`, `discover_bound`, and `ext_body`,
+`retract_body` (`Lemmas/Count.lean`: the blocks after a push or pull).
+
 ### A verified flyer: push limit 3 (`Formal/Flyers/PL3.lean`)
 
 `FF.compactSlime_flies`: the bank's 6-block `compact_slime` flyer, under **every** oracle,
