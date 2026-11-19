@@ -262,17 +262,22 @@ def startExtension (c : Config) (cx : Ctx) (pos : Pos) (d : Dir) (sticky : Bool)
     let st ← st.setList c pos dests
     pure (some { cx with st })
 
+/-- The pull of a sticky retraction (after the arm cell was cleared): discover from two
+cells ahead toward the piston and move; a normal piston or a failed pull moves nothing. -/
+def retractPull (c : Config) (cx : Ctx) (pos : Pos) (d : Dir) (sticky : Bool) :
+    Except Err (Ctx × List Pos) :=
+  if sticky then
+    match discover c cx.st ((pos.add d).add d) d.opp (some pos) true with
+    | some sources => moveBlocks c cx sources d.opp
+    | none => pure (cx, [])
+  else pure (cx, [])
+
 /-- Rust `start_retraction`: remove whatever is in front; a sticky piston then pulls
 starting two cells ahead (a failed pull still retracts). -/
 def startRetraction (c : Config) (cx : Ctx) (pos : Pos) (d : Dir) (sticky angry : Bool) :
     Except Err Ctx := do
   let cx := cx.removeIndexed (pos.add d)
-  let (cx, dests) ←
-    if sticky then
-      match discover c cx.st ((pos.add d).add d) d.opp (some pos) true with
-      | some sources => moveBlocks c cx sources d.opp
-      | none => pure (cx, [])
-    else pure (cx, [])
+  let (cx, dests) ← retractPull c cx pos d sticky
   let st := cx.st.set pos (.piston d sticky angry 3 false)
   let st ← st.setList c pos dests
   pure { cx with st }

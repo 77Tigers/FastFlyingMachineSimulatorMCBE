@@ -1,7 +1,11 @@
 import Formal.Basic
 import Formal.Sim
 import Formal.Speed
+import Formal.Inv
 import Formal.Lemmas.St
 import Formal.Lemmas.Discover
 import Formal.Lemmas.Closure
+import Formal.Lemmas.Move
+import Formal.Lemmas.MoveLists
+import Formal.Lemmas.Actions
 import Formal.Replay
