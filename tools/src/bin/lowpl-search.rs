@@ -1,5 +1,6 @@
 // Random restart + hill-climbing search for small flyers at a low push limit (e.g. PL2).
-// usage: lowpl-search SECONDS THREADS OUT_DIR [PL=2] [W=4 H=3 D=2] [NMIN=4 NMAX=10]
+// usage: lowpl-search SECONDS THREADS OUT_DIR [PL=2] [W=4 H=3 D=2] [NMIN=4 NMAX=10] [CORES=0]
+// CORES > 0 seeds every restart with that many 4-block push-pull cores (glue sandwich).
 // A candidate "flies" if the minimum X of its non-arm blocks rises steadily without losing blocks.
 // Research tool only: uses the public simulator API; does not change the simulator.
 use fastflyer::{Block, Coord, Flyer, Kind};
@@ -120,6 +121,7 @@ fn main() {
     let d: i64 = a.get(7).map(|s| s.parse().unwrap()).unwrap_or(2);
     let nmin: usize = a.get(8).map(|s| s.parse().unwrap()).unwrap_or(4);
     let nmax: usize = a.get(9).map(|s| s.parse().unwrap()).unwrap_or(10);
+    let cores: usize = a.get(10).map(|s| s.parse().unwrap()).unwrap_or(0);
     std::fs::create_dir_all(&out).unwrap();
     let deadline = Instant::now() + Duration::from_secs(secs);
     let evals = Arc::new(AtomicU64::new(0));
@@ -137,6 +139,20 @@ fn main() {
                 // random start
                 let n = nmin + r.range(nmax - nmin + 1);
                 let mut c = Cells::new();
+                if cores > 0 {
+                    // seed with push-pull cores: pusher+glue in one row, glue+sticky puller above
+                    for _ in 0..cores {
+                        let x = r.range((w - 1).max(1) as usize) as i64;
+                        let y = r.range((h - 1).max(1) as usize) as i64;
+                        let z = r.range(d as usize) as i64;
+                        let g1 = if r.range(2) == 0 { Kind::Slime } else { Kind::Honey };
+                        let g2 = if r.range(2) == 0 { Kind::Slime } else { Kind::Honey };
+                        c.insert(Coord::new(x, y, z), Block::piston(0, false, false, 0, false).unwrap().cell());
+                        c.insert(Coord::new(x + 1, y, z), Block::plain(g1, false).unwrap().cell());
+                        c.insert(Coord::new(x, y + 1, z), Block::plain(g2, false).unwrap().cell());
+                        c.insert(Coord::new(x + 1, y + 1, z), Block::piston(1, true, false, 0, false).unwrap().cell());
+                    }
+                }
                 while c.len() < n {
                     let p = cells[r.range(cells.len())];
                     c.insert(p, random_cell(&mut r));
