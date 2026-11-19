@@ -13,4 +13,6 @@ import Formal.Lemmas.WfExt
 import Formal.Lemmas.WfOther
 import Formal.Lemmas.Count
 import Formal.Lemmas.Turn
+import Formal.Lemmas.TickPrelude
+import Formal.Lemmas.Tick
 import Formal.Replay
