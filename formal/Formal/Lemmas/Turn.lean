@@ -18,6 +18,28 @@ def ListsOK (c : Config) (s : St) : Prop :=
 def Frozen (s : St) (q : Pos) (d : Dir) (st an : Bool) (k : Fin 4) : Prop :=
   k.val ≠ 0 ∧ s.get q = some (.piston d st an k false)
 
+/-- The forward factor of the list a block owns: the push of a `+X` piston (state 1) and the
+pull of a `-X` piston (state 3) move blocks forward; no other move raises X. -/
+def fwB : Option Block → Int
+  | some (.piston d _ _ k false) => if k.val = 1 then d.fw else if k.val = 3 then d.opp.fw else 0
+  | _ => 0
+
+theorem fwB_nonneg (b : Option Block) : 0 ≤ fwB b := by
+  unfold fwB
+  split
+  · split
+    · exact Dir.fw_nonneg _
+    · split
+      · exact Dir.fw_nonneg _
+      · exact Int.le_refl 0
+  · exact Int.le_refl 0
+
+/-- The forward-moving part of the list at `p`. -/
+def St.fwdLen (s : St) (p : Pos) : Int := ((s.list p).length : Int) * fwB (s.get p)
+
+theorem St.fwdLen_nonneg (s : St) (p : Pos) : 0 ≤ s.fwdLen p :=
+  Int.mul_nonneg (by omega) (fwB_nonneg _)
+
 structure TurnEffect (c : Config) (cx cx' : Ctx) (pos : Pos) : Prop where
   wf : Wf cx'.st
   lok : ListsOK c cx'.st
@@ -34,6 +56,12 @@ structure TurnEffect (c : Config) (cx cx' : Ctx) (pos : Pos) : Prop where
   count : cx'.st.N = cx.st.N
   /-- the X sum rises by at most the number of blocks moved (the new list's length) -/
   phi : cx'.st.phi ≤ cx.st.phi + (cx'.st.list pos).length
+  /-- ... and only if they moved forward -/
+  phiF : cx'.st.phi ≤ cx.st.phi + cx'.st.fwdLen pos
+  /-- a piston in state 2 or 3 after its turn faces the same way as before, and was frozen -/
+  dirK : ∀ d st an (k : Fin 4), cx'.st.get pos = some (.piston d st an k false) →
+    (k.val = 2 ∨ k.val = 3) →
+    ∃ (st' an' : Bool) (k' : Fin 4), cx.st.get pos = some (.piston d st' an' k' false) ∧ k'.val ≠ 0
 
 section
 variable {c : Config} {cx : Ctx} {pos : Pos}
@@ -65,6 +93,8 @@ theorem turnEffect_refl (hW : Wf cx.st) (hL : ListsOK c cx.st)
   three_two d st an h := absurd rfl (h13 d st an 3 h).2
   count := rfl
   phi := by omega
+  phiF := by have := St.fwdLen_nonneg cx.st pos; omega
+  dirK d st an k h hk := ⟨st, an, k, h, by omega⟩
 
 /-- Frozen pistons are immovable for every owner. -/
 theorem Frozen.immov {s : St} {q : Pos} {d : Dir} {st an : Bool} {k : Fin 4}
@@ -107,6 +137,13 @@ theorem ext_effect {cx cx' : Ctx} {d : Dir} {st an : Bool} {S : List Pos}
   three_two d' st' an' h := by rw [hR.get] at h; simp at h
   count := (count_ext hW hb hS hR).1
   phi := (count_ext hW hb hS hR).2
+  phiF := by
+    have hp : cx'.st.get pos = some (.piston d st false 1 false) := by rw [hR.get]; simp
+    unfold St.fwdLen; rw [hp]
+    simpa [fwB] using (count_ext_fw hW hb hS hR).2
+  dirK d' st' an' k' h hk := by
+    have hp : cx'.st.get pos = some (.piston d st false 1 false) := by rw [hR.get]; simp
+    rw [hp] at h; cases h; simp at hk
 
 /-! ### Failed extension -/
 
@@ -123,6 +160,13 @@ theorem fail_effect {d : Dir} {st an : Bool} (hW : Wf cx.st) (hL : ListsOK c cx.
   three_two d' st' an' h := by simp at h
   count := (count_fail hb).1
   phi := (count_fail hb).2
+  phiF := by
+    have := count_fail_phi hb
+    have := St.fwdLen_nonneg (cx.st.set pos (.piston d st true 0 false)) pos
+    dsimp only; omega
+  dirK d' st' an' k' h hk := by
+    change (cx.st.set pos _).get pos = _ at h
+    rw [St.get_set] at h; simp at h; omega
 
 /-! ### Finishing -/
 
@@ -144,7 +188,7 @@ theorem finish_effect {cx' : Ctx} {d : Dir} {st an : Bool} {k next : Fin 4}
       have : cx.st.list pos = L' := by simp [St.list, ExtTreeMap.getD_eq_getD_getElem?, hl']
       exact hW.list_moving pos L' q hl' (this ▸ hq)
   refine ⟨finish_wf hW hb hk hnext hget hl hlp, ?_, hl, fun q h => hpw ▸ h, ?_, ?_, ?_,
-    (count_finish hb hget).1, (count_finish hb hget).2⟩
+    (count_finish hb hget).1, (count_finish hb hget).2, ?_, ?_⟩
   · exact ListsOK.of_lists hL hl (fun L h => by rw [hlp] at h; cases h)
   · intro q hq d' st' an' k'
     constructor
@@ -178,6 +222,13 @@ theorem finish_effect {cx' : Ctx} {d : Dir} {st an : Bool} {k next : Fin 4}
     obtain ⟨rfl, rfl, rfl, hn, -⟩ := h
     rw [hn] at hnext
     rcases hk with h1 | h1 <;> simp only [h1] at hnext <;> exact absurd hnext (by decide)
+  · have := count_finish_phi hb hget
+    have := St.fwdLen_nonneg cx'.st pos
+    omega
+  · intro d' st' an' k' h _
+    rw [hget, if_pos rfl] at h
+    cases h
+    exact ⟨st, an, k, hb, by omega⟩
 
 /-! ### Retraction -/
 
@@ -196,7 +247,7 @@ theorem retract_effect {cx' : Ctx} {d : Dir} {st an : Bool}
   have harm := hW.arm_front pos d st an 2 false hb (Or.inr rfl)
   have hlen := pulled_length (c := c) (cx := cx) (pos := pos) (d := d) (st := st)
   refine ⟨retract_wf hW hb hget hl hlp, ?_, hl, hpw, ?_, ?_, ?_,
-    (count_retract hW hb hget hlp hls).1, (count_retract hW hb hget hlp hls).2⟩
+    (count_retract hW hb hget hlp hls).1, (count_retract hW hb hget hlp hls).2, ?_, ?_⟩
   · exact ListsOK.of_lists hL hl (fun L h => perm_map_ok hlen.1 hlen.2 (hlp L h))
   · intro q hq d' st' an' k
     have hqf : ∀ b, cx.st.get q = some b → b.isPiston = true → q ≠ pos.add d := by
@@ -220,6 +271,13 @@ theorem retract_effect {cx' : Ctx} {d : Dir} {st an : Bool}
     simp only [Option.some.injEq, Block.piston.injEq] at h
     obtain ⟨rfl, rfl, rfl, -, -⟩ := h
     exact hb
+  · have hp : cx'.st.get pos = some (.piston d st an 3 false) := by rw [hget, if_pos rfl]
+    unfold St.fwdLen; rw [hp]
+    simpa [fwB] using (count_retract_fw hW hb hget hlp hls).2
+  · intro d' st' an' k' h _
+    rw [hget, if_pos rfl] at h
+    cases h
+    exact ⟨st, an, 2, hb, by decide⟩
 
 /-! ### Any turn -/
 

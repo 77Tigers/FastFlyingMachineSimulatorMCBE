@@ -60,13 +60,23 @@ theorem Pos.add_x (p : Pos) (d : Dir) : (p.add d).x = p.x + d.dx := rfl
 
 theorem Dir.dx_le_one (d : Dir) : d.dx ≤ 1 := by cases d <;> decide
 
+/-- The forward factor of a direction: 1 for `+X`, else 0 (a move along `d` raises X by at
+most this). -/
+def Dir.fw : Dir → Int
+  | .px => 1
+  | _ => 0
+
+theorem Dir.dx_le_fw (d : Dir) : d.dx ≤ d.fw := by cases d <;> decide
+theorem Dir.fw_nonneg (d : Dir) : 0 ≤ d.fw := by cases d <;> decide
+theorem Dir.fw_le_one (d : Dir) : d.fw ≤ 1 := by cases d <;> decide
+
 /-- A move along `d` of the cells `S` maps the body injectively; the image sum of X rises by
-at most `|S|`. -/
+at most `|S|` if `d` is `+X`, and not at all otherwise. -/
 theorem body_shift {s s' : St} {S : List Pos} {d : Dir} (hnd : S.Nodup)
     (hsub : ∀ r ∈ S, r ∈ s.body)
     (hinj : ∀ a ∈ s.body, ∀ b ∈ s.body, a ∈ S → b ∉ S → a.add d ≠ b)
     (hmem : ∀ q, q ∈ s'.body ↔ ∃ r ∈ s.body, (if r ∈ S then r.add d else r) = q) :
-    s'.N = s.N ∧ s'.phi ≤ s.phi + S.length := by
+    s'.N = s.N ∧ s'.phi ≤ s.phi + S.length * d.fw := by
   classical
   set σ : Pos → Pos := fun r => if r ∈ S then r.add d else r with hσ
   have hinjOn : Set.InjOn σ s.body := by
@@ -81,23 +91,26 @@ theorem body_shift {s s' : St} {S : List Pos} {d : Dir} (hnd : S.Nodup)
     ext q; rw [hmem, Finset.mem_image]
   refine ⟨by rw [St.N, himg, Finset.card_image_of_injOn hinjOn]; rfl, ?_⟩
   rw [St.phi, himg, Finset.sum_image hinjOn]
-  have hle : ∀ r ∈ s.body, (σ r).x ≤ r.x + (if r ∈ S.toFinset then 1 else 0) := by
+  have hle : ∀ r ∈ s.body, (σ r).x ≤ r.x + (if r ∈ S.toFinset then d.fw else 0) := by
     intro r _
     simp only [hσ, List.mem_toFinset]
     split
-    · rw [Pos.add_x]; have := Dir.dx_le_one d; omega
+    · rw [Pos.add_x]; have := Dir.dx_le_fw d; omega
     · simp
   calc ∑ r ∈ s.body, (σ r).x
-      ≤ ∑ r ∈ s.body, (r.x + (if r ∈ S.toFinset then (1 : Int) else 0)) := Finset.sum_le_sum hle
-    _ = s.phi + ∑ r ∈ s.body, (if r ∈ S.toFinset then (1 : Int) else 0) := by
+      ≤ ∑ r ∈ s.body, (r.x + (if r ∈ S.toFinset then d.fw else 0)) := Finset.sum_le_sum hle
+    _ = s.phi + ∑ r ∈ s.body, (if r ∈ S.toFinset then d.fw else 0) := by
         rw [Finset.sum_add_distrib]; rfl
-    _ = s.phi + ((s.body ∩ S.toFinset).card : Int) := by
+    _ = s.phi + ((s.body ∩ S.toFinset).card : Int) * d.fw := by
         rw [Finset.sum_ite_mem]; simp
-    _ ≤ s.phi + S.length := by
+    _ ≤ s.phi + S.length * d.fw := by
         have : (s.body ∩ S.toFinset).card ≤ S.length := by
           calc (s.body ∩ S.toFinset).card ≤ S.toFinset.card :=
                 Finset.card_le_card Finset.inter_subset_right
             _ = S.length := List.toFinset_card_of_nodup hnd
+        have h1 : ((s.body ∩ S.toFinset).card : Int) ≤ S.length := by exact_mod_cast this
+        have h0 := Dir.fw_nonneg d
+        have := Int.mul_le_mul_of_nonneg_right h1 h0
         omega
 
 theorem immovable_arm {o : Option Pos} {p : Pos} {b : Block} (h : immovable o p b = false) :
@@ -121,10 +134,10 @@ theorem St.list_length_of {s : St} {p : Pos} {n : Nat}
 section
 variable {c : Config} {cx cx' : Ctx} {pos : Pos} {d : Dir} {st an : Bool} {S : List Pos}
 
-theorem count_ext (hW : Wf cx.st) (hb : cx.st.get pos = some (.piston d st an 0 false))
+theorem count_ext_fw (hW : Wf cx.st) (hb : cx.st.get pos = some (.piston d st an 0 false))
     (hS : discover c cx.st (pos.add d) d (some pos) false = some S)
     (hR : ExtResult cx cx' pos d st S) :
-    cx'.st.N = cx.st.N ∧ cx'.st.phi ≤ cx.st.phi + (cx'.st.list pos).length := by
+    cx'.st.N = cx.st.N ∧ cx'.st.phi ≤ cx.st.phi + (cx'.st.list pos).length * d.fw := by
   have hM := discover_moveOK hS
   have hposI : immovable (some pos) pos (.piston d st an 0 false) = true := by simp [immovable]
   have hposS : pos ∉ S := mw_not_mem_of_immovable hM hb hposI
@@ -201,14 +214,14 @@ theorem count_ext (hW : Wf cx.st) (hb : cx.st.get pos = some (.piston d st an 0 
             rw [Pos.add_opp_add] at this; exact hrS this
           rw [if_neg hsrc, if_neg hrS, hb']
 
-theorem count_retract (hW : Wf cx.st) (hb : cx.st.get pos = some (.piston d st an 2 false))
+theorem count_retract_fw (hW : Wf cx.st) (hb : cx.st.get pos = some (.piston d st an 2 false))
     (hget : ∀ q, cx'.st.get q =
       if q = pos then some (.piston d st an 3 false)
       else moveWorld (cx.st.remove (pos.add d)) (pulled c cx.st pos d st) d.opp q)
     (hlp : ∀ L, cx'.st.lists[pos]? = some L →
       L.Perm ((pulled c cx.st pos d st).map (·.add d.opp)))
     (hls : pulled c cx.st pos d st ≠ [] → ∃ L, cx'.st.lists[pos]? = some L) :
-    cx'.st.N = cx.st.N ∧ cx'.st.phi ≤ cx.st.phi + (cx'.st.list pos).length := by
+    cx'.st.N = cx.st.N ∧ cx'.st.phi ≤ cx.st.phi + (cx'.st.list pos).length * d.opp.fw := by
   set S := pulled c cx.st pos d st with hS
   set W1 := cx.st.remove (pos.add d) with hW1
   have hM : MoveOK W1 S d.opp (some pos) := pulled_moveOK
@@ -286,6 +299,30 @@ theorem count_retract (hW : Wf cx.st) (hb : cx.st.get pos = some (.piston d st a
             rw [Pos.add_opp_add] at this; exact hrS this
           rw [if_neg hsrc, if_neg hrS, h1]
 
+theorem fw_mul_le (n : Nat) (d : Dir) : (n : Int) * d.fw ≤ n := by
+  have h1 := Dir.fw_le_one d
+  have h0 : (0 : Int) ≤ n := by omega
+  have := Int.mul_le_mul_of_nonneg_left h1 h0
+  simpa using this
+
+theorem count_ext (hW : Wf cx.st) (hb : cx.st.get pos = some (.piston d st an 0 false))
+    (hS : discover c cx.st (pos.add d) d (some pos) false = some S)
+    (hR : ExtResult cx cx' pos d st S) :
+    cx'.st.N = cx.st.N ∧ cx'.st.phi ≤ cx.st.phi + (cx'.st.list pos).length :=
+  let h := count_ext_fw hW hb hS hR
+  ⟨h.1, h.2.trans (by have := fw_mul_le (cx'.st.list pos).length d; omega)⟩
+
+theorem count_retract (hW : Wf cx.st) (hb : cx.st.get pos = some (.piston d st an 2 false))
+    (hget : ∀ q, cx'.st.get q =
+      if q = pos then some (.piston d st an 3 false)
+      else moveWorld (cx.st.remove (pos.add d)) (pulled c cx.st pos d st) d.opp q)
+    (hlp : ∀ L, cx'.st.lists[pos]? = some L →
+      L.Perm ((pulled c cx.st pos d st).map (·.add d.opp)))
+    (hls : pulled c cx.st pos d st ≠ [] → ∃ L, cx'.st.lists[pos]? = some L) :
+    cx'.st.N = cx.st.N ∧ cx'.st.phi ≤ cx.st.phi + (cx'.st.list pos).length :=
+  let h := count_retract_fw hW hb hget hlp hls
+  ⟨h.1, h.2.trans (by have := fw_mul_le (cx'.st.list pos).length d.opp; omega)⟩
+
 theorem count_finish {k next : Fin 4} (hb : cx.st.get pos = some (.piston d st an k false))
     (hget : ∀ q, cx'.st.get q =
       if q = pos then some (.piston d st an next false)
@@ -314,6 +351,40 @@ theorem count_fail (hb : cx.st.get pos = some (.piston d st an 0 false)) :
     · rfl
   obtain ⟨h1, h2⟩ := St.body_congr this
   exact ⟨h1, by rw [h2]; omega⟩
+
+end
+
+end FF
+
+namespace FF
+
+section
+variable {c : Config} {cx cx' : Ctx} {pos : Pos} {d : Dir} {st an : Bool}
+
+theorem count_finish_phi {k next : Fin 4} (hb : cx.st.get pos = some (.piston d st an k false))
+    (hget : ∀ q, cx'.st.get q =
+      if q = pos then some (.piston d st an next false)
+      else if q ∈ cx.st.list pos then (cx.st.get q).map Block.finished else cx.st.get q) :
+    cx'.st.phi = cx.st.phi := by
+  have : ∀ q, q ∈ cx'.st.body ↔ q ∈ cx.st.body := by
+    intro q
+    rw [St.mem_body, St.mem_body, hget]
+    split
+    · rename_i e; subst e; simp [hb, Block.kind]
+    · split
+      · cases cx.st.get q <;> simp
+      · rfl
+  exact (St.body_congr this).2
+
+theorem count_fail_phi (hb : cx.st.get pos = some (.piston d st an 0 false)) :
+    (cx.st.set pos (.piston d st true 0 false)).phi = cx.st.phi := by
+  have : ∀ q, q ∈ (cx.st.set pos (.piston d st true 0 false)).body ↔ q ∈ cx.st.body := by
+    intro q
+    rw [St.mem_body, St.mem_body, St.get_set]
+    split
+    · rename_i e; subst e; simp [hb, Block.kind]
+    · rfl
+  exact (St.body_congr this).2
 
 end
 

@@ -23,6 +23,9 @@ import Formal.Counting2
 import Formal.Theorems
 import Formal.SpeedBound
 import Formal.SpeedRest
+import Formal.Lemmas.Fwd
+import Formal.Counting3
+import Formal.SpeedFwd
 import Formal.Shift.Map
 import Formal.Shift.Sim
 import Formal.Verify

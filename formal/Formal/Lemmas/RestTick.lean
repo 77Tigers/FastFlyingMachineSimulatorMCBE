@@ -389,6 +389,11 @@ structure TickResult2 (s s' : St) : Prop where
   rest : s'.nState 1 + s'.tokens ≤ s.restP.card + s.tokens
   lo : s.nState 1 + s.nState 2 ≤ s'.nState 2 + s'.nState 3
   hi : s'.nState 2 + s'.nState 3 ≤ s.nState 1 + s.nState 2
+  hiSub : s'.stateCells 2 ∪ s'.stateCells 3 ⊆ s.stateCells 1 ∪ s.stateCells 2
+  dirHi : ∀ q d st an (k : Fin 4), s'.get q = some (.piston d st an k false) →
+    (k.val = 2 ∨ k.val = 3) →
+    ∃ (st' an' : Bool) (k' : Fin 4), s.get q = some (.piston d st' an' k' false)
+  phiF : s'.phi ≤ s.phi + s'.fwdTotal
 
 theorem tick_spec2 {c : Config} {s : St} (hW : Wf s) (hL : ListsOK c s) (o : TickOracle) :
     ∃ s', tick c o s = .ok s' ∧ TickResult2 s s' := by
@@ -399,7 +404,7 @@ theorem tick_spec2 {c : Config} {s : St} (hW : Wf s) (hL : ListsOK c s) (o : Tic
   have hL0 : ListsOK c s0 := tickStart_lok hW hL
   have hI0 : ChunkInv2 c s0 pw ⟨s0, pw⟩ [] [] := by
     refine ⟨⟨⟨hW0, hL0, List.nodup_nil, fun _ _ _ _ _ _ => Iff.rfl, fun _ h => by simp at h,
-      fun _ h => by simp at h, rfl, by simp⟩, fun _ _ => rfl, fun _ _ _ _ => rfl, ?_, rfl,
+      fun _ h => by simp at h, rfl, by simp, by simp, fun _ h => by simp at h⟩, fun _ _ => rfl, fun _ _ _ _ => rfl, ?_, rfl,
       by simp, _root_.le_refl _, fun _ h => by simp at h, fun _ h => by simp at h⟩,
       fun _ h => by simp at h, fun _ h => by simp at h⟩
     intro q hq
@@ -423,7 +428,25 @@ theorem tick_spec2 {c : Config} {s : St} (hW : Wf s) (hL : ListsOK c s) (o : Tic
     obtain ⟨d, st, an, k, -, hq⟩ := hf
     simp only [List.nil_append]
     exact hperm.mem_iff.mpr (chunk_mem_occupied (by rw [hq]; rfl))
-  refine ⟨cx'.st, htick, ?_, ?_, ?_, ?_, ?_⟩
+  have hhiSub : cx'.st.stateCells 2 ∪ cx'.st.stateCells 3 ⊆ s.stateCells 1 ∪ s.stateCells 2 := by
+      intro q hq
+      rcases Finset.mem_union.mp hq with h | h
+      · have h2 := St.mem_stateCells.mp h
+        by_cases hqV : q ∈ V
+        · rcases hT.st2fromv q hqV h2 with h' | h'
+          · exact Finset.mem_union_left _ (St.mem_stateCells.mpr ((tickStart_hasState hW).mp h'))
+          · exact Finset.mem_union_right _ (St.mem_stateCells.mpr ((tickStart_hasState hW).mp h'))
+        · obtain ⟨d, st, an, hf⟩ := h2
+          have := (hT.base.frozen q hqV d st an 2).mp ⟨by decide, hf⟩
+          exact absurd (hvis q ⟨d, st, an, 2, this⟩) hqV
+      · have h3 := St.mem_stateCells.mp h
+        by_cases hqV : q ∈ V
+        · exact Finset.mem_union_right _ (St.mem_stateCells.mpr
+            ((tickStart_hasState hW).mp (hT.base.three_two q hqV h3)))
+        · obtain ⟨d, st, an, hf⟩ := h3
+          have := (hT.base.frozen q hqV d st an 3).mp ⟨by decide, hf⟩
+          exact absurd (hvis q ⟨d, st, an, 3, this⟩) hqV
+  refine ⟨cx'.st, htick, ?_, ?_, ?_, ?_, ?_, hhiSub, ?_, ?_⟩
   · rw [hT.kc, ts_cls hW]
   · have h1 := hT.psi
     have h2 := sum_lcount_le hWe hT.base.nodup
@@ -512,24 +535,7 @@ theorem tick_spec2 {c : Config} {s : St} (hW : Wf s) (hL : ListsOK c s) (o : Tic
     rw [Finset.card_union_of_disjoint hd1] at this
     have := Finset.card_union_le (cx'.st.stateCells 2) (cx'.st.stateCells 3)
     unfold St.nState; omega
-  · have hsub : cx'.st.stateCells 2 ∪ cx'.st.stateCells 3 ⊆ s.stateCells 1 ∪ s.stateCells 2 := by
-      intro q hq
-      rcases Finset.mem_union.mp hq with h | h
-      · have h2 := St.mem_stateCells.mp h
-        by_cases hqV : q ∈ V
-        · rcases hT.st2fromv q hqV h2 with h' | h'
-          · exact Finset.mem_union_left _ (St.mem_stateCells.mpr ((tickStart_hasState hW).mp h'))
-          · exact Finset.mem_union_right _ (St.mem_stateCells.mpr ((tickStart_hasState hW).mp h'))
-        · obtain ⟨d, st, an, hf⟩ := h2
-          have := (hT.base.frozen q hqV d st an 2).mp ⟨by decide, hf⟩
-          exact absurd (hvis q ⟨d, st, an, 2, this⟩) hqV
-      · have h3 := St.mem_stateCells.mp h
-        by_cases hqV : q ∈ V
-        · exact Finset.mem_union_right _ (St.mem_stateCells.mpr
-            ((tickStart_hasState hW).mp (hT.base.three_two q hqV h3)))
-        · obtain ⟨d, st, an, hf⟩ := h3
-          have := (hT.base.frozen q hqV d st an 3).mp ⟨by decide, hf⟩
-          exact absurd (hvis q ⟨d, st, an, 3, this⟩) hqV
+  · have hsub := hhiSub
     have hd1 : Disjoint (cx'.st.stateCells 2) (cx'.st.stateCells 3) := by
       rw [Finset.disjoint_left]; intro q h1 h2
       obtain ⟨_, _, _, e1⟩ := St.mem_stateCells.mp h1
@@ -539,5 +545,17 @@ theorem tick_spec2 {c : Config} {s : St} (hW : Wf s) (hL : ListsOK c s) (o : Tic
     rw [Finset.card_union_of_disjoint hd1] at this
     have := Finset.card_union_le (s.stateCells 1) (s.stateCells 2)
     unfold St.nState; omega
+
+  · intro q d st an k hg hk
+    by_cases hqV : q ∈ V
+    · obtain ⟨st', an', k', h'⟩ := hT.base.hiD q hqV d st an k hg hk
+      obtain ⟨an'', h''⟩ := (ts_get_piston hW).mp ⟨an', h'⟩
+      exact ⟨st', an'', k', h''⟩
+    · have := (hT.base.frozen q hqV d st an k).mp ⟨by omega, hg⟩
+      exact absurd (hvis q ⟨d, st, an, k, this⟩) hqV
+  · have := hT.base.phiF
+    have := sum_fwd_le_fwdTotal (s := cx'.st) hT.base.nodup
+    have h3 : s0.phi = s.phi := (tickStart_count hW).2
+    omega
 
 end FF

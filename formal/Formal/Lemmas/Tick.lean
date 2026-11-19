@@ -23,6 +23,10 @@ structure TickInv (c : Config) (s0 : St) (cx : Ctx) (V : List Pos) : Prop where
   three_two : ∀ q ∈ V, HasState cx.st q 3 → HasState s0 q 2
   count : cx.st.N = s0.N
   phi : cx.st.phi ≤ s0.phi + ((V.map fun p => ((cx.st.list p).length : Int)).sum)
+  phiF : cx.st.phi ≤ s0.phi + ((V.map fun p => cx.st.fwdLen p).sum)
+  hiD : ∀ q ∈ V, ∀ d st an (k : Fin 4), cx.st.get q = some (.piston d st an k false) →
+    (k.val = 2 ∨ k.val = 3) →
+    ∃ (st' an' : Bool) (k' : Fin 4), s0.get q = some (.piston d st' an' k' false)
 
 section
 variable {c : Config} {s0 : St}
@@ -31,10 +35,26 @@ theorem hasState_frozen {s : St} {q : Pos} {k : Fin 4} (hk : k.val ≠ 0) :
     HasState s q k ↔ ∃ d st an, Frozen s q d st an k :=
   ⟨fun ⟨d, st, an, h⟩ => ⟨d, st, an, hk, h⟩, fun ⟨d, st, an, _, h⟩ => ⟨d, st, an, h⟩⟩
 
+theorem fwdLen_ne {cx cx' : Ctx} {pos p : Pos} (hW : Wf cx.st) (hE : TurnEffect c cx cx' pos)
+    (hp : p ≠ pos) : cx'.st.fwdLen p = cx.st.fwdLen p := by
+  unfold St.fwdLen
+  have hl : cx'.st.list p = cx.st.list p := by
+    simp [St.list, ExtTreeMap.getD_eq_getD_getElem?, hE.lists_ne p hp]
+  rw [hl]
+  cases hL : cx.st.lists[p]? with
+  | none =>
+    have : cx.st.list p = [] := by simp [St.list, ExtTreeMap.getD_eq_getD_getElem?, hL]
+    rw [this]; simp
+  | some L =>
+    obtain ⟨d, st, an, k, hk, h13⟩ := hW.list_owner p L hL
+    have hf : Frozen cx.st p d st an k := ⟨by omega, hk⟩
+    have hf' := ((hE.frozen_ne p hp d st an k).mpr hf).2
+    rw [hk, hf']
+
 theorem tickInv_step {cx : Ctx} {V : List Pos} {pos : Pos} (hI : TickInv c s0 cx V)
     (hpos : pos ∉ V) : ∃ cx', pistonTurn c cx pos = .ok cx' ∧ TickInv c s0 cx' (V ++ [pos]) := by
   obtain ⟨cx', h, hE⟩ := turn_effect (pos := pos) hI.wf hI.lok
-  refine ⟨cx', h, hE.wf, hE.lok, ?_, ?_, ?_, ?_, hE.count.trans hI.count, ?_⟩
+  refine ⟨cx', h, hE.wf, hE.lok, ?_, ?_, ?_, ?_, hE.count.trans hI.count, ?_, ?_, ?_⟩
   · exact List.nodup_append.mpr ⟨hI.nodup, List.nodup_singleton _,
       fun a ha b hb e => hpos (by simp at hb; rw [← hb, ← e]; exact ha)⟩
   · intro q hq d st an k
@@ -73,6 +93,24 @@ theorem tickInv_step {cx : Ctx} {V : List Pos} {pos : Pos} (hI : TickInv c s0 cx
     have := hE.phi
     have := hI.phi
     omega
+  · have hsum : (V.map fun p => cx'.st.fwdLen p) = (V.map fun p => cx.st.fwdLen p) := by
+      apply List.map_congr_left
+      intro p hp
+      have hne : p ≠ pos := by rintro rfl; exact hpos hp
+      exact fwdLen_ne hI.wf hE hne
+    simp only [List.map_append, List.map_cons, List.map_nil, List.sum_append, List.sum_cons,
+      List.sum_nil, hsum]
+    have := hE.phiF
+    have := hI.phiF
+    omega
+  · intro q hq d st an k hg hk
+    rcases List.mem_append.mp hq with hqV | hq
+    · have hne : q ≠ pos := by rintro rfl; exact hpos hqV
+      have hf := (hE.frozen_ne q hne d st an k).mp ⟨by omega, hg⟩
+      exact hI.hiD q hqV d st an k hf.2 hk
+    · simp at hq; subst hq
+      obtain ⟨st', an', k', h', hk'⟩ := hE.dirK d st an k hg hk
+      exact ⟨st', an', k', ((hI.frozen _ hpos d st' an' k').mp ⟨hk', h'⟩).2⟩
 
 theorem tickInv_fold (ps : List Pos) : ∀ (cx : Ctx) (V : List Pos), TickInv c s0 cx V →
     ps.Nodup → (∀ p ∈ ps, p ∉ V) →
@@ -165,6 +203,27 @@ structure TickResult (c : Config) (s s' : St) : Prop where
   one_two : ∀ q, HasState s q 1 → HasState s' q 2
   three_two : ∀ q, HasState s' q 3 → HasState s q 2
 
+/-- The forward-moving cells in piston lists. -/
+def St.fwdTotal (s : St) : Int := ∑ p ∈ s.lists.keys.toFinset, s.fwdLen p
+
+theorem sum_fwd_le_fwdTotal {s : St} {V : List Pos} (hV : V.Nodup) :
+    ((V.map fun p => s.fwdLen p).sum) ≤ s.fwdTotal := by
+  classical
+  have h1 : ((V.map fun p => s.fwdLen p).sum) = ∑ p ∈ V.toFinset, s.fwdLen p := by
+    rw [List.sum_toFinset _ hV]
+  have h0 : ∀ p, p ∉ s.lists.keys.toFinset → s.fwdLen p = 0 := by
+    intro p hp
+    rw [List.mem_toFinset, ExtTreeMap.mem_keys] at hp
+    have : s.lists[p]? = none := ExtTreeMap.getElem?_eq_none hp
+    simp [St.fwdLen, St.list, ExtTreeMap.getD_eq_getD_getElem?, this]
+  have h2 : ∑ p ∈ V.toFinset, s.fwdLen p ≤ ∑ p ∈ s.lists.keys.toFinset ∪ V.toFinset, s.fwdLen p :=
+    Finset.sum_le_sum_of_subset_of_nonneg Finset.subset_union_right
+      (fun p _ _ => St.fwdLen_nonneg s p)
+  have h3 : ∑ p ∈ s.lists.keys.toFinset, s.fwdLen p =
+      ∑ p ∈ s.lists.keys.toFinset ∪ V.toFinset, s.fwdLen p :=
+    Finset.sum_subset Finset.subset_union_left (fun p _ hp => h0 p hp)
+  rw [h1, St.fwdTotal, h3]; exact h2
+
 theorem sum_list_le_listTotal {s : St} {V : List Pos} (hV : V.Nodup) :
     ((V.map fun p => ((s.list p).length : Int)).sum) ≤ s.listTotal := by
   have h1 : ((V.map fun p => ((s.list p).length : Int)).sum) =
@@ -190,7 +249,8 @@ theorem tick_spec {c : Config} {s : St} (hW : Wf s) (hL : ListsOK c s) (o : Tick
   have hL0 : ListsOK c s0 := tickStart_lok hW hL
   have hI0 : ChunkInv c s0 ⟨s0, pw⟩ [] [] :=
     ⟨⟨hW0, hL0, List.nodup_nil, fun _ _ _ _ _ _ => Iff.rfl, fun _ h => by simp at h,
-      fun _ h => by simp at h, rfl, by simp⟩, fun _ h => by simp at h, fun _ h => by simp at h⟩
+      fun _ h => by simp at h, rfl, by simp, by simp, fun _ h => by simp at h⟩,
+      fun _ h => by simp at h, fun _ h => by simp at h⟩
   set order := (o.chunks s0 (occupiedChunks c s0)).val with horder
   have hperm := (o.chunks s0 (occupiedChunks c s0)).property
   obtain ⟨cx', hfold, V, hI⟩ := chunkInv_fold o order ⟨s0, pw⟩ [] [] hI0
