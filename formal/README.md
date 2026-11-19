@@ -110,6 +110,13 @@ cannot be renewed without power, so the run makes at most `2K` moves.
 * `PL1/Turn.lean`: every piston turn at push limit 1 with X-facing pistons is a `Rel`.
 * `PL1/NoFlyer.lean`: ticks and runs (`tick_rel`, `stateAt_rel`) and the theorems.
 
+`FF.pl1_flyer_needs` (`PL1/Needs.lean`): at push limit 1 (pistons facing any way) a machine has
+speed 0 under every order unless it contains a `+X` piston (else the front layer never
+advances), a sticky `-X` piston (else the rear layer never advances: a rear block can only be
+pulled forward), a piston facing sideways (above) and a power source (end rod, redstone block or
+observer). Open: whether such a machine can fly. With sideways pistons blocks change rows, so the
+row-order argument no longer applies.
+
 ### A verified flyer: push limit 3 (`Formal/Flyers/PL3.lean`)
 
 `FF.compactSlime_flies`: the bank's 6-block `compact_slime` flyer, under **every** oracle,
