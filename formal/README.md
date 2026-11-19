@@ -23,7 +23,7 @@ check also trusts `native_decide`. `K` = pistons, `N` = blocks other than arms.
 | `pl1_flyer_needs` | `PL1/Needs.lean` | a PL1 flyer needs a +X piston, a sticky −X piston, a sideways piston and a power source |
 | `pl2_flyer_needs` | `PL2/Needs.lean` | a PL ≤ 2 flyer needs a +X piston, a sticky −X piston and a power source |
 | `noGlue_flyer_needs` | `PL2/Needs.lean` | the same at any push limit for machines without slime or honey |
-| `rows_need_Q` | `PL2/Rows.lean` | any PL, ±X pistons only, no glue: every row's second block must be a sticky −X piston |
+| `rows_need_Q`, `rows_need_P` | `PL2/Rows.lean` | any PL, ±X pistons only, no glue: every row's second block is a sticky −X piston, and a +X piston is among the PL blocks behind its front block |
 
 Open: whether a PL1 or PL2 flyer exists; ≤ 5 bps at PL12 for machines with fewer than 3 blocks
 per piston.
@@ -153,7 +153,9 @@ at any push limit without slime or honey (`noGlue_flyer_needs`). Reusable:
 or honey, rows keep their order (`relabel_shift`: any move along X closed under occupied
 destinations is a relabelling) and a pull moves a single block, so a row's rear block can only
 be pulled by the row's second block, a sticky `-X` piston two cells ahead. If some row's second
-block is anything else, its rear block never advances.
+block is anything else, its rear block never advances. `FF.rows_need_P`: likewise the front block
+of a row can only be pushed, as the end of an unbroken run (`push_run`), by a `+X` piston at most
+`PL` blocks behind it in the row.
 
 ### A verified flyer: push limit 3 (`Formal/Flyers/PL3.lean`)
 
