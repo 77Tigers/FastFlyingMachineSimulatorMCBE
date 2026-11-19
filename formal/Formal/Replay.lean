@@ -149,4 +149,36 @@ def replay (t : Trace) : Except String (Nat × Option String) := do
       s := s'; n := n + 1
   return (n, none)
 
+/-! ### Diagnostic: does a state satisfy `Wf` and `ListsOK`? (Not used by any proof.) -/
+
+/-- The first violated clause of `Wf` / `ListsOK`, if any. -/
+def wfViolation (c : Config) (s : St) : Option String := Id.run do
+  let blocks := s.world.toList
+  let lists := s.lists.toList
+  for (p, L) in lists do
+    match s.get p with
+    | some (.piston _ _ _ k false) =>
+      if !(k.val == 1 || k.val == 3) then return some s!"list_owner: state {k.val} at {showPos p}"
+    | _ => return some s!"list_owner: no nonmoving piston at {showPos p}"
+    if L.length > c.pushLimit then return some s!"ListsOK: list too long at {showPos p}"
+    for q in L do
+      match s.get q with
+      | some b => if !b.moving then return some s!"list_moving: {showPos q} not moving"
+      | none => return some s!"list_moving: {showPos q} empty"
+  let all := lists.flatMap (·.2)
+  if !all.Nodup then return some "list_disjoint / ListsOK: a cell is listed twice"
+  let mut fronts : List Pos := []
+  for (p, b) in blocks do
+    match b with
+    | .piston d _ _ k mv =>
+      if mv && k.val != 0 then return some s!"moving_piston at {showPos p}"
+      if k.val == 1 || k.val == 2 then
+        if s.get (p.add d) != some (.plain .arm false) then
+          return some s!"arm_front: no arm in front of {showPos p}"
+        fronts := p.add d :: fronts
+    | .plain .arm true => return some s!"arm_still: moving arm at {showPos p}"
+    | _ => pure ()
+  if !fronts.Nodup then return some "front_unique: two pistons share an arm cell"
+  return none
+
 end FF.Replay

@@ -15,4 +15,7 @@ import Formal.Lemmas.Count
 import Formal.Lemmas.Turn
 import Formal.Lemmas.TickPrelude
 import Formal.Lemmas.Tick
+import Formal.Lemmas.Static
+import Formal.Theorems
+import Formal.SpeedBound
 import Formal.Replay
