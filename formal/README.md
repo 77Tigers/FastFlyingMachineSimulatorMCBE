@@ -22,6 +22,7 @@ check also trusts `native_decide`. `K` = pistons, `N` = blocks other than arms.
 | `pl1_xonly_speed0` | `PL1/NoFlyer.lean` | PL1, all pistons face ±X ⇒ speed 0 |
 | `pl1_flyer_needs` | `PL1/Needs.lean` | a PL1 flyer needs a +X piston, a sticky −X piston, a sideways piston and a power source |
 | `pl2_flyer_needs` | `PL2/Needs.lean` | a PL ≤ 2 flyer needs a +X piston, a sticky −X piston and a power source |
+| `noGlue_flyer_needs` | `PL2/Needs.lean` | the same at any push limit for machines without slime or honey |
 
 Open: whether a PL1 or PL2 flyer exists; ≤ 5 bps at PL12 for machines with fewer than 3 blocks
 per piston.
@@ -142,7 +143,8 @@ order unless it has a `+X` piston, a sticky `-X` piston and a power source. The 
 (`push_ahead`, `pull_behind`): at push limit at most 2, slime and honey cannot drag a block from
 the pusher's own layer, so a push along `+X` moves only blocks ahead of the pusher and a pull by
 a `-X` piston only blocks at least two cells behind it. Hence the rearmost layer advances only
-by pulls of sticky `-X` pistons and the frontmost only by pushes of `+X` pistons. Reusable:
+by pulls of sticky `-X` pistons and the frontmost only by pushes of `+X` pistons. The same holds
+at any push limit without slime or honey (`noGlue_flyer_needs`). Reusable:
 `mem_expand` (what one closure step can add), `closure_inv`, `discover_bound`, and `ext_body`,
 `retract_body` (`Lemmas/Count.lean`: the blocks after a push or pull).
 

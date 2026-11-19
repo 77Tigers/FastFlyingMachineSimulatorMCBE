@@ -20,6 +20,16 @@ def AddStep (s : St) (dir : Dir) (owner : Option Pos) (p q : Pos) : Prop :=
     (∃ b e nb, s.get p = some b ∧ isGlue b = true ∧ q = p.add e ∧ s.get (p.add e) = some nb ∧
       immovable owner (p.add e) nb = false)
 
+/-- No slime or honey anywhere. -/
+def NoGlue (s : St) : Prop := ∀ q b, s.get q = some b → isGlue b = false
+
+theorem noGlue_remove {s : St} (h : NoGlue s) (p : Pos) : NoGlue (s.remove p) := by
+  intro q b hq
+  rw [St.get_remove] at hq
+  split at hq
+  · cases hq
+  · exact h q b hq
+
 theorem foldl_upper {α : Type} {f : ExtTreeSet Pos → α → ExtTreeSet Pos} (R : α → Pos → Prop)
     (hf : ∀ acc a q, q ∈ f acc a → q ∈ acc ∨ R a q) :
     ∀ (l : List α) (acc : ExtTreeSet Pos) (q : Pos), q ∈ l.foldl f acc → q ∈ acc ∨ ∃ a ∈ l, R a q := by
@@ -213,6 +223,63 @@ theorem pull_behind {c : Config} {s : St} {pos : Pos} {S : List Pos} (hPL : c.pu
       | px => rw [hback, harm] at hnb; cases hnb
       | _ => simp [Pos.add, Dir.dx]; omega
 
+/-- Without size limits: a property of the first block that every closure step keeps holds for
+every moved block. -/
+theorem discover_all {c : Config} {s : St} {first : Pos} {dir : Dir} {owner : Option Pos}
+    {pulling : Bool} {l : List Pos} (R : Pos → Prop) (h0 : R first)
+    (hstep : ∀ p q, R p → AddStep s dir owner p q → R q)
+    (h : discover c s first dir owner pulling = some l) : ∀ r ∈ l, R r := by
+  have key : ∀ T, closure c s dir owner (s.world.size + 1) {first} = some T → ∀ r ∈ T, R r := by
+    intro T hT
+    refine closure_inv (fun S => ∀ r ∈ S, R r) ?_ _ _ _ hT
+      (fun r hr => by simp at hr; subst hr; exact h0)
+    intro S _ hS
+    left
+    intro q hq
+    rcases mem_expand hq with h1 | ⟨p, hp, hst⟩
+    · exact hS q h1
+    · exact hstep p q (hS p hp) hst
+  unfold discover at h
+  split at h
+  · cases h; simp
+  · split at h
+    · cases h
+    · split at h
+      · cases h
+      · rename_i T hT
+        dsimp only at h
+        split at h
+        · cases h
+        · cases h
+          intro r hr
+          exact key T hT r (ExtTreeSet.mem_toList.mp hr)
+
+theorem push_ahead' {c : Config} {s : St} {pos : Pos} {S : List Pos}
+    (hC : c.pushLimit ≤ 2 ∨ NoGlue s)
+    (hS : discover c s (pos.add .px) .px (some pos) false = some S) : ∀ r ∈ S, pos.x < r.x := by
+  rcases hC with hPL | hG
+  · exact push_ahead hPL hS
+  · refine discover_all (fun r => pos.x < r.x) (by simp [Pos.add, Dir.dx]) ?_ hS
+    intro p q hp hq
+    rcases hq with ⟨-, rfl⟩ | ⟨b, e, nb, hb, hg, -⟩
+    · simp only [Pos.add, Dir.dx]; omega
+    · rw [hG _ _ hb] at hg; cases hg
+
+theorem pull_behind' {c : Config} {s : St} {pos : Pos} {S : List Pos}
+    (hC : c.pushLimit ≤ 2 ∨ NoGlue s) (harm : s.get (pos.add .nx) = none)
+    (hS : discover c s ((pos.add .nx).add .nx) .px (some pos) true = some S) :
+    ∀ r ∈ S, r.x < pos.x := by
+  rcases hC with hPL | hG
+  · exact pull_behind hPL harm hS
+  · have := discover_all (fun r => r = (pos.add .nx).add .nx) rfl ?_ hS
+    · intro r hr; rw [this r hr]; simp [Pos.add, Dir.dx]
+    · intro p q hp hq
+      subst hp
+      have hback : ((pos.add .nx).add .nx).add .px = pos.add .nx := Pos.add_add_opp _ .nx
+      rcases hq with ⟨hd, -⟩ | ⟨b, e, nb, hb, hg, -⟩
+      · rw [hback, harm] at hd; cases hd
+      · rw [hG _ _ hb] at hg; cases hg
+
 /-! ### Relabellings for moves of up to two blocks -/
 
 /-- `r` could be moved forward: a `+X` piston behind it, or a sticky `-X` piston ahead of it. -/
@@ -232,7 +299,7 @@ theorem rel2_sig {s s' : St} (hs : ∀ q, (s'.get q).map Block.sig = (s.get q).m
 section
 variable {c : Config} {cx cx' : Ctx} {pos : Pos} {d : Dir} {st an : Bool}
 
-theorem rel2_ext {S : List Pos} (hPL : c.pushLimit ≤ 2) (hW : Wf cx.st)
+theorem rel2_ext {S : List Pos} (hPL : c.pushLimit ≤ 2 ∨ NoGlue cx.st) (hW : Wf cx.st)
     (hb : cx.st.get pos = some (.piston d st an 0 false))
     (hS : discover c cx.st (pos.add d) d (some pos) false = some S)
     (hR : ExtResult cx cx' pos d st S) : Rel2 cx.st cx'.st := by
@@ -271,12 +338,12 @@ theorem rel2_ext {S : List Pos} (hPL : c.pushLimit ≤ 2) (hW : Wf cx.st)
       | px =>
         right
         refine ⟨by simp [Pos.add, Dir.dx], Or.inl ⟨pos, body_of_piston hb, ?_, ?_⟩⟩
-        · exact push_ahead hPL hS r hrS
+        · exact push_ahead' hPL hS r hrS
         · rw [tyAt_piston hb]; rfl
       | _ => left; simp [Pos.add, Dir.dx]
     · simp only [hrS, ite_false]; exact Or.inl (_root_.le_refl _)
 
-theorem rel2_retract (hPL : c.pushLimit ≤ 2) (hW : Wf cx.st)
+theorem rel2_retract (hPL : c.pushLimit ≤ 2 ∨ NoGlue cx.st) (hW : Wf cx.st)
     (hb : cx.st.get pos = some (.piston d st an 2 false))
     (hget : ∀ q, cx'.st.get q =
       if q = pos then some (.piston d st an 3 false)
@@ -338,12 +405,12 @@ theorem rel2_retract (hPL : c.pushLimit ≤ 2) (hW : Wf cx.st)
             rcases pulled_cases (c := c) (cx := cx) (pos := pos) (d := .nx) (st := true) with h | h
             · rw [← hSdef] at h; rw [h] at hrS; simp at hrS
             · exact h
-          exact pull_behind hPL (by simp [hW1]) hdisc r hrS
+          exact pull_behind' (hPL.imp id fun h => noGlue_remove h _) (by simp [hW1]) hdisc r hrS
         · rw [tyAt_piston hb]; rfl
       | _ => left; simp [Pos.add, Dir.dx, Dir.opp]
     · simp only [hrS, ite_false]; exact Or.inl (_root_.le_refl _)
 
-theorem turn_rel2 (hPL : c.pushLimit ≤ 2) (hW : Wf cx.st)
+theorem turn_rel2 (hPL : c.pushLimit ≤ 2 ∨ NoGlue cx.st) (hW : Wf cx.st)
     (h : pistonTurn c cx pos = .ok cx') : Rel2 cx.st cx'.st := by
   have hid : cx' = cx → Rel2 cx.st cx'.st := fun e => e ▸ rel2_sig (fun _ => rfl)
   cases hg : cx.st.get pos with
@@ -472,8 +539,9 @@ theorem rel2_tickStart {s : St} : Rel2 s (tickStart s) := by
   exact BitsOnly.sig (comp_bits (calmAt_bits _ q) unpulse_bits) b
 
 section
-variable {c : Config} (hPL : c.pushLimit ≤ 2) (I : St → Prop) (hI : ∀ s s', Rel2 s s' → I s → I s')
-include hPL hI
+variable {c : Config} (I : St → Prop) (hI : ∀ s s', Rel2 s s' → I s → I s')
+  (hC : ∀ s, I s → c.pushLimit ≤ 2 ∨ NoGlue s)
+include hI hC
 
 theorem turns_pres2 : ∀ (ps : List Pos) (cx cx' : Ctx), Wf cx.st → ListsOK c cx.st → I cx.st →
     ps.foldlM (pistonTurn c) cx = .ok cx' → Wf cx'.st ∧ ListsOK c cx'.st ∧ I cx'.st
@@ -481,7 +549,7 @@ theorem turns_pres2 : ∀ (ps : List Pos) (cx cx' : Ctx), Wf cx.st → ListsOK c
   | p :: ps, cx, cx', hW, hL, hx, h => by
     obtain ⟨cx1, h1, hE⟩ := turn_effect (c := c) (pos := p) hW hL
     rw [List.foldlM_cons, h1] at h
-    exact turns_pres2 ps cx1 cx' hE.wf hE.lok (hI _ _ (turn_rel2 hPL hW h1) hx) h
+    exact turns_pres2 ps cx1 cx' hE.wf hE.lok (hI _ _ (turn_rel2 (hC _ hx) hW h1) hx) h
 
 theorem chunks_pres2 (o : TickOracle) : ∀ (order : List Chunk) (cx cx' : Ctx),
     Wf cx.st → ListsOK c cx.st → I cx.st →
@@ -495,7 +563,7 @@ theorem chunks_pres2 (o : TickOracle) : ∀ (order : List Chunk) (cx cx' : Ctx),
     | error e => rw [hf] at h; cases h
     | ok cx1 =>
       rw [hf] at h
-      obtain ⟨hW1, hL1, hx1⟩ := turns_pres2 hPL I hI _ cx cx1 hW hL hx hf
+      obtain ⟨hW1, hL1, hx1⟩ := turns_pres2 I hI hC _ cx cx1 hW hL hx hf
       exact chunks_pres2 o order cx1 cx' hW1 hL1 hx1 h
 
 theorem tick_pres2 {o : TickOracle} {s s' : St} (hW : Wf s) (hL : ListsOK c s) (hx : I s)
@@ -521,7 +589,7 @@ theorem tick_pres2 {o : TickOracle} {s s' : St} (hW : Wf s) (hL : ListsOK c s) (
       rw [show clearAngry (powerStage s).1 (powerStage s).2 = s0 from rfl]
       rw [hfold]
     rw [this] at h; cases h
-    exact (chunks_pres2 hPL I hI o order ⟨s0, pw⟩ cx' hW0 hL0 (hI _ _ rel2_tickStart hx) hfold).2.2
+    exact (chunks_pres2 I hI hC o order ⟨s0, pw⟩ cx' hW0 hL0 (hI _ _ rel2_tickStart hx) hfold).2.2
 
 theorem stateAt_pres2 {o : Oracle} {s : St} (hW : Wf s) (hL : ListsOK c s) (hx : I s) :
     ∀ t, I (stateAt c o s t) := by
@@ -533,7 +601,7 @@ theorem stateAt_pres2 {o : Oracle} {s : St} (hW : Wf s) (hL : ListsOK c s) (hx :
     obtain ⟨s', h, -⟩ := tick_spec hWt hLt (o t)
     have he : stateAt c o s (t + 1) = s' := by simp [stateAt, h]
     rw [he]
-    exact tick_pres2 hPL I hI hWt hLt ih h
+    exact tick_pres2 I hI hC hWt hLt ih h
 
 end
 
@@ -542,7 +610,7 @@ theorem pl2_needs_Q {c : Config} {s : St} (hW : Wf s) (hL : ListsOK c s) (hPL : 
     (hN : 0 < s.N) (hQ : NoTy .Q s) : AlwaysAtMost c s 0 := by
   obtain ⟨q0, hq0⟩ := Finset.card_pos.mp hN
   refine alwaysAtMost_zero_of hW hL hN q0.x fun o t x hx => ?_
-  have := stateAt_pres2 (o := o) hPL (IQ q0.x) (fun _ _ h hI => h.iQ hI) hW hL
+  have := stateAt_pres2 (o := o) (IQ q0.x) (fun _ _ h hI => h.iQ hI) (fun _ _ => Or.inl hPL) hW hL
     ⟨hQ, q0, hq0, _root_.le_refl _⟩ t
   obtain ⟨q, hq, hqx⟩ := this.2
   exact (keys_x_ge hx hq).trans hqx
@@ -555,7 +623,7 @@ theorem pl2_needs_P {c : Config} {s : St} (hW : Wf s) (hL : ListsOK c s) (hPL : 
     ⟨∑ q ∈ s.body, |q.x|, fun q hq => (le_abs_self _).trans
       (Finset.single_le_sum (f := fun q => |q.x|) (fun _ _ => abs_nonneg _) hq)⟩
   refine alwaysAtMost_zero_of hW hL hN M fun o t x hx => ?_
-  have hI := stateAt_pres2 (o := o) hPL (IP M) (fun _ _ h hI => h.iP hI) hW hL ⟨hP, hM'⟩ t
+  have hI := stateAt_pres2 (o := o) (IP M) (fun _ _ h hI => h.iP hI) (fun _ _ => Or.inl hPL) hW hL ⟨hP, hM'⟩ t
   have hNt : 0 < (stateAt c o s t).N := by
     have hspec := stateAt_spec (o := o) hW hL
     have : ∀ i, (stateAt c o s i).N = s.N := by
@@ -572,7 +640,7 @@ theorem pl2_needs_power {c : Config} {s : St} (hW : Wf s) (hL : ListsOK c s)
     (hPL : c.pushLimit ≤ 2) (hN : 0 < s.N) (hNP : NoPow s) : AlwaysAtMost c s 0 := by
   refine alwaysAtMost_zero_of hW hL hN ((s.phi + 4 * c.pushLimit * (s.cls isPK).card) / s.N)
     fun o t x hx => ?_
-  have hNPt := stateAt_pres2 (o := o) hPL NoPow (fun _ _ h hn => h.noPow hn) hW hL hNP
+  have hNPt := stateAt_pres2 (o := o) NoPow (fun _ _ h hn => h.noPow hn) (fun _ _ => Or.inl hPL) hW hL hNP
   have hb := noPow_bounded hW hL hNPt t hx
   have hNi : (0 : Int) < s.N := by exact_mod_cast hN
   rw [Int.le_ediv_iff_mul_le hNi]
@@ -587,5 +655,81 @@ theorem pl2_flyer_needs {c : Config} {s : St} (hW : Wf s) (hL : ListsOK c s)
   · exact pl2_needs_P hW hL hPL hN h
   · exact pl2_needs_Q hW hL hPL hN h
   · exact pl2_needs_power hW hL hPL hN h
+
+
+/-! ### Any push limit, without slime or honey -/
+
+theorem Rel2.noGlue {s s' : St} (h : Rel2 s s') (hn : NoGlue s) : NoGlue s' := by
+  obtain ⟨σ, hb, hs, -⟩ := h
+  intro q b hq
+  by_cases harm : b.kind = .arm
+  · cases b with
+    | plain k m => cases k <;> simp_all [isGlue, Block.kind]
+    | _ => simp [Block.kind] at harm
+  · have hqB : q ∈ s'.body := St.mem_body.mpr ⟨b, hq, by simp [isNonArm, harm]⟩
+    obtain ⟨r, hr, rfl⟩ := (hb _).mp hqB
+    have h1 := hs r hr
+    rw [hq] at h1
+    cases h2 : s.get r with
+    | none => rw [h2] at h1; cases h1
+    | some b0 =>
+      rw [h2] at h1
+      simp only [Option.map_some, Option.some.injEq, Block.sig, Prod.mk.injEq] at h1
+      have := hn r b0 h2
+      simp only [isGlue] at this ⊢
+      rw [h1.1]; exact this
+
+/-- Without slime or honey, at any push limit: no sticky `-X` piston means speed 0. -/
+theorem noGlue_needs_Q {c : Config} {s : St} (hW : Wf s) (hL : ListsOK c s) (hG : NoGlue s)
+    (hN : 0 < s.N) (hQ : NoTy .Q s) : AlwaysAtMost c s 0 := by
+  obtain ⟨q0, hq0⟩ := Finset.card_pos.mp hN
+  refine alwaysAtMost_zero_of hW hL hN q0.x fun o t x hx => ?_
+  have := stateAt_pres2 (o := o) (fun s => IQ q0.x s ∧ NoGlue s)
+    (fun _ _ h hI => ⟨h.iQ hI.1, h.noGlue hI.2⟩) (fun _ h => Or.inr h.2) hW hL
+    ⟨⟨hQ, q0, hq0, _root_.le_refl _⟩, hG⟩ t
+  obtain ⟨q, hq, hqx⟩ := this.1.2
+  exact (keys_x_ge hx hq).trans hqx
+
+/-- Without slime or honey, at any push limit: no `+X` piston means speed 0. -/
+theorem noGlue_needs_P {c : Config} {s : St} (hW : Wf s) (hL : ListsOK c s) (hG : NoGlue s)
+    (hN : 0 < s.N) (hP : NoTy .P s) : AlwaysAtMost c s 0 := by
+  classical
+  obtain ⟨M, hM'⟩ : ∃ M : Int, ∀ q ∈ s.body, q.x ≤ M :=
+    ⟨∑ q ∈ s.body, |q.x|, fun q hq => (le_abs_self _).trans
+      (Finset.single_le_sum (f := fun q => |q.x|) (fun _ _ => abs_nonneg _) hq)⟩
+  refine alwaysAtMost_zero_of hW hL hN M fun o t x hx => ?_
+  have hI := stateAt_pres2 (o := o) (fun s => IP M s ∧ NoGlue s)
+    (fun _ _ h hI => ⟨h.iP hI.1, h.noGlue hI.2⟩) (fun _ h => Or.inr h.2) hW hL ⟨⟨hP, hM'⟩, hG⟩ t
+  have hNt : 0 < (stateAt c o s t).N := by
+    have hspec := stateAt_spec (o := o) hW hL
+    have : ∀ i, (stateAt c o s i).N = s.N := by
+      intro i
+      induction i with
+      | zero => rfl
+      | succ i ih => rw [(hspec i).2.2.2.count, ih]
+    rw [this]; exact hN
+  obtain ⟨q, hq⟩ := Finset.card_pos.mp hNt
+  exact (keys_x_ge hx hq).trans (hI.1.2 q hq)
+
+/-- Without slime or honey, at any push limit: no power source means speed 0. -/
+theorem noGlue_needs_power {c : Config} {s : St} (hW : Wf s) (hL : ListsOK c s) (hG : NoGlue s)
+    (hN : 0 < s.N) (hNP : NoPow s) : AlwaysAtMost c s 0 := by
+  refine alwaysAtMost_zero_of hW hL hN ((s.phi + 4 * c.pushLimit * (s.cls isPK).card) / s.N)
+    fun o t x hx => ?_
+  have hNPt := stateAt_pres2 (o := o) (fun s => NoPow s ∧ NoGlue s)
+    (fun _ _ h hn => ⟨h.noPow hn.1, h.noGlue hn.2⟩) (fun _ h => Or.inr h.2) hW hL ⟨hNP, hG⟩
+  have hb := noPow_bounded hW hL (fun t => (hNPt t).1) t hx
+  have hNi : (0 : Int) < s.N := by exact_mod_cast hN
+  rw [Int.le_ediv_iff_mul_le hNi]
+  linarith
+
+/-- **What a flyer without slime or honey needs**, at any push limit: a `+X` piston, a sticky
+`-X` piston and a power source. -/
+theorem noGlue_flyer_needs {c : Config} {s : St} (hW : Wf s) (hL : ListsOK c s) (hG : NoGlue s)
+    (hN : 0 < s.N) (hmiss : NoTy .P s ∨ NoTy .Q s ∨ NoPow s) : AlwaysAtMost c s 0 := by
+  rcases hmiss with h | h | h
+  · exact noGlue_needs_P hW hL hG hN h
+  · exact noGlue_needs_Q hW hL hG hN h
+  · exact noGlue_needs_power hW hL hG hN h
 
 end FF
