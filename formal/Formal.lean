@@ -34,6 +34,7 @@ import Formal.PL1.NoFlyer
 import Formal.PL1.Needs
 import Formal.PL1.SideRow
 import Formal.PL1.SideReach
+import Formal.PL1.SideClosure
 import Formal.PL2.Needs
 import Formal.PL2.Rows
 import Formal.Shift.Map
