@@ -95,7 +95,7 @@ theorem ext_spec (hW : Wf cx.st) (hb : cx.st.get pos = some (.piston d st an 0 f
         else if q = pos.add d then some (.plain .arm false) else moveWorld cx.st S d q) ∧
       (∀ q, q ≠ pos → cx'.st.lists[q]? = cx.st.lists[q]?) ∧
       (S = [] → cx'.st.lists[pos]? = none) ∧
-      (S ≠ [] → ∃ L, cx'.st.lists[pos]? = some L ∧ ∀ q, q ∈ L ↔ q ∈ S.map (·.add d)) ∧
+      (S ≠ [] → ∃ L, cx'.st.lists[pos]? = some L ∧ L.Perm (S.map (·.add d))) ∧
       (∀ q, cx'.powered.contains q = true → cx.powered.contains q = true) := by
   have hocc := discover_occ hS
   have hnd := discover_nodup hS
@@ -378,7 +378,7 @@ theorem retract_spec (hW : Wf cx.st) (hb : cx.st.get pos = some (.piston d st an
       (∀ q, q ≠ pos → cx'.st.lists[q]? = cx.st.lists[q]?) ∧
       (pulled c cx.st pos d st = [] → cx'.st.lists[pos]? = none) ∧
       (pulled c cx.st pos d st ≠ [] → ∃ L, cx'.st.lists[pos]? = some L ∧
-        ∀ q, q ∈ L ↔ q ∈ (pulled c cx.st pos d st).map (·.add d.opp)) ∧
+        L.Perm ((pulled c cx.st pos d st).map (·.add d.opp))) ∧
       (∀ q, cx'.powered.contains q = true → cx.powered.contains q = true) := by
   have harm := hW.arm_front pos d st an 2 false hb (Or.inr rfl)
   have hfl : cx.st.lists[pos.add d]? = none :=

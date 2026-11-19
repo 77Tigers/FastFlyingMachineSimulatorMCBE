@@ -34,7 +34,7 @@ theorem St.setList_ok {c : Config} {s : St} {p : Pos} {b : Block} {l : List Pos}
     ∃ s', s.setList c p l = .ok s' ∧ s'.world = s.world ∧
       (∀ q, q ≠ p → s'.lists[q]? = s.lists[q]?) ∧
       (l = [] → s'.lists[p]? = none) ∧
-      (l ≠ [] → ∃ L, s'.lists[p]? = some L ∧ ∀ q, q ∈ L ↔ q ∈ l) := by
+      (l ≠ [] → ∃ L, s'.lists[p]? = some L ∧ L.Perm l) := by
   have hperm := List.mergeSort_perm l (fun a b => compare a b != .gt)
   have hnd : (l.mergeSort fun a b => compare a b != .gt).Nodup := hperm.nodup_iff.mpr hn
   by_cases he : l = []
@@ -61,7 +61,7 @@ theorem St.setList_ok {c : Config} {s : St} {p : Pos} {b : Block} {l : List Pos}
       simp [Ne.symm hq]
     · intro h; exact absurd h he
     · intro _
-      refine ⟨_, by simp, fun q => hperm.mem_iff⟩
+      exact ⟨_, by simp, hperm⟩
 
 /-! ### `moveBlocks` without lists on the moved cells -/
 

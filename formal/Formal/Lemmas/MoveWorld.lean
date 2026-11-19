@@ -45,22 +45,34 @@ theorem Block.startMoving_not_arm {b : Block} {o : Option Pos} {p : Pos} {m : Bo
 
 /-! ### `moveWorld` on a discovered set -/
 
+/-- What the cell lemmas need from a moved set: its cells are occupied and movable, and it
+contains the occupied destination of each of its cells. -/
+def MoveOK (s : St) (S : List Pos) (dir : Dir) (o : Option Pos) : Prop :=
+  (∀ p ∈ S, ∃ b, s.get p = some b ∧ immovable o p b = false) ∧
+  (∀ p ∈ S, (s.get (p.add dir)).isSome → p.add dir ∈ S)
+
+theorem discover_moveOK {c : Config} {s : St} {first : Pos} {dir : Dir} {o : Option Pos}
+    {pl : Bool} {S : List Pos} (hS : discover c s first dir o pl = some S) : MoveOK s S dir o :=
+  ⟨fun _ hp => discover_mem hS hp, fun _ hp hd => discover_dest_mem hS hp hd⟩
+
+theorem moveOK_nil {s : St} {dir : Dir} {o : Option Pos} : MoveOK s [] dir o :=
+  ⟨fun _ h => by simp at h, fun _ h => by simp at h⟩
+
 section
-variable {c : Config} {s : St} {first : Pos} {dir : Dir} {o : Option Pos} {pl : Bool}
-  {S : List Pos} (hS : discover c s first dir o pl = some S)
+variable {s : St} {dir : Dir} {o : Option Pos} {S : List Pos} (hS : MoveOK s S dir o)
 include hS
 
 theorem mw_not_mem_of_immovable {q : Pos} {b : Block} (hq : s.get q = some b)
     (hi : immovable o q b = true) : q ∉ S := by
   intro hm
-  obtain ⟨b', hb', hm'⟩ := discover_mem hS hm
+  obtain ⟨b', hb', hm'⟩ := hS.1 q hm
   rw [hq] at hb'; cases hb'
   rw [hi] at hm'; cases hm'
 
 theorem mw_src_not_mem_of_immovable {q : Pos} {b : Block} (hq : s.get q = some b)
     (hi : immovable o q b = true) : q.add dir.opp ∉ S := by
   intro hm
-  have := discover_dest_mem hS hm (by rw [Pos.add_opp_add, hq]; rfl)
+  have := hS.2 _ hm (by rw [Pos.add_opp_add, hq]; rfl)
   rw [Pos.add_opp_add] at this
   exact mw_not_mem_of_immovable hS hq hi this
 
@@ -71,6 +83,7 @@ theorem mw_immovable {q : Pos} {b : Block} (hq : s.get q = some b)
   rw [if_neg (mw_src_not_mem_of_immovable hS hq hi), if_neg (mw_not_mem_of_immovable hS hq hi),
     hq]
 
+omit hS in
 /-- A destination holds the moved block. -/
 theorem mw_dest {r : Pos} (hr : r ∈ S) :
     moveWorld s S dir (r.add dir) = (s.get r).map Block.startMoving := by
@@ -85,7 +98,7 @@ theorem mw_cases {q : Pos} {b' : Block} (h : moveWorld s S dir q = some b') :
   unfold moveWorld at h
   split at h
   · rename_i hm
-    obtain ⟨b, hb, hi⟩ := discover_mem hS hm
+    obtain ⟨b, hb, hi⟩ := hS.1 _ hm
     rw [hb] at h; cases h
     exact Or.inr ⟨b, hm, hb, hi, rfl⟩
   · rename_i hm

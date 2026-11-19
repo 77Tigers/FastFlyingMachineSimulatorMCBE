@@ -8,4 +8,8 @@ import Formal.Lemmas.Closure
 import Formal.Lemmas.Move
 import Formal.Lemmas.MoveLists
 import Formal.Lemmas.Actions
+import Formal.Lemmas.MoveWorld
+import Formal.Lemmas.WfExt
+import Formal.Lemmas.WfOther
+import Formal.Lemmas.Turn
 import Formal.Replay
