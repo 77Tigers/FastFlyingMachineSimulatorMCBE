@@ -28,7 +28,7 @@ check also trusts `native_decide`. `K` = pistons, `N` = blocks other than arms.
 Open: whether a PL1 or PL2 flyer exists; ≤ 5 bps at PL12 for machines with fewer than 3 blocks
 per piston.
 
-## Main result
+## First bound (`Formal/SpeedBound.lean`)
 
 `FF.speed_bound` ([Formal/SpeedBound.lean](Formal/SpeedBound.lean)): from any well-formed
 state, under every oracle, the minimum X of the flyer after `t` ticks is at most
