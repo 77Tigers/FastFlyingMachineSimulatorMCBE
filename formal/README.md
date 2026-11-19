@@ -56,6 +56,20 @@ blocks, while all `N` blocks move `v` per tick.
   (as counts); the pistons' X sum rises by at most the number of moving pistons.
 * `Counting2.lean`: the run-level arithmetic.
 
+### A verified flyer: push limit 3 (`Formal/Flyers/PL3.lean`)
+
+`FF.compactSlime_flies`: the bank's 6-block `compact_slime` flyer, under **every** oracle,
+never errs and moves its rearmost block forward by at least one every 6 ticks, forever
+(1.67 bps). So flyers exist at PL3 in this model, and the speed bounds above are not vacuous.
+
+How: a tick commutes with translating the flyer by whole chunks (`Formal/Shift/Sim.lean`:
+`run_tr`, with the oracle conjugated). `Formal/Verify.lean` enumerates every outcome of a tick
+(every chunk order, every candidate order at every chunk turn; `tick_mem_allTicks`) and turns
+"closed set of states up to translation + every `P`-tick run advances" into the infinite-run
+statement (`flies_of_check`). The finite check (96 states) is done by `native_decide`, so this
+one theorem also trusts Lean's compiler (`#print axioms` lists the three `native_decide`
+axioms besides the standard ones). The same machinery would verify a PL2 flyer if one is found.
+
 **What "well-formed" covers.** `Wf` ([Formal/Inv.lean](Formal/Inv.lean)): piston lists belong
 to nonmoving pistons in state 1 or 3 and hold moving blocks, no cell is in two lists, only
 retracted pistons move, arms never move, a piston with its arm out has its arm in front, and two
