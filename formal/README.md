@@ -21,6 +21,7 @@ check also trusts `native_decide`. `K` = pistons, `N` = blocks other than arms.
 | `noPow_bounded` | `NoPower.lean` | no power source in the run ⇒ at most 2K moves |
 | `pl1_xonly_speed0` | `PL1/NoFlyer.lean` | PL1, all pistons face ±X ⇒ speed 0 |
 | `pl1_flyer_needs` | `PL1/Needs.lean` | a PL1 flyer needs a +X piston, a sticky −X piston, a sideways piston and a power source |
+| `pl1_needs_two_side_rows` | `PL1/SideRow.lean` | a PL1 flyer needs sideways pistons in at least two different rows |
 | `pl2_flyer_needs` | `PL2/Needs.lean` | a PL ≤ 2 flyer needs a +X piston, a sticky −X piston and a power source |
 | `noGlue_flyer_needs` | `PL2/Needs.lean` | the same at any push limit for machines without slime or honey |
 | `rows_need_Q`, `rows_need_P` | `PL2/Rows.lean` | any PL, ±X pistons only, no glue: every row's second block is a sticky −X piston, and a +X piston is among the PL blocks behind its front block |
@@ -136,7 +137,11 @@ cannot be renewed without power, so the run makes at most `2K` moves.
 speed 0 under every order unless it contains a `+X` piston (else the front layer never
 advances), a sticky `-X` piston (else the rear layer never advances: a rear block can only be
 pulled forward), a piston facing sideways (above) and a power source (end rod, redstone block or
-observer). Open: whether such a machine can fly. With sideways pistons blocks change rows, so the
+observer). `FF.pl1_needs_two_side_rows` (`PL1/SideRow.lean`): a sideways piston facing `e` only
+moves blocks between the rows `+e` and `+2e` from its own, so if all sideways pistons lie in one
+row, that row keeps its blocks in order forever, contains an `O` block (a sideways piston), and
+has a block that never advances; so the sideways pistons must lie in at least two rows. Open:
+whether such a machine can fly. With sideways pistons blocks change rows, so the
 row-order argument no longer applies.
 
 `FF.pl2_flyer_needs` (`PL2/Needs.lean`): at push limit 2 (or 1) a machine has speed 0 under every

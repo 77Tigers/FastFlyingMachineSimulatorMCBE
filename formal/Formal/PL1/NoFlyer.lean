@@ -126,13 +126,13 @@ theorem mem_rowX {s : St} {y z x : Int} : x ∈ s.rowX y z ↔ (⟨x, y, z⟩ : 
 /-- A block with no possible forward mover exists as soon as some block is not an X-facing
 piston (`+X`, or sticky `-X`). -/
 theorem exists_stuck {s : St} {q0 : Pos} (hq0 : q0 ∈ s.body) (hO : s.tyAt q0 = .O) :
-    ∃ B ∈ s.body, ¬ HasMover s B := by
+    ∃ B ∈ s.body, B.y = q0.y ∧ B.z = q0.z ∧ ¬ HasMover s B := by
   set y := q0.y
   set z := q0.z
   have hq0' : q0 = ⟨q0.x, y, z⟩ := Pos.eq_of_xyz rfl rfl rfl
   obtain ⟨b, hb, hstuck⟩ := chain_stuck (s.rowX y z) (fun x => s.tyAt ⟨x, y, z⟩) q0.x
     (mem_rowX.mpr (hq0' ▸ hq0)) (by show s.tyAt ⟨q0.x, y, z⟩ = .O; rw [← hq0']; exact hO)
-  refine ⟨⟨b, y, z⟩, mem_rowX.mp hb, ?_⟩
+  refine ⟨⟨b, y, z⟩, mem_rowX.mp hb, rfl, rfl, ?_⟩
   rintro ⟨p, hp, hpy, hpz, hk⟩
   apply hstuck
   have hpe : p = ⟨p.x, y, z⟩ := Pos.eq_of_xyz rfl hpy hpz
@@ -151,7 +151,7 @@ theorem pl1_xonly_no_flyer {c : Config} {s : St} (hW : Wf s) (hL : ListsOK c s)
     (hPL : c.pushLimit = 1) (hx : XOnly s) (hO : ∃ q ∈ s.body, s.tyAt q = .O) :
     AlwaysAtMost c s 0 := by
   obtain ⟨q0, hq0, hO0⟩ := hO
-  obtain ⟨B, hB, hst⟩ := exists_stuck hq0 hO0
+  obtain ⟨B, hB, -, -, hst⟩ := exists_stuck hq0 hO0
   have hN : 0 < s.N := Finset.card_pos.mpr ⟨q0, hq0⟩
   obtain ⟨m0, hm0⟩ := minX_some_of_body hN
   refine ⟨(B.x : ℚ) - m0, ?_⟩

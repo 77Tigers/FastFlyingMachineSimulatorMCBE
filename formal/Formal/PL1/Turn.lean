@@ -44,11 +44,10 @@ theorem rel_of_sig_off {s s' : St} (a : Pos) (ha : a ∉ s.body) (ha' : a ∉ s'
 section
 variable {c : Config} {cx cx' : Ctx} {pos : Pos} {d : Dir} {st an : Bool}
 
-theorem rel_ext {S : List Pos} (hPL : c.pushLimit = 1) (hW : Wf cx.st) (hx : XOnly cx.st)
+theorem rel_ext' {S : List Pos} (hPL : c.pushLimit = 1) (hW : Wf cx.st) (hd : d = .px ∨ d = .nx)
     (hb : cx.st.get pos = some (.piston d st an 0 false))
     (hS : discover c cx.st (pos.add d) d (some pos) false = some S)
     (hR : ExtResult cx cx' pos d st S) : Rel cx.st cx'.st := by
-  have hd : d = .px ∨ d = .nx := hx pos _ hb rfl
   obtain ⟨hdy, hdz, hdx⟩ := xdir hd
   have hlen := discover_length_le hS
   rw [hPL] at hlen
@@ -116,13 +115,12 @@ theorem rel_ext {S : List Pos} (hPL : c.pushLimit = 1) (hW : Wf cx.st) (hx : XOn
         · simp [Dir.dx] at hdx1
   | _ :: _ :: _, _, _, hlen => simp at hlen
 
-theorem rel_retract (hPL : c.pushLimit = 1) (hW : Wf cx.st) (hx : XOnly cx.st)
+theorem rel_retract' (hPL : c.pushLimit = 1) (hW : Wf cx.st) (hd : d = .px ∨ d = .nx)
     (hb : cx.st.get pos = some (.piston d st an 2 false))
     (hget : ∀ q, cx'.st.get q =
       if q = pos then some (.piston d st an 3 false)
       else moveWorld (cx.st.remove (pos.add d)) (pulled c cx.st pos d st) d.opp q) :
     Rel cx.st cx'.st := by
-  have hd : d = .px ∨ d = .nx := hx pos _ hb rfl
   obtain ⟨hdy, hdz, hdx⟩ := xdir hd
   have harm := hW.arm_front pos d st an 2 false hb (Or.inr rfl)
   have hpd : pos.add d ≠ pos := Pos.add_ne_self pos d
@@ -207,6 +205,20 @@ theorem rel_retract (hPL : c.pushLimit = 1) (hW : Wf cx.st) (hx : XOnly cx.st)
         rw [this]; exact not_body_of_arm harm
       · rw [tyAt_piston hb]; rfl
   · rw [hP] at hlen; simp at hlen
+
+theorem rel_ext {S : List Pos} (hPL : c.pushLimit = 1) (hW : Wf cx.st) (hx : XOnly cx.st)
+    (hb : cx.st.get pos = some (.piston d st an 0 false))
+    (hS : discover c cx.st (pos.add d) d (some pos) false = some S)
+    (hR : ExtResult cx cx' pos d st S) : Rel cx.st cx'.st :=
+  rel_ext' hPL hW (hx pos _ hb rfl) hb hS hR
+
+theorem rel_retract (hPL : c.pushLimit = 1) (hW : Wf cx.st) (hx : XOnly cx.st)
+    (hb : cx.st.get pos = some (.piston d st an 2 false))
+    (hget : ∀ q, cx'.st.get q =
+      if q = pos then some (.piston d st an 3 false)
+      else moveWorld (cx.st.remove (pos.add d)) (pulled c cx.st pos d st) d.opp q) :
+    Rel cx.st cx'.st :=
+  rel_retract' hPL hW (hx pos _ hb rfl) hb hget
 
 theorem rel_finish {k next : Fin 4} (hb : cx.st.get pos = some (.piston d st an k false))
     (hget : ∀ q, cx'.st.get q =
