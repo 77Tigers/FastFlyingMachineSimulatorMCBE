@@ -30,6 +30,32 @@ The bound is uniform (one constant for all runs), so it rules out "some run is f
 reasonable reading. `Formal/Speed.lean` holds the two statement forms (`AlwaysAtMost`, and
 `CanBeFasterThan`, which is one reading of "faster", not a settled definition).
 
+### Second bound: pistons must rest (`Formal/SpeedRest.lean`)
+
+`FF.speed_bound_rest`: from a well-formed state with `K` pistons and `N > 0` blocks (arms not
+counted), every run under every oracle has speed at most
+
+    10 · PL · K / (PL · K + 2 · N)   blocks per second   (up to a constant).
+
+Corollaries: `speed_bound_rest_uniform` (at most `10·PL/(PL+2)`, so 8.57 at push limit 12,
+better than the first bound's 8.89), `pl12_bound` (60/7 bps at PL12) and
+`pl12_five_bps_of_ratio` (at PL12, a flyer with at least 6 blocks per piston never beats
+5 bps). For the four PL12 bank flyers the bound is 5.22, 5.71, 6.26 and 6.52 bps; over the
+whole bank it is always at least 1.67 bps above the measured speed.
+
+Why: a piston cannot be moved during the at least three tick ends of each push-pull cycle
+(states 1, 2, 3), nor in the tick before it extends (a piston moved in a tick is not
+powered in the next one; an `angry` one must have failed while resting earlier, which the
+potential in `Lemmas/Rest.lean` accounts for). Every piston must itself keep up with the
+flyer, so it completes at most `(1 - v)/4` cycles per tick, each moving at most `2·PL`
+blocks, while all `N` blocks move `v` per tick.
+
+* `Lemmas/Cls.lean`: per action, the pistons' X sum rises by at most the number of pistons moved.
+* `Lemmas/Rest.lean`, `Lemmas/RestTick.lean`: per tick, new extensions + angry tokens after
+  ≤ resting pistons + angry tokens before; pistons in states 1, 2 before = in states 2, 3 after
+  (as counts); the pistons' X sum rises by at most the number of moving pistons.
+* `Counting2.lean`: the run-level arithmetic.
+
 **What "well-formed" covers.** `Wf` ([Formal/Inv.lean](Formal/Inv.lean)): piston lists belong
 to nonmoving pistons in state 1 or 3 and hold moving blocks, no cell is in two lists, only
 retracted pistons move, arms never move, a piston with its arm out has its arm in front, and two

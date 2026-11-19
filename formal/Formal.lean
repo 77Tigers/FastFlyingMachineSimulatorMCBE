@@ -16,6 +16,11 @@ import Formal.Lemmas.Turn
 import Formal.Lemmas.TickPrelude
 import Formal.Lemmas.Tick
 import Formal.Lemmas.Static
+import Formal.Lemmas.Cls
+import Formal.Lemmas.Rest
+import Formal.Lemmas.RestTick
+import Formal.Counting2
 import Formal.Theorems
 import Formal.SpeedBound
+import Formal.SpeedRest
 import Formal.Replay
