@@ -6,6 +6,26 @@ and machine-checked theorems about **every** run: every update order, not sample
 Toolchain: `leanprover/lean4:v4.36.0` (pinned in `lean-toolchain`, the version Mathlib uses).
 Build: `cd formal && lake exe cache get && lake build` (the first build downloads Mathlib).
 
+## Results at a glance
+
+All for every update order (oracle), from well-formed states, no `sorry`; only the PL3 flyer
+check also trusts `native_decide`. `K` = pistons, `N` = blocks other than arms.
+
+| theorem | file | statement |
+| --- | --- | --- |
+| `speed_bound` | `SpeedBound.lean` | speed ≤ 20·PL/(2·PL+3) bps |
+| `speed_bound_rest` | `SpeedRest.lean` | speed ≤ 10·PL·K/(PL·K+2N) bps |
+| `speed_bound_fwd` | `SpeedFwd.lean` | speed ≤ 10·PL·K/(PL·K+4N) bps; so ≤ 10·PL/(PL+4): PL1 2, PL2 3.33, PL3 4.29, PL4 5, PL5 5.56, PL12 7.5 |
+| `pl12_five_bps_of_ratio3` | `SpeedFwd.lean` | PL12 and N ≥ 3K ⇒ ≤ 5 bps (all PL12 bank flyers) |
+| `compactSlime_flies` | `Flyers/PL3.lean` | a PL3 flyer exists (≥ 1 block per 6 ticks forever) |
+| `noPow_bounded` | `NoPower.lean` | no power source in the run ⇒ at most 2K moves |
+| `pl1_xonly_speed0` | `PL1/NoFlyer.lean` | PL1, all pistons face ±X ⇒ speed 0 |
+| `pl1_flyer_needs` | `PL1/Needs.lean` | a PL1 flyer needs a +X piston, a sticky −X piston, a sideways piston and a power source |
+| `pl2_flyer_needs` | `PL2/Needs.lean` | a PL ≤ 2 flyer needs a +X piston, a sticky −X piston and a power source |
+
+Open: whether a PL1 or PL2 flyer exists; ≤ 5 bps at PL12 for machines with fewer than 3 blocks
+per piston.
+
 ## Main result
 
 `FF.speed_bound` ([Formal/SpeedBound.lean](Formal/SpeedBound.lean)): from any well-formed
