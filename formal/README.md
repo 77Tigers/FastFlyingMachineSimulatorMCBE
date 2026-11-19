@@ -56,6 +56,60 @@ blocks, while all `N` blocks move `v` per tick.
   (as counts); the pistons' X sum rises by at most the number of moving pistons.
 * `Counting2.lean`: the run-level arithmetic.
 
+### Third bound: only one move per cycle carries blocks forward (`Formal/SpeedFwd.lean`)
+
+`FF.speed_bound_fwd`: from a well-formed state with `K` pistons and `N > 0` blocks, every run
+under every oracle has speed at most
+
+    10 · PL · K / (PL · K + 4 · N)   blocks per second   (up to a constant).
+
+Why: a `+X` piston pushes forward but pulls backward, a `-X` piston pushes backward but pulls
+forward, a sideways piston moves nothing along X. So of the two moves of a push-pull cycle at
+most one raises the X sum, by at most `PL`: the factor `2·PL` of the rest bound becomes `PL`.
+
+Since `K ≤ N` this gives, for every machine (`pl1_bound` ... `pl5_bound`, `pl12_bound_fwd`):
+
+| push limit | 1 | 2 | 3 | 4 | 5 | 12 |
+| --- | --- | --- | --- | --- | --- | --- |
+| speed bound (bps) | 2 | 3.33 | 4.29 | 5 | 5.56 | 7.5 |
+
+`pl12_five_bps_of_ratio3`: at PL12 a machine with at least 3 blocks per piston never beats
+5 bps. All four PL12 bank flyers have more than 3 (their bounds are 3.5 to 4.8 bps), and over
+the whole bank the bound is never below the measured speed (closest: the PL3 flyers, 2 vs 1.67).
+
+* `Lemmas/Count.lean` (`Dir.fw`, `count_ext_fw`, `count_retract_fw`): a move along `d` raises
+  the X sum by at most `|S|·fw d`, with `fw +X = 1` and `fw d = 0` otherwise.
+* `Lemmas/Turn.lean` (`fwdLen`, `TurnEffect.phiF`, `dirK`), `Lemmas/Tick.lean`,
+  `Lemmas/RestTick.lean` (`TickResult2.phiF`, `dirHi`): the same per tick, and pistons facing
+  `-X` in states 2, 3 after a tick were in states 1, 2 before.
+* `Lemmas/Fwd.lean`: forward cells ≤ `PL` × (`+X` pistons in state 1 + `-X` pistons in state 3).
+* `Counting3.lean`: the run-level arithmetic.
+
+### Push limit 1, X-facing pistons: no flyer (`Formal/PL1/NoFlyer.lean`)
+
+`FF.pl1_xonly_speed0`: at push limit 1, from a well-formed state in which every piston faces
+`+X` or `-X`, every run under every oracle keeps the rearmost X within a constant of its start
+(speed 0). So a push limit 1 flyer, if one exists, needs a piston facing sideways.
+
+Why: at push limit 1 every move carries one block one step into an empty cell. With only
+X-facing pistons nothing moves sideways, so each row along X keeps its blocks in the same order
+forever, and a block can only be moved forward by the block just behind it in its row (a `+X`
+piston pushing it) or by the block just ahead of it (a sticky `-X` piston pulling it). Call a
+`+X` piston `P`, a sticky `-X` piston `Q`, anything else `O`. If a row contains an `O` (an
+observer, redstone block, end rod, slime, a `-X` normal piston...), some block of that row has
+no possible forward mover (`PL1/Chain.lean`, `chain_stuck`): following the movers from the `O`
+backwards gives a chain of `P`s down to the rear block, which needs a `Q` ahead of it, or
+forwards a chain of `Q`s up to the front block, which needs a `P` behind it. That block never
+moves forward. Otherwise every block is a piston: there is no power source, and then
+(`NoPower.lean`, `noPow_bounded`, any push limit) every extension uses up an angry token, which
+cannot be renewed without power, so the run makes at most `2K` moves.
+
+* `PL1/Lane.lean`: relabellings (blocks mapped one-to-one, keeping kind, facing, stickiness,
+  row and order in the row, hence rank), and `Rel` (relabelling + every forward move had a
+  possible mover); `Rel` is transitive.
+* `PL1/Turn.lean`: every piston turn at push limit 1 with X-facing pistons is a `Rel`.
+* `PL1/NoFlyer.lean`: ticks and runs (`tick_rel`, `stateAt_rel`) and the theorems.
+
 ### A verified flyer: push limit 3 (`Formal/Flyers/PL3.lean`)
 
 `FF.compactSlime_flies`: the bank's 6-block `compact_slime` flyer, under **every** oracle,
@@ -113,6 +167,9 @@ No `sorry`; `#print axioms FF.speed_bound` lists only `propext`, `Classical.choi
 | `Formal/Inv.lean` | the invariant `Wf` and buildable states |
 | `Formal/Lemmas/*.lean` | the proof layers above |
 | `Formal/Theorems.lean`, `Formal/SpeedBound.lean` | the run-level argument and the main results |
+| `Formal/SpeedRest.lean`, `Formal/SpeedFwd.lean`, `Formal/Counting*.lean` | the rest bound and the forward bound |
+| `Formal/NoPower.lean`, `Formal/PL1/*.lean` | no power source => bounded run; no PL1 flyer with X-facing pistons only |
+| `Formal/Shift/*.lean`, `Formal/Verify.lean`, `Formal/Flyers/PL3.lean` | translation, the all-orders check, the verified PL3 flyer |
 | `Formal/Replay.lean`, `Main.lean` | test harness: replays Rust traces through `FF.tick`; `--wf` diagnostic |
 
 ## Randomness
