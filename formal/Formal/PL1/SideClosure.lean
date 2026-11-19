@@ -7,6 +7,7 @@ that is moved lands in a row of `T`, and its rows from there are in `T` again), 
 sticky `-X` piston has a block that never advances (`pl1_outside_closure`).
 -/
 import Formal.PL1.SideReach
+import Mathlib.Tactic.LinearCombination
 
 namespace FF
 
@@ -436,5 +437,94 @@ theorem pl1_one_side_direction {c : Config} {s : St} (hW : Wf s) (hL : ListsOK c
     have : (1 : Int) ≤ k := by exact_mod_cast hk
     linarith
   exact pl1_outside_closure hW hL hPL hT hg hp0b hO hR
+
+
+/-- **No flyer unless two sideways pistons face opposite ways.** At push limit 1, if there is a
+sideways piston and some weights `sy, sz` make every sideways piston's facing raise
+`y·sy + z·sz` by exactly one (for instance: no two sideways pistons face opposite directions),
+the machine has speed 0 under every update order. -/
+theorem pl1_no_opposite {c : Config} {s : St} (hW : Wf s) (hL : ListsOK c s)
+    (hPL : c.pushLimit = 1) (sy sz : Int) {q1 : Pos} (h1 : IsSide s q1)
+    (hall : ∀ q d st an k mv, s.get q = some (.piston d st an k mv) → d ≠ .px → d ≠ .nx →
+      d.dy * sy + d.dz * sz = 1) :
+    AlwaysAtMost c s 0 := by
+  classical
+  let φ : Pos → Int := fun q => q.y * sy + q.z * sz
+  set SP := s.body.filter (fun q => IsSide s q) with hSP
+  have hne : SP.Nonempty := by
+    obtain ⟨d, st, an, k, mv, hb, -⟩ := id h1
+    exact ⟨q1, Finset.mem_filter.mpr ⟨body_of_piston hb, h1⟩⟩
+  obtain ⟨p0, hp0, hmin⟩ := SP.exists_min_image φ hne
+  obtain ⟨hp0b, hp0s⟩ := Finset.mem_filter.mp hp0
+  set F : Dir → Prop := fun d => d.dy * sy + d.dz * sz = 1 with hF
+  set T : Int → Int → Prop := fun y z => ∃ p, IsSide s p ∧ φ p + 1 ≤ y * sy + z * sz with hTdef
+  have hstep : ∀ (q : Pos) (g : Dir), F g → (q.add g).y * sy + (q.add g).z * sz =
+      q.y * sy + q.z * sz + 1 := by
+    intro q g hg
+    simp only [Pos.add_y, Pos.add_z]
+    simp only [hF] at hg
+    linear_combination hg
+  have hT : Closed T F := by
+    intro q g hq hg
+    obtain ⟨p, hp, hle⟩ := hq
+    have e1 := hstep q g hg
+    have e2 := hstep (q.add g) g hg
+    exact ⟨⟨p, hp, by omega⟩, ⟨p, hp, by omega⟩⟩
+  have hg : Good2 T F s := by
+    intro q b hq hk
+    cases b with
+    | piston d st an k mv =>
+      simp only [Block.dir]
+      by_cases hd : d = .px ∨ d = .nx
+      · rcases hd with h | h
+        · exact Or.inl h
+        · exact Or.inr (Or.inl h)
+      · push_neg at hd
+        right; right
+        have hdF : F d := hall q d st an k mv hq hd.1 hd.2
+        have hside : IsSide s q := ⟨d, st, an, k, mv, hq, hd.1, hd.2⟩
+        have e1 := hstep q d hdF
+        have e2 := hstep (q.add d) d hdF
+        exact ⟨hdF, ⟨q, hside, by simp only [φ]; omega⟩, ⟨q, hside, by simp only [φ]; omega⟩⟩
+    | plain kk m => cases kk <;> simp [Block.kind] at hk
+    | _ => simp [Block.kind] at hk
+  have hO : s.tyAt p0 = .O := by
+    obtain ⟨d, st, an, k, mv, hb, hd1, hd2⟩ := id hp0s
+    rw [tyAt_piston hb]
+    cases d <;> first | exact absurd rfl hd1 | exact absurd rfl hd2 | rfl
+  have hR : ¬ T p0.y p0.z := by
+    rintro ⟨p, hp, hle⟩
+    have hpm := hmin p (Finset.mem_filter.mpr ⟨by
+      obtain ⟨d, st, an, k, mv, hb, -⟩ := id hp; exact body_of_piston hb, hp⟩)
+    simp only [φ] at hpm hle
+    omega
+  exact pl1_outside_closure hW hL hPL hT hg hp0b hO hR
+
+
+/-- A piston facing `d` at `q`. -/
+def HasFacing (s : St) (d : Dir) : Prop := ∃ q st an k mv, s.get q = some (.piston d st an k mv)
+
+/-- **A push limit 1 flyer needs two sideways pistons facing opposite directions** (`+Y` and
+`-Y`, or `+Z` and `-Z`). -/
+theorem pl1_needs_opposite {c : Config} {s : St} (hW : Wf s) (hL : ListsOK c s)
+    (hPL : c.pushLimit = 1) {q1 : Pos} (h1 : IsSide s q1)
+    (hy : ¬ (HasFacing s .py ∧ HasFacing s .ny)) (hz : ¬ (HasFacing s .pz ∧ HasFacing s .nz)) :
+    AlwaysAtMost c s 0 := by
+  classical
+  refine pl1_no_opposite hW hL hPL (if HasFacing s .ny then -1 else 1)
+    (if HasFacing s .nz then -1 else 1) h1 ?_
+  intro q d st an k mv hq hd1 hd2
+  have hf : HasFacing s d := ⟨q, st, an, k, mv, hq⟩
+  cases d with
+  | px => exact absurd rfl hd1
+  | nx => exact absurd rfl hd2
+  | py =>
+    have : ¬ HasFacing s .ny := fun h => hy ⟨hf, h⟩
+    simp [Dir.dy, Dir.dz, this]
+  | ny => simp [Dir.dy, Dir.dz, hf]
+  | pz =>
+    have : ¬ HasFacing s .nz := fun h => hz ⟨hf, h⟩
+    simp [Dir.dy, Dir.dz, this]
+  | nz => simp [Dir.dy, Dir.dz, hf]
 
 end FF

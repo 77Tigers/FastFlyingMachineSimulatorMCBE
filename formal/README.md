@@ -23,7 +23,7 @@ check also trusts `native_decide`. `K` = pistons, `N` = blocks other than arms.
 | `pl1_flyer_needs` | `PL1/Needs.lean` | a PL1 flyer needs a +X piston, a sticky −X piston, a sideways piston and a power source |
 | `pl1_needs_two_side_rows` | `PL1/SideRow.lean` | a PL1 flyer needs sideways pistons in at least two different rows |
 | `pl1_needs_side_reach` | `PL1/SideReach.lean` | a PL1 flyer needs a sideways piston with another sideways piston in the row it pushes into or pulls from |
-| `pl1_one_side_direction` | `PL1/SideClosure.lean` | a PL1 flyer needs sideways pistons facing at least two different directions |
+| `pl1_needs_opposite` | `PL1/SideClosure.lean` | a PL1 flyer needs two sideways pistons facing opposite directions (+Y and −Y, or +Z and −Z) |
 | `pl1_outside_closure` | `PL1/SideClosure.lean` | rows outside any set of rows closed under the sideways pistons' push/pull steps never change; an O block there is stuck |
 | `pl1_unreached_row` | `PL1/SideReach.lean` | if no sideways piston can move another, every non-(+X or sticky −X piston) block, e.g. each power source, must lie in a row some sideways piston pushes into or pulls from |
 | `pl2_flyer_needs` | `PL2/Needs.lean` | a PL ≤ 2 flyer needs a +X piston, a sticky −X piston and a power source |
@@ -150,10 +150,12 @@ facing `e` has a sideways piston in the row of `p + e` or of `p + 2e`, sideways 
 change rows, their rows never gain or lose a block, and one of them has a block that never
 advances. `FF.pl1_outside_closure` (`PL1/SideClosure.lean`) allows sideways pistons that move each
 other: take a set `T` of rows closed under steps of 1 and 2 along every sideways facing in use and
-containing every sideways piston's push/pull rows; then rows outside `T` never change. Corollary
-`FF.pl1_one_side_direction`: if all sideways pistons face the same way `f`, the one furthest
-back along `f` is outside the closure of the others' rows ahead of them, so a PL1 flyer needs
-sideways pistons facing two different directions. Open: whether such a machine can fly. With sideways pistons blocks change rows, so the
+containing every sideways piston's push/pull rows; then rows outside `T` never change. Corollaries:
+`FF.pl1_one_side_direction` (all sideways pistons face one way) and, stronger,
+`FF.pl1_needs_opposite`: if no two sideways pistons face opposite directions, pick signs so that
+every facing raises `±y ± z` by one; the sideways piston with the least `±y ± z` lies outside the
+closure of the rows strictly above the sideways pistons, so its row is stuck. A PL1 flyer needs
+sideways pistons facing opposite ways. Open: whether such a machine can fly. With sideways pistons blocks change rows, so the
 row-order argument no longer applies.
 
 `FF.pl2_flyer_needs` (`PL2/Needs.lean`): at push limit 2 (or 1) a machine has speed 0 under every
