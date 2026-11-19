@@ -100,7 +100,9 @@ fn xsum(f: &Flyer) -> i64 {
 }
 
 fn fitness(c: &Cells, pl: u64, seeds: &[u64], ticks: usize) -> i64 {
-    seeds.iter().map(|&s| advance(c, pl, s, ticks)).min().unwrap_or(0)
+    // FITMAX=1: reward machines that fly under some order (best seed), not every order.
+    let it = seeds.iter().map(|&s| advance(c, pl, s, ticks));
+    if std::env::var("FITMAX").is_ok() { it.max().unwrap_or(0) } else { it.min().unwrap_or(0) }
 }
 
 fn describe(c: &Cells) -> String {
@@ -153,11 +155,24 @@ fn main() {
                         c.insert(Coord::new(x + 1, y + 1, z), Block::piston(1, true, false, 0, false).unwrap().cell());
                     }
                 }
+                if let Ok(k) = std::env::var("TRAIN") {
+                    // seed a pusher train: [observer facing +x][pusher +x] units along a row
+                    let k: usize = k.parse().unwrap_or(2);
+                    let y = r.range(h as usize) as i64;
+                    let z = r.range(d as usize) as i64;
+                    for u in 0..k as i64 {
+                        let x = 1 + 2 * u;
+                        if x + 1 < w {
+                            c.insert(Coord::new(x, y, z), Block::observer(0, u == 0, false).unwrap().cell());
+                            c.insert(Coord::new(x + 1, y, z), Block::piston(0, false, false, 0, false).unwrap().cell());
+                        }
+                    }
+                }
                 while c.len() < n {
                     let p = cells[r.range(cells.len())];
                     c.insert(p, random_cell(&mut r));
                 }
-                let seeds = [r.next(), r.next()];
+                let seeds = [r.next(), r.next(), r.next(), r.next()];
                 let mut fit = fitness(&c, pl, &seeds, 40);
                 evals.fetch_add(1, Ordering::Relaxed);
                 // hill climb
