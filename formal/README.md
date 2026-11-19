@@ -22,6 +22,7 @@ check also trusts `native_decide`. `K` = pistons, `N` = blocks other than arms.
 | `pl1_xonly_speed0` | `PL1/NoFlyer.lean` | PL1, all pistons face ±X ⇒ speed 0 |
 | `pl1_flyer_needs` | `PL1/Needs.lean` | a PL1 flyer needs a +X piston, a sticky −X piston, a sideways piston and a power source |
 | `pl1_needs_two_side_rows` | `PL1/SideRow.lean` | a PL1 flyer needs sideways pistons in at least two different rows |
+| `pl1_needs_side_reach` | `PL1/SideReach.lean` | a PL1 flyer needs a sideways piston with another sideways piston in the row it pushes into or pulls from |
 | `pl2_flyer_needs` | `PL2/Needs.lean` | a PL ≤ 2 flyer needs a +X piston, a sticky −X piston and a power source |
 | `noGlue_flyer_needs` | `PL2/Needs.lean` | the same at any push limit for machines without slime or honey |
 | `rows_need_Q`, `rows_need_P` | `PL2/Rows.lean` | any PL, ±X pistons only, no glue: every row's second block is a sticky −X piston, and a +X piston is among the PL blocks behind its front block |
@@ -140,8 +141,11 @@ pulled forward), a piston facing sideways (above) and a power source (end rod, r
 observer). `FF.pl1_needs_two_side_rows` (`PL1/SideRow.lean`): a sideways piston facing `e` only
 moves blocks between the rows `+e` and `+2e` from its own, so if all sideways pistons lie in one
 row, that row keeps its blocks in order forever, contains an `O` block (a sideways piston), and
-has a block that never advances; so the sideways pistons must lie in at least two rows. Open:
-whether such a machine can fly. With sideways pistons blocks change rows, so the
+has a block that never advances; so the sideways pistons must lie in at least two rows.
+`FF.pl1_needs_side_reach` (`PL1/SideReach.lean`) strengthens this: if no sideways piston at `p`
+facing `e` has a sideways piston in the row of `p + e` or of `p + 2e`, sideways pistons never
+change rows, their rows never gain or lose a block, and one of them has a block that never
+advances. Open: whether a PL1 machine with sideways pistons that move each other can fly. With sideways pistons blocks change rows, so the
 row-order argument no longer applies.
 
 `FF.pl2_flyer_needs` (`PL2/Needs.lean`): at push limit 2 (or 1) a machine has speed 0 under every
