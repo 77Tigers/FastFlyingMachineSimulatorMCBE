@@ -23,6 +23,7 @@ check also trusts `native_decide`. `K` = pistons, `N` = blocks other than arms.
 | `pl1_flyer_needs` | `PL1/Needs.lean` | a PL1 flyer needs a +X piston, a sticky −X piston, a sideways piston and a power source |
 | `pl1_needs_two_side_rows` | `PL1/SideRow.lean` | a PL1 flyer needs sideways pistons in at least two different rows |
 | `pl1_needs_side_reach` | `PL1/SideReach.lean` | a PL1 flyer needs a sideways piston with another sideways piston in the row it pushes into or pulls from |
+| `pl1_unreached_row` | `PL1/SideReach.lean` | if no sideways piston can move another, every non-(+X or sticky −X piston) block, e.g. each power source, must lie in a row some sideways piston pushes into or pulls from |
 | `pl2_flyer_needs` | `PL2/Needs.lean` | a PL ≤ 2 flyer needs a +X piston, a sticky −X piston and a power source |
 | `noGlue_flyer_needs` | `PL2/Needs.lean` | the same at any push limit for machines without slime or honey |
 | `rows_need_Q`, `rows_need_P` | `PL2/Rows.lean` | any PL, ±X pistons only, no glue: every row's second block is a sticky −X piston, and a +X piston is among the PL blocks behind its front block |

@@ -381,4 +381,53 @@ theorem pl1_needs_side_reach {c : Config} {s : St} (hW : Wf s) (hL : ListsOK c s
     exact hst (hmv B hB hBy hBz (by omega))
   exact (keys_x_ge hxm (hσ.mem hB hBy hBz)).trans hle
 
+
+/-- **Unreached rows are stuck.** At push limit 1, if no sideways piston has a sideways piston in
+the rows it pushes into or pulls from, then every block that is neither a `+X` piston nor a
+sticky `-X` piston (a power source, say) must lie in such a row: otherwise the machine has
+speed 0 under every update order. -/
+theorem pl1_unreached_row {c : Config} {s : St} (hW : Wf s) (hL : ListsOK c s)
+    (hPL : c.pushLimit = 1)
+    (hstatic : ∀ p d st an k mv, s.get p = some (.piston d st an k mv) → d ≠ .px → d ≠ .nx →
+      ∀ q, IsSide s q → ¬ (q.y = (p.add d).y ∧ q.z = (p.add d).z) ∧
+        ¬ (q.y = ((p.add d).add d).y ∧ q.z = ((p.add d).add d).z))
+    {q0 : Pos} (hq0 : q0 ∈ s.body) (hO : s.tyAt q0 = .O)
+    (hun : ∀ p d st an k mv, s.get p = some (.piston d st an k mv) → d ≠ .px → d ≠ .nx →
+      ¬ (q0.y = (p.add d).y ∧ q0.z = (p.add d).z) ∧
+        ¬ (q0.y = ((p.add d).add d).y ∧ q0.z = ((p.add d).add d).z)) :
+    AlwaysAtMost c s 0 := by
+  set A : Int → Int → Prop := fun y z => ∀ p d st an k mv,
+    s.get p = some (.piston d st an k mv) → d ≠ .px → d ≠ .nx →
+      ¬ (y = (p.add d).y ∧ z = (p.add d).z) ∧ ¬ (y = ((p.add d).add d).y ∧ z = ((p.add d).add d).z)
+    with hAdef
+  have hgood : Good A s := by
+    intro p b hp hk
+    cases b with
+    | piston d st an k mv =>
+      simp only [Block.dir]
+      by_cases hd : d = .px ∨ d = .nx
+      · rcases hd with h | h
+        · exact Or.inl h
+        · exact Or.inr (Or.inl h)
+      · push_neg at hd
+        right; right
+        have hside : IsSide s p := ⟨d, st, an, k, mv, hp, hd.1, hd.2⟩
+        refine ⟨fun p' d' st' an' k' mv' hp' h1 h2 => hstatic p' d' st' an' k' mv' hp' h1 h2 p hside,
+          ?_, ?_⟩
+        · intro hA'
+          exact (hA' p d st an k mv hp hd.1 hd.2).1 ⟨rfl, rfl⟩
+        · intro hA'
+          exact (hA' p d st an k mv hp hd.1 hd.2).2 ⟨rfl, rfl⟩
+    | plain kk m => cases kk <;> simp [Block.kind] at hk
+    | _ => simp [Block.kind] at hk
+  obtain ⟨B, hB, hBy, hBz, hst⟩ := exists_stuck hq0 hO
+  have hN : 0 < s.N := Finset.card_pos.mpr ⟨q0, hq0⟩
+  have hA : A q0.y q0.z := fun p d st an k mv hp h1 h2 => hun p d st an k mv hp h1 h2
+  refine alwaysAtMost_zero_of hW hL hN B.x fun o t x hxm => ?_
+  obtain ⟨⟨σ, hσ, hmv⟩, -⟩ := stateAt_reach (o := o) hPL hA hW hL hgood t
+  have hle : (σ B).x ≤ B.x := by
+    by_contra h
+    exact hst (hmv B hB hBy hBz (by omega))
+  exact (keys_x_ge hxm (hσ.mem hB hBy hBz)).trans hle
+
 end FF
