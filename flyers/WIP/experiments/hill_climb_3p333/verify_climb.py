@@ -208,9 +208,10 @@ def main() -> int:
             "extension_failures": audit_res.get("extension_failures"),
             "distance_240": audit_res.get("distance"),
         },
-        "minus_one_1000t": (
+        "minus_one": (
             {
                 "pl": test_pl - 1,
+                "ticks": args.ticks,
                 "total_pass": minus_one["total_pass"],
                 "min_distance": minus_one["min_distance"],
             }

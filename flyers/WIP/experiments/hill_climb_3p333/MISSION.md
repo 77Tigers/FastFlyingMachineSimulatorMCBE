@@ -40,8 +40,17 @@ Known dead ends (do not retry):
 | 0 (baseline run 2) | `d0aaacc` | `flyers/bank/pl18/nk_lat_n4.flyer` | 18 | 20/20 | 60/60 | 224 | 3.334 | Noise floor = 0 | Confirmed |
 | 0 (ref) | `d0aaacc` | `flyers/bank/pl19/nk_stack_n4.flyer` | 19 | 20/20 | 60/60 | 756 | 3.333 | Astra 7.3, Neon 5.8, Fable 4.5 | Reference |
 | 1 | `021b309` | `round1/screw6_pl18.flyer` | 18 | 20/20 | 60/60 | 108 | 3.333 | Astra 8.0, Neon 7.8, Fable 7.0 (3-0 A/B over `nk_lat_n4`); unanimous Option C pivot | Kept as compact PL18 control; pure 6-body hopper ring hit `sum <= -6` wall (stall 1/2 on PL) |
-| 2 | pending | `round2/openplus6_pl18.flyer` | 18 | 20/20 | 60/60 | 107 | 3.333 | Pending Round 2 panel + stall triage | New self-pulled 6-body mechanism (lightning-rod sticky power + cross-body shared RB); PL17 still open (stall 2/2 on PL) |
-| 2 (alt) | pending | `round2/openplus3_pl19.flyer` | 19 | 20/20 | 60/60 | 55 | 3.333 | Pending Round 2 panel + stall triage | Tiny `6x6x6` 55-block self-pulled 3-body flyer (80/80 at PL19, 0/80 at PL18) |
+| 2 | `9f9a3a4` | `round2/openplus6_pl18.flyer` | 18 | 20/20 | 60/60 | 107 | 3.333 | Astra 7.5, Neon 7.4, Fable 7.3 (3-0 A/B over `screw6_pl18`); 2-1 STOP vs Neon CONTINUE | Kept as new 107b self-pulled control (stall 2/2 on PL); orchestrator override for 1 final Round 3 test of Neon's exact `A4->T3->O3` + `gap=3` tower blueprint |
+| 2 (alt) | `9f9a3a4` | `round2/openplus3_pl19.flyer` | 19 | 20/20 | 60/60 | 55 | 3.333 | Noted by panel (`6x6x6` cube) | Tiny 55-block 3-body self-pulled reference |
+| 3 | `a1ac112` | `round3/mixed_screw_pl16.flyer` | **16** | 20/20 | 60/60 | 262 | 3.334 | Pending Round 3 panel | **NEW RECORD (-2 PL vs baseline PL18)!** Stall counter reset to 0 |
+| 3 (alt) | `a1ac112` | `round3/mixed_screw_pl17.flyer` | **17** | 20/20 | 60/60 | 256 | 3.334 | Pending Round 3 panel | Verified PL17 stepping stone (4-hopper A4 + 2 loop hoppers/half-ring) |
+
+## Round 2 stall triage (buckets)
+
+- **Work missing something:** 100% (160/160 PL17 failures across Rounds 1-2; both rounds stayed in uniform 4-rider single rings).
+- **Grader wrong / Case vague / Infrastructure / Variance:** 0%.
+- **Panel vote:** Astra STOP, Fable STOP, Neon CONTINUE.
+- **Orchestrator decision:** Take one strictly bounded Round 3 shot at Neon's arithmetic-verified 6-body mixed screw (`A4 -> T3 -> O3` x2, `B0/B3` towerless) + 4 `gap=3` vertical towers (first multi-level architecture of the climb). Stop immediately if Round 3 does not clear PL17.
 
 ## Round 2 dead ends logged
 
