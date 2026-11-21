@@ -39,3 +39,8 @@ Known dead ends (do not retry):
 | 0 (baseline run 1) | `d0aaacc` | `flyers/bank/pl18/nk_lat_n4.flyer` | 18 | 20/20 | 60/60 | 224 | 3.334 | Astra 8.6, Neon 7.2, Fable 6.0 | Baseline |
 | 0 (baseline run 2) | `d0aaacc` | `flyers/bank/pl18/nk_lat_n4.flyer` | 18 | 20/20 | 60/60 | 224 | 3.334 | Noise floor = 0 | Confirmed |
 | 0 (ref) | `d0aaacc` | `flyers/bank/pl19/nk_stack_n4.flyer` | 19 | 20/20 | 60/60 | 756 | 3.333 | Astra 7.3, Neon 5.8, Fable 4.5 | Reference |
+| 1 | pending | `round1/screw6_pl18.flyer` | 18 | 20/20 | 60/60 | 108 | 3.333 | Pending Round 1 panel | Kept as compact PL18 control; pure 6-body hopper ring hit `sum <= -6` wall (stall 1/2 on PL) |
+
+## Round 1 dead ends logged
+
+- Pure 6-body 4-hopper ring built from compact flat/two-level modules (`round1/flexible.py`, 1,360 PL17 links across 4 core shapes + 30 flat templates + 39 free-pickup + 48 rod-powered + 366 two-level split layouts): every PL17 link obeys `t <= -1 + p[to] - p[from]`, capping 6-link offset sum at `-6` (needs `-4`). Single handoff reached PL16 (`round1/pl16_handoff.json`), and `screw6_pl18.flyer` hit 4 bodies at load 17 and 2 bodies at load 18 (108 blocks, 80/80).
