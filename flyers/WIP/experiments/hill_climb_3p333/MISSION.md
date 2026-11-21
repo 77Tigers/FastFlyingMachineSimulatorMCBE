@@ -45,7 +45,7 @@ Known dead ends (do not retry):
 | 3 | `bcc0ac1` | `round3/mixed_screw_pl16.flyer` | **16** | 20/20 | 60/60 | 262 | 3.334 | Astra 8.8, Neon 8.7, Fable 8.3 (3-0 valid, zero ballast); unanimous CONTINUE for PL15 | **NEW RECORD (-2 PL vs baseline PL18)!** Stall counter reset to 0 |
 | 3 (alt) | `bcc0ac1` | `round3/mixed_screw_pl17.flyer` | **17** | 20/20 | 60/60 | 256 | 3.334 | Verified stepping stone | Verified PL17 (4-hopper A4 + 2 loop hoppers/half-ring) |
 | 4 | `98717ad` | `round4/mixed_screw_pl15.flyer` | **15** | 20/20 | 60/60 | 282 | 3.333 | Astra 9.0, Neon 9.1, Fable 8.4 (3-0 valid, zero ballast); Astra & Neon independently invented `Obs2+P+S` for PL14/13 | **NEW RECORD (-3 PL vs baseline PL18)!** 20-body `O3->T3->A3c+S` + 4-lvl towers on col 2/5; stall counter 0 |
-| 5 | pending | `round5/` (no closed PL14 flyer) | 15 (record held) | — | — | — | — | Pending Round 5 panel | Proved `B1(5G+2R) -> B2(Obs2+S)` pickup & PL13 local witness in sim; B0 failed 11-cell routing across 3.12M clear poses (stall 1/2 on PL) |
+| 5 | `da41845` | `round5/` (no closed PL14 flyer) | 15 (record held) | — | — | — | — | Pending Round 5 panel | Proved `B1(5G+2R) -> B2(Obs2+S)` pickup & PL13 local witness in sim; B0 failed 11-cell routing across 3.12M clear poses (stall 1/2 on PL) |
 
 ## Round 5 dead ends logged
 
