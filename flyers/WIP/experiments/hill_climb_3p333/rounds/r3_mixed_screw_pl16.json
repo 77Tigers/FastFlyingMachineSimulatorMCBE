@@ -1,0 +1,34 @@
+{
+  "file": "flyers/WIP/experiments/hill_climb_3p333/round3/mixed_screw_pl16.flyer",
+  "tested_pl": 16,
+  "encoded_pl": 16,
+  "blocks": 262,
+  "dims": [
+    14,
+    16,
+    10
+  ],
+  "samples": {
+    "climbing_pass": 20,
+    "climbing_total": 20,
+    "heldout_pass": 60,
+    "heldout_total": 60,
+    "total_pass": 80,
+    "min_distance": 3334,
+    "max_distance": 3334,
+    "min_bps": 3.334,
+    "climbing_failures": []
+  },
+  "audit_240": {
+    "max_successful_action": "16",
+    "movement_failures": "0",
+    "extension_failures": "0",
+    "distance_240": "80"
+  },
+  "minus_one": {
+    "pl": 15,
+    "ticks": 10000,
+    "total_pass": 0,
+    "min_distance": 0
+  }
+}

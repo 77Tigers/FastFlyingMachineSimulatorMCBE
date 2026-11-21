@@ -1,0 +1,115 @@
+openplus6_pl18.flyer PL 18 blocks 107 XYZ (6, 8, 10) feafee9e36d0baad450b8282de5834c3f7d24932220abb8e0830af6840bea597
+0 {'G': 11, 'R': 3, 'H': 3, 'S': 1}
+1 {'G': 10, 'R': 3, 'H': 3, 'S': 1}
+2 {'G': 11, 'R': 2, 'H': 3, 'S': 1}
+3 {'G': 11, 'R': 3, 'H': 3, 'S': 1}
+4 {'G': 10, 'R': 3, 'H': 3, 'S': 1}
+5 {'G': 11, 'R': 3, 'H': 3, 'S': 1}
+file=openplus6_pl18.flyer limit=18 rng_final=6053433728553997232 phase_x=0 phase_z=0 ticks=240 start_min_x=13 end_min_x=93 distance=80 extensions=480 extension_failures=0 end_blocks=107 initial_kinds=[0, 32, 32, 0, 0, 0, 11, 0, 6, 24, 0] final_kinds=[0, 32, 32, 0, 0, 0, 11, 0, 6, 24, 0] conservation_mismatch_ticks=0 period=0 translated_repeat_pairs=0 first_repeat=None traced=true max_successful_action=18 movement_failures=0
+file=openplus6_pl18.flyer limit=18 rng_final=6269817706955863120 phase_x=0 phase_z=0 ticks=10000 start_min_x=13 end_min_x=3346 distance=3333 extensions=20000 extension_failures=0 end_blocks=107 initial_kinds=[0, 32, 32, 0, 0, 0, 11, 0, 6, 24, 0] final_kinds=[0, 32, 32, 0, 0, 0, 11, 0, 6, 24, 0] conservation_mismatch_ticks=0 period=0 translated_repeat_pairs=0 first_repeat=None traced=true max_successful_action=18 movement_failures=0
+file=openplus6_pl18.flyer limit=18 rng_final=6053433728553997232 phase_x=7 phase_z=7 ticks=240 start_min_x=13 end_min_x=93 distance=80 extensions=480 extension_failures=0 end_blocks=107 initial_kinds=[0, 32, 32, 0, 0, 0, 11, 0, 6, 24, 0] final_kinds=[0, 32, 32, 0, 0, 0, 11, 0, 6, 24, 0] conservation_mismatch_ticks=0 period=0 translated_repeat_pairs=0 first_repeat=None traced=true max_successful_action=18 movement_failures=0
+file=openplus6_pl18.flyer limit=18 rng_final=6269817706955863120 phase_x=7 phase_z=7 ticks=10000 start_min_x=13 end_min_x=3346 distance=3333 extensions=20000 extension_failures=0 end_blocks=107 initial_kinds=[0, 32, 32, 0, 0, 0, 11, 0, 6, 24, 0] final_kinds=[0, 32, 32, 0, 0, 0, 11, 0, 6, 24, 0] conservation_mismatch_ticks=0 period=0 translated_repeat_pairs=0 first_repeat=None traced=true max_successful_action=18 movement_failures=0
+file=openplus6_pl18.flyer limit=17 rng_final=6053433728553997232 phase_x=0 phase_z=0 ticks=240 start_min_x=13 end_min_x=13 distance=0 extensions=7 extension_failures=1428 end_blocks=107 initial_kinds=[0, 32, 32, 0, 0, 0, 11, 0, 6, 24, 0] final_kinds=[0, 32, 32, 0, 0, 0, 11, 0, 6, 24, 0] conservation_mismatch_ticks=0 period=0 translated_repeat_pairs=0 first_repeat=None traced=true max_successful_action=17 movement_failures=1428
+file=openplus6_pl18.flyer limit=17 rng_final=6053433728553997232 phase_x=7 phase_z=7 ticks=240 start_min_x=13 end_min_x=13 distance=0 extensions=7 extension_failures=1428 end_blocks=107 initial_kinds=[0, 32, 32, 0, 0, 0, 11, 0, 6, 24, 0] final_kinds=[0, 32, 32, 0, 0, 0, 11, 0, 6, 24, 0] conservation_mismatch_ticks=0 period=0 translated_repeat_pairs=0 first_repeat=None traced=true max_successful_action=17 movement_failures=1428
+b0: 11 slime cells, e.g. (46,2,18)
+b1: 11 honey cells, e.g. (46,5,20)
+b2: 11 honey cells, e.g. (47,3,21)
+b3: 11 slime cells, e.g. (47,4,17)
+b4: 10 honey cells, e.g. (48,1,16)
+b5: 10 slime cells, e.g. (48,5,23)
+tick   0 slot 0 extend  load 18  moves b0           (+7 other)  by piston #23 +X now at (48,1,15) on b4
+tick   0 slot 0 retract load  0  moves              (+0 other)  by piston #7 +X now at (47,2,20) on b0
+tick   0 slot 0 retract load  0  moves              (+0 other)  by piston #19 +X now at (47,6,20) on -
+tick   0 slot 0 extend  load 18  moves b1           (+7 other)  by piston #41 +X now at (48,6,24) on b5
+tick   0 slot 0 extend  load 17  moves b3           (+6 other)  by piston #34 +X now at (48,4,20) on -
+tick   0 slot 0 extend  load  0  moves              (+0 other)  by sticky piston #92 -X now at (50,4,17) on b3+b4
+tick   0 slot 0 extend  load 18  moves b2           (+7 other)  by piston #26 +X now at (48,1,19) on -
+tick   0 slot 0 extend  load  0  moves              (+0 other)  by sticky piston #89 -X now at (50,3,22) on b2+b5
+tick   2 slot 1 retract load  0  moves              (+0 other)  by piston #41 +X now at (48,6,24) on b5
+tick   2 slot 1 extend  load 18  moves b0           (+7 other)  by piston #25 +X now at (49,1,17) on b0+b2
+tick   2 slot 1 extend  load 18  moves b1           (+7 other)  by piston #43 +X now at (49,7,23) on -
+tick   2 slot 1 retract load  0  moves              (+0 other)  by piston #34 +X now at (48,4,20) on b1
+tick   2 slot 1 retract load 17  moves b3           (+6 other)  by sticky piston #92 -X now at (50,4,17) on b3+b4
+tick   2 slot 1 retract load  0  moves              (+0 other)  by piston #26 +X now at (48,1,19) on b0
+tick   2 slot 1 retract load 18  moves b2           (+7 other)  by sticky piston #89 -X now at (50,3,22) on b2+b5
+tick   2 slot 1 retract load  0  moves              (+0 other)  by piston #23 +X now at (48,1,15) on b4
+tick   4 slot 2 extend  load 17  moves b5           (+7 other)  by piston #12 +X now at (49,3,23) on b2
+tick   4 slot 2 extend  load 18  moves b1           (+7 other)  by piston #39 +X now at (50,6,22) on b1+b3
+tick   4 slot 2 extend  load 18  moves b0           (+7 other)  by piston #21 +X now at (50,0,16) on -
+tick   4 slot 2 retract load  0  moves              (+0 other)  by piston #43 +X now at (49,7,23) on b5
+tick   4 slot 2 extend  load  0  moves              (+0 other)  by sticky piston #56 -X now at (51,2,19) on b0+b2
+tick   4 slot 2 extend  load 17  moves b4           (+7 other)  by piston #9 +X now at (49,3,17) on b0+b3
+tick   4 slot 2 retract load  0  moves              (+0 other)  by piston #25 +X now at (49,1,17) on b0+b2+b4
+tick   4 slot 2 extend  load  0  moves              (+0 other)  by sticky piston #69 -X now at (51,5,20) on b1+b3
+tick   6 slot 3 retract load  0  moves              (+0 other)  by piston #12 +X now at (49,3,23) on b2
+tick   6 slot 3 extend  load 17  moves b4           (+7 other)  by piston #13 +X now at (50,4,16) on -
+tick   6 slot 3 extend  load 17  moves b5           (+7 other)  by piston #8 +X now at (50,2,22) on b5
+tick   6 slot 3 retract load 18  moves b1           (+7 other)  by sticky piston #69 -X now at (51,5,20) on b1+b3
+tick   6 slot 3 retract load  0  moves              (+0 other)  by piston #21 +X now at (50,0,16) on b4
+tick   6 slot 3 retract load  0  moves              (+0 other)  by piston #39 +X now at (50,6,22) on b1+b3+b5
+tick   6 slot 3 retract load 18  moves b0           (+7 other)  by sticky piston #56 -X now at (51,2,19) on b0+b2
+tick   6 slot 3 retract load  0  moves              (+0 other)  by piston #9 +X now at (49,3,17) on b0+b3
+tick   8 slot 4 extend  load  0  moves              (+0 other)  by sticky piston #49 -X now at (53,1,16) on b0
+tick   8 slot 4 extend  load 17  moves b3           (+6 other)  by piston #34 +X now at (50,4,20) on b1+b3
+tick   8 slot 4 extend  load 18  moves b2           (+7 other)  by piston #2 +X now at (50,3,19) on b0+b3
+tick   8 slot 4 retract load  0  moves              (+0 other)  by piston #13 +X now at (50,4,16) on b3
+tick   8 slot 4 extend  load 17  moves b5           (+7 other)  by piston #16 +X now at (51,4,22) on b1
+tick   8 slot 4 extend  load  0  moves              (+0 other)  by sticky piston #76 -X now at (53,6,23) on b1+b5
+tick   8 slot 4 extend  load 17  moves b4           (+7 other)  by piston #17 +X now at (51,5,17) on b4
+tick   8 slot 4 retract load  0  moves              (+0 other)  by piston #8 +X now at (50,2,22) on b2+b5
+tick  10 slot 5 extend  load 18  moves b2           (+7 other)  by piston #26 +X now at (51,1,19) on b2
+tick  10 slot 5 retract load 17  moves b5           (+7 other)  by sticky piston #76 -X now at (53,6,23) on b1+b5
+tick  10 slot 5 extend  load 17  moves b3           (+6 other)  by piston #19 +X now at (51,6,20) on b3
+tick  10 slot 5 retract load  0  moves              (+0 other)  by piston #34 +X now at (50,4,20) on b1+b3
+tick  10 slot 5 retract load  0  moves              (+0 other)  by piston #16 +X now at (51,4,22) on b1+b2
+tick  10 slot 5 retract load 17  moves b4           (+7 other)  by sticky piston #49 -X now at (53,1,16) on b0+b4
+tick  10 slot 5 retract load  0  moves              (+0 other)  by piston #2 +X now at (50,3,19) on b0+b3
+tick  10 slot 5 retract load  0  moves              (+0 other)  by piston #17 +X now at (51,5,17) on b3+b4
+tick  12 slot 0 extend  load 18  moves b0           (+7 other)  by piston #23 +X now at (52,1,15) on b4
+tick  12 slot 0 retract load  0  moves              (+0 other)  by piston #26 +X now at (51,1,19) on b0+b2
+tick  12 slot 0 extend  load 18  moves b1           (+7 other)  by piston #43 +X now at (52,7,23) on b5
+tick  12 slot 0 extend  load 18  moves b2           (+7 other)  by piston #7 +X now at (52,2,20) on b5
+tick  12 slot 0 extend  load 17  moves b3           (+6 other)  by piston #3 +X now at (52,5,19) on b3+b4
+tick  12 slot 0 extend  load  0  moves              (+0 other)  by sticky piston #92 -X now at (54,4,17) on b3+b4
+tick  12 slot 0 extend  load  0  moves              (+0 other)  by sticky piston #89 -X now at (54,3,22) on b2+b5
+tick  12 slot 0 retract load  0  moves              (+0 other)  by piston #19 +X now at (51,6,20) on b1+b3
+tick  14 slot 1 retract load  0  moves              (+0 other)  by piston #23 +X now at (52,1,15) on b4
+tick  14 slot 1 retract load  0  moves              (+0 other)  by piston #7 +X now at (52,2,20) on b5
+tick  14 slot 1 extend  load 18  moves b0           (+7 other)  by piston #21 +X now at (53,0,16) on -
+tick  14 slot 1 retract load 17  moves b3           (+6 other)  by sticky piston #92 -X now at (54,4,17) on b3+b4
+tick  14 slot 1 extend  load 18  moves b1           (+7 other)  by piston #39 +X now at (53,6,22) on b1+b3
+tick  14 slot 1 retract load  0  moves              (+0 other)  by piston #43 +X now at (52,7,23) on b5
+tick  14 slot 1 retract load  0  moves              (+0 other)  by piston #3 +X now at (52,5,19) on b1+b3+b4
+tick  14 slot 1 retract load 18  moves b2           (+7 other)  by sticky piston #89 -X now at (54,3,22) on b2+b5
+tick  16 slot 2 extend  load 17  moves b4           (+7 other)  by piston #9 +X now at (53,3,17) on b0+b3
+tick  16 slot 2 extend  load  0  moves              (+0 other)  by sticky piston #56 -X now at (55,2,19) on b2
+tick  16 slot 2 extend  load 17  moves b5           (+7 other)  by piston #8 +X now at (53,2,22) on b2+b5
+tick  16 slot 2 extend  load  0  moves              (+0 other)  by sticky piston #69 -X now at (55,5,20) on b3
+tick  16 slot 2 extend  load 18  moves b1           (+7 other)  by piston #41 +X now at (54,6,24) on -
+tick  16 slot 2 retract load  0  moves              (+0 other)  by piston #21 +X now at (53,0,16) on b4
+tick  16 slot 2 retract load  0  moves              (+0 other)  by piston #39 +X now at (53,6,22) on b1+b3+b5
+tick  16 slot 2 extend  load 18  moves b0           (+7 other)  by piston #25 +X now at (54,1,17) on b0+b2
+tick  18 slot 3 extend  load 17  moves b4           (+7 other)  by piston #13 +X now at (54,4,16) on -
+tick  18 slot 3 retract load  0  moves              (+0 other)  by piston #9 +X now at (53,3,17) on b0+b3
+tick  18 slot 3 retract load 18  moves b0           (+7 other)  by sticky piston #56 -X now at (55,2,19) on b0+b2
+tick  18 slot 3 extend  load 17  moves b5           (+7 other)  by piston #16 +X now at (54,4,22) on b1
+tick  18 slot 3 retract load  0  moves              (+0 other)  by piston #8 +X now at (53,2,22) on b2+b5
+tick  18 slot 3 retract load  0  moves              (+0 other)  by piston #25 +X now at (54,1,17) on b0+b2+b4
+tick  18 slot 3 retract load 18  moves b1           (+7 other)  by sticky piston #69 -X now at (55,5,20) on b1+b3
+tick  18 slot 3 retract load  0  moves              (+0 other)  by piston #41 +X now at (54,6,24) on b5
+tick  20 slot 4 extend  load  0  moves              (+0 other)  by sticky piston #76 -X now at (57,6,23) on b1
+tick  20 slot 4 extend  load 17  moves b3           (+6 other)  by piston #34 +X now at (54,4,20) on b1+b3
+tick  20 slot 4 retract load  0  moves              (+0 other)  by piston #13 +X now at (54,4,16) on b3
+tick  20 slot 4 extend  load 18  moves b2           (+7 other)  by piston #26 +X now at (54,1,19) on b0+b2
+tick  20 slot 4 retract load  0  moves              (+0 other)  by piston #16 +X now at (54,4,22) on b1+b2
+tick  20 slot 4 extend  load 17  moves b4           (+7 other)  by piston #17 +X now at (55,5,17) on b4
+tick  20 slot 4 extend  load  0  moves              (+0 other)  by sticky piston #49 -X now at (57,1,16) on b0+b4
+tick  20 slot 4 extend  load 17  moves b5           (+7 other)  by piston #12 +X now at (55,3,23) on -
+tick  22 slot 5 extend  load 17  moves b3           (+6 other)  by piston #3 +X now at (55,5,19) on b3+b4
+tick  22 slot 5 extend  load 18  moves b2           (+7 other)  by piston #2 +X now at (55,3,19) on b3
+tick  22 slot 5 retract load  0  moves              (+0 other)  by piston #12 +X now at (55,3,23) on b2
+tick  22 slot 5 retract load  0  moves              (+0 other)  by piston #17 +X now at (55,5,17) on b3+b4
+tick  22 slot 5 retract load 17  moves b4           (+7 other)  by sticky piston #49 -X now at (57,1,16) on b0+b4
+tick  22 slot 5 retract load  0  moves              (+0 other)  by piston #26 +X now at (54,1,19) on b0+b2
+tick  22 slot 5 retract load 17  moves b5           (+7 other)  by sticky piston #76 -X now at (57,6,23) on b1+b5
+tick  22 slot 5 retract load  0  moves              (+0 other)  by piston #34 +X now at (54,4,20) on b1+b3

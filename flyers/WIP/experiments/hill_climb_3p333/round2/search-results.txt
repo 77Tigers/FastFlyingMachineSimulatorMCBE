@@ -1,0 +1,181 @@
+six_trim.log
+n6_18_-1_-1_O_fixedrod_1.txt single removals 82 clean ['2 R -2 3 3', '5 R -2 2 4']
+
+fixed_hardware.log
+0 cap 10 glue infeasible cut rounds 12
+1 cap 10 glue 10 cut rounds 4
+2 cap 11 glue 11 cut rounds 10
+3 cap 10 glue infeasible cut rounds 12
+4 cap 10 glue 10 cut rounds 4
+5 cap 10 glue infeasible cut rounds 7
+
+rewiring.log
+hot [0, 3, 5] offset (16, 1, 16)
+body 0 tests 15298 accepted 0
+body 3 tests 15298 accepted 0
+body 5 tests 15403 accepted 0
+
+selfpull6_trimmed_piston.log
+hot [0, 3, 5] offset (16, 1, 16)
+body 0 tests 32253 accepted 0
+body 3 tests 32257 accepted 0
+body 5 tests 32305 accepted 0
+
+faces.log
+hot [0, 3, 5] offset (16, 1, 16)
+body 0 tests 38021 accepted 0
+body 3 tests 38020 accepted 0
+body 5 tests 38128 accepted 0
+
+catalog17.log
+59 template classes
+v1_0_-2_0 links 3664 t=-1:2104 t=0:1560 | complete screened=0 rings=4280 power assignments=0 power-coverable=0 complete-wirings=0 routed=0 | 
+v1_0_-1_-1 links 1300 t=-1:688 t=0:612 | complete screened=0 rings=3810 power assignments=0 power-coverable=4 complete-wirings=0 routed=0 | 
+v1_0_-1_0 links 1340 t=-1:716 t=0:624 | complete screened=0 rings=4654 power assignments=0 power-coverable=34 complete-wirings=0 routed=0 | 
+v1_0_-1_1 links 6320 t=-1:3336 t=0:2984 | complete screened=0 rings=32507 power assignments=0 power-coverable=827 complete-wirings=0 routed=0 | 
+v1_0_0_0 links 0 t=-1:0 t=0:0 | complete screened=0 rings=0 power assignments=0 power-coverable=0 complete-wirings=0 routed=0 | 
+v1_0_0_2 links 4168 t=-1:2664 t=0:1504 | complete screened=0 rings=10744 power assignments=0 power-coverable=1 complete-wirings=0 routed=0 | 
+v1_0_1_1 links 1432 t=-1:852 t=0:580 | complete screened=0 rings=7890 power assignments=0 power-coverable=0 complete-wirings=0 routed=0 | 
+v1_1_-2_0 links 1384 t=-1:1144 t=0:240 | complete screened=0 rings=157 power assignments=0 power-coverable=0 complete-wirings=0 routed=0 | 
+v1_1_-1_-1 links 724 t=-1:500 t=0:224 | complete screened=0 rings=704 power assignments=0 power-coverable=0 complete-wirings=0 routed=0 | 
+v1_1_-1_0 links 3552 t=-1:2320 t=0:1232 | complete screened=0 rings=6151 power assignments=0 power-coverable=14 complete-wirings=0 routed=0 | 
+v1_1_-1_1 links 3864 t=-1:2368 t=0:1496 | complete screened=0 rings=8027 power assignments=0 power-coverable=27 complete-wirings=0 routed=0 | 
+v1_1_0_0 links 1560 t=-1:860 t=0:700 | complete screened=0 rings=9997 power assignments=0 power-coverable=0 complete-wirings=0 routed=0 | 
+v1_1_0_2 links 1992 t=-1:1464 t=0:528 | complete screened=0 rings=939 power assignments=0 power-coverable=0 complete-wirings=0 routed=0 | 
+v1_1_1_1 links 152 t=-1:152 t=0:0 | complete screened=0 rings=0 power assignments=0 power-coverable=0 complete-wirings=0 routed=0 | 
+v1_-1_-2_0 links 1376 t=-1:1080 t=0:296 | complete screened=0 rings=196 power assignments=0 power-coverable=0 complete-wirings=0 routed=0 | 
+v1_-1_-1_-1 links 680 t=-1:496 t=0:184 | complete screened=0 rings=688 power assignments=0 power-coverable=0 complete-wirings=0 routed=0 | 
+v1_-1_-1_0 links 3448 t=-1:2360 t=0:1088 | complete screened=0 rings=6352 power assignments=0 power-coverable=0 complete-wirings=0 routed=0 | 
+v1_-1_-1_1 links 4808 t=-1:3024 t=0:1784 | complete screened=0 rings=18848 power assignments=0 power-coverable=0 complete-wirings=0 routed=0 | 
+v1_-1_0_0 links 0 t=-1:0 t=0:0 | complete screened=0 rings=0 power assignments=0 power-coverable=0 complete-wirings=0 routed=0 | 
+v1_-1_0_2 links 3520 t=-1:2424 t=0:1096 | complete screened=0 rings=5969 power assignments=0 power-coverable=0 complete-wirings=0 routed=0 | 
+v1_-1_1_1 links 1260 t=-1:760 t=0:500 | complete screened=0 rings=5357 power assignments=0 power-coverable=0 complete-wirings=0 routed=0 | 
+v1_2_-2_0 links 432 t=-1:408 t=0:24 | complete screened=0 rings=0 power assignments=0 power-coverable=0 complete-wirings=0 routed=0 | 
+v1_2_-1_-1 links 284 t=-1:236 t=0:48 | complete screened=0 rings=16 power assignments=0 power-coverable=0 complete-wirings=0 routed=0 | 
+v1_2_-1_0 links 1816 t=-1:1312 t=0:504 | complete screened=0 rings=679 power assignments=0 power-coverable=0 complete-wirings=0 routed=0 | 
+v1_2_-1_1 links 2304 t=-1:1496 t=0:808 | complete screened=0 rings=1325 power assignments=0 power-coverable=11 complete-wirings=0 routed=0 | 
+v1_2_0_0 links 864 t=-1:560 t=0:304 | complete screened=0 rings=1622 power assignments=0 power-coverable=12 complete-wirings=0 routed=0 | 
+v1_2_0_2 links 704 t=-1:576 t=0:128 | complete screened=0 rings=14 power assignments=0 power-coverable=0 complete-wirings=0 routed=0 | 
+v1_2_1_1 links 0 t=-1:0 t=0:0 | complete screened=0 rings=0 power assignments=0 power-coverable=0 complete-wirings=0 routed=0 | 
+v1_-2_-2_0 links 240 t=-1:216 t=0:24 | complete screened=0 rings=0 power assignments=0 power-coverable=0 complete-wirings=0 routed=0 | 
+v1_-2_-1_-1 links 8 t=-1:8 t=0:0 | complete screened=0 rings=0 power assignments=0 power-coverable=0 complete-wirings=0 routed=0 | 
+v1_-2_-1_0 links 0 t=-1:0 t=0:0 | complete screened=0 rings=0 power assignments=0 power-coverable=0 complete-wirings=0 routed=0 | 
+v1_-2_-1_1 links 1656 t=-1:1160 t=0:496 | complete screened=0 rings=622 power assignments=0 power-coverable=0 complete-wirings=0 routed=0 | 
+v1_-2_0_0 links 0 t=-1:0 t=0:0 | complete screened=0 rings=0 power assignments=0 power-coverable=0 complete-wirings=0 routed=0 | 
+v1_-2_0_2 links 1744 t=-1:1176 t=0:568 | complete screened=0 rings=555 power assignments=0 power-coverable=0 complete-wirings=0 routed=0 | 
+v1_-2_1_1 links 708 t=-1:432 t=0:276 | complete screened=0 rings=672 power assignments=0 power-coverable=0 complete-wirings=0 routed=0 | 
+v0_0_-2_0 links 684 t=-1:536 t=0:148 | complete screened=0 rings=406 power assignments=0 power-coverable=0 complete-wirings=0 routed=0 | 
+v0_0_-1_-1 links 6064 t=-1:3264 t=0:2800 | complete screened=0 rings=24486 power assignments=0 power-coverable=249 complete-wirings=0 routed=0 | 
+v0_0_0_-2 links 828 t=-1:516 t=0:312 | complete screened=0 rings=780 power assignments=0 power-coverable=0 complete-wirings=0 routed=0 | 
+v0_0_0_0 links 0 t=-1:0 t=0:0 | complete screened=0 rings=0 power assignments=0 power-coverable=0 complete-wirings=0 routed=0 | 
+v0_1_-2_0 links 300 t=-1:300 t=0:0 | complete screened=0 rings=0 power assignments=0 power-coverable=0 complete-wirings=0 routed=0 | 
+v0_1_-1_-1 links 2448 t=-1:1792 t=0:656 | complete screened=0 rings=1525 power assignments=0 power-coverable=0 complete-wirings=0 routed=0 | 
+v0_1_0_-2 links 232 t=-1:216 t=0:16 | complete screened=0 rings=2 power assignments=0 power-coverable=0 complete-wirings=0 routed=0 | 
+v0_1_0_-1 links 808 t=-1:612 t=0:196 | complete screened=0 rings=1132 power assignments=0 power-coverable=0 complete-wirings=0 routed=0 | 
+v0_1_0_0 links 420 t=-1:232 t=0:188 | complete screened=0 rings=2576 power assignments=0 power-coverable=0 complete-wirings=0 routed=0 | 
+v0_-1_-2_0 links 256 t=-1:232 t=0:24 | complete screened=0 rings=20 power assignments=0 power-coverable=0 complete-wirings=0 routed=0 | 
+v0_-1_-1_-1 links 2328 t=-1:1824 t=0:504 | complete screened=0 rings=1788 power assignments=0 power-coverable=0 complete-wirings=0 routed=0 | 
+v0_-1_0_-2 links 144 t=-1:132 t=0:12 | complete screened=0 rings=2 power assignments=0 power-coverable=0 complete-wirings=0 routed=0 | 
+v0_-1_0_-1 links 516 t=-1:380 t=0:136 | complete screened=0 rings=208 power assignments=0 power-coverable=0 complete-wirings=0 routed=0 | 
+v0_-1_0_0 links 0 t=-1:0 t=0:0 | complete screened=0 rings=0 power assignments=0 power-coverable=0 complete-wirings=0 routed=0 | 
+v0_2_-2_0 links 80 t=-1:80 t=0:0 | complete screened=0 rings=0 power assignments=0 power-coverable=0 complete-wirings=0 routed=0 | 
+v0_2_-1_-1 links 784 t=-1:632 t=0:152 | complete screened=0 rings=38 power assignments=0 power-coverable=0 complete-wirings=0 routed=0 | 
+v0_2_0_-2 links 16 t=-1:16 t=0:0 | complete screened=0 rings=0 power assignments=0 power-coverable=0 complete-wirings=0 routed=0 | 
+v0_2_0_-1 links 228 t=-1:188 t=0:40 | complete screened=0 rings=30 power assignments=0 power-coverable=0 complete-wirings=0 routed=0 | 
+v0_2_0_0 links 116 t=-1:88 t=0:28 | complete screened=0 rings=80 power assignments=0 power-coverable=0 complete-wirings=0 routed=0 | 
+v0_-2_-2_0 links 48 t=-1:48 t=0:0 | complete screened=0 rings=0 power assignments=0 power-coverable=0 complete-wirings=0 routed=0 | 
+v0_-2_-1_-1 links 328 t=-1:296 t=0:32 | complete screened=0 rings=0 power assignments=0 power-coverable=0 complete-wirings=0 routed=0 | 
+v0_-2_0_-2 links 16 t=-1:16 t=0:0 | complete screened=0 rings=0 power assignments=0 power-coverable=0 complete-wirings=0 routed=0 | 
+v0_-2_0_-1 links 0 t=-1:0 t=0:0 | complete screened=0 rings=0 power assignments=0 power-coverable=0 complete-wirings=0 routed=0 | 
+v0_-2_0_0 links 0 t=-1:0 t=0:0 | complete screened=0 rings=0 power assignments=0 power-coverable=0 complete-wirings=0 routed=0 |
+
+freex3_17_-1_-1_M.log
+links 3512 t=-1:2432 t=0:1080
+complete screened=2 rings=0 power assignments=0 power-coverable=0 complete-wirings=0 routed=0
+
+freex6_17_-1_-1_O.log
+links 456 t=-1:280 t=0:176
+complete screened=1573 rings=138 power assignments=12 power-coverable=0 complete-wirings=0 routed=0
+
+un6O_16_-1_-1.log
+links 3092 t=-5:752 t=-4:1104 t=-3:784 t=-2:348 t=-1:104 t=0:0 t=1:0 t=2:0 t=3:0
+complete screened=0 rings=0 power assignments=0 power-coverable=0 complete-wirings=0 routed=0
+
+un6O_16_-2_0.log
+links 3092 t=-5:752 t=-4:1104 t=-3:784 t=-2:348 t=-1:104 t=0:0 t=1:0 t=2:0 t=3:0
+complete screened=0 rings=0 power assignments=0 power-coverable=0 complete-wirings=0 routed=0
+
+twin17_-1_-1_3.log
+links 1340 t=-1:716 t=0:624
+paired clusters 200 paired links 629592
+paired closures=390190 rings=390190 coverable=8 wirings=0 routed=0
+
+twin17_-2_0_3.log
+links 1668 t=-2:1044 t=0:624
+paired clusters 200 paired links 720328
+paired closures=217722 rings=217722 coverable=0 wirings=0 routed=0
+
+sixnear17_beam_1.log
+pose choices 25 25 25
+local rings=7731 power-coverable=916 complete wirings=0 routed=0
+
+sixnear17_dynamic_1.log
+pose choices 25 25 25
+local rings=9683 power-coverable=1757 complete wirings=2407 routed=0
+
+rf-1_-1_-1_-1_0_0.log
+links 2112 t=-3:1120 t=-2:620 t=-1:304 t=0:68 t=1:0
+general closures=6336511 profiled=866 rings=0 complete wirings=0 routed=0
+
+rf-1_-1_0_-1_-1_0.log
+links 2112 t=-3:1120 t=-2:620 t=-1:304 t=0:68 t=1:0
+general closures=6347482 profiled=0 rings=0 complete wirings=0 routed=0
+
+rf-2_-1_0_-1_0_0.log
+links 2112 t=-3:1120 t=-2:620 t=-1:304 t=0:68 t=1:0
+general closures=2971423 profiled=0 rings=0 complete wirings=0 routed=0
+
+rf-2_-2_0_0_0_0.log
+links 2112 t=-3:1120 t=-2:620 t=-1:304 t=0:68 t=1:0
+general closures=1392658 profiled=0 rings=0 complete wirings=0 routed=0
+
+rf-2_0_0_-2_0_0.log
+links 2112 t=-3:1120 t=-2:620 t=-1:304 t=0:68 t=1:0
+general closures=1414764 profiled=0 rings=0 complete wirings=0 routed=0
+
+phase (0,0) verified 81 non-piston blocks at 833 period boundaries
+phase (7,7) verified 81 non-piston blocks at 833 period boundaries
+phase (0,0) verified 42 non-piston blocks at 833 period boundaries
+phase (7,7) verified 42 non-piston blocks at 833 period boundaries
+
+final_s0.log
+pose choices 211 211 211
+local rings=282318 power-coverable=3246 complete wirings=0 routed=0
+
+final_s1.log
+pose choices 211 211 211
+local rings=240834 power-coverable=2581 complete wirings=0 routed=0
+
+final_s2.log
+pose choices 211 211 211
+local rings=260349 power-coverable=1899 complete wirings=0 routed=0
+
+final_s3.log
+pose choices 211 211 211
+local rings=249950 power-coverable=2695 complete wirings=0 routed=0
+
+final_s4.log
+pose choices 211 211 211
+local rings=193467 power-coverable=2778 complete wirings=0 routed=0
+
+final_s5.log
+pose choices 211 211 211
+local rings=227303 power-coverable=2243 complete wirings=0 routed=0
+
+final_s6.log
+pose choices 211 211 211
+local rings=211317 power-coverable=1953 complete wirings=0 routed=0
+
+final_s7.log
+pose choices 211 211 211
+local rings=200466 power-coverable=2871 complete wirings=0 routed=0
