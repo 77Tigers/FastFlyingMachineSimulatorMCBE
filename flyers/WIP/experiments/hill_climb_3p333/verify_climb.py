@@ -190,7 +190,7 @@ def main() -> int:
             minus_one = run_samples(
                 m1_flyer,
                 args.distance,
-                min(args.ticks, 1000),
+                args.ticks,
                 args.jobs,
                 td_path / "samples_m1.csv",
             )

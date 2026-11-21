@@ -39,7 +39,13 @@ Known dead ends (do not retry):
 | 0 (baseline run 1) | `d0aaacc` | `flyers/bank/pl18/nk_lat_n4.flyer` | 18 | 20/20 | 60/60 | 224 | 3.334 | Astra 8.6, Neon 7.2, Fable 6.0 | Baseline |
 | 0 (baseline run 2) | `d0aaacc` | `flyers/bank/pl18/nk_lat_n4.flyer` | 18 | 20/20 | 60/60 | 224 | 3.334 | Noise floor = 0 | Confirmed |
 | 0 (ref) | `d0aaacc` | `flyers/bank/pl19/nk_stack_n4.flyer` | 19 | 20/20 | 60/60 | 756 | 3.333 | Astra 7.3, Neon 5.8, Fable 4.5 | Reference |
-| 1 | pending | `round1/screw6_pl18.flyer` | 18 | 20/20 | 60/60 | 108 | 3.333 | Pending Round 1 panel | Kept as compact PL18 control; pure 6-body hopper ring hit `sum <= -6` wall (stall 1/2 on PL) |
+| 1 | `021b309` | `round1/screw6_pl18.flyer` | 18 | 20/20 | 60/60 | 108 | 3.333 | Astra 8.0, Neon 7.8, Fable 7.0 (3-0 A/B over `nk_lat_n4`); unanimous Option C pivot | Kept as compact PL18 control; pure 6-body hopper ring hit `sum <= -6` wall (stall 1/2 on PL) |
+| 2 | pending | `round2/openplus6_pl18.flyer` | 18 | 20/20 | 60/60 | 107 | 3.333 | Pending Round 2 panel + stall triage | New self-pulled 6-body mechanism (lightning-rod sticky power + cross-body shared RB); PL17 still open (stall 2/2 on PL) |
+| 2 (alt) | pending | `round2/openplus3_pl19.flyer` | 19 | 20/20 | 60/60 | 55 | 3.333 | Pending Round 2 panel + stall triage | Tiny `6x6x6` 55-block self-pulled 3-body flyer (80/80 at PL19, 0/80 at PL18) |
+
+## Round 2 dead ends logged
+
+- Self-pulled 6-body and 3-body rings (`round2/openplus6_pl18.flyer` 107b PL18, `round2/openplus3_pl19.flyer` 55b PL19): flew cleanly 80/80 with lightning-rod sticky power and cross-body shared RB on body 2 (loads: bodies 0,3,5 = 18; bodies 1,2,4 = 17). Bounded PL17 negatives in `round2/search-results.txt`: fixed-hardware `contract.py` proves bodies 0,3,5 need 11 glue; 256,983 local edit/piston/face perturbations of `openplus6_pl18` all failed; 18,462,838 open-plus 6-body closed link combos, 165,848 3-body template placements, and 1,866,004 perturbed placements found no routed PL17 flyer.
 
 ## Round 1 dead ends logged
 
