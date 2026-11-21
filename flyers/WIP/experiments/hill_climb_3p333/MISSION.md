@@ -46,18 +46,24 @@ Known dead ends (do not retry):
 | 3 (alt) | `bcc0ac1` | `round3/mixed_screw_pl17.flyer` | **17** | 20/20 | 60/60 | 256 | 3.334 | Verified stepping stone | Verified PL17 (4-hopper A4 + 2 loop hoppers/half-ring) |
 | 4 | `98717ad` | `round4/mixed_screw_pl15.flyer` | **15** | 20/20 | 60/60 | 282 | 3.333 | Astra 9.0, Neon 9.1, Fable 8.4 (3-0 valid, zero ballast); Astra & Neon independently invented `Obs2+P+S` for PL14/13 | **NEW RECORD (-3 PL vs baseline PL18)!** 20-body `O3->T3->A3c+S` + 4-lvl towers on col 2/5; stall counter 0 |
 | 5 | `da41845` | `round5/` (no closed PL14 flyer) | 15 (record held) | — | — | — | — | 3-0 CONTINUE: Neon verified all 3 links of `(B0,B2)` double-`Obs2` at `(0,-3,+1)`; Astra ran 24-body `(B0,B1)` fixture 10k ticks at PL14; Fable invented towerless `S1/P2` `Rod(0h)` unit | Proved `B1(5G+2R) -> B2(Obs2+S)` pickup & PL13 local witness in sim; B0 failed 11-cell routing across 3.12M clear poses (stall 1/2 on PL) |
-| 6 | pending | `round6/` (no closed PL14 flyer) | 15 (record held) | — | — | — | — | Pending Round 6 panel + 2-round stall triage (with `refs/3_3.33_ext_a.flyer` PL12 rear-rod reference) | Closed relaxed `(B0,B2)` back at B0=18 (0 at <=13); 15.8M `(B0,B1)` armed fronts gave 0 joins; proved `S1/P2` mid-stroke arm collision in native sim (stall 2/2 on PL) |
+| 6 | `58e8c48` | `round6/` (no closed PL14 flyer) | 15 (record held) | — | — | — | — | 3-0 STOP (Astra, Neon, Fable): 100% `work missing something`; `ext_a` solves towers down to PL10-12 but does not close PL14 back ring (`max sum(t) = -3` vs `-2` required) | **STOPPED at 2-round stall bar; verified PL15 record locked (-3 PL vs baseline PL18)** |
 
-## Round 6 dead ends logged
+## Round 6 stall triage & final bounds
 
-- Double-`Obs2` `(B0, B2)` mixed screw (`round6/flex.cpp`, `round6/sweep.py`): 30,042 joins (fixed) + 7,241 (joint) + 1,013,410 (crossed) gave 0 backs at caps `(10, 11, 6)`. Relaxed `(0, -3, +1)` closed at `B0=14` (`relaxed_back.backs`, B0 load 18, B1/B2 = 14) with 0 at B0 caps 12-13.
-- Double-`Obs2` `(B0, B1)` rear-pickup search (`round6/backup.cpp`, `round6/three.cpp`): 8.71M + 7.13M armed front placements gave 0 compatible opposite halves within PL14 B0 budget.
-- Towerless `S1/P2` mid-stroke rigid push (`round6/midstroke.rs`, `round6/midstroke_order.fixture`): real update-order collision at Rod slot 3 when P2's carrier retracts first and pushes Rod into its own extended pulling arm (`immovable obstruction` even at PL15).
+- **Stall buckets (Rounds 5-6):** `work missing something` = 100% (all 5 tested PL14 families hit geometric/order walls); `grader wrong` = 0; `case vague` = 0; `infrastructure` = 0; `variance` = 0 (noise floor = 0).
+- **Double-`Obs2` `(B0, B2)` mixed screw (`round6/flex.cpp`, `round6/sweep.py`):** 30,042 joins (fixed) + 7,241 (joint) + 1,013,410 (crossed) gave 0 backs at caps `(10, 11, 6)`. Relaxed `(0, -3, +1)` closed at `B0=14` (`relaxed_back.backs`, B0 load 18, B1/B2 = 14) with 0 at B0 caps 12-13.
+- **Double-`Obs2` `(B0, B1)` rear-pickup search (`round6/backup.cpp`, `round6/three.cpp`):** 8.71M + 7.13M armed front placements gave 0 compatible opposite halves within PL14 B0 budget.
+- **Towerless `S1/P2` mid-stroke rigid push (`round6/midstroke.rs`, `round6/midstroke_order.fixture`):** real update-order collision at Rod slot 3 when P2's carrier retracts first and pushes Rod into its own extended pulling arm (`immovable obstruction` even at PL15).
+- **Maintainer `ext_a` back-ring bounds (Round 6 panel):**
+  - Lightning rods adhere to both slime and honey identically to redstone blocks (`src/sim.rs:279-287`); `ext_a` avoids sticking through move-order asymmetry and uses `t = -4` coaxial links.
+  - Exhaustive pairwise search with `ext_a` rear-rod `B2` across `{O3, T3}^3` at PL14 caps `(11, 11, 7+1S)` gives `max(t0 + t1 + t2) = -5` (needs `-2`).
+  - Even removing `B2`'s back sticky via a 6-tower `ext_a` setup across all 27 `{O3, T3, A3c}^3` triples at `(11, 11, 8)` tops out at `max(t0 + t1 + t2) = -3`, 1 X-step short of `-2`.
+  - Dual-`O3` same-phase 2-RB sharing: 0 valid 2D configurations. 6-phase pull-first rings fail on early hopper firing at `s = 2`.
 
 ## Maintainer references added after Round 6
 
-- `refs/3_3.33_ext_a.flyer` (60b, `17x3x3`, verified 80/80 at PL12, 0/80 at PL11): single rear-facing `-X` lightning rod behind a 5-slime cross (`5G + 1Rod + 1S = 7` fixed -> load 10 interior, load 11 four-push plate, load 11 tip, load 12 transition).
-- `refs/3_3.33_ext_b.flyer` (74b, `16x6x6`, verified 80/80 at PL13, 0/80 at PL12): downward-rod 8-fixed interior plates (load 11-12).
+- `refs/3_3.33_ext_a.flyer` (60b, `17x3x3`, engine-less open extension: 0 standalone distance, finite 48-extension startup sequence clears PL12 and fails PL11 across 80/80 cases; with 3 prescribed rear pushes per 12-tick period, passes 80/80 at PL12 and 0/80 at PL11): single rear-facing `-X` lightning rod behind a 5-slime cross (`5G + 1Rod + 1S = 7` fixed -> load 10 interior, load 11 four-push plate, load 11 tip, load 12 transition). Worth reusing as the tower template in any future climb that discovers a PL14-capable back ring.
+- `refs/3_3.33_ext_b.flyer` (74b, `16x6x6`, engine-less open extension: 0 standalone distance, finite 65-extension startup sequence clears PL13 and fails PL12 across 80/80 cases): downward-rod 8-fixed interior plates (load 11-12).
 
 ## Round 5 dead ends logged
 
