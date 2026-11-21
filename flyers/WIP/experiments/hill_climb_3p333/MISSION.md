@@ -42,8 +42,13 @@ Known dead ends (do not retry):
 | 1 | `021b309` | `round1/screw6_pl18.flyer` | 18 | 20/20 | 60/60 | 108 | 3.333 | Astra 8.0, Neon 7.8, Fable 7.0 (3-0 A/B over `nk_lat_n4`); unanimous Option C pivot | Kept as compact PL18 control; pure 6-body hopper ring hit `sum <= -6` wall (stall 1/2 on PL) |
 | 2 | `9f9a3a4` | `round2/openplus6_pl18.flyer` | 18 | 20/20 | 60/60 | 107 | 3.333 | Astra 7.5, Neon 7.4, Fable 7.3 (3-0 A/B over `screw6_pl18`); 2-1 STOP vs Neon CONTINUE | Kept as new 107b self-pulled control (stall 2/2 on PL); orchestrator override for 1 final Round 3 test of Neon's exact `A4->T3->O3` + `gap=3` tower blueprint |
 | 2 (alt) | `9f9a3a4` | `round2/openplus3_pl19.flyer` | 19 | 20/20 | 60/60 | 55 | 3.333 | Noted by panel (`6x6x6` cube) | Tiny 55-block 3-body self-pulled reference |
-| 3 | `a1ac112` | `round3/mixed_screw_pl16.flyer` | **16** | 20/20 | 60/60 | 262 | 3.334 | Pending Round 3 panel | **NEW RECORD (-2 PL vs baseline PL18)!** Stall counter reset to 0 |
-| 3 (alt) | `a1ac112` | `round3/mixed_screw_pl17.flyer` | **17** | 20/20 | 60/60 | 256 | 3.334 | Pending Round 3 panel | Verified PL17 stepping stone (4-hopper A4 + 2 loop hoppers/half-ring) |
+| 3 | `bcc0ac1` | `round3/mixed_screw_pl16.flyer` | **16** | 20/20 | 60/60 | 262 | 3.334 | Astra 8.8, Neon 8.7, Fable 8.3 (3-0 valid, zero ballast); unanimous CONTINUE for PL15 | **NEW RECORD (-2 PL vs baseline PL18)!** Stall counter reset to 0 |
+| 3 (alt) | `bcc0ac1` | `round3/mixed_screw_pl17.flyer` | **17** | 20/20 | 60/60 | 256 | 3.334 | Verified stepping stone | Verified PL17 (4-hopper A4 + 2 loop hoppers/half-ring) |
+| 4 | pending | `round4/mixed_screw_pl15.flyer` | **15** | 20/20 | 60/60 | 282 | 3.333 | Pending Round 4 panel | **NEW RECORD (-3 PL vs baseline PL18)!** 20-body `O3->T3->A3c+S` + 4-lvl towers on col 2/5; stall counter 0 |
+
+## Round 4 PL14 dead ends logged
+
+- Staggered-X 3-phase half-turn back rings (`round4/stretch.cpp`): offsetting one of three back hoppers by ±1..2 along X across O3/T3/A3c footprints at `t1 = -3` and caps `(11, 11, 7)` yielded 4,000 middle-to-sticky placements across 2,216 oriented pairs and 0 closed rings. Breaking PL14 requires changing the back-ring mechanism (e.g. 6-phase odd+even double-pulling, rigid pushes, or 2-hopper cores).
 
 ## Round 2 stall triage (buckets)
 
