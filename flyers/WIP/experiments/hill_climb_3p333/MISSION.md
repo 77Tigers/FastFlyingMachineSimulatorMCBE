@@ -44,7 +44,13 @@ Known dead ends (do not retry):
 | 2 (alt) | `9f9a3a4` | `round2/openplus3_pl19.flyer` | 19 | 20/20 | 60/60 | 55 | 3.333 | Noted by panel (`6x6x6` cube) | Tiny 55-block 3-body self-pulled reference |
 | 3 | `bcc0ac1` | `round3/mixed_screw_pl16.flyer` | **16** | 20/20 | 60/60 | 262 | 3.334 | Astra 8.8, Neon 8.7, Fable 8.3 (3-0 valid, zero ballast); unanimous CONTINUE for PL15 | **NEW RECORD (-2 PL vs baseline PL18)!** Stall counter reset to 0 |
 | 3 (alt) | `bcc0ac1` | `round3/mixed_screw_pl17.flyer` | **17** | 20/20 | 60/60 | 256 | 3.334 | Verified stepping stone | Verified PL17 (4-hopper A4 + 2 loop hoppers/half-ring) |
-| 4 | pending | `round4/mixed_screw_pl15.flyer` | **15** | 20/20 | 60/60 | 282 | 3.333 | Pending Round 4 panel | **NEW RECORD (-3 PL vs baseline PL18)!** 20-body `O3->T3->A3c+S` + 4-lvl towers on col 2/5; stall counter 0 |
+| 4 | `98717ad` | `round4/mixed_screw_pl15.flyer` | **15** | 20/20 | 60/60 | 282 | 3.333 | Astra 9.0, Neon 9.1, Fable 8.4 (3-0 valid, zero ballast); Astra & Neon independently invented `Obs2+P+S` for PL14/13 | **NEW RECORD (-3 PL vs baseline PL18)!** 20-body `O3->T3->A3c+S` + 4-lvl towers on col 2/5; stall counter 0 |
+| 5 | pending | `round5/` (no closed PL14 flyer) | 15 (record held) | — | — | — | — | Pending Round 5 panel | Proved `B1(5G+2R) -> B2(Obs2+S)` pickup & PL13 local witness in sim; B0 failed 11-cell routing across 3.12M clear poses (stall 1/2 on PL) |
+
+## Round 5 dead ends logged
+
+- Fixed-stencil `B2(Obs2+S)` + `B0(3-hopper + P)` mixed screw (`round5/spine.cpp`, `round5/handoff.cpp`): `B1(5G+2R) -> B2(Obs2+S)` pickup passed real sim at both hopper orders and phases, and `round5/towers.cpp` is ready for 4/5-level PL14 towers, but `B0` failed to connect within 11 glue+RB across 40,019 (front P) and 3,123,090 (rear P) clear arrangements (`T3->O3` needed 15, `T3->T3` needed 14).
+- Standalone 6-body `Obs2+P+S` ring with shared diagonal pickup + side observer (`round5/ring.cpp`): local 9-cell witness flew 4 moves at PL13 (loads 13/12/11/11), and 9,942/19,746 PL14 triples had connected core routes before rigid actuators, yet 0 completed all 6 paired actuator placements inside that fixed stencil (repeating the witness's exact X-geometry sums to rest-offset `-24` vs required `-4`).
 
 ## Round 4 PL14 dead ends logged
 
