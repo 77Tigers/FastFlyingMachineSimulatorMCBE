@@ -45,7 +45,19 @@ Known dead ends (do not retry):
 | 3 | `bcc0ac1` | `round3/mixed_screw_pl16.flyer` | **16** | 20/20 | 60/60 | 262 | 3.334 | Astra 8.8, Neon 8.7, Fable 8.3 (3-0 valid, zero ballast); unanimous CONTINUE for PL15 | **NEW RECORD (-2 PL vs baseline PL18)!** Stall counter reset to 0 |
 | 3 (alt) | `bcc0ac1` | `round3/mixed_screw_pl17.flyer` | **17** | 20/20 | 60/60 | 256 | 3.334 | Verified stepping stone | Verified PL17 (4-hopper A4 + 2 loop hoppers/half-ring) |
 | 4 | `98717ad` | `round4/mixed_screw_pl15.flyer` | **15** | 20/20 | 60/60 | 282 | 3.333 | Astra 9.0, Neon 9.1, Fable 8.4 (3-0 valid, zero ballast); Astra & Neon independently invented `Obs2+P+S` for PL14/13 | **NEW RECORD (-3 PL vs baseline PL18)!** 20-body `O3->T3->A3c+S` + 4-lvl towers on col 2/5; stall counter 0 |
-| 5 | `da41845` | `round5/` (no closed PL14 flyer) | 15 (record held) | — | — | — | — | Pending Round 5 panel | Proved `B1(5G+2R) -> B2(Obs2+S)` pickup & PL13 local witness in sim; B0 failed 11-cell routing across 3.12M clear poses (stall 1/2 on PL) |
+| 5 | `da41845` | `round5/` (no closed PL14 flyer) | 15 (record held) | — | — | — | — | 3-0 CONTINUE: Neon verified all 3 links of `(B0,B2)` double-`Obs2` at `(0,-3,+1)`; Astra ran 24-body `(B0,B1)` fixture 10k ticks at PL14; Fable invented towerless `S1/P2` `Rod(0h)` unit | Proved `B1(5G+2R) -> B2(Obs2+S)` pickup & PL13 local witness in sim; B0 failed 11-cell routing across 3.12M clear poses (stall 1/2 on PL) |
+| 6 | pending | `round6/` (no closed PL14 flyer) | 15 (record held) | — | — | — | — | Pending Round 6 panel + 2-round stall triage (with `refs/3_3.33_ext_a.flyer` PL12 rear-rod reference) | Closed relaxed `(B0,B2)` back at B0=18 (0 at <=13); 15.8M `(B0,B1)` armed fronts gave 0 joins; proved `S1/P2` mid-stroke arm collision in native sim (stall 2/2 on PL) |
+
+## Round 6 dead ends logged
+
+- Double-`Obs2` `(B0, B2)` mixed screw (`round6/flex.cpp`, `round6/sweep.py`): 30,042 joins (fixed) + 7,241 (joint) + 1,013,410 (crossed) gave 0 backs at caps `(10, 11, 6)`. Relaxed `(0, -3, +1)` closed at `B0=14` (`relaxed_back.backs`, B0 load 18, B1/B2 = 14) with 0 at B0 caps 12-13.
+- Double-`Obs2` `(B0, B1)` rear-pickup search (`round6/backup.cpp`, `round6/three.cpp`): 8.71M + 7.13M armed front placements gave 0 compatible opposite halves within PL14 B0 budget.
+- Towerless `S1/P2` mid-stroke rigid push (`round6/midstroke.rs`, `round6/midstroke_order.fixture`): real update-order collision at Rod slot 3 when P2's carrier retracts first and pushes Rod into its own extended pulling arm (`immovable obstruction` even at PL15).
+
+## Maintainer references added after Round 6
+
+- `refs/3_3.33_ext_a.flyer` (60b, `17x3x3`, verified 80/80 at PL12, 0/80 at PL11): single rear-facing `-X` lightning rod behind a 5-slime cross (`5G + 1Rod + 1S = 7` fixed -> load 10 interior, load 11 four-push plate, load 11 tip, load 12 transition).
+- `refs/3_3.33_ext_b.flyer` (74b, `16x6x6`, verified 80/80 at PL13, 0/80 at PL12): downward-rod 8-fixed interior plates (load 11-12).
 
 ## Round 5 dead ends logged
 
