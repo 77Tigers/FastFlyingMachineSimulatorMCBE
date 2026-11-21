@@ -1,0 +1,33 @@
+{
+  "file": "flyers/bank/pl18/nk_lat_n4.flyer",
+  "tested_pl": 18,
+  "encoded_pl": 18,
+  "blocks": 224,
+  "dims": [
+    4,
+    14,
+    14
+  ],
+  "samples": {
+    "climbing_pass": 20,
+    "climbing_total": 20,
+    "heldout_pass": 60,
+    "heldout_total": 60,
+    "total_pass": 80,
+    "min_distance": 3334,
+    "max_distance": 3334,
+    "min_bps": 3.334,
+    "climbing_failures": []
+  },
+  "audit_240": {
+    "max_successful_action": "18",
+    "movement_failures": "0",
+    "extension_failures": "0",
+    "distance_240": "80"
+  },
+  "minus_one_1000t": {
+    "pl": 17,
+    "total_pass": 0,
+    "min_distance": 0
+  }
+}

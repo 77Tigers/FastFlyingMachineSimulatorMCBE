@@ -1,0 +1,33 @@
+{
+  "file": "flyers/WIP/experiments/hill_climb_3p333/round2/openplus3_pl19.flyer",
+  "tested_pl": 19,
+  "encoded_pl": 19,
+  "blocks": 55,
+  "dims": [
+    6,
+    6,
+    6
+  ],
+  "samples": {
+    "climbing_pass": 20,
+    "climbing_total": 20,
+    "heldout_pass": 60,
+    "heldout_total": 60,
+    "total_pass": 80,
+    "min_distance": 3333,
+    "max_distance": 3333,
+    "min_bps": 3.333,
+    "climbing_failures": []
+  },
+  "audit_240": {
+    "max_successful_action": "19",
+    "movement_failures": "0",
+    "extension_failures": "0",
+    "distance_240": "80"
+  },
+  "minus_one_1000t": {
+    "pl": 18,
+    "total_pass": 0,
+    "min_distance": 0
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "file": "flyers/WIP/experiments/hill_climb_3p333/round4/mixed_screw_pl15.flyer",
+  "verdict": "PASS",
+  "failure_reasons": [],
+  "evidence_level": "autonomous_flight",
+  "flyer_sha256": "b24c9bd405a7808b8b052d23a95e1189efc9badcc36224b3b14c8e5a213dbfa1",
+  "git_head": "fe9e917",
+  "engine_sha256": {
+    "live": "2848217bbce455c272422fb431c58445c436f4f5ece5ff9701c1d88ac811b8d6",
+    "catalogue": "2848217bbce455c272422fb431c58445c436f4f5ece5ff9701c1d88ac811b8d6",
+    "matches_catalogue": true
+  },
+  "ticks": 10000,
+  "distance_threshold": 3333,
+  "tested_pl": 15,
+  "encoded_pl": 15,
+  "blocks": 282,
+  "dims": [
+    14,
+    12,
+    17
+  ],
+  "samples": {
+    "climbing_pass": 20,
+    "climbing_total": 20,
+    "heldout_pass": 60,
+    "heldout_total": 60,
+    "total_pass": 80,
+    "min_distance": 3333,
+    "max_distance": 3333,
+    "min_bps": 3.333,
+    "climbing_failures": []
+  },
+  "audit_240": {
+    "limit": 15,
+    "distance": 80,
+    "extensions": 1600,
+    "extension_failures": 0,
+    "movement_failures": 0,
+    "max_successful_action": 15,
+    "conservation_mismatch_ticks": 0
+  },
+  "bank_stats": {
+    "ticks": 10000,
+    "distance": 3333,
+    "extensions": 66664,
+    "extension_failures": 0,
+    "endpoint_conserved": true
+  },
+  "minus_one": {
+    "pl": 14,
+    "ticks": 10000,
+    "distance_threshold": 3333,
+    "total_pass": 0,
+    "min_distance": 0
+  }
+}

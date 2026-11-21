@@ -1,0 +1,29 @@
+file=mixed_screw_pl16.flyer limit=16 rng_final=6053433728553997232 phase_x=0 phase_z=0 ticks=240 start_min_x=14 end_min_x=94 distance=80 extensions=1440 extension_failures=0 end_blocks=262 initial_kinds=[0, 71, 71, 0, 0, 0, 40, 0, 0, 72, 0] final_kinds=[0, 71, 71, 0, 0, 0, 40, 0, 0, 72, 0] conservation_mismatch_ticks=0 period=0 translated_repeat_pairs=0 first_repeat=None traced=true max_successful_action=16 movement_failures=0
+file=mixed_screw_pl16.flyer limit=16 rng_final=6269817706955863120 phase_x=0 phase_z=0 ticks=10000 start_min_x=14 end_min_x=3348 distance=3334 extensions=60000 extension_failures=0 end_blocks=264 initial_kinds=[0, 71, 71, 0, 0, 0, 40, 0, 0, 72, 0] final_kinds=[0, 71, 71, 0, 0, 0, 40, 0, 0, 72, 0] conservation_mismatch_ticks=0 period=0 translated_repeat_pairs=0 first_repeat=None traced=true max_successful_action=16 movement_failures=0
+file=mixed_screw_pl16.flyer limit=16 rng_final=6053433728553997232 phase_x=7 phase_z=7 ticks=240 start_min_x=14 end_min_x=94 distance=80 extensions=1440 extension_failures=0 end_blocks=262 initial_kinds=[0, 71, 71, 0, 0, 0, 40, 0, 0, 72, 0] final_kinds=[0, 71, 71, 0, 0, 0, 40, 0, 0, 72, 0] conservation_mismatch_ticks=0 period=0 translated_repeat_pairs=0 first_repeat=None traced=true max_successful_action=16 movement_failures=0
+file=mixed_screw_pl16.flyer limit=16 rng_final=6269817706955863120 phase_x=7 phase_z=7 ticks=10000 start_min_x=14 end_min_x=3348 distance=3334 extensions=60000 extension_failures=0 end_blocks=264 initial_kinds=[0, 71, 71, 0, 0, 0, 40, 0, 0, 72, 0] final_kinds=[0, 71, 71, 0, 0, 0, 40, 0, 0, 72, 0] conservation_mismatch_ticks=0 period=0 translated_repeat_pairs=0 first_repeat=None traced=true max_successful_action=16 movement_failures=0
+file=mixed_screw_pl16.flyer limit=15 rng_final=6053433728553997232 phase_x=0 phase_z=0 ticks=240 start_min_x=14 end_min_x=14 distance=0 extensions=30 extension_failures=4296 end_blocks=256 initial_kinds=[0, 71, 71, 0, 0, 0, 40, 0, 0, 72, 0] final_kinds=[0, 71, 71, 0, 0, 0, 40, 0, 0, 72, 0] conservation_mismatch_ticks=0 period=0 translated_repeat_pairs=0 first_repeat=None traced=true max_successful_action=15 movement_failures=4296
+file=mixed_screw_pl16.flyer limit=15 rng_final=6269817706955863120 phase_x=0 phase_z=0 ticks=10000 start_min_x=14 end_min_x=14 distance=0 extensions=30 extension_failures=179976 end_blocks=256 initial_kinds=[0, 71, 71, 0, 0, 0, 40, 0, 0, 72, 0] final_kinds=[0, 71, 71, 0, 0, 0, 40, 0, 0, 72, 0] conservation_mismatch_ticks=0 period=0 translated_repeat_pairs=0 first_repeat=None traced=true max_successful_action=15 movement_failures=179976
+file=mixed_screw_pl16.flyer limit=15 rng_final=6053433728553997232 phase_x=7 phase_z=7 ticks=240 start_min_x=14 end_min_x=14 distance=0 extensions=30 extension_failures=4296 end_blocks=256 initial_kinds=[0, 71, 71, 0, 0, 0, 40, 0, 0, 72, 0] final_kinds=[0, 71, 71, 0, 0, 0, 40, 0, 0, 72, 0] conservation_mismatch_ticks=0 period=0 translated_repeat_pairs=0 first_repeat=None traced=true max_successful_action=15 movement_failures=4296
+file=mixed_screw_pl16.flyer limit=15 rng_final=6269817706955863120 phase_x=7 phase_z=7 ticks=10000 start_min_x=14 end_min_x=14 distance=0 extensions=30 extension_failures=179976 end_blocks=256 initial_kinds=[0, 71, 71, 0, 0, 0, 40, 0, 0, 72, 0] final_kinds=[0, 71, 71, 0, 0, 0, 40, 0, 0, 72, 0] conservation_mismatch_ticks=0 period=0 translated_repeat_pairs=0 first_repeat=None traced=true max_successful_action=15 movement_failures=179976
+active pistons 72 loaded pushes per period 62 loaded pulls 10
+body 0 level 0 glue, red, sticky 11 2 0 piston riders 3 peak 16 loads [16, 16, 16, 16]
+body 1 level 0 glue, red, sticky 12 1 0 piston riders 3 peak 16 loads [16, 16, 16, 16]
+body 2 level 0 glue, red, sticky 7 2 1 piston riders 6 peak 16 loads [16, 16, 14, 15]
+body 3 level 0 glue, red, sticky 11 2 0 piston riders 3 peak 16 loads [16, 16, 16, 16]
+body 4 level 0 glue, red, sticky 12 1 0 piston riders 3 peak 16 loads [16, 16, 16, 16]
+body 5 level 0 glue, red, sticky 7 2 1 piston riders 6 peak 16 loads [16, 16, 14, 15]
+body 1 level 1 glue, red, sticky 6 2 1 piston riders 4 peak 13 loads [12, 12, 12, 13]
+body 2 level 1 glue, red, sticky 6 2 1 piston riders 7 peak 16 loads [13, 14, 15, 16]
+body 4 level 1 glue, red, sticky 6 2 1 piston riders 4 peak 13 loads [12, 12, 12, 13]
+body 5 level 1 glue, red, sticky 6 2 1 piston riders 7 peak 16 loads [13, 14, 15, 16]
+body 1 level 2 glue, red, sticky 8 3 1 piston riders 4 peak 16 loads [16, 16, 16, 16]
+body 2 level 2 glue, red, sticky 7 3 1 piston riders 4 peak 15 loads [15, 15, 15, 15]
+body 4 level 2 glue, red, sticky 8 3 1 piston riders 4 peak 16 loads [16, 16, 16, 16]
+body 5 level 2 glue, red, sticky 7 3 1 piston riders 4 peak 15 loads [15, 15, 15, 15]
+body 1 level 3 glue, red, sticky 7 2 0 piston riders 3 peak 12 loads [12, 11, 10, 9]
+body 2 level 3 glue, red, sticky 7 3 0 piston riders 3 peak 13 loads [11, 10, 13, 12]
+body 4 level 3 glue, red, sticky 7 2 0 piston riders 3 peak 12 loads [12, 11, 10, 9]
+body 5 level 3 glue, red, sticky 7 3 0 piston riders 3 peak 13 loads [11, 10, 13, 12]
+phase (0,0) verified 182 non-piston blocks at 833 period boundaries
+phase (7,7) verified 182 non-piston blocks at 833 period boundaries
