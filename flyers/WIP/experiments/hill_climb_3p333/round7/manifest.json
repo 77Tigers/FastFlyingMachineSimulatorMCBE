@@ -1,0 +1,130 @@
+{
+  "family": "Round 7 two-plane rigid actuators and six-body towered backs",
+  "evidence_level": "local_witness",
+  "caps": {
+    "target_pl": 14,
+    "rigid_skeleton": 12,
+    "direct_gate_victim": 10,
+    "ordinary_back": [
+      11,
+      11,
+      8,
+      11,
+      11,
+      8
+    ],
+    "native_fixture_encoded_pl": 14,
+    "native_fixture_lowest_working_pl": 12
+  },
+  "seed": 0,
+  "ranges": {
+    "baseline": "Round 4 mixed_screw_pl15.flyer, 282 blocks, previously verified 80/80 at PL15",
+    "solver_budget_scope": "5 seconds per pinned single-body CP gate, 2.5 seconds solver time",
+    "port_pose": "body and donor centers, ordered motor lanes and hub owner; r=3..13; all eligible YZ within the 14-source path bound",
+    "direct_gate_pose": "two hopper lanes, common pickup, first hopper redstone and late hopper gate",
+    "repair_pose": "directed edge, target cap, offset, translated source stencil, modified port or donor emitter",
+    "repair_yz": [
+      -8,
+      8
+    ],
+    "crossed_link_t": [
+      -15,
+      5
+    ],
+    "crossed_link_yz": [
+      -15,
+      15
+    ],
+    "crossed_pose": "six core types, cover assignment, per-body capacity and X positions; 216 X placements admitted to the joint 3D check",
+    "counting": "Disjoint hardware signatures by family. The four-port recheck, material completions, nested incoming poses, CP controls and native fixture repetitions do not add to unique_placements.",
+    "levels": {
+      "native_two_strokes": "local_witness",
+      "search_bounds_and_projected_bodies": "arithmetic_only"
+    },
+    "fixture_phases": [
+      [
+        0,
+        0
+      ],
+      [
+        7,
+        7
+      ]
+    ],
+    "fixture_seeds": [
+      0,
+      15
+    ],
+    "fixture_four_tick_loads": [
+      12,
+      12
+    ],
+    "saved_candidate_count": 0,
+    "held_out_runs": 0
+  },
+  "time_budget_s": 5,
+  "unique_placements": 284392,
+  "per_stage_rejections": {
+    "two_plane_free_hardware": 1974,
+    "two_plane_free_transport": 62178,
+    "two_plane_borrowed_hardware": 1992,
+    "two_plane_borrowed_transport": 81168,
+    "second_pull_interference": 20,
+    "second_pull_transport": 20,
+    "second_pull_offset_sum": 8,
+    "carrier_glaze_or_rod_hardware": 2907,
+    "carrier_glaze_or_rod_transport": 35160,
+    "carrier_glaze_or_rod_hopper_order": 13,
+    "donor_glaze_hardware": 51830,
+    "donor_glaze_transport": 46827,
+    "donor_glaze_hopper_order": 79,
+    "split_six_body_occupancy": 216
+  },
+  "output_hashes": {
+    "flyers/WIP/experiments/hill_climb_3p333/round7/two_plane.fixture": "4aace1070738cf6553a5f88b7680f58f25f9f20282cdb37849137cbadb83ad13",
+    "flyers/WIP/experiments/hill_climb_3p333/round7/results.json": "5668c648acf280cf42b9fbcc882eeac4d2d4902ceaa6137fe1ec864d338514b4"
+  },
+  "minimal_failure_witness": {
+    "evidence_level": "arithmetic_only",
+    "edge": "O3 to T3",
+    "offset": 2,
+    "carrier_cap": 11,
+    "slot": 0,
+    "own_order": [
+      2,
+      3,
+      4
+    ],
+    "source_order": [
+      2,
+      3,
+      4
+    ],
+    "input": [
+      1,
+      0,
+      1
+    ],
+    "expected": 14,
+    "discovered": 16,
+    "extra": [
+      [
+        -2,
+        -1,
+        2
+      ],
+      [
+        -1,
+        -1,
+        2
+      ]
+    ],
+    "missing": []
+  },
+  "replay_cmd": "sh flyers/WIP/experiments/hill_climb_3p333/round7/build.sh port_sweep discovery links offsets world && .venv/bin/python -B flyers/WIP/experiments/hill_climb_3p333/round7/evidence.py flyers/WIP/experiments/hill_climb_3p333/round7/results.json && target/release/fastflyer-research audit flyers/WIP/experiments/hill_climb_3p333/round7/two_plane.fixture 240 0",
+  "timestamps": {
+    "started": "2026-11-21T18:18:22+00:00",
+    "preflight_green": "2026-11-21T18:18:46+00:00",
+    "finished": "2026-11-21T19:26:13+00:00"
+  }
+}
